@@ -1,0 +1,43 @@
+This area is to document our needs and solutions with regards to [[RunLevels]].  To understand the reasons see the discussion below.
+
+* As we reach consensus on requirements and solutions they will be listed here.
+
+----
+I view runlevels as having following key features.
+# dictate the final running state of the system.  For example, single user, multi-user, X
+# provide checkpoints/steps and seperation/modularity for the boot process.  By seperating the boot sequence into steps or runlevel and associating each enabled init.d script to a runlevel (using taskdirs), there is no need for fine-grained dependency tracking.  For example, there is a Network runlevel which setups the network interface.  All network dependenant scripts would be symlinked in Network's taskdir to /S/S/init.d.
+
+Now we need to define what runlevels we have/want and where they belong in the boot sequence.  To start things off, here are my suggestions based on our current runlevels + some additions.
+
+* Init --> Multi --> Network --> GUI
+* Done --> Halt
+* Done --> Reboot
+* Single -- I'm not sure where it fits in, please educate me!!
+
+Carlo J. [[Calica]]
+----
+I'm not a big fan of runlevels myself. I think the complexity they add to the average-case boot procedure is
+not worth the benefit they add to a few power users (sorry for the stupid question, but does anybody really "switches to single user mode"
+nowadays?).
+----
+Run levels make particular sense whenever things go wrong.  If the machine fails to complete the boot process you might need a single user mode to fix the problems.  If starting the networking causes the machine to hang (because of corrupt/damaged driver or hardware) you'll need access to the machine without networking enabled.  Hopefully these things won't happen but how do you correct things when they do?
+
+Single user mode is necessary whenever the state of the machine needs to be strictly managed.  For example, single user mode can be necessary when:
+*ensuring libraries and programs are not being used while security updates are being applied;
+* ensuring drive partitions will not be mounted by a user or process while they are being checked for errors, or when repartitioning or data recovery is required;
+* taking backups of a file system or database in a known state, guaranteeing that it won't be modified during the backup.
+----
+''Run levels make particular sense whenever things go wrong.  If the machine fails to complete the boot process you might need a single user mode to fix the problems.''
+
+This, of course, was "in the days before live CDs". :-)
+
+Now, seriously, a rescue boot device is a much simpler way to solve things. For starters, it is in great part because of this "let's boot into single user mode" mentality that the whole /xxx vs. /usr/xxx mess started.
+
+''Single user mode is necessary whenever the state of the machine needs to be strictly managed.''
+
+All these scenarios only make sense when a machine is in a truly multiuser environment (that is, several different real people using the computer at the same time). These days -- I mean, in the last few decades :) -- this means a networked environment. In these scenarios, "go to single user mode" means only "bring the network down". It's not like you have dozens of dumb terminals hooked to your box anymore.
+
+Sorry if those arguments are heretic/non-unixy, but that's what we're all about here. ;-)
+----
+
+{{Discussions}}

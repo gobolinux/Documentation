@@ -1,0 +1,7 @@
+AbsTK is programming toolkit which abstracts away the user interface, allowing programs to create, for example, GUI and CLI interfaces without separating the code.  It was developed by the GoboLinux team for usage in [[Installer]].
+
+http://www.gobolinux.org/abstk/
+
+<!--/-->
+
+{{Reference|2007|March|13|Mpb}}

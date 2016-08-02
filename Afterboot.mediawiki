@@ -1,0 +1,123 @@
+= Introduction =
+A list of things to remember after the first boot.  This page is intended to be similar in spirit to the [http://www.openbsd.org/cgi-bin/man.cgi?query=afterboot&apropos=0&sektion=0&manpath=OpenBSD+Current&arch=i386&format=html  afterboot]  man page of the [http://www.openbsd.org<!--/--> OpenBSD] project.
+
+I (Peter Eriksen) will be updating this page as I'm setting things up. I didn't find anything similar in the documentation, so here goes.  It applies to release 011, and hopefully some of the things are built into the upcomming 012 release.
+
+= [[LiveCD]] Tricks =
+If X isn't set up correctly in the installation but works fine on the [[LiveCD]], it might be good to cp the one from the running [[LiveCD]] to the installation.  Here it's done through a floppy:
+<pre>
+~]mount /Mount/Floppy
+~]cp /System/Settings/X11/XF86Config /Mount/Floppy/
+</pre>
+
+If networking with DHCP doesn't work on the [[LiveCD]] try this:
+<pre>
+~]dhcpcd
+</pre>
+
+= Privilege Escalation =
+Add user peter to the system group "sys".  The user could also be added to a group wheel, but I guess, since there is already a group sys with user gobo in it and no group wheel, then it's natural to use sys as the administrator group.
+<pre>
+~]usermod -G sys peter
+</pre>
+''Below only applies to GoboLinux 013 and earlier as it is default since GoboLinux 014'' <br />
+Next give peter root privileges by configuring the sudoers file.
+<pre>
+~]visudo
+</pre>
+Add e.g. the following line or something similar
+<pre>
+%sys ALL=(ALL) NOPASSWD:ALL
+</pre>
+
+= Timezone =
+<pre>
+~]ls -l /Programs/Glibc/Settings/localtime
+lrwxrwxrwx  1 gobo gobo 56 2004-12-16 13:42 /Programs/Glibc/Settings/localtime -> /Programs/Glibc/Current/share/zoneinfo/America/Sao_Paulo
+~]sudo ln -sf /Programs/Glibc/Current/Shared/zoneinfo/Europe/Copenhagen /Programs/Glibc/Settings/localtime
+~]sudo ln -sf /Programs/Glibc/Current/Shared/zoneinfo/Europe/Copenhagen /System/Settings/localtime
+</pre>
+It might be relevant to set the zoneinfo of the system clock.
+<pre>
+~]ls /usr/share/zoneinfo
+</pre>
+(Suppose you want to use GMT)
+<pre>
+~]ln -sf /usr/share/zoneinfo/GMT /etc/localtime
+</pre>
+
+= X.Org =
+If the X configuration file from the [[LiveCD]] was saved on a floppy, copy it to the installation.
+<pre>
+~]mount /Mount/Floppy
+~]sudo cp /Mount/Floppy/XF86Config /System/Settings/X11/XF86Config
+</pre>
+
+=  Boot Menu =
+<pre>
+~]sudo cp /System/Kernel/Boot/grub/menu.lst /System/Kernel/Boot/grub/menu.lst.backup
+~]sudo vi /System/Kernel/Boot/grub/menu.lst
+</pre>
+
+= Terminal Settings =
+If remote ssh programs doesn't work it might be because of the terminal settings.  In that case a workaround could be:
+<pre>
+~]echo $TERM
+xterm-color
+~]export TERM=xterm
+</pre>
+
+= Compile Settings =
+<pre>
+~]sudo vim /Programs/Compile/Settings/Compile/Compile.conf
+</pre>
+Put your name in compile[[RecipeAuthor]]="" and uncomment.
+Comment the line "http://cscience.org/~gobo/recipe-store".  Use http://www.gobolinux.org/recipe-store/ instead.
+
+=  Updating the [[GoboLinux]] Infrastructure =
+It might be wise to upgrade Compile and other programs
+before attempting to compile or install other programs
+<pre>
+~]InstallPackage Scripts
+~]InstallPackage Compile
+</pre>
+
+= Known Issues =
+Remember to look over the [http://www.gobolinux.org/index.php?page=known_issues_014 known issues] for things that might affect you.
+Also see if any of the [http://bugs.gobolinux.org tracking bugs] affect you.
+
+= Miscellaneous Files to Check =
+<pre>
+/System/Settings/~BootScripts/Options
+/System/Settings/hosts
+/System/Settings/resolv.conf
+/System/Settings/fstab
+/System/Settings/modprobe.conf
+</pre>
+
+= NVIDIA Driver =
+In GoboLinux 0.14.1 you will first have to compile a custom kernel without Xen virtualisation as that is unsupported by NVIDIA's proprietary driver. Once that is done, just do:
+
+<pre>
+~]Compile nvidia
+</pre>
+
+Then edit /System/Settings/X11/xorg.conf. You need at least to change 'Driver "nv"' into 'Driver "nvidia"' outcomment "Load dri" if present.
+
+= Workarounds for Recipe Problems =
+<pre>
+~]cd /Programs/SDL/Current/include
+~]ln -s SDL/* .
+~]SymlinkProgram SDL
+</pre>
+
+= Todo: =
+== Soundcard Drivers ==
+== Power-Off ==
+http://www.tldp.org/HOWTO/ACPI-HOWTO/ .
+== hdparm ==
+== Hardware Sensors ==
+
+{{Handbook}}
+
+[[Category:Howtos]]

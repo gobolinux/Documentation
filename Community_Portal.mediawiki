@@ -1,0 +1,23 @@
+Dear developers, I want see in the 014
+
+1. The CDFS filesystem!
+
+2. Full UTF-8 encoding for I can in Consoles and virtual terminals use the hungarian characters correct, and can this others peoples!
+
+3. The 014 is not in CD-image, but in DVD-image,
+
+4. and in this DVD-image the KDE-I18N-hu.
+
+5. XFCE
+
+6. multi-gnome terminal http://multignometerm.sourceforge.net<!--<!--/-->-->
+
+[[User:Violazoli|Violazoli]] 12:40, 10 November 2006 (EST)
+
+----
+
+I would like to see boot script themes that actually work.  :-)  I tried AppleII and a few others, and they rendered the system unusuable.  Filesystems were left read-only.  Paths couldn't be found.  In no case could CTRL-ALT-DEL be used to reboot the machine.  Just a mess!
+
+The only working one was Progress.  :)  Thank you.
+
+2007 Mar 13. -- Samuel Falvo

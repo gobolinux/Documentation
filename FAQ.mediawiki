@@ -1,0 +1,11 @@
+I propose that we move the links "see also" to the bottom of this page. Comments about this?
+
+
+== Unanswered Questions ==
+Please see my new question :)  "viewing available recipes on the commandline"
+thanks! (remove this entry when it was answered please)
+
+
+== Missing Links ==
+Currently the "See Building a custom GoboLinux LiveCD." is not working. Has the LiveCD Project been moved
+or cancelled? [[User:80.108.103.172|80.108.103.172]] 09:55, 1 September 2008 (EDT)

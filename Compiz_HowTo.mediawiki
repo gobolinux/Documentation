@@ -1,0 +1,74 @@
+My setup: Lenovo thinkpad x60 (gfx chip: intel 945GM)
+(this article is "work in progress..)
+
+* As root do: Compile compiz-fusion<br>
+compiz-fusion and all its dependencies will get compiled and installed<br>
+
+* Modify thoses xorg.conf sections:
+
+<pre>
+Section "ServerLayout"
+	Identifier     "Xorg Configured"
+	Screen         0 "Screen0"  0 0
+	InputDevice    "Mouse0" "CorePointer"
+	InputDevice    "Keyboard0" "CoreKeyboard"
+        Option         "AIGLX" "true"
+EndSection
+</pre>
+
+<pre>
+Section "Module"
+	Load  "glx"
+	Load  "extmod"
+	Load  "xtrap"
+	Load  "record"
+	Load  "dbe"
+	Load  "dri"
+	Load  "type1"
+EndSection
+</pre>
+
+<pre>
+Section "Device"
+	Identifier  "Card0"
+	Driver      "intel"
+       	BusID           "PCI:0:2:0"
+        Option "XAANoOffscreenPixmaps" "true"
+	Option "DRI"     "true"
+EndSection
+</pre>
+
+<pre>
+Section "Screen"
+	Identifier "Screen0"
+	Device     "Card0"
+	SubSection "Display"
+            Virtual         2048 2048
+	EndSubSection
+
+EndSection
+</pre>
+
+<pre>
+Section "DRI"
+        Group "video"
+        Mode    0666
+EndSection
+</pre>
+
+<pre>
+Section "Extensions"
+Option "Composite" "Enable"
+EndSection
+</pre>
+
+* Restart Xorg
+* Run compiz with : 
+keisangi@kanzume ~] LIBGL_ALWAYS_INDIRECT=1 INTEL_BATCH=1 compiz --replace --indirect-rendering --sm-disable ccp & <br>
+keisangi@kanzume ~] emerald start &<br><br>
+
+Compiz-fusion is really snappy despite the lowend gfx chip on x60<br><br>
+
+Sources: [http://wiki.compiz-fusion.org/Intel_with_AiGLX wiki.compiz-fusion]
+
+[[Category:Howtos]]

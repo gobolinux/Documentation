@@ -1,0 +1,5 @@
+This how-to page provides platform specific notes for using Rootless on Gentoo Linux. You will also need to follow the general instructions on installing [[Rootless]].
+
+As Gentoo Linux is a source based Linux distribution, Rootless usually "just works".
+
+{{Rootless}}

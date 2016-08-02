@@ -1,0 +1,140 @@
+First, how do I get Unicode to display properly? Sorry about the mess below, you'll just have to believe that it really is Russian.
+
+I propose that directory names should have a localized layer added to them. The system would continue to see the directories in their original English names, but would display them based on the preference of the user. For example, the root directory would look like this for a Russian user who wants to see the directory names in Russian:
+<pre>
+/
+\&#1057;&#1082;&#1083;&#1072;&#1076;
+&#1059;&#1089;&#1090;&#1088;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072;
+&#1057;&#1080;&#1089;&#1090;&#1077;&#1084;&#1072;
+&#1060;&#1072;&#1081;&#1083;&#1099;
+&#1055;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1084;&#1099;
+&#1055;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1080;
+</pre>
+However, under this system, calls to /Files would still work, because there is simply a "translation" layer between the system and the user. <code>cd /Files</code> and <code>cd /&#1060;&#1072;&#1081;&#1083;&#1099;</code> would have the same effect; this way, we don't need to worry about localizing every single script and program. The system just automatically translates "&#1060;&#1072;&#1081;&#1083;&#1099;" to "Files" and vice versa.
+
+Another advantage is that this could be used by people who want to retain the English names, but don't like the name choices. I, for instance, don't like the choice "Depot" and "Mount". (Of course, /Depot doesn't really ever get called from a script, so I could change it right now without any problems, but this is just an example.) To change it, all I would have to do is edit the English localization (there should be an English localization precisely for this reason, even if it doesn't make much sense to begin with) and change it to look something like this:
+<pre>
+Depot = Commons
+Mount = Devices
+System = System
+Files = Files
+Programs = Programs
+Users = Users
+etc.
+</pre>
+-----
+It could also be implemented with [[GoboHide]] and additional symlinks.  Symlink /Devices to /Mount and [[GoboHide]] /Mount.  But yes, a nice way to set this up would be nice.
+
+Carlo [[User:Calica|Calica]]
+-----
+Yes, [[GoboHide]] would be a nice way to implement that. If someone contributes a script to automate this process
+(perhaps looking up in a list of localizations, etc), we might include that as an option in the installer. One would have to be
+careful, however, not to contribute packages compiled to be somehow dependent on these names.
+
+-- hisham
+
+-----
+
+There should be no problem to use scripts pointing to an internationalized location. All gobolinux systems could have hiden links for all languages. The only problem might be if two languages have the same name for diferent places. That need to be checked extensibly before implemented. The foward compatibility would be total, and the backward compatibility would be somewhat limited. But you can aways write backward compatible using english directories.
+
+-- Manabu
+
+-----
+
+A good idea is to create a localizated tree like the /System/Links/Executables. For example: in pt_BR, the /System/Links/Executables/mount, shoud be pointed by /SomeDirLikePtBROrAnythingElse/Executaveis/montar. So, when the user wants to mount some device, he types "montar /dev/hdb /Mount/CD-Rom". It's not a complete internationalization, but is very simple to implement, and could make a no-system-nor-pc -> [[GoboLinux]] easier.
+
+Another idea is to use something like the MS-Win. Say, pt:/Dispositivos/HD1. The simple prefix pt:/ could, in the worst hipotesis, be implemented like a global alias with zsh, or a simple program that converts between adresses. Even a global variable could be used (imagine: "user# montar $pt/Dispositivos/HD1 $pt/cdrom" - it could seem ugly, but works...)
+
+ps.: if someone could correct my horrible English...
+
+-- Cl�ber   <cleberz@ufpr.br>
+
+-----
+
+It should be possible to use accentuation, so /Executable/Mount is better of as /executáveis/montar 
+
+-- Manabu
+
+
+-----
+
+So we have some suggestions, I think its a good idea to pick on one, clearly define its goals, and reach it, ie with a script.  As I suggested something similar to this on the mailing list, i remember someone else saying he wrote something in python. Lets see if this reaches something useful enough :)  -- shevegen
+
+------
+How about this:
+
+There's another optional kernel patch called GoboRename. We have three users: Juan, from Spain, who decides to have his directories in Spanish, Peter, who speaks English but wants to invent his own directory names, Norman, who prefers the default English names, and Ken, who doesn't even have GoboRename in his system.
+
+Juan never has to learn about English names. He just types the Spanish names to zsh and GoboRename knows that Juan's System has an evironment variable Language=ES, so it looks for the corresponding translation of dir names in the system.
+When Juan wants to write a script that uses system directory names, he just writes a text file called texto1 with the Spanish naming, then he types in the shell:<code>MakeScript texto1</code>
+
+The script will look like:
+
+<code>#!/Programs/zsh<br>language=ES</code>
+
+Then he can send his script to Norman, who can use it directly, because GoboRename translates the directory names. If he wants to read the script, he can type:
+
+<code>TranslateScript texto1 EN
+ 
+</code>
+
+And now the script uses English directory names.
+
+Now let's say that Peter writes a script. He does the same as Juan, except that his language environment variable is Language=Custom, And he can change the directory names whenever he likes, by editing a system file. Peter's scripts look like this:
+
+<code>#!/Programs/zsh
+<br>language=Custom
+<br>Depot=MyPlace
+<br>Files=ImportantFiles <br>and so on
+ 
+</code>
+
+Now, if Ken gets the texto1 script, he will type:
+
+
+<code>TranslateScript texto1 NoRename
+ 
+</code>
+
+And it will look like
+
+<code>#!/Programs/zsh
+......
+
+</code>
+
+Now, if Juan asks for help to Norman though irc, the first thing that Norman will tell him is: "open a teminal and type: 'setLanguage --justThisSession EN'", so that Norman can tell Juan to type commands with English directory names, as Norman knows.
+
+-------------
+
+Sorry,I made some mistakes, I think it should be:
+
+Juan's script:
+<pre>
+#!/Programs/zsh
+setLanguage --justThisSession ES
+</pre>
+As for Peter's script, the simplest (but most verbous) sollution is:
+
+<pre>
+#!/Programs/zsh
+setLanguage --justThisSession Custom Depot=MyPlace Files=ImportantFiles 
+</pre>
+
+Another option for Peter's script would be for him to have a custom-naming file:
+
+<pre>
+#!/Programs/zsh
+setLanguage --justThisSession CustomFile 
+</pre>
+
+Then, if Peter sends his script (call it Peters_Text1)to Juan, then Peter would also send him the custom-naming file, which Juan would save in, say, /Deposito/Peter. Then, before running the script, Juan would type:
+
+<pre>
+setCustomFile --justThisSession /Deposito/Peter
+TranslateScript ./Peters_Text1 ES
+</pre>
+
+The first line would make Peter's naming the default custom naming, but just for current zsh session. The second line translates Peter's custom script to one with an official (for Gobolinux) Spanish file naming, so that Juan can forget about Peter's defaults.
+
+{{Discussions}}

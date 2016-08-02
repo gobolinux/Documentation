@@ -1,0 +1,99 @@
+Carlo Calica aka [[CarloCalica]]
+
+I guess I'll use this as a dev blog.
+
+-----
+
+== Calica 011 Experiences ==
+
+X.Org vs Xorg naming issues
+
+[[FindPackage]] no longer in Scripts.  Went to backup and broke it into seperate package.  Verify functionality and adding features
+
+[[CreatePackage]] = during backup added -s option to backup current settings.  Determine if useful to anyone else and submit upstream..  [[CreatePackage]] seems to have some odd behavior wrt to Variable.  Investigate.
+
+-----
+
+== Calica ToDo ==
+
+My personal want/todo list: 
+Here's a few things I'd like to see.  If I don't see them I may do them.
+
+* define Gobo Editions more
+* continue [[BootScripts]] work
+* PAM enable Gobo
+* more advanced user authentication (LDAP)
+* learn more about profiles
+
+-----
+
+Here's some info regarding my [[BootScripts]] implementation.
+
+Overview:
+
+Overriding goals are ease of use, and flexibility.  We will keep our existing Daemon management and runlevels (with a few changes); and add the concept of task directories and [[Need]] based dependencies.  It is designed to support parallel startup for faster bootup times.  A quick look at the file system well help explain. Please suggest more Gobo friendly names.
+<pre>
+/S/S/runlevels/
+Start
+Multi
+Network
+GUI
+/S/S/init.d/
+Start.d/
+Multi.d
+Network.d/
+GUI.d/
+</pre>
+* runlevels - contains [[RunLevels]] scripts.  These scripts will be maintained with the [[BootScripts]] package (or at least distributed with it)
+* init.d - contains all the [[init.d]] scripts.  Also contains the associated runlevel task directory (Start.d, ...).  The runlevel task directory contains symlinks to the task script in the parent directory, /S/S/init.d.
+
+Here is an example runlevel script for Multi:
+<pre>
+#!/bin/bash
+. BootScriptFunctions
+
+Need.py runlevel Init
+Need.py runlevel Network
+
+Need.py rl-begin Multi
+
+Need.py taskdir /System/Settings/init.d/Multi.d
+Exec "Starting console mouse GPM..."                      Mouse Start
+Exec "Starting PCMCIA daemon..."                          PCMCIA Start
+</pre>
+[[BootScriptFunctions]] provides wrapper functions such as Exec.  Making the import explicit simplifies the implementation and the code more obvious to the newcomer (easier to find out what Exec does)  Need.py communicates with the "master controller" and takes a subcommand and message as args.  The commands are as follows:
+* runlevel - specifies a runlevel dependency
+* rl-begin - tells the "master" that the script is actually begining the runlevel as opposed to loading dependencies
+* taskdir - starts all the init files in the specified directory.  This may be done in parallel.
+* task - starts the script in /S/S/init.d
+
+Packages place their init scripts in Settings/init.d and it is up to the admin to make the corresponding symlinks in the runlevel task directory.  Perhaps this could be done using [[PostInstall]] scripts.  These scripts are standard foo [[stop | start]] but maybe customized for dependencies handling by using "Need.py task foo"
+
+In the example runlevel script both GPM and PCMCIA daemon should have there own init script and symlink in Multi.d.  Ideally, each runlevel script would only contain Need.py requests but being able to establish a linear execution order is useful.
+
+Notes:
+* "Need.py task foo" starts foo in /S/S/init.d.  This means dependencies are started even if they're not enabled in a specific runlevel.  This allows the admin to enable nfs without needing to enable portmap.  Ease of admin vs starting services with admin knowledge.  Where do we stand?
+
+Implementation:
+
+The "master" is implement in Python.  Need.py is implemented in Ruby (For some reason Python's signal handler is buggy so I rewrote in Ruby, ideally this will be in C for faster startup time.  In addition, there is a display script written Python.  Themes are implemented by using a different display script.  All IPC is handled by FIFOs and signals.
+
+Master - This is a multithreaded server with starts the runlevel script and listens on the fifo for Need.py requests.  Sends update messages to display process via a fifo.
+
+Need.py - Used by scripts to communicate with master.  Simply reads args and sends messages to master.  Depending on subcommand with sleep until it receives signal from Master
+
+Display - Used for display themes.  Reads messages from fifo and maintains an internal state of task status.  Current implementations is a simple raw message viewer, and a curses based one.  All scripts STDOUT and STDERR are redirected to a text file.  Display can tail -f that file and display to a "console" window.  Possibilities include a framebuffer version.
+
+Current Status:
+
+It is booting my workstation with mostly stock 010 rc1 [[BootScripts]].  Major issue is tasks (mainly hotplug) spewing large amounts of data to the console.  stderr and stdout are being redirected to /dev/null.  This completely defeats the usefulness of the viewer process.  I need to learn more about pty's.  Hopefully spawning the processes in a pty with special fd readers will help.  Anyone with pointer's?  Stevens isn't translating well to python.
+
+ToDo:
+* Boot under UML (by passed.  Booting my real system.
+* redirect task's IO away from the console.
+partially solved.  The big abuser was hotplug which is better if syslog is running.
+* Improve the visual quality of the viewer process.  I'm a horrible UI designer (that includes text mode), so I'll need some help.  Implementation can be any language, just needs to be able to read a fifo (basically a special type of file)
+* move tasks from Exec in runlevel scripts to taskdir entries
+* Define boot runlevels (stages) and their dependencies.  Help guys?
+* Many init.d scripts source /etc/init.d/functions.  Need to research what this should provide and provide it.  Anyone with easy access to other distro's care to look?
+* ?????

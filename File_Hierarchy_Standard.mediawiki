@@ -1,0 +1,6 @@
+The file organization system used by traditional Unix/Linux systems.  The current guidlines may be found here:
+
+http://www.pathname.com/fhs/
+<!--/-->
+
+{{Handbook}}

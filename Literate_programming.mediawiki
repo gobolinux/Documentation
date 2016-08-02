@@ -1,0 +1,7 @@
+====Literate Programming====
+
+A style of programming proposed by Knuth in 1984. In literate programming you write comments with program instead of program with comments. More details at [http://www.literateprogramming.com].
+
+Ahh... it has nothing to do with Gobo. Not yet.
+
+{{Reference}}

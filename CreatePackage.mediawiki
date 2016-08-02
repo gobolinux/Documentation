@@ -1,0 +1,23 @@
+Makes a [[GoboLinux]] package from an installed program on the system, which is basically a compressed tarball from its entry at /Programs.
+
+Usage: '''CreatePackage''' <directory>
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+* '''-b, --bzip2''' - Compress using bzip2
+* '''-D, --no-dependencies''' - Do not create Dependencies file
+* '''-g, --gzip''' - Compress using gzip
+* '''-p, --personal-backup''' - Use personal backup mode.  Do NOT use for public distribution
+* '''-d, --devel-version''' - Manage development version numbers (for use mainly by [[GoboLinux]] developers)
+* '''-n, --new-version''' ''<entry>'' - Sets a new version number for the package (for use mainly by [[GoboLinux]] developers)
+* '''-k, --keep''' - Copy new version instead of moving (for use with devel-version and new-version)
+* '''-s, --sign''' - Sign package
+* '''-t, --target-dir''' ''<entry>'' - Create the package archive inside the passed directory (instead of '.')
+
+Usage Examples:
+
+  CreatePackage gtk+
+
+{{Scripts}}

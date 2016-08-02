@@ -1,0 +1,9 @@
+A minimal functionality [[SymlinkProgram]] that can be used when the original script is not working.
+
+==Usage==
+   [[RescueSymlinkProgram]] <program_path> [goboLinks]
+
+==Example==
+   [[RescueSymlinkProgram]] /Programs/Glibc/Current /System/Links
+
+{{Scripts}}

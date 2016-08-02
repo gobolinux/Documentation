@@ -1,0 +1,17 @@
+An eye-candy-enabled replacement to 'ls', with summarized statistics and a fancy output. 
+A short name can also be used ('l').
+
+==Usage==
+   '''l''' [<options>...] <pattern>
+or, equivalently:
+   '''List''' [<options>...] <pattern>
+
+===Options===
+* '''-a, --all''' - List both regular and dot-files.
+* '''-d, --directories''' - List directories only.
+* '''-h, --hidden''' - List dot-files only.
+* '''-L, --no-links''' - List only files that are not symbolic links.
+* '''-s, --size''' - Sort by size, largest size shown last.
+* '''-t, --time''' - Sort by time, most recent file shown last.
+
+{{Scripts}}

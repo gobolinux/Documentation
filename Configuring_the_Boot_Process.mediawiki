@@ -1,0 +1,208 @@
+{{Handbook Navigation}}
+
+By default, the [[GoboLinux]] boot scripts are configured to initialize and configure a relatively small number of daemons and settings that are common among most users. This page explains how to compel [[GoboLinux]] to do what you want when it goes up or down.
+
+== Boot-time options ==
+
+At boot-time, the boot scripts execute several programs. Their purpose is to configure things like the keyboard and the system clock and to initialize things like the swap partitions. There is an assortment of options that can be used to customize exactly how these programs are going to be executed and therefore how the system is going to be configured.
+
+You can change all these options by editing the /System/Settings/BootOptions and /System/Settings/NetworkOptions files. These files are composed of a set of entries in the format:
+<pre>
+Option=value
+</pre>
+
+Note that no space is allowed before or after the = character. (For the curious, yes, this is just a shell file that is "sourced" by the boot scripts.)
+
+The following subsections describe the available entries in the /System/Settings/BootOptions and NetworkOptions files and the possible values you can give them.
+
+=== Configuring boot themes ===
+
+:''"GoboText was so hard to debug that it motivated the creation of the TestBootTheme script." -- Hisham Muhammad''
+
+Mainstream distributions have boot scripts that look always the same. Sure, Red Hat boot scripts are different than Slackware boot scripts, but what I mean is that once you stuck with one of these distributions, you'll always see the same thing when starting up your computer.
+
+[[GoboLinux]], on the other hand, has support to boot themes, so that you can choose the "appearance and behavior" (''"Look and feel" always sounds like an advertisement'') of your system at boot-time. Indeed, you can even create your own boot themes, as explained on section [[Creating a boot theme]].
+
+Choose your favorite theme by setting the BootTheme=<~YourFavoriteTheme> option in the BootOptions file. A few of the themes currently available are:
+
+* '''CheckList''' - Shows tasks and others that depend on them, then checks them off.
+* '''Hat''' - A Red-Hat look-alike: lots of colored [ OK ]s and [FAILED]s are echoed as things are initialized.
+* '''Progress''', '''Progress-II''', or '''Progress-III''' - Fancy themes that stress your terminal with tons of escape codes.
+* '''Quotes''' - Prints short random quotes to indicate success or failure of every initialized item.
+* '''Slack''' - This theme is inspired by the feel of old-school Slackware boots: no distracting messages, no colors, no special effects.
+
+Check /Programs/[[BootScripts]]/Current/Themes/ to see all the available themes.
+
+You can use the TestBootTheme script to see how a boot theme looks like without actually rebooting your computer. TestBootTheme is described on section [[Testing a boot theme]].
+
+You can also set the boot theme from GRUB by adding BootTheme=<~YourFavoriteTheme> to the boot line. This can be handy if [[BootOptions]] specifies a broken or nonexistent theme, because GoboLinux will not boot without a valid one.
+
+=== Clock mode ===
+
+[[GoboLinux]] needs to know if your hardware clock is set to GMT or local time (unless, of course, you happen to be lucky enough to live in a place under the Greenwich time zone). Do this by editing the ClockMode entry. Set it to GMT if your hardware clock is set to GMT. Set it to LocalTime if your hardware clock is set to local time.
+
+For obtaining time zone information, Linux applications rely on information provided by Glibc, the C library. Glibc, on its turn, uses the "localtime" symlink on its Settings directory (/Programs/Glibc/Settings) to indicate which is the active time zone. This symlink is configured by the installer according to the option you selected in the time zone selection screen, but you can always reconfigure it by hand, by pointing the "localtime" symlink to a different location under /Programs/Glibc/Current/Shared/zoneinfo.
+
+For those curious about it, what actually happens behind the scenes is that the ClockMode information is used by the hwclock application, typically launched at boot time through the SetClock task.
+
+=== Keymap layout ===
+
+Use the KeymapLayout entry in /System/Settings/[[BootOptions]] to choose an appropriate console keyboard layout if you don't put up with wrong key assignments.
+
+The available keymaps are in the KBD package; they are the .map files. You can set the console keyboard layout at any time by running loadkeys. For example, to set the Dvorak keymap, just type in:
+ loadkeys dvorak.map
+
+Keep in mind that keyboard layout configuration for the graphical environment is set in a different place. Look for the relevant "InputDevice" section in /System/Settings/xorg.conf. Likewise, you can set the keymap at runtime without restarting: just use the setxkbmap tool. For example, for configuring the keyboard to use the Dvorak layout, you could type this in at an X Terminal (such as xterm or konsole):
+ setxkbmap dvorak
+
+Some desktop environments also offer graphical tools for setting the keyboard layout. For example, in KDE you can configure this at the KDE Control Center.
+
+=== Console font ===
+
+If you don't like the default, fancy and exclusive console font used by [[GoboLinux]], set the ConsoleFont of /System/Settings/[[BootOptions]] to your favorite.
+
+This can be also set from the command line at any time using the standard setfont tool. See the setfont manual page ("man setfont") for details.
+
+Remember that this affects only the console font. On X, applications have their own font settings.
+
+=== Mouse setup ===
+
+The MouseType and MouseDevice entries are used to setup GPM (to enable mouse support on the console). Set them to something that makes sense to your system. Please note that GPM is not enabled by default. If you want to use it take a look at 
+/System/Settings/[[BootScripts]]/[[BootUp]] (and at the section on [[#Customizing the initialization|customizing the initialization]] if you can't figure out how to edit this file).
+
+Like in the keyboard setup, the mouse configuration for the graphical environment is set in a different place. Look for the relevant "InputDevice" section in /System/Settings/xorg.conf. The [[Installer]] should have set a sane default for your system, based on hardware autodetection. If not, you can always try a failsafe setup such as:
+
+<pre>
+Section "InputDevice"
+Identifier  "Mouse0"
+Driver      "mouse"
+Option      "Protocol" "auto"
+Option      "Device" "/dev/input/mice"
+Option      "ZAxisMapping" "4 5"
+EndSection
+</pre>
+
+There is nothing [[GoboLinux]]-specific about mouse setup on X. You can find HOWTOs and tutorials around the net that can give you more detailed instructions about this. (But feel free to drop by at the mailing list if you're still stuck!)
+
+=== Kernel modules loaded on boot ===
+
+Through the use of Udev, [[GoboLinux]] is capable of loading a number of modules automatically at boot. However, many times they aren't capable of loading them, and that's where the user must do that manually.
+
+This is a job which can be done by editing /System/Settings/modprobe.conf, in the same manner as you should do in another distribution. However, the [[BootScripts]] package has a special array where the modules and their parameters can be specified, and they'll get loaded at boot time with no pain.
+
+This file is called /System/Settings/[[BootOptions]]. Give it a look, and you'll see an array called UserDefinedModules, which is probably commented. This array is sourced by the boot scripts, and for every line, it will modprobe it, including any parameters following them. This is how a simple array to load i810_audio (audio driver) and sk98lin (ethernet driver) can be constructed:
+<pre>
+UserDefinedModules=(
+"i810_audio"
+"sk98lin"
+)
+</pre>
+
+=== Network configuration ===
+
+Through the NetworkOptions file, the user may specify the settings for each available network interface. The most common one is the loopback interface (lo), which is specified by default as follows:
+
+<pre>
+lo_IP=127.0.0.1
+lo_Netmask=255.0.0.0
+</pre>
+
+Notice that each entry starts with the name of the interface (lo) followed by an '_' and 
+the name of the property being set. The properties available for each interface are:
+* IP: if defined, sets a static IP address to be used at this interface;
+* Netmask: The network mask to be used;
+* Broadcast: The broadcast address of the subnet (optional);
+* BootProto: Specifies a boot protocol to be used at the interface initialization. 
+By now, it only makes sense to set 'dhcp' or keep the property value unset (empty).
+
+Let's suppose a system that has two ethernet interfaces, eth0 and eth1, the 
+first one being configured through dhcp and the second one, using a static configuration. 
+So, eth0 would be configured setting
+<pre>
+eth0_BootProto=DHCP
+</pre>
+
+And eth1, would be adjusted using something like
+<pre>
+eth1_IP=192.168.2.13
+eth1_Netmask=255.255.255.0
+eth1_Broadcast=192.168.2.255
+</pre>
+
+In any time, you may make an interface up running 'StartTask Network <interface_name>'. For example
+<pre>
+StartTask Network eth0
+</pre>
+
+'StopTask Network <interface_name>' turns the interface down.
+
+
+In most of the systems some, if not all, interfaces are supposed to become up at boot time. 
+The NetworkInterfacesOnBoot variable contains all the network interfaces that must be 
+started during the boot process. For example:
+<pre>
+NetworkInterfacesOnBoot=(
+"lo"
+"eth0"
+"eth1"
+)
+</pre>
+
+Additionally, you may want to specify a gateway for the outgoing communications. 
+This is done by setting the Gateway and GatewayInterface variables, like the following lines:
+<pre>
+Gateway=192.168.2.1
+GatewayInterface=eth1
+</pre>
+
+'''Important'''
+The specification of the DNS servers (if specified manually) is done in the same place as the 
+traditional Unix systems, at /etc/resolv.conf (or /System/Settings/resolv.conf). 
+An example of resolv.conf file is:
+<pre>
+nameserver 200.176.2.10
+nameserver 200.199.252.68
+</pre>
+
+== Customizing the initialization ==
+
+A detailed description on how the [[GoboLinux]] boot scripts behave is given elsewhere (chapter "[[Boot scripts]]" is dedicated to them). For the purposes of this overview, you just need to know that when you press your computer power button, some files are magically executed.
+
+These files are located at /System/Settings/[[BootScripts]] and are described below.
+
+* '''BootUp''' - is the basic boot script. As the name implies, it runs when the system boots up. It contains generic initializations that should apply in every boot scenario. More complex boot scenarios can be built on that by using different boot scripts that start by calling BootUp and then doing additional stuff. Two of those scripts are shipped by default:
+** '''Console''' - this calls BootUp and then runs extra initializations suited for a console session.
+** '''Graphic''' - this calls BootUp and then starts a graphic login manager.
+* '''Shutdown''' - analogous to BootUp, this is the basic shutdown script. It is used by the other, more specialized, termination scripts:
+** '''Reboot''' - invokes Shutdown to perform the necessary terminations, and reboots the machine.
+** '''Halt''' - invokes Shutdown and powers down the machine (or simply halts if there's no hardware support for software-controlled power down).
+
+Each of these files is essentially composed of a sequence of lines like the following one, whose meaning seems to intuitive enough.
+ Exec "Message..." command-with-parameters
+
+As a concrete example, suppose that you want to adjust your keyboard delay and repeat rate in the console. You can do this by adding the following line to /System/Settings/[[BootScripts]]/Console:
+ Exec "Making keyboard speedy..." kbdrate -r 30 -d 250
+
+The boot scripts also support a concept of "tasks". 
+This is slightly more advanced, and is explained in section "[[Boot script tasks]]".
+
+=== Automated login ===
+
+If you wish to use an automated login, there are several ways to achieve this goal.
+
+For KDE (or KDM, it also has a configuration which allows you to tweak it a lot) you can use this:
+
+# Open Control Center in administrative mode.
+# Select Login Manager.
+# Under the Convenience tab check "Enable auto-login" and select which_user you should log in as.
+# Click "Apply".
+
+If you do not use KDE or want a non-GUI based solution, one way is to use rungetty.
+
+# <pre>Compile rungetty</pre>
+# In your inittab file (for example, nano /etc/inittab) find the line which includes tty1 (it's your first terminal, the default showing up on login). 
+# Now, you will see "agetty" in there - change this "agetty" line to <pre>"rungetty tty1 --autologin your_username_goes_in_here"</pre>
+
+Of course, replace your_username_goes_in_here with the user you want to login :)
+
+Using another tty than 1 may be useful too.

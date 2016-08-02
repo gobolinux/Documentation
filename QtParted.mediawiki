@@ -1,0 +1,5 @@
+[[QtParted]] is similiar to other "Partition Managers" like Norton's Partition Magic etc...
+[[QtParted]] as the name suggests is written in Qt, and can be used to manage  i.e
+Create, Remove,etc... partitions.
+
+{{Reference}}

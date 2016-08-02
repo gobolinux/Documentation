@@ -1,0 +1,11 @@
+Hi,
+
+I'm a new user of (Rootless) Gobo Linux.  As of 20070313 I'm currently spearheading a re-organization of the Gobo Wiki.  If you have questions or comments about changes that I am making, please email me at mpb.mail@gmail.com.
+
+-mpb
+
+I oversee the following pages:
+
+* [[Welcome to the GoboLinux Wiki!]]
+* [[Documentation]]
+* [[Wiki Team]]

@@ -1,0 +1,5 @@
+<div style='border: 1px black solid;'>
+
+'''Please note''': This page has been merged into [[{{{1}}}]].
+
+</div>

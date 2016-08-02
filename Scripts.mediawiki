@@ -1,0 +1,95 @@
+<br/>
+<div align="center">
+<table style="background-color: #d0d0d0;">
+<tr><td colspan=2 style="background-color: #e0e0f0; text-align:center; font-weight: bold; font-size: larger; padding: 4px;">[[Scripts]]</td></tr>
+<tr>
+<td style="background-color: #f0f0f0; text-align:right; padding-right: 5px; padding-left: 5px;">'''Documentation'''</td>
+<td style="background-color: #ffffff; text-align:left; padding-right: 5px; padding-left: 5px; ">
+[[Packages]] • 
+[[Compiling from source]]
+</td>
+</tr>
+<tr>
+<td style="background-color: #f0f0f0; text-align:right; padding-right: 5px; padding-left: 5px;">'''Scripts'''</td>
+<td style="background-color: #ffffff; text-align:left; padding-right: 5px; padding-left: 5px; ">
+[[AddUser]] • 
+[[AttachProgram]] • 
+[[AugmentCommandNotFoundDatabase]] • 
+[[CheckDependants]] • 
+[[CheckDependencies]] • 
+[[CleanModules]] • 
+[[ColorMake]] • 
+[[CommandNotFound]] • 
+[[CreateInitRD]] • 
+[[CreatePackage]] • 
+[[CreateRootlessEnvironment]] • 
+[[DeduceName]] • 
+[[Dependencies]] • 
+[[DescribeProgram]] • 
+[[DetachProgram]] • 
+[[DisableProgram]] • 
+[[FiboSandbox]] • 
+[[FilterColors]] • 
+[[FilterLines]] • 
+[[FindPackage]] • 
+[[FindQuick]] • 
+[[FixAttributes]] • 
+[[FixDirReferences]] • 
+[[FixInfo]] • 
+[[GenBuildInformation]] • 
+[[GetAvailable]] • 
+[[GoboPath]] • 
+[[GrepQuick]] • 
+[[GrepReplace]] • 
+[[GuessLatest]] • 
+[[GuessProgramCase]] • 
+[[HasCompatiblePackage]] • 
+[[Hashes]] • 
+[[install]] • 
+[[InstallPackage]] • 
+[[IsExecutable]] • 
+[[KillProcess]] • 
+[[LinkOrExpandAll]] • 
+[[List]] • 
+[[ListProgramFiles]] • 
+[[MergeTree]] • 
+[[mkinitrd.pl]] • 
+[[MultiGrep]] • 
+[[NamingConventions]] • 
+[[NoRecipe]] • 
+[[PrepareProgram]] • 
+[[PrioritiseUpdates]] • 
+[[RemoveBroken]] • 
+[[RemoveEmpty]] • 
+[[RemoveProgram]] • 
+[[Rename]] • 
+[[RescueInstallPackage]] • 
+[[RescueSymlinkProgram]] • 
+[[SandboxInstall]] • 
+[[ScriptFunctions]] • 
+[[SignProgram]] • 
+[[SuggestDuplicates]] • 
+[[SuggestUpdates]] • 
+[[SuperUserName]] • 
+[[SymlinkProgram]] • 
+[[SystemFind]] • 
+[[SystemInfo]] • 
+[[UnionSandbox]] • 
+[[UpdateSettings]] • 
+[[UpgradeSystem]] • 
+[[UseFlags]] • 
+[[usleep]] • 
+[[VerifyProgram]] • 
+[[which]]
+
+</td>
+</tr>
+<tr>
+<td style="background-color: #f0f0f0; text-align:right; padding-right: 5px; padding-left: 5px;">'''See also'''</td>
+<td style="background-color: #ffffff; text-align:left; padding-right: 5px; padding-left: 5px; ">
+[[Compile]] • 
+[[Rootless]]
+</td>
+</tr>
+</table>
+</div>

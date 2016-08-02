@@ -1,0 +1,40 @@
+Recipes are directions to [[Compile]] on how to configure, make, and install a particular program.
+The term "Recipe" can refer to either
+* A packed tarball, as held in the recipe-store on gobolinux.org.  These are named as
+''Foo--1.0-r1--recipe.tar.bz2''.
+* The file Foo/1.0-r1/Recipe in such a tarball.
+
+== File Layout ==
+A packed recipe is a tarball such as Program--Version-r1--recipe.tar.bz2.
+It contains a directory structure
+* '''Program/'''
+** '''Version-r1/'''
+*** '''Recipe''' - the primary file.
+*** '''[[Recipe format specification#Patches|Patches]]''', optionally.
+*** '''[[Recipe format specification#Resources Files|Resources/]]'''
+**** '''Dependencies'''
+**** '''Description'''
+**** '''Defaults/''' (optionally)
+***** '''Settings/'''
+***** '''Variable/'''
+**** '''[[Boot script tasks|Tasks/]]''' (optionally)
+**** '''Wrappers/''' (optionally)
+**** '''BuildDependencies''', '''BuildInformation''', '''Environment''', '''[[Hints File|Hints]]''', '''PostInstall''', '''Requirements''', optionally.
+*** '''Architecture''' subdirectories, such as '''arm/''', '''cell/''', '''i686/''', '''ppc/''', '''sh4/''', or '''x86_64/''', optionally.
+
+== See ==
+* [[Writing Recipes]]
+* [[Recipe Format Specification]]
+* [[Binary recipes]]
+* [[How to Commit Recipes]]
+* Scripts:
+** [[NewVersion]] - Updates an existing recipe to a new version.
+** [[MakeRecipe]] - Creates a recipe template from URL.
+** [[EditRecipe]] - Edits an existing recipe.
+** [[RecipeLint]] - Makes sure a recipe has no obvious errors.
+** [[GetRecipe]] - Fetches a recipe and insert it in your system's Recipes tree.
+** [[UpdateRecipes]] - Updates the local recipe list from recipe stores.
+** [[PackRecipe]] - Generates a packed recipe tarball from a local Recipe directory, ready for submission.
+** [[ContributeRecipe]] - submits the recipe for approval and inclusion in the recipe-store.
+* The online Recipe Browser at [http://recipes.gobolinux.org/ recipes.gobolinux.org].
+* The Recipes mailing list at http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes.

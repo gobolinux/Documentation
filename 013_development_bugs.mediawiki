@@ -1,0 +1,195 @@
+Some items were moved from "first development pre-release" item to "second development pre-release" so that we don't miss the previous problems and don't forget to check them while testing the new release.
+
+== LiveCD-specific (release-candidate) ==
+New bug reports are being tracked now at [http://bugs.gobolinux.org the GoboLinux bug tracker].
+
+
+== LiveCD-specific (second development pre-release) ==
+* <s> Remember to test BootScripts themes. </s>
+* <s> Packages are not signed </s> (fixed by detsch)
+* <s> Some packages have empty Resources/Defaults/Settings </s> ('''fixed''' - lucasvr)
+* <s> Some packages have share -> Shared, and not share -> /System/Links/Shared (needs to be fixed in MiniSymlinkProgram). </s> ('''fixed''' - lucasvr)
+* <s> No multiple virtual consoles launched (after exiting the first terminal, init seems to launch the other consoles.) </s> ('''fixed''' - lucasvr)
+* <s> System freeze after detection of nvidiafb. System booted fine after turning vesafb on again. Might be interesting to blacklist nvidiafb. </s> ('''fixed''' - lucasvr)
+* <s> Why do we have init=/linuxrc? Can't we just create a symlink /bin/init to the proper place? </s> (never mind -- lucasvr)
+* <s> Needs to perform "mount -a" so that /dev/shm, /dev/pts and /proc/bus/usb are mounted.</s> ('''fixed''' - lucasvr)
+* <s> Date is incorrectly set. "hwclock --hctosys" should be fine in the LiveCD boot task.</s> ('''fixed''' - lucasvr)
+* Graphical environment
+** startx log: "Could not init font path element /Files/Fonts/CID, removing from list!"
+** <s> X started in 1024x768, but at 256 colors only. Maybe it's a problem due to the usage of vesafb? </s> ('''hopefully fixed''' with the re-introduction of GenXorgConf)
+** Konsole
+*** <s>Menubar is disabled by default. Should we enable it?</s> - no, no reason to change default behaviors 'just because' - hisham.
+*** Konsole doesn't open a "root shell".
+*** <s>We only have 9 fonts available for selection on Konsole. Don't we have more than that?</s> - no. those are the only fixed-size ones - hisham
+** <s>Audacious started in shade mode. Needed double-click to expand it.</s>
+** <s>gmplayer didn't work: "[skin] file (/Programs/MPlayer/1.0pre8/share/mplayer/Skin/default/skin ) not found."</s> [fixed]
+** Tons of warnings on mplayer.desktop, invoked by loading the menu editor, such as "kbuildsycoca: WARNING: '/System/Links/Shared/applications/mplayer.desktop' specifies undefined mimetype/servicetype 'video/x-ms-wmx'"
+** Sigsegv while using System -> Kinfocenter. It's just a matter of stay clicking in entries such as "OpenGL", "Memory", "PCI". In a short time it will crash. (?Test for a known Knoppix-Bug: Any program, that opens "/proc/ioports" for read (as Kinfocenter does in "I/O-Ports") exits with sigsegv?)
+** <s>QTParted: "No device found. Maybe you're not using root user?". Didn't behave different after creating a "root" entry in passwd and executing from the shell.</s> [using qtparted 0.4.4 now - detsch]
+** Firefox is only listed in "Lost & Found" in the K menu.
+* <s> With RIVA TNT2 Model 64 card I get the following error when trying to startx. " Fatal server error: cannot run in framebuffer mode. Please specify busIDs for all framebuffer devices.  xio: fatal io error 104 (connection reset by peer) on xserver ":0.0" after 0 requests (0 known processed) with 0 events remaining. </s> ('''fixed''' - lucasvr)
+
+== LiveCD-specific (first development pre-release) ==
+* <s> something wrong with the launch of init </s>
+** <s> no Ctrl-C in livecd </s>
+*** <s> is terminal setup correctly??  bash is simply called from end of LiveCD bootscript --calica </s>
+*** <s> again bash is called at end of LiveCD bootscript.  proper solution is a LiveCD inittab that starts login shell rather than getty and remove bash from bootscript. --calica </s> ('''fixed''' -- lucasvr)
+* <s> Can't access internet. I have a cable modem and it is up and running through my other linux os. </s> dhcpd is working fine now (lucasvr)
+** <s> device detection wasn't working (see udev bug below) still having problems with dhcpcd --calica </s> fixed on 2nd pre-release (lucasvr)
+* <s> "Sound device /dev/dsp can't be opened" came up when the system started and I didn't have sound. sound card is vt8233 via technologies ac97 audio controller. Sound didn't work on gobo twelve either </s>
+** <s> device detection wasn't working (see udev bug below).  Still might be issue --calica </s> -- fixed on 2nd pre-release (lucasvr)
+
+* mkinitrd.pl doesn't work well under /UnionFS, better under a real HD mount but still crashes out because it can't basename a variable with a ghost path to /Programs/Scripts/Current/Data/udev (whatever "data" is)...the whole usage info section is too vague on what exactly the options need to be -- Joey
+** Sorry? I didn't get it. Could you please post more about that in the mailing list?
+* <s> I CANNOT edit the initrd's /bin/linuxrc, modify it, recompile it, and have it work. Please document your toolchain for this (since mkinitrd.pl doesn't work....) -- Joey </s>
+** <s> I see, it's all detailed in http://gobolinux.org/index.php?page=livecd . But that page is well buried, only refenced obliquely in the forums, not in the gobo.org docs or kb. Should I just add it? -Joey -- yes (lucasvr) </s>
+* <s> sudo needs to compile with a log-dir option, always complains about not finding /var/log/adm -- Joey </s> ('''fixed''' -- lucasvr)
+*I suggest switching to a Standard GoboTasks framework for the LiveCD. All it seems like it needs is to do additional to the stock system is to just generate a /Users/Gobo skeleton directory at boot time. It should mimic the real system as much as possible, using all its parts. (might I suggest initng as a future replacement to our BSD-style system?) -- Joey@llnw.com
+** Might be better to discuss this in the mailing list (lucasvr)
+
+== Installed/LiveCD systems ==
+* <s> It would be good if /Mount would be populated with drives found on the system. </s> It does that after the system is installed. Might be tricky to do in the live cd, as the target partition might be mounted and in use at the time the user chooses to start the installation (lucasvr).
+* Bugs in KDE: system:/users doesn't work. KDE has been built without Zeroconf support.
+* <s>kdm configured for /Programs/Xorg/6.8.2 [calica]</s> [fixed - detsch]
+
+== General ==
+* <s>compile usb-storage as a builtin?</s> [done]
+* <s>Grub with Peter Clark's splashscreen patch.</s> [done]
+
+* Bootable CD still freezes with kernel panic on some AMD64 systems.  Bug report is identical to the 012 release: http://www.pakistanopensource.org/goboforum/viewtopic.php?t=155
+** Boots with minor problems on my AMD64 X2 NForce4 system.  My problem is the kernel doesn't like the sata_nv controller and complains about the interrupt.  I've had this problem previously and it magically went away by removing acpi=off and a GRUB, BIOS and<!--<!--/-->-->or kernel update.
+
+== Tracking redundant procfs mounts ==
+* BootScripts/bin/BootDriver:34
+** BootDriver needs to mount proc to read /proc/cmdline.
+* Udev/Current/Resources/Tasks/Udev:6
+
+== CompressAndBuildISO conflicts ==
+* Installing GDB 6.4...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/lib/libopcodes.la
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/lib/libopcodes.a
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/lib/libiberty.a
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/lib/libbfd.a
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/lib/libbfd.la
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/include/bfd.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/include/dis-asm.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/include/symcat.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/include/ansidecl.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/BinUtils/2.16.1/include/bfdlink.h
+
+* Installing Man-Pages 2.33...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/DiffUtils/2.8.1/man/man1/diff.1
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/GoboHide/20060712/man/man7/hier.7
+
+* Installing Net-Tools 1.60...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/CoreUtils/5.96/bin/hostname
+
+* Installing Procps 3.2.6...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/CoreUtils/5.96/bin/<b></b>kill
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/CoreUtils/5.96/bin/uptime
+
+* Installing Glibc 2.4...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Linux-Headers/2.6.16.20/include/net/route.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Linux-Headers/2.6.16.20/include/scsi/sg.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Linux-Headers/2.6.16.20/include/scsi/scsi.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Linux-Headers/2.6.16.20/include/scsi/scsi_ioctl.h
+
+* Installing Netkit-Base 0.17...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/InetUtils/1.4.2/bin/ping
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/InetUtils/1.4.2/man/man8/ping.8
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/InetUtils/1.4.2/man/man8/inetd.8
+
+* Installing Shadow 4.0.16...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/CoreUtils/5.96/bin/su
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/CoreUtils/5.96/bin/groups
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Man-Pages/2.33/man/man3/getspnam.3
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Man-Pages/2.33/man/man5/passwd.5
+
+* Installing Sysklogd 1.4.1...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/InetUtils/1.4.2/man/man5/syslog.conf.5
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/InetUtils/1.4.2/man/man8/syslogd.8
+
+* Installing Util-Linux 2.12r...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/InetUtils/1.4.2/man/man1/logger.1
+
+* Installing Xorg 7.1...
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/HwData/0.148-1/Shared/hwdata/Cards
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Man-Pages/2.33/man/man4/mouse.4
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/gl.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/xmesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/ggimesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/glu.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/glx.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/dmesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/osmesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/gl_mangle.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/glx_mangle.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/mesa_wgl.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/glfbdev.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/glxext.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/uglmesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/fxmesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/glext.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/directfbgl.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/svgamesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/glu_mangle.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/amesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/vms_x_fix.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/uglglutshapes.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/xmesa_x.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/wmesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/mglmesa.h
+** Conflict: /Depot/Gobo-013/Output/ROLayer/Programs/Mesa/6.5/include/GL/xmesa_xf86.h
+
+
+== Fixed ==
+* Scripts zsh autocompletions not active
+** There is something wrong with ZSH 4.2.6 compilation. Same system with the 'official' ZSH 4.2.5 package has autocompletions ok --detsch 
+
+* empty /TmpFS. Is it needed?
+** (lucasvr: fixed on development snapshot )
+* spurious mounts during boot?
+   mount: none already mounted or /System/Kernel/Status busy
+** (lucasvr: fixed on development snapshot)
+
+* Recompile GCC with Objective-C support
+** done by lucas --detsch
+
+* Got the error message "udevd-event[1923] run_program:exec of program'/sbin/mod_wrap' failed". this message repeated itself over and over with the number in the brackets changing. 1969,1926,1941,1934,1930,1973,1980,1986,2014,2012,2011,2026 where all numbers listed in the brackets.
+** (lucasvr: fixed on development snapshot)
+
+* CVS directories and files are all over in /Files subdirectories. (lucasvr: fixed on development snapshot)
+* ping problem
+   ]ping
+    ping: unknown protocol icmp.
+    can't init ping: No such file or directory
+** problem detected: Netkit-Base should have Settings/{inetd.conf,protocols,services}. Netkit-Base Recipe needs to be fixed. Volunteers? :)
+** fixed --detsch
+* Coldplug + Udev: Modules are not being auto-loaded
+   udevd-event: run_program: exec of program /sbin/mod_wrap failed (lucasvr: fixed on development snapshot)
+* are you guys putting the updated snapshots online? So that others can build off of what's already fixed? - joey
+
+* Perl locale warning
+   perl: warning: Setting locale failed.
+   perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = "en_US",
+        LANG = "en_US"
+     are supported and installed on your system.
+   perl: warning: Falling back to the standard locale ("C").
+
+* No /etc/services so syslogd doesn't start properly [calica]
+* cannot open /System/Settings/kbd/consolefonts/lode-lat1u-16.psf.gz
+** looks like we need an updated KBD recipe here. --detsch
+* /Users/gobo is populated with lots of hidden files that are obviously leftovers, since /S/S<!--<!--/-->-->skel only has four hidden files. 
+** Those hidden files are copied from EnhancedSkel (which needs to be updated) --detsch
+* no cdrtools (mkisofs - for BuildISOEnvironment). This applies to HD installs as well. - joey
+* QT based Installer doesn't work
+* EnhancedSkel needs to be updated (remove xmms icon, prepare a new .kde, ...)
+* "X detection: <Esc> to skip" takes forever; at least add message "<Enter> to proceed"
+** Not a bug, this time was prolonged duringthis development cycle, but is going to be set back to 3 seconds soon.
+** Also update grub configuration files to use video= instead of vga= since we'll be switching from vesafb to vesafb-tng.
+* ssh needs /var/empty
+* Manager needs to be 're-maked' to work. CompressAndBuildISO should build our tools inside considerind the LiveCD environment, not the host system env.
+
+{{Archival|2007|March|13|Mpb}}

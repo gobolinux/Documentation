@@ -1,0 +1,43 @@
+==Basic Concepts==
+The most important thing to remember with Cygwin is that it is basically a cross compilation kit.
+This means that it provides a Unixy interface to the otherwise unaltered Windows OS.
+As a result the binaries it compiles and uses are Windows (.exe).  The main consequence of this is 
+that none of the binary packages that contain compiled binaries will work.  More below...
+
+==Dependencies==
+Almost all *nix distros (including Mac OS X) contain a standard set of tools, but Cygwin does not.  Here are 
+some programs which Gobo assumes are present and needs to function; make sure you have installed then in Cygwin.
+* '''mtail''' - Necessary for Gobo's ''make'' to work
+* '''python''' - Compile is essentially a python program
+* '''wget''' - used by Compile and InstallPackage to fetch recipes and packages
+
+==Install==
+
+The instructions are very clear, and mostly work, however the Scripts package now contains 
+compiled C code, so once the CreateRootlessEnvironment has run, you do not have a working system.
+* Using your favorite text editor, create the file /usr/include/linux/kdev_t.h. It should contain the following:
+<pre>
+#ifndef _LINUX_KDEV_T_H
+#define _LINUX_KDEV_T_H
+#define MAJOR(dev)      ((dev)>>8)
+#define MINOR(dev)      ((dev) & 0xff)
+#define MKDEV(ma,mi)    ((ma)<<8 | (mi))
+#endif
+</pre>
+* Go to Programs/Scripts/Current/src
+* run <code>make</code>
+* You will suddenly have a bunch of .exe files in the directory.  My brute force method was to go to 
+../bin and remove all the files with the same name. e.g. LinkOrExpand, IsExecutable, SuperUserName, usleep
+* Then copy the .exe versions over to ../bin
+* Rerun SymlinkProgram Scripts (This would have failed before because of an unusable binary)
+* Done - if you have installed any other programs at this point, you will need to rerun SymlinkProgram for them as well.
+
+You can InstallPackage Compile because at this point there is no compiled code in it (but that is why Python must be installed)
+
+==Other Programs==
+I haven't much info on this except I cannot get OpenSSL to compile at the moment, but I am working on it.
+As a result the Apache menu needs to be adjusted and the ssl config option commented out (just put a # in front of it)
+
+More forthcoming when I get to it.
+
+{{Platforms}}

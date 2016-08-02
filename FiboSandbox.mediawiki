@@ -1,0 +1,30 @@
+Run the program in a protected sandbox, as a restricted user.
+
+Usage: '''FiboSandbox''' [<options>] <program> [<command-parameters...>]
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+* '''-o, --original''' - Restore original owners.
+* '''-r, --restore''' ''<entry>'' - Restore ownership to <entry>.
+* '''-d, --directory''' ''<entry>'' - The program should be run at <entry>. This path should be either absolute, or relative to the sandbox root.
+* '''-s, --sandbox''' ''<entry>[:<entry>...]'' - Colon-separated list of areas where the restricted user has write access to. The default value is '.'.
+
+
+To allow mobility within the sandbox, the '.' directory is mounted at
+a sandbox root (like /System/Variable/tmp/.[[FiboSandbox7824]]). For this reason, use of relative paths like '..' to reach
+directories higher in the hierarchy than '.' may produce unexpected results.
+It may also confuse symbolic links that flow through the sandbox.
+
+
+Examples:
+<pre>
+FiboSandbox -r 0.0 -s '.:/Programs/NaughtyApp/Current' make install
+</pre>
+
+
+Note about the name: Fibo is a user without privileges to touch anything outside the sandbox. (This is related to unmanaged files)
+
+
+{{Scripts}}

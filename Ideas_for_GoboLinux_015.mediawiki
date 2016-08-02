@@ -1,0 +1,160 @@
+Feel free to submit your own ideas, and if there is anything that you would like to personally take responsibility for, add your name to the list. Also, this page needs to be looked over to see if everything is still relevant.
+
+----
+
+
+
+== Base ==
+----
+Additions and modifications to GoboLinux's base (including [[Scripts]]):
+
+==== YaST ====
+
+A tool like SuSE's YaST would be nice. As far as I know, there is the KDE control panel, which only is good for KDE. It does not let you manage security, devices, etc.
+: I agree, something like that would be nice. I took a look at YaST a while ago, and it looked rather difficult to port. The fact that there ''was'' an [http://yast4debian.alioth.debian.org/ effort to port YaST to Debian] that is now dormant with little to show, doesn't fill me with a lot of confidence. The [http://en.opensuse.org/Porting_YaST wiki page on porting YaST] also doesn't give a lot of hope; it looks like it would require some massive patching to get it to work.
+
+:However, something like [http://www.simonzone.com/software/guidance/ Guidance] should be fairly straightforward to get working. Guidance has the following modules:
+::I think porting YaST is too much trouble... if SuSE would have wanted people to port it, they would make it easy and provide sufficient docu for that big task (YaST wasnt even GPLed few years ago, tells you how SuSE thought about the world ...)
+:* Service/daemon administration (would need to be modified to work with GoboLinux)
+:* User and Group administration (little to no work needed here)
+:* Disk and filesystem administration (probably just a little work with paths)
+:* Screen and display configuration (little to no work needed here)
+:* Wine configuration (probably just a little work with paths)
+:* GRUB configuration (probably just a little work with paths)
+:Kubuntu, for one, uses Guidance.
+
+:It may be that Guidance will be [http://dot.kde.org/1176941846/ incorporated into KDE4], so it's worth looking at anyways if Gobo will switch to KDE4.
+:- MLA
+::I think Gobo will switch to KDE4 when its out (and reasonable usable), Gobo was always very KDE centric :-)
+
+:I would strongly prefer to see a program that is usable both on the command-line and in X11.  Does Guidance offer this?  If not, then I don't see much value in it.  --KC5TJA
+
+:Is there any reason why linuxconf is not considered? --KC5TJA
+::I had completely forgotten about linuxconf, to be honest. Looking at it, though, doesn't seem very promising. It doesn't seem as though it has been updated for almost three years. I haven't seen it used in a major distribution since, oh, 2001 or so. From what I remember (back in '99 or 2000), it was notoriously brittle. The GUI is Java (apparently incomplete) and wxXT (? I've never heard of this toolkit!); a third-party GTK version is available, but it is GTK1 and was last updated in 2001. I'm not saying that it shouldn't be considered, but rather that if it is considered, there need to be some very good reasons for considering it. --MLA
+
+==== GRUB ====
+GRUB's gfxboot patch needs to be updated to the latest from SUSE. Also, some additional artwork would be nice.
+: - I will update the gfxpatch and work on creating more splash screens for GRUB. If someone wants to send me a mockup or background image, contact me on the gobolinux-devel mailing list. ''MLA''
+
+==== Bootsplash ====
+Integrate bootsplash &mdash; or rather, [http://dev.gentoo.org/~spock/projects/fbsplash FBSplash] &mdash; into the standard kernel. An alternative is [http://splashy.alioth.debian.org splashy], which had the advantage of not requiring a kernel patch, but is still under development and may have some bugs. Difficulty of implimentation: for fbsplash, easy; the process is well [http://gentoo-wiki.com/HOWTO_fbsplash documented]. For splashy, unknown. See its [http://splashy.alioth.debian.org/wiki/installation installation instructions] for details.
+: - I'm willing to help with this. ''MLA''
+Ubuntu uses "usplash" which is also implemented in userspace, I believe...
+: Yes, but have you seen how absolutely '''ugly''' it is? I tried making a theme for it and practically ripped by hair out. It's do-able, but not pleasant. ''MLA''
+
+
+==== HAL, IVMan, and PMount integration ====
+It's rather embarrassing that GoboLinux still doesn't automatically mount removable USB drives and CDs. Difficulty of implementation: has already been [[HAL HowTo |implemented]], but still needs to be integrated into the distro.
+ - just want to add that if hal and dbus is working, kde will do mounting without pmount and ivman.
+
+==== User Authentication ====
+Add support for PAM and LDAP user authentication. PAM will be a necessity if a user wishes to login via KDM and their $HOME is encrypted ([[#Encrypted HOME|see below for more on encrypted $HOME]]). Difficulty of implimentation: unknown.
+: - I'm willing to help with this. ''MLA''
+
+
+==== TuxOnIce (Suspend2) Support ====
+[http://www.tuxonice.net TuxOnIce] (formerly Suspend2) is a kernel patch that
+allows better suspend-to-disk functionality. This is a big advantage to
+laptop users and to those who don't want to leave their desktops running
+overnight, but want to start the next morning exactly where they left off. A
+userspace interface, [http://www.tuxonice.net/userui UserUI], integrates with
+[[#Bootsplash|FBSplash]], and there are
+[http://wiki.tuxonice.net/EncryptedSwapAndRoot instructions] for using it
+when root and swap are encrypted.
+: - I'm willing to help with this. ''MLA''
+
+
+==== UTF-8 ====
+I not know, in what time can I download the stable 014? The rc of 014 is unusable in the hungarian language, but I want have a gobo-distro with (kernel-based...) UTF-8 support (in the file- and directory-names, MC, and others. As the (rather old...) UhuLinux 2.0 hungarian distro...)
+[[User:Violazoli|zoli]] 14:16, 11 August 2007 (EDT)
+
+
+==== Glibc ====
+
+I think, it is need any simple script, wherewith the user can simple change the glibc (as update) and ALL programs in the system, whats depended at the glibc, and needed to the correct work of the system (in commandline and graphical environment). So, with this glibc-change it is not needed, as after this change should work for ekzample the "Azureus" or "XaoS" - this programs not needed for the chief, principial, frequented functions. But should work correct the X, the KDE, XFCE, Gnome, Beryl, Firefox, GCC, all Gobo-scripts, MC...
+
+[[User:Violazoli|zoli]] 14:16, 11 August 2007 (EDT)
+  For this i propose a small & static compiled Busybox be included in default Gobolinux as well (if size reason allows it, but busybox can be made really small).
+
+==== Boot in 5 seconds ====
+
+There is a [http://lwn.net/Articles/299483/ report] about a demonstration at Linux Plumber Conference where some guys apparently managed to get Linux boot in 5 seconds from start to X up and running. While some of their patches seem to be ugly hacks, it might well be possible to incorporate some of the more mature ideas into the Gobo kernel to reduce boot time.
+
+== Development ==
+----
+First, a little (abbreviated) history, courtesy of [http://distrowatch.com/gobo Distrowatch]: 
+* 005 was released 11 October 2002.
+* 006 was released 19 May 2003.
+* 007 was released 22 October 2003.
+* 010 was released 7 January 2004.
+* 011 was released 4 June 2004.
+* 012 was released 2 June 2005.
+* 013 was released 3 November 2006.
+* 014 has not yet been released as of 20 August 2007, although a beta (release candidate) was released 11 April 2007.
+* 014 was released 1 January 2008.
+* 014.01 was released 3 April 2008.
+
+It's quickly obvious that until 012, releases were coming every six months (on average). There was a one-year separation between 011 and 012, a '''''17-month separation''''' between 012 and 013, a 14-month separation between 013 and 014; 3 months to a point release; it now seems that 015 will be well over a year since the last release.
+
+Of course, GoboLinux is an all-volunteer distro; no one is getting paid to develop it, and the core developers have other duties and responsibilities. So this section is to list ideas of ways in which development can be distributed more widely and effectively.
+
+==== Release Coordinator ====
+There should be a visible release coordinator who is responsible to coordinate development and keep it on track.  
+Carlo Calica has volunteered to be the release coordinator for 015.
+
+==== Distributed ISO creation ====
+Compiling all the programs that go onto the ISO is a big job. It would be good if some volunteers stepped forward to help compile packages. For this to work, however, the release coordinator needs to clearly assign tasks to avoid confusion and duplication.
+: This can be easy to achieve. Its a little chicken and egg problem, on the IRC channel there are new people every now and then, all potential Gobolinux users, but it needs time and knowledge for them to master Gobolinux right now ;) Btw Slax will do something similar once Slax 6 is stable (right now, at AUG 2007, there are still only release candidates for SLAX).
+
+Volunteers:
+* MLA, shevy (to help MLA)
+
+==== Use virtualization for a consistent build environment ==== 
+Related to [[#Distributed ISO creation|ISO creation]], QEMU images could be provided so that the resulting packages are consistent with one another.
+
+
+==== Automated ISO snapshots ====
+Automated snapshots would reduce the amount of time necessary to release. In addition, the more that the ISO process can be streamlined and automated, the better.
+
+
+==== Unsafe recipes ====
+Make an open recipe repository (not really a repository but you know what I mean) that allows uploading well-formed and non-duplicated recipes to the "repository" and a voting/tagging system  to verify the safety of the recipe (tags like "moved to safe repository", "verified as malignant", "broken", ect).
+
+== Installer ==
+----
+
+The graphical version of the installer used PyQt3. The next release of AbsTK should switch to PyQT4, so that it is not necessary to have two separate versions of QT (3 and 4) on one installation.
+:I like that! I saw some qt4 apps, it really looks better than qt3
+
+==== Encrypted HOME ====
+Several distros (most recently, Debian Etch) have started giving users the option to encrypt their home directories. This makes sense for priacy and security reasons, and there is no reason why GoboLinux should not offer the same. Difficulty of implimentation: unknown. The instructions for creating an encrypted directory with LUKS is readily available and fairly straightforward &mdash; I'd place the difficulty at intermediate. However, the installation routine will also need to be modified.
+
+== Applications and Environments ==
+----
+What libraries and programs should be added or removed?
+
+==== Create encrypted home directories ====
+In the case that users chose to encrypt their home directories ''after'' installation, or in the case that a new user is added to the system, there needs to be a script (preferably with a GUI frontend) that will automate the process. Difficulty of implimentation: easy to intermediate.
+: - I'm willing to help with this. ''MLA''
+
+==== KDE4 ====
+KDE4.0 is due to be released at the end of October 2007. It makes sense to switch over to KDE4 (and QT4) as soon as possible.
+
+: KDE4 uses CMake for its build environment.  It might require a new recipe type for Compile.  Anyone use CMake? - calica
+:: Well, I know quite many projects that switched to cmake. The thing i noticed first was that cmake uses colours! :) I find it quite solid, but I havent used it myself for a project. Two Examples for packages that need cmake are (i mean the "newest" version, some projects only recently switched to cmake) physfs and initng
+
+==== XFCE ====
+For computers with more limited resources, an XFCE-based version may be welcomed. This, however, would probably require a separate ISO image, as there likely isn't enough space available for both KDE and XFCE.
+
+: If it is possible to download an ISO with XFCE, I want download that. I not like KDE.
+
+: [[User:Violazoli|zoli]] 14:16, 11 August 2007 (EDT)
+
+
+
+
+
+== Promotion ==
+----
+GoboLinux is obviously exciting to a lot of people; it is regularly brought up in forums and commentaries as a distro that "does things differently." But it still could use better marketing (not to mention rock-stable releases). See [[BetterMarketing]] for some further thoughts on the matter.
+:A problem in there is that on IRC there normally is only one or two dudes that know enough to help other dudes there... we need to train more smart Gobolinux dudes! (Yes i like the dude word a lot *grin*)

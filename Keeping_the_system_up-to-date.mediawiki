@@ -1,0 +1,19 @@
+{{ToC}}
+
+There is a number of ways to keep your system up-to-date. [[GoboLinux]] provides some tools to check the versions you have installed against the latest available ones.
+
+[[The Manager tool | Manager]] is a graphical application that not only informs you of new versions of programs, but also provides a GUI for most of the system management scripts, including [[Compile]]. It is based on the Qt toolkit.
+
+[[Freshen]] is a console application that checks for updated [[GoboLinux]] recipes and packages, with an output similar to "emerge" in Gentoo.
+
+There are also some scripts in the Scripts package that provide some informational aid in this respect: [[SuggestUpdates]], [[SuggestDuplicates]], [[PrioritiseUpdates]], with a script-friendly output.
+
+For the curious (or tweakers), it's interesting to note that most of the programs mentioned above make use of some general helper scripts such as [[FindPackage]] and [[GetAvailable]].
+
+
+===  Subtopics: ===
+# [[System maintenance scripts]]
+# [[The Manager tool]]
+# [[Freshen | The Freshen tool]]
+
+{{Handbook}}

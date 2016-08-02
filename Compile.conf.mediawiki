@@ -1,0 +1,67 @@
+Compile.conf is the file where you can configure the various paths and URLs used by [[Compile]].
+
+It is stored at /Programs/Compile/Settings/Compile/Compile.conf -- which, once installed, has a link at /System/Settings/Compile/Compile.conf (if you're used to the [[GoboLinux]] tree, you should know by now that this is the same as /etc/Compile/Compile.conf).
+
+These are the usual contents of the file:
+
+Your name here so that credit is added to recipes.
+<pre>
+compileRecipeAuthor="Paul McCartney"
+# example only! change the name (unless of course, you're Paul ;) )
+</pre>
+
+The standard locations for your local Compile files.
+<pre>
+compileDir="${goboPrefix}/Files/Compile"
+compileDependenciesDir="$compileDir/Recipes"
+compileArchivesDir="$compileDir/Archives"
+compileSourcesDir="$compileDir/Sources"
+</pre>
+
+You can have a series of local directories to search for unpacked recipes (ie, directories containing recipe subdirectories):
+<pre>
+compileRecipeDirs=(
+"$compileDir/LocalRecipes"
+"$compileDir/Recipes"
+)
+</pre>
+Please note that if you comment the "$compileDir/LocalRecipes" line, then you can ignore local recipes.
+
+
+This is where the remote recipes are fetched.
+<pre>
+getRecipeStores=(
+"http://gobolinux.org/recipe-store"
+"http://gobo.calica.com/recipe-store"
+)
+</pre>
+
+The following variable indicates where [[GetRecipe]] places its recipes. Ideally, it should match $compileRecipeDirs:
+<pre>
+compileGetRecipeDir="$compileDir/Recipes"
+</pre>
+
+These specify the source and destination to [[PackRecipe]]:
+<pre>
+compileLocalRecipesDir="$compileDir/LocalRecipes"
+compilePackedRecipesDir="$compileDir/PackedRecipes"
+</pre>
+
+Some of the main free software repositories are treated especially: recipes use these variables in their <code>url</code> declarations, so that you can pick your favorite mirror without having to edit recipes one by one:
+<pre>
+ftpGnu=ftp://ftp.gnu.org/gnu/
+ftpAlphaGnu=ftp://alpha.gnu.org/gnu/
+httpSourceforge=http://unc.dl.sourceforge.net/sourceforge/
+</pre>
+
+A variable to set the "make" command called by Compile. ColorMake provides the highlighting that GoboLinux has by default:
+<pre>
+compileMakeCommand="ColorMake"
+</pre>
+
+Options to use with the make command. This can be used to run multiple threads in parallel on different CPUs or for other customisation:
+<pre>
+compileMakeOptions="-j2"
+</pre>
+
+{{Reference}}

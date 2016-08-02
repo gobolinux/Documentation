@@ -1,0 +1,18 @@
+Mirrors one directory structure into another.
+
+Usage: '''MergeTree''' <source> <destination>
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+* '''-d, --delete''' - On conflicts, overwrite original file.
+
+All files and directories in <source> appear as symbolic links in <destination>.
+
+Examples:
+<pre>
+MergeTree /Programs/KOffice/Current /Programs/KDE/Current
+</pre>
+
+{{Scripts}}

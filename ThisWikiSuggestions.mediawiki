@@ -1,0 +1,13 @@
+Here please collect some suggestions for the Gobolinux WIKI only please.
+That may include suggestions to improve its usability, code parts and so on.
+Thank you.
+
+
+
+
+- I want to suggest to find a way to avoid those pesky spammers which boil wikis by putting hyperlinks to ie chinese sites. I know that some wikis have this problem sometimes, i hope there is an easy solution like checking for the hyperlinks and disallowing them if there is a certain pattern or so - [[SheVegen]]
+** I did a perminant IP ban of one spammer just now. If I can find a way to add the entire wiki to my watchlist, I'll swat these as they come up. For an automated way of doing it, I would need to take another look at the MediaWiki source code, which is not something I'm particularly looking forward to doing again. [[User:Dan|Dan]] 15:25, 25 July 2006 (EDT)
+*** You can get notice of changes on the entire wiki by subscribing to this feed: http://gobo.kundor.org/wiki/index.php?title=Special:Recentchanges&feed=rss
+**** Cool! Thanks. I'll try to keep the site spam-free until doing so becomes annoying, at which point I'll become irritated, and find some way to code around the spam. [[User:Dan|Dan]]
+
+{{Wiki Team}}

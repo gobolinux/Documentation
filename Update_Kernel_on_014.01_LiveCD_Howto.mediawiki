@@ -1,0 +1,82 @@
+= Update Kernel on 014.01 LiveCD =
+
+This text guide you to update the Linux kernel package on Gobolinux LiveCD release 014.01 and is based in this tutorial:
+
+  http://www.gobolinux.org/?page=livecd
+
+I think it will run smooth in a raw 014.01 install or in a heavily update one. Just a side note, I'm run this tutorial with Scripts 2.10.2 and Compile 1.13.3.
+
+== Prerequisites ==
+
+Before anything, I advise you to create a GPG key to sign packages:
+
+  gpg --gen-key
+
+After the first thing, you should know that as today (2010-06-05) the latest Linux kernel recipe (2.6.32.3) are compatible only with SquashFS 4.0. So we will need to update the SquashFS-Tools program and the follow command should do the trick:
+
+  Compile SquashFS-Tools 4.0
+
+Then you should compile and pack a update Linux kernel, this step should take a long time to finish:
+
+  mkdir -p ~/014.01+ && cd ~/014.01+
+  Compile Linux 2.6.32.3
+  CreatePackage Linux 2.6.32.3
+
+== Setup ==
+
+Now that we have the prerequisites satisfied, lets follow the original tutorial:
+
+<pre>
+ Compile http://fmierlo.stackedboxes.org/GoboLinux/014.01+/BuildLiveCD--20080330--recipe.tar.bz2
+</pre>
+
+Well, today BuildLiveCD is very different from 2 years ago. This recipe just apply some patchs that fix BuildLiveCD, as it was in 2008-03-31, to run appropriately with a new kernel, fetch files correctly, and remove OpenOffice from the ISO due it's size.
+
+  mkdir /Depot/LiveCD 
+  cd /Depot/LiveCD 
+  UpdateEnvironment 
+
+I setup UpdateEnvironment to fetch files from gytha.org::gobolinux-packages/014/livecd/ using rsync because it's the only 014.01 original files mirror that I found. In case of this mirror isn't working, I setup another one and you can get these files from there:
+
+<pre>
+ wget -r -nd -l 1 http://fmierlo.stackedboxes.org/GoboLinux/014.01+/packages-014.01/ -P Packages
+ rm -f Packages/index.html*
+</pre>
+
+To finish the initial setup, we need at last one dirt hack:
+
+<pre>
+ wget http://fmierlo.stackedboxes.org/GoboLinux/014.01+/SquashFS-4.0.patch
+ patch -p 0 -i SquashFS-4.0.patch
+</pre>
+
+It basically update InitRD to deal with the new kernel.
+
+== Update the package and build the ISO ==
+Finally you can make a copy of your brand new kernel to the packages directory, remove the old one, and build the ISO:
+
+  cp ~/014.01+/Linux--2.6.32.3-r1--i686.tar.bz2 Packages
+  rm Packages/Linux--2.6.24.4-r2--i686.tar.bz2
+  time CompressAndBuildISO
+  mv Output/GoboLinux-NoVersion.iso Output/GoboLinux-014.01+-i686.iso
+
+That's all folks!
+
+== Clarification ==
+
+If you want a ISO with OpenOffice, just add this line:
+
+  OpenOffice
+
+to the file /Programs/BuildLiveCD/20080330/Data/Packages-List-OpenOffice.
+
+If you don't want to have all this work and lost this time, just download the ISO from here:
+
+  http://fmierlo.stackedboxes.org/GoboLinux/014.01+/iso/
+
+== Know Issues ==
+
+* StarTask HAL isn't working
+
+
+{{Howtos}}

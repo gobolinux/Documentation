@@ -1,0 +1,34 @@
+GoboBSD is GoboLinux ported to use the FreeBSD 7 kernel.
+The primary platforms are amd64 and i386.
+
+==Why?==
+
+* It's fun
+* Opens up the possibility to use some FreeBSD-specific enhancements
+** better support for ZFS than Linux
+** FreeBSD jails
+** Dtrace
+
+==The Plan / Milestones==
+* Setup a chroot with Gobo file hierarchy (DONE)
+* Port the C programs shipped with Scripts (DONE)
+* Install programs from main FreeBSD into chroot (Mostly done)
+* Install base dependencies needed by Scripts/Compile (DONE)
+* Adapt Script/Compile for some FreeBSD-isms (In progress)
+* Convert existing/create new recipes to install base dependencies
+* Cleanup (programs/headers/libraries from main FreeBSD)
+* Build a bootable CD-ROM
+* Support for ChrootCompile
+
+==FreeBSD-isms==
+* Using FreeBSD libc, not glibc
+* No util-linux, need to use similar programs bundled with FreeBSD
+* FreeBSD comes bundled with kernel and system tools; Linux has a decoupled model (kernel is separate)
+
+===Libtool===
+FreeBSD uses another versioning number for libraries than Linux. This affect libtool behavior and has repercussions when upgrading libraries [http://www.gentoo.org/proj/en/gentoo-alt/bsd/devnotes.xml]
+
+One solution to this problem is to use the Linux naming scheme on GoboBSD. The first step is to patch libtool. That doesn't solve the entire problem as many packages ships with complete autotools, because it may need a specific version (m4 macros may be one reason). This could be solved two ways.
+
+* Specify the required version of libtool as a BuildDependency and regenerate the autotools files by running autoreconf -vfi before ./configure
+* Some generic function that does a best effort to patch the autotool files to use the Linux naming scheme

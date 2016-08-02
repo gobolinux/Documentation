@@ -1,0 +1,15 @@
+=Overview=
+Contribute a recipe to the global store.
+
+==Usage==
+   '''ContributeRecipe''' { <recipe dir> | <recipe name> [<recipe version>] }
+
+===Options===
+* '''<tt>-h, --help</tt>''' - Show this help.
+* '''<tt>--version</tt>''' - Show program version.
+* '''<tt>-v, --verbose</tt>''' - Enable verbose mode.
+
+==Examples==
+   ContributeRecipe firefox
+
+{{Compile}}

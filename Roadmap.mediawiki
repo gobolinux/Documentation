@@ -1,0 +1,13 @@
+Roadmaps for the [[GoboLinux]] Project:
+
+See [[GoboLinux 015 Checklist]], and
+http://bugs.gobolinux.org/roadmap_page.php 
+
+Old Roadmaps:
+
+* [http://www.gobolinux.org/index.php?page=older_docs/roadmap012 Roadmap 012]
+* [http://www.gobolinux.org/index.php?page=older_docs/roadmap011 Roadmap 011]
+* [http://www.gobolinux.org/index.php?page=older_docs/roadmap007 Roadmap 007]
+* [http://www.gobolinux.org/index.php?page=older_docs/roadmap006 Roadmap 006]
+
+{{Community}}

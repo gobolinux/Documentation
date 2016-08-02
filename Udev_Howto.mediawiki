@@ -1,0 +1,195 @@
+If you're using a GoboLinux version more recent than 013, you should have no problem using Udev.  You can install the latest version using <code>Compile Udev</code>.
+
+If you have an ancient version of GoboLinux and you want to enable Udev on a system running devfs, this page will be helpful.
+
+All the info in here was originally borrowed liberally from [http://be-linux.org/ BE-LFS], so thanks to that project.  This howto has changed a lot since then, due to the addition of the Tasks framework to the Udev recipe.
+
+
+=== Requirements ===
+
+* Kernel >= 2.6.0
+* Udev >= 030
+
+'''Note: These instructions are for a GoboLinux 011 setup.'''
+
+=== Kernel ===
+
+Before you can use Udev, you need to upgrade to a 2.6 series kernel, the more recent the better.  To go from a 2.4 to a 2.6 kernel, basically you'll need to update BinUtils and install Module-Init-Tools first.  You can also use the opportunity of moving to 2.6 to switch to NPTL instead of linuxthreads.  Version 011 of the [[LiveCD]] installs a 2.6 kernel by default, with the proper dependencies, so you should be ready to go with a default 011 install.
+
+When compiling your own kernel, in the kernel configuration, make sure you have:<br>
+*General->Support for hot-pluggable devices<br>
+You can turn off Filesystems>Pseudo->/dev file system support, but perhaps leaving this until after udev is actually working would be wise.  If you leave "Automatically mount at boot" on for devfs, though, you'll be running devfs before udev starts and it will still be on "beneath" udev.
+
+=== Udev ===
+
+Simply run
+<pre>
+~InstallPackage Udev
+</pre>
+This will install the latest version of udev (030 or higher).  This version of Udev has support for the /System/Links/Tasks scripts to start udev properly.
+
+
+=== Fstab setup ===
+
+Check if your Gobo already has a hidden /sys symlink (stat /sys), if not make one (ln -s /System/Kernel/Objects /sys), and then hide it (gobohide -h /sys).
+
+You need to modify your /System/Settings/fstab to allow the "sys" filesystem to be mounted.  Udev needs this, as well as the "pts" (PseudoTTYs) and "shm" (Shared Memory) filesystems.
+
+<pre>
+none /System/Kernel/Objects         sysfs   defaults 0 0
+none /System/Kernel/Devices/pts  devpts defaults 0 0
+none /System/Kernel/Devices/shm tmpfs  defaults 0 0
+</pre>
+
+
+While you're editing the fstab, you might as well prepare it for the udev naming scheme:  Change all the disk mount points from the ide/target/disc/part or whatever devfs uses to the simple hda1 stuff.  (While it's possible to put a devfs naming scheme in udev, that's more work, and the hda1/hda2/etc. format will work with nearly any device manager.)   So a reasonably complete fstab might be:
+
+<pre>
+# Root partition.
+/System/Kernel/Devices/hda9 / reiserfs defaults 1 0
+
+# Proc filesystem.
+proc /System/Kernel/Status proc defaults 0 0
+
+# Sys filesystem
+none  /System/Kernel/Objects    sysfs   defaults        0 0
+
+# pts and shm
+none /System/Kernel/Devices/pts devpts defaults 0 0
+none /System/Kernel/Devices/shm tmpfs defaults 0 0
+
+# Swap partition.
+/System/Kernel/Devices/hda13 swap swap pri=1 0 0
+</pre>
+
+=== Creating nodes ===
+
+Now things get a little hairy, so it's an excellent idea to reboot with a livecd and work in a chroot.  If you don't, at least log out of X.
+
+Unmount devfs, if it's running (don't do this from a chroot!). "umount /dev" should do it (as user "gobo" naturally!).
+
+NOTE: You can't unmount /dev unless you reboot with a livecd and access your gobolinux partition while it's not the root partition...
+
+Make some nodes that the kernel needs before udev starts:
+<pre>
+mknod -m 600 /System/Kernel/Devices/console c 5 1
+mknod -m 666 /System/Kernel/Devices/null c 1 3
+</pre>
+If you're told that null already exists, do "rm /System/Kernel/Devices/null" and repeat the command.
+
+Test mounting udev:
+<pre>
+mount -n -t tmpfs none /System/Kernel/Devices
+udevstart
+</pre>
+
+Look around /System/Kernel/Devices, make sure that nodes for most of your devices are there.
+
+If so, good!  We'll just edit some files and then reboot.
+
+If you didn't see any nodes...something went wrong, figure it out before continuing.
+
+
+=== Edit the BootScripts ===
+
+Here we will disable the mounting of the old devfs subsystem, and enable the mounting of the new udev subsystem.
+
+With the new Tasks framework added to the Udev recipe, all we really have to do is tell Init to load it up at startup.  Go to the appropriate directory.
+
+<pre>
+cd /System/Settings/BootScripts
+</pre>
+
+Now, backup Init, and edit it so it begins something like this:
+
+<pre>
+Exec "Mounting Kernel Objects file system..."          ~MountSys
+Exec "Mounting Kernel Status file system..."           ~MountProc
+Exec "Starting udev..."                         Udev
+#Exec "Starting device file system daemon..."    devfsd "$goboDevices"
+Exec "Activating all swap files/partitions..."  swapon -a
+Exec "Checking file systems..."                 CheckFS
+</pre>
+
+Make sure to remove or comment out the line which starts devfsd, and keep the rest of the file in the same order as before.
+
+You should probably also edit Options and switch to the Slack BootTheme, so you can see what's going on if something goes wrong.
+
+
+
+=== Modifying your boot manager ===
+
+Now you need to tell your kernel not to start devfs.  How you do so depends on whether you use Grub or Lilo to boot.
+
+=== Grub ===
+Edit your /System/Kernel/Boot/grub/menu.lst and add "devfs=nomount" to your "kernel" line.
+
+From this:
+<pre>
+kernel (hd0,4)/System/Kernel/Boot/kernel-2.6 root=/dev/hda5 vga=791
+</pre>
+To this:
+<pre>
+kernel (hd0,4)/System/Kernel/Boot/kernel-2.6 root=/dev/hda5 va=791 devfs=nomount
+</pre>
+
+
+=== Lilo ===
+Edit your /System/Settings/lilo.conf and add "devfs=nomount" to your "append" line for your kernel, then re-run lilo.
+
+From this:
+<pre>
+append="vga=791"
+</pre>
+To this:
+<pre>
+append="vga=791 devfs=nomount"
+</pre>
+
+Now run "lilo" from the prompt to allow lilo to re-read its config file.
+
+
+Whether you use lilo or grub, you should be set up properly now, so cross your fingers and.......
+
+=== Reboot! ===
+
+Have a livecd on hand, because it's not too unlikely that your system won't boot properly.  It took me the better part of half an hour to track down my little mistakes when I did this, not knowing that the Tasks scripts had been added (I was doing it the old way).
+
+
+=== Joining groups ===
+
+After you've rebooted, you're likely to find that as a non-gobo user you're denied access to a lot of nodes.  This is because udev permissions use a group-based authentication scheme.  Two important groups -- video and cdrom -- may not be in your group file by default, so become gobo and issue:
+<pre>
+groupadd video
+groupadd cdrom
+</pre>
+Then you should add your day-to-day user to the groups you want to use with a command like this:
+<pre>
+usermod -G floppy,audio,users,cdrecord,video _user_
+</pre>
+
+=== Writing rules ===
+
+Information on writing udev rules can be found at URL http://www.reactivated.net/udevrules.php 
+
+More information on udev rules, esp. for usb memory sticks, and card readers.  Gives a nice overview to get up and running quickly while explaining what is happening without drowning you in detail.
+
+* URL http://www.debian-administration.org/articles/126 
+* URL http://wiki.archlinux.org/index.php/Using_udev_to_map_multiple_entries_to_a_device 
+
+Adjust paths as necessary.
+
+For your memory card reader, the above will make these settings comprehensible:
+* USB memory sticks: it's interesting to add the following rule to /System/Settings/udev/rules.d/50-udev.rules:
+
+#memory stick USB Mass Storage Device
+BUS<code>"usb", SYSFS{product}</code>"USB Mass Storage Device", KERNEL="sd?*",
+NAME<code>"%k", SYMLINK</code>"usb_flash"
+
+BUS<code>"scsi", SYSFS{model}</code>"SM CARD Reader*", NAME{all_partitions}="smartmedia"
+BUS<code>"scsi", SYSFS{model}</code>"CF CARD Reader*", NAME{all_partitions}="compactflash"
+BUS<code>"scsi", SYSFS{model}</code>"SD CARD Reader*", NAME{all_partitions}="securedigital"
+BUS<code>"scsi", SYSFS{model}</code>"MS CARD Reader*", NAME{all_partitions}="memorystick"
+BUS<code>"scsi", SYSFS{vendor}</code>"Sony'''", SYSFS{model}="Sony DSC'''", NAME="sony-dsc%n"
+
+{{Archival|2009|April|4|Kundor}}

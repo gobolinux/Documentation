@@ -1,0 +1,5 @@
+<div style='border: 1px black solid;'>
+
+'''Please note''': The old version of this page has been moved to [[{{{1}}}]] as part of the great wiki reorganization of 2007.
+
+</div>

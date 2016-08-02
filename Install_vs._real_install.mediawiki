@@ -1,0 +1,10 @@
+{{ToC}}
+
+Usually, during software installation, the <code>install</code> program is used to copy files to their destination directories with the proper attributes. Many times, the ownership of files must be given to the superuser and programs that are not aware of GoboLinux do this by running <code>install</code> passing the superuser name hardcoded to <code>root</code>. Since the superuser name in GoboLinux is configurable (as a sample, in the LiveCD it is set to <code>gobo</code>), this results in an error. The hack used to solve this problem follows.
+
+/System/Links/Executables/install points to the <code>install</code> script from the Scripts package,
+not to the <code>install</code> program from the FileUtils package. This <code>install</code> script
+translates the superuser name and forwards the real installation
+work to <code>real_install</code>, which is, as the name suggests, a symlink to the "real" <code>install</code> from FileUtils.
+
+{{Handbook}}

@@ -1,0 +1,21 @@
+=Overview=
+Find which applications is dependant on a given application.
+
+==Usage==
+   [[CheckDependants]] <program> [<version>]
+
+===Options===
+* '''<code>-h, --help</code>''' - Show this help.
+* '''<code>--version</code>''' - Show program version.
+* '''<code>-v, --verbose</code>''' - Enable verbose mode.
+* '''<code>-f, --fast</code>''' - Do a fast check - do no cross check result with <code>ldd</code>.
+* '''<code>-s, --specific-version</code>''' - Be more specific regarding given version. May miss some applications.
+* '''<code>-m, --include-minors</code>''' - Use the version given as base, and include any minor and bug release versions when checking.
+
+===Other considerations===
+* If no version is given, current version, or latest version, if no current version is found, is used.
+
+==Examples==
+   [[CheckDependants]] Cairo 1.0.2
+
+{{Scripts}}

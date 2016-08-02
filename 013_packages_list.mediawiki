@@ -1,0 +1,135 @@
+== Suggestions ==
+
+For making suggestions, follow the pattern by adding your name as a subsection and making a list. For commenting on people's suggestions, add another bullet level below the item.
+
+=== Stolennomenclature ===
+
+* kaffeine (media player + digital tv viewer and recorder)
+* klear (digital tv viewer and recorder)
+* ardour (sound ecording studio)
+* dvdauthor (command line dvd authoring)
+* dvdstyler (gui dvd authoring)
+* wine (run windows programs)
+
+=== Jonatan ===
+
+* rox-filer 2M
+* OroboROX 500K
+* rox-lib 200K
+* rox-session 1M
+
+=== Carlo ===
+
+* NTPClient 36k
+
+=== Jonas ===
+
+* Grip
+* SVN
+** hisham: I second this :)
+* KMPlayer
+* Xine-Lib 11M
+* Kaffeine/Gxine ----- stolennomenclature second this
+* libdvdcss ----- stolennomenclature second this
+* AmaroK
+* Audacious
+* crond (Dcron/Fcron)
+* locate (slocate<!--<!--/-->-->rlocate)
+
+=== LucasVR ===
+
+* Minicom
+* Listener, with rules to remove broken links at removal of entries in /Programs
+
+=== djbjrca ===
+
+* GTKPod
+* Clisp
+
+=== mre ===
+
+* xmms
+** this should not be here as it's a gtk+ 1 app /Jonas
+* smb4k
+* fluxbox
+
+=== shevegen ===
+
+* MPlayer and FFMpeg from cvs please, including the latest
+xvid source (this doesnt need to be from cvs). The CVS versions mostly
+work but MPlayer should be checked briefly since it sometimes
+has problems to compile from cvs.
+** (Btw which gcc version? Can someone add this to the entry above?)
+* I am also for a windowmanager, preferrable fluxbox too. It really
+loads a lot faster than KDE :)
+
+=== Zaheer MK ===
+
+* GNOME (for latest PCs) ----- stolennomenclature second this
+* XFCE (for older PCs)
+* GParted (for partitioning HDD) ----- stolennomenclature second this
+* GStreamer & based apps (for all multimedia requirements) ----- stolennomenclature second this
+* Kindly add the latest version of GNOME & XFCE; atleast please have a version (CD) with the above S/W and all the main GTK+ S/W, making it a true GNU/Linux Desktop OS.
+** GoboLinux is a true GNU/Linux Desktop OS without GNOME and i think it would be a waste to have more than one GUI, I also think KDE is the better choice -RiCo
+*** I think that there should be at least one lightwieght window manager on the CD. Historically that has been WindowMaker and I think that we should keep it that way. I prefer Gnome over KDE, but I agree that there should only be one primary wondow manager. With the new Gobo CD-tools it should be easy to create user-made CDs with Gnome and/or XFCE. /Jonas
+**** GoboLinux KoboLinux XoboLinux... ;-) <!--<!--/-->-->sev
+
+=== TheSleepless ===
+
+* IPRoute2 (apparently ifconfig is deprecated in favour of this)
+* IPTables (and perhaps some kind of firewall configuration tool, gobolinux is wide open by default)
+** Help and ideas are especially welcome in this regard. Feel free to drop by at the mailing list and share your thoughts. Thanks! -- [[User:Hisham|Hisham]] 22:14, 19 June 2006 (EDT)
+*** How about GuardDog (or KMyFirewall, although GuardDog looks a little more straight-forward)? :Peter
+* GD
+* NTP (configured so that it'll automatically update the user's clock, perhaps an install option, or an on bootup ntpdate 0.pool.ntp.org ?)
+** Seconded. Make auto-clock-updating the default. -AndyF
+* NIS/YP
+* NFS
+
+=== slef ===
+
+* Git (as in the version tracker)
+* GPL-Ghostscript (please not AFPL, which restricts commercial distribution - same version is available under GPL today, as far as I can tell)
+* GCC built with ObjC and maybe Java support
+
+=== Rafasgj ===
+
+* PyGTK
+* Ltrace
+* FAAD2
+* FAAC
+
+=== Hisham ===
+
+* Gphoto2
+* LibGphoto2
+* NFS stuff: NFS-Progs, TCPWrappers, Portmap
+
+=== RiCo ===
+
+* Webmin
+
+=== Andy F ===
+
+* <s>KOffice</s> (mailing list discussion has convinced me OOo is a better inclusion for the ISO, though I will still use KOffice as my primary)
+** I sorta prefer KOffice myself :Peter
+* any ftp daemon that goes with the [http://www.kde-apps.org/content/show.php?content=11918 FTPMonitor kicker applet] (my preference is Pure-FTPD). Also, the applet itself.
+* any gui ftp client (e.g. Kasablanca)
+* KNetLoad
+* RenameUtils
+I second Jonas's multimedia suggestions: XineLib, KMPlayer, libdvdcss, AmaroK, Audacious. Grip doesn't seem as much like a default inclusion in a KDE-centric distro with the audiocd:/ ioslave that will do ogg, flac and mp3 rips.
+Also, please make sure every package shows up in the right spot in the KDE menu, or I would have no idea to look for (e.g.) "Kasablanca" as an ftp client.
+** Grip is good for other window managers such as WindowMaker. Not all ppl want to use KDE, so at least one alternative to audiocd:/ should be included. <!--<!--/-->-->Jonas
+
+=== Peter ===
+* KNetworkManager (it's incredible--KWifiManager is pitiful in comparison)
+* KGet
+* Amarok, XineLib, libdvdcss, etc. 
+
+=== Thorn ===
+* IceWM window manager. Quite simple and fast.
+* FTE text editor. NORMAL, windows-style editor, supports syntax highlight, folds (best variant), file browsing, calling commands, etc
+
+== Kuartet Desktop ==
+
+There is a new project developing a Mezzo style desktop based on KDE called Kuartet. Let's support other innovators as well.

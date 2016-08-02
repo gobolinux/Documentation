@@ -1,0 +1,15 @@
+=Overview=
+Performs all sorts of sanity checks in a recipe.
+
+=Usage=
+  '''RecipeLint''' <recipe-file>
+
+==Options==
+* '''<tt>-h, --help</tt>''' - Show this help.
+* '''<tt>--version'''</tt> - Show program version.
+* '''<tt>-v, --verbose'''</tt> - Enable verbose mode.
+* '''<tt>-t, --thorough'''</tt> - Perform thorough URL/file testing (don't use cache).
+* '''<tt>-D, --quick-and-dirty</tt>''' - Cut some corners (don't download files, etc; not recommended).
+* '''<tt>-W, --no-web</tt>''' - Fully offline operation (not recommended).
+
+{{Compile}}

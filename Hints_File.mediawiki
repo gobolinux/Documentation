@@ -1,0 +1,55 @@
+Hints files are a way for recipe and package authors to communicate their intentions about certain files in their recipes or packages to users' systems. At the moment, they're only used by [[UpdateSettings]], but the format is versatile enough that future scripts might use them, too.
+
+In this document, I'll describe everything anyone should need to know about hints files.
+
+== Hints Files for Users ==
+All a user should need to know is that the Hints file is something that resides in the <code>Resources</code> directory of any given program. In it are instructions from the package or recipe maintainer regarding what should be done with certain files. Various scripts may look for these instructions and react to them as seems fit.
+
+=== Script-specific information ===
+* [[UpdateSettings#hintsEnabled.3D.3Cyes.7Cno.3E|UpdateSettings.conf]]
+
+
+
+== Hints Files for Recipe Maintainers ==
+The hints file is basically a series of <code>filenames: actions</code> groups, separated by whitespace. Each of the groups consists of a comma-separated list. The filenames list supports any wildcards you would expect to be supported by sh's <code>case</code> statement. All of these groups must be in a section. Sections start with a section name on a line by itself surrounded by square brackets, and go until the next section name, or until the end of the file. 
+
+Filenames in hints files are reletave to the target installation directory. So, if you're giving hints about settings, you'll probably want to prefix everything with Settings/. Since wildcards are supported, if you know that Settings isn't going to contain any subfolders, and you're making hints for UpdateSettings, which doesn't examin files not in Settings, you can abbreviate it with */
+
+Hints files can have Bash-style comments (comments that start with <code>#</code> and go until the end of the line).
+
+It's not necessary that a hint occur all on one line, nor is it nessary that there be a line break between hints. In fact, these three examples are parsed identically:
+<pre>
+[ UpdateSettings ]
+   Settings/a, Settings/b : dont_create, auto_merge
+   Settings/* : skip
+</pre>
+
+<pre>
+[ UpdateSettings ]
+   Settings/a, Settings/b : 
+      dont_create, auto_merge
+   Settings/* : skip
+</pre>
+
+<pre>
+[ UpdateSettings ]
+Settings/a, Settings/b : dont_create, auto_merge Settings/* : skip
+</pre>
+
+In the interest of keeping your code readable, I'd probably recommend one of the first two.
+
+Note that because the parser doesn't particularly care about whitespace (only the presence or lack of punctuation marks), this will work:
+<pre>
+*: auto_merge, check_delete, skip
+</pre>
+
+but this will not:
+<pre>
+*: auto_merge check_delete skip
+</pre>
+
+
+=== Script-specific ===
+* [[UpdateSettings#Configuring UpdateSettings|Commands supported by UpdateSettings]]
+
+{{Reference}}

@@ -1,2 +1,0 @@
-Contents of the test page.
-Here is a [[link]] to another page.

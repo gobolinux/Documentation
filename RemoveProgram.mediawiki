@@ -1,0 +1,16 @@
+Takes a program name and a version and excludes it from the [[GoboLinux]] system. While it's sufficient to manually "rm" the program from the /Programs directory, some broken links will remain on the /System/Links and /System/Settings directories. One can manually "cd" into these dirs and launch "find . | [[RemoveBroken]]", or can use this script to perform this lightweight job. [[RemoveProgram]] avoids scanning the entire /System/Links hierarchy (looking directly at the links from files from the program).
+
+Usage: RemoveProgram <program> <version>
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+* '''-b, --batch''' - Do not ask for confirmation.
+
+Examples:
+<pre>
+RemoveProgram Qt 3.2.3
+</pre>
+
+{{Scripts}}

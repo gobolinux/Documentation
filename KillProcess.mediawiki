@@ -1,0 +1,21 @@
+KillProcess is a wrapper that functions as an enhanced 'kill' utility. It can kill by resource usage (the process that's consuming the greatest amount of memory or CPU usage) and by name.
+
+Usage: '''KillProcess''' { -c | -m | [-n] <regexps...> }
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+* '''-i, --interactive''' - Ask for confirmation before killing a process.
+* '''-d, --display''' - Informative output only. Do not actually kill any process.
+* '''-n, --name''' - Kill processes by name. This is similar to killall, but names are matched to regular expressions passed as additional parameters to [[KillProcess]]. This is the default behavior if no other mode switches are passed.
+* '''-m, --memory''' - Kill the process that is consuming the greatest amount of memory.
+* '''-c, --cpu''' - Kill the process with the highest CPU usage level.
+* '''-s, --spare''' ''<entry>[:<entry>...]'' - Enter a colon-separated list of program names that should not be killed by automatic kills. Entries for this list can also be added in the killProcessSpare entry in the configuration file.
+
+Be mindful that when matching processes by name, you are actually searching for a match in any part of the entire process command line. This is useful when the process name (as interpreted by killall) is changed to a generic name (such as kdeinit). There are some caveats, however. For example, entering 'ion' as a pattern would also match 'evolution'. Furthermore, even parameters may match: a search for 'lpd' would also kill 'kwrite helpdocument.txt'.
+
+Examples:
+ KillProcess knotify artsd kwrited
+
+{{Scripts}}

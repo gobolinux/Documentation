@@ -1,0 +1,23 @@
+This is a stub. More information to this article is very welcome {{Todo|populate with steps to use to speed up Compile with ccache.}}
+
+
+== ccache ==
+You can use ccache to speed up consecutive compilations of the same program.
+
+In general it might be useful to give ccache a try and install it, but don't expect 
+it to be too useful either (it's not designed for total world domination - yet ;)).
+
+
+Here are a few commands to get one started with ccache:
+
+To run ccache together with distcc do:
+  CCACHE_PREFIX=distcc
+
+To reset ccache statistics, do:
+  ccache -z
+
+To remove all cached files do:
+  ccache -C
+
+
+Official webpage for ccache can be found [http://ccache.samba.org/ here]

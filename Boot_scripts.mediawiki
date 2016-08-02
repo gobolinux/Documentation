@@ -1,0 +1,11 @@
+{{ToC}}
+
+Chapter "[[Configuring GoboLinux]]" already talked a little bit about boot scripts. There, the focus was on how to configure boot-related things. Here, the interest in other (more advanced) aspects. This chapter is targeted to people wanting to understand the [[GoboLinux]] boot scripts better or create their own boot themes.
+
+
+===  Subtopics: ===
+# [[The boot scripts anatomy]]
+# [[Boot script tasks]]
+# [[Creating a boot theme]]
+
+{{Handbook}}

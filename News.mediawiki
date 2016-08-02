@@ -1,0 +1,2 @@
+<includeonly>[[Category:News]]</includeonly>
+<noinclude>[[Category:Wiki Team]]</noinclude>

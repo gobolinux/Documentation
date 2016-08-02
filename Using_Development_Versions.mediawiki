@@ -1,0 +1,20 @@
+To use development versions of the GoboLinux tools, install them via Compile, passing "svn" as a version number. This will fetch the latest version from Subversion.
+
+ Compile Scripts svn
+ Compile Compile svn
+
+This will leave a checked-out copy of the tool in your /Files/Compile/Sources directory. When you re-run Compile later, it will reuse this copy and only download what's changed.
+
+You can also run straight from a checked-out repository. For example:
+
+ cd /Programs/Scripts
+ svn co http://svn.gobolinux.org/tools/trunk/Scripts 2.9-SVN
+ SymlinkProgram Scripts 2.9-SVN
+ UpdateSettings Scripts
+
+ cd /Programs/Compile
+ svn co http://svn.gobolinux.org/tools/trunk/Compile 1.11-SVN
+ SymlinkProgram Compile 1.11-SVN
+ UpdateSettings Compile
+
+Compile handles version numbers containing the string "SVN" specially (it disables version checking for compatibility between Scripts and Compile).

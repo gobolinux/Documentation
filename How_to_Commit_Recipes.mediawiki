@@ -1,0 +1,38 @@
+This is a page with information for GoboLinux contributors who were granted commit access to the recipes repository. The idea is that frequent recipe contributors are offered commit access. If you'd like to have commit access (or would like to nominate a fellow user to get commit access), contact the developers with CVS access (gobo at gobolinux.org) and we'll work things out.
+
+To commit recipes, you need the [[DevelScripts]] package installed, and [[Subversion]]. The good news is that you don't need to manipulate Subversion directly; the DevelScripts take care of that.
+
+==Installing DevelScripts==
+
+You should fetch DevelScripts from CVS. This can be done using its Compile recipe. Just run:
+
+<pre>
+Compile develscripts
+</pre>
+
+This will add a file called /System/Settings/DevelScripts/CompileSubversion.conf -- take a look at this file. It lists the default locations where DevelScripts expects to find the local copy of the Subversion repository. You could change these locations, but for simplicity let's keep the provided default: /Files/Compile/Subversion
+
+==Committing recipes==
+
+To commit a recipe, use the [[PutRecipe]] script. It takes care of incrementing the revision number, copying the files into the local repository and runs svn to commit them to the GoboLinux repository. PutRecipe takes as a parameter a directory containing a recipe, like this:
+
+<pre>
+PutRecipe firefox
+</pre>
+
+By default, it will look for a recipe in /Files/Compile/LocalRecipes. If there is more than one version there, the script will complain and will ask you to give it a second parameter specifying the version number.
+
+Note that committing the recipe to SVN does not immediately generate a tarball of it in the public recipe store. Recipe store updates are done periodically from the svn repository in an automated fashion.
+
+A useful link, in case you missed it in the [http://gobolinux.org/?page=community Community] page of the website is the 
+[http://gobolinux.org/websvn/ web interface for the SVN repository].
+
+==Reviewing other people's recipes==
+
+If you have commit access to the recipes repository, feel free to provide feedback on and commit recipes contributed by users to the [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes/ gobolinux-recipes] mailing list. Be sure to provide feedback, even if just a quick email saying "Committed, thanks!", so that other committers know that the recipe has been already committed.
+
+You don't need to actually compile the recipe in order to test it, but only commit recipes that "look good" (have no problems reported by RecipeLint, etc.) If the recipe does advanced stuff such as including patches to C code or jumps through hoops in the hook functions, you may want to leave it so that more experienced committers review it. Committing more straightforward recipes (such as NewVersion updates) already helps a lot in "balancing the work load" for committers, allowing devs to work on the more problematic cases.
+
+==In case of doubt==
+
+If you're unsure about anything about a recipe, don't hesitate to use the [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes/ gobolinux-recipes] mailing list to ask questions, submit recipes for discussion, etc.

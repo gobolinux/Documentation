@@ -1,0 +1,64 @@
+Rather than dirty up the Ideas section with pros/cons, let's consider them here.
+----
+''What I mean is this: Boundaries should be established between "[[GoboLinux]] the OS" and the collection of [[GoboPackages]] which continues to grow. Also, the OS should be released in different versions: "[[GoboLinux]] Workgroup Server", "[[GoboLinux]] Enterprise Server", "[[GoboLinux]] Enthusiast Edition", "[[GoboLinux]] Desktop Edition", "[[GoboLinux]] Netboot", etc.''
+
+The primary difference between Workgroup and Enterprise Servers is the support contract.  What are the differences that we can affect being a small group?  Management is one.  Enterprise geared towards multiple servers/multiple users.  Workgroup (I'm thinking more SOHO, Small Office, Home Office), simplified admin.  Web based interfaces.  single server and a handful of users.
+
+I conceptually see a difference between Enthusiast and Desktop Editions, but can think of specifics.
+
+[[GoboLinux]] Netboot could be very interesting.  An off shoot could be something similar to LTSP.
+
+Can this be handled by profiles?
+
+Carlo J. [[User:Calica|Calica]]
+----
+Yes, we're on the same page.  "Enterprise Server" would be geared toward use in a datacenter - oriented toward technologies which are designed to scale linearly like J2EE AppServers, webservers & such or for dedicated one-task, high-load servers like a large database server.
+
+"Workgroup Server" would be designed more as a drop-in network information hub (as opposed to a blade in a server farm) specifically aimed at replacing NT Domain servers for file/print and basic collaboration needs.  Another way to look at it is that it would be the hub around which workstations are arrayed.  Out of the box, it might have things turned on like DHCPD, bind (or something similar), Samba with a PDC config, netatalk, nfs, ldap server, kerberos server.  It should be something simple enough for the average Windows admin to quickly pick up.
+
+"Desktop Edition" would be aimed at replacing MS Windows on your typical PC for your typical end user.  The focus would be on simplicity, visual consistency and administrative integration with the "Workgroup Server" product.
+
+"NetBoot Edition" would probably be an extension to "Workgroup Server Edition" - an extra service that automatically sets-up the necessary TFTP, NFS and DNS changes to support network booting.  Plus, automatic netboot rom generation would be great.
+
+"Enthusiast edition" would be closest to what we have now - all the latest and greatest bleeding edge, cool stuff - but don't use it to run your nuclear reactor!  It would always be more experimental than the others, but never so much so as to be called "unstable".
+
+These differences far exceed what is reasonable to expect out of an installation program - primarily because the combined total of all the necessary packages would exceed the size of a CD.  I'd imagine that the majority of the basic installation mechanics would be shared across versions, it's just that the package sets are completely different and their compile-time configurations and defaults are different as well (for example, a "Desktop Edition" would only have a minimum setup necessary to do peer-to-peer filesharing - many of the compile-time options could be left out).
+
+Actually, I bet all the different versions could be automatically generated from a compile system that just notes the different compile options for each product and then automatically generates an iso.
+
+[[User:StuPenrose|StuPenrose]]
+----
+Most of that can be handled by profiles.  It mainly needs multi-cd support.  Then each edition is just an additional(or whatever needed) cd over [[GoboCore]] or [[LiveCD|GoboLive]].  Compile time options can be reflected in different versions or names.  ie /P/Foo/1.0-workgroup or /P/Foo-workgroup/1.0.
+
+Carlo J. [[User:Calica|Calica]]
+
+----
+Yes, now that I think of it different version names for packages should work just fine, as long as they were of the first form you mentioned (/P/Foo/1.0-edition).  As long as the installers between the editions can be highly independent of each other when necessary ( a really monolithic installer might discourage necessary distinction between editions), that would work.
+
+So yes, I agree that it could be done on a set of CDs.  I only would want to ensure that each individual edition would also have the option of being distributed seperately (this would save bandwidth on the download and make it more convenient).
+
+[[User:StuPenrose|StuPenrose]]
+
+----
+Actually, it could be handled by profiles, different stores for each edition, and a smart installer (or different installer using the same info).  Imagine a scenario like this:
+* A [[GoboCore]] team.  They're responsible for the base system and packages.
+* A [[GoboCommunity]] team.  They're responsible for creation and maintainence of packages and recipes.
+* A [[LiveCD|GoboLiveCD]] team.  Take the [[GoboCore]] and packages from [[GoboCommunity]] and make a [[LiveCD]].  A subgoal is creation of the installer and customizable LiveCDs.
+* Gobo Edition teams.  Each team would have a profile, a Store and skel entries.
+We have the first three all merged together right now.  A nice aspect of this is it allows for partial (possibly commercial) forks at the Edition level.  This is much nicer and cleaner than Debian and UnitedLinux.
+
+Carlo [[User:Calica|Calica]]
+
+----
+
+That sounds like an excellent way to do things.  As you say, it would give all sorts of contributers the choice of a variety of cleanly separated areas to work on.
+
+Great idea!
+
+I suppose one could call this the assembly line approach.  The Community team makes the parts, the Core & [[LiveCD]] teams make the chassis, and the Edition teams produce the final product.
+
+[[User:StuPenrose|StuPenrose]]
+
+----
+
+{{Discussions}}

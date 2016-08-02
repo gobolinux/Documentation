@@ -1,0 +1,39 @@
+=== Why? ===
+
+Helps others to contribute patches of core components in GoboLinux. also there will be constant testing done on these with users that like to use bleeding edge version.
+----
+I don't really think this is needed yet... almost everything seems to have only one developer at the moment, so what difference would it make?  Later on though it could be useful, and I suppose maybe it's never too early to start. [[User:Michael|MichaelHomer]]
+----
+if there's only one developer per package then there's no much use,except if developer want some help then it proves useful. [[User:Starlord|StarLord]]
+----
+I've been contributing to Scripts and Compile in a number of small ways.  The shell script nature of it forces use of modular code.  After awhile, you can add significant functionality with new scripts and unobtrusive patches to existing ones.  The kernel evolved for a long time without version control and in some case can improve code quality.  The lack of it hasn't make it difficult, although I sometimes wonder of its status. Carlo [[User:Calica|Calica]]
+----
+The way things are developed right now is still pretty messy. I'm not sure I would adapt very easily to a version control system, to be honest. Right now, the 'development version' of Scripts, for example, is the one I have running live. This usually means my system breaks pretty badly from time to time, but that's life. :-) The bleeding-edge of the Scripts development is not a place you want to be believe me... it's just an easy way to get your system hosed. In the end, it makes me careful about the type of changes I make and that has brought some stability to the Scripts as a whole. When a very important feature is added or the package has been idle/stable for a while, it's time for a new release. Because of this, silly features (for example, a new flag for [[GrepQuick]]) may sit for a long time in my HD between releases, because I came to the conclusion less Scripts releases is better for overall system stability. But revision control will probably be used sometime in the future, when the Scripts grow beyond proportion (and that'll probably be a bad sign). -- [[User:hisham|hisham]]
+----
+If version control is suitable for these Wiki pages it must be suitable for your work within [[GoboLinux]] itself.  And how difficult has it been for us all to use the Wiki page version control?  I've just created version 9 of this page at no effort at all.  And you can all see the differences between version 7 and version 9 at the click of a few buttons; try it: http://gobo.kundor.org/w/index.php?title=VersionControl-Discussion&diff=1995&oldid=1677
+
+Hisham, if the way you are developing now is "pretty messy" (and I admire your honesty) then your best move will be to introduce version control to help control and coordinate yourself.  If something was working yesterday and it doesn't work today can you identify what has changed?  A version control tool will give you that information for free.
+
+Using version control is as simple as wearing a seat belt in a car, and I'm sure none of us would choose not to do that; not using version control is just asking for problems.  It really is never too early to start.  -- [[concernedOnlooker]]
+----
+Version control (at least the kind you people are interested in) requires access to the internet, something that I don't currently have in the box where I'm currently keeping the latest Scripts, and that's just one example of the difficulties involved in adopting version control. It is a valuable tool for apps that are developed collectively by many around the internet, but this is not the current state of affairs in the [[GoboLinux]] Scripts. Once I believe the development model would be best served in a decentralized manner, version control will most likely be adopted. -- [[User:hisham|hisham]]
+
+=== What could vcs contain? ===
+
+*Recipes for Compile package
+*Scripts package
+*Compile package
+
+
+=== Who will have write access to vcs? ===
+
+for start only the author/maintainer of that package, later users with frequent patch contributions.
+
+
+=== Version control software ===
+
+* Good ol' CVS, if only for its large availability?
+* Subversion
+* [http://abridgegame.org/darcs/ Darcs], or [http://svk.elixus.org/ SVK] would be good choices because you can work offline with full functionality.  Darcs is especially cool for all the functionality the developer built in for submitting patches by mail (and I hear all the cool kids or using it ;-)). Considering the points hisham made above, this might give him the flexibility he needs. Just my 2 cents.  Rohan 
+
+{{Discussions}}

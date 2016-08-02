@@ -1,0 +1,16 @@
+{{Wiki Team Navigation}}
+The [[Wiki Team]] is the team of volunteers who maintain and edit this wiki.  '''Organized contribution''' (as described in the following pages) is 
+encouraged.
+
+
+We are currently '''recruiting''' volunteer '''category editors'''!  For details please see [[Wiki Structure]] or contact [[User:Mpb]].
+
+
+Wiki Team documents:
+: [[Wiki Guidelines]] - read this first!
+: [[Wiki Structure]]
+: [[List of templates]]
+: [http://meta.wikimedia.org/wiki/Help:Contents MediaWiki User's Guide]
+
+
+{{Wiki Team}}

@@ -1,0 +1,23 @@
+=Overview=
+Create a link in /Programs to $goboInstall or <src_tree>.
+
+==Usage==
+   '''AttachProgram''' <program> [<version>] [<src_tree>]
+
+===Options===
+* <tt>'''-h, --help'''</tt> - Show this help.
+* <tt>'''--version'''</tt> - Show program version.
+* <tt>'''-v, --verbose'''</tt> - Enable verbose mode.
+* <tt>'''-b, --batch'''</tt> - Batch mode.
+* <tt>'''-f, --force'''</tt> -  Force.  Reattach even if installed.
+* <tt>'''-r, --rootfs'''</tt> - Move to RootFS.
+* <tt>'''-D, --no-dependencies'''</tt> - Do not try to fulfill dependencies.
+
+===Notes===
+This script creates a program entry in /Programs with a version symlink to the <src_tree> directory. After it is tied into /Programs, SymlinkProgram is executed.
+If <destdir> is omitted the environment variable $goboInstall is used.
+
+==Examples==
+   AttachProgram GCC 2.95.3 /Network/Programs
+
+{{Scripts}}

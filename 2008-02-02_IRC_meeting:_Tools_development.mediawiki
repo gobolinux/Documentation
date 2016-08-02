@@ -1,0 +1,53 @@
+A presumptive agenda for the developer discussion week 5.
+
+* Saturday 2, 11am - US west coast (GMT-8)
+* Saturday 2, 5pm - Brazil (GMT-2)
+* Saturday 2, 8pm - Central Europe (GMT+1)
+* Sunday 3, 8am - New Zealand (GMT+13)
+
+===Development===
+* Current development - is the model sufficient
+  * svn migration - lead: Lucas
+  * leads - feature based
+* New tools - Any new tools planned/needed
+  * A bridge between InstallPackage and Compile.  Maybe a tool above
+    Compile/InstallPackage/Freshen to provide a single interaction point.
+    PackageKit support?
+  * A tool which suggests a package if an executable isn't found
+* Major changes - any major cross-tools changes planned/needed
+* Signing tool releases - The signatures are often wrong. Why?  How can we prevent this. (calica)
+
+===Roadmaps===
+* coding style - with more people hacking we need a coding style document (for all programming/scripting languages)
+  * Keep 3 space indention for shell scripts
+  * Use tabs for python
+* Use flags - for both Compile and InstallPackage Lead: mhomer
+====Scripts====
+* unionfs - what to do (fuse?)
+  * enable PostInstall to run unsafely if unionfs is unavailable
+* /System/Index - when and how (can we implement it in the sandbox as a first stage?)
+* cleanup - a lot of duplicated as well as old/deprecated code
+
+====Compile====
+* recipes - back to basic "The plan is to make Compile as smart as it can and the recipes as small as possible." - Hisham (2004) (http://developers.slashdot.org/article.pl?sid=04/06/05/1949213)
+* modularisation - make each build type a module
+* ChrootCompile - move functionallity of ChrootCompile into Compile
+* librarisation - make Compile the frontend to a Compile library
+* python - to ease interaction with tools like Freshen and Manager should Compile be rewritten in python or wrappers added
+
+====BootScripts====
+* logging - it's not working
+====Manager====
+* more modules - expanding it with system configuration
+* Freshen - are they doing the same job or are they complements; if latter should Freshen be included in Manager
+* AbsTk - make it possible to run manager from the console
+====Freshen====
+* become single interaction point of all scripts
+* share backend with Manager
+
+====Installer====
+* partitioning - multiple partitions and mount points from the installer
+* net install - download and install packages directly from a repo
+====Listener====
+what should be done here
+[[Category:IRC_Meetings]]

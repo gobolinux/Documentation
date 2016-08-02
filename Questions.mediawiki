@@ -1,0 +1,5 @@
+These are [[Template:Question|Questions]] users have raised on the wiki.  Please follow the links and answer them as best you can.  The article will have a <nowiki>{{Question}}</nowiki> template near where the asking user thought the clarification was needed. If you think you've adequately addressed the question, remove the <nowiki>{{Question}}</nowiki> template from the article.
+
+
+{{questionlist}}
+[[Category:Maintenance]]

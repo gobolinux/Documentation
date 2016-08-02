@@ -1,0 +1,15 @@
+<includeonly>
+
+<p class="todo">
+'''''[[Project:Todos|Todo:]]''' {{{1}}}''
+</p>
+{{ {{#ifexist: Template:{{{priority|medium}}}|{{{priority|medium}}}|other}} }}
+</includeonly><noinclude>
+This is the Todo template.  Include it on a page when you feel it needs work done, or otherwise needs to be brought to the attention of others.  Add it with a justification, and optionally a priority, like this:
+
+<code><nowiki>{{Todo | Explain how to port Gobo to PDP-10 | priority=high }}</nowiki></code>
+
+Valid priorities are ''urgent'', ''high'', ''medium'', and ''low''.  Not providing one defaults to ''medum''; providing any other priority is listed as ''other'' (before ''low'').  Providing ''none'' will make the Todo show up as usual in the page, but not be listed at [[Project:Todos]].
+
+It will show up in the page where you add it, so putting it at the bottom is probably appropriate.  The Todo will also be listed at [[Project:Todos]], as well as the Category Todo page for whichever [[Wiki Structure|category]] the page belongs to.
+</noinclude>

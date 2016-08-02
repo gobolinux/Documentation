@@ -1,0 +1,12 @@
+These are [[Template:Todo|Todos]] which have been noted on the wiki.  Please address the stated issues if you are able.  The article will have a <nowiki>{{Todo}}</nowiki> template somewhere, probably near the end. If you think you've completed the task, remove the <nowiki>{{Todo}}</nowiki> template from the article.
+
+
+{| class="dpl"
+!Article!!Categories!!Todo!!class="pri"|Priority
+{{todolist|urgent}}
+{{todolist|high}}
+{{todolist|medium}}
+{{todolist|other}}
+{{todolist|low}}
+|}
+[[Category:Maintenance]]

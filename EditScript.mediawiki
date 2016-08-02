@@ -1,0 +1,17 @@
+Create or edit a [[GoboLinux]] script.
+
+Usage: EditScript <script-name-with-no-path>
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+
+You will be prompted if you want to create the script if it does not exist. [[EditScript]] uses [[TemplateScript]] as a template for newly created scripts.
+
+Examples:
+<pre>
+EditScript EditScript
+</pre>
+
+{{Reference}}

@@ -1,0 +1,4 @@
+This is a stub. Planning to populate with the steps to install and get Gobo working an any USB drive similar to the instructions for Ubuntu, Gentoo etc. [Brillgene]
+
+In the meantime, maybe these instructions in this post are better than nothing:
+http://lists.gobolinux.org/pipermail/gobolinux-devel/2008-January/003113.html

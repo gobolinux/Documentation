@@ -1,0 +1,26 @@
+Prepares applications for installation, running the 'configure' script.
+
+Usage: '''PrepareProgram''' [ <target''name> [<version''nr>] ] [ -- <additional_options> ]
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-b, --batch''' - batch mode: no user interaction
+* '''-t, --tree''' - prepare directories, rather than running configure.
+* '''-T, --tree-cleanup''' - like --tree, but instead of creating directories, remove empty ones
+* '''-k, --keep''' - keep the directory if it already exists in the /Programs hierarchy.
+* '''-r, --remove''' - remove the directory if it already exists in the /Programs hierarchy.
+* '''-c, --configure''' ''<entry>'' - specify program to be used as 'configure' script. The default value is './configure'.
+* '''-C, --cross-compile''' - lets [[GoboPath]] export directories based on $cross[[PrefixDir]].
+* '''-a, --autoconf''' - Assume configure is based on autoconf, skipping detection.
+* '''-A, --no-autoconf''' - Assume configure is NOT based on autoconf, skipping detection.
+* '''-D, --no-default-options''' - Skip detection altogether, use only configure options passed on the command-line.
+
+The /Programs hierarchy for the program is only created with --tree.
+
+Examples:
+<pre>
+PrepareProgram KDE 2.2
+</pre>
+
+{{Scripts}}

@@ -1,0 +1,23 @@
+== Installation ==
+
+'''First try:'''  Install Bootcamp and boot with standard 013.  It experiences the SMP/SquashFS problems on know issues.  Booting with suggested kernel args boots with some errors  but I get a prompt.  Unfortunately, each keypress registers twice.
+
+'''Second try:'''  Remaster ISO with kernel with patches from www.mactel-linux.org.  This has problems in initrd mounting the squashfs filesystems.
+
+'''Third try:'''  Boot knoppix (works great!).  Partition disk and copy / from a fresh Gobo013 install (used QEMU), and Knoppix's kernel/modules.  Adjust fstab, create lilo.conf and run /sbin/lilo.  Reboot, no go.  Doesn't recongize the partition.  Install, [http://refit.sf.net refit], sync GPT and MBR partitions (using refit) and success!
+
+== Next Steps ==
+
+'''Compile Kernel'''  Use [http://www.mactel-linux.org mactel-linux] patches for 2.6.19.  Need to pull out UTF patches and update squashfs.  Remove vesafb patches to "remove variables".  Success!
+
+'''Getting Wireless Working:''' MadWifi_NG doesn't support the 802.11n chipset used, so must use NDISwrapper.  Success!
+
+'''Native Resolution''' The MacBook has a 1280x800 LCD.  Use 915Resolution to set.  Success!
+
+'''Suspend''' TODO.  Will focus on s2ram first and then s2both.
+
+'''iSight''' TODO. Should be straight forward but low priority.
+
+'''Remaster ISO''' Unless there is demand, wait until 014.
+
+{{Platforms}}

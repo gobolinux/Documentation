@@ -1,0 +1,85 @@
+==  Package creation ==
+
+* [[Compile]] - Automated program compilation tool.
+* [[MakeRecipe]] - Create a recipe template.
+* [[EditRecipe]] - Edit a recipe.
+* [[PackRecipe]] (formerly [[GenRecipeStore]]) - Generate "packed recipes", ready for submission.
+* [[CreatePackage]] - Make a [[GoboLinux]] package.
+* [[GetRecipe]] - Fetch a recipe and insert it in the recipes tree.
+* [[FetchArchive]] - Given a recipe, download the files required to compile it.
+* [[NewVersion]] - Update a recipe to a new version.
+* [[PrepareProgram]] - Prepares applications for instalation, running the 'configure'
+* [[SymlinkProgram]] - Link a program from the /Programs hierarchy in the /System tree.
+* [[UpdateRecipes]] - Update local recipe list from recipe stores.
+
+===  Helper tools ===
+
+* [[DeduceName]] - Scan a file to find the capitalization of a program name.
+* [[FiboSandbox]] - Run the program in a protected sandbox, as a restricted user.
+* [[FindPackage]] - Search packages and recipes, locally or remotely.
+* [[FixInfo]] - Remakes the entries in the info 'dir' file.
+* [[FixLibtoolLa]] - Convert a .la file created by libtool to make it [[GoboLinux]]-compliant.
+* [[NamingConventions]] - Heuristics to determine a capitalized, [[GoboLinux]]-like name.
+* [[SandboxInstall]] - Runs 'make install', using a sandbox environment.
+
+==  Package management ==
+
+* [[Freshen]] - Checks for updated [[GoboLinux]] packages/recipes.
+* [[CreatePackage]] - Make a [[GoboLinux]] package.
+* [[InstallPackage]] - Install [[GoboLinux]] packages.
+* [[DisableProgram]] - Unlink a program from the /System/Links hierarchy.
+* [[RemoveProgram]] - Removes a program version from the system.
+* [[DetachProgram]] - Move a program from /Programs to a different location.
+* [[Dependencies]] - Queries dependencies in a [[GoboLinux]] package.
+* [[AllDependencies]] - Show the entire dependency hierarchy for a package.
+* [[MergeTree]] - Mirrors one directory structure into another.
+* [[RebuildLinks]] - Rebuild /System/Links directories.
+* [[KeyManager]] - Manage digital signature keys for [[GoboLinux]] packages.
+* [[Hashes]] - Manages [[FileHash]] and [[FileHash.sig]] in a [[GoboLinux]] package.
+* [[GetAvailable]] - lets you search package and recipe store for available packages/recipes.
+
+==  Kernel management ==
+
+* [[CleanModules]] - Clean up all kernel modules that can be removed.
+* [[CreateInitRD]]
+
+==  System maintenance ==
+
+* [[RemoveBroken]] - Removes broken links.
+* [[AddUser]] - Register a new user in this system.
+* [[EditScript]] - Create or edit a [[GoboLinux]] script.
+* [[SystemFind]] - Special 'find' utility for searches in the /System hierarchy.
+* [[SystemInfo]] - Display some basic system information. Useful for /etc/issue.
+
+==  Utilities ==
+
+* [[FilterColors]] - Filter to monochrome.
+* [[FilterLines]]
+* [[FixAttributes]] - Fix attributes from files based on its contents.
+* [[GrepReplace]] - Swaps occurrences of a regex for another word in a series of files.
+* [[IsExecutable]] - Determines if a file is executable.
+* [[RemoveEmpty]] - Remove all empty directories inside current (or a given) directory.
+* [[RenameCaps]] - Rename files, capitalizing them.
+
+==  Wrappers ==
+
+* [[FindQuick]] (alias: f) - Find files.
+* [[GrepQuick]] (alias: g) - Shorthand for 'grep'.
+* [[List]] (alias: l) - A fancy front-end for 'ls'.
+* [[KillProcess]] - Enhanced process killing utility.
+* [[Rename]] - Performs a sed-based search/replace in a set of filenames.
+
+==  Boot scripts ==
+
+* [[BootDriver]] - The boot controller script.
+* [[StartTask]] - Run a boot task from the command line.
+* [[StopTask]] - Stop a boot task from the command line.
+* [[TestBootTheme]]
+
+==  Special files ==
+
+* [[GoboPath]]
+* [[ScriptFunctions]]
+* [[TemplateScript]]
+
+{{Reference}}

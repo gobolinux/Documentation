@@ -1,0 +1,22 @@
+== Configuration tweaks ==
+
+=== Fonts with Flash 7 ===
+
+The [http://macromedia.mplug.org/faq.html Macromedia Flash for Linux FAQ] says: 
+
+11. Most text is failing to display on Flash sites!
+
+:The plugin has bugs where it makes bad assumptions about the font configuration. For this reason, it fails to find fonts on newer versions of X.org.  You can workaround this problem in the short-term by using these commands as root.
+:mkdir -p /usr/X11R6/lib/X11/fs/
+:ln -s /etc/X11/fs/config /usr/X11R6/lib/X11/fs/config
+:Read Red Hat Bugzilla #184028 for more information about this problem.
+Ultimately Macromedia must fix this bug in a future version of their plugin.
+
+Looking at my /Programs/Xorg/Current/lib/X11/fs/config file, I found some incorrect font paths there. These incorrect paths are not used normally by Xorg because Gobo doesn't use the old xfs font server, relying on xorg.conf and fonts.conf instead, but seems that Flash is the last program that still relies on this file. If fonts in Flash don't work, change the "catalogue" line to:
+
+   catalogue = /Files/Fonts/Misc/,/Files/Fonts/TrueType/,/Files/Fonts/Type1/,/Files/Fonts/CID/,
+   /Files/Fonts/75dpi/,/Files/Fonts/100dpi/
+
+(all of the above in one line).
+
+[[Category:Howtos]]

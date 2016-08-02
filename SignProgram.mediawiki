@@ -1,0 +1,15 @@
+Generate and sign a hash file of a Gobolinux package with gpg.
+
+Usage: '''SignProgram''' { [<options>] <package> [<version>] }
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+* '''-u, --local-user''' <entry> - Use <entry> as the user ID to sign with.
+* '''-S, --no-signature''' - Just create FileHash.  No GPG signing.
+
+If no version is specified, Current is assumed.  If the -u option isn't
+used, the first ID found in the secret keyring is used.
+
+{{Scripts}}

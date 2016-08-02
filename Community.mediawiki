@@ -1,0 +1,7 @@
+<div style='border: 1px black solid'>
+
+This Community page was last reviewed on [[Community pages last reviewed in {{{1|Never}}} {{{2|}}}|{{{3|}}} {{{2|}}} {{{1|Never}}}]] by [[User:{{{4|Unknown}}}]].
+
+</div>
+
+[[Category:Community]]

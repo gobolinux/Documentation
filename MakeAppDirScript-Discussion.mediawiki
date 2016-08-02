@@ -1,0 +1,96 @@
+Implementation Idea:
+
+This might me done at the kernel level. The ext2/3 filesystem is treating files and directories differently. A new behavior could be added: if a directory contains a symlink ".open", opening the directory as a file would open the file pointed by the link, in the context of the directory.
+
+Example:
+
+<pre>
+$ ls -l ~/~MyApplication/
+lrwxrwxrwx    0 .open  -> myApp
+-rw-r--r--   20 .myapprc
+-rwxrwxrwx  100 myApp
+-rwxrwxrwx  200 logo.png
+
+$ ./~MyApplication
+*** running ~MyApplication/myApp ***
+</pre>
+
+----
+
+Well, the whole AppDir idea is already implemented in the ROX filer (http://rox.sourceforge.net), but I imagine implementing it on the Kernel level would actually make it work for all application. That might be pretty cool, I suppose. Though it might also create problems. Would clicking on a directory in Konqueror/nautilus/some-other-filer open the directory or run the program? If the program is run, how would someone using konqueror look inside such a directory?
+
+On second thougt, I think it is probably better to implement AppDirs in userspace, like it has been in ROX. Programs have to be written to handle them properly anyway. You want your file manager to be able to run and look inside an AppDir.
+
+Does anyone know whether the Konqueror or Nautilus developers have ever considered implementing AppDirs? I imagine it wouldn't be too hard.
+
+[[ZaNy]]
+
+----
+
+<quote> how would someone using konqueror look inside such a directory? </quote>
+
+in mac os x to look inside ".app" bundles, you just right click on them and there is something like a "browse contents", this lets you browse the actual contents of the application. something similar to this could work to let you browse the contents of an appdir if so needed.
+
+-- johnnybezak
+
+----
+
+Basically, in my humble opinion, it is impossible to reconcile the Gobo FH and ROX AppDirs. Why?<br>
+1. ROX AppDirs have a specific action associated with them, and only one action. Gobo's FH contains directories that have one, none, or many actions possibly associated with them (for example, think of KDE. sometimes you might want it to startkde, sometimes you may want konqueror, sometimes kghostview, etc)<br>
+2. Gobo's FH is consistent and static; moving stuff out of /Programs breaks stuff. ROX AppDirs are meant to be movable, organized by the user, etc.<br>
+3. The two really have fundamentally different purposes altogether, one being a "Package Manager" of sorts, the other being an interface to the user.<br>
+
+As far as implementation, however, just wait for reiser4.
+seaslug
+
+----
+
+I think seaslug summarized the issue pretty well, and about the implementation question,
+yes, implementing [[AppDirs]] in a UNIX system ''properly'' can be a major pain. The concept only works "for real" in systems like
+[[RiscOS]] and [[AtheOS]], where you can really move binaries around. Here's a repost of an excerpt of a message from [[gobo-l]],
+for posterity:
+
+ROX-Filer will probably want to cooperate
+closer with the ROX OS project, which is about making a RISC OS clone based
+on the Linux kernel (matching their goal of cloning the RISC OS file
+manager). Attempts of making compatibility layers so that /Programs entries
+work (or should I say "fake") as [[AppDirs]] have been made (and presumably
+worked fairly well), but /Programs entries and [[AppDirs]] are something
+fundamentally different by design, so it would always end up being a "compat
+layer", and not a first-class-design. As usual, I could be wrong.
+
+-- hisham
+
+----
+
+ROX app dirs can have multiple actions: they appear on the right-click popup menu. Of course, there can only be one default action (although it might be to show a menu). In the case of something like KDE, ROX would make KDE a regular directory, and have subdirectories for each application (so that clicking on KDE showed you all the KDE apps, each of which would be an app dir).
+
+-- Thomas Leonard
+
+----
+
+if rox-filer is installed, there can be as many rox appdir wrappers as you like<br>
+a wrapper is basically a rox appdir, with an icon, optional help files, and an executable that simply runs the already installed program, where ever it is
+
+an AppRun example:
+
+<pre>
+#!/bin/sh
+exec firefox "$@"
+</pre>
+
+so you would have a rox appdir, probably in a standard dir with other appdir wrappers, so when you click the appdirs Firefox icon ... the Firefox browser runs
+
+the Gobo file system would not be changed at all. There would simply also be a convenient rox appdir wrapper to run the program
+
+for a distro that uses rox appdirs, see Puppy Linux http://distrowatch.com/table.php?distribution=puppy
+
+----
+
+Any news on it ?  -shevegen (15 JUN 2005)
+
+----
+
+David Faure has written a patch for KDE to enable [[AppDirs]] using .desktop files  http://bugs.kde.org/show_bug.cgi?id=81772
+
+{{Discussions}}

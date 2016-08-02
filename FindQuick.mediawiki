@@ -1,0 +1,18 @@
+A wrapper around 'find'. '''FindQuick''' (or 'f' for short) uses a colorized output and has a very reduced syntax.
+
+Usage: '''FindQuick''' <file to search> [<path>]
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+
+If <file to search> contains "*", it is used directly as an expression for the search. If not, "*" is added to the beginning and the end. If <path> is not specified, the working directory is assumed.
+
+Examples:
+<pre>
+FindQuick "*.c" ..
+</pre>
+Note the added quotes to avoid shell expansion.
+
+{{Scripts}}

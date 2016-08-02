@@ -1,0 +1,12 @@
+Remove all empty directories inside current (or a given) directory.
+
+Usage: '''RemoveEmpty'''
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+* '''-d, --depth''' ''<entry>'' - Depth of search for empty directories.
+* '''-D, --no-defaults''' - Do not remove empty directories in Defaults.
+
+{{Scripts}}

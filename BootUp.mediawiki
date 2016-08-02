@@ -1,0 +1,3 @@
+[[BootUp]] procedure is one of the first jobs run by the system when [[GoboLinux]] or for that matter any OS when the OS is "switched on".
+
+{{Reference}}

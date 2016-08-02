@@ -1,0 +1,75 @@
+
+* The [[CloopUtils]] package, available at:  http://gobolinux.org/packages/binary/current/CloopUtils--2.00--i686.tar.bz2
+** Is this package appropriate for other Linux distibutions?
+** I see no particular "home page" for this, although I found:
+*** http://packages.debian.org/testing/misc/cloop-utils
+*** http://am.xs4all.nl/phpwiki/index.php/CloopUtils
+
+* "A convenience directory. It "mountExtracted" [sic] bind it with /Mount/CD-ROM inside Mounted, i.e., on the chrooted environment, you can access it via /Mount/CD-ROM, using it as a contact to the "external world" to easilly copy files in and out."
+** This paragraph doesn't make sense to me.  It needs to be reworded. -- [[Sy]]
+
+
+=  Troubleshooting =
+
+This can't be right:
+
+<pre>
+-rw-r--r--  1 gobo gobo  4685824 2004-08-02 15:41 GoboLinux-~NoVersion.iso
+</pre>
+
+I'm missing something, aren't i? :
+
+<pre>
+gobo@Sandbox ~/ISO]compressCloopAndBuildISO
+Compressing cloop file...
+
+real    0m0.080s
+user    0m0.000s
+sys     0m0.005s
+Building ISO...
+
+Size of boot image is 4 sectors -> No emulation
+Total translation table size: 2048
+Total rockridge attributes bytes: 1042
+Total directory bytes: 2048
+Path table size(bytes): 26
+Max brk space used 5000
+2288 extents written (4 Mb)
+
+real    0m0.334s
+user    0m0.005s
+sys     0m0.039s
+</pre>
+
+----
+
+I played around a bit too much, and when the CD was unmounted, ejected, reinserted and a <code>mount /Mount/CD-ROM</code> is attempted, it reports
+<code>mount: /System/Kernel/Devices/ide/host0/bus1/target0/lun0/cd already mounted or /Mount/CD-ROM busy</code>
+
+Also, sound mysteriously died.  This was solved by rebooting the system. -- [[Sy]]
+
+----
+
+<pre>
+gobo@Sandbox /]exit
+Cleaning up history...
+Filling up free space with zeroes...
+dd: writing to `Mounted/zeros': No space left on device
+468153+0 records in
+468152+0 records out
+Removing generated zeroes file...
+Unmounting  Mounted/System/Kernel/Status
+Unmounting  Mounted/System/Kernel/Devices
+Unmounting  Mounted/Mount/CD-ROM
+Unmounting  Mounted
+</pre>
+
+Is the "No space left on device" message normal?
+
+----
+
+On the mailing list, Andr�Detsch reported:
+
+Btw, we are moving to squashfs (instead of cloop). I have already updated the
+generation scripts, and will update the how-to as soon as a first alpha for
+012 becomes released.

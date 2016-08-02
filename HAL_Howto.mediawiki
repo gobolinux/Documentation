@@ -1,0 +1,217 @@
+=  HAL =
+
+With [http://freedesktop.org/wiki/Software/hal HAL] and [http://ivman.sf.net Ivman] and [http://www.piware.de/projects.shtml pmount],
+you can have devices like CD-ROMs and USB flash sticks be automatically mounted and added to your panel or desktop. When you unmount it the mountpoint will be removed from your panel.
+
+* '''HAL''' is a hardware abstraction layer that keeps track of your hardware, both internal and removable. It's like a database that adds information from the hardware and from .fdi files, and it can also call other programs when certain events happens.
+* '''Udev''' tells HAL when hardware is added or removed and replaces ''Hotplug'' in this functionality.
+* '''Ivman''' is a volume manager that can be set up to automount removable media, and to do all kinds of other stuff. It reacts when media is inserted or removed, or when a property of any device is changed.
+* '''Dbus''' is an IPC service that lets all these components communicate with each other.
+
+NOTE: HAL and Ivman are not limited to storage devices, but also handle stuff like network cards and other hotpluggable devices on USB, Firewire, PCMCIA, etc...
+
+==  Setup ==
+
+The following was tried with ''Udev 070'', ''HAL 0.5.4'', ''DBus 0.50'', ''Ivman 0.6.4'', and ''pmount 0.9.3''.
+We are going to set things up so that Ivman is run as root and handles the automounting under <code>/Mount/Media</code> , with the help of pmount.
+Then users can run their own instances of Ivman too, to handle desktop specific stuff (like adding devices to the panel).
+
+* You need to be running Udev and DBus, make sure that's the case and that the DBus system bus is started at boot. (Use <code>[[StartTask]] messagebus</code>)
+
+* You also need a recent kernel and glibc compiled against recent headers. This was tested with ''Glibc 2.3.5'' with NPTL compiled against ''Linux-Libc-Headers 2.6.12.0''
+
+* Install HAL, Pmount and Ivman:
+<pre>
+] Compile hal
+...
+] Compile pmount
+...
+] Compile ivman
+...
+</pre>
+Pmount should be patched with http://kymatica.com/stuff/pmount-0.9.3-lijon.patch and HAL should be patched with http://kymatica.com/stuff/hal-0.5.4-lijon.patch
+(These patches should be included with the recipes, together with the small patch that escapes the $hal.volume.mount_point$ in ivmans src/manager.c:619)
+
+* Make sure there is nothing in <code>/System/Settings/hal/device.d</code> that does any mounting, becouse we want ivman to handle the mounting! (Actually I don't think device.d works in HAL 0.5.4 since they moved to <code>info.callouts.*</code> instead...)
+
+* Make sure there is a <code>haldaemon</code> system group and user, and a <code>plugdev</code> group. Add all users that should be able to access and unmount removable media to the <code>plugdev</code> group. ''Note that users must log out and in again for the group changes to take effect''
+
+* Start HAL as root:
+<pre>
+] StartTask hald
+</pre>
+
+* Start Ivman as root:
+<pre>
+] ivman
+</pre>
+
+NOTE: If all this works, don't forget to check that hald and ivman is started in your bootscripts:
+<pre>
+Exec "Starting D-Bus system bus..."             messagebus
+Exec "Starting HAL daemon..."                   StartTask hald
+Exec "Starting Volume Manager..."               ivman
+</pre>
+
+* Make sure Ivman is started as your user too: Add this script in your [[AutoStart]] folder:
+<pre>
+#!/bin/sh
+exec 1>&2
+echo -n "Launching volume manager... "
+if ps -C ivman -o user | grep -q $USER
+then
+echo "Already running."
+exit
+else
+echo "OK"
+exec ivman
+fi
+</pre>
+
+* Disable mounting with usermode ivman, or else there will be problems if more than one user is logged in and running ivman at the same time... We want the root ivman to handle mounting. In <code>~/.ivman/IvmConfigActions.xml</code>, comment out this section:
+<pre>
+<!--
+<ivm:Match name="ivm.mountable" value="true">
+<ivm:Option name="mount" value="true" />
+</ivm:Match>
+-->
+</pre>
+
+==  Ivman rules to add devices to your ROX panel ==
+
+* Create a script named <code>~/bin/rox.panelput</code> and make it executable:
+<pre>
+#!/bin/sh
+### Change "Top" below to the panel you want your devices on...
+rox --RPC << EOF
+<?xml version="1.0"?>
+<env:Envelope xmlns:env="http://www.w3.org/2001/12/soap-envelope">
+<env:Body xmlns="http://rox.sourceforge.net/SOAP/ROX-Filer">
+<Panel$1>
+<Side>Top</Side>
+<Path>$2</Path>
+</Panel$1>
+</env:Body>
+</env:Envelope>
+EOF
+</pre>
+
+* And here comes the ivman rule, which should be inserted in your <code>~/.ivman/IvmConfigProperties.xml</code> (this files is created first time you run ivman as a user)
+<pre>
+<ivm:Match name="ivm.mountable" value="true">
+<ivm:Property name="hal.volume.is_mounted">
+<ivm:Action value="true" exec='rox.panelput Add "$hal.volume.mount_point$"' />
+<ivm:Action value="false" exec='rox.panelput Remove "$hal.volume.mount_point$"' />
+</ivm:Property>
+</ivm:Match>
+</pre>
+
+==  A nice <code>~/bin/eject</code> script: ==
+
+This lets you unmount your media and also FUSE mountpoints with the ''Eject'' entry on the right-click menu on mountpoints. Don't forget to make the script executable.
+<pre>
+#!/bin/sh
+pumount "$1" 2>/dev/null || fusermount -u "$1" 2>/dev/null ||
+echo "Could not unmount with pumount or fusermount -u" >&2
+</pre>
+
+==  More patches ==
+
+===  Spaces in mountpoint names ===
+
+Ivman 0.6.5 and earlier have the problem that mountpoints are not enclosed by quotes when passed as arg to <code>pmount</code>. So if a inserted media has spaces in the desired mount point, pmount will fail! look in ivmans <code>src/manager.c:619</code> and put \" around the <code>$hal.volume.desired''mount''point$</code> thing...  This bug was fixed upstream in Ivman 0.6.6, thus this workaround is no longer required.
+
+===  Better mountpoint names ===
+
+At least for me, my CD-ROM's got mounted as <code>/media/hde</code> and stuff like that, this patch to <code>/System/Links/Shared/hal/fdi/policy/10osvendor/10-storage-policy.fdi</code> fixed it so that media is mounted with the volume label as mountpoint:
+<pre>
+--- /System/Links/Shared/hal/fdi/policy/10osvendor/10-storage-policy.fdi        2005-10-21 19:18:07.000000000 -0200
++++ /System/Settings/hal/fdi/policy/10-storage-policy.fdi       2005-10-22 13:12:44.000000000 -0200
+@@ -96,8 +96,7 @@
+<match key="block.is_volume" bool="true">
+<match key="volume.fsusage" string="filesystem">
+<!-- skip for drives with the no partitions hint (they are handled above) -->
+-       <match key="@block.storage_device:storage.no_partitions_hint" bool="false">
+-
++<!--   <match key="@block.storage_device:storage.no_partitions_hint" bool="false"> -->
+<merge key="volume.policy.should_mount" type="bool">true</merge>
+<merge key="volume.policy.mount_filesystem" type="copy_property">volume.fstype</merge>
+
+@@ -173,7 +172,7 @@
+<merge key="volume.policy.should_mount" type="bool">true</merge>
+</match>
+</match>
+-       </match>
++<!--   </match> -->
+</match>
+</match>
+</pre>
+Note that you can put a copy of this file under /System/Settings/hal/fdi/policy and patch that one instead.
+
+=  Making different types of media get different icons =
+
+With ROX, it's also possible to have the inserted media get an icon that represents the type of media inserted.
+
+* Patch rox-filer to add SOAP calls for setting icons: http://kymatica.com/stuff/rox-2.3-iconsoap.patch
+
+* Add this <code>/System/Settings/hal/fdi/information/10-usb-flash.fdi</code> to detect usb flash sticks:
+<pre>
+<?xml version="1.0" encoding="UTF-8"?> <!-- -*- SGML -*- -->
+<deviceinfo version="0.2">
+<device>
+<match key="@block.storage_device:storage.bus" string="usb">
+<match key="info.category" string="volume">
+<merge key="volume.is_usb_storage" type="bool">true</merge>
+</match>
+</match>
+</device>
+</deviceinfo>
+</pre>
+
+* Change your <code>~/.ivman/IvmConfigProperties.xml</code> rule to this:
+<pre>
+<ivm:Match name="ivm.mountable" value="true">
+<ivm:Property name="hal.volume.is_mounted">
+<ivm:Action value="true" exec='rox.seticon Set "$hal.volume.mount_point$" $HOME/.ivman/other.png' />
+<ivm:Action value="false" exec='rox.seticon Unset "$hal.volume.mount_point$"' />
+</ivm:Property>
+
+<ivm:Match name="hal.volume.is_usb_storage" value="true">
+<ivm:Property name="hal.volume.is_mounted">
+<ivm:Action value="true" exec='rox.seticon Set "$hal.volume.mount_point$" $HOME/.ivman/usb.png' />
+<ivm:Action value="false" exec='rox.seticon Unset "$hal.volume.mount_point$"' />
+</ivm:Property>
+</ivm:Match>
+
+<ivm:Match name="hal.volume.is_disc" value="true">
+<ivm:Property name="hal.volume.is_mounted">
+<ivm:Action value="true" exec='rox.seticon Set "$hal.volume.mount_point$" $HOME/.ivman/cdr.png' />
+<ivm:Action value="false" exec='rox.seticon Unset "$hal.volume.mount_point$"' />
+</ivm:Property>
+</ivm:Match>
+
+<ivm:Property name="hal.volume.is_mounted">
+<ivm:Action value="true" exec='rox.panelput Add "$hal.volume.mount_point$"' />
+<ivm:Action value="false" exec='rox.panelput Remove "$hal.volume.mount_point$"' />
+</ivm:Property>
+</ivm:Match>
+</pre>
+
+* Create this script in <code>~/bin/rox.seticon</code> and make it executable:
+<pre>
+rox --RPC << EOF
+<?xml version="1.0"?>
+<env:Envelope xmlns:env="http://www.w3.org/2001/12/soap-envelope">
+<env:Body xmlns="http://rox.sourceforge.net/SOAP/ROX-Filer">
+<$1Icon>
+<Path>$2</Path>
+<Icon>$3</Icon>
+</$1Icon>
+</env:Body>
+</env:Envelope>
+EOF
+</pre>
+
+* And put some icons for <code>other.png</code>, <code>cdr.png</code> and <code>usb.png</code> in <code>~/.ivman/</code> and you're done!
+
+{{Howtos}}

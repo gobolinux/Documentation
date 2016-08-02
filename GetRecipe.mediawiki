@@ -1,0 +1,13 @@
+=Overview=
+Fetch a recipe and insert it in the recipes tree.
+
+==Usage==
+   '''GetRecipe''' [<recipe-url>|<recipe-path>]
+
+==Options==
+* '''<tt>-h, --help</tt>''' - Show this help.
+* '''<tt>--version</tt>''' - Show program version.
+* '''<tt>-v, --verbose</tt>''' - Enable verbose mode.
+* '''<tt>-W, --no-web</tt>''' - Do not check remote site for recipes.
+
+{{Compile}}

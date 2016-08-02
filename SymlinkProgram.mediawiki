@@ -1,0 +1,35 @@
+Link a program from the /Programs hierarchy in the /System tree.
+
+Usage: '''SymlinkProgram''' [<options>] <program''name> [<program''version>]
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+* '''-s, --settings''' ''<entry>'' - Link settings into /System/Settings: 'yes', 'no' or 'safe'. The default value is 'yes'.
+* '''-l, --libraries''' ''<entry>'' - Link libraries into /System/Links/Libraries: 'yes', 'no' or 'safe'. The default value is 'yes'.
+* '''-e, --executables''' ''<entry>'' - Link executables into /System/Links/Executables: 'yes', 'no' or 'safe'. The default value is 'yes'.
+* '''-d, --daemons''' ''<entry>'' - Link daemons into /System/Links/Daemons: 'yes', 'no' or 'safe'. The default value is 'yes'.
+* '''-h, --headers''' ''<entry>'' - Link headers into /System/Links/Headers: 'yes', 'no' or 'safe'. The default value is 'yes'.
+* '''-a, --shared''' ''<entry>'' - Link shared files into /System/Links/Shared: 'yes', 'no' or 'safe'. The default value is 'yes'.
+* '''-w, --wrappers''' ''<entry>'' - Link wrappers into /System/Links/Executables: 'yes', 'no' or 'safe'. The default value is 'yes'.
+* '''-t, --tasks''' ''<entry>'' - Link tasks into /System/Links/Executables: 'yes', 'no' or 'safe'. The default value is 'yes'.
+* '''-E, --no-environment''' - Do not link entries from /System/Links/Environment.
+* '''-A, --no-variable''' - Do not move variable files into /System/Variable.
+* '''-M, --no-doc''' - Do not link manuals and info files.
+* '''-S, --no-strip''' - Do not strip executables.
+* '''-X, --cross-compile''' - lets [[GoboPath]] export directories based on $cross[[PrefixDir]].
+* '''-C, --cleanup''' - Clean up after installation.
+* '''-c, --conflict''' ''<entry>'' - What to do on conflicts, 'keep' or 'overwrite'. The default value is 'keep'.
+* '''-n, --no-make''' - Dummy option. Preserved for backwards compatibility.
+* '''-r, --relative''' - Use relative paths to link files from /Programs.
+* '''-t, --rootfs''' - Copy program to rootfs if a symlink.
+
+If no program version is specified, Current is assumed.
+
+Examples:
+<pre>
+SymlinkProgram WeirdSuperLib 2.4
+</pre>
+
+{{Scripts}}

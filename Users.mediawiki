@@ -1,0 +1,9 @@
+<div style='border: 2px solid red'>
+
+This page is a user page.  It should be moved into the User: namespace, and all links to this page should be updated to the new location.
+
+</div>
+<includeonly>
+[[Category:Users]]
+[[Category:Todo]]
+</includeonly>

@@ -1,0 +1,12 @@
+{{ToC}}
+
+The [[GoboLinux]] boot scripts can be divided in two parts: the first and the second, also known as Part One and Part Two. Except in ancient Rome, where they used to be called Part I and Part II. Though, for didactic reasons, these parts will be called '''core''' and '''themes'''  throughout the section.
+
+The core drives the boot process. It knows ''what'' must be done, and ''when'' things must be done, but it doesn't know ''how'' to do much. Themes have the knowhow. This way, you can think of a boot theme as a manner to do boot-related work.
+
+
+===  Subtopics: ===
+# [[Core of the BootScripts package]]
+# [[Boot themes]]
+
+{{Handbook}}

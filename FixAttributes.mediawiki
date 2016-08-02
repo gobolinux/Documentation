@@ -1,0 +1,27 @@
+Fix attributes from files based on its contents. This is useful for restoring the permissions when files are copied from filesystems that do not support Unix-style permission (like FAT floppies).
+
+Usage: '''FixAttributes''' [options...] files...
+
+Options:
+* '''-h, --help''' - Shows this help.
+* '''-v, --version''' - Show program version.
+* '''-V, --verbose''' - Enable verbose mode.
+* '''-R, --recursive''' - Recurses into subdirectories fixing permissions.
+* '''-t, --true''' ''<entry>'' - Sets permission <entry> if file is considered executable.
+* '''-f, --false''' ''<entry>'' - Sets permission <entry> if file is considered not executable.
+
+Example:
+ FixAttributes -t 700 -f 600 *
+
+== Configuration ==
+Default permission modes are obtained from <code>FixAttributes.conf</code>.
+
+Typical contents are
+<pre>
+fixatChmodTrue=755
+fixatChmodFalse=644
+</pre>
+which will change files which seem to be executables to mode 755 (owner read, write, execute; group read, execute; others read, execute),
+and files which do not seem to be executables to mode 644 (owner read, write; group read; others read.)
+
+{{Scripts}}

@@ -1,0 +1,18 @@
+=Overview=
+Given a recipe, download the files required to compile it.
+
+==Usage==
+   '''FetchArchive''' <recipe>
+
+===Options===
+* '''-h, --help''' - Shows this help.
+* '''--version''' - Show program version.
+* '''-v, --verbose''' - Enable verbose mode.
+* '''-d, --save-directory''' ''<entry>'' - Rename the directory into which the archive is unpacked/files checked out.
+* '''-s, --save-to''' ''<entry>'' - Save the files to the given directory. The default value is '/Files/Compile/Archives'.
+* '''-b, --batch''' - Avoid asking questions.
+
+==Examples==
+   FetchArchive /Files/Compile/LocalRecipes/K3B/0.10/Recipe
+
+{{Compile}}

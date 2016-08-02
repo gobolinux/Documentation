@@ -1,0 +1,19 @@
+Jonas Karlsson
+{|
+|E-mail: jonas <at> gobolinux.org
+|-
+|Gtalk: cj.karlsson <at> gmail.com
+|-
+|ICQ: 29418004
+|-
+|MSN: Mohjive <at> hotmail.com
+|-
+|Homepage: http://karlsson.sytes.net
+|}
+
+
+== Rejected recipes to be manually tested (eventually) ==
+
+* http://recipes.gobolinux.org/review/1238216463-334/dominique_juergensen/Wicd--1.5.9
+* http://recipes.gobolinux.org/review/1238122407-10180/fabio_mierlo/LaTeX2rtf--1.9.19
+* http://recipes.gobolinux.org/review/1237119215-26422/nick_matteo/DBus-Qt--0.9

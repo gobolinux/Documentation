@@ -1,0 +1,3 @@
+Back in the day, we decided that I would be user 00000001 and [[User:Detsch|André]]'s would be 00000010, but his original image of the system we built from scratch would be the only 001 version, and my tweaked copy of it would be 002.
+
+Hisham is from Brasil!

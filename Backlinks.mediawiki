@@ -1,0 +1,11 @@
+<div style='border: 1px solid black;'>
+
+This is a backlink page.  This page has no significant content of its own.  Instead, this page is important because of the pages that link to in.
+
+Please click on "What links here" in order to see a list of all the pages that are linked to this page.
+
+By default, all backlink pages are part of the Backlink category.
+
+</div>
+
+[[Category:Backlink]]

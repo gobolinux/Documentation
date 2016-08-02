@@ -1,0 +1,27 @@
+=Overview=
+Creates an account for a new user and register it on the system. This script adds an option to populate this user's home directory with a customized settings environment.
+
+==Usage==
+   '''AddUser''' [<options>] <login>
+
+===Options===
+* <tt>'''-h, --help'''</tt> - Show this help.
+* <tt>'''--version'''</tt> - Show program version.
+* <tt>'''-v, --verbose'''</tt> - Enable verbose mode.
+* <tt>'''-c, --comment''' ''<entry>''</tt> - Text to be stored in the comment field of the UNIX password file.
+* <tt>'''-f, --full-name''' ''<entry>''</tt> - User's full name.
+* <tt>'''-r, --room-number''' ''<entry>''</tt> - User's office number.
+* <tt>'''-w, --work-phone''' ''<entry>''</tt> - User's work phone.
+* <tt>'''-h, --home-phone''' ''<entry>''</tt> - User's home phone.
+* <tt>'''-o, --other''' ''<entry>''</tt> - User's home phone.
+* <tt>'''-s, --shell''' ''<entry>''</tt> - User's default shell. The default value is <tt>/bin/zsh</tt>.
+* <tt>'''-p, --password''' ''<entry>''</tt> - Encoded user's password.
+* <tt>'''-S, --skel'''</tt> - Populate home directory with customized settings.
+
+===Other considerations===
+User information such as full name and office number can be viewed with programs such as finger(1) and modified with chfn(1).
+
+==Examples==
+   AddUser -f 'Hisham Muhammad' hisham
+
+{{Scripts}}

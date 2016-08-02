@@ -1,0 +1,5 @@
+A directory containing service scripts which you can lauch with a \"start\" or \"stop\" parameters. These scripts are pretty standard (a number of apps even ship them), but the directory itself where they reside, as usual, vary from Unix to Unix and distro to distro.
+
+A few common locations are /etc/init.d, /sbin/init.d, /etc/rc/init.d...
+
+{{Reference}}

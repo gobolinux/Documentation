@@ -1,0 +1,16 @@
+A list of free Linux games which are available for GoboLinux. It is currently incomplete; please take the little time and update when you make a recipe available for example. 
+
+* [http://toppler.sourceforge.net/ Tower Toppler] recipe: towertoppler
+* [http://www.wesnoth.org/ Battle for Wesnoth] recipe: wesnoth
+* [http://olofson.net/kobodl/ KoboDeluxe] recipe: kobodeluxe
+* [http://icculus.org/neverball/ Neverball] recipe: neverball
+* [http://www.gltron.org/ GLTron] recipe: gltron
+* [http://www.openttd.com/ OpenTTD] recipe: openttd (needed data files can be downloaded on [http://www.abandonia.com/games/240/download/TransportTycoonDeluxeforWindows.htm Abandonia] )
+* [http://www.frozen-bubble.org/ Frozen Bubble] recipe: frozen-bubble
+* [http://www.freeciv.org/ FreeCIV] recipe: freeciv
+* [http://pentagram.sourceforge.net Pentagram] recipe: pentagram
+* [http://mednafen.sourceforge.net Mednafen] recipe: mednafen
+* [http://www.zsnes.com ZSnes] recipe: zsnes
+* [http://www.wormux.org Wormux] recipe: wormux
+
+[[Category:Community]]
