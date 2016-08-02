@@ -1,5 +1,0 @@
-{{Category Navigation}}
-
-This is the Maintenance category page.  Pages in the category are all related to the continual process of maintaining the Wiki.
-
-[[Category:Wiki Team]]

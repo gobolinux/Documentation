@@ -1,8 +1,0 @@
-<div {{#if:{{{1|{{{limit|}}}}}}|class="toclimit-{{{1|{{{limit|}}}}}}"}}>__TOC__</div><noinclude>
-==Usage==
-This template inserts a Table of Contents which omits subheadings lower than a certain level. The table obeys the same layout rules as the <nowiki>__TOC__</nowiki> magic word. You can specify the limit with the limit parameter; for instance, limit=3 allows ===subheadings=== but omits any subheadings below that from the TOC (they still have section edit links, however; the main use for this template is situations where you want section edit links for ease of editing but don't want to clutter the table of contents).
-
-<pre>{{toclimit|limit=}}</pre>
-
-[[Category: Table of Contents Templates]]
-</noinclude>

@@ -1,7 +1,0 @@
-<includeonly>
-|-
-|{{{1}}}
-| class="pri" | {{{2|&nbsp;}}}
-</includeonly><noinclude>
-This template is part of the backend for the [[Template:Todo|Todo]] system.  It's quite unlikely that you'd want to edit it.
-</noinclude>
