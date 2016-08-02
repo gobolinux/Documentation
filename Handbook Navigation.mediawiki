@@ -1,7 +1,5 @@
 {| style='border: 1px black solid; float:right; margin-left:10px; margin-bottom: 10px; padding: 5px;'
 |
-[[Main Page|Home]]
-----
 Concepts
 :[[The GoboLinux Way]]
 :[[The GoboLinux Filesystem Hierarchy|Filesystem hierarchy]]

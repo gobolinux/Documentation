@@ -18,10 +18,3 @@ Managing software
 Configuring
 :[[Configuring the Boot Process|The boot process]]
 :[[Hardware configuration|Hardware]]
-----
-Other topics
-:[[:Category:Howtos|Howtos]]
-:[[:Category:Reference|Reference]]
-|}
-
-<noinclude>Back to [[List of templates]]</noinclude>
