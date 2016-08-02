@@ -1,6 +1,6 @@
 {| style='border: 1px black solid; float:right; margin-left:10px; margin-bottom: 10px; padding: 5px;'
 |
-[[Main Page|Home]]
+[[Home|Home]]
 ----
 Concepts
 :[[The GoboLinux Way]]
@@ -18,3 +18,4 @@ Managing software
 Configuring
 :[[Configuring the Boot Process|The boot process]]
 :[[Hardware configuration|Hardware]]
+|}
