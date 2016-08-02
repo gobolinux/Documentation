@@ -1,1 +1,27 @@
-Handbook_Navigation.mediawiki
+{| style='border: 1px black solid; float:right; margin-left:10px; margin-bottom: 10px; padding: 5px;'
+|
+[[Main Page|Home]]
+----
+Concepts
+:[[The GoboLinux Way]]
+:[[The GoboLinux Filesystem Hierarchy|Filesystem hierarchy]]
+----
+Installing
+:[[Installing GoboLinux|GoboLinux]]
+:[[Rootless|Rootless]]
+----
+Managing software
+:[[Packages]]
+:[[Compiling From Source]]
+:[[Writing Recipes]]
+----
+Configuring
+:[[Configuring the Boot Process|The boot process]]
+:[[Hardware configuration|Hardware]]
+----
+Other topics
+:[[:Category:Howtos|Howtos]]
+:[[:Category:Reference|Reference]]
+|}
+
+<noinclude>Back to [[List of templates]]</noinclude>
