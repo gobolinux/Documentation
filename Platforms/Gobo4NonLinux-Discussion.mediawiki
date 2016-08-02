@@ -1,0 +1,41 @@
+Rather than dirty up the Ideas section with pros/cons, let's consider them here.
+----
+Ok, I just got an iBook "for" the wife.  I, of course, want it more unixy than macy.  Current plan:
+# Add enough packages from Fink to get Scripts and Compile working.
+# Start creating recipes.  Use the ported sources from Fink when needed.
+# Migrate the installed Fink packages to Gobo packages.
+
+Concerns:
+* Name collisions.  Will probably Prefix "Gobo" or use a /Gobo directory.  Ideas.
+* Lack of legacy symlinks.  This may cause problems.
+
+Carlo J. [[User:Calica|Calica]]
+----
+do you mean something like this project does http://www.colinux.org/ ?
+might be good solution to use gobo inside windows
+
+[[User:Starlord|StarLord]]
+----
+Somewhat, but that is more like UML where you have a virtual machine inside the host OS.  Mac OS X and Cygwin are much more parallel than inside.  Also, I'm talking iBook so I'm using Mac OS X rather than Windows.
+
+Carlo J. [[User:Calica|Calica]]
+----
+You could go all-the-way and make that LinuxPPC [[GoboLinux]] port that NarcolepticElectron mentioned on the list a while back!
+
+[[User:StuPenrose|StuPenrose]]
+
+----
+Nah.  I really want to give OS X a try.  I just want to use unix applications.  I'm thinking more along the lines of [[GoboPackages]] aka /Programs tarballs and recipes all managed by Scripts and Compile.
+
+Carlo J. [[User:Calica|Calica]]
+----
+Are there gonna be naming conflicts? IIRC there are no /Programs or /System directories, and those are the only ones you'll really need.
+
+-- [[User:Hisham|hisham]]
+----
+There ''is'' /System, but its only subdir is Library, so no problem
+
+-- [[User:Tonik|Tonik]]
+
+{{Discussions}}
+{{Platforms}}

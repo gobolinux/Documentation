@@ -1,0 +1,3 @@
+{{Category Navigation|About Gobo=([[Welcome to the GoboLinux Wiki!|Go]])}}
+
+[[Category:Approved Categories]]
