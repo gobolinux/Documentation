@@ -1,7 +1,0 @@
-Liber ''abaci'', published in 1202 after [[ Fibonacci of Pisa | Fibonacci's]] return to Italy, was dedicated to Scotus.<br>
-The book was based on the arithmetic and algebra that Fibonacci had accumulated during his travels.<br>
-The book, which went on to be widely copied and imitated, introduced the Hindu-Arabic place-valued decimal system and the use of Arabic numerals into Europe.<br>
-Indeed, although mainly a book about the use of Arab numerals, which became known as algorism, simultaneous linear equations are also studied in this work.<br>
-Certainly many of the problems that Fibonacci considers in Liber ''abaci'' were similar to those appearing in Arab sources.
-
-{{Reference}}
