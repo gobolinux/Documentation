@@ -6,11 +6,13 @@ http://www.gobolinux.org/?page=doc/articles/clueless
 
 A wiki may allow for some discussions or clarifications, so I (shevy) took the liberty of simply also making it available here.
 
+What Hisham wrote back then in 2004 I will copy 1:1 without modifications; I will however try to style it a bit, in order to make it easier to read - bear with me here please as this may take some weeks. :)
+
 ---
 
-I am not clueless
+# I am not clueless
 or
-Myths and misconceptions about the design of GoboLinux
+# Myths and misconceptions about the design of GoboLinux
 
 Hisham H. Muhammad
 
@@ -18,9 +20,9 @@ Hisham H. Muhammad
     are doomed to reinvent it, poorly.''
     - Henry Spencer, 1987
 
-This week we had another release of GoboLinux, and again a number of people, even if indirectly, called me ``clueless'' for coming up with such a structure for a Linux distribution, for a number of reasons. None of those reasons was new; I heard all of them many times. This article is an attempt to sum them up, and explain why I chose the design decisions I made, hopefully clearing any pending misconceptions. I don't have illusion this will prevent them keep happening, but at least I'll have a text to point people to. This article ranges from common misconceptions from those who have never used GoboLinux, to well-intentioned but poorly-thought-out ideas that keep coming from time to time to the GoboLinux mailing list, often causing long debates. I'll be separating the points in sections and they are meant to be self-contained, so feel free to skip directly to the ones that interest you, if you don't feel like reading the whole thing.
+This week we had another release of **GoboLinux**, and again a number of people, even if indirectly, called me ``**clueless**'' for coming up with such a structure for a Linux distribution, for a number of reasons. None of those reasons was new; I heard all of them many times. This article is an attempt to sum them up, and explain why I chose the design decisions I made, hopefully clearing any pending misconceptions. I don't have illusion this will prevent them keep happening, but at least I'll have a text to point people to. This article ranges from common misconceptions from those who have never used **GoboLinux**, to well-intentioned but poorly-thought-out ideas that keep coming from time to time to the **GoboLinux** mailing list, often causing long debates. I'll be separating the points in sections and they are meant to be self-contained, so feel free to skip directly to the ones that interest you, if you don't feel like reading the whole thing.
 
-``There is a reason why things are the way they are''
+> ``There is a reason why things are the way they are''
 
 This is something I hear constantly, often followed by an explanation about the difference between /, /usr and /usr/local, and/or /bin and /sbin. I do understand the difference1. If I did away with this three-level distinction, is because I believe there are other ways to approach the problems this distinction tries to solve. In a GoboLinux system, the argument for having separate /usr and /usr/local trees in order to separate programs shipped by the distribution and compiled by the user clearly does not hold. Each program is naturally separated, and this was the prime intention of creating GoboLinux in the first place.
 
@@ -32,7 +34,7 @@ There is one last argument, however, that is still valid for Linux systems to da
 
 Fortunately, like with the live CD, we have nowadays a technological advancement that serves as a real solution to the problem: union mounts, also known as overlay filesystems. The idea is that you can mount several partitions in the same directory. This way, the semantics of /Programs as ``the collection of all programs available in the system'' is retained, independently of the physical location of the actual data. File systems are all about abstraction (we don't refer to files based on their track, sector and cylinder address), this progresses a step further. Overlay filesystems are very flexible: the sysadmin, for example, can overlay site-specific settings for an application on top of the defaults exported over NFS. Unfortunately, it is not in widespread use, for reasons beyond my understanding. The Plan 9 operating system has it as one of its basic filesystem operations: the bind command (in Plan 9, for example, you don't need a $PATH variable, because all directories containing executables are ``bound'' in a single directory). There is an implementation of an overlay filesystem for Linux: ovlfs.
 
-The alleged user-friendliness of longer names
+### The alleged user-friendliness of longer names
 
 Many, many people, when they stumble upon GoboLinux, look at the long, descriptive directory names and say ``Look! They changed the Linux directory names by making them longer and descriptive to make the system friendly!''. There is some people who say this as if this were a good thing, and some people who say this as if this were a bad thing. Both are wrong.
 
@@ -46,13 +48,13 @@ The GoboLinux directories, too, have different semantics from the Unix directori
 
 For strict compatibility reasons, however, we have an extra set of symbolic links with the Unix names pointing to the closest GoboLinux equivalents (even making a few concessions in the GoboLinux side of the equation in order to preserve this compatibility). The fact that these are links, and we call them the legacy tree keeps this notion very clear. The work of Lucas Villa Real and Felipe Damasio on GoboHide, the kernel patch for true hidden directories on Linux, further isolates the legacy tree as an isolated accessory.
 
-Do you want to change the standard?
+### Do you want to change the standard?
 
 Of course not. For starters, we're not that naive to think that we could. But the actual reason why we don't want to change the standard is because we believe there should be no standard. I know this statement may sound even bolder than talking about changing a standard, but the reason I say that is because we believe it is the duty of each application to allow itself to be installed anywhere and to accept that other applications it needs to work with may be installed anywhere (more on this in the next section). Now, if there was a standard stating this, I'd even sign a petition to support it. In fact, there is: the GNU release standards, when they recommend the usage of GNU Autotools, supporting the -prefix family of switches, and probing for the location of applications with the configure script, do just that. But when a proposed standard like the FHS gives me an arbitrary list of binaries that should be, for unexplained reasons, in a separate directory, I laugh at that.
 
 Different situations imply different needs, and so-called standards that attempt to fit every feet in the same shoe are doomed to failure. Standardize on flexibility instead. That's not we don't propose the GoboLinux tree as a standard to be followed by anyone else. In five, ten or twenty years, we may have completely different needs from the ones we have today. I don't want that the move away from the GoboLinux tree then to be as hard as the move away from the traditional Unix tree is today. Which leads us naturally to our next section...
 
-An uphill battle to change all applications
+### An uphill battle to change all applications
 
 This is not as hard as it seems. Before the first version of GoboLinux was fully built, I had already worked on and improved this model for about a whole year. When André Detsch and I got around to build, in two days, a system from scratch built around those concepts, I already knew that this was perfectly feasible.
 
@@ -62,7 +64,7 @@ A more delicate problem arises when a program, even though it allows itself to b
 
 So, the battle GoboLinux is fighting with regard to installation paths is not specific to us; we are only exposing problems on the flexibility of installation of applications, that happen not only in our tree, but anywhere a user has a custom installation need. I see that the situation has improved greatly in the last few years, with more and more projects adopting GNU Autotools.
 
-``It's easier to compile all programs relative to the same tree''
+> ``It's easier to compile all programs relative to the same tree''
 
 Sure it is. This is a point that comes up from time to time on the GoboLinux mailing list, when people suggest us to either model /System/Links after a regular Unix tree, with subdirectories such as bin, lib, etc., or just compile everything relative to /usr and let the legacy tree ensure that everything keeps working. People who suggest this are also implicitly suggesting one of two things: to compile relative to a tree and then install relative to another; or to compile relative to a tree and then use a redirection hack on installation. I don't like any of the two approaches. In the first one, you are expecting a certain flexibility from the build system that is not always there, but unlike the points I raised on the previous section, it is not justifiable that this flexibility should be in the application's build system in the first place4. As for the second approach, I don't like the idea of an operating system built around a hack that can be at any moment circumvented by a new system call or some unorthodox access method. Some might say that GoboHide, for example, also falls in this ``low-level hack'' territory. I point out, then, that GoboHide is not mandatory: GoboLinux is designed to work with a vanilla Linux kernel5.
 
