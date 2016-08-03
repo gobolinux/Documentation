@@ -1,1 +1,3 @@
-Welcome to the Documentation wiki!
+Welcome to the Documentation wiki for the GoboLinux project!
+
+(We should add some links as starters here eventually - you can remove this entry here. Statement made by shevy.)
