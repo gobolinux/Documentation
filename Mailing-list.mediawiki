@@ -1,0 +1,6 @@
+We have the following mailing lists:
+
+* [http://lists.gobolinux.org/mailman/listinfo/gobolinux-users GoboLinux-Users]: users mailing list, in English
+* [http://lists.gobolinux.org/mailman/listinfo/gobolinux-devel GoboLinux-Devel]: developers corner
+
+{{Community}}
