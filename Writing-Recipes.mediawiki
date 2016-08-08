@@ -8,7 +8,7 @@ In any case, once the recipe is done and compiled, a packed version of it will s
 We only need to do one thing here, add your name to Compile.conf (for credits on Recipes you may make).
 Open Compile.conf in a '''text editor'''. In this example, we'll use nano (use whichever is your favorite):
 
-  <code>nano '''/System/Settings/Compile/Compile.conf'''</code>
+  nano /System/Settings/Compile/Compile.conf
 
 On the 2nd line of text, there should be a line for the setting "compileRecipeAuthor".  Uncomment it (remove the leading #), and enter your name between the double quotes.
 
@@ -22,12 +22,12 @@ Then save the file and exit nano (Control+O, Enter, Control+X).
 When a recipe for an older version of a given package already exists, it's not needed to run [[MakeRecipe]] again. [[NewVersion]] is a script which takes a package name and version as parameters and creates a new one based on the previous' contents.
 
 The following examples show its usage:
- $ [[NewVersion]] GCC 4.4.4
+ $ NewVersion GCC 4.4.4
 
 This command will fetch the latest GCC recipe, create a new subdir called "4.4.4" inside /Files/Compile/LocalRecipes/GCC and will replace the package version in "$url" by 4.4.4.
 
 On the other hand, users may also tell the full URL for the package sources, just in case the replace isn't executed properly, or if the URL has changed in the server:
- $ [[NewVersion]] GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
+ $ NewVersion GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
 
 If the version of the package has not changed, and only minor recipe updates are needed, [[NewVersion]] will not work as it will not copy the same version of a recipe over.  In this case, [[EditRecipe]] is the tool to use. 
 
