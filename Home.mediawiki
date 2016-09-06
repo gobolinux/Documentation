@@ -10,6 +10,8 @@
 ** [[Compile | The Compile tool]]
 ** [[Writing Recipes]]
 *** [[Recipe format specification]]
+*** [[Use flags]]
+*** [[Use flags specification]]
 * [[System management]]
 ** [[Keeping the system up-to-date]]
 *** [[System maintenance scripts]]
