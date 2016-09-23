@@ -42,10 +42,7 @@ Glibc
 Nvidia
 </pre>
 
-Note: presently blacklisting specific versions is not supported, but the same behaviour can be achieved by creating an empty directory in the <tt>/Programs</tt> directory.  For example, to blacklist GCC version 4.1.2 you might:
-
-<code>
-mkdir -p ${goboPrefix}/Programs/GCC/4.1.2
-</code>
-
-{{Scripts}}
+Note: presently blacklisting specific versions is not supported, but the same behaviour can be achieved by creating an empty directory in the <tt>/Programs</tt> directory.  For example, to blacklist GCC version 4.1.2 you may:
+<pre>
+mkdir /Programs/GCC/4.1.2
+</pre>
