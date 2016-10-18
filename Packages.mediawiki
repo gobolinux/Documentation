@@ -5,7 +5,7 @@ All installed packages live under /Programs.  A package is essentially a tarball
 for a typical program installation (e.g. bin, lib, sbin, etc); as such it is similar to a .tgz Slackware package ("slackage"),
 but meant to be unpacked in its own dedicated directory, not mixed into the rest of the system's software.
 
-[[GoboLinux]] features both binary packages and compilation from source. Binary packages are compiled, so that you can install them quickly, without having to compile them yourself (a process which, for some packages, can take up to several hours). On the other hand, with binary packages you can't use your favorite optimization flags or generate code specific to your architecture (after all, the packaged programs are already compiled, in a generic way).  [[Compiling from source]], using rule sets that in [[GoboLinux]] lingo are called [[Recipes]], gives you this freedom, but you have to compile it yourself -- for instance, you need to have compilation tools installed.
+[[GoboLinux]] features support for both binary packages and compilation from source. Binary packages are compiled, so that you can install them quickly, without having to compile them yourself (a process which, for some packages, can take up to several hours). On the other hand, with binary packages you can't use your favorite optimization flags or generate code specific to your architecture (after all, the packaged programs are already compiled, in a generic way).  [[Compiling from source]], using rule sets that in [[GoboLinux]] lingo are called [[Recipes]], gives you this freedom, but you have to compile it yourself -- for instance, you need to have compilation tools installed.
 
 So, in a few words, binary packages are nice because you don't have to compile them, while source recipes are nice because you get to compile them.
 
@@ -126,7 +126,5 @@ Once you have a package properly compiled and installed (as explained in the pre
 
 This will create a binary package in the current working directory.
 
-Please be careful with the contents of the Settings directory when creating a binary package, so that it does not include personal information. A package submitted for inclusion in the packages directory at http://www.gobolinux.org must feature sensible default settings, preferably the defaults as specified by the application right after its compilation.
-
-{{question | I've created a package, how do I share it back to the community ? }}
-{{Scripts}}
+Please be careful with the contents of the Settings directory when creating a binary package, so that it does not include personal information. 
+{{A package submitted for inclusion in the packages directory at http://www.gobolinux.org must feature sensible default settings, preferably the defaults as specified by the application right after its compilation.}}
