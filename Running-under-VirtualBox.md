@@ -54,3 +54,5 @@ xrandr --output VGA-0 --preferred
 ```
 
 This will resize the desktop to match your window size.
+
+Note that this installation of the VirtualBox guest additions will only last for the current Live-CD session. If you install GoboLinux into a VirtualBox virtual hard drive, you will have to do the same again.
