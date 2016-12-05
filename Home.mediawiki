@@ -1,6 +1,8 @@
 <div style="float:right; border: 1px solid #6eb927; padding: .3em; width: 30%; background-color:#ecf2e6; margin-top: 0; margin-left: 10px; margin-bottom: 10px;">
 * [[The GoboLinux Way]]
 ** [[The GoboLinux Filesystem Hierarchy]]
+* [[GoboLinux 016]]
+** [[Running under VirtualBox]]
 * [[Configuring GoboLinux]]
 ** [[Configuring the Boot Process]]
 ** [[Hardware configuration]]
