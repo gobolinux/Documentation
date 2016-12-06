@@ -2,97 +2,127 @@ Use Flags are a way to affect the compilation of a [[Recipe]] based on the Progr
 
 Also see [[Available use flags]].
 
-== Use Flags Names ==
+## Use Flags Names
+
 Flags are lower-case alphanumeric plus underscore, and should be named
 after what they do - the other program, tool, hardware, or
 functionality they enable, with any other characters stripped out if
-necessary. Example names would be "python", "ipw2200", "gtk".
+necessary. Example names would be `python`, `ipw2200`, `gtk`.
 
-== Enabling Use Flags ==
+## Enabling Use Flags
+
 Flags are enabled in three ways. The first is through the global
 default flag set, in
-/Programs/Scripts/Current/Data/SystemUseFlags.conf. At the moment,
+`/Programs/Scripts/Current/Data/SystemUseFlags.conf`. At the moment,
 this set is empty, but it will probably end up populated based on what
 is used for packages and the ISO. The second is the local flags, set
-in /System/Settings/UseFlags.conf. Finally, the USE environment
+in `/System/Settings/UseFlags.conf`. Finally, the `USE` environment
 variable is read for flag specifications. It is intended that this be
 used for single Compile runs, such as for testing recipes, and not to
 set flags for your system (use UseFlags.conf for that). Later flag
 specifications overwrite earlier ones, both in the order listed above
 and within the files.
 
-A flag specification has the format (-|+)<flag>[ program1[ program2
-...]]. + enables the flag, - disables it, and providing a
+A flag specification has the format `(-|+)<flag>[ program1[ program2
+...]]`. `+` enables the flag, `-` disables it, and providing a
 space-separated list of programs after the flag makes that
 specification apply only to those programs. Only one flag
 specification should be included on each line, and everything after a #
 is ignored as a comment. An example file for clarity:
+
+```
  +foo # Enable foo globally. This text is ignored.
  -bar
  +bar FooBar
+```
+
 This enables the foo flag globally and disables bar, but then enables
-the bar flag for only the program "FooBar". If the last two lines were
+the bar flag for only the program `FooBar`. If the last two lines were
 the other way around, bar would be globally disabled again. A special
 specification is -*. This disables all flags, and is probably most
 useful in the environment variable.
 
 The environment variable takes a space-separated list of flag
 specifications (rather than newline), so it accepts a special syntax
-for the specifications, with '@' instead of a space when listing
+for the specifications, with `@` instead of a space when listing
 programs to go with a flag. It takes the ugly syntax because it's
 likely to be by far the least common way of using it. The same set of
 flags from above could be applied with:
- USE="+foo -bar +bar@FooBar"
 
-== Use Flags in Recipes ==
+```
+ USE="+foo -bar +bar@FooBar"
+```
+
+## Use Flags in Recipes
 
 Flags should be listed in the Dependencies or BuildDependencies file
 in the same manner as the existing cross/!cross flag:
- FooBar >= 1.2 [foo,bar]
+
+```
+FooBar >= 1.2 [foo,bar]
+```
+
 Flags are separated by commas, and treated as a disjunction - the
 dependency will be enabled if and only if at least one of the listed
-flags is enabled. If the cross/!cross flag is specified, it must be
+flags is enabled. If the `cross`/`!cross` flag is specified, it must be
 the first flag listed (technical limitation; may be lifted in time).
 
 If a flag has no associated dependency, first consider whether it is
 necessary at all, or whether support should just be enabled by
 default. If the flag is necessary, it should be listed at the end of
 the Dependencies file as an entry without a corresponding dependency:
- FooBar >= 1.2 [foo,bar]
- [baz,quux]
+
+```
+FooBar >= 1.2 [foo,bar]
+[baz,quux]
+```
+
 Dependency-free flags may be necessary when associated with hardware,
 or when there is some lengthy compilation, large filesize, or mutual
 incompatibility associated with them.
 
-Within a Recipe file, the with_<flag> variable may be set for the
+Within a Recipe file, the `with_<flag>` variable may be set for the
 common case of adding a configure option:
- with_gtk="--with-gtk=$gtk__path"
+
+```
+with_gtk="--with-gtk=$gtk__path"
+```
 
 Or to add multiple configure options:
- with_gtk=(
+```
+with_gtk=(
     "--with-gtk=$gtk_path"
     "--with-foo=$foo_path"
     "--with-bar=$bar_path"
  )
+```
 
 This will add the value of the variables to the most common
 configuration array for the recipe type. For configure, this is
 configure_options; python, python_options; makefile, build_variables;
 scons, scons_variables; cmake, cmake_options; cabal, cabal_options. In
 the case where more complicated changes are needed to enable support,
-there is a function using_<flag>() available:
- using_gtk() {
-    configure_options=( "${configure_options[@]}" "--with-gtk=$gtk__path" )
- }
+there is a function `using_<flag>()` available:
+
+```
+using_gtk() {
+   configure_options=( "${configure_options[@]}" "--with-gtk=$gtk__path" )
+}
+```
+
 This example does the same thing as the with_gtk one above, but the
 function can alter other variables as well. It should not alter code,
 execute scripts, move files, or apply patches; that is what the flag
-hook functions are for. Each of the existing hook functions (pre_link,
-pre_patch, pre_build, pre_install, post_install) has a corresponding
-using_<flag>_<hook() function:
- using_gtk_pre_build() {
-    rm -rf *
- }
+hook functions are for. Each of the existing hook functions (`pre_link`,
+`pre_patch`, `pre_build`, `pre_install`, `post_install`) has a corresponding
+`using_<flag>_<hook()` function:
+
+```
+using_gtk_pre_build() {
+   rm -rf *
+}
+```
+
 These are run through Run_Hook and so are sudoed the same as the bare
 hooks (for the moment). This may cause problems if you create files or
 directories from the hook, so keep it in mind (it applies to all hook
@@ -118,18 +148,18 @@ complicated recipes, but in most cases they should be concise and
 simple.
 
 In all cases, only the variables and functions for flags that are both
-enabled and listed in the (Build)?Dependencies file will be applied,
+enabled and listed in the `(Build)?Dependencies` file will be applied,
 and others have no effect even if the flag is enabled. This avoids
 looping through many inapplicable flags several times during the
 Compile process.
 
 The flags enabled for a given compilation are saved into
-Resources/UseFlags in the installed program directory. This enables
+`Resources/UseFlags` in the installed program directory. This enables
 tools such as Freshen to display which flags have changed state since
 the last installation of a given program, or find programs that could
 benefit from recompilation.
 
-== Use Flags in Tools Development ==
+## Use Flags in Tools Development
 
 Flags are accessed from the shell through the UseFlags script, which
 takes either a program name or a recipe directory as its first
@@ -158,5 +188,4 @@ be enabled for that recipe. Freshen uses that to provide output on
 which flags could be enabled, modeled after emerge, only without the
 ugliness. The other methods should be treated as private.
 
-See the [http://thread.gmane.org/gmane.linux.distributions.gobo.devel/2593 mailing list thread.]
-{{Compile}}
+See the [mailing list thread](http://thread.gmane.org/gmane.linux.distributions.gobo.devel/2593).
