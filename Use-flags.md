@@ -110,12 +110,12 @@ using_gtk() {
 }
 ```
 
-This example does the same thing as the with_gtk one above, but the
+This example does the same thing as the `with_gtk` one above, but the
 function can alter other variables as well. It should not alter code,
 execute scripts, move files, or apply patches; that is what the flag
 hook functions are for. Each of the existing hook functions (`pre_link`,
 `pre_patch`, `pre_build`, `pre_install`, `post_install`) has a corresponding
-`using_<flag>_<hook()` function:
+`using_<flag>_<hook>()` function:
 
 ```
 using_gtk_pre_build() {
@@ -133,7 +133,7 @@ currently-executing hook, so it should be safe.
 
 In most cases, dependencies are autodetected by configure correctly
 and no change to the Recipe file will be necessary. In that case, the
-with_<flag> variables should *not* be used only to convey redundant
+`with_<flag>` variables should *not* be used only to convey redundant
 information, and the flag should just be listed appropriately in
 Dependencies. Note that this means that unlike Gentoo's, our flags are
 not exclusive: their support may be compiled in even if the flag is
