@@ -3,6 +3,7 @@
 ** [[The GoboLinux Filesystem Hierarchy]]
 * [[GoboLinux 016]]
 ** [[Running under VirtualBox]]
+** [[Installing to external storage devices]]
 ** [[Filesystem virtualization with Runner]]
 * [[Configuring GoboLinux]]
 ** [[Configuring the Boot Process]]
