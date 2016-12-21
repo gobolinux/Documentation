@@ -34,7 +34,13 @@ GCC < 4.0.0 | >= 4.1.0, != 4.1.2 | ICC > 2.0.0
 </pre>
 means a GCC version less than 4.0.0 or a GCC version greater than 4.1.0 but not equal to 4.1.2 or an ICC version greater than 2.0.0.  See the code for [[CheckDependencies]] for the exact algorithm.
 
-See [[Dependencies]] and [[Use Flags]].
+Dependencies to language-specific package managers can be fulfilled using the [[Aliens]] subsystem, using the syntax <tt>AlienType:alien_package</tt>, as in the examples above.
+
+Note that there are limitations in version handling for Aliens, as it depends on the Alien provider and the package manager itself:
+
+* CPAN dependencies ignore version information ([http://stackoverflow.com/questions/260593/how-can-i-install-a-specific-version-of-a-set-of-perl-modules CPAN only installs the latest version])
+
+For more info, see [[Dependencies]] and [[Use Flags]].
 
 ==== Description ====
 This file contains information of interest to humans regarding the program.  A typical example is
