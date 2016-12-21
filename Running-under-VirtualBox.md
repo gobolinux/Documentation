@@ -2,7 +2,7 @@ When running the GoboLinux 016 live ISO through VirtualBox, you will notice that
 
 ### The quick solution: Setting up VESA mode
 
-Generate a configuration template with
+Generate a **configuration template** with
 
 ```
 X -configure
