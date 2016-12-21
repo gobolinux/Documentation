@@ -21,6 +21,8 @@ Glibc 2.5
 Lame >= 3.96.1 [lame]
 Mesa 6.5.2
 Qt >= 3.3.8, < 4.0 [qt]
+LuaRocks:luafilesystem
+CPAN:XML::Parser
 Xorg 7.2
 ZLib 1.2.3
 </pre>
