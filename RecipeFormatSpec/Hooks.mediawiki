@@ -47,9 +47,6 @@ Note: pre_patch will not be called if there are no patches.
 * symlink
 * '''post_install()'''
 
-==== perl: ====
-* same as '''makefile'''
-
 ==== python: ====
 * '''pre_patch()'''
 * patch, if any

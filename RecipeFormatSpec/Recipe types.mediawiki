@@ -57,25 +57,6 @@ Variables to be defined in the environment during the execution of ''cmake''.
 '''recipe_type=makefile''' is used for Programs based on Makefiles.
 No options are relevant only for ''makefile''.
 
-=== perl ===
-'''recipe_type=perl''' is used for Programs based on Makefile.PL.
-Some options are only relevant for ''perl'':
-
-==== perl_options=(<array of options>) ====
-Flags to be passed to "perl Makefile.PL".
-These flags are passed in addition to default flags (such as prefix).
-
-==== without=(<array of submodules>) ====
-Some Perl modules assume the presence of other modules,
-but may be compiled without them. Use this array if you
-want to disable those extra dependencies.
-
-Example:
- without=(
-    "xml"
-    "nuclear_reactor"
- )
-
 === python ===
 '''recipe_type=python''' is used for Programs based on Python Distutils.
 Some options are only relevant for ''python'':

@@ -95,7 +95,7 @@ Example:
    )
 
 ==== create_dirs_first=yes ====
-''Valid modes: configure, makefile, perl''
+''Valid modes: configure, makefile''
 
 By default, Compile only generates directories in the target location
 right before the installation step. This is useful for the --no-install
@@ -289,7 +289,6 @@ See [[Use flags]].
 These options are included for compatibility with old recipes.  They should not be used.
 *  '''is_compileprogram=yes''' is equivalent to '''recipe_type=configure'''
 *  '''is_makefile=yes''' is equivalent to '''recipe_type=makefile'''
-*  '''is_perl=yes''' is equivalent to '''recipe_type=perl'''
 *  '''is_python=yes''' is equivalent to '''recipe_type=python'''
 *  '''is_xmkmf=yes''' is equivalent to ''' recipe_type=xmkmf'''
 *  '''is_scons=yes''' is equivalent to '''recipe_type=scons'''

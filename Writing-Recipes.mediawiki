@@ -224,12 +224,6 @@ Like with '''configure''' and '''autogen''', if the makefile uses a different na
 makefile=GNUmakefile
 </pre>
 
-==== perl recipes ====
-
-This recipe type is for Perl modules. By convention, recipes and packages for Perl modules should have "Perl-" prepended to their names. A "perl" recipe is essentially a "makefile" recipe that runs "perl Makefile.PL" as a first step.
-
-You can pass Makefile.PL options using the '''perl_options''' array, very much like '''configure_options''' and '''make_variables'''.
-
 ==== python recipes ====
 
 The "python" recipe type is used for programs using Python Distutils as a build system. Since it is so recent, there is a number of minor variations floating around (some packages use setup.py, others use build.py, etc.) -- "python" tries to detect these variations where possible, but ultimately there are flags to specify special cases explicitly.
