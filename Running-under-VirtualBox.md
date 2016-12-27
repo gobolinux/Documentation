@@ -2,23 +2,19 @@ When running the GoboLinux 016 live ISO through VirtualBox, you will notice that
 
 ### The quick solution: Setting up VESA mode
 
-Generate a **configuration template** with
+Run the following command:
 
 ```
-X -configure
+SymlinkProgram xorg-server
 ```
 
-This will generate a file called `xorg.conf.new`.
-
-Edit this file (using `dit` or `vim`) and replace `"fbdev"` with `"vesa"`.
-
-Start Xorg with:
+This will activate in /System/Settings/X11 a fallback version of xorg.conf, preconfigured to use the `vesa` driver. Then you'll be able to start X normally with:
 
 ```
-startx -- -config xorg.conf.new
+startx
 ```
 
-To make this permanent in an installed system, rename `xorg.conf.new` to `xorg.conf` and move it to `/Programs/Xorg-Server/Settings/X11`, then run `sudo SymlinkProgram xorg-server`.
+Once you install the system to a VirtualBox disk image, you will have to do the same procedure.
 
 ### The nice solution: Setting up VirtualBox guest additions
 
