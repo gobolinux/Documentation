@@ -1,5 +1,3 @@
-{{Handbook Navigation}}
-
 By default, the [[GoboLinux]] boot scripts are configured to initialize and configure a relatively small number of daemons and settings that are common among most users. This page explains how to compel [[GoboLinux]] to do what you want when it goes up or down.
 
 == Boot-time options ==
@@ -100,65 +98,41 @@ UserDefinedModules=(
 
 === Network configuration ===
 
-Through the NetworkOptions file, the user may specify the settings for each available network interface. The most common one is the loopback interface (lo), which is specified by default as follows:
+==== Wi-Fi ====
+
+If you are using Wi-Fi, just select your network using the [http://github.com/gobolinux/GoboNet GoboNet] widget in the AwesomeWM system tray:
+
+https://gobolinux.org/images/gobo016gobonet.png
+
+==== Wired network ====
+
+If you have a wired network, initialize it on boot using standard Linux commands in your bootscripts sequence.
+
+First, check which are your network interfaces typing
 
 <pre>
-lo_IP=127.0.0.1
-lo_Netmask=255.0.0.0
+ifconfig
 </pre>
 
-Notice that each entry starts with the name of the interface (lo) followed by an '_' and 
-the name of the property being set. The properties available for each interface are:
-* IP: if defined, sets a static IP address to be used at this interface;
-* Netmask: The network mask to be used;
-* Broadcast: The broadcast address of the subnet (optional);
-* BootProto: Specifies a boot protocol to be used at the interface initialization. 
-By now, it only makes sense to set 'dhcp' or keep the property value unset (empty).
+You should have a network interface named something like `eth0` or `enp0s3`.
 
-Let's suppose a system that has two ethernet interfaces, eth0 and eth1, the 
-first one being configured through dhcp and the second one, using a static configuration. 
-So, eth0 would be configured setting
+Edit the /System/Settings/BootScripts/BootUp script. If you are using DHCP, just add this:
+
 <pre>
-eth0_BootProto=DHCP
+dhcpcd eth0 &
 </pre>
 
-And eth1, would be adjusted using something like
+If you have a static network configuration, add these two commands, adjusting them to your network setup:
+
 <pre>
-eth1_IP=192.168.2.13
-eth1_Netmask=255.255.255.0
-eth1_Broadcast=192.168.2.255
+ifconfig <b>eth0</b> <b>192.168.1.5</b> netmask <b>255.255.255.0</b>
+route add default gateway <b>192.168.1.1</b> metric 1 dev <b>eth0</b>
 </pre>
 
-In any time, you may make an interface up running 'StartTask Network <interface_name>'. For example
-<pre>
-StartTask Network eth0
-</pre>
-
-'StopTask Network <interface_name>' turns the interface down.
-
-
-In most of the systems some, if not all, interfaces are supposed to become up at boot time. 
-The NetworkInterfacesOnBoot variable contains all the network interfaces that must be 
-started during the boot process. For example:
-<pre>
-NetworkInterfacesOnBoot=(
-"lo"
-"eth0"
-"eth1"
-)
-</pre>
-
-Additionally, you may want to specify a gateway for the outgoing communications. 
-This is done by setting the Gateway and GatewayInterface variables, like the following lines:
-<pre>
-Gateway=192.168.2.1
-GatewayInterface=eth1
-</pre>
-
-'''Important'''
 The specification of the DNS servers (if specified manually) is done in the same place as the 
 traditional Unix systems, at /etc/resolv.conf (or /System/Settings/resolv.conf). 
 An example of resolv.conf file is:
+
 <pre>
 nameserver 200.176.2.10
 nameserver 200.199.252.68
