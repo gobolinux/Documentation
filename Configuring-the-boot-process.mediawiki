@@ -125,8 +125,8 @@ dhcpcd eth0 &
 If you have a static network configuration, add these two commands, adjusting them to your network setup:
 
 <pre>
-ifconfig <b>eth0</b> <b>192.168.1.5</b> netmask <b>255.255.255.0</b>
-route add default gateway <b>192.168.1.1</b> metric 1 dev <b>eth0</b>
+ifconfig eth0 192.168.1.5 netmask 255.255.255.0
+route add default gateway 192.168.1.1 metric 1 dev eth0
 </pre>
 
 The specification of the DNS servers (if specified manually) is done in the same place as the 
