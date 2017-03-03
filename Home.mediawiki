@@ -3,6 +3,7 @@
 ** [[The GoboLinux Filesystem Hierarchy]]
 * [[GoboLinux 016]]
 ** [[Running under VirtualBox]]
+** [[Running under VMWare Workstation Player]]
 ** [[Installing to external storage devices]]
 ** [[Filesystem virtualization with Runner]]
 ** [[Installing Dconf]]
