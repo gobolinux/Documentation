@@ -1,0 +1,19 @@
+{{ToC}}
+
+Use the UpdateRecipes command to refresh your local cache of the [[GoboLinux]] recipe store.
+
+[[Freshen]] is a console application that checks for updated [[GoboLinux]] recipes and packages, with an output similar to "emerge" in Gentoo.
+
+You can query available updates using the utilities [[SuggestUpdates]], [[SuggestDuplicates]] and [[PrioritiseUpdates]]. Outputs are suitable for piping into commands.
+
+For the curious (or tweakers), it's interesting to note that most of the programs mentioned above make use of some general helper scripts such as [[FindPackage]] and [[GetAvailable]].
+
+[[The Manager tool | Manager]] (not supported for Gobo 016) is a graphical application that not only informs you of new versions of programs, but also provides a GUI for most of the system management scripts, including [[Compile]]. It is based on the Qt toolkit.
+
+
+===  Subtopics: ===
+# [[System maintenance scripts]]
+# [[The Manager tool]]
+# [[Freshen | The Freshen tool]]
+
+{{Handbook}}
