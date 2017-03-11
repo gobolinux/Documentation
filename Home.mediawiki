@@ -31,6 +31,7 @@
 *** [[Implementing a boot theme]]
 *** [[Testing a boot theme]]
 * [[GoboLinux scripts]]
+** [[Index of scripts|GoboLinux Command Reference]]
 ** [[General notes about the scripts]]
 ** [[Guidelines for script authors]]
 * [[Linux kernel topics]]
