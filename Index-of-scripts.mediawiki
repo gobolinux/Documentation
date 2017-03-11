@@ -17,9 +17,10 @@
 === Administration ===
 * [[SymlinkProgram]] - Link a program from the /Programs hierarchy in the /System tree.
 * [[DisableProgram]] - Unlink a program from the /System/Links hierarchy.
-* [[RemoveProgram]] - Removes a program version from the system.
+* [[RemoveProgram]] - Remove a program version from the system.
 * [[DetachProgram]] - Move a program from /Programs to a different location.
 * [[RebuildLinks]] - Rebuild /System/Links directories.
+* [[RemoveBroken]] - Remove broken links.
 
 ===  Creating recipes and packages ===
 
@@ -50,7 +51,6 @@
 
 ==  System maintenance ==
 
-* [[RemoveBroken]] - Removes broken links.
 * [[AddUser]] - Register a new user in this system.
 * [[EditScript]] - Create or edit a [[GoboLinux]] script.
 * [[SystemFind]] - Special 'find' utility for searches in the /System hierarchy.
