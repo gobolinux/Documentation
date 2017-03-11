@@ -3,15 +3,15 @@
 
 === Finding ===
 * [[UpdateRecipes]] - Update local copy of recipe store
-* [[GetAvailable]]   - Search for [[GoboLinux]] recipes and binary (precompiled) packages
+* [[GetAvailable]]   - Search for [[GoboLinux]] recipes and precompiled packages
 * [[FindPackage]] - Search for packages and recipes, locally or remotely.
 * [[Dependencies]] - Queries dependencies in a [[GoboLinux]] package.
 * [[AllDependencies]] - Show the entire dependency hierarchy for a package.
 
 === Installing ===
-* [[InstallPackage]] - Install precompiled [[GoboLinux]] packages.
 * [[Compile]] - Compile and install software from sources using [[GoboLinux]] recipe.
-* [[FetchArchive]] - Download sources for a recipe, but don't compile.
+* [[FetchArchive]] - Download the sources for a recipe, but don't compile.
+* [[InstallPackage]] - Install precompiled [[GoboLinux]] packages.
 * [[Freshen]] - Check and upgrade [[GoboLinux]] packages/recipes
 
 === Administration ===
