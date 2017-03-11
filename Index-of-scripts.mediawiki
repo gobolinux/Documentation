@@ -5,14 +5,17 @@
 * [[UpdateRecipes]] - Update local copy of recipe store
 * [[GetAvailable]]   - Search for [[GoboLinux]] recipes and precompiled packages
 * [[FindPackage]] - Search for packages and recipes, locally or remotely.
-* [[Dependencies]] - Queries dependencies in a [[GoboLinux]] package.
+* [[SuggestUpdates]] - List packages with an update available.
+* [[SuggestDuplicates]] - Provide a list of programs that are not linked to Current
+* [[PrioritiseUpdates]] - Order output of [[SuggestUpdates]] by dependency
+* [[Dependencies]] - Queries dependencies in a GoboLinux package.
 * [[AllDependencies]] - Show the entire dependency hierarchy for a package.
 
 === Installing ===
-* [[Compile]] - Compile and install software from sources using [[GoboLinux]] recipe.
-* [[FetchArchive]] - Download the sources for a recipe, but don't compile.
-* [[InstallPackage]] - Install precompiled [[GoboLinux]] packages.
-* [[Freshen]] - Check and upgrade [[GoboLinux]] packages/recipes
+* [[Compile]] - Compile and install software from sources using GoboLinux recipe.
+* [[InstallPackage]] - Install precompiled GoboLinux packages.
+* [[FetchArchive]] - Download the sources for a recipe, but don't compile them.
+* [[Freshen]] - Many options to check for availability and upgrade GoboLinux packages
 
 === Administration ===
 * [[SymlinkProgram]] - Link a program from the /Programs hierarchy in the /System tree.
