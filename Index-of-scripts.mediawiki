@@ -1,42 +1,33 @@
-==  Package creation ==
 
-* [[Compile]] - Automated program compilation tool.
-* [[MakeRecipe]] - Create a recipe template.
-* [[EditRecipe]] - Edit a recipe.
-* [[PackRecipe]] (formerly [[GenRecipeStore]]) - Generate "packed recipes", ready for submission.
-* [[CreatePackage]] - Make a [[GoboLinux]] package.
-* [[GetRecipe]] - Fetch a recipe and insert it in the recipes tree.
-* [[FetchArchive]] - Given a recipe, download the files required to compile it.
-* [[NewVersion]] - Update a recipe to a new version.
-* [[PrepareProgram]] - Prepares applications for instalation, running the 'configure'
-* [[SymlinkProgram]] - Link a program from the /Programs hierarchy in the /System tree.
-* [[UpdateRecipes]] - Update local recipe list from recipe stores.
+==  Package management ==
+
+=== Finding ===
+* [[UpdateRecipes]] - Update local copy of recipe store
+* [[GetAvailable]]   - Search for [[GoboLinux]] recipes and binary (precompiled) packages
+* [[FindPackage]] - Search for packages and recipes, locally or remotely.
+* [[Dependencies]] - Queries dependencies in a [[GoboLinux]] package.
+* [[AllDependencies]] - Show the entire dependency hierarchy for a package.
+
+=== Installing ===
+* [[InstallPackage]] - Install precompiled [[GoboLinux]] packages.
+* [[Compile]] - Compile and install software from sources using [[GoboLinux]] recipe.
+* [[FetchArchive]] - Download sources for a recipe, but don't compile.
+* [[Freshen]] - Check and upgrade [[GoboLinux]] packages/recipes
+
+=== Administration ===
+* [[DisableProgram]] - Unlink a program from the /System/Links hierarchy.
+* [[RemoveProgram]] - Removes a program version from the system.
+* [[DetachProgram]] - Move a program from /Programs to a different location.
+* [[RebuildLinks]] - Rebuild /System/Links directories.
 
 ===  Helper tools ===
 
 * [[DeduceName]] - Scan a file to find the capitalization of a program name.
 * [[FiboSandbox]] - Run the program in a protected sandbox, as a restricted user.
-* [[FindPackage]] - Search packages and recipes, locally or remotely.
 * [[FixInfo]] - Remakes the entries in the info 'dir' file.
 * [[FixLibtoolLa]] - Convert a .la file created by libtool to make it [[GoboLinux]]-compliant.
 * [[NamingConventions]] - Heuristics to determine a capitalized, [[GoboLinux]]-like name.
 * [[SandboxInstall]] - Runs 'make install', using a sandbox environment.
-
-==  Package management ==
-
-* [[Freshen]] - Checks for updated [[GoboLinux]] packages/recipes.
-* [[CreatePackage]] - Make a [[GoboLinux]] package.
-* [[InstallPackage]] - Install [[GoboLinux]] packages.
-* [[DisableProgram]] - Unlink a program from the /System/Links hierarchy.
-* [[RemoveProgram]] - Removes a program version from the system.
-* [[DetachProgram]] - Move a program from /Programs to a different location.
-* [[Dependencies]] - Queries dependencies in a [[GoboLinux]] package.
-* [[AllDependencies]] - Show the entire dependency hierarchy for a package.
-* [[MergeTree]] - Mirrors one directory structure into another.
-* [[RebuildLinks]] - Rebuild /System/Links directories.
-* [[KeyManager]] - Manage digital signature keys for [[GoboLinux]] packages.
-* [[Hashes]] - Manages [[FileHash]] and [[FileHash.sig]] in a [[GoboLinux]] package.
-* [[GetAvailable]] - lets you search package and recipe store for available packages/recipes.
 
 ==  Kernel management ==
 
@@ -50,6 +41,21 @@
 * [[EditScript]] - Create or edit a [[GoboLinux]] script.
 * [[SystemFind]] - Special 'find' utility for searches in the /System hierarchy.
 * [[SystemInfo]] - Display some basic system information. Useful for /etc/issue.
+
+==  Package creation ==
+
+* [[GetRecipe]] - Fetch a recipe and insert it in the recipes tree.
+* [[MakeRecipe]] - Create a recipe template.
+* [[EditRecipe]] - Edit a recipe.
+* [[PackRecipe]] (formerly [[GenRecipeStore]]) - Generate "packed recipes", ready for submission.
+* [[CreatePackage]] - Make a [[GoboLinux]] package.
+* [[NewVersion]] - Update a recipe to a new version.
+* [[PrepareProgram]] - Prepares applications for instalation, running the 'configure'
+* [[SymlinkProgram]] - Link a program from the /Programs hierarchy in the /System tree.
+* [[KeyManager]] - Manage digital signature keys for [[GoboLinux]] packages.
+* [[Hashes]] - Manages [[FileHash]] and [[FileHash.sig]] in a [[GoboLinux]] package.
+* [[MergeTree]] - Mirrors one directory structure into another.
+
 
 ==  Utilities ==
 
