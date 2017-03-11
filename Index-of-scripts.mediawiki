@@ -15,10 +15,24 @@
 * [[Freshen]] - Check and upgrade [[GoboLinux]] packages/recipes
 
 === Administration ===
+* [[SymlinkProgram]] - Link a program from the /Programs hierarchy in the /System tree.
 * [[DisableProgram]] - Unlink a program from the /System/Links hierarchy.
 * [[RemoveProgram]] - Removes a program version from the system.
 * [[DetachProgram]] - Move a program from /Programs to a different location.
 * [[RebuildLinks]] - Rebuild /System/Links directories.
+
+===  Creating recipes and packages ===
+
+* [[GetRecipe]] - Fetch a recipe and insert it in the recipes tree.
+* [[MakeRecipe]] - Create a recipe template.
+* [[EditRecipe]] - Edit a recipe.
+* [[PackRecipe]] (formerly [[GenRecipeStore]]) - Generate "packed recipes", ready for submission.
+* [[CreatePackage]] - Make a [[GoboLinux]] package.
+* [[NewVersion]] - Update a recipe to a new version.
+* [[PrepareProgram]] - Prepares applications for instalation, running the 'configure'
+* [[KeyManager]] - Manage digital signature keys for [[GoboLinux]] packages.
+* [[Hashes]] - Manages [[FileHash]] and [[FileHash.sig]] in a [[GoboLinux]] package.
+* [[MergeTree]] - Mirrors one directory structure into another.
 
 ===  Helper tools ===
 
@@ -41,21 +55,6 @@
 * [[EditScript]] - Create or edit a [[GoboLinux]] script.
 * [[SystemFind]] - Special 'find' utility for searches in the /System hierarchy.
 * [[SystemInfo]] - Display some basic system information. Useful for /etc/issue.
-
-==  Package creation ==
-
-* [[GetRecipe]] - Fetch a recipe and insert it in the recipes tree.
-* [[MakeRecipe]] - Create a recipe template.
-* [[EditRecipe]] - Edit a recipe.
-* [[PackRecipe]] (formerly [[GenRecipeStore]]) - Generate "packed recipes", ready for submission.
-* [[CreatePackage]] - Make a [[GoboLinux]] package.
-* [[NewVersion]] - Update a recipe to a new version.
-* [[PrepareProgram]] - Prepares applications for instalation, running the 'configure'
-* [[SymlinkProgram]] - Link a program from the /Programs hierarchy in the /System tree.
-* [[KeyManager]] - Manage digital signature keys for [[GoboLinux]] packages.
-* [[Hashes]] - Manages [[FileHash]] and [[FileHash.sig]] in a [[GoboLinux]] package.
-* [[MergeTree]] - Mirrors one directory structure into another.
-
 
 ==  Utilities ==
 
