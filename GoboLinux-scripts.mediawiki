@@ -1,6 +1,6 @@
 {{ToC}}
 ===  Subtopics: ===
-# [[Index of scripts|GoboLinux Command Reference]]
+# [[GoboLinux Command Reference]]
 # [[General notes about the scripts]]
 # [[Guidelines for script authors]]
 # [[The bleeding edge: keeping track of CVS]]
