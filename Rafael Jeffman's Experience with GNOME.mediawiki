@@ -4,10 +4,10 @@ The first thing, and that most annoys me, there is a bug in Gnome's Control-Cent
 
 A workaround for this bug is by manually setting the keyboard values by hand with:
 
-<pre>
-gconftool-2 -t int -s /desktop/gnome/peripherals/keyboard/delay 500
-gconftool-2 -t int -s /desktop/gnome/peripherals/keyboard/rate 20
-</pre>
+<blockquote>
+gconftool-2 -t int -s /desktop/gnome/peripherals/keyboard/delay 500 <br/>
+gconftool-2 -t int -s /desktop/gnome/peripherals/keyboard/rate 20 <br/>
+</blockquote>
 
 Also, I've made a mistake during the first stages of compilation and many Gconf files (''%gconf'') where not ''user readable'', which causes lots of trouble. The reason seemed to be the gconf settings directories being created with the wrong permissions (0700 instead of 0755). I hope to have fixed it, but I did not tested most of the ''fixed recipes''. The recipes created after this error was found worked well.
 

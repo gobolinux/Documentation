@@ -86,29 +86,29 @@ These files can be present under Resources (all files are optional):
 ** '''Variable/''': ditto, for "variable" (local state) files. These files, if not already existing, are copied directly to /System/Variable (local state files are stored directly in /System/Variable so that "var" files can be isolated in a separate partition and maintained in a site-local manner independently of package additions/removals).
 * '''Dependencies''': Contains a list of packages on which this package depends. The Dependencies file is created by the [[Dependencies]] script. It is a plain text file, containing one entry per line, in "App 1.0" format.
 * '''Description''': Program description, in plain text format.
-<pre>
-[Name] Sampleapp
-[Summary] A very important app
-[License] GNU General Public License (GPL)
-[Description] a description of  the program
-[Homepage] http://www.just-an-app.com/
-</pre>
+<blockquote>
+[Name] Sampleapp <br/>
+[Summary] A very important app <br/>
+[License] GNU General Public License (GPL) <br/>
+[Description] a description of  the program <br/>
+[Homepage] http://www.just-an-app.com/ <br/>
+</blockquote>
 * '''Environment''': a file listing a series of shell 'export' commands, setting environment variables.
 * '''FileHash''': MD5 checksums of all files in package tarball.
 * '''FileHash.sig''': GPG signature of [[FileHash]]
 * '''Hints''': Insufficient data, but seems to be a Install configure package affecting a single package.
 * '''MetaData''': Generic meta-data store which seems to formatted like the Description file.
-<pre>
-Name: SampleApp
-Version: 1.0.0
-</pre>
+<blockquote>
+Name: SampleApp <br/>
+Version: 1.0.0 <br/>
+</blockquote>
 * '''NewDependencies''': Seems to be an optional list of dependencies. format seems to be space separated package name/version pairs each on an individual line. 
 * '''PostInstall''': Seems to be a script to be run after the package is installed
 * '''Requirements''': Seems to be a list of required users and groups. White-spaces don't seem to be used consistently.
-<pre>
-required_users=("nobody")
-required_groups=( "nothing" "nowhere" )
-</pre>
+<blockquote>
+required_users=("nobody") <br/>
+required_groups=( "nothing" "nowhere" ) <br/>
+</blockquote>
 * '''Revision''': Seems to be a version for the recipe. One line containing a small counting number prepended by the upper-case letter R. ex 'R3'
 * '''Tasks/''': boot scripts can make use of "[[boot script tasks]]", which are little service scripts that can be shipped by programs. This is roughly equivalent to the /etc/init.d scripts found in many distributions.
 * '''Unmanaged/''': Files to be inserted outside the /Programs Hierarchy only if no file exists there? 

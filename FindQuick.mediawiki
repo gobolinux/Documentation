@@ -10,9 +10,9 @@ Options:
 If <file to search> contains "*", it is used directly as an expression for the search. If not, "*" is added to the beginning and the end. If <path> is not specified, the working directory is assumed.
 
 Examples:
-<pre>
-FindQuick "*.c" ..
-</pre>
+<blockquote>
+FindQuick "*.c" .. <br/>
+</blockquote>
 Note the added quotes to avoid shell expansion.
 
 {{Scripts}}

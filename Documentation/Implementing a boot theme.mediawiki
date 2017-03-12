@@ -6,14 +6,14 @@ This section describes how each of the obligatory theme functions must be implem
 
 This, as the name implies, is the standard location to perform initializations. Below is an example on how you can use the standard $PREVLEVEL variable (from the Sysvinit <code>init</code> program) to echo some message when system initializes or goes down.
 
-<pre>
-if [ "$PREVLEVEL" = "N" ]
-then
-echo "GoboLinux is initializing..."
-else
-echo "GoboLinux is going down..."
-fi
-</pre>
+<blockquote>
+if [ "$PREVLEVEL" = "N" ] <br/>
+then <br/>
+echo "GoboLinux is initializing..." <br/>
+else <br/>
+echo "GoboLinux is going down..." <br/>
+fi <br/>
+</blockquote>
 
 ==  ThemeFile ==
 
@@ -21,12 +21,12 @@ fi
 
 A very simple example implementation of ThemeFile follows.
 
-<pre>
-function ThemeFile()
-{
-echo "Entering file '$1'..."
-}
-</pre>
+<blockquote>
+function ThemeFile() <br/>
+{ <br/>
+echo "Entering file '$1'..." <br/>
+} <br/>
+</blockquote>
 
 ==  ThemeBefore and ThemeAfter ==
 
@@ -38,18 +38,18 @@ If your theme supports only sequential booting (ie, does not use [[Fork]] and [[
 
 Here's a quick example of ThemeBefore and ThemeAfter:
 
-<pre><nowiki>
-function ThemeBefore() {
-shift # ignore id
-echo -n "===> $@... "
-}
-function ThemeAfter() {
-if [ "$2" -eq 0 ]
-then echo "{SUCCESS}"
-else echo "{ERROR}"
-fi
-}
-</nowiki></pre>
+<blockquote><nowiki>
+function ThemeBefore() { <br/>
+shift # ignore id <br/>
+echo -n "===> $@... " <br/>
+} <br/>
+function ThemeAfter() { <br/>
+if [ "$2" -eq 0 ] <br/>
+then echo "{SUCCESS}" <br/>
+else echo "{ERROR}" <br/>
+fi <br/>
+} <br/>
+</nowiki></blockquote>
 
 ==  ThemeFinish ==
 
@@ -57,12 +57,12 @@ The ThemeFinish function is called as the last step in a runlevel switch (after 
 
 The following example shows a sample ThemeFinish implementation that just writes an issue file that clears the screen.
 
-<pre>
-function ThemeFinish()
-{
-clear > $1
-echo "Welcome!!" >> $1
-}
-</pre>
+<blockquote>
+function ThemeFinish() <br/>
+{ <br/>
+clear > $1 <br/>
+echo "Welcome!!" >> $1 <br/>
+} <br/>
+</blockquote>
 
 {{Handbook}}

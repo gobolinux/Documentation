@@ -13,8 +13,8 @@ Examples:
 
 FilterColors is usually used through a pipe:
 
-<pre>
-some_command | FilterColors
-</pre>
+<blockquote>
+some_command | FilterColors <br/>
+</blockquote>
 
 {{Scripts}}

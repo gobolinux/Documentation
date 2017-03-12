@@ -13,33 +13,33 @@
 
 This can't be right:
 
-<pre>
--rw-r--r--  1 gobo gobo  4685824 2004-08-02 15:41 GoboLinux-~NoVersion.iso
-</pre>
+<blockquote>
+-rw-r--r--  1 gobo gobo  4685824 2004-08-02 15:41 GoboLinux-~NoVersion.iso <br/>
+</blockquote>
 
 I'm missing something, aren't i? :
 
-<pre>
-gobo@Sandbox ~/ISO]compressCloopAndBuildISO
-Compressing cloop file...
-
-real    0m0.080s
-user    0m0.000s
-sys     0m0.005s
-Building ISO...
-
-Size of boot image is 4 sectors -> No emulation
-Total translation table size: 2048
-Total rockridge attributes bytes: 1042
-Total directory bytes: 2048
-Path table size(bytes): 26
-Max brk space used 5000
-2288 extents written (4 Mb)
-
-real    0m0.334s
-user    0m0.005s
-sys     0m0.039s
-</pre>
+<blockquote>
+gobo@Sandbox ~/ISO]compressCloopAndBuildISO <br/>
+Compressing cloop file... <br/>
+ <br/>
+real    0m0.080s <br/>
+user    0m0.000s <br/>
+sys     0m0.005s <br/>
+Building ISO... <br/>
+ <br/>
+Size of boot image is 4 sectors -> No emulation <br/>
+Total translation table size: 2048 <br/>
+Total rockridge attributes bytes: 1042 <br/>
+Total directory bytes: 2048 <br/>
+Path table size(bytes): 26 <br/>
+Max brk space used 5000 <br/>
+2288 extents written (4 Mb) <br/>
+ <br/>
+real    0m0.334s <br/>
+user    0m0.005s <br/>
+sys     0m0.039s <br/>
+</blockquote>
 
 ----
 
@@ -50,19 +50,19 @@ Also, sound mysteriously died.  This was solved by rebooting the system. -- [[Sy
 
 ----
 
-<pre>
-gobo@Sandbox /]exit
-Cleaning up history...
-Filling up free space with zeroes...
-dd: writing to `Mounted/zeros': No space left on device
-468153+0 records in
-468152+0 records out
-Removing generated zeroes file...
-Unmounting  Mounted/System/Kernel/Status
-Unmounting  Mounted/System/Kernel/Devices
-Unmounting  Mounted/Mount/CD-ROM
-Unmounting  Mounted
-</pre>
+<blockquote>
+gobo@Sandbox /]exit <br/>
+Cleaning up history... <br/>
+Filling up free space with zeroes... <br/>
+dd: writing to `Mounted/zeros': No space left on device <br/>
+468153+0 records in <br/>
+468152+0 records out <br/>
+Removing generated zeroes file... <br/>
+Unmounting  Mounted/System/Kernel/Status <br/>
+Unmounting  Mounted/System/Kernel/Devices <br/>
+Unmounting  Mounted/Mount/CD-ROM <br/>
+Unmounting  Mounted <br/>
+</blockquote>
 
 Is the "No space left on device" message normal?
 

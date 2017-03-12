@@ -32,35 +32,35 @@ Here's some info regarding my [[BootScripts]] implementation.
 Overview:
 
 Overriding goals are ease of use, and flexibility.  We will keep our existing Daemon management and runlevels (with a few changes); and add the concept of task directories and [[Need]] based dependencies.  It is designed to support parallel startup for faster bootup times.  A quick look at the file system well help explain. Please suggest more Gobo friendly names.
-<pre>
-/S/S/runlevels/
-Start
-Multi
-Network
-GUI
-/S/S/init.d/
-Start.d/
-Multi.d
-Network.d/
-GUI.d/
-</pre>
+<blockquote>
+/S/S/runlevels/ <br/>
+Start <br/>
+Multi <br/>
+Network <br/>
+GUI <br/>
+/S/S/init.d/ <br/>
+Start.d/ <br/>
+Multi.d <br/>
+Network.d/ <br/>
+GUI.d/ <br/>
+</blockquote>
 * runlevels - contains [[RunLevels]] scripts.  These scripts will be maintained with the [[BootScripts]] package (or at least distributed with it)
 * init.d - contains all the [[init.d]] scripts.  Also contains the associated runlevel task directory (Start.d, ...).  The runlevel task directory contains symlinks to the task script in the parent directory, /S/S/init.d.
 
 Here is an example runlevel script for Multi:
-<pre>
-#!/bin/bash
-. BootScriptFunctions
-
-Need.py runlevel Init
-Need.py runlevel Network
-
-Need.py rl-begin Multi
-
-Need.py taskdir /System/Settings/init.d/Multi.d
-Exec "Starting console mouse GPM..."                      Mouse Start
-Exec "Starting PCMCIA daemon..."                          PCMCIA Start
-</pre>
+<blockquote>
+#!/bin/bash <br/>
+. BootScriptFunctions <br/>
+ <br/>
+Need.py runlevel Init <br/>
+Need.py runlevel Network <br/>
+ <br/>
+Need.py rl-begin Multi <br/>
+ <br/>
+Need.py taskdir /System/Settings/init.d/Multi.d <br/>
+Exec "Starting console mouse GPM..."                      Mouse Start <br/>
+Exec "Starting PCMCIA daemon..."                          PCMCIA Start <br/>
+</blockquote>
 [[BootScriptFunctions]] provides wrapper functions such as Exec.  Making the import explicit simplifies the implementation and the code more obvious to the newcomer (easier to find out what Exec does)  Need.py communicates with the "master controller" and takes a subcommand and message as args.  The commands are as follows:
 * runlevel - specifies a runlevel dependency
 * rl-begin - tells the "master" that the script is actually begining the runlevel as opposed to loading dependencies

@@ -26,9 +26,9 @@ Then you should compile and pack a update Linux kernel, this step should take a 
 
 Now that we have the prerequisites satisfied, lets follow the original tutorial:
 
-<pre>
- Compile http://fmierlo.stackedboxes.org/GoboLinux/014.01+/BuildLiveCD--20080330--recipe.tar.bz2
-</pre>
+<blockquote>
+ Compile http://fmierlo.stackedboxes.org/GoboLinux/014.01+/BuildLiveCD--20080330--recipe.tar.bz2 <br/>
+</blockquote>
 
 Well, today BuildLiveCD is very different from 2 years ago. This recipe just apply some patchs that fix BuildLiveCD, as it was in 2008-03-31, to run appropriately with a new kernel, fetch files correctly, and remove OpenOffice from the ISO due it's size.
 
@@ -38,17 +38,17 @@ Well, today BuildLiveCD is very different from 2 years ago. This recipe just app
 
 I setup UpdateEnvironment to fetch files from gytha.org::gobolinux-packages/014/livecd/ using rsync because it's the only 014.01 original files mirror that I found. In case of this mirror isn't working, I setup another one and you can get these files from there:
 
-<pre>
- wget -r -nd -l 1 http://fmierlo.stackedboxes.org/GoboLinux/014.01+/packages-014.01/ -P Packages
- rm -f Packages/index.html*
-</pre>
+<blockquote>
+ wget -r -nd -l 1 http://fmierlo.stackedboxes.org/GoboLinux/014.01+/packages-014.01/ -P Packages <br/>
+ rm -f Packages/index.html* <br/>
+</blockquote>
 
 To finish the initial setup, we need at last one dirt hack:
 
-<pre>
- wget http://fmierlo.stackedboxes.org/GoboLinux/014.01+/SquashFS-4.0.patch
- patch -p 0 -i SquashFS-4.0.patch
-</pre>
+<blockquote>
+ wget http://fmierlo.stackedboxes.org/GoboLinux/014.01+/SquashFS-4.0.patch <br/>
+ patch -p 0 -i SquashFS-4.0.patch <br/>
+</blockquote>
 
 It basically update InitRD to deal with the new kernel.
 

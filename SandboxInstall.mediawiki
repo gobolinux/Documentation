@@ -1,12 +1,12 @@
 If I wanted to run make my self, what would I need to do to sandbox it? It would be useful to know how its done.
 
-<pre>
-tar xvzf Foo.tar.gz
-cd Foo 
-PrepareProgram Foo 1.0 -- --enable-crazy-feature-x
-make
-PrepareProgram -t Foo 1.0
-SandboxInstall Foo 1.0
-SymlinkProgram Foo 1.0
-</pre>
+<blockquote>
+tar xvzf Foo.tar.gz <br/>
+cd Foo  <br/>
+PrepareProgram Foo 1.0 -- --enable-crazy-feature-x <br/>
+make <br/>
+PrepareProgram -t Foo 1.0 <br/>
+SandboxInstall Foo 1.0 <br/>
+SymlinkProgram Foo 1.0 <br/>
+</blockquote>
 Also see [[Manual Compile]]

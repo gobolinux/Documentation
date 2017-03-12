@@ -4,25 +4,25 @@ Here are the steps I needed to perform in order to adapt my Settings to the new 
 
 The new version uses the [[BootDriver]] script (a new name for the ambiguous bin/Init). This is how the new version looks like.
 
-<pre>
-id:2:initdefault:
-
-l1:S:wait:/System/Links/Executables/~BootDriver ~BootUp
-su:S:respawn:/sbin/sulogin
-
-l2:12345:wait:/System/Links/Executables/~BootDriver Console
-l6:6:wait:/System/Links/Executables/~BootDriver Reboot
-l0:0:wait:/System/Links/Executables/~BootDriver Halt
-
-ca:12345:ctrlaltdel:/sbin/shutdown -t1 -r now
-
-1:2345:respawn:/System/Links/Executables/agetty tty1 9600
-2:2345:respawn:/System/Links/Executables/agetty tty2 9600
-3:2345:respawn:/System/Links/Executables/agetty tty3 9600
-4:2345:respawn:/System/Links/Executables/agetty tty4 9600
-5:2345:respawn:/System/Links/Executables/agetty tty5 9600
-6:2345:respawn:/System/Links/Executables/agetty tty6 9600
-</pre>
+<blockquote>
+id:2:initdefault: <br/>
+ <br/>
+l1:S:wait:/System/Links/Executables/~BootDriver ~BootUp <br/>
+su:S:respawn:/sbin/sulogin <br/>
+ <br/>
+l2:12345:wait:/System/Links/Executables/~BootDriver Console <br/>
+l6:6:wait:/System/Links/Executables/~BootDriver Reboot <br/>
+l0:0:wait:/System/Links/Executables/~BootDriver Halt <br/>
+ <br/>
+ca:12345:ctrlaltdel:/sbin/shutdown -t1 -r now <br/>
+ <br/>
+1:2345:respawn:/System/Links/Executables/agetty tty1 9600 <br/>
+2:2345:respawn:/System/Links/Executables/agetty tty2 9600 <br/>
+3:2345:respawn:/System/Links/Executables/agetty tty3 9600 <br/>
+4:2345:respawn:/System/Links/Executables/agetty tty4 9600 <br/>
+5:2345:respawn:/System/Links/Executables/agetty tty5 9600 <br/>
+6:2345:respawn:/System/Links/Executables/agetty tty6 9600 <br/>
+</blockquote>
 
 You can always find the new versions of settings files in the Resources/Defaults/Settings directory of the program.
 
@@ -33,21 +33,21 @@ The Options file is no longer mixed with the boot scripts in Settings/[[BootScri
 An important change: now the network settings are entered directly in [[BootOptions]], instead of separate files in a Settings/[[BootScripts]]/Network. So, add a section to
 [[BootOptions]] that looks like this:
 
-<pre>
-~NetworkInterfacesOnBoot=(
-"lo"
-"eth0"
-)
-
-eth0_IP=139.82.100.63
-eth0_Netmask=255.255.255.192
-eth0_~BootProto=Static # This the default if none is selected
-#eth0_~BootProto=DHCP # Requires DHCPCD package
-eth0_Broadcast=139.82.100.63
-
-lo_IP=127.0.0.1
-lo_Netmask=255.0.0.0
-</pre>
+<blockquote>
+~NetworkInterfacesOnBoot=( <br/>
+"lo" <br/>
+"eth0" <br/>
+) <br/>
+ <br/>
+eth0_IP=139.82.100.63 <br/>
+eth0_Netmask=255.255.255.192 <br/>
+eth0_~BootProto=Static # This the default if none is selected <br/>
+#eth0_~BootProto=DHCP # Requires DHCPCD package <br/>
+eth0_Broadcast=139.82.100.63 <br/>
+ <br/>
+lo_IP=127.0.0.1 <br/>
+lo_Netmask=255.0.0.0 <br/>
+</blockquote>
 
 I believe the format is quite intuitive. So now, user specific configuration, for most purposes, is concentrated at the [[BootOptions]] file.
 
@@ -59,10 +59,10 @@ The main change is that Init and Done were renamed to [[BootUp]] and Shutdown, a
 
 For example, you can have a script called Graphic that looks like this:
 
-<pre>
-source ~BootUp
-Exec "Starting login manager..." kdm
-</pre>
+<blockquote>
+source ~BootUp <br/>
+Exec "Starting login manager..." kdm <br/>
+</blockquote>
 
 The nice new feature is that you can specify any boot script to [[BootDriver]] through the kernel command line in GRUB, using a command such as Boot=Graphic. So you can have a boot menu with "graphic desktop" and "console" entries.
 

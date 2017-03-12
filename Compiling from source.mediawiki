@@ -6,9 +6,9 @@
 
 In this example we'll install '''irssi''', a text-based IRC (Internet Relay Chat) client.  To compile and install it, just type:
 
-<pre>
-Compile irssi
-</pre>
+<blockquote>
+Compile irssi <br/>
+</blockquote>
 
 This will go and download a Recipe for compiling and installing Irssi.  Like cooking food, a  Recipe is a set of instructions that will tell Compile how to "cook" (compile) and "serve" (install) a package.  Depending on the speed of your computer, internet connection and what packages you have installed, Irssi should download and install in a few minutes.  Cool, huh? :-)
 
@@ -67,15 +67,15 @@ The [[PrepareProgram]] script does two things. It creates a directory hierarchy 
 
 The syntax for the [[PrepareProgram]] is:.
 
-<pre>
-PrepareProgram <program-name> <version-number> [ -- <additional-options> ]
-</pre>
+<blockquote>
+PrepareProgram <program-name> <version-number> [ -- <additional-options> ] <br/>
+</blockquote>
 
 Passing a program name and version number is mandatory. These names are the ones used in the directories under programs. For example,
 
-<pre>
-PrepareProgram --tree Foo 1.0
-</pre>
+<blockquote>
+PrepareProgram --tree Foo 1.0 <br/>
+</blockquote>
 
 (the --tree switch) creates the directories /Programs/Foo/Settings, /Programs/Foo/1.0, /Programs/Foo/1.0/bin and so on.
 
@@ -88,15 +88,15 @@ The second task performed by [[PrepareProgram]] is to prepare the sources. Since
 
 In short, [[PrepareProgram]] can be considered a wrapper to 'configure'. Instead of running, for example,
 
-<pre>
-~/foo-1.0] configure --with-shared=yes
-</pre>
+<blockquote>
+~/foo-1.0] configure --with-shared=yes <br/>
+</blockquote>
 
 you'll run
 
-<pre>
-~/foo-1.0] PrepareProgram Foo 1.0 -- --with-shared=yes
-</pre>
+<blockquote>
+~/foo-1.0] PrepareProgram Foo 1.0 -- --with-shared=yes <br/>
+</blockquote>
 
 ===  Installing safely: SandboxInstall ===
 
@@ -104,9 +104,9 @@ Strictly speaking, if everything was set up correctly you can simply run "make i
 
 To help us in this task, [[GoboLinux]] includes [[SandboxInstall]], a script that creates a controlled environment for safely executing 'make install'. It uses a sandbox provided by the [[FiboSandbox]] script, which configures custom permissions for an allowed set of paths to a special user, [[fibo]]. Installation then runs as this user, who has no permission to write anywhere but the few places [[SandboxInstall]] allows it to, such as /Programs/Foo/Current and /Programs/Foo/Settings. Therefore, no files can be installed in "random places". A typical call to [[SandboxInstall]] looks like this:
 
-<pre>
-SandboxInstall Foo 1.0
-</pre>
+<blockquote>
+SandboxInstall Foo 1.0 <br/>
+</blockquote>
 
 If necessary, additional options can be passed. Refer to the [[SandboxInstall | SandboxInstall reference page]] for details.
 
@@ -116,15 +116,15 @@ The final step in the compilation of a program is performed by the [[SymlinkProg
 
 The syntax for [[SymlinkProgram]] is:
 
-<pre>
-SymlinkProgram <program-name> [ <version-number> ]
-</pre>
+<blockquote>
+SymlinkProgram <program-name> [ <version-number> ] <br/>
+</blockquote>
 
 The second argument is optional. If no version number is specified, the one linked as Current will be used. A commonly used command-line parameter is <code>-c overwrite</code>, which tells it to overwrite any existing symlinks in case of conflicts (the default action is to preserve the existing links in order to not affect previously existing applications). To integrate a program Foo into the /System structure, overwriting any links, you would type:
 
-<pre>
-SymlinkProgram -c overwrite Foo
-</pre>
+<blockquote>
+SymlinkProgram -c overwrite Foo <br/>
+</blockquote>
 
 [[SymlinkProgram]] features many command-line switches, to cover more advanced needs. You can refer to the [[SymlinkProgram | SymlinkProgram reference page]] for details if necessary.
 

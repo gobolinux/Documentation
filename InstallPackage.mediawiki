@@ -18,8 +18,8 @@ Options:
 Default behavior for --same is 'cancel', for --old is 'keep'. Notice that 'remove' may be dangerous for important system packages as it can leave the system in an inconsistent state during installation.
 
 Examples:
-<pre>
-InstallPackage Gimp--2.0.5.tar.gz
-</pre>
+<blockquote>
+InstallPackage Gimp--2.0.5.tar.gz <br/>
+</blockquote>
 
 {{Scripts}}

@@ -19,8 +19,8 @@ Options:
 The /Programs hierarchy for the program is only created with --tree.
 
 Examples:
-<pre>
-PrepareProgram KDE 2.2
-</pre>
+<blockquote>
+PrepareProgram KDE 2.2 <br/>
+</blockquote>
 
 {{Scripts}}

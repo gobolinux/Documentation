@@ -7,8 +7,8 @@ First install the drivers for your card. Either they are supported by the kernel
 There are two ways to install support for WPA. You could either get the [http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/iw_we18-5.diff Wireless Extensions kernel patch] (beta) with WPA-support and install [http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html Wireless Tools] [http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/wireless_tools.28.pre8.tar.gz 28-pre8] or you can install wpa_supplicant. This guide treat only the latter.
 
 To install WPA Supplicant you only have to issue
-<pre>    Compile wpa_supplicant
-</pre>
+<blockquote>    Compile wpa_supplicant
+</blockquote>
 at the prompt.
 
 == Configuring WPA Supplicant ==
@@ -16,42 +16,42 @@ Edit the file
 /Programs/WPA_Supplicant/Settings/wpa_supplicant.conf
 and add one or more networks. My file looks something like this:
 ----
-<pre>
-ctrl_interface=/System/Variable/run/wpa_supplicant
-ap_scan=2
-
-network={
-ssid="MyNetwork"
-#psk="somepresharedkey"
-psk=9a3c6704a1d6ada5e14ada27170a9071c9a5393af1f18af2fa0798537f52bdb1
-key_mgmt=WPA-PSK
-pairwise=TKIP
-group=TKIP
-proto=WPA
-}
-</pre>
+<blockquote>
+ctrl_interface=/System/Variable/run/wpa_supplicant <br/>
+ap_scan=2 <br/>
+ <br/>
+network={ <br/>
+ssid="MyNetwork" <br/>
+#psk="somepresharedkey" <br/>
+psk=9a3c6704a1d6ada5e14ada27170a9071c9a5393af1f18af2fa0798537f52bdb1 <br/>
+key_mgmt=WPA-PSK <br/>
+pairwise=TKIP <br/>
+group=TKIP <br/>
+proto=WPA <br/>
+} <br/>
+</blockquote>
 ----
 Where the hexadecimal preshared key has been generated with *wpa_passphrase*. As I have only used this mode yet you can read more about configuring WPA Supplicant at [http://hostap.epitest.fi/wpa_supplicant/ its homepage].
 
 == Link WPA Supplicant configuration File (Optional) ==
 If you want to stay consistent with the linking of configuration files into /System/Settings, create the following link
-<pre>ln -s /Programs/WPA_Supplicant/Settings/wpa_supplicant.conf /System/Settings/</pre>
-
-If you do so, then in the instructions below replace "/Programs/WPA_Supplicant/Settings/wpa_supplicant.conf" wherever mentioned with "/System/Settings/wpa_supplicant.conf"
-
-== Start WPA Supplicant and make it start at boot ==
-Now, what is left is to start WPA Supplicant and confirm that it works. Starting WPA Supplicant is done with<br>
-<pre>    wpa_supplicant [-BddehLqqvw] -i<ifname> -c<config file> [-D<driver>] \
-[-N -i<ifname> -c<conf> [-D<driver>] ...]
-</pre>
+<blockquote>ln -s /Programs/WPA_Supplicant/Settings/wpa_supplicant.conf /System/Settings/</pre>
+ <br/>
+If you do so, then in the instructions below replace "/Programs/WPA_Supplicant/Settings/wpa_supplicant.conf" wherever mentioned with "/System/Settings/wpa_supplicant.conf" <br/>
+ <br/>
+== Start WPA Supplicant and make it start at boot == <br/>
+Now, what is left is to start WPA Supplicant and confirm that it works. Starting WPA Supplicant is done with<br> <br/>
+<pre>    wpa_supplicant [-BddehLqqvw] -i<ifname> -c<config file> [-D<driver>] \ <br/>
+[-N -i<ifname> -c<conf> [-D<driver>] ...] <br/>
+</blockquote>
 Where <ifname> is the interface name e.g. wlan0, the configfile is wpa_suppplicant.conf with path and <driver> is the driver you use for your wireless network card. So for example:
-<pre> wpa_supplicant -ddw -iwlan0 -c/Programs/WPA_Supplicant/Settings/wpa_supplicant.conf -Dndiswrapper
-</pre>
+<blockquote> wpa_supplicant -ddw -iwlan0 -c/Programs/WPA_Supplicant/Settings/wpa_supplicant.conf -Dndiswrapper
+</blockquote>
 The '''-dd''' is for extra debbuging output to help finding any errors and the '''w''' is there so wpa_supplicant waits for the device if it's not initiated. After everything is working switch the -dd to -B to start WPA Supplicant in the background and lessen the debugging output.
 
 If you want WPA Supplicant to start at boot add the start command to /System/Settings/[[BootScripts]]/[[BootUp]]. It should look something like this:
-<pre> Exec "Starting WPA service..." wpa_supplicant -Bw -iwlan0 -c/Programs/WPA_Supplicant/Settings/wpa_supplicant.conf -Dndiswrapper
-</pre>
+<blockquote> Exec "Starting WPA service..." wpa_supplicant -Bw -iwlan0 -c/Programs/WPA_Supplicant/Settings/wpa_supplicant.conf -Dndiswrapper
+</blockquote>
 
 If anyone had any other experiences and/or additional information feel free to add it or send it to me (jonka750 at student.liu.se) or talk to me (Mohjive) in #gobolinux@freenode.net.
 

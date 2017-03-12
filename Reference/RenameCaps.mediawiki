@@ -14,8 +14,8 @@ Options:
 * '''-i, --inverse''' - inverse "artist and track names": "Bar Bar - Foo Foo.ext" becomes "Foo Foo - Bar Bar.ext"
 
 Examples:
-<pre>
-RenameCaps -i "Does It Really Happen - Yes.mp3"
-</pre>
+<blockquote>
+RenameCaps -i "Does It Really Happen - Yes.mp3" <br/>
+</blockquote>
 
 {{Reference}}

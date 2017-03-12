@@ -8,31 +8,31 @@ That doesn't mean that you can only have one version linked into the system: you
 
 For example, say program Foo 1.0 looks like this:
 
-<pre>
-/Programs/Foo/1.0/bin/foo
-/Programs/Foo/1.0/include/foo.h
-/Programs/Foo/1.0/lib/libfoo.so.1
-/Programs/Foo/1.0/lib/libfoo.so -> libfoo.so.1
-</pre>
+<blockquote>
+/Programs/Foo/1.0/bin/foo <br/>
+/Programs/Foo/1.0/include/foo.h <br/>
+/Programs/Foo/1.0/lib/libfoo.so.1 <br/>
+/Programs/Foo/1.0/lib/libfoo.so -> libfoo.so.1 <br/>
+</blockquote>
 
 Now, say, you install a new version, 2.0, which looks like this:
 
-<pre>
-/Programs/Foo/2.0/bin/foo
-/Programs/Foo/2.0/include/foo.h
-/Programs/Foo/2.0/lib/libfoo.so.2
-/Programs/Foo/2.0/lib/libfoo.so -> libfoo.so.2
-</pre>
+<blockquote>
+/Programs/Foo/2.0/bin/foo <br/>
+/Programs/Foo/2.0/include/foo.h <br/>
+/Programs/Foo/2.0/lib/libfoo.so.2 <br/>
+/Programs/Foo/2.0/lib/libfoo.so -> libfoo.so.2 <br/>
+</blockquote>
 
 The default behavior of [[SymlinkProgram]] is to replace symlinks under /Programs that belong to a different version of the same program. So, now, we'll have the following links related to Foo under system:
 
-<pre>
-/System/Links/Executables/foo -> /Programs/Foo/2.0/bin/foo
-/System/Links/Headers/foo.h -> /Programs/Foo/2.0/include/foo.h
-/System/Links/Libraries/libfoo.so.2 -> /Programs/Foo/2.0/lib/libfoo.so.2
-/System/Links/Libraries/libfoo.so -> /Programs/Foo/2.0/lib/libfoo.so.2
-/System/Links/Libraries/libfoo.so.1 -> /Programs/Foo/1.0/lib/libfoo.so.1
-</pre>
+<blockquote>
+/System/Links/Executables/foo -> /Programs/Foo/2.0/bin/foo <br/>
+/System/Links/Headers/foo.h -> /Programs/Foo/2.0/include/foo.h <br/>
+/System/Links/Libraries/libfoo.so.2 -> /Programs/Foo/2.0/lib/libfoo.so.2 <br/>
+/System/Links/Libraries/libfoo.so -> /Programs/Foo/2.0/lib/libfoo.so.2 <br/>
+/System/Links/Libraries/libfoo.so.1 -> /Programs/Foo/1.0/lib/libfoo.so.1 <br/>
+</blockquote>
 
 So, now, when you run "foo", it will fetch version 2.0 of the program through your system $PATH (which looks at /System/Links/Executables). But, as you can see, libfoo.so.1 is still there. This way, if you have other programs installed in the system that are linked specifically to version 1 of the libfoo library will continue working.
 

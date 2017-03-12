@@ -57,17 +57,17 @@ When a program name is not explicitly given to Compile (e.g., if it assumes it f
 
 In this example we'll make a recipe, starting from the source code for a program on your computer.  We'll use [http://sf.net/projects/joe-editor/ joe], a text editor (console based).  This is my first recipe, and it is now in the main Compile tree.
 
-<pre>
-MakeRecipe http://unc.dl.sourceforge.net/sourceforge/joe-editor/joe-3.1.tar.gz
-</pre>
+<blockquote>
+MakeRecipe http://unc.dl.sourceforge.net/sourceforge/joe-editor/joe-3.1.tar.gz <br/>
+</blockquote>
 
 Based on the filename of the URL, [[MakeRecipe]] detects that the program it is compiling is called joe (which, after a run of the [[NamingConventions]] script, becomes Joe), and that the version is 3.1.
 
 Note: In case it didn't, you could have passed it explicitly as parameters
 
-<pre>
-MakeRecipe HardToDetect 2.0 http://example.org/htd_2_0.tar.bz2
-</pre>
+<blockquote>
+MakeRecipe HardToDetect 2.0 http://example.org/htd_2_0.tar.bz2 <br/>
+</blockquote>
 
 [[MakeRecipe]] should now report that it has downloaded the sources, and found that it uses autoconf.  Which is a good thing, as that means there is very little work to be done on our part.  So now we compile and install the package on our machine.
 
@@ -85,18 +85,18 @@ When you create a new recipe for a program that's not yet available in the [[Gob
 Writing Meta recipe is like putting small things inside some larger container.
 For example consider the following meta recipe:
 
-<pre>
-# Recipe for version 1.4.5 by Hisham Muhammad, on Wed Jan 23 01:28:21 BRST 2008
-# Recipe (MakeRecipe) for Audacious by Andre Detsch <detsch@gobolinux.org>, on Qua \
-Nov 30 15:01:27 BRST 2005
-compile_version=1.8.2
-recipe_type=meta
-
-include=(
-   "Audacious-Itself--1.4.5"
-   "Audacious-Plugins--1.4.4"
-)
-</pre>
+<blockquote>
+# Recipe for version 1.4.5 by Hisham Muhammad, on Wed Jan 23 01:28:21 BRST 2008 <br/>
+# Recipe (MakeRecipe) for Audacious by Andre Detsch <detsch@gobolinux.org>, on Qua \ <br/>
+Nov 30 15:01:27 BRST 2005 <br/>
+compile_version=1.8.2 <br/>
+recipe_type=meta <br/>
+ <br/>
+include=( <br/>
+   "Audacious-Itself--1.4.5" <br/>
+   "Audacious-Plugins--1.4.4" <br/>
+) <br/>
+</blockquote>
 
 Where two packages (Audacious-Itself and -Plugins) are being regrouped behind 1 "bigger" recipe called Audacious. So with meta recipe you can have lots of small recipes regrouped in one big recipe.
 It simplify installation and can help too in some case with stubborn project that don't get along immediately with Gobo directory layout. Thus creating a meta recipes can help porting quickly a project in one big chunk (all the parts will be installed into the same prefix), before making it nicer and modular later.
@@ -120,26 +120,26 @@ Compile has built-in support for applying patches distributed with recipes. Ther
 ==== Patch structure ====
 
 Compile applies the patch from within the source directory with the '-p1' option, stripping one directory from the patch's search path. This is to ensure that the patch is appliable without editing even if the recipe is updated. The patch should therefore add one level to the source directory in the path. An example taken from the rlocate recipe, created with 'diff':
-<pre>
---- rlocate-0.4.3/doc/rlocate.html  2006-01-19 10:04:52.000000000 +0100
-+++ rlocate-0.4.3.new/doc/rlocate.html  2006-01-19 19:10:20.000000000 +0100
-@@ -223,6 +223,6 @@
-  permissions of the rlocate and rlocated binaries. To do this execute
-  the following commands.</p>
-  <pre>
--        chown root:rlocate /usr/local/bin/rlocate
-+        chown 0:rlocate /usr/local/bin/rlocate
-         chmod 2755 /usr/local/bin/rlocate
-</pre>
+<blockquote>
+--- rlocate-0.4.3/doc/rlocate.html  2006-01-19 10:04:52.000000000 +0100 <br/>
++++ rlocate-0.4.3.new/doc/rlocate.html  2006-01-19 19:10:20.000000000 +0100 <br/>
+@@ -223,6 +223,6 @@ <br/>
+  permissions of the rlocate and rlocated binaries. To do this execute <br/>
+  the following commands.</p> <br/>
+  <pre> <br/>
+-        chown root:rlocate /usr/local/bin/rlocate <br/>
++        chown 0:rlocate /usr/local/bin/rlocate <br/>
+         chmod 2755 /usr/local/bin/rlocate <br/>
+</blockquote>
 This diff should then be in a file, say '01-root_to_uid.patch', wich is placed in the Rlocate 0.4.3 recipe directory. Of course the filename should be somewhat descriptive to what the patch does. The filename should also be prefixed with a number, which ensures that the patches are applied in the correct order, as there can be a number of patches, some of them being applied to the same source file.
 
 ==== Creating a patch ====
 
 To create a patch you need the edited source and the "clean" source, then use 'diff' to create the patch. To create the patch in the example above I used
-<pre>
-cd /Files/Compile/Sources
-diff -Naur rlocate-0.4.3 rlocate-0.4.3.new > 01-root_to_uid.patch
-</pre>
+<blockquote>
+cd /Files/Compile/Sources <br/>
+diff -Naur rlocate-0.4.3 rlocate-0.4.3.new > 01-root_to_uid.patch <br/>
+</blockquote>
 where rlocate-0.4.3.new was the directory holding the edited source. This may work if you only have one type of change made. But if you made several different edits and want them in different patches one can specify the exact file to 'diff' or you can make a full diff and edit the resulting file, spliting it into smaller patches.
 
 ==== Converting patches ====
@@ -170,12 +170,12 @@ As presented in the [[Compile]] section, Compile handles compilation of programs
 
 These are autoconf-based packages, and are indicated with '''recipe_type=configure'''. The most common variation in recipes of this type is the need to pass additional flags to the <code>configure</code> script. You can do so with the '''configure_options''' flag, like this:
 
-<pre>
-configure_options=(
-"--enable-shared"
-"--with-foo"
-)
-</pre>
+<blockquote>
+configure_options=( <br/>
+"--enable-shared" <br/>
+"--with-foo" <br/>
+) <br/>
+</blockquote>
 
 Keep in mind that by passing explicit flags to <code>configure</code>, you are affecting the dependencies of the package. Ideally, the <code>configure</code> script should be able to detect what's available in the system and enable or disable features. Much progress in this area has been made in the last few years, especially with [http://pkgconfig.freedesktop.org Pkgconfig], but still some programs require flags to be passed explicitly.
 
@@ -185,10 +185,10 @@ Another occasionally necessary flag is '''autogen_before_configure=yes'''. Some 
 
 If <code>configure</code> or <code>autogen.sh</code> have non-standard names, you can explicitly provide them with '''configure''' and '''autogen''', like this:
 
-<pre>
-configure=configure.gnu
-autogen=gen_all.sh
-</pre>
+<blockquote>
+configure=configure.gnu <br/>
+autogen=gen_all.sh <br/>
+</blockquote>
 
 Since "compileprogram" recipes also run <code>make</code>, most of the observations about "makefile" recipes, discussed below also apply.
 
@@ -200,29 +200,29 @@ For this kind of recipe, Compile runs <code>make</code> twice: the "build" run a
 
 In "makefile" recipes, you will always have to pass at least one additional option in the recipe, to tell the Makefile to use the /Programs/<program-name>/<version> directory. If we're lucky, the Makefile has one main variable that controls the installation prefix. Variables of this kind are usually called PREFIX, DESTDIR, INSTDIR... you'll have to look inside the Makefile to find out. Remember that the installation prefix is set by Compile as the '''target''' shell variable. To give <code>make</code> variables, we can either use '''build_variables''' and '''install_variables''', which give options to the "build" and "install" runs of <code>make</code>, or just '''make_variables''' which passes options to both runs. Their use is similar to that of '''configure_options'''.
 
-<pre>
-make_variables=(
-"DESTDIR=$target"
-)
-</pre>
+<blockquote>
+make_variables=( <br/>
+"DESTDIR=$target" <br/>
+) <br/>
+</blockquote>
 
 Sometimes, paths are defined in several variables of the Makefile. No problem:
 
-<pre>
-make_variables=(
-"BINDIR=$target/bin"
-"LIBDIR=$target/lib"
-"ETCDIR=$target/../Settings"
-)
-</pre>
+<blockquote>
+make_variables=( <br/>
+"BINDIR=$target/bin" <br/>
+"LIBDIR=$target/lib" <br/>
+"ETCDIR=$target/../Settings" <br/>
+) <br/>
+</blockquote>
 
 If there are no variables of this kind in the Makefile, that is, if the Makefile has hard-coded locations in its installation rules, then unfortunately you'll have to patch the Makefile (and possibly the source code, look for references to paths like <code>/usr</code> using <code>grep</code>). See the section "[[#Patches|patches]]" for more information.
 
 Like with '''configure''' and '''autogen''', if the makefile uses a different name from the standard (<code>Makefile</code>), you can pass it explicitly using the '''makefile''' variable:
 
-<pre>
-makefile=GNUmakefile
-</pre>
+<blockquote>
+makefile=GNUmakefile <br/>
+</blockquote>
 
 ==== python recipes ====
 

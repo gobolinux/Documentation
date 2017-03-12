@@ -7,270 +7,270 @@ Intructions on editing this page:
 </ul>
 
 = Base =
-<pre>
-Atool
-Autoconf
-Automake
-Bash
-BC
-Bin86
-BinUtils
-Bison
-Bzip2
-CoreUtils
-Cpio
-DHCPCD
-Dialog
-DiffUtils
-E2FSProgs
-Ed
-File
-FindUtils
-Flex
-Gawk
-GCC
-Gettext
-GLib
-Glibc
-GoboHide
-GPM
-Grep
-Groff
-Grub
-Gzip
-Hdparm
-InetUtils
-KBD
-Less
-LibTool
-Linux
-Linux-Headers
-M4
-Make
-Man
-Man-Pages
-MC
-MkTemp
-Module-Init-Tools
-Mtail
-Nano
-Nasm
-Ncurses
-Netkit-Base
-Net-Tools
-OpenSSL
-Patch
-PCIUtils
-PCRE
-Perl
-Pinfo
-Procinfo
-Procps
-Psmisc
-Python
-Readline
-ReiserFSProgs
-Sash
-Sed
-Shadow
-Slocate
-Strace
-Sudo
-Sysklogd
-Sysvinit
-Tar
-Texinfo
-Udev
-Util-Linux
-Wget
-ZLib
-ZSH
-</pre>
+<blockquote>
+Atool <br/>
+Autoconf <br/>
+Automake <br/>
+Bash <br/>
+BC <br/>
+Bin86 <br/>
+BinUtils <br/>
+Bison <br/>
+Bzip2 <br/>
+CoreUtils <br/>
+Cpio <br/>
+DHCPCD <br/>
+Dialog <br/>
+DiffUtils <br/>
+E2FSProgs <br/>
+Ed <br/>
+File <br/>
+FindUtils <br/>
+Flex <br/>
+Gawk <br/>
+GCC <br/>
+Gettext <br/>
+GLib <br/>
+Glibc <br/>
+GoboHide <br/>
+GPM <br/>
+Grep <br/>
+Groff <br/>
+Grub <br/>
+Gzip <br/>
+Hdparm <br/>
+InetUtils <br/>
+KBD <br/>
+Less <br/>
+LibTool <br/>
+Linux <br/>
+Linux-Headers <br/>
+M4 <br/>
+Make <br/>
+Man <br/>
+Man-Pages <br/>
+MC <br/>
+MkTemp <br/>
+Module-Init-Tools <br/>
+Mtail <br/>
+Nano <br/>
+Nasm <br/>
+Ncurses <br/>
+Netkit-Base <br/>
+Net-Tools <br/>
+OpenSSL <br/>
+Patch <br/>
+PCIUtils <br/>
+PCRE <br/>
+Perl <br/>
+Pinfo <br/>
+Procinfo <br/>
+Procps <br/>
+Psmisc <br/>
+Python <br/>
+Readline <br/>
+ReiserFSProgs <br/>
+Sash <br/>
+Sed <br/>
+Shadow <br/>
+Slocate <br/>
+Strace <br/>
+Sudo <br/>
+Sysklogd <br/>
+Sysvinit <br/>
+Tar <br/>
+Texinfo <br/>
+Udev <br/>
+Util-Linux <br/>
+Wget <br/>
+ZLib <br/>
+ZSH <br/>
+</blockquote>
 
 = NonBase =
-<pre>
-ALSA-Lib
-ALSA-Utils
-APR
-APR-Util
-Aspell
-Aspell-en
-ATK
-Audacious
-Audiofile
-Aumix
-Cairo
-Cairomm
-Cdparanoia-III
-CDRDAO
-CDRTools
-Curl
-CVS
-Cyrus-Sasl
-DB
-Dcron
-Device-Mapper
-Dmraid
-DosFSTools
-DriConf
-DVD+RW-Tools
-Eject
-Firefox
-Flac
-Fuse
-Gimp
-Glibmm
-GMP
-GnuPG
-GnuTLS
-GParted
-GTK+
-GTKMM
-Htop
-HwData
-ID3Lib
-ImageMagick
-Imlib
-Indent
-Iwlwifi-3945-ucode
-Iwlwifi-4965-ucode
-JACK
-JPEG
-Lame
-Lazy
-LCMS
-Lesstif
-LibART_LGPL
-LibAssuan
-LibExif
-LibGCrypt
-LibGlade
-LibGPG-Error
-LibID3Tag
-LibIDL
-LibIDN
-LibKSBA
-LibMad
-LibMCS
-LibMNG
-LibOGG
-LibPNG
-LibRSVG
-LibSamplerate
-LibSigc++
-LibSndfile
-LibUngif
-LibUSB
-LibVorbis
-LibXML2
-LibXSLT
-LILO
-Links
-Lsof
-LVM2
-Madwifi
-Mdadm
-Mesa
-MPlayer
-NDISwrapper
-Neon
-NSPR
-NSS
-NTFS-3G
-OpenSSH
-Pango
-Parted
-PCMCIAUtils
-Perl-XML-Parser
-Pinentry
-Pkgconfig
-Popt
-PPP
-PTH
-RP-PPPoE
-Rsync
-Ruby
-SquashFS-Tools
-SSHFS
-Subversion
-SysFSUtils
-T1Lib
-TagLib
-Thunderbird
-TIFF
-TraceRoute
-Unzip
-Vim
-WindowMaker
-Wireless-Tools
-WPA_Supplicant
-Xpdf
-YAFC
-Zip
-</pre>
+<blockquote>
+ALSA-Lib <br/>
+ALSA-Utils <br/>
+APR <br/>
+APR-Util <br/>
+Aspell <br/>
+Aspell-en <br/>
+ATK <br/>
+Audacious <br/>
+Audiofile <br/>
+Aumix <br/>
+Cairo <br/>
+Cairomm <br/>
+Cdparanoia-III <br/>
+CDRDAO <br/>
+CDRTools <br/>
+Curl <br/>
+CVS <br/>
+Cyrus-Sasl <br/>
+DB <br/>
+Dcron <br/>
+Device-Mapper <br/>
+Dmraid <br/>
+DosFSTools <br/>
+DriConf <br/>
+DVD+RW-Tools <br/>
+Eject <br/>
+Firefox <br/>
+Flac <br/>
+Fuse <br/>
+Gimp <br/>
+Glibmm <br/>
+GMP <br/>
+GnuPG <br/>
+GnuTLS <br/>
+GParted <br/>
+GTK+ <br/>
+GTKMM <br/>
+Htop <br/>
+HwData <br/>
+ID3Lib <br/>
+ImageMagick <br/>
+Imlib <br/>
+Indent <br/>
+Iwlwifi-3945-ucode <br/>
+Iwlwifi-4965-ucode <br/>
+JACK <br/>
+JPEG <br/>
+Lame <br/>
+Lazy <br/>
+LCMS <br/>
+Lesstif <br/>
+LibART_LGPL <br/>
+LibAssuan <br/>
+LibExif <br/>
+LibGCrypt <br/>
+LibGlade <br/>
+LibGPG-Error <br/>
+LibID3Tag <br/>
+LibIDL <br/>
+LibIDN <br/>
+LibKSBA <br/>
+LibMad <br/>
+LibMCS <br/>
+LibMNG <br/>
+LibOGG <br/>
+LibPNG <br/>
+LibRSVG <br/>
+LibSamplerate <br/>
+LibSigc++ <br/>
+LibSndfile <br/>
+LibUngif <br/>
+LibUSB <br/>
+LibVorbis <br/>
+LibXML2 <br/>
+LibXSLT <br/>
+LILO <br/>
+Links <br/>
+Lsof <br/>
+LVM2 <br/>
+Madwifi <br/>
+Mdadm <br/>
+Mesa <br/>
+MPlayer <br/>
+NDISwrapper <br/>
+Neon <br/>
+NSPR <br/>
+NSS <br/>
+NTFS-3G <br/>
+OpenSSH <br/>
+Pango <br/>
+Parted <br/>
+PCMCIAUtils <br/>
+Perl-XML-Parser <br/>
+Pinentry <br/>
+Pkgconfig <br/>
+Popt <br/>
+PPP <br/>
+PTH <br/>
+RP-PPPoE <br/>
+Rsync <br/>
+Ruby <br/>
+SquashFS-Tools <br/>
+SSHFS <br/>
+Subversion <br/>
+SysFSUtils <br/>
+T1Lib <br/>
+TagLib <br/>
+Thunderbird <br/>
+TIFF <br/>
+TraceRoute <br/>
+Unzip <br/>
+Vim <br/>
+WindowMaker <br/>
+Wireless-Tools <br/>
+WPA_Supplicant <br/>
+Xpdf <br/>
+YAFC <br/>
+Zip <br/>
+</blockquote>
 
 = GoboLinux Tools =
-<pre>
-AbsTK
-BootScripts
-Compile
-ConfigTools
-EnhancedSkel
-Installer
-Listener
-LiveCD
-Manager
-Scripts
-</pre>
+<blockquote>
+AbsTK <br/>
+BootScripts <br/>
+Compile <br/>
+ConfigTools <br/>
+EnhancedSkel <br/>
+Installer <br/>
+Listener <br/>
+LiveCD <br/>
+Manager <br/>
+Scripts <br/>
+</blockquote>
 
 = KDE =
-<pre>
-DBus
-DBus-GLib
-DBus-Qt
-FAM
-HAL
-HAL-Info
-K3B
-KDE-Base
-KDE-Graphics
-KDE-I18N-de
-KDE-I18N-hu
-KDE-I18N-pt_BR
-KDE-Libs
-KDE-Network
-KDE-PIM
-KDE-Utils
-LibNTLM
-LibTheora
-MDNSResponder
-Pilot-Link
-PyQt
-Qt
-SIP
-</pre>
+<blockquote>
+DBus <br/>
+DBus-GLib <br/>
+DBus-Qt <br/>
+FAM <br/>
+HAL <br/>
+HAL-Info <br/>
+K3B <br/>
+KDE-Base <br/>
+KDE-Graphics <br/>
+KDE-I18N-de <br/>
+KDE-I18N-hu <br/>
+KDE-I18N-pt_BR <br/>
+KDE-Libs <br/>
+KDE-Network <br/>
+KDE-PIM <br/>
+KDE-Utils <br/>
+LibNTLM <br/>
+LibTheora <br/>
+MDNSResponder <br/>
+Pilot-Link <br/>
+PyQt <br/>
+Qt <br/>
+SIP <br/>
+</blockquote>
 
 = OpenOffice.org =
-<pre>
-OpenOffice
-</pre>
+<blockquote>
+OpenOffice <br/>
+</blockquote>
 
 = Printing =
-<pre>
-A2PS
-CUPS
-ESP-Ghostscript
-Foomatic
-LibPaper
-</pre>
+<blockquote>
+A2PS <br/>
+CUPS <br/>
+ESP-Ghostscript <br/>
+Foomatic <br/>
+LibPaper <br/>
+</blockquote>
 
 = X.Org (and dependencies) =
-<pre>
-Expat
-Fontconfig
-FreeType
-Xorg
-XTerm
-</pre>
+<blockquote>
+Expat <br/>
+Fontconfig <br/>
+FreeType <br/>
+Xorg <br/>
+XTerm <br/>
+</blockquote>
 
 {{Community}}

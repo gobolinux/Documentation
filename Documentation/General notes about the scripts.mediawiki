@@ -6,41 +6,41 @@ Many scripts accept command-line options. All options feature a short, one-lette
 
 * All command-line options have to be passed first, before other types of arguments (file names, package names, etc). In other words,
 
-<pre>
-FooScript -m Foo
-</pre>
+<blockquote>
+FooScript -m Foo <br/>
+</blockquote>
 
 works, but
 
-<pre>
-FooScript Foo -m      # WRONG! Switches must come first.
-</pre>
+<blockquote>
+FooScript Foo -m      # WRONG! Switches must come first. <br/>
+</blockquote>
 
 does not.
 
 * Some command-line options accept arguments. These arguments must be passed as the word following the argument, both in short and long forms. For example, say that -s and --long are options that take a parameter. This is the correct way to use them:
 
-<pre>
-FooScript -s value --long another
-</pre>
+<blockquote>
+FooScript -s value --long another <br/>
+</blockquote>
 
 These are not recognized:
 
-<pre>
-FooScript -s=value --long another      # WRONG! Use distinct tokens.
-</pre>
+<blockquote>
+FooScript -s=value --long another      # WRONG! Use distinct tokens. <br/>
+</blockquote>
 
 * Each option should be passed in a separate token, even when in short mode. If -a, -b and -c are options for an immaginary [[FooScript]], then
 
-<pre>
-FooScript -a -b -c blah.txt
-</pre>
+<blockquote>
+FooScript -a -b -c blah.txt <br/>
+</blockquote>
 
 is correct, but
 
-<pre>
-FooScript -abc blah.txt      # WRONG! Options must be separated.
-</pre>
+<blockquote>
+FooScript -abc blah.txt      # WRONG! Options must be separated. <br/>
+</blockquote>
 
 is not.
 

@@ -16,14 +16,14 @@ some programs which Gobo assumes are present and needs to function; make sure yo
 The instructions are very clear, and mostly work, however the Scripts package now contains 
 compiled C code, so once the CreateRootlessEnvironment has run, you do not have a working system.
 * Using your favorite text editor, create the file /usr/include/linux/kdev_t.h. It should contain the following:
-<pre>
-#ifndef _LINUX_KDEV_T_H
-#define _LINUX_KDEV_T_H
-#define MAJOR(dev)      ((dev)>>8)
-#define MINOR(dev)      ((dev) & 0xff)
-#define MKDEV(ma,mi)    ((ma)<<8 | (mi))
-#endif
-</pre>
+<blockquote>
+#ifndef _LINUX_KDEV_T_H <br/>
+#define _LINUX_KDEV_T_H <br/>
+#define MAJOR(dev)      ((dev)>>8) <br/>
+#define MINOR(dev)      ((dev) & 0xff) <br/>
+#define MKDEV(ma,mi)    ((ma)<<8 | (mi)) <br/>
+#endif <br/>
+</blockquote>
 * Go to Programs/Scripts/Current/src
 * run <code>make</code>
 * You will suddenly have a bunch of .exe files in the directory.  My brute force method was to go to 

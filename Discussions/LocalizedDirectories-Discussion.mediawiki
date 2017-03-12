@@ -1,27 +1,27 @@
 First, how do I get Unicode to display properly? Sorry about the mess below, you'll just have to believe that it really is Russian.
 
 I propose that directory names should have a localized layer added to them. The system would continue to see the directories in their original English names, but would display them based on the preference of the user. For example, the root directory would look like this for a Russian user who wants to see the directory names in Russian:
-<pre>
-/
-\&#1057;&#1082;&#1083;&#1072;&#1076;
-&#1059;&#1089;&#1090;&#1088;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072;
-&#1057;&#1080;&#1089;&#1090;&#1077;&#1084;&#1072;
-&#1060;&#1072;&#1081;&#1083;&#1099;
-&#1055;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1084;&#1099;
-&#1055;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1080;
-</pre>
+<blockquote>
+/ <br/>
+\&#1057;&#1082;&#1083;&#1072;&#1076; <br/>
+&#1059;&#1089;&#1090;&#1088;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072; <br/>
+&#1057;&#1080;&#1089;&#1090;&#1077;&#1084;&#1072; <br/>
+&#1060;&#1072;&#1081;&#1083;&#1099; <br/>
+&#1055;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1084;&#1099; <br/>
+&#1055;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1080; <br/>
+</blockquote>
 However, under this system, calls to /Files would still work, because there is simply a "translation" layer between the system and the user. <code>cd /Files</code> and <code>cd /&#1060;&#1072;&#1081;&#1083;&#1099;</code> would have the same effect; this way, we don't need to worry about localizing every single script and program. The system just automatically translates "&#1060;&#1072;&#1081;&#1083;&#1099;" to "Files" and vice versa.
 
 Another advantage is that this could be used by people who want to retain the English names, but don't like the name choices. I, for instance, don't like the choice "Depot" and "Mount". (Of course, /Depot doesn't really ever get called from a script, so I could change it right now without any problems, but this is just an example.) To change it, all I would have to do is edit the English localization (there should be an English localization precisely for this reason, even if it doesn't make much sense to begin with) and change it to look something like this:
-<pre>
-Depot = Commons
-Mount = Devices
-System = System
-Files = Files
-Programs = Programs
-Users = Users
-etc.
-</pre>
+<blockquote>
+Depot = Commons <br/>
+Mount = Devices <br/>
+System = System <br/>
+Files = Files <br/>
+Programs = Programs <br/>
+Users = Users <br/>
+etc. <br/>
+</blockquote>
 -----
 It could also be implemented with [[GoboHide]] and additional symlinks.  Symlink /Devices to /Mount and [[GoboHide]] /Mount.  But yes, a nice way to set this up would be nice.
 
@@ -110,30 +110,30 @@ Now, if Juan asks for help to Norman though irc, the first thing that Norman wil
 Sorry,I made some mistakes, I think it should be:
 
 Juan's script:
-<pre>
-#!/Programs/zsh
-setLanguage --justThisSession ES
-</pre>
+<blockquote>
+#!/Programs/zsh <br/>
+setLanguage --justThisSession ES <br/>
+</blockquote>
 As for Peter's script, the simplest (but most verbous) sollution is:
 
-<pre>
-#!/Programs/zsh
-setLanguage --justThisSession Custom Depot=MyPlace Files=ImportantFiles 
-</pre>
+<blockquote>
+#!/Programs/zsh <br/>
+setLanguage --justThisSession Custom Depot=MyPlace Files=ImportantFiles  <br/>
+</blockquote>
 
 Another option for Peter's script would be for him to have a custom-naming file:
 
-<pre>
-#!/Programs/zsh
-setLanguage --justThisSession CustomFile 
-</pre>
+<blockquote>
+#!/Programs/zsh <br/>
+setLanguage --justThisSession CustomFile  <br/>
+</blockquote>
 
 Then, if Peter sends his script (call it Peters_Text1)to Juan, then Peter would also send him the custom-naming file, which Juan would save in, say, /Deposito/Peter. Then, before running the script, Juan would type:
 
-<pre>
-setCustomFile --justThisSession /Deposito/Peter
-TranslateScript ./Peters_Text1 ES
-</pre>
+<blockquote>
+setCustomFile --justThisSession /Deposito/Peter <br/>
+TranslateScript ./Peters_Text1 ES <br/>
+</blockquote>
 
 The first line would make Peter's naming the default custom naming, but just for current zsh session. The second line translates Peter's custom script to one with an official (for Gobolinux) Spanish file naming, so that Juan can forget about Peter's defaults.
 

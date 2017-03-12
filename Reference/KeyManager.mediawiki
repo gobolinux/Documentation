@@ -3,19 +3,19 @@
 Manage digital signature keys for [[GoboLinux]] packages.
 
 Usage: [[KeyManager]] { <key_file> }
-<pre>
-Options:
--h, --help
-Shows this help.
--v, --version
-Show program version.
--V, --verbose
-Enable verbose mode.
--i, --import
-Import key
--l, --list
-List public keys
-
-</pre>
+<blockquote>
+Options: <br/>
+-h, --help <br/>
+Shows this help. <br/>
+-v, --version <br/>
+Show program version. <br/>
+-V, --verbose <br/>
+Enable verbose mode. <br/>
+-i, --import <br/>
+Import key <br/>
+-l, --list <br/>
+List public keys <br/>
+ <br/>
+</blockquote>
 
 {{Reference}}

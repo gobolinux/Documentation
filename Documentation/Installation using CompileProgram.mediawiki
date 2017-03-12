@@ -16,15 +16,15 @@ The [[PrepareProgram]] script does two things. It creates a directory hierarchy 
 
 The syntax for the [[PrepareProgram]] is:.
 
-<pre>
-PrepareProgram <program-name> <version-number> ~[ -- <additional-options> ]
-</pre>
+<blockquote>
+PrepareProgram <program-name> <version-number> ~[ -- <additional-options> ] <br/>
+</blockquote>
 
 Passing a program name and version number is mandatory. These names are the ones used in the directories under programs. For example,
 
-<pre>
-PrepareProgram Foo 1.0
-</pre>
+<blockquote>
+PrepareProgram Foo 1.0 <br/>
+</blockquote>
 
 creates the directories /Programs/Foo/Settings, /Programs/Foo/1.0, /Programs/Foo/1.0/bin and so on.
 
@@ -37,15 +37,15 @@ The second task performed by [[PrepareProgram]] is to prepare the sources. Since
 # If unfortunately the program does not feature a standard preparation script such as 'configure', the [[PrepareProgram]] will, as a last resort, scan for hardcoded paths in the Makefiles and attempt to modify them. Given that this automated process can be highly error-prone, [[PrepareProgram]] avoids being "automagical" and asks for the user's assistance: it asks the user for permission before attempting modifications, it saves backup copies of all Makefiles, and displays a summary of changes to the user. (Note: If the user is sure the modifications will be correct, all interaction can be suppressed passing the --batch option to [[PrepareProgram]].)
 In short, [[PrepareProgram]] can be considered a wrapper to 'configure'. Instead of running, for example,
 
-<pre>
-~/foo-1.0] configure --with-shared=yes
-</pre>
+<blockquote>
+~/foo-1.0] configure --with-shared=yes <br/>
+</blockquote>
 
 you'll run
 
-<pre>
-~/foo-1.0] PrepareProgram Foo 1.0 -- --with-shared=yes
-</pre>
+<blockquote>
+~/foo-1.0] PrepareProgram Foo 1.0 -- --with-shared=yes <br/>
+</blockquote>
 
 However, for most programs that use GNU [[AutoTools]], you'll want to use the all-in-one [[CompileProgram]] wrapper script.
 
@@ -55,17 +55,17 @@ The final step in the compilation of a program is performed by the [[SymlinkProg
 
 The syntax for [[SymlinkProgram]] is:
 
-<pre>
-SymlinkProgram <program-name> ~[ <version-number> ]
-</pre>
+<blockquote>
+SymlinkProgram <program-name> ~[ <version-number> ] <br/>
+</blockquote>
 
 The second argument is optional. If no version number is specified, the one linked as Current will be used.
 
 [[SymlinkProgram]] is the script responsible for creating the symbolic links under /System/Links. It can also, optionally, provide a controlled environment for safely executing 'make install', using a sandbox provided by the [[FiboSandbox]] script. To have [[SymlinkProgram]] perform 'make install', use the --make (-m) option, like this:
 
-<pre>
-SymlinkProgram -m Foo
-</pre>
+<blockquote>
+SymlinkProgram -m Foo <br/>
+</blockquote>
 
 It is recommended that 'make install' is always executed through [[SymlinkProgram]], because the sandbox ensures that 'make install' will only have permissions to store files under /Programs/Foo/Current and /Programs/Foo/Settings.
 
@@ -77,28 +77,28 @@ The [[CompileProgram]] script wraps [[PrepareProgram]], make and [[SymlinkProgra
 
 The syntax for [[CompileProgram]] is:
 
-<pre>
-CompileProgram <file-or-path> [ <program-name> [ <version-number> ] ] [ -- <additional-options> ]
-</pre>
+<blockquote>
+CompileProgram <file-or-path> [ <program-name> [ <version-number> ] ] [ -- <additional-options> ] <br/>
+</blockquote>
 
 The first argument is the filename of the source tarball or the path where the sources are located. Normally, you'll want to use the '.' (current) directory as an argument, doing something like this:
 
-<pre>
-~] aunpack foo-1.0.tar.gz
-~] cd foo-1.0
-~/foo-1.0] CompileProgram .
-</pre>
+<blockquote>
+~] aunpack foo-1.0.tar.gz <br/>
+~] cd foo-1.0 <br/>
+~/foo-1.0] CompileProgram . <br/>
+</blockquote>
 
 Note that, unlike in [[PrepareProgram]] and [[SymlinkProgram]], here both the program name and version are optional. [[CompileProgram]] performs a number of heuristics to determine the program name (and capitalization) and version. These heuristics, among other things, read the directory name and scan the README file. [[CompileProgram]] will display the name and version detected, and ask for confirmation. If those are not satisfactory, the user can cancel the process and enter the correct names in the command line, like:
 
-<pre>
-~/foo-1.0] CompileProgram .
-Press Enter to compile Foo, version 1.0 or Ctrl-C to cancel.
-<Ctrl-C>
-~/foo-1.0] CompileProgram . Foo
-Press Enter to compile Foo, version 1.0 or Ctrl-C to cancel.
-<Enter>
-</pre>
+<blockquote>
+~/foo-1.0] CompileProgram . <br/>
+Press Enter to compile Foo, version 1.0 or Ctrl-C to cancel. <br/>
+<Ctrl-C> <br/>
+~/foo-1.0] CompileProgram . Foo <br/>
+Press Enter to compile Foo, version 1.0 or Ctrl-C to cancel. <br/>
+<Enter> <br/>
+</blockquote>
 
 Prior to compilation, [[CompileProgram]] will display on screen the README and INSTALL files, if present. They may contain relevant information for the user such as additional switches to be passed to configure. These options can be passed to [[CompileProgram]] like in [[PrepareProgram]]: appended to the commandline options, after '--'.
 

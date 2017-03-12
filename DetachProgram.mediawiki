@@ -13,8 +13,8 @@ Options:
 This script 'moves' a program from the /Programs hierarchy to <destdir> directory.  Afterwards, symlinks are created in /Programs to maintain functionality.  If <destdir> is omitted the environment variable $goboInstall is used.
 
 Examples:
-<pre>
-DetachProgram GCC 2.95.3 /Network/Programs
-</pre>
+<blockquote>
+DetachProgram GCC 2.95.3 /Network/Programs <br/>
+</blockquote>
 
 {{Scripts}}

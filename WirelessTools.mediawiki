@@ -7,32 +7,32 @@ The test machine for the article is a lenovo Thinkpad x60.<br>
 - Atheros-based cards, you'll need madwifi.<br>
 <br>
 You will need to install madwifi:
-<pre>
-Compile madwifi
-</pre>
+<blockquote>
+Compile madwifi <br/>
+</blockquote>
 As usual on GoboLinux everything (including dependencies) 
 is being compiled and installed with just this simple command.
 
 After a reboot, you should see the following:
-<pre>
-root@kanzume /] iwconfig
-lo        no wireless extensions.
-
-eth0      no wireless extensions.
-
-wifi0     no wireless extensions.
-
-ath0      IEEE 802.11g  ESSID:""  Nickname:""
-          Mode:Managed  Channel:0  Access Point: Not-Associated
-          Bit Rate:0 kb/s   Tx-Power:12 dBm   Sensitivity=1/1
-          Retry:off   RTS thr:off   Fragment thr:off
-          Encryption key:000D-0BB8-667A   Security mode:open
-          Power Management:off
-          Link Quality=0/70  Signal level=-98 dBm  Noise level=-98 dBm
-          Rx invalid nwid:2247  Rx invalid crypt:0  Rx invalid frag:0
-          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
-root@kanzume /]    
-</pre>
+<blockquote>
+root@kanzume /] iwconfig <br/>
+lo        no wireless extensions. <br/>
+ <br/>
+eth0      no wireless extensions. <br/>
+ <br/>
+wifi0     no wireless extensions. <br/>
+ <br/>
+ath0      IEEE 802.11g  ESSID:""  Nickname:"" <br/>
+          Mode:Managed  Channel:0  Access Point: Not-Associated <br/>
+          Bit Rate:0 kb/s   Tx-Power:12 dBm   Sensitivity=1/1 <br/>
+          Retry:off   RTS thr:off   Fragment thr:off <br/>
+          Encryption key:000D-0BB8-667A   Security mode:open <br/>
+          Power Management:off <br/>
+          Link Quality=0/70  Signal level=-98 dBm  Noise level=-98 dBm <br/>
+          Rx invalid nwid:2247  Rx invalid crypt:0  Rx invalid frag:0 <br/>
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0 <br/>
+root@kanzume /]     <br/>
+</blockquote>
 
 - Bringing up/down the interface, set the IPs and such is the same as for any other NIC: with ifconfig.<br>
 - Selecting ESSID and encyption keys are done with iwconfig<br>

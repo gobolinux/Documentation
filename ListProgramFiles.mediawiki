@@ -1,32 +1,32 @@
 Gives you the list of files which belong to some program you have installed on your machine.
 
 ==Usage==
-<pre>ListProgramFiles <program> [<version>] | <version_directory></pre>
-
-===Options===
-* <tt>'''-h, --help'''</tt> - Show the help message.
-* <tt>'''--version'''</tt> - Show program's version number.
-* <tt>'''-v, --verbose'''</tt> - Enables verbose mode.
-* <tt>'''-f, --files'''</tt> - List files (equivalent to '-xtype f' in 'find')
-* <tt>'''-l, --links'''</tt> - List links (equivalent to '-type l' in 'find') 
-* <tt>'''-p, --path'''</tt> - Return full path, including the program's directory.
-* <tt>'''-n, --null'''</tt> - Separate files with null instead of newline.
-
-===Other considerations===
-* '''<program>''' field is not case-sensitive, although the '''<version>''' field is.
-
-==Usage examples==
-===Which files belong the current installed version of 'Wireless-Tools'===
-<pre>ListProgramFiles wireless-tools</pre>
+<blockquote>ListProgramFiles <program> [<version>] | <version_directory></pre>
+ <br/>
+===Options=== <br/>
+* <tt>'''-h, --help'''</tt> - Show the help message. <br/>
+* <tt>'''--version'''</tt> - Show program's version number. <br/>
+* <tt>'''-v, --verbose'''</tt> - Enables verbose mode. <br/>
+* <tt>'''-f, --files'''</tt> - List files (equivalent to '-xtype f' in 'find') <br/>
+* <tt>'''-l, --links'''</tt> - List links (equivalent to '-type l' in 'find')  <br/>
+* <tt>'''-p, --path'''</tt> - Return full path, including the program's directory. <br/>
+* <tt>'''-n, --null'''</tt> - Separate files with null instead of newline. <br/>
+ <br/>
+===Other considerations=== <br/>
+* '''<program>''' field is not case-sensitive, although the '''<version>''' field is. <br/>
+ <br/>
+==Usage examples== <br/>
+===Which files belong the current installed version of 'Wireless-Tools'=== <br/>
+<blockquote>ListProgramFiles wireless-tools</pre>
 or, equivalently:
-<pre>ListProgramFiles wireless-tools Current</pre>
-Notice how '''<program>''' field is not case-sensitive although '''<version>''' field is.
-
-===Which files belong to version 28 of 'Wireless-Tools'===
-<pre>ListProgramFiles wireless-tools 28</pre>
+<blockquote>ListProgramFiles wireless-tools Current</pre>
+Notice how '''<program>''' field is not case-sensitive although '''<version>''' field is. <br/>
+ <br/>
+===Which files belong to version 28 of 'Wireless-Tools'=== <br/>
+<blockquote>ListProgramFiles wireless-tools 28</pre>
 
 ===Which files belong to 'Wireless-Tools' (merges files from all versions installed)===
-<pre>ListProgramFiles /Programs/Wireless-Tools</pre>
-Notice that we passed the program's directory instead of its name.
-
-{{Scripts}}
+<blockquote>ListProgramFiles /Programs/Wireless-Tools</pre>
+Notice that we passed the program's directory instead of its name. <br/>
+ <br/>
+{{Scripts}} <br/>

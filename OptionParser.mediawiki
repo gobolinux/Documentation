@@ -58,26 +58,26 @@ Adds an option, updating options arrays accordingly. Options are stored using a 
 See each option's Add_ function header for a more detailed description.
 ==== Usage ====
 <code>Add_Option <type> <default> <short> <long> <description> [<values>]</code>
-<pre>Add_Option "Entry" "ask" "s" "same" "What to do when unpackaging over the same version." "keep remove ask cancel"</pre>
-==== Arguments ====
-:; type (string)
-:: Option's type
-:; default (string)
-:: Option's default value
-:; short (char)
-:: Option's shortening
-:; long (string)
-:: Option's full name
-:; description (string)
-:: Option's description
-:; values (list)
-:: Option's possible values
-=== Add_Option_Boolean ===
-----
-Adds an option of type boolean. A boolean option has only two possible values: 'on' and 'off', which respectively map to 'true' and 'false'. In fact, anything else than 'on' means 'false'. Since its values are fixed, there is no need to specify a list of possible values. Furthermore, they don't have a default value because they're evaluated at 'false' by default.
-==== Usage ====
-<code>Add_Option_Boolean <short> <long> <description></code>
-<pre>Add_Option_Boolean "d" "display" "Informative output only. Do not actually kill any process."</pre>
+<blockquote>Add_Option "Entry" "ask" "s" "same" "What to do when unpackaging over the same version." "keep remove ask cancel"</pre>
+==== Arguments ==== <br/>
+:; type (string) <br/>
+:: Option's type <br/>
+:; default (string) <br/>
+:: Option's default value <br/>
+:; short (char) <br/>
+:: Option's shortening <br/>
+:; long (string) <br/>
+:: Option's full name <br/>
+:; description (string) <br/>
+:: Option's description <br/>
+:; values (list) <br/>
+:: Option's possible values <br/>
+=== Add_Option_Boolean === <br/>
+---- <br/>
+Adds an option of type boolean. A boolean option has only two possible values: 'on' and 'off', which respectively map to 'true' and 'false'. In fact, anything else than 'on' means 'false'. Since its values are fixed, there is no need to specify a list of possible values. Furthermore, they don't have a default value because they're evaluated at 'false' by default. <br/>
+==== Usage ==== <br/>
+<code>Add_Option_Boolean <short> <long> <description></code> <br/>
+<blockquote>Add_Option_Boolean "d" "display" "Informative output only. Do not actually kill any process."</pre>
 ==== Arguments ====
 :; short (char)
 :: Option's shortening
@@ -90,24 +90,24 @@ Adds an option of type boolean. A boolean option has only two possible values: '
 Adds a full option entry. An option of this type can assume only one value at a time, chosen among the pool of possible values.
 ==== Usage ====
 <code>Add_Option_Entry <short> <long> <description> [<default> [<values>]]</code>
-<pre>Add_Option_Entry "s" "same" "What to do when unpackaging over the same version." "ask" "keep remove ask cancel"</pre>
-==== Arguments ====
-:; short (char)
-:: Option's shortening
-:; long (string)
-:: Option's full name
-:; description (string)
-:: Option's description
-:; default (string)
-:: Option's default value
-:; values (list)
-:: Option's possible values
-=== Add_Option_List ===
-----
-Adds an option of type list. This is an option which can take a list of values instead of a single one.
-==== Usage ====
-<code>Add_Option_List <shor> <long> <description> [<default>]</code>
-<pre>Add_Option_List "s" "sandbox" "Colon-separated list of areas where the restricted user has write access to." "."</pre>
+<blockquote>Add_Option_Entry "s" "same" "What to do when unpackaging over the same version." "ask" "keep remove ask cancel"</pre>
+==== Arguments ==== <br/>
+:; short (char) <br/>
+:: Option's shortening <br/>
+:; long (string) <br/>
+:: Option's full name <br/>
+:; description (string) <br/>
+:: Option's description <br/>
+:; default (string) <br/>
+:: Option's default value <br/>
+:; values (list) <br/>
+:: Option's possible values <br/>
+=== Add_Option_List === <br/>
+---- <br/>
+Adds an option of type list. This is an option which can take a list of values instead of a single one. <br/>
+==== Usage ==== <br/>
+<code>Add_Option_List <shor> <long> <description> [<default>]</code> <br/>
+<blockquote>Add_Option_List "s" "sandbox" "Colon-separated list of areas where the restricted user has write access to." "."</pre>
 ==== Arguments ====
 :; short (char)
 :: Option's shortening
@@ -122,17 +122,17 @@ Adds an option of type list. This is an option which can take a list of values i
 Adds a new argument to our array of arguments.
 ==== Usage ====
 <code>Add_Argument <value></code>
-<pre>Add Argument</pre>
-==== Arguments ====
-:; value (string)
-:: The argument to be added
-=== Args_To_Array ===
-----
-Converts a space separated string of arguments to a bash array. If the start (end) position is not specified, the array will start at the first (end at the last) one.
-==== Usage ====
-<code>eval `Args_To_Array <name> [<from> [<to>]]`</code>
-Returns an array called myArray with all non-option arguments.
-<pre>eval `Args_To_Array myArray`</pre>
+<blockquote>Add Argument</pre>
+==== Arguments ==== <br/>
+:; value (string) <br/>
+:: The argument to be added <br/>
+=== Args_To_Array === <br/>
+---- <br/>
+Converts a space separated string of arguments to a bash array. If the start (end) position is not specified, the array will start at the first (end at the last) one. <br/>
+==== Usage ==== <br/>
+<code>eval `Args_To_Array <name> [<from> [<to>]]`</code> <br/>
+Returns an array called myArray with all non-option arguments. <br/>
+<blockquote>eval `Args_To_Array myArray`</pre>
 ==== Arguments ====
 :; name (string)
 :: Array's name
@@ -148,29 +148,29 @@ Returns an array called myArray with all non-option arguments.
 Returns the argument at the specified position.
 ==== Usage ====
 <code>Arg <position></code>
-<pre>Arg 3</pre>
-==== Arguments ====
-:; position (number)
-:: Argument's position
-==== Output ====
-:; string
-:: The argument at <position>, if in bounds, or an empty string
-=== Number_Of_Arguments ===
-----
-Prints the number of arguments.
-==== Usage ====
-<code>Number_Of_Arguments</code>
-==== Arguments ====
-: none
-==== Output ====
-:; number
-:: The number of arguments.
-=== Entry ===
-----
-Checks whether a specific option of type 'Entry' exists in our list.
-==== Usage ====
-<code>Entry <name></code>
-<pre>Entry "s"</pre>
+<blockquote>Arg 3</pre>
+==== Arguments ==== <br/>
+:; position (number) <br/>
+:: Argument's position <br/>
+==== Output ==== <br/>
+:; string <br/>
+:: The argument at <position>, if in bounds, or an empty string <br/>
+=== Number_Of_Arguments === <br/>
+---- <br/>
+Prints the number of arguments. <br/>
+==== Usage ==== <br/>
+<code>Number_Of_Arguments</code> <br/>
+==== Arguments ==== <br/>
+: none <br/>
+==== Output ==== <br/>
+:; number <br/>
+:: The number of arguments. <br/>
+=== Entry === <br/>
+---- <br/>
+Checks whether a specific option of type 'Entry' exists in our list. <br/>
+==== Usage ==== <br/>
+<code>Entry <name></code> <br/>
+<blockquote>Entry "s"</pre>
 ==== Arguments ====
 :; char/string ()
 :: Option's shortening/full name
@@ -189,23 +189,23 @@ Checks whether a specific option of type 'Entry' exists in our list.
 Checks whether the specified Entry option has a default value.
 ==== Usage ====
 <code>Is_Entry_Set <name></code>
-<pre>Is_Entry_Set "s"</pre>
-==== Arguments ====
-:; char/string ()
-:: Option's shortening/full name
-==== Return ====
-:; 0
-:: The option has a default value.
-:; 1
-:: The option has no default value.
-:; 2
-:: The option doesn't exist.
-=== Is_Entry ===
-----
-Checks whether it exists an Entry option with the specified name-value pair. The value can also be empty, in which case the option just has to exist.
-==== Usage ====
-<code>Is_Entry <option> [<compare>]</code>
-<pre>Is_Entry "s" "ask"</pre>
+<blockquote>Is_Entry_Set "s"</pre>
+==== Arguments ==== <br/>
+:; char/string () <br/>
+:: Option's shortening/full name <br/>
+==== Return ==== <br/>
+:; 0 <br/>
+:: The option has a default value. <br/>
+:; 1 <br/>
+:: The option has no default value. <br/>
+:; 2 <br/>
+:: The option doesn't exist. <br/>
+=== Is_Entry === <br/>
+---- <br/>
+Checks whether it exists an Entry option with the specified name-value pair. The value can also be empty, in which case the option just has to exist. <br/>
+==== Usage ==== <br/>
+<code>Is_Entry <option> [<compare>]</code> <br/>
+<blockquote>Is_Entry "s" "ask"</pre>
 ==== Arguments ====
 :; option (string)
 :: Option's name
@@ -219,23 +219,23 @@ Checks whether it exists an Entry option with the specified name-value pair. The
 Checks if the specified Boolean option exists and is active.
 ==== Usage ====
 <code>Boolean <name></code>
-<pre>Boolean "no-web"</pre>
-==== Arguments ====
-:; char/string ()
-:: Option's shortening/full name
-==== Return ====
-:; 0
-:: The option is active.
-:; 1
-:: The option isn't active.
-:; 2
-:: The option doesn't exist.
-=== Set_Boolean ===
-----
-Set a boolean option to 'on' or 'off', as specified by the argument. Defaults to 'on' when no argument is present.
-==== Usage ====
-<code>Set_Boolean <name> [<value>]</code>
-<pre>Set_Boolean "batch"</pre>
+<blockquote>Boolean "no-web"</pre>
+==== Arguments ==== <br/>
+:; char/string () <br/>
+:: Option's shortening/full name <br/>
+==== Return ==== <br/>
+:; 0 <br/>
+:: The option is active. <br/>
+:; 1 <br/>
+:: The option isn't active. <br/>
+:; 2 <br/>
+:: The option doesn't exist. <br/>
+=== Set_Boolean === <br/>
+---- <br/>
+Set a boolean option to 'on' or 'off', as specified by the argument. Defaults to 'on' when no argument is present. <br/>
+==== Usage ==== <br/>
+<code>Set_Boolean <name> [<value>]</code> <br/>
+<blockquote>Set_Boolean "batch"</pre>
 ==== Arguments ====
 :; char/string ()
 :: Option's shortening/full name

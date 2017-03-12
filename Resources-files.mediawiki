@@ -13,25 +13,25 @@ Defaults/ may also contain a subdirectory Variable/.  These files are copied to 
 ==== Dependencies ====
 This file lists programs which should be installed for this Program to work properly.
 The format is like
-<pre>
-Fontconfig 2.4.2
-FreeType 2.1.10
-GCC >= 3.0.0, < 4.0.0, != 3.1.0
-Glibc 2.5
-Lame >= 3.96.1 [lame]
-Mesa 6.5.2
-Qt >= 3.3.8, < 4.0 [qt]
-LuaRocks:luafilesystem
-CPAN:XML::Parser
-Xorg 7.2
-ZLib 1.2.3
-</pre>
+<blockquote>
+Fontconfig 2.4.2 <br/>
+FreeType 2.1.10 <br/>
+GCC >= 3.0.0, < 4.0.0, != 3.1.0 <br/>
+Glibc 2.5 <br/>
+Lame >= 3.96.1 [lame] <br/>
+Mesa 6.5.2 <br/>
+Qt >= 3.3.8, < 4.0 [qt] <br/>
+LuaRocks:luafilesystem <br/>
+CPAN:XML::Parser <br/>
+Xorg 7.2 <br/>
+ZLib 1.2.3 <br/>
+</blockquote>
 The tags such as [lame] specify ''use flags'', optional dependencies which affect the compilation of the package, if present.
 
 The exact algorithm for complex dependencies is specified in [[CheckDependencies]] but allows for a sequence of options separated by "|" (or) each of which is a sequence of versions separated by "," (and).  Precedence is left to right.  Thus:
-<pre>
-GCC < 4.0.0 | >= 4.1.0, != 4.1.2 | ICC > 2.0.0
-</pre>
+<blockquote>
+GCC < 4.0.0 | >= 4.1.0, != 4.1.2 | ICC > 2.0.0 <br/>
+</blockquote>
 means a GCC version less than 4.0.0 or a GCC version greater than 4.1.0 but not equal to 4.1.2 or an ICC version greater than 2.0.0.  See the code for [[CheckDependencies]] for the exact algorithm.
 
 Dependencies to language-specific package managers can be fulfilled using the [[Aliens]] subsystem, using the syntax <tt>AlienType:alien_package</tt>, as in the examples above.
@@ -44,14 +44,14 @@ For more info, see [[Dependencies]] and [[Use Flags]].
 
 ==== Description ====
 This file contains information of interest to humans regarding the program.  A typical example is
-<pre>
-[Name] GCC
-[Summary] The GNU Compiler Collection
-[Description] The GNU Compiler Collection contains frontends for C,  C++,
-Objective-C, Fortran, Java, and Ada...
-[License] GNU General Public License (GPL)
-[Homepage] http://gcc.gnu.org/
-</pre>
+<blockquote>
+[Name] GCC <br/>
+[Summary] The GNU Compiler Collection <br/>
+[Description] The GNU Compiler Collection contains frontends for C,  C++, <br/>
+Objective-C, Fortran, Java, and Ada... <br/>
+[License] GNU General Public License (GPL) <br/>
+[Homepage] http://gcc.gnu.org/ <br/>
+</blockquote>
 ==== Environment ====
 This file contains environment variables which should be set for this program, as bash assignments.
 For example, the Firefox recipe has

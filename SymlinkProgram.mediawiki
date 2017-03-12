@@ -28,8 +28,8 @@ Options:
 If no program version is specified, Current is assumed.
 
 Examples:
-<pre>
-SymlinkProgram WeirdSuperLib 2.4
-</pre>
+<blockquote>
+SymlinkProgram WeirdSuperLib 2.4 <br/>
+</blockquote>
 
 {{Scripts}}

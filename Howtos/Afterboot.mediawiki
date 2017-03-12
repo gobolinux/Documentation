@@ -5,111 +5,111 @@ I (Peter Eriksen) will be updating this page as I'm setting things up. I didn't 
 
 = [[LiveCD]] Tricks =
 If X isn't set up correctly in the installation but works fine on the [[LiveCD]], it might be good to cp the one from the running [[LiveCD]] to the installation.  Here it's done through a floppy:
-<pre>
-~]mount /Mount/Floppy
-~]cp /System/Settings/X11/XF86Config /Mount/Floppy/
-</pre>
+<blockquote>
+~]mount /Mount/Floppy <br/>
+~]cp /System/Settings/X11/XF86Config /Mount/Floppy/ <br/>
+</blockquote>
 
 If networking with DHCP doesn't work on the [[LiveCD]] try this:
-<pre>
-~]dhcpcd
-</pre>
+<blockquote>
+~]dhcpcd <br/>
+</blockquote>
 
 = Privilege Escalation =
 Add user peter to the system group "sys".  The user could also be added to a group wheel, but I guess, since there is already a group sys with user gobo in it and no group wheel, then it's natural to use sys as the administrator group.
-<pre>
-~]usermod -G sys peter
-</pre>
+<blockquote>
+~]usermod -G sys peter <br/>
+</blockquote>
 ''Below only applies to GoboLinux 013 and earlier as it is default since GoboLinux 014'' <br />
 Next give peter root privileges by configuring the sudoers file.
-<pre>
-~]visudo
-</pre>
+<blockquote>
+~]visudo <br/>
+</blockquote>
 Add e.g. the following line or something similar
-<pre>
-%sys ALL=(ALL) NOPASSWD:ALL
-</pre>
+<blockquote>
+%sys ALL=(ALL) NOPASSWD:ALL <br/>
+</blockquote>
 
 = Timezone =
-<pre>
-~]ls -l /Programs/Glibc/Settings/localtime
-lrwxrwxrwx  1 gobo gobo 56 2004-12-16 13:42 /Programs/Glibc/Settings/localtime -> /Programs/Glibc/Current/share/zoneinfo/America/Sao_Paulo
-~]sudo ln -sf /Programs/Glibc/Current/Shared/zoneinfo/Europe/Copenhagen /Programs/Glibc/Settings/localtime
-~]sudo ln -sf /Programs/Glibc/Current/Shared/zoneinfo/Europe/Copenhagen /System/Settings/localtime
-</pre>
+<blockquote>
+~]ls -l /Programs/Glibc/Settings/localtime <br/>
+lrwxrwxrwx  1 gobo gobo 56 2004-12-16 13:42 /Programs/Glibc/Settings/localtime -> /Programs/Glibc/Current/share/zoneinfo/America/Sao_Paulo <br/>
+~]sudo ln -sf /Programs/Glibc/Current/Shared/zoneinfo/Europe/Copenhagen /Programs/Glibc/Settings/localtime <br/>
+~]sudo ln -sf /Programs/Glibc/Current/Shared/zoneinfo/Europe/Copenhagen /System/Settings/localtime <br/>
+</blockquote>
 It might be relevant to set the zoneinfo of the system clock.
-<pre>
-~]ls /usr/share/zoneinfo
-</pre>
+<blockquote>
+~]ls /usr/share/zoneinfo <br/>
+</blockquote>
 (Suppose you want to use GMT)
-<pre>
-~]ln -sf /usr/share/zoneinfo/GMT /etc/localtime
-</pre>
+<blockquote>
+~]ln -sf /usr/share/zoneinfo/GMT /etc/localtime <br/>
+</blockquote>
 
 = X.Org =
 If the X configuration file from the [[LiveCD]] was saved on a floppy, copy it to the installation.
-<pre>
-~]mount /Mount/Floppy
-~]sudo cp /Mount/Floppy/XF86Config /System/Settings/X11/XF86Config
-</pre>
+<blockquote>
+~]mount /Mount/Floppy <br/>
+~]sudo cp /Mount/Floppy/XF86Config /System/Settings/X11/XF86Config <br/>
+</blockquote>
 
 =  Boot Menu =
-<pre>
-~]sudo cp /System/Kernel/Boot/grub/menu.lst /System/Kernel/Boot/grub/menu.lst.backup
-~]sudo vi /System/Kernel/Boot/grub/menu.lst
-</pre>
+<blockquote>
+~]sudo cp /System/Kernel/Boot/grub/menu.lst /System/Kernel/Boot/grub/menu.lst.backup <br/>
+~]sudo vi /System/Kernel/Boot/grub/menu.lst <br/>
+</blockquote>
 
 = Terminal Settings =
 If remote ssh programs doesn't work it might be because of the terminal settings.  In that case a workaround could be:
-<pre>
-~]echo $TERM
-xterm-color
-~]export TERM=xterm
-</pre>
+<blockquote>
+~]echo $TERM <br/>
+xterm-color <br/>
+~]export TERM=xterm <br/>
+</blockquote>
 
 = Compile Settings =
-<pre>
-~]sudo vim /Programs/Compile/Settings/Compile/Compile.conf
-</pre>
+<blockquote>
+~]sudo vim /Programs/Compile/Settings/Compile/Compile.conf <br/>
+</blockquote>
 Put your name in compile[[RecipeAuthor]]="" and uncomment.
 Comment the line "http://cscience.org/~gobo/recipe-store".  Use http://www.gobolinux.org/recipe-store/ instead.
 
 =  Updating the [[GoboLinux]] Infrastructure =
 It might be wise to upgrade Compile and other programs
 before attempting to compile or install other programs
-<pre>
-~]InstallPackage Scripts
-~]InstallPackage Compile
-</pre>
+<blockquote>
+~]InstallPackage Scripts <br/>
+~]InstallPackage Compile <br/>
+</blockquote>
 
 = Known Issues =
 Remember to look over the [http://www.gobolinux.org/index.php?page=known_issues_014 known issues] for things that might affect you.
 Also see if any of the [http://bugs.gobolinux.org tracking bugs] affect you.
 
 = Miscellaneous Files to Check =
-<pre>
-/System/Settings/~BootScripts/Options
-/System/Settings/hosts
-/System/Settings/resolv.conf
-/System/Settings/fstab
-/System/Settings/modprobe.conf
-</pre>
+<blockquote>
+/System/Settings/~BootScripts/Options <br/>
+/System/Settings/hosts <br/>
+/System/Settings/resolv.conf <br/>
+/System/Settings/fstab <br/>
+/System/Settings/modprobe.conf <br/>
+</blockquote>
 
 = NVIDIA Driver =
 In GoboLinux 0.14.1 you will first have to compile a custom kernel without Xen virtualisation as that is unsupported by NVIDIA's proprietary driver. Once that is done, just do:
 
-<pre>
-~]Compile nvidia
-</pre>
+<blockquote>
+~]Compile nvidia <br/>
+</blockquote>
 
 Then edit /System/Settings/X11/xorg.conf. You need at least to change 'Driver "nv"' into 'Driver "nvidia"' outcomment "Load dri" if present.
 
 = Workarounds for Recipe Problems =
-<pre>
-~]cd /Programs/SDL/Current/include
-~]ln -s SDL/* .
-~]SymlinkProgram SDL
-</pre>
+<blockquote>
+~]cd /Programs/SDL/Current/include <br/>
+~]ln -s SDL/* . <br/>
+~]SymlinkProgram SDL <br/>
+</blockquote>
 
 = Todo: =
 == Soundcard Drivers ==

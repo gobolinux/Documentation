@@ -8,9 +8,9 @@
 
 To install binary packages, simply run [[InstallPackage]] passing the package name as a parameter. For example:
 
-<pre>
-InstallPackage Foo--1.0--i686.tar.bz2
-</pre>
+<blockquote>
+InstallPackage Foo--1.0--i686.tar.bz2 <br/>
+</blockquote>
 
 This will unpack the archive inside /Programs, and will call [[SymlinkProgram]] to update /System/Links.
 
@@ -18,9 +18,9 @@ This will unpack the archive inside /Programs, and will call [[SymlinkProgram]] 
 
 To create a binary package, use the [[CreatePackage]] script. It has the following syntax:
 
-<pre>
-CreatePackage <program-name>
-</pre>
+<blockquote>
+CreatePackage <program-name> <br/>
+</blockquote>
 
 It will create a package of the Current version of the specified program, and store the generated archive at /Programs.
 
@@ -34,9 +34,9 @@ Note: please be careful with the contents of the Settings directory when creatin
 
 The usual procedure to clean up symbolic links, is, then:
 
-<pre>
-~] cd /System/Links
-/System/Links] find | RemoveBroken
-</pre>
+<blockquote>
+~] cd /System/Links <br/>
+/System/Links] find | RemoveBroken <br/>
+</blockquote>
 
 {{Handbook}}

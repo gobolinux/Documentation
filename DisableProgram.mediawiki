@@ -10,8 +10,8 @@ Options:
 This script "disables" a program in the system, while keeping it in the /Programs hierarchy. To "re-enable" it, run [[SymlinkProgram]]. If version is not specified, Current is assumed.
 
 Examples:
-<pre>
-DisableProgram GCC 2.95.3
-</pre>
+<blockquote>
+DisableProgram GCC 2.95.3 <br/>
+</blockquote>
 
 {{Scripts}}

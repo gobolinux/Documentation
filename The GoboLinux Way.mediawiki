@@ -6,9 +6,9 @@ The main task of a Linux distribution is to keep track and organize the programs
 
 In [[GoboLinux]], every program lives in its own subdirectory.  Under the top level directory /Programs; e.g  you'll find Xorg 7.0 at /Programs/Xorg/7.0/, and ping at /Programs/Netkit-Base/0.17/bin/ping. To see what programs are installed in the system, all you need to do is to look in the /Programs directory:
 
-<pre>
-ls /Programs
-</pre>
+<blockquote>
+ls /Programs <br/>
+</blockquote>
 
 For each category of files, there is a directory under /System/Links grouping files from each application as symbolic links: Executables, Libraries, Headers, Shared and Manuals. For compatibility, each "legacy" UNIX directory is a link to a corresponding category. Therefore, /bin, /sbin, /usr/bin, /usr/local/bin (and so on) are all symlinks to /System/Links/Executables. Environment variables are also simplified: <code>export PATH=/System/Links/Executables</code> is enough.
 

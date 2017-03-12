@@ -34,15 +34,15 @@ This file allows one to specify packages that should not appear in the Dependenc
 
 ==== An Dependencies.blacklist example ====
 The following example blacklists the packages Glibc and Nvidia. Comments and blank lines are ignored by the parser, so it's ok to include them.
-<pre>
-# Dependencies.blacklist is documented in detail at
-#  http://wiki.gobolinux.org/Dependencies
-
-Glibc
-Nvidia
-</pre>
+<blockquote>
+# Dependencies.blacklist is documented in detail at <br/>
+#  http://wiki.gobolinux.org/Dependencies <br/>
+ <br/>
+Glibc <br/>
+Nvidia <br/>
+</blockquote>
 
 Note: presently blacklisting specific versions is not supported, but the same behaviour can be achieved by creating an empty directory in the <tt>/Programs</tt> directory.  For example, to blacklist GCC version 4.1.2 you may:
-<pre>
-mkdir /Programs/GCC/4.1.2
-</pre>
+<blockquote>
+mkdir /Programs/GCC/4.1.2 <br/>
+</blockquote>
