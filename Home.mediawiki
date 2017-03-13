@@ -17,8 +17,8 @@
 ** [[Writing Recipes]]
 *** [[Recipe format specification]]
 *** [[Use flags]]
-* [[Package management]]
-** [[Updating packages | Updates]]
+* Package management
+** [[Updating-packages | Updates]]
 ** [[System maintenance]]
 ** [[Freshen | The Freshen tool]]
 ** [[Manager | The Manager tool]]
