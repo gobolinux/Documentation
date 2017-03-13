@@ -4,23 +4,23 @@ The BootDriver script should not be run directly from the command line. It is in
 
 BootDriver takes a parameter, indicating which "runlevel" script should be executed. Here's a sample <code>inittab</code> with calls to BootDriver:
 
-<blockquote>
-id:2:initdefault: <br/>
- <br/>
-l1:S:wait:/System/Links/Executables/BootDriver BootUp <br/>
-su:S:respawn:/sbin/sulogin <br/>
- <br/>
-l2:12345:wait:/System/Links/Executables/BootDriver Console <br/>
-l6:6:wait:/System/Links/Executables/BootDriver Reboot <br/>
-l0:0:wait:/System/Links/Executables/BootDriver Halt <br/>
- <br/>
-ca:12345:ctrlaltdel:/sbin/shutdown -t1 -r now <br/>
- <br/>
-1:2345:respawn:/System/Links/Executables/agetty tty1 9600 <br/>
-2:2345:respawn:/System/Links/Executables/agetty tty2 9600 <br/>
-3:2345:respawn:/System/Links/Executables/agetty tty3 9600 <br/>
-4:2345:respawn:/System/Links/Executables/agetty tty4 9600 <br/>
-5:2345:respawn:/System/Links/Executables/agetty tty5 9600 <br/>
-</blockquote>
+
+    id:2:initdefault: 
+     
+    l1:S:wait:/System/Links/Executables/BootDriver BootUp 
+    su:S:respawn:/sbin/sulogin 
+     
+    l2:12345:wait:/System/Links/Executables/BootDriver Console 
+    l6:6:wait:/System/Links/Executables/BootDriver Reboot 
+    l0:0:wait:/System/Links/Executables/BootDriver Halt 
+     
+    ca:12345:ctrlaltdel:/sbin/shutdown -t1 -r now 
+     
+    1:2345:respawn:/System/Links/Executables/agetty tty1 9600 
+    2:2345:respawn:/System/Links/Executables/agetty tty2 9600 
+    3:2345:respawn:/System/Links/Executables/agetty tty3 9600 
+    4:2345:respawn:/System/Links/Executables/agetty tty4 9600 
+    5:2345:respawn:/System/Links/Executables/agetty tty5 9600 
+
 
 {{Reference}}

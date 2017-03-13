@@ -34,9 +34,9 @@ Common options are:
 * '''-i <program>''' to get information on <program>
 
 Freshen outputs its update lists in the form:
-<blockquote>
-[IUX] Foo 2.0                    1.0 <br/>
-</blockquote>
+
+    [IUX] Foo 2.0                    1.0 
+
 Meaning an upgrade to Foo version 2.0, from 1.0, which is available as both a recipe and a package.
 
 The mnemonics mean:
@@ -49,27 +49,27 @@ The mnemonics mean:
 
 Examples:
 
-<blockquote>
-Freshen <br/>
-</blockquote>
+
+    Freshen 
+
 Produce an ordered list of everything that can be updated on the system.
-<blockquote>
-Freshen -R <br/>
-</blockquote>
+
+    Freshen -R 
+
 Produce an ordered list of everything that can be updated on the system using only binary packages.
-<blockquote>
-Freshen -U -l 5 <br/>
-</blockquote>
+
+    Freshen -U -l 5 
+
 Update the first five programs on the list.
-<blockquote>
-Freshen -U Firefox <br/>
-</blockquote>
+
+    Freshen -U Firefox 
+
 Update Firefox and its dependencies
-<blockquote>
-Freshen -U -x Qt <br/>
-</blockquote>
+
+    Freshen -U -x Qt 
+
 Update everything except Qt and anything that depends upon it.
-<blockquote>
-Freshen -s Firefox Kopete <br/>
-</blockquote>
+
+    Freshen -s Firefox Kopete 
+
 Ordered list of upgrades '''needed''' in order to upgrade Firefox and Kopete to their newest releases. Add '''-U''' to perform the upgrade.

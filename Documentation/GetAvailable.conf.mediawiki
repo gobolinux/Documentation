@@ -5,42 +5,42 @@ It is stored at /Programs/Scripts/Settings/Scripts/GetAvailable.conf -- which, o
 These are the usual contents of the file:
 
 The timeout (in seconds) when trying to fetch the packages list from a sever.
-<blockquote>
-timeout=15 <br/>
-</blockquote>
+
+    timeout=15 
+
 
 The paths from which local packages will be automatically be found. Notice that both compressed (e.g. /Depot/Packages/Qt--4.0.0--i686.tar.bz2) and uncompressed (e.g. /Mount/[[SquashFS]]/Programs/Qt/4.0.0) packages can be matched.
-<blockquote>
-defaultLocalPackagesPaths=( <br/>
-"/Depot/Packages" <br/>
-"/Mount/SquashFS/Programs" <br/>
-"/Mount/CD-ROM/Depot/Packages/" <br/>
-"." <br/>
-) <br/>
-</blockquote>
+
+    defaultLocalPackagesPaths=( 
+    "/Depot/Packages" 
+    "/Mount/SquashFS/Programs" 
+    "/Mount/CD-ROM/Depot/Packages/" 
+    "." 
+    ) 
+
 
 The URLS from which lists of official binary packages (packed by some core developer) will be retrieved.
-<blockquote>
-officialPackagesLists=( <br/>
-'http://kundor.org/gobo/packages/official/MANIFEST.bz2' <br/>
-'http://gobo.calica.com/packages/official/MANIFEST.bz2' <br/>
-) <br/>
-</blockquote>
+
+    officialPackagesLists=( 
+    'http://kundor.org/gobo/packages/official/MANIFEST.bz2' 
+    'http://gobo.calica.com/packages/official/MANIFEST.bz2' 
+    ) 
+
 
 The URLS from which lists of contributed binary packages (contributed by some user, and placed, without garanties, at our servers) will be retrieved.
-<blockquote>
-contribPackagesLists=( <br/>
-'http://kundor.org/gobo/packages/contrib/MANIFEST.bz2' <br/>
-'http://gobo.calica.com/packages/contrib/MANIFEST.bz2' <br/>
-) <br/>
-</blockquote>
+
+    contribPackagesLists=( 
+    'http://kundor.org/gobo/packages/contrib/MANIFEST.bz2' 
+    'http://gobo.calica.com/packages/contrib/MANIFEST.bz2' 
+    ) 
+
 
 The URLS from which lists of tracked versions will be retrieved. A tracked version is a program version that actually may not have a correspondent Recipe or binary package, but that is already made available by the program developers
 
-<blockquote>
-trackedVersionsLists=( <br/>
-'http://gobolinux.org/version-tracker/TrackedVersions.bz2' <br/>
-) <br/>
-</blockquote>
+
+    trackedVersionsLists=( 
+    'http://gobolinux.org/version-tracker/TrackedVersions.bz2' 
+    ) 
+
 
 {{Handbook}}

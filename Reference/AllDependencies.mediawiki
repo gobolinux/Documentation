@@ -13,8 +13,8 @@ Options:
 * '''-r, --repeat''' - Allow repeated entries (circular dependencies will loop endlessly!)
 
 Examples:
-<blockquote>
-AllDependencies -t -r GTK+ <br/>
-</blockquote>
+
+    AllDependencies -t -r GTK+ 
+
 
 {{Reference}}

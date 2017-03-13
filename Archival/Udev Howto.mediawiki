@@ -23,9 +23,9 @@ You can turn off Filesystems>Pseudo->/dev file system support, but perhaps leavi
 === Udev ===
 
 Simply run
-<blockquote>
-~InstallPackage Udev <br/>
-</blockquote>
+
+    ~InstallPackage Udev 
+
 This will install the latest version of udev (030 or higher).  This version of Udev has support for the /System/Links/Tasks scripts to start udev properly.
 
 
@@ -35,32 +35,32 @@ Check if your Gobo already has a hidden /sys symlink (stat /sys), if not make on
 
 You need to modify your /System/Settings/fstab to allow the "sys" filesystem to be mounted.  Udev needs this, as well as the "pts" (PseudoTTYs) and "shm" (Shared Memory) filesystems.
 
-<blockquote>
-none /System/Kernel/Objects         sysfs   defaults 0 0 <br/>
-none /System/Kernel/Devices/pts  devpts defaults 0 0 <br/>
-none /System/Kernel/Devices/shm tmpfs  defaults 0 0 <br/>
-</blockquote>
+
+    none /System/Kernel/Objects         sysfs   defaults 0 0 
+    none /System/Kernel/Devices/pts  devpts defaults 0 0 
+    none /System/Kernel/Devices/shm tmpfs  defaults 0 0 
+
 
 
 While you're editing the fstab, you might as well prepare it for the udev naming scheme:  Change all the disk mount points from the ide/target/disc/part or whatever devfs uses to the simple hda1 stuff.  (While it's possible to put a devfs naming scheme in udev, that's more work, and the hda1/hda2/etc. format will work with nearly any device manager.)   So a reasonably complete fstab might be:
 
-<blockquote>
-# Root partition. <br/>
-/System/Kernel/Devices/hda9 / reiserfs defaults 1 0 <br/>
- <br/>
-# Proc filesystem. <br/>
-proc /System/Kernel/Status proc defaults 0 0 <br/>
- <br/>
-# Sys filesystem <br/>
-none  /System/Kernel/Objects    sysfs   defaults        0 0 <br/>
- <br/>
-# pts and shm <br/>
-none /System/Kernel/Devices/pts devpts defaults 0 0 <br/>
-none /System/Kernel/Devices/shm tmpfs defaults 0 0 <br/>
- <br/>
-# Swap partition. <br/>
-/System/Kernel/Devices/hda13 swap swap pri=1 0 0 <br/>
-</blockquote>
+
+    # Root partition. 
+    /System/Kernel/Devices/hda9 / reiserfs defaults 1 0 
+     
+    # Proc filesystem. 
+    proc /System/Kernel/Status proc defaults 0 0 
+     
+    # Sys filesystem 
+    none  /System/Kernel/Objects    sysfs   defaults        0 0 
+     
+    # pts and shm 
+    none /System/Kernel/Devices/pts devpts defaults 0 0 
+    none /System/Kernel/Devices/shm tmpfs defaults 0 0 
+     
+    # Swap partition. 
+    /System/Kernel/Devices/hda13 swap swap pri=1 0 0 
+
 
 === Creating nodes ===
 
@@ -71,17 +71,17 @@ Unmount devfs, if it's running (don't do this from a chroot!). "umount /dev" sho
 NOTE: You can't unmount /dev unless you reboot with a livecd and access your gobolinux partition while it's not the root partition...
 
 Make some nodes that the kernel needs before udev starts:
-<blockquote>
-mknod -m 600 /System/Kernel/Devices/console c 5 1 <br/>
-mknod -m 666 /System/Kernel/Devices/null c 1 3 <br/>
-</blockquote>
+
+    mknod -m 600 /System/Kernel/Devices/console c 5 1 
+    mknod -m 666 /System/Kernel/Devices/null c 1 3 
+
 If you're told that null already exists, do "rm /System/Kernel/Devices/null" and repeat the command.
 
 Test mounting udev:
-<blockquote>
-mount -n -t tmpfs none /System/Kernel/Devices <br/>
-udevstart <br/>
-</blockquote>
+
+    mount -n -t tmpfs none /System/Kernel/Devices 
+    udevstart 
+
 
 Look around /System/Kernel/Devices, make sure that nodes for most of your devices are there.
 
@@ -96,20 +96,20 @@ Here we will disable the mounting of the old devfs subsystem, and enable the mou
 
 With the new Tasks framework added to the Udev recipe, all we really have to do is tell Init to load it up at startup.  Go to the appropriate directory.
 
-<blockquote>
-cd /System/Settings/BootScripts <br/>
-</blockquote>
+
+    cd /System/Settings/BootScripts 
+
 
 Now, backup Init, and edit it so it begins something like this:
 
-<blockquote>
-Exec "Mounting Kernel Objects file system..."          ~MountSys <br/>
-Exec "Mounting Kernel Status file system..."           ~MountProc <br/>
-Exec "Starting udev..."                         Udev <br/>
-#Exec "Starting device file system daemon..."    devfsd "$goboDevices" <br/>
-Exec "Activating all swap files/partitions..."  swapon -a <br/>
-Exec "Checking file systems..."                 CheckFS <br/>
-</blockquote>
+
+    Exec "Mounting Kernel Objects file system..."          ~MountSys 
+    Exec "Mounting Kernel Status file system..."           ~MountProc 
+    Exec "Starting udev..."                         Udev 
+    #Exec "Starting device file system daemon..."    devfsd "$goboDevices" 
+    Exec "Activating all swap files/partitions..."  swapon -a 
+    Exec "Checking file systems..."                 CheckFS 
+
 
 Make sure to remove or comment out the line which starts devfsd, and keep the rest of the file in the same order as before.
 
@@ -125,26 +125,26 @@ Now you need to tell your kernel not to start devfs.  How you do so depends on w
 Edit your /System/Kernel/Boot/grub/menu.lst and add "devfs=nomount" to your "kernel" line.
 
 From this:
-<blockquote>
-kernel (hd0,4)/System/Kernel/Boot/kernel-2.6 root=/dev/hda5 vga=791 <br/>
-</blockquote>
+
+    kernel (hd0,4)/System/Kernel/Boot/kernel-2.6 root=/dev/hda5 vga=791 
+
 To this:
-<blockquote>
-kernel (hd0,4)/System/Kernel/Boot/kernel-2.6 root=/dev/hda5 va=791 devfs=nomount <br/>
-</blockquote>
+
+    kernel (hd0,4)/System/Kernel/Boot/kernel-2.6 root=/dev/hda5 va=791 devfs=nomount 
+
 
 
 === Lilo ===
 Edit your /System/Settings/lilo.conf and add "devfs=nomount" to your "append" line for your kernel, then re-run lilo.
 
 From this:
-<blockquote>
-append="vga=791" <br/>
-</blockquote>
+
+    append="vga=791" 
+
 To this:
-<blockquote>
-append="vga=791 devfs=nomount" <br/>
-</blockquote>
+
+    append="vga=791 devfs=nomount" 
+
 
 Now run "lilo" from the prompt to allow lilo to re-read its config file.
 
@@ -159,14 +159,14 @@ Have a livecd on hand, because it's not too unlikely that your system won't boot
 === Joining groups ===
 
 After you've rebooted, you're likely to find that as a non-gobo user you're denied access to a lot of nodes.  This is because udev permissions use a group-based authentication scheme.  Two important groups -- video and cdrom -- may not be in your group file by default, so become gobo and issue:
-<blockquote>
-groupadd video <br/>
-groupadd cdrom <br/>
-</blockquote>
+
+    groupadd video 
+    groupadd cdrom 
+
 Then you should add your day-to-day user to the groups you want to use with a command like this:
-<blockquote>
-usermod -G floppy,audio,users,cdrecord,video _user_ <br/>
-</blockquote>
+
+    usermod -G floppy,audio,users,cdrecord,video _user_ 
+
 
 === Writing rules ===
 

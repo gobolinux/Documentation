@@ -1,36 +1,36 @@
-<blockquote>
-acl <br/>
-avahi # use avahi for bonjour support <br/>
-bonjour <br/>
-curses <br/>
-cyrus_sasl <br/>
-dbus <br/>
-gnome <br/>
-gnome_vfs <br/>
-gnutls # use gnutls for ssl <br/>
-gstreamer <br/>
-gtk <br/>
-gui # enables gui regardless of what toolkit is used. <br/>
-ldap <br/>
-libgnome <br/>
-libgnomeui <br/>
-meanwhile # use meanwhile for sametime support <br/>
-mono <br/>
-networkmanager <br/>
-nss # use nss for ssl <br/>
-ogg <br/>
-openssl # use openssl for ssl <br/>
-pam <br/>
-pango <br/>
-perl <br/>
-qt4 <br/>
-rtl #right-to-left text support <br/>
-sametime <br/>
-sqlite <br/>
-ssl <br/>
-startup_notification <br/>
-theora <br/>
-tcl <br/>
-tk <br/>
-x11 # enabled graphical interface <br/>
-</blockquote>
+
+    acl 
+    avahi # use avahi for bonjour support 
+    bonjour 
+    curses 
+    cyrus_sasl 
+    dbus 
+    gnome 
+    gnome_vfs 
+    gnutls # use gnutls for ssl 
+    gstreamer 
+    gtk 
+    gui # enables gui regardless of what toolkit is used. 
+    ldap 
+    libgnome 
+    libgnomeui 
+    meanwhile # use meanwhile for sametime support 
+    mono 
+    networkmanager 
+    nss # use nss for ssl 
+    ogg 
+    openssl # use openssl for ssl 
+    pam 
+    pango 
+    perl 
+    qt4 
+    rtl #right-to-left text support 
+    sametime 
+    sqlite 
+    ssl 
+    startup_notification 
+    theora 
+    tcl 
+    tk 
+    x11 # enabled graphical interface 
+

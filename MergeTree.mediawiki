@@ -11,8 +11,8 @@ Options:
 All files and directories in <source> appear as symbolic links in <destination>.
 
 Examples:
-<blockquote>
-MergeTree /Programs/KOffice/Current /Programs/KDE/Current <br/>
-</blockquote>
+
+    MergeTree /Programs/KOffice/Current /Programs/KDE/Current 
+
 
 {{Scripts}}

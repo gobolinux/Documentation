@@ -8,17 +8,17 @@ Nowadays, you can perform the entire installation graphically. Actually, this is
 
 The [[GoboLinux]] CD features a complete graphical environment, provided that your video card and mouse were configured, hopefully automatically by the hardware auto-detection feature. To start the graphical mode, type in
 
-<blockquote>
-startx <br/>
-</blockquote>
+
+    startx 
+
 
 In the desktop, you will find the "Install [[GoboLinux]]" icon. Just click it and follow the instructions to have the system installed into your hard disk.
 
 As a failsafe, we also provide an interactive text-based frontend for the installer. You can launch it by typing
 
-<blockquote>
-Installer <br/>
-</blockquote>
+
+    Installer 
+
 
 Note the capital "i". [[GoboLinux]] scripts, except in special cases, use upper-case initials (called by some "CamelCase convention").
 
@@ -48,14 +48,14 @@ If you also created a swap partition, use mkswap to format it.
 '''Step 2: Mount your new partition and enable swap'''
 
 Mount your new partition, using a command such as
-<blockquote>
-mount /dev/{your partition} /Mount/GoboLinux <br/>
-</blockquote>
+
+    mount /dev/{your partition} /Mount/GoboLinux 
+
 
 Enable your swap partition, using command line as
-<blockquote>
-swapon /dev/(your swap partition) <br/>
-</blockquote>
+
+    swapon /dev/(your swap partition) 
+
 
 '''Step 3: Install the system'''
 
@@ -69,22 +69,22 @@ that will be installed if you choose it. Currently, they are:
 
 Go to /System/Links/Shared/Installer/Profiles and run the '[[ProfileInstall]]' script (which is in PATH), passing the
 chosen profile and the mount point used on Step 2. For example:
-<blockquote>
-ProfileInstall Full /Mount/GoboLinux <br/>
-</blockquote>
+
+    ProfileInstall Full /Mount/GoboLinux 
+
 
 '''Step 4: Perform some basic configuration'''
 
 Before you can be able to boot your new [[GoboLinux]] system, you'll have to
 change a few of the default settings to reflect your system. The file
-<blockquote>
-/Mount/GoboLinux/System/Settings/fstab <br/>
-</blockquote>
+
+    /Mount/GoboLinux/System/Settings/fstab 
+
 contains the partition list. Configure it as usual. Another file which
 you will have to edit is
-<blockquote>
-/Mount/GoboLinux/Programs/BootScripts/Settings/BootScripts/Options <br/>
-</blockquote>
+
+    /Mount/GoboLinux/Programs/BootScripts/Settings/BootScripts/Options 
+
 This file contains configurations for programs that are called at boot
 time, such as the system's hostname, mouse configuration and keymap
 layout.
@@ -99,12 +99,12 @@ Standard Text Editor, for those who just really hate visual environments.
 Before reboot the system you will need to install a bootloader and
 configure it, if you don't have one installed yet. We suggest GRUB.
 To install it just run
-<blockquote>
-grub <br/>
-grub> root (hd*,**) <br/>
-grub> setup --prefix=/System/Kernel/Boot/grub (hd*) <br/>
-grub>quit <br/>
-</blockquote>
+
+    grub 
+    grub> root (hd*,**) 
+    grub> setup --prefix=/System/Kernel/Boot/grub (hd*) 
+    grub>quit 
+
 
 * *  your [[GoboLinux]] HD number: hda is 0, hdb 1, and so on
 * ** your [[GoboLinux]] partition number: 0 is 1, 1 is 2, and so on

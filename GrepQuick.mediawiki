@@ -14,8 +14,8 @@ Options:
 Search is case sensitive only if there is at least one uppercase character in the pattern. Binary files are not searched. Error messages are not displayed. Line numbers are displayed. If no files are specified, all files are selected (except in "source" mode, where <nowiki>*.[CcHh]*</nowiki> is selected instead).
 
 Example:
-<blockquote>
-g foo <br/>
-</blockquote>
+
+    g foo 
+
 
 {{Scripts}}

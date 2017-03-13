@@ -20,38 +20,38 @@ GoboLinux comes with CUPS installed by default.
 
 Note that ALSA is muted by default, to automatically save and restore changes done in e.g. alsamixer, add these lines to your boot scripts.
 
-* Init: <blockquote>Exec "Restoring ALSA settings..."     alsactl restore</pre>
-* Done: <blockquote>Exec "Storing ALSA settings..."       alsactl store</pre>
 
-If your soundcard does not support hardware mixing of multiple streams, you can use ALSA's software mixer, dmix. Configure your $HOME/.asoundrc like this:
-
- pcm.!default {
-    type plug
-    slave.pcm "dmixer"
- }
- 
- pcm.dsp {
-    type plug
-    slave.pcm "dmixer"
- }
- 
- pcm.dmixer  {
-    type dmix
-    ipc_key 1024
-    slave {
-       pcm "hw:0,0"
-       period_time 0
-       period_size 2048
-       buffer_size 8192
-       rate 44100
-    }
-    bindings {
-       0 0
-       1 1
-    }
- }
- 
- ctl.dmixer {
-    type hw
-    card 0
- }
+    * Done: <blockquote>Exec "Storing ALSA settings..."       alsactl store</pre> 
+     
+    If your soundcard does not support hardware mixing of multiple streams, you can use ALSA's software mixer, dmix. Configure your $HOME/.asoundrc like this: 
+     
+     pcm.!default { 
+        type plug 
+        slave.pcm "dmixer" 
+     } 
+      
+     pcm.dsp { 
+        type plug 
+        slave.pcm "dmixer" 
+     } 
+      
+     pcm.dmixer  { 
+        type dmix 
+        ipc_key 1024 
+        slave { 
+           pcm "hw:0,0" 
+           period_time 0 
+           period_size 2048 
+           buffer_size 8192 
+           rate 44100 
+        } 
+        bindings { 
+           0 0 
+           1 1 
+        } 
+     } 
+      
+     ctl.dmixer { 
+        type hw 
+        card 0 
+     } 

@@ -9,8 +9,8 @@ Options:
 * '''-R, --recursive''' - Perform change recursively in all files (overrides last parameter).
 
 Examples:
-<blockquote>
-GrepReplace "SimMcast" "simmcast" *.java <br/>
-</blockquote>
+
+    GrepReplace "SimMcast" "simmcast" *.java 
+
 
 {{Scripts}}

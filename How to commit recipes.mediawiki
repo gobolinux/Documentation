@@ -6,9 +6,9 @@ To commit recipes, you need the [[DevelScripts]] package installed, and [[Subver
 
 You should fetch DevelScripts from CVS. This can be done using its Compile recipe. Just run:
 
-<blockquote>
-Compile develscripts <br/>
-</blockquote>
+
+    Compile develscripts 
+
 
 This will add a file called /System/Settings/DevelScripts/CompileSubversion.conf -- take a look at this file. It lists the default locations where DevelScripts expects to find the local copy of the Subversion repository. You could change these locations, but for simplicity let's keep the provided default: /Files/Compile/Subversion
 
@@ -16,9 +16,9 @@ This will add a file called /System/Settings/DevelScripts/CompileSubversion.conf
 
 To commit a recipe, use the [[PutRecipe]] script. It takes care of incrementing the revision number, copying the files into the local repository and runs svn to commit them to the GoboLinux repository. PutRecipe takes as a parameter a directory containing a recipe, like this:
 
-<blockquote>
-PutRecipe firefox <br/>
-</blockquote>
+
+    PutRecipe firefox 
+
 
 By default, it will look for a recipe in /Files/Compile/LocalRecipes. If there is more than one version there, the script will complain and will ask you to give it a second parameter specifying the version number.
 

@@ -17,10 +17,10 @@ Example:
 Default permission modes are obtained from <code>FixAttributes.conf</code>.
 
 Typical contents are
-<blockquote>
-fixatChmodTrue=755 <br/>
-fixatChmodFalse=644 <br/>
-</blockquote>
+
+    fixatChmodTrue=755 
+    fixatChmodFalse=644 
+
 which will change files which seem to be executables to mode 755 (owner read, write, execute; group read, execute; others read, execute),
 and files which do not seem to be executables to mode 644 (owner read, write; group read; others read.)
 

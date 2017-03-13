@@ -10,44 +10,44 @@ These commands should generally be executed in your own home directory.
 
 If you haven't done so install ChrootCompile
 
-<blockquote>
-InstallPackage ChrootCompile
-</blockquote>
+
+    InstallPackage ChrootCompile 
+
 
 or if you want the latest development version
 
-<blockquote>
-Compile ChrootCompile svn
-</blockquote>
+
+    Compile ChrootCompile svn 
+
 
 The development version of ChrootCompile might need the development version of Compile:
 
-<blockquote>
-Compile Compile svn
-</blockquote>
+
+    Compile Compile svn 
+
 
 ==Setup==
 
 Setup the base environment:
 
-<blockquote>
-cd ~
-</blockquote>
 
-<blockquote>
-mkdir My_Compile_Chroot
-</blockquote>
+    cd ~ 
 
-<blockquote>
-ChrootCompile -s ~/My_Compile_Chroot
-</blockquote>
+
+
+    mkdir My_Compile_Chroot 
+
+
+
+    ChrootCompile -s ~/My_Compile_Chroot 
+
 
 
 You can now use :
 
-<blockquote>
-ChrootCompile <recipe_name> <recipe_version>
-</blockquote>
+
+    ChrootCompile <recipe_name> <recipe_version> 
+
 
 to compile recipes. The recipe will be compiled and if the compile is successful a package will be placed in My_Compile_Chroot/Clean. You can install this package to install the recipe on your system.
 

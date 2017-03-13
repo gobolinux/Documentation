@@ -19,9 +19,9 @@ It may also confuse symbolic links that flow through the sandbox.
 
 
 Examples:
-<blockquote>
-FiboSandbox -r 0.0 -s '.:/Programs/NaughtyApp/Current' make install <br/>
-</blockquote>
+
+    FiboSandbox -r 0.0 -s '.:/Programs/NaughtyApp/Current' make install 
+
 
 
 Note about the name: Fibo is a user without privileges to touch anything outside the sandbox. (This is related to unmanaged files)

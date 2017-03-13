@@ -5,9 +5,9 @@ By default, the [[GoboLinux]] boot scripts are configured to initialize and conf
 At boot-time, the boot scripts execute several programs. Their purpose is to configure things like the keyboard and the system clock and to initialize things like the swap partitions. There is an assortment of options that can be used to customize exactly how these programs are going to be executed and therefore how the system is going to be configured.
 
 You can change all these options by editing the /System/Settings/BootOptions and /System/Settings/NetworkOptions files. These files are composed of a set of entries in the format:
-<blockquote>
-Option=value <br/>
-</blockquote>
+
+    Option=value 
+
 
 Note that no space is allowed before or after the = character. (For the curious, yes, this is just a shell file that is "sourced" by the boot scripts.)
 
@@ -70,15 +70,15 @@ The MouseType and MouseDevice entries are used to setup GPM (to enable mouse sup
 
 Like in the keyboard setup, the mouse configuration for the graphical environment is set in a different place. Look for the relevant "InputDevice" section in /System/Settings/xorg.conf. The [[Installer]] should have set a sane default for your system, based on hardware autodetection. If not, you can always try a failsafe setup such as:
 
-<blockquote>
-Section "InputDevice" <br/>
-Identifier  "Mouse0" <br/>
-Driver      "mouse" <br/>
-Option      "Protocol" "auto" <br/>
-Option      "Device" "/dev/input/mice" <br/>
-Option      "ZAxisMapping" "4 5" <br/>
-EndSection <br/>
-</blockquote>
+
+    Section "InputDevice" 
+    Identifier  "Mouse0" 
+    Driver      "mouse" 
+    Option      "Protocol" "auto" 
+    Option      "Device" "/dev/input/mice" 
+    Option      "ZAxisMapping" "4 5" 
+    EndSection 
+
 
 There is nothing [[GoboLinux]]-specific about mouse setup on X. You can find HOWTOs and tutorials around the net that can give you more detailed instructions about this. (But feel free to drop by at the mailing list if you're still stuck!)
 
@@ -89,12 +89,12 @@ Through the use of Udev, [[GoboLinux]] is capable of loading a number of modules
 This is a job which can be done by editing /System/Settings/modprobe.conf, in the same manner as you should do in another distribution. However, the [[BootScripts]] package has a special array where the modules and their parameters can be specified, and they'll get loaded at boot time with no pain.
 
 This file is called /System/Settings/[[BootOptions]]. Give it a look, and you'll see an array called UserDefinedModules, which is probably commented. This array is sourced by the boot scripts, and for every line, it will modprobe it, including any parameters following them. This is how a simple array to load i810_audio (audio driver) and sk98lin (ethernet driver) can be constructed:
-<blockquote>
-UserDefinedModules=( <br/>
-"i810_audio" <br/>
-"sk98lin" <br/>
-) <br/>
-</blockquote>
+
+    UserDefinedModules=( 
+    "i810_audio" 
+    "sk98lin" 
+    ) 
+
 
 === Network configuration ===
 
@@ -110,33 +110,33 @@ If you have a wired network, initialize it on boot using standard Linux commands
 
 First, check which are your network interfaces typing
 
-<blockquote>
-ifconfig <br/>
-</blockquote>
+
+    ifconfig 
+
 
 You should have a network interface named something like `eth0` or `enp0s3`.
 
 Edit the /System/Settings/BootScripts/BootUp script. If you are using DHCP, just add this:
 
-<blockquote>
-dhcpcd eth0 & <br/>
-</blockquote>
+
+    dhcpcd eth0 & 
+
 
 If you have a static network configuration, add these two commands, adjusting them to your network setup:
 
-<blockquote>
-ifconfig eth0 192.168.1.5 netmask 255.255.255.0 <br/>
-route add default gateway 192.168.1.1 metric 1 dev eth0 <br/>
-</blockquote>
+
+    ifconfig eth0 192.168.1.5 netmask 255.255.255.0 
+    route add default gateway 192.168.1.1 metric 1 dev eth0 
+
 
 The specification of the DNS servers (if specified manually) is done in the same place as the 
 traditional Unix systems, at /etc/resolv.conf (or /System/Settings/resolv.conf). 
 An example of resolv.conf file is:
 
-<blockquote>
-nameserver 200.176.2.10 <br/>
-nameserver 200.199.252.68 <br/>
-</blockquote>
+
+    nameserver 200.176.2.10 
+    nameserver 200.199.252.68 
+
 
 == Customizing the initialization ==
 
@@ -173,10 +173,10 @@ For KDE (or KDM, it also has a configuration which allows you to tweak it a lot)
 
 If you do not use KDE or want a non-GUI based solution, one way is to use rungetty.
 
-# <blockquote>Compile rungetty</pre>
-# In your inittab file (for example, nano /etc/inittab) find the line which includes tty1 (it's your first terminal, the default showing up on login).  <br/>
-# Now, you will see "agetty" in there - change this "agetty" line to <blockquote>"rungetty tty1 --autologin your_username_goes_in_here"</pre>
 
-Of course, replace your_username_goes_in_here with the user you want to login :)
-
-Using another tty than 1 may be useful too.
+    # In your inittab file (for example, nano /etc/inittab) find the line which includes tty1 (it's your first terminal, the default showing up on login). 
+    # Now, you will see "agetty" in there - change this "agetty" line to <blockquote>"rungetty tty1 --autologin your_username_goes_in_here"</pre> 
+     
+    Of course, replace your_username_goes_in_here with the user you want to login :) 
+     
+    Using another tty than 1 may be useful too. 

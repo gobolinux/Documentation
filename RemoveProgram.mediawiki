@@ -9,8 +9,8 @@ Options:
 * '''-b, --batch''' - Do not ask for confirmation.
 
 Examples:
-<blockquote>
-RemoveProgram Qt 3.2.3 <br/>
-</blockquote>
+
+    RemoveProgram Qt 3.2.3 
+
 
 {{Scripts}}

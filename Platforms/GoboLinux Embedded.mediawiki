@@ -16,11 +16,11 @@ Alternatively, one can download the ISO image instead, which offers an uncompres
 * [http://gobo.calica.com/gobolinux-iso-arm/GoboLinux-003-armv5te.iso Full version (ISO)] - 280MB  [http://gobo.calica.com/gobolinux-iso-arm/GoboLinux-003-armv5te.iso.md5 (md5)] 
 
 In order to uncompress the tarball with the full version, one must to supply the 'p' flag to tar, so that permissions are kept. Uncompressing the full version, thus, is done through the following commands:
-<blockquote>
-mkdir GoboLinux-003-armv5te <br/>
-cd GoboLinux-003-armv5te <br/>
-tar zxpf /path/to/GoboLinux-003-armv5te.tar.gz <br/>
-</blockquote>
+
+    mkdir GoboLinux-003-armv5te 
+    cd GoboLinux-003-armv5te 
+    tar zxpf /path/to/GoboLinux-003-armv5te.tar.gz 
+
 
 Given that ARM platforms usually need to have their own special kernel image, there's no point on shipping one with the distribution. There is, however, an optional patch used to hide the legacy tree, so that only the GoboLinux tree appears in the filesystem (/System, /Programs and so on). This patch is called GoboHide, and it can be downloaded for various kernel releases on its [http://gobolinux.org/?page=doc/articles/gobohide documentation page].
 
@@ -29,11 +29,11 @@ The installation is pretty much dependent on the platform used, but it's a commo
 
 == Configuring GoboLinux embedded ==
 The initrd image is actually an gzip'ed ext3 filesystem, which can be extracted and mounted on your local filesystem. In a GoboLinux system, the following commands are enough to mount it read-write on any distribution:
-<blockquote>
-mkdir -p /System/ARM-SoftFP <br/>
-gzip -d GoboLinux-003-armv5te.gz <br/>
-mount -o loop GoboLinux-003-armv5te /System/ARM-SoftFP <br/>
-</blockquote>
+
+    mkdir -p /System/ARM-SoftFP 
+    gzip -d GoboLinux-003-armv5te.gz 
+    mount -o loop GoboLinux-003-armv5te /System/ARM-SoftFP 
+
 
 At this point, the filesystem will be available at /System/ARM-SoftFP, where you'll be able to read and write its contents. It's important to note the directory name used as mount point: since the filesystem was all compiled against that prefix, all symlinks inside the image will be available and will not be broken, with a few exceptions in the root filesystem.
 
@@ -42,10 +42,10 @@ The major configurable part of the distribution is sitted in /System/Settings. Y
 There are also tasks, which are simple scripts with start/stop commands. They are stored at /System/Links/Tasks, where you'll see files such as GoboHide, LoadModules, Mouse and Swap. Take a look there if you have something to modify on these standard tasks.
 
 After finished with the modifications, just leave /System/ARM-SoftFP and compress the image again with the following commands:
-<blockquote>
-umount /System/ARM-SoftFP <br/>
-gzip GoboLinux-003-armv5te <br/>
-</blockquote>
+
+    umount /System/ARM-SoftFP 
+    gzip GoboLinux-003-armv5te 
+
 
 You're now ready to upload your modified filesystem to your platform, according to the instructions provided by your vendor.
 
@@ -82,69 +82,69 @@ In short, Bootstrap is able to either compile new packages, or to start a new po
 == Configuration ==
 Given that the cross config file had been written, using it is just a matter of running ''./Bootstrap''. This command is responsible of fetching descriptions for the available packages and then opening a menu based interface where the target platform can be configured. The following snippet shows the available options:
 
-<blockquote>
-Bootstrap Configuration <br/>
- <br/>
-    Build options  ---> <br/>
-    Base  system  ---> <br/>
-    Development  ---> <br/>
-    Fonts and XML parsers  ---> <br/>
-    Audio  ---> <br/>
-    Networking  ---> <br/>
-    X servers  ---> <br/>
-    Video and graphics  ---> <br/>
-    GTK  suite  ---> <br/>
-    Misc  ---> <br/>
-    Desktop  ---> <br/>
-    Shrink Options  ---> <br/>
-</blockquote>
+
+    Bootstrap Configuration 
+     
+        Build options  ---> 
+        Base  system  ---> 
+        Development  ---> 
+        Fonts and XML parsers  ---> 
+        Audio  ---> 
+        Networking  ---> 
+        X servers  ---> 
+        Video and graphics  ---> 
+        GTK  suite  ---> 
+        Misc  ---> 
+        Desktop  ---> 
+        Shrink Options  ---> 
+
 
 === Build options ===
 The first entry allows to select the target platform on which the compilations will be targeted to. Currently, Bootstrap's build menu presents profiles for SH-4 and ARM processors, allowing a subsequent selection of a specific implementation of the chosen processor. This allows Bootstrap to keep configuration files specific to each platform, such as bootscripts, package selection and so on:
 
-<blockquote>
-Build options <br/>
- <br/>
-    Cross-Compiling (ARM target)  ---> <br/>
-    ARM implementation (SiriuStar board)  ---> <br/>
-    Target profile (Embedded platform)  ---> <br/>
-    Network interface (DHCP configuration)  ---> <br/>
---- <br/>
-    (2.6.16.18) Kernel version for Linux-Libc-Headers package <br/>
-    (GoboLinux) Hostname <br/>
-    (gobo) Super-user name <br/>
-</blockquote>
+
+    Build options 
+     
+        Cross-Compiling (ARM target)  ---> 
+        ARM implementation (SiriuStar board)  ---> 
+        Target profile (Embedded platform)  ---> 
+        Network interface (DHCP configuration)  ---> 
+    --- 
+        (2.6.16.18) Kernel version for Linux-Libc-Headers package 
+        (GoboLinux) Hostname 
+        (gobo) Super-user name 
+
 
 This configuration shows that we're going to create a distribution for an ARM processor. More especifically, we're targetting it to the [http://www.tecnequip.com.br/ele_produtos.html SiriuStar] board, so any special scripts needed by that board are going to be integrated automatically into the filesystem. A practical example of such profile script is one that needs to read a specific driver's /proc entry to update the RTC.
 
 Apart from creating a distribution for ARM or SH-4, it's also possible to create a distribution which will run in the same processor as the one executing the script. So, if you're running on a x86 and would like to create an embedded version of GoboLinux for the same architecture, it's just a matter of disabling the cross-compiling feature of Bootstrap:
 
-<blockquote>
-Cross-Compiling <br/>
- <br/>
-    (X) Native compiling <br/>
-    ( ) ARM target <br/>
-    ( ) SH-4 target <br/>
-</blockquote>
+
+    Cross-Compiling 
+     
+        (X) Native compiling 
+        ( ) ARM target 
+        ( ) SH-4 target 
+
 
 The development of Bootstrap also took care of those who'd like to create a distribution to another platform, but which didn't need to care about space. This situation doesn't need to count on replacements for the standard GoboLinux tools, neither on the strip of individual files so that the filesystem can fit in the flash or hard disk. The selection of this kind of profile is possible through the '''Target profile''' menu, where one of ''Desktop'' and ''Embedded'' options can be chosen.
 
-<blockquote>
-Target profile <br/>
- <br/>
-    (X) Embedded platform <br/>
-    ( ) Desktop platform <br/>
-</blockquote>
+
+    Target profile 
+     
+        (X) Embedded platform 
+        ( ) Desktop platform 
+
 
 One final step configuring the target's platform is choosing its network connectivity. Due to the common fact that many bootloaders focused on the embedded allows to boot the kernel with bootp and to assign IPs even before the operating system is up, it might not be feasible to reconfigure the network after the system has booted. To avoid having GoboLinux' bootscripts to reconfigure the network, it's possible to disable that in '''Network Interface''':
 
-<blockquote>
-Network interface <br/>
- <br/>
-    (X) Disabled <br/>
-    ( ) DHCP configuration <br/>
-    ( ) Manual configuration <br/>
-</blockquote>
+
+    Network interface 
+     
+        (X) Disabled 
+        ( ) DHCP configuration 
+        ( ) Manual configuration 
+
 
 One last important option is related to the kernel version on which headers will be available to the filesystem. The generation of the headers is currently done by an external script developed by Linux From Scratch guys, which is capable of removing portions not used by userspace applications. The last version known to work was 2.6.12.
 
@@ -155,22 +155,22 @@ The selection of packages that will be compiled can be done through the subseque
 
 Selecting them is pretty much straightforward, so only the base system is going to be described here. Many small systems can be created by just using this first menu, so you can start populating your filesystem in small steps, starting with this one.
 
-<blockquote>
-Base system <br/>
- <br/>
-        Libc implementation (Glibc)  ---> <br/>
-    [ ] Module Init Tools <br/>
-    [*] BusyBox <br/>
-    [*] LibGCC <br/>
-    [ ] ZLib <br/>
-    [ ] GPM <br/>
-    [ ] GoboHide <br/>
-    [ ] Listener <br/>
-    [ ] Udev <br/>
---- <br/>
-    [ ] Ncurses <br/>
-    [ ] Bash <br/>
-</blockquote>
+
+    Base system 
+     
+            Libc implementation (Glibc)  ---> 
+        [ ] Module Init Tools 
+        [*] BusyBox 
+        [*] LibGCC 
+        [ ] ZLib 
+        [ ] GPM 
+        [ ] GoboHide 
+        [ ] Listener 
+        [ ] Udev 
+    --- 
+        [ ] Ncurses 
+        [ ] Bash 
+
 
 This setup allows to configure a small environment, where only the BusyBox suite will be available. It already features a replacement for udev (called mdev), so the system is going to be fully functional. The LibGCC package is generated by some libraries taken from by the cross-compiler that will be needed at runtime by some applications. One final note is made to the Libc implementation: if the target filesystem really needs to be '''that''' small, uClibc can be used instead of the default, Glibc.
 
@@ -179,33 +179,33 @@ This is one of the more interesting features of Bootstrap. Due to the nature of 
 
 Making these scripts aware of which files are ''necessary'' and which ones aren't needed to get the package up and running is an easy task to be performed on GoboLinux, and are reflected through the following options in the shrink menu:
 
-<blockquote>
-Shrink Options <br/>
- <br/>
-    [ ] Remove and shrink as much as possible <br/>
-    [ ] Remove headers <br/>
-    [ ] Remove static libraries <br/>
-    [ ] Remove libtool related files <br/>
-    [ ] Remove pkgconfig related files <br/>
-    [ ] Remove documentation <br/>
-    [ ] Remove backup of the default settings <br/>
-    [ ] Remove internationalization files <br/>
-    [ ] Remove aclocal macros <br/>
-        Removal of symbols (All symbols from executables and libraries)  ---> <br/>
-        Native language support  ---> <br/>
-</blockquote>
+
+    Shrink Options 
+     
+        [ ] Remove and shrink as much as possible 
+        [ ] Remove headers 
+        [ ] Remove static libraries 
+        [ ] Remove libtool related files 
+        [ ] Remove pkgconfig related files 
+        [ ] Remove documentation 
+        [ ] Remove backup of the default settings 
+        [ ] Remove internationalization files 
+        [ ] Remove aclocal macros 
+            Removal of symbols (All symbols from executables and libraries)  ---> 
+            Native language support  ---> 
+
 
 Please note that there will be no automatic cleanup of the filesystem. You must invoke the '''make shrink''' command so that it performs a backup of the generated filesystem, followed by the cleanup based on the selected options.
 
 == Running Bootstrap ==
 Finished with the ''menuconfig'' configuration, Bootstrap is ready to start doing its work. The ''Bootstrap'' script automatically invokes '''make''', which on its turn will download, compile and install all packages selected, according to the following snippet:
 
-<blockquote>
-PrepareTarget: Creating the GoboLinux tree... <br/>
-PrepareTarget: Populating the device directory... <br/>
-PrepareTarget: Creating the LibGCC package... <br/>
-(...) <br/>
-</blockquote>
+
+    PrepareTarget: Creating the GoboLinux tree... 
+    PrepareTarget: Populating the device directory... 
+    PrepareTarget: Creating the LibGCC package... 
+    (...) 
+
 
 At the end of this process, the filesystem generated will be available at the directory specified at the cross config file (usually under /System), and will be ready for usage on the target platform. Files can always be modified manually after they are generated, as they're not overwritten by subsequent ''make'' calls. The filesystem can then be shared for remote mounting over NFS at boot time, or copied to different medias, depending on your interests and resources available on your platform.
 
@@ -215,9 +215,9 @@ If you're porting Gobo to an architecture which is not listed by Bootstrap, you 
 == Availability ==
 BootStrap can be downloaded as a package or directly from the Subversion repository. The current stable release is 1.1, and it can be downloaded [http://gobolinux.org/download/bootstrap here]. SVN snapshots can be obtained in the following way:
 
-<blockquote>
-svn checkout http://svn.gobolinux.org/tools/trunk/Bootstrap <br/>
-</blockquote>
+
+    svn checkout http://svn.gobolinux.org/tools/trunk/Bootstrap 
+
 
 = Porting GoboLinux to a new embedded platform =
 So, do you want to try Gobo on a different architecture? That's cool, and that's why this documentation was created for: we want to encourage you to join in the developers' and users' corner with interesting experiments.

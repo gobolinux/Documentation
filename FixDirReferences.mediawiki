@@ -9,8 +9,8 @@ Options:
 * '''-b, --backup''' - Keep a backup file of the original .la file.
 
 Examples:
-<blockquote>
-FixLibtoolLa -b *.la <br/>
-</blockquote>
+
+    FixLibtoolLa -b *.la 
+
 
 {{Scripts}}

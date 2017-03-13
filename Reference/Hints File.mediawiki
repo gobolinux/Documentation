@@ -18,35 +18,35 @@ Filenames in hints files are reletave to the target installation directory. So, 
 Hints files can have Bash-style comments (comments that start with <code>#</code> and go until the end of the line).
 
 It's not necessary that a hint occur all on one line, nor is it nessary that there be a line break between hints. In fact, these three examples are parsed identically:
-<blockquote>
-[ UpdateSettings ] <br/>
-   Settings/a, Settings/b : dont_create, auto_merge <br/>
-   Settings/* : skip <br/>
-</blockquote>
 
-<blockquote>
-[ UpdateSettings ] <br/>
-   Settings/a, Settings/b :  <br/>
-      dont_create, auto_merge <br/>
-   Settings/* : skip <br/>
-</blockquote>
+    [ UpdateSettings ] 
+       Settings/a, Settings/b : dont_create, auto_merge 
+       Settings/* : skip 
 
-<blockquote>
-[ UpdateSettings ] <br/>
-Settings/a, Settings/b : dont_create, auto_merge Settings/* : skip <br/>
-</blockquote>
+
+
+    [ UpdateSettings ] 
+       Settings/a, Settings/b : 
+          dont_create, auto_merge 
+       Settings/* : skip 
+
+
+
+    [ UpdateSettings ] 
+    Settings/a, Settings/b : dont_create, auto_merge Settings/* : skip 
+
 
 In the interest of keeping your code readable, I'd probably recommend one of the first two.
 
 Note that because the parser doesn't particularly care about whitespace (only the presence or lack of punctuation marks), this will work:
-<blockquote>
-*: auto_merge, check_delete, skip <br/>
-</blockquote>
+
+    *: auto_merge, check_delete, skip 
+
 
 but this will not:
-<blockquote>
-*: auto_merge check_delete skip <br/>
-</blockquote>
+
+    *: auto_merge check_delete skip 
+
 
 
 === Script-specific ===

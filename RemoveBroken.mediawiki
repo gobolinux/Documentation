@@ -4,9 +4,9 @@ This script is very useful when used together with "find" to find stray, broken 
 "find /System/Links | [[RemoveBroken]]".
 
 Example:
-<blockquote>
-  find /System/Links | RemoveBroken <br/>
-</blockquote>
+
+      find /System/Links | RemoveBroken 
+
 
 This is functionally equivalent to
  find /System/Links -xtype l -delete

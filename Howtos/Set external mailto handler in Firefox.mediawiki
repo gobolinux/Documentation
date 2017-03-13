@@ -12,10 +12,10 @@ If you use Firefox and are not running it in KDE or Gnome you'll often times fin
 Some useful ways of using this method is to establish a script to launch a web service as your default means of sending email. A simple script to handle that would be:
 
 ''for the gmail service''
-<blockquote>#!/bin/bash
-. GoboPath <br/>
-TO=$(echo $1 | sed 's/mailto://') <br/>
-URL="https://mail.google.com/mail?view=cm&tf=0&to=${TO}" <br/>
-${goboExecutables}/firefox ${URL}</blockquote>
+
+    . GoboPath 
+    TO=$(echo $1 | sed 's/mailto://') 
+    URL="https://mail.google.com/mail?view=cm&tf=0&to=${TO}" 
+
 
 [[Category:Howtos]]

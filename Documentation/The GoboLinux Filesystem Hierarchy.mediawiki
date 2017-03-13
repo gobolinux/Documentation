@@ -36,65 +36,65 @@
 
 Here is an overview of the filesystem tree.
 The legacy folders (on the ":" part of the tree) are hidden by [[GoboHide]]; as you can see they are links to the GoboLinux folders.
-<blockquote>
-/ <br/>
-|-- Depot <br/>
-|-- Files <br/>
-|   |-- Compile <br/>
-|   |   |-- Archives <br/>
-|   |   |-- Sources <br/>
-|   |   `-- Store <br/>
-|   |-- Descriptions <br/>
-|   |-- Fonts <br/>
-|   `-- Wallpapers <br/>
-|-- Mount <br/>
-|-- Programs <br/>
-|-- System <br/>
-|   |-- Kernel <br/>
-|   |   |-- Boot <br/>
-|   |   |-- Devices <br/>
-|   |   |-- Modules <br/>
-|   |   |-- Objects <br/>
-|   |   `-- Status <br/>
-|   |-- Links <br/>
-|   |   |-- Environment <br/>
-|   |   |-- Executables <br/>
-|   |   |-- Headers <br/>
-|   |   |-- Libraries <br/>
-|   |   |-- Manuals <br/>
-|   |   |-- Shared <br/>
-|   |   `-- Tasks <br/>
-|   |-- Settings <br/>
-|   `-- Variable <br/>
-|       |-- cache <br/>
-|       |-- empty <br/>
-|       |-- lib <br/>
-|       |-- lock <br/>
-|       |-- log <br/>
-|       |-- run <br/>
-|       |-- spool <br/>
-|       `-- tmp <br/>
-|-- Users <br/>
-: <br/>
-: <br/>
-:-- etc  -> System/Settings <br/>
-:-- dev  -> System/Kernel/Devices <br/>
-:-- sys  -> System/Kernel/Objects <br/>
-:-- proc -> System/Kernel/Status <br/>
-:-- var  -> System/Variable <br/>
-:-- tmp  -> System/Variable/tmp <br/>
-:-- sbin -> System/Links/Executables <br/>
-:-- bin  -> System/Links/Executables <br/>
-:-- lib  -> System/Links/Libraries <br/>
-`-- usr <br/>
-    |-- X11R6   -> . <br/>
-    |-- local   -> . <br/>
-    |-- sbin    -> ../System/Links/Executables <br/>
-    |-- bin     -> ../System/Links/Executables <br/>
-    |-- include -> ../System/Links/Headers <br/>
-    |-- lib     -> ../System/Links/Libraries <br/>
-    |-- man     -> ../System/Links/Manuals <br/>
-    `-- share   -> ../System/Links/Shared <br/>
-</blockquote>
+
+    / 
+    |-- Depot 
+    |-- Files 
+    |   |-- Compile 
+    |   |   |-- Archives 
+    |   |   |-- Sources 
+    |   |   `-- Store 
+    |   |-- Descriptions 
+    |   |-- Fonts 
+    |   `-- Wallpapers 
+    |-- Mount 
+    |-- Programs 
+    |-- System 
+    |   |-- Kernel 
+    |   |   |-- Boot 
+    |   |   |-- Devices 
+    |   |   |-- Modules 
+    |   |   |-- Objects 
+    |   |   `-- Status 
+    |   |-- Links 
+    |   |   |-- Environment 
+    |   |   |-- Executables 
+    |   |   |-- Headers 
+    |   |   |-- Libraries 
+    |   |   |-- Manuals 
+    |   |   |-- Shared 
+    |   |   `-- Tasks 
+    |   |-- Settings 
+    |   `-- Variable 
+    |       |-- cache 
+    |       |-- empty 
+    |       |-- lib 
+    |       |-- lock 
+    |       |-- log 
+    |       |-- run 
+    |       |-- spool 
+    |       `-- tmp 
+    |-- Users 
+    : 
+    : 
+    :-- etc  -> System/Settings 
+    :-- dev  -> System/Kernel/Devices 
+    :-- sys  -> System/Kernel/Objects 
+    :-- proc -> System/Kernel/Status 
+    :-- var  -> System/Variable 
+    :-- tmp  -> System/Variable/tmp 
+    :-- sbin -> System/Links/Executables 
+    :-- bin  -> System/Links/Executables 
+    :-- lib  -> System/Links/Libraries 
+    `-- usr 
+        |-- X11R6   -> . 
+        |-- local   -> . 
+        |-- sbin    -> ../System/Links/Executables 
+        |-- bin     -> ../System/Links/Executables 
+        |-- include -> ../System/Links/Headers 
+        |-- lib     -> ../System/Links/Libraries 
+        |-- man     -> ../System/Links/Manuals 
+        `-- share   -> ../System/Links/Shared 
+
 
 {{Handbook}}

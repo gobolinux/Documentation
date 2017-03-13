@@ -6,61 +6,61 @@ compiz-fusion and all its dependencies will get compiled and installed<br>
 
 * Modify thoses xorg.conf sections:
 
-<blockquote>
-Section "ServerLayout" <br/>
-	Identifier     "Xorg Configured" <br/>
-	Screen         0 "Screen0"  0 0 <br/>
-	InputDevice    "Mouse0" "CorePointer" <br/>
-	InputDevice    "Keyboard0" "CoreKeyboard" <br/>
-        Option         "AIGLX" "true" <br/>
-EndSection <br/>
-</blockquote>
 
-<blockquote>
-Section "Module" <br/>
-	Load  "glx" <br/>
-	Load  "extmod" <br/>
-	Load  "xtrap" <br/>
-	Load  "record" <br/>
-	Load  "dbe" <br/>
-	Load  "dri" <br/>
-	Load  "type1" <br/>
-EndSection <br/>
-</blockquote>
+    Section "ServerLayout" 
+    	Identifier     "Xorg Configured" 
+    	Screen         0 "Screen0"  0 0 
+    	InputDevice    "Mouse0" "CorePointer" 
+    	InputDevice    "Keyboard0" "CoreKeyboard" 
+            Option         "AIGLX" "true" 
+    EndSection 
 
-<blockquote>
-Section "Device" <br/>
-	Identifier  "Card0" <br/>
-	Driver      "intel" <br/>
-       	BusID           "PCI:0:2:0" <br/>
-        Option "XAANoOffscreenPixmaps" "true" <br/>
-	Option "DRI"     "true" <br/>
-EndSection <br/>
-</blockquote>
 
-<blockquote>
-Section "Screen" <br/>
-	Identifier "Screen0" <br/>
-	Device     "Card0" <br/>
-	SubSection "Display" <br/>
-            Virtual         2048 2048 <br/>
-	EndSubSection <br/>
- <br/>
-EndSection <br/>
-</blockquote>
 
-<blockquote>
-Section "DRI" <br/>
-        Group "video" <br/>
-        Mode    0666 <br/>
-EndSection <br/>
-</blockquote>
+    Section "Module" 
+    	Load  "glx" 
+    	Load  "extmod" 
+    	Load  "xtrap" 
+    	Load  "record" 
+    	Load  "dbe" 
+    	Load  "dri" 
+    	Load  "type1" 
+    EndSection 
 
-<blockquote>
-Section "Extensions" <br/>
-Option "Composite" "Enable" <br/>
-EndSection <br/>
-</blockquote>
+
+
+    Section "Device" 
+    	Identifier  "Card0" 
+    	Driver      "intel" 
+           	BusID           "PCI:0:2:0" 
+            Option "XAANoOffscreenPixmaps" "true" 
+    	Option "DRI"     "true" 
+    EndSection 
+
+
+
+    Section "Screen" 
+    	Identifier "Screen0" 
+    	Device     "Card0" 
+    	SubSection "Display" 
+                Virtual         2048 2048 
+    	EndSubSection 
+     
+    EndSection 
+
+
+
+    Section "DRI" 
+            Group "video" 
+            Mode    0666 
+    EndSection 
+
+
+
+    Section "Extensions" 
+    Option "Composite" "Enable" 
+    EndSection 
+
 
 * Restart Xorg
 * Run compiz with : 

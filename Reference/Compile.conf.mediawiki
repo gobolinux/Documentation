@@ -5,63 +5,63 @@ It is stored at /Programs/Compile/Settings/Compile/Compile.conf -- which, once i
 These are the usual contents of the file:
 
 Your name here so that credit is added to recipes.
-<blockquote>
-compileRecipeAuthor="Paul McCartney" <br/>
-# example only! change the name (unless of course, you're Paul ;) ) <br/>
-</blockquote>
+
+    compileRecipeAuthor="Paul McCartney" 
+    # example only! change the name (unless of course, you're Paul ;) ) 
+
 
 The standard locations for your local Compile files.
-<blockquote>
-compileDir="${goboPrefix}/Files/Compile" <br/>
-compileDependenciesDir="$compileDir/Recipes" <br/>
-compileArchivesDir="$compileDir/Archives" <br/>
-compileSourcesDir="$compileDir/Sources" <br/>
-</blockquote>
+
+    compileDir="${goboPrefix}/Files/Compile" 
+    compileDependenciesDir="$compileDir/Recipes" 
+    compileArchivesDir="$compileDir/Archives" 
+    compileSourcesDir="$compileDir/Sources" 
+
 
 You can have a series of local directories to search for unpacked recipes (ie, directories containing recipe subdirectories):
-<blockquote>
-compileRecipeDirs=( <br/>
-"$compileDir/LocalRecipes" <br/>
-"$compileDir/Recipes" <br/>
-) <br/>
-</blockquote>
+
+    compileRecipeDirs=( 
+    "$compileDir/LocalRecipes" 
+    "$compileDir/Recipes" 
+    ) 
+
 Please note that if you comment the "$compileDir/LocalRecipes" line, then you can ignore local recipes.
 
 
 This is where the remote recipes are fetched.
-<blockquote>
-getRecipeStores=( <br/>
-"http://gobolinux.org/recipe-store" <br/>
-"http://gobo.calica.com/recipe-store" <br/>
-) <br/>
-</blockquote>
+
+    getRecipeStores=( 
+    "http://gobolinux.org/recipe-store" 
+    "http://gobo.calica.com/recipe-store" 
+    ) 
+
 
 The following variable indicates where [[GetRecipe]] places its recipes. Ideally, it should match $compileRecipeDirs:
-<blockquote>
-compileGetRecipeDir="$compileDir/Recipes" <br/>
-</blockquote>
+
+    compileGetRecipeDir="$compileDir/Recipes" 
+
 
 These specify the source and destination to [[PackRecipe]]:
-<blockquote>
-compileLocalRecipesDir="$compileDir/LocalRecipes" <br/>
-compilePackedRecipesDir="$compileDir/PackedRecipes" <br/>
-</blockquote>
+
+    compileLocalRecipesDir="$compileDir/LocalRecipes" 
+    compilePackedRecipesDir="$compileDir/PackedRecipes" 
+
 
 Some of the main free software repositories are treated especially: recipes use these variables in their <code>url</code> declarations, so that you can pick your favorite mirror without having to edit recipes one by one:
-<blockquote>
-ftpGnu=ftp://ftp.gnu.org/gnu/ <br/>
-ftpAlphaGnu=ftp://alpha.gnu.org/gnu/ <br/>
-httpSourceforge=http://unc.dl.sourceforge.net/sourceforge/ <br/>
-</blockquote>
+
+    ftpGnu=ftp://ftp.gnu.org/gnu/ 
+    ftpAlphaGnu=ftp://alpha.gnu.org/gnu/ 
+    httpSourceforge=http://unc.dl.sourceforge.net/sourceforge/ 
+
 
 A variable to set the "make" command called by Compile. ColorMake provides the highlighting that GoboLinux has by default:
-<blockquote>
-compileMakeCommand="ColorMake" <br/>
-</blockquote>
+
+    compileMakeCommand="ColorMake" 
+
 
 Options to use with the make command. This can be used to run multiple threads in parallel on different CPUs or for other customisation:
-<blockquote>
-compileMakeOptions="-j2" <br/>
-</blockquote>
+
+    compileMakeOptions="-j2" 
+
 
 {{Reference}}

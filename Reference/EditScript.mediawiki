@@ -10,8 +10,8 @@ Options:
 You will be prompted if you want to create the script if it does not exist. [[EditScript]] uses [[TemplateScript]] as a template for newly created scripts.
 
 Examples:
-<blockquote>
-EditScript EditScript <br/>
-</blockquote>
+
+    EditScript EditScript 
+
 
 {{Reference}}

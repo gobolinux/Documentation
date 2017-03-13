@@ -22,8 +22,8 @@ Options:
 If no flags are set, all system locations are scanned.
 
 Examples:
-<blockquote>
-SystemFind -i -l freetype <br/>
-</blockquote>
+
+    SystemFind -i -l freetype 
+
 
 {{Scripts}}
