@@ -20,8 +20,7 @@
 * Package management
 ** [[Updating-packages | Updates]]
 ** [[System maintenance]]
-** [[Freshen | The Freshen tool]]
-** [[Manager | The Manager tool]]
+** [[Freshen]]
 * [[Boot scripts]]
 ** [[The boot scripts anatomy]]
 *** [[Core of the BootScripts package]]
