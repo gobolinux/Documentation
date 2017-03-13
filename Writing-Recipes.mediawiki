@@ -1,12 +1,23 @@
-{{Handbook Navigation}}
-In this section, you'll learn to create recipes. Basically, there are two ways to do it: updating an existing one, or creating from scratch. There are scripts to help you in those situations: [[NewVersion]] or [[EditRecipe]], and [[MakeRecipe]], respectively.
+In this section, you'll learn to create recipes. Basically,
+there are two ways to do it: updating an existing one, or
+creating one from scratch. To assist in this, we have the
+programs [[NewVersion]], [[EditRecipe]] and [[MakeRecipe]]
 
-In any case, once the recipe is done and compiled, a packed version of it will show up in /Files/Compile/Store (or any other location configured at /System/Settings/Compile/[[Compile.conf]]). We encourage you to contribute your recipes, so that the community can benefit (and you can easily get it from the online repository afterwards!). To send a recipe for inclusion in the main compile tree, just run `ContributeRecipe [program name]` to submit it for review, or email the tar.bz2 to the gobolinux-recipes mailing list: http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes
+However you do it, once the recipe is done and compiled, a
+packed version of it will show up in /Files/Compile/Store
+(or any other location configured at
+/System/Settings/Compile/[[Compile.conf]]). We encourage you
+to contribute your recipes, so that the community can
+benefit. To send a recipe for inclusion in the main compile
+tree, just run "[[ContributeRecipe]] [program name]" to submit
+it for review.
 
 == Setting up Compile.conf ==
 
-We only need to do one thing here, add your name to Compile.conf (for credits on Recipes you may make).
-Open Compile.conf in a '''text editor'''. In this example, we'll use nano (use whichever is your favorite):
+We only need to do one thing here, add your name to
+Compile.conf (for credits on Recipes you may make).  Open
+Compile.conf in a '''text editor'''. In this example, we'll
+use nano (use whichever is your favorite):
 
   nano /System/Settings/Compile/Compile.conf
 
@@ -47,9 +58,9 @@ What's a good name? One that follows our set of package naming guidelines:
 # Packages should never have spaces in their names. If they do, the space is simply suppressed (according to this, the name [[Acrobat_Reader]] is indeed incorrect).
 # There should never be two package names differing only in capitalization. The [[GoboLinux]] scripts refer to package, program and recipe names in a case-insensitive manner.
 
-The set of rules defined in [[NamingConventions]] won't be listed exhaustively here because that would be like re-implementing the script, only this time in literate programming. In short, it deals with detecting common prefix and suffix patterns, such as "Tools" and "Utils" and vowel-consonant heuristics.
-
-:''"Literate programming - A style of programming proposed by Knuth in 01984. In literate programming you write comments with program instead of program with comments. (...) Ahh... it has nothing to do with Gobo. Not yet."'' &mdash;Leandro Motta Barros
+The set of rules are defined in [[NamingConventions]] and
+deal with detecting common prefix and suffix patterns, such
+as "Tools" and "Utils" and vowel-consonant heuristics.
 
 When a program name is not explicitly given to Compile (e.g., if it assumes it from an URL), it passes the inferred name through [[NamingConventions]]. In recent versions, some rules are enforced even in explicitly given names -- one of them is that all program names must start with a capital letter.
 
@@ -66,12 +77,12 @@ Based on the filename of the URL, [[MakeRecipe]] detects that the program it is 
 Note: In case it didn't, you could have passed it explicitly as parameters
 
 <blockquote>
-MakeRecipe HardToDetect 2.0 http://example.org/htd_2_0.tar.bz2 <br/>
+MakeRecipe HardToDetect 2.0 http://example.org/htd_2_0.tar.bz2
 </blockquote>
 
 [[MakeRecipe]] should now report that it has downloaded the sources, and found that it uses autoconf.  Which is a good thing, as that means there is very little work to be done on our part.  So now we compile and install the package on our machine.
 
-<code>Compile joe</code>
+<blockquote>Compile joe</blockquote>
 
 Wait a few minutes, and Joe will be compiled and installed on your system.  Now you have a local recipe and it will be packaged into /Files/Compile/Store by default as Joe--3.1--recipe.tar.bz2.
 
@@ -196,10 +207,8 @@ Another occasionally necessary flag is '''autogen_before_configure=yes'''. Some 
 
 If <code>configure</code> or <code>autogen.sh</code> have non-standard names, you can explicitly provide them with '''configure''' and '''autogen''', like this:
 
-<blockquote>
-configure=configure.gnu <br/>
-autogen=gen_all.sh <br/>
-</blockquote>
+      configure=configure.gnu
+      autogen=gen_all.sh
 
 Since "compileprogram" recipes also run <code>make</code>, most of the observations about "makefile" recipes, discussed below also apply.
 
