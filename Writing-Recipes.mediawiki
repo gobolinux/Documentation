@@ -113,11 +113,18 @@ To share your recipe:
 
 === Patches ===
 
-Compile has built-in support for applying patches distributed with recipes. There are some things that should be considered when creating a patch for an application. First of all, if the patch is generic, consider sending it upstreams, to the original project, as well. If that is done, here is how one should do to get the patch working with Compile.
+Compile has built-in support for applying patches
+distributed with recipes. There are some things that should
+be considered when creating a patch for an application.
+First of all, if the patch is generic, consider sending it
+upstream, to the original project, as well. If that is
+done, here is how one should do to get the patch working
+with Compile.
 
 ==== Patch structure ====
 
 Compile applies the patch from within the source directory with the '-p1' option, stripping one directory from the patch's search path. This is to ensure that the patch is appliable without editing even if the recipe is updated. The patch should therefore add one level to the source directory in the path. An example taken from the rlocate recipe, created with 'diff':
+
 <blockquote>
 --- rlocate-0.4.3/doc/rlocate.html  2006-01-19 10:04:52.000000000 +0100 <br/>
 +++ rlocate-0.4.3.new/doc/rlocate.html  2006-01-19 19:10:20.000000000 +0100 <br/>
@@ -126,20 +133,24 @@ Compile applies the patch from within the source directory with the '-p1' option
 
 Set the permissions of the rlocate and rlocated binaries. To do this execute <br/>
  the following commands.</p> 
+
 <blockquote>
 -        chown root:rlocate /usr/local/bin/rlocate <br/>
 +        chown 0:rlocate /usr/local/bin/rlocate <br/>
          chmod 2755 /usr/local/bin/rlocate <br/>
 </blockquote>
+
 This diff should then be in a file, say '01-root_to_uid.patch', wich is placed in the Rlocate 0.4.3 recipe directory. Of course the filename should be somewhat descriptive to what the patch does. The filename should also be prefixed with a number, which ensures that the patches are applied in the correct order, as there can be a number of patches, some of them being applied to the same source file.
 
 ==== Creating a patch ====
 
 To create a patch you need the edited source and the "clean" source, then use 'diff' to create the patch. To create the patch in the example above I used
+
 <blockquote>
 cd /Files/Compile/Sources <br/>
 diff -Naur rlocate-0.4.3 rlocate-0.4.3.new > 01-root_to_uid.patch <br/>
 </blockquote>
+
 where rlocate-0.4.3.new was the directory holding the edited source. This may work if you only have one type of change made. But if you made several different edits and want them in different patches one can specify the exact file to 'diff' or you can make a full diff and edit the resulting file, spliting it into smaller patches.
 
 ==== Converting patches ====
