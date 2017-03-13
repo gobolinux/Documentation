@@ -124,9 +124,11 @@ Compile applies the patch from within the source directory with the '-p1' option
 --- rlocate-0.4.3/doc/rlocate.html  2006-01-19 10:04:52.000000000 +0100 <br/>
 +++ rlocate-0.4.3.new/doc/rlocate.html  2006-01-19 19:10:20.000000000 +0100 <br/>
 @@ -223,6 +223,6 @@ <br/>
-  permissions of the rlocate and rlocated binaries. To do this execute <br/>
-  the following commands.</p> <br/>
-  <pre> <br/>
+</blockquote>
+
+Set the permissions of the rlocate and rlocated binaries. To do this execute <br/>
+ the following commands.</p> 
+<blockquote>
 -        chown root:rlocate /usr/local/bin/rlocate <br/>
 +        chown 0:rlocate /usr/local/bin/rlocate <br/>
          chmod 2755 /usr/local/bin/rlocate <br/>
