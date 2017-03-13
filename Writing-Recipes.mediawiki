@@ -85,15 +85,16 @@ When you create a new recipe for a program that's not yet available in the [[Gob
 Writing Meta recipe is like putting small things inside some larger container.
 For example consider the following meta recipe:
 
-	# Recipe for version 1.4.5 by Hisham Muhammad, on Wed Jan 23 01:28:21 BRST 2008
-	# Recipe (MakeRecipe) for Audacious by Andre Detsch <detsch@gobolinux.org>, on Wed Nov 30 15:01:27 BRST 2005
-	compile_version=1.8.2
-	recipe_type=meta 
-
-	include=(
-	"Audacious-Itself--1.4.5"
-	"Audacious-Plugins--1.4.4"
-	)
+<blockquote>
+# Recipe for version 1.4.5 by Hisham Muhammad, on Wed Jan 23 01:28:21 BRST 2008
+# Recipe (MakeRecipe) for Audacious by Andre Detsch <detsch@gobolinux.org>, on Wed Nov 30 15:01:27 BRST 2005
+compile_version=1.8.2
+recipe_type=meta 
+include=(
+"Audacious-Itself--1.4.5"
+"Audacious-Plugins--1.4.4"
+)
+</blockquote>
 
 Where two packages (Audacious-Itself and -Plugins) are being regrouped behind 1 "bigger" recipe called Audacious. So with meta recipe you can have lots of small recipes regrouped in one big recipe.
 It simplify installation and can help too in some case with stubborn project that don't get along immediately with Gobo directory layout. Thus creating a meta recipes can help porting quickly a project in one big chunk (all the parts will be installed into the same prefix), before making it nicer and modular later.
