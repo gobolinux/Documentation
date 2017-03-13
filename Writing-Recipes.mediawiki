@@ -133,8 +133,8 @@ Compile applies the patch from within the source directory with the '-p1' option
       +++ rlocate-0.4.3.new/doc/rlocate.html  2006-01-19 19:10:20.000000000 +0100
       @@ -223,6 +223,6 @@
 
-Set the permissions of the rlocate and rlocated binaries. To do this execute <br/>
- the following commands.</p> 
+Set the permissions of the rlocate and rlocated binaries. To do this execute 
+the following commands:
 
       -        chown root:rlocate /usr/local/bin/rlocate
       +        chown 0:rlocate /usr/local/bin/rlocate
@@ -203,7 +203,20 @@ These are packages that use Makefiles directly. You can easily spot programs of 
 
 For this kind of recipe, Compile runs <code>make</code> twice: the "build" run and the "install" run. A few programs require only one run; you can disable either with '''do_build=no''' and '''do_install=no'''.
 
-In "makefile" recipes, you will always have to pass at least one additional option in the recipe, to tell the Makefile to use the /Programs/<program-name>/<version> directory. If we're lucky, the Makefile has one main variable that controls the installation prefix. Variables of this kind are usually called PREFIX, DESTDIR, INSTDIR... you'll have to look inside the Makefile to find out. Remember that the installation prefix is set by Compile as the '''target''' shell variable. To give <code>make</code> variables, we can either use '''build_variables''' and '''install_variables''', which give options to the "build" and "install" runs of <code>make</code>, or just '''make_variables''' which passes options to both runs. Their use is similar to that of '''configure_options'''.
+In "makefile" recipes, you will always have to pass at least
+one additional option in the recipe, to tell the Makefile to
+use the /Programs/&lt;program-name&gt;/&lt;version&gt;
+directory. If we're lucky, the Makefile has one main
+variable that controls the installation prefix. Variables of
+this kind are usually called PREFIX, DESTDIR, INSTDIR...
+you'll have to look inside the Makefile to find out.
+Remember that the installation prefix is set by Compile as
+the '''target''' shell variable. To give <code>make</code>
+variables, we can either use '''build_variables''' and
+'''install_variables''', which give options to the "build"
+and "install" runs of <code>make</code>, or just
+'''make_variables''' which passes options to both runs.
+Their use is similar to that of '''configure_options'''.
 
       make_variables=(
       "DESTDIR=$target"
