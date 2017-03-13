@@ -1,6 +1,0 @@
-:Currently the "Links" section contains 3 links (I today added the 3rd link which points to the Gobolinux Forum) My problem is the first link... I think we should not bother to collect all links on one extra site, but instead move all the important links to the main site here which you get if you click on navigation "Main Page". Wikipedia does so similar, on one page, they list all the links, most of the time on the very bottom - written by Shevegen (31 OCT 2007)
-
-Something just confused me. There is a link on the page "A copy of the Original FAQ". What does it mean, original FAQ? Does it mean we should no 
-longer update it, or is it there only for historical purpose? I have exchanged the words to hint that this is a FAQ which we can still use. A FAQ should just be a quick helper IMO. [[User:Shevegen|Shevegen]] 05:34, 5 November 2007 (EST)
-:Well, you changed the link.  [[FAQ]] and [[Original FAQ]] are two different pages.
-:They share much of their content and should probably be merged, but the link was around in the "Raw Materials" section to be available as a source. --[[User:Kundor|kundor]] ([[User talk:Kundor|talk]])
