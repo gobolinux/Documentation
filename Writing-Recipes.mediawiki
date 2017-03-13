@@ -87,12 +87,11 @@ For example consider the following meta recipe:
 
 <blockquote>
 # Recipe for version 1.4.5 by Hisham Muhammad, on Wed Jan 23 01:28:21 BRST 2008 <br/>
-# Recipe (MakeRecipe) for Audacious by Andre Detsch <detsch@gobolinux.org>, on Qua \ <br/>
-Nov 30 15:01:27 BRST 2005 <br/>
+# Recipe (MakeRecipe) for Audacious by Andre Detsch <detsch@gobolinux.org>, on Wed Nov 30 15:01:27 BRST 2005 <br/>
 compile_version=1.8.2 <br/>
 recipe_type=meta <br/>
- <br/>
-include=( <br/>
+
+include=(<br/>
    "Audacious-Itself--1.4.5" <br/>
    "Audacious-Plugins--1.4.4" <br/>
 ) <br/>
