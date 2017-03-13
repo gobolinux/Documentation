@@ -92,8 +92,8 @@ compile_version=1.8.2
 recipe_type=meta 
 
 include=(
-   \"Audacious-Itself--1.4.5\"
-   \"Audacious-Plugins--1.4.4\"
+"Audacious-Itself--1.4.5"
+"Audacious-Plugins--1.4.4"
 )
 </blockquote>
 
