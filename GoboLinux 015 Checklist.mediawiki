@@ -1,5 +1,0 @@
-* [[Outdated Programs]] contains a list of all packages on the GoboLinux 014.01 ISO image. None of them has yet been confirmed to have a recipe for the latest upstream version or a binary package built...
-* The ideas and thoughts that exist about 015 should probably be compiled into a more or less concrete plan. There's [[Ideas for GoboLinux 015]], and two IRC meetings regarding 015: [[2008-01-19 IRC meeting: 015 Roadmap]] and [[2008-04-26 IRC meeting: 015 PreStage1]]. Two more IRC meetings that took place after 014 might also be relevant: [[2008-01-06 IRC meeting: 014 Postmortem]] and [[2008-03-15 IRC meeting: 014.01]].
-* It might be sensible to designate a date by which upstream package versions would be fixed for the release. This might help with ensuring a good release quality. Opinions?
-* Since GoboLinux 015 is practically in feature freeze, the focus now needs to be package quality. Probable versions of major software are: X.Org 7.4, KDE 4.2. Apart from that, whatever is in trunk now.
-* [[015 suggested package list]]
