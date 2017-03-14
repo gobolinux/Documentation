@@ -1,9 +1,0 @@
-Detailed documentations for 
-* [[Scripts]]  What are they exactly and how to use them
-* [[Compile]] Advanced guide for making recipes
-* [[BootScripts]] How to add new [[BootScripts]], how to convert existing ones
-* [[Installing GoboLinux using a thumb drive]]
-
-If you don't want to work on those topics, but are desparate for something to write about, consider looking at [[Project:Todos]] and [[Project:Questions]].
-
-[[Category:Maintenance]]

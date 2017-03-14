@@ -1,7 +1,0 @@
-The AutoStart folder is a directory where your desktop environment searches for apps to start when you log into your X session.
-
-* In [http://rox.sf.net ROX-Filer] this can be accessed by right-clicking the ROX-Session icon and choosing "Auto Start..."
-
-* In KDE, it is in ~/.kde/Autostart
-
-[[Category:Reference]]

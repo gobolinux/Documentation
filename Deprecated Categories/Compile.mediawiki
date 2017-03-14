@@ -1,7 +1,0 @@
-{{Category Navigation}}
-
-The Compile Category is Deprecated and may be deleted in the future.
-
-Please use the Handbook, Reference or Howtos categories instead.
-
-[[Category:Deprecated Categories]]

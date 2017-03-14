@@ -1,9 +1,0 @@
-The distribution method of GoboLinux, the Live CD provides a full, easy to use environment to experience Gobo, and [[Installer]] to install to your hard drive.
-
-See [[Building a custom GoboLinux LiveCD]].
-
-===External Links===
-[http://gobolinux.org/index.php?page=livecd Tweaking the GoboLinux LiveCD] on GoboLinux.org
-
-
-{{Reference}}

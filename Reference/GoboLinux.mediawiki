@@ -1,5 +1,0 @@
-A Linux-based OS with an alternative filesystem hierarchy and a file-system-directory-based package management system.
-
-http://www.GoboLinux.org
-
-{{Reference}}
