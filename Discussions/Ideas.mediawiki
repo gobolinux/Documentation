@@ -1,89 +1,16 @@
-== Misc. ==
-
-* [[PackageBundles]] - Ease installation of multiple packages, ie KDE.
-* [[BetterMarketing]] - thoughts about promoting the distro
-* [[Summer of Code project ideas]]
-
-==  Long Term Goal: GoboLinux the product. ==
-
-As [[GoboLinux]] and its community matures I predict it will reach a point where it will require a more structured and directed development  process.  I submit that one of the areas in which [[GoboLinux]] should move is the realm of producing ''highly distinguished products''.
-
-What I mean is this: Boundaries should be established between "[[GoboLinux]] the OS" and the collection of [[GoboPackages]] which continues to grow.  Also, the OS should be released in different versions:  "[[GoboLinux Workgroup Server]]", "[[GoboLinux Enterprise Server]]", "[[GoboLinux Enthusiast Edition]]", "[[GoboLinux Desktop Edition]]", "[[GoboLinux Netboot]]", etc.
-
-These different products would be very similar in that they all come from the same pool of Gobo-ness, but different in that they are tweaked to work correctly, right out of the box, in their different realms of application.  Such tweaks are usually out of the range of things that can easily be accomplished with mere package-sets in an install program - they are an extra layer of polish that separates professional software from enthusiast software.
-
-Why am I so concerned about professional software?  I believe [[GoboLinux]] has huge potential to break down barriers to the adoption of Linux and free software in general.  The simpler file-system makes it easier for a windows-technician to come to terms with Linux, thereby promoting adoption among the "windows techies" crowd.  Of course it also makes a Linux-based desktop so much more friendly to those of a less technical nature.  Finally, the ease of package management of [[GoboLinux]] makes it one of the most administrator-friendly Unix-based OSs out there.
-
-Author: [[User:StuPenrose|StuPenrose]]
-
-Discussion: [[GoboLinuxTheProduct-Discussion]]
-
-I Disagree about the part of "Gobolinux Enterprise" Server. Gobolinux should be modular, and the user should easily adapt it. We dont need a special flavour. But I do agree that we need a more structured, directed and ACTIVE development. Gobolinux releases are almost like 1x year. :( Given that there arent many users on Gobolinux, this becomes some hassle for all people who do have problems with installs, and just wanted a flawless OS (which Gobolinux could more easily be than Ubuntu, simply due to the better philosophy in Gobolinux than Ubuntu)
-
-==  Version control for bleeding edge users ==
-
-in my opinion Gobolinux needs version constrol system for Scripts and Compile packages and other system specific components.
-
-Author: [[User:Starlord|Starlord]]
-
-Discussion: [[VersionControl-Discussion]]
-
-
-==  MakeAppDir script ==
-I'm a big fan of the ROX filer, which uses a thing called AppDirs. An AppDir is a directory that contains all the files belonging to one program. Just like in [[GoboLinux]]! All that is missing is an AppRun script. If a directory contains a file called AppRun, the ROX filer will execute AppRun instead of opening the directory.
-
-I would like to have some sort of system to easily change directories in /Programs into AppDirs. Maybe a script called MakeAppDir. It might be a problem for the script to figure out what binary AppRun should run, though. Also, you probably wouldn't want to change a library into an AppDir. A guessing system would be far from perfect. Maybe packages should come with an example AppRun script in /Programs/foo/version/Resources.
-
-Author: [[ZaNy]]
-
-Discussion: [[MakeAppDirScript-Discussion]]
-
-
 ==  Filesystem Hierarchy Standard ==
 Filesystem hierarchy should be documented as a standard,this helps software vendors (who distribute their software only in binary form) to comply gobo's filesystem.
-
-Discussion: [[Talk:The GoboLinux Filesystem Hierarchy]]
-
 
 ==  Internationalize Directory Names ==
 As a native English speaker, I ask why do the directory names have to be in English? Can directory names be localized in a manner that makes it easy for the user, without having to modify existing scripts?
 
 Author: Rodion
 
-Discussion: [[LocalizedDirectories-Discussion]]
-
-
 ==  Gobo for non-Linux systems ==
 Thoughts and strategies for bootstraping Gobo onto non-Linux systems.  Good examples, the commercial unixes, Mac OS X, Cygwin, and Microsoft's SFU.
+c
 
-Author: Carlo [[User:Calica|Calica]]
-
-Discussion: [[Gobo4NonLinux-Discussion]]
-
-
-==  Make it easier to use templates in the kb ==
-Certain areas (bug tracking, ideas) should have consistent formatting.  How can we encourage/make easy to use, templates?
-
-Author: Carlo [[User:Calica|Calica]]
-
-Discussion:[[KBTemplates-Discussion]]
-
-
-==  Package descriptions in knowledge base ==
-The package directories at http://gobolinux.org/packages/binary/007/ and http://gobolinux.org/packages/contrib/ work pretty well when you know exactly what package you want. However, I have no idea what most of the  packages in those directories are. If I remember correctly there was some talk on the mailing list about a package manager that would, among other things, display descriptions. This is probably a long time away, though. In the mean time, wouldn't it be a good idea to add a section to the knowledgebase with package descriptions and links to the packages? I imagine packages would be divided into a number of categories like Media, Utilities, Development, Libraries etc..
-
-Author: [[ZaNy]]
-
-Solution: http://recipes.gobolinux.org
-
-==  Use BitTorrent for downloads ==
-
-I just spent quite a long time trying to download [[GoboLinux]] from the mirrors, and all were heavily loaded. I wonder if any of the admins have thought of setting up a Bittorrent tracker for [[GoboLinux]]? It would likely reduce bandwidth loads and at the same time speed up downloads.
-
-Author: JK
-
-I had to use a smart downloader which could grab from multiple mirrors at once.  It was still fairly slow though.  [[BitTorrent]] would rock.  A [[BitTorrent]] download used to be available for a previous revision, so the precident is there. -- Sy
-
+Author: Carlo 
 
 ==  Test with Qemu (http://fabrice.bellard.free.fr/qemu/) ==
 
@@ -99,114 +26,18 @@ Tab-completion which inserts quotes instead of backslashes.
 * http://www.zsh.org/mla/users/2003/msg00794.html
 
 
-==  GoboLinux Control Center (was: linuxconf!) ==
-
-Include easy system configuration tools like mandrake control center and a simple method for view/add and remove drivers.
-
-I second this one, though I dislike Mandrake's Control Center.  It was really slow and buggy, IMO.  If someone could make an application that is easy to use for newcomers and still useful for power users, that'd be great.  That, and well document where all the configuration files are, if you don't want to or can't use a GUI.  -- [[MichaelFarrell]]
-
-Original Author: Anonymus
-
-Discussion: [[GoboLinux-Control-Center-Discussion]]
-
-
-==  Desktop envirronement ==
-
-Only one desktop envirronement without other choice ! (like windows or xandros......fun & clean !)
-
-I dont see what this should help - those users who want to change their DE shall be able to do this in a simple way - the others even dont know how to do this
-
-==  Install program ==
-
-Show a simple menu when booting cd for choosing to launch live-cd or directly install program(without need to load live-cd).
-
-
-==  Clean up Kernel ! ==
-
-Desktop users will never know what is kernel and compilation of drivers into it !
-Idea is to clean kernel from drivers and make it independant for easy install of drivers with copying and configuration files like windows (*.inf) that just copy libraries without any compilation.
-Kernel will load at startup only drivers profile you have not all drivers ! and in safe mode will load a standard configuration.
-:That sounds like a good suggestion but I think it requires quite some work. I think right now Gobolinux is kinda sparse on developer resources, guess we could need more (hehe i am not excluding myself, I am just really bad at shell stuff ...)
-
-==  Root directory ==
-
-Idea is to rename root directory (/) to another like (/boot or /c) for freeing it to the root filesystem where there is /hda1, /hdb2 etc ...
-
-:why not /root? but remember: that are two keystrokes more per command!
-
-:: In addition, what advantage is there in this? If, for example, hdb2 maps to /Users/joe, then why have it listed in the root filesystem? If hdb2 doesn't map to any commonly used partition (maybe it's Windows), then what's wrong with having it in /Mount/hdb2 (or /Mount/Windows, to give it a more descriptive name)? Like the comment above, trying to imitate Windows' file hierarchy only adds an additional and unnecessary layer to the command line.
-
-==  Configuration ==
-
-Consider property-editing in directories by a specific command (maybe property-name=xy or so) - mapping that to settings in configuration-files of an application - a liitle bit like a virtual directory...
-
-
-==  Elektrified gobo ==
-
-There are many advantages for adding Elektra http://elektra.sourceforge.net/ suppot to [[GoboLinux]]. We can make some impovements to scripts and control center independence of really directory structure (may be localized).
---
-I dont see the advantages, but feel free to list them. As I see it, it has XML like structure with PCDATA constructs - every well structured YAML file easily beats it, and applications can as easily extract information from YAML files.
-Also my scepticism (i may be persuaded) is in that there needs a lot of work to be done - is the effort worth it? The current config files arent perfect, especially with stuff like the huge apache conf, but at least its working. -- shevegen
-
-
-==  Categorized entries in package pages ==
-
-It would be much easier to locate software for people.
-
-- I don't think it's a good idea. You can have many different views of one program (Firefox isn't just a web browser :-)). I think it would be too complicated for usage. And if you really want it, you can make /System/Links/CategorizedPrograms and write a script which would categorize them as symlinks. Then you would be able to have one program under more categories. ''jan molic''
-
-I refer to the download servers. Make categorized entries for ''finding'' software.
-
-one option here is to go with tags. that way one can put a single program under multiple categories.
-then later on one can fire up manager and tell it to show everything that got a kde tag, a game tag or a office tag and so on.
-
 == Categorized programs ==
 
 The directory /Programs could be categorized too: /Programs/Net, /Programs/Graphics, etc
 
-Discussion: [[CategorizedProgramsDirectory-Discussion]]
-
-
-==  Scripts or GoboTools ==
-
-'''ChrootProgram (new):'''<br>
-In [[GoboLinux]], it's easy to chroot programs. Chrooting is (maybe) about better security. You can chroot Apache and then mount-bind data directory inside the chroot, but nothing else. My idea:<br>
-'' $ ChrootProgram Apache-2.4 ''<br>
-would produce /Programs/Apache/2.4-chrooted/ which would contain all 2.4's files + copied libraries from elsewhere (the same structure and links inside chroot) + wrappers to all binaries, so the program would look not chrooted for an user (it would be fully transparent).<br>
-Author: jan molic<br>
-I like it. :) -- [[User:Hisham|hisham]]
-
+[editor: tags are the thing now.]
 
 '''RemoveProgram (new feature):'''<br>
 should test .GoboTimestamp (or program's directory) ctime against contents before removing, then print files changed after installation + ask Remove all/Nothing/Remove not changed.<br>
 Author: jan molic<br>
 This is cool. Try doing it with the program's directory, if not possible use Resources/Timestamp (no need to use dot files, we have the Resources directory for this kind of thing). Show us the code and we'll add it. :) -- [[User:Hisham|hisham]]
 
-
 '''Compile (small change):'''<br>
 If you have sources already extracted, want to use them, but don't have downloaded archive, Compile wants to download it first, even if it's not necessary (it should ask if old sources may be used first). <br>
 Author: jan molic<br>
 Compile tries to run wget -c on the file because it doesn't know if the download is complete. If the recipe contains file''md5 and file''size entries, Compile uses them to test if the file is complete before trying to run wget again. -- [[User:Hisham|hisham]]
-
-== Sandboxed Programs ==
-
-Build on top of the [[GoboLinux]] filesystem concept to implement something like the proposed [http://www.dragonflybsd.org/docs/goals.cgi#packages DragonFly BSD packages concept]. That is, create for each program version a sandbox which contains exactly the subset of the system it depends on (other programs, libraries, etc.) and/or requires access to (depot, user home folders, etc.). Use links rather than union file system to avoid performance and complexity issues. Automatically and transparently use chroot when running the program. This has the benefits of improving security and robustness of the system. It also allows getting rid of the top-level legacy links and hence the need for [[GoboHide]]. This notion was discussed in an [http://thread.gmane.org/gmane.linux.distributions.gobo.general/1532/focus=1656 old thread] but seems to have been dropped. -- [[User:Oren|Oren]]
-
-
-== Flavours ==
-The rationale for the idea is found in this post: http://lists.gobolinux.org/pipermail/gobolinux-users/2007-January/004249.html
-
-== Whitebox programs and a flexible naming policy for Gobolinux packages ==
-Extend the Gobo naming policy for packages in a backwards-compatible way, to allow for the introduction of heavily patched packages and imported packages from other distros, while avoiding naming conflicts. At the same time, avoid naming conflicts related to user-contributed packages. 
-
-Discussion: [[whitebox-programs-and-flexible-naming-Discussion]]
-
-{{Discussions}}
-
-== Establish GoboLinux as the origin of any universal packages ==
-
-I was considering the difficulties involved in building packages that will run on any Linux, and realized the most difficult thing is that both the builders setup and the installers setup can be completely different.  Programs like Alien attempt to create ".LSB" packages, but they have their own problems, for one a failure to cope with evolution of the standards.
-
-So as to make things simple, it seems that the best method is to enforce a single source point for any package builder who intends to create universal packages.  To the best of my knowledge, GoboLinux is the only GNU/Linux out there whose design could allow companies to build individual packages for the various 1001 versions of libraries each distribution contains.  Why not create a build environment tool which modifies the symlinks as required to create replicas of the layout of the major distributions?  Then do some work to make sure that companies interested in the Linux market know that GoboLinux allows them to create packages for major releases without having to employ a large IT staff to manage each distribution or go completely open in their source code.  Finally, once GoboLinux has been established as the build environment, it should become relatively simple to create tools capable of converting to any install environment using the layout tools mentioned above.
-
-It's a fair bit of initial work, and similar projects were attempted in the past, but none of them had the advantage of choosing GoboLinux, whose base design concept makes this all easier.  After critical mass is achieved, the distributions themselves would want to update the layout database.
