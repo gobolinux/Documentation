@@ -1,9 +1,0 @@
-==Previous Work==
-
-* Nathan's [http://news.gmane.org/find-root.php?message_id=%3c200407282326.27378.email%40nathanpalmer.com%3eMail]
-* Raphael's [http://news.gmane.org/find-root.php?message_id=%3c407906AB.9000807%40gmx.de%3e  Mail]
-* Mika's [http://news.gmane.org/find-root.php?message_id=%3c40A4BFA3.3080402%40japo.fi%3e  Mail] and Recipes: http://koti.japo.fi/~pmika/gobolinux/gnome/ 
-* [[Rafael Jeffman's Experience with GNOME]]
-* [[Discussion on GNOME Prefix Independence]]
-
-{{Discussions}}

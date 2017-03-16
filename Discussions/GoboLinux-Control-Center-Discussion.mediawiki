@@ -1,9 +1,0 @@
-Yeah, we could get a centralized system-configurator, just like the drakconf in mandrake, or yast in suse. However, there are some crucial differences between these systems and Gobo (including, but not only, the directory tree).
-
-This configurator/installer/manager/anything more, need to be absolutelly optional for the administrator. The automagical things could happen, but not by obligation.
-
-My idea of a ideal configurator for Gobo is: a text-mode program (very colorfull) that interpret and modify system-config files (say, manage the /System/Settings). It should be absolutelly blind: the administrator say where, what and when this program manage the files, their formats, etc.
-
--- Cl�ber <cleberz(yes, you know what goes here!)ufpr.br>
-
-{{Discussions}}

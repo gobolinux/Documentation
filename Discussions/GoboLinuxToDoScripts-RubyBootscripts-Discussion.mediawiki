@@ -1,6 +1,0 @@
-- I think shell language is good enough for this purpose. I'm big fan of Ruby, love it, but don't want the dependency on that big package. When you work with files, shell is very powerful. ''jan molic''
-
--- I disagree about the part that shell language is "good enough" for this purpose. To me, shell scripts feel alien. I however agree with you that it should not be a part of Gobolinux "vanilla". However it would be a nice idea for a future Gobolinux to 
-have "suit your flavour" language bootup scripts. At least I have less problems to understand ruby source than shell source :)  'shev'
-
-{{Discussions}}
