@@ -20,5 +20,4 @@ GoboLinux comes with CUPS installed by default.
 
 Note that ALSA is muted by default, to automatically save and restore changes done in e.g. alsamixer, add these lines to your boot scripts.
 
-
-    * Done: <blockquote>Exec "Storing ALSA settings..."       alsactl store</pre> 
+    * Done: <code>Exec "Storing ALSA settings..."             alsactl store</code> 
