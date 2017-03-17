@@ -19,19 +19,17 @@ Here is the command line if you use the helper script
 qemust --iso=GoboLinux-016.01-alpha-x86_64.iso --image=gobo.img
 ```
 
-Here is the full command you can edit and past into the
+Alternatively, here is the full command you can edit and past into the
 terminal:
 
 ```
 sudo qemu-system-x86_64 \
--enable-kvm \
--show-cursor \
--boot d -m 768 \
--cpu host -daemonize \
--vga std -soundhw ac97 -rtc base=utc \
--usb -usbdevice tablet -device usb-mouse -vga std -clock unix \
 -cdrom GoboLinux-016.01-alpha-x86_64.iso \
--hda gobo.img
+-hda gobo.img \
+-boot d \
+-m 768 -enable-kvm -show-cursor -cpu host -daemonize \
+-vga std -soundhw ac97 -rtc base=utc \
+-usb -usbdevice tablet -device usb-mouse -vga std -clock unix 
 ```
 
 ### Boot the disk image
@@ -43,18 +41,16 @@ disk image:
 ```
 qemust  --image=gobo.img
 ```
+
 The full command is:
 
 ```
 sudo qemu-system-x86_64 \
--enable-kvm \
--show-cursor \
--boot c -m 768 \
--cpu host -daemonize \
+-hda gobo.img \
+-boot c \
+-m 768 -enable-kvm -show-cursor -cpu host -daemonize \
 -vga std -soundhw ac97 -rtc base=utc \
--usb -usbdevice tablet -device usb-mouse -vga std -clock unix \
--hda gobo.img
-
+-usb -usbdevice tablet -device usb-mouse -vga std -clock unix
 ```
 
 ## Networking
@@ -80,18 +76,18 @@ Details can be found
 
 ## Qemust
 
-This is a perl5 script that you can run to start your QEMU
-process.  Then install the script's dependencies. 
-I would suggest using the _cpanminus_ client:
+The following is a perl5 script that you can run to start your QEMU
+process. The most convenient way to install its dependencies
+is to use _cpanminus_:
 
 ```
 cpan App::cpanminus
 cpanm Getopt::Long::Descriptive
 ```
 
-Of course you may want to edit the QEMU parameters to your choice. 
-then make the script executable, with something like
-<code>chmod a+x ~/bin/qemust</code>.
+Edit the QEMU options to your liking, put the script in
+somewhere in your $PATH, make it script executable with
+something like <code>chmod a+x ~/bin/qemust</code>.
 
 ```
 #!/usr/bin/env perl
