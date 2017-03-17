@@ -53,7 +53,7 @@ sudo qemu-system-x86_64 \
 -usb -usbdevice tablet -device usb-mouse -vga std -clock unix
 ```
 
-## Networking
+## Networking under QEMU
 
 QEMU provides a networking stack so that the guest OS
 running on this virtual machine can access the internet, or
@@ -74,11 +74,11 @@ utilities won't work.
 Details can be found
 [here.](https://en.wikibooks.org/wiki/QEMU/Networking#User_mode_networking)
 
-## Qemust
+## Helper script
 
 The following is a perl5 script that you can run to start your QEMU
-process. The most convenient way to install its dependencies
-is to use _cpanminus_:
+process. It has some library dependencies. The most convenient way to install 
+them (and any CPAN modules) is to use _cpanminus_:
 
 ```
 cpan App::cpanminus
