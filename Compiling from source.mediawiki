@@ -6,9 +6,7 @@
 
 In this example we'll install '''irssi''', a text-based IRC (Internet Relay Chat) client.  To compile and install it, just type:
 
-
     Compile irssi 
-
 
 This will go and download a Recipe for compiling and installing Irssi.  Like cooking food, a  Recipe is a set of instructions that will tell Compile how to "cook" (compile) and "serve" (install) a package.  Depending on the speed of your computer, internet connection and what packages you have installed, Irssi should download and install in a few minutes.  Cool, huh? :-)
 
