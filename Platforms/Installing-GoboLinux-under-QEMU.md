@@ -1,6 +1,11 @@
-Here is what you need to do to boot an ISO image of Gobo
-under QEMU and install the OS to a disk image on the
-host filesystem.
+We'll illustrate how to:
+
+* create a disk image
+* boot an ISO image of Gobo under QEMU 
+* install Gobo to a disk image on the host filesystem
+* reboot the newly installed guest 
+* initialize networking 
+* launch QEMU from a helper script
 
 ### Create a disk image 
 
@@ -12,15 +17,8 @@ qemu-img create gobo.img 10G
 
 ### Boot the installer
 
-Here is the command line if you use the helper script
-<code>qemust</code> which appears below.
-
-```
-qemust --iso=GoboLinux-016.01-alpha-x86_64.iso --image=gobo.img
-```
-
-Alternatively, here is the full command you can edit and past into the
-terminal:
+Here is the full command you can edit and
+paste into the terminal:
 
 ```
 sudo qemu-system-x86_64 \
@@ -32,17 +30,13 @@ sudo qemu-system-x86_64 \
 -usb -usbdevice tablet -device usb-mouse -vga std -clock unix 
 ```
 
+To test boot only the ISO, omit the -hda option.
+
 ### Boot the disk image
 
-Shutdown the guest OS after you've finished the
-installation.  Start QEMU again, this time booting from the
-disk image:
-
-```
-qemust  --image=gobo.img
-```
-
-The full command is:
+After you've finished the installation, shutdown the guest
+OS and terminate QEMU. Start QEMU again, this time booting
+from the disk image:
 
 ```
 sudo qemu-system-x86_64 \
@@ -76,18 +70,41 @@ Details can be found
 
 ## Helper script
 
-The following is a perl5 script that you can run to start your QEMU
-process. It has some library dependencies. The most convenient way to install 
-them (and any CPAN modules) is to use _cpanminus_:
+<code>Qemust</code> is a perl5 script you can use to start
+your QEMU processes. With most options defined in the script,
+the command line becomes much simpler.
+
+### To boot from an ISO and install to a disk image:
+
+```
+qemust --iso=GoboLinux-016.01-alpha-x86_64.iso --image=gobo.img
+```
+
+### To boot from the disk image
+
+```
+qemust  --image=gobo.img
+```
+
+### To test an ISO:
+
+```
+qemust --iso=GoboLinux-016.01-alpha-x86_64.iso 
+```
+
+The script has some library dependencies. The
+most convenient way to install them (and any CPAN modules)
+is to use _cpanminus_ (cpanm). So install _cpanminus_, then
+the dependencies:
 
 ```
 cpan App::cpanminus
 cpanm Getopt::Long::Descriptive
 ```
 
-Edit the QEMU options to your liking, put the script in
-somewhere in your $PATH, make it script executable with
-something like <code>chmod a+x ~/bin/qemust</code>.
+The script follows below. Edit the QEMU options to your
+liking, put the script in somewhere in your $PATH, and make
+it executable with something like <code>chmod a+x ~/bin/qemust</code>.
 
 ```
 #!/usr/bin/env perl

@@ -4,7 +4,7 @@
 * GoboLinux 016
 ** [[Running under VirtualBox]]
 ** [[Running under VMWare Workstation Player]]
-** [[Installing-GoboLinux-under-QEMU|Running under QEMU]]
+** [[Installing-GoboLinux-under-QEMU|Installing and running under QEMU]]
 ** [[Installing to external storage devices]]
 ** [[Filesystem virtualization with Runner]]
 ** [[Installing Dconf]]
