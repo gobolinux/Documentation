@@ -96,8 +96,8 @@ For example consider the following meta recipe:
       compile_version=1.8.2
       recipe_type=meta 
       include=(
-      "Audacious-Itself--1.4.5"
-      "Audacious-Plugins--1.4.4"
+          "Audacious-Itself--1.4.5"
+          "Audacious-Plugins--1.4.4"
       )
 
 Where two packages (Audacious-Itself and -Plugins) are being regrouped behind 1 "bigger" recipe called Audacious. So with meta recipe you can have lots of small recipes regrouped in one big recipe.
@@ -180,8 +180,8 @@ As presented in the [[Compile]] section, Compile handles compilation of programs
 These are autoconf-based packages, and are indicated with '''recipe_type=configure'''. The most common variation in recipes of this type is the need to pass additional flags to the <code>configure</code> script. You can do so with the '''configure_options''' flag, like this:
 
       configure_options=(
-      "--enable-shared"
-      "--with-foo"
+          "--enable-shared"
+          "--with-foo"
       )
 
 Keep in mind that by passing explicit flags to <code>configure</code>, you are affecting the dependencies of the package. Ideally, the <code>configure</code> script should be able to detect what's available in the system and enable or disable features. Much progress in this area has been made in the last few years, especially with [http://pkgconfig.freedesktop.org Pkgconfig], but still some programs require flags to be passed explicitly.
@@ -219,15 +219,15 @@ and "install" runs of <code>make</code>, or just
 Their use is similar to that of '''configure_options'''.
 
       make_variables=(
-      "DESTDIR=$target"
+          "DESTDIR=$target"
       )
 
 Sometimes, paths are defined in several variables of the Makefile. No problem:
 
       make_variables=(
-      "BINDIR=$target/bin"
-      "LIBDIR=$target/lib"
-      "ETCDIR=$target/../Settings"
+          "BINDIR=$target/bin"
+          "LIBDIR=$target/lib"
+          "ETCDIR=$target/../Settings"
       )
 
 If there are no variables of this kind in the Makefile, that is, if the Makefile has hard-coded locations in its installation rules, then unfortunately you'll have to patch the Makefile (and possibly the source code, look for references to paths like <code>/usr</code> using <code>grep</code>). See the section "[[#Patches|patches]]" for more information.
