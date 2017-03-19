@@ -22,7 +22,7 @@
 ** [[Updating-packages | Updates]]
 ** [[System maintenance]]
 ** [[Freshen]]
-* [[Boot scripts]]
+* Boot scripts
 ** [[The boot scripts anatomy]]
 *** [[Core of the BootScripts package]]
 *** [[Boot themes]]
@@ -31,7 +31,7 @@
 *** [[Implementing a boot theme]]
 *** [[Testing a boot theme]]
 * [[GoboLinux Command Reference]]
-* [[GoboLinux scripts]]
+* GoboLinux scripts
 ** [[General notes about the scripts]]
 ** [[Guidelines for script authors]]
 * [[Linux kernel topics]]
