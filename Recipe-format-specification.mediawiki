@@ -3,7 +3,7 @@ For an introduction, see [[Writing Recipes]].
 {{toclimit|limit=2}}
 This page applies both to Recipes and patches in the main recipe directory and those in any architecture subdirectories.
 
-If present at <tt>&lt;architecture&gt;/Recipe</tt>, an architecture-specific Recipe file is sourced in addition to the base Recipe file.  Variable assignments in it will override earlier ones, so to append to a variable, you must do so explicitly, e.g.
+If present at <tt><architecture>/Recipe</tt>, an architecture-specific Recipe file is sourced in addition to the base Recipe file.  Variable assignments in it will override earlier ones, so to append to a variable, you must do so explicitly, e.g.
  configure_options=(
     "${configure_options[@]}"
     --with-cpu=i686
