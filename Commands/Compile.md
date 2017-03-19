@@ -1,6 +1,4 @@
 ```
-COMPILE(1)                                   User Commands                                  COMPILE(1)
-
 NAME
        Compile - Build software from GoboLinux recipe
 
