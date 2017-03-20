@@ -1,8 +1,8 @@
 {{ToC}}
 
-Thanks to Compile, installing a new kernel is pretty straightforward on [[GoboLinux]]. The Linux recipe takes into account the existence of a file called config.gz inside /System/Kernel/Status. This file contains the current configuration for the running kernel, and is used thereby to feed the new kernel options.
+Thanks to Compile, installing a new kernel is pretty straightforward on GoboLinux. The Linux recipe takes into account the existence of a file called config.gz inside /System/Kernel/Status. This file contains the current configuration for the running kernel, and is used thereby to feed the new kernel options.
 
-In short, running '''Compile Linux''' will fetch the latest available recipe (which already contains [[GoboLinux]] optional patches). After doing that, the kernel itself is automatically downloaded, patched and filled with the current configuration, taken from config.gz.
+In short, running '''Compile Linux''' will fetch the latest available recipe (which already contains GoboLinux optional patches). After doing that, the kernel itself is automatically downloaded, patched and filled with the current configuration, taken from config.gz.
 
 The menuconfig entry then appears, and allows for the user to modify their kernel options. Just selecting "Exit" and telling the script to save the changes will finish the user's interaction with the Linux kernel compilation. After completed, a new entry will appear under /System/Kernel/Modules/$KERNEL_RELEASE, and the new bzImage and System.map files will get installed under /System/Kernel/Boot.
 

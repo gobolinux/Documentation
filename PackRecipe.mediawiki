@@ -1,4 +1,4 @@
-Generate "packed recipes", ready for submission, for inclusion in the [[GoboLinux]] Recipe Store.
+Generate "packed recipes", ready for submission, for inclusion in the GoboLinux Recipe Store.
 
 Usage: '''PackRecipe''' [<program> [<version>]]
 

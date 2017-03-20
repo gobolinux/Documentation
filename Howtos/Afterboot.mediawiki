@@ -74,7 +74,7 @@ If remote ssh programs doesn't work it might be because of the terminal settings
 Put your name in compile[[RecipeAuthor]]="" and uncomment.
 Comment the line "http://cscience.org/~gobo/recipe-store".  Use http://www.gobolinux.org/recipe-store/ instead.
 
-=  Updating the [[GoboLinux]] Infrastructure =
+=  Updating the GoboLinux Infrastructure =
 It might be wise to upgrade Compile and other programs
 before attempting to compile or install other programs
 

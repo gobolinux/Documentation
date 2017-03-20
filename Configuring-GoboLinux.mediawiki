@@ -1,6 +1,6 @@
 {{ToC}}
 
-In the previous chapter you have seen how to install [[GoboLinux]] and make it bootable. Most of the essential configuration has been performed by the [[Installer]], but occasionally a further touch is needed, such as configuration of devices that couldn't be automatically detected, custom partitions, and so on. In any case, it's always nice to know where things are set up for when the need of further tweaks arise. This chapter explains what else should be configured, and how to do this.
+In the previous chapter you have seen how to install GoboLinux and make it bootable. Most of the essential configuration has been performed by the [[Installer]], but occasionally a further touch is needed, such as configuration of devices that couldn't be automatically detected, custom partitions, and so on. In any case, it's always nice to know where things are set up for when the need of further tweaks arise. This chapter explains what else should be configured, and how to do this.
 
 ===  Subtopics: ===
 # [[Configuring the Boot Process]]

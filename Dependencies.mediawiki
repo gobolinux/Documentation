@@ -1,4 +1,4 @@
-Queries dependencies in a [[GoboLinux]] package. It scans the files from a program and verifies the relations to other files through dynamic linking (using the program ldd). This way, it can identify dependency relations between packages.
+Queries dependencies in a GoboLinux package. It scans the files from a program and verifies the relations to other files through dynamic linking (using the program ldd). This way, it can identify dependency relations between packages.
 
 == Usage ==
 Usage: '''Dependencies''' { [-c] <package> [<version>] | -f <file> }

@@ -1,11 +1,11 @@
-This applies to vmware Workstation v4.5.2 and [[GoboLinux]] 011
+This applies to vmware Workstation v4.5.2 and GoboLinux 011
 
 This is a work in progress by [[Sy]]
 
 * Install vmware -- default settings
-* Create a new virtual machine (vm) for [[GoboLinux]] -- use an IDE virtual drive, not a SCSI one.  SCSI will boot the livecd, but a [[GoboLinux]] installation with that setting will not boot.  Assistance in getting vmware/scsi running gobo would be appreciated.
+* Create a new virtual machine (vm) for GoboLinux -- use an IDE virtual drive, not a SCSI one.  SCSI will boot the livecd, but a GoboLinux installation with that setting will not boot.  Assistance in getting vmware/scsi running gobo would be appreciated.
 ** Both "Other Linux 2.4 kernel" and "Other Linux 2.6 kernel" (liveCD and booting an installation with framebuffer 2.6) appear to run fine
-* Pop the [[GoboLinux]] CD in, and start up the [[GoboLinux]] vm.
+* Pop the GoboLinux CD in, and start up the GoboLinux vm.
 * When prompted for hardware selection, choose 2:  "bypass only x11 hardware detection".
 * cfdisk -- figure out your partitions
 * mkfs for ext2 or mke2fs -j for an ext3 partition

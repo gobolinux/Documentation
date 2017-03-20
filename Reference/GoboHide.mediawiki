@@ -1,4 +1,4 @@
-As you might have already seen, [[GoboLinux]] adopts an alternative directory tree. As you might also be wondering, without the legacy tree a lot of common applications wouldn't work in [[GoboLinux]]. In order to allow both worlds to co-exist, a tool which allows symlinks and directories to be hidden was developed, called [[GoboHide]].
+As you might have already seen, GoboLinux adopts an alternative directory tree. As you might also be wondering, without the legacy tree a lot of common applications wouldn't work in GoboLinux. In order to allow both worlds to co-exist, a tool which allows symlinks and directories to be hidden was developed, called [[GoboHide]].
 
 [[GoboHide]] works by hooking directory read operations directly in the root of the problem: since every readdir() call is translated and performed by the kernel, we have added a list which is kept in kernel, checking every readdir() operation. If the current inode being read is stored in this list, then it simply doesn't get copied onto the destination buffer, which should be returned to the user.
 

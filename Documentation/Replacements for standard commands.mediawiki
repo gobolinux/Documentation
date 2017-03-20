@@ -1,8 +1,8 @@
 {{ToC}}
 
-[[GoboLinux]] has its own replacements for a few standard commands like <code>su</code> and <code>make</code>. The reasons for making a replacement ranges from adding necessary functionality (<code>su</code>) to making prettier output (<code>make</code>).
+GoboLinux has its own replacements for a few standard commands like <code>su</code> and <code>make</code>. The reasons for making a replacement ranges from adding necessary functionality (<code>su</code>) to making prettier output (<code>make</code>).
 
-While having these "replaced programs" is not a problem in itself (in fact, most provide enhanced functionality which adds to the [[GoboLinux]] experience), it's important to point out these differences here so that you can know what's going on with these perhaps unexpected behaviors.
+While having these "replaced programs" is not a problem in itself (in fact, most provide enhanced functionality which adds to the GoboLinux experience), it's important to point out these differences here so that you can know what's going on with these perhaps unexpected behaviors.
 
 The replacements are provided by several different packages. All except <code>install</code> are handled by making an alias in the shell initialization scripts. This way, you can easily disable the alias and restore the original version of a program, if you so wish. They can be often found in their own subdirectory Resources/Wrappers inside the program directory.
 

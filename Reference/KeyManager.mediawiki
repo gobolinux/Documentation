@@ -1,6 +1,6 @@
 [[KeyManager]] help output.
 
-Manage digital signature keys for [[GoboLinux]] packages.
+Manage digital signature keys for GoboLinux packages.
 
 Usage: [[KeyManager]] { <key_file> }
 

@@ -1,8 +1,8 @@
 {{ToC}}
 
-This section documents the coding style used in [[GoboLinux]] shell scripts.
+This section documents the coding style used in GoboLinux shell scripts.
 
-It's important to note that not all scripts follow these guidelines, because of historical baggage (some of the scripts are older than [[GoboLinux]] itself). Patches to correct the non-conformities are welcome.
+It's important to note that not all scripts follow these guidelines, because of historical baggage (some of the scripts are older than GoboLinux itself). Patches to correct the non-conformities are welcome.
 
 == Indentation and block organization ==
 
@@ -14,7 +14,7 @@ A few rules of thumb:
 * Bear in mind that esac is ridiculous.
 * When doing weird stuff such as functional-like programming with eval, hide it in a pretty function to pretend it is a bit more readable. Eventually we might make a [[Functional]] module. By now, Map() is defined in the [[Array]] module.
 
-It's hard to believe, but the only shell module containing [[GoboLinux]]-specific stuff is the one aptly called [[GoboLinux shell module | GoboLinux]]. Keep that in mind when submitting functions for inclusion in one of the modules.
+It's hard to believe, but the only shell module containing GoboLinux-specific stuff is the one aptly called [[GoboLinux shell module | GoboLinux]]. Keep that in mind when submitting functions for inclusion in one of the modules.
 
 == Names ==
 

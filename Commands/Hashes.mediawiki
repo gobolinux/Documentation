@@ -1,4 +1,4 @@
-Manages [[FileHash]] and [[FileHash]].sig in a [[GoboLinux]] package.
+Manages [[FileHash]] and [[FileHash]].sig in a GoboLinux package.
 
 Usage: '''Hashes''' { [-c] <package> [<version>] }
 

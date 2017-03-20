@@ -1,4 +1,4 @@
-Heuristics to determine a capitalized, [[GoboLinux]]-like name.
+Heuristics to determine a capitalized, GoboLinux-like name.
 
 Usage: '''NamingConventions''' <name>
 

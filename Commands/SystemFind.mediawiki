@@ -1,6 +1,6 @@
 '''SystemFind''' is a special 'find' utility for searches in the /System hierarchy.
 
-In a usual Linux distro, a binary, library or header can be in one of many places. In [[GoboLinux]], we have the /System/Links tree that works like a natural index: every binary is under /System/Links/Executables, every library under Libraries, etc. To know where exactly a program is (in other words, which package it is a part of), one can just do "l" (alias for [[List]], and ls -l equivalent) to see where does the link point too. For executables, the [[which]] command is even more convenient.
+In a usual Linux distro, a binary, library or header can be in one of many places. In GoboLinux, we have the /System/Links tree that works like a natural index: every binary is under /System/Links/Executables, every library under Libraries, etc. To know where exactly a program is (in other words, which package it is a part of), one can just do "l" (alias for [[List]], and ls -l equivalent) to see where does the link point too. For executables, the [[which]] command is even more convenient.
 
 Based on this idea of the /System/Links tree as a "filesystem index", we have the [[SystemFind]] script, which scans it and returns the linked files directly. Scanning /S/L is much faster than scanning the entire /Programs tree: there are less directories to traverse (and at least in [[ReiserFS]], symlinks are stored in the same inode as the directory, making it a time and space efficient operation).
 

@@ -3,7 +3,7 @@
 * '''/Programs/''' - The programs directories. Under this directory, you find a subdirectory per program. Each program directory, on its turn, contains one or more version directories, and optionally, Settings and Variable subdirectories. See section "[[Anatomy of a package]]" for details on the structure of programs directories.
 * '''/Users/''' - The users' home directories. Let's say you have a user on your system called ''will''. The ''will'' home directory will be /Users/will. Even the superuser (typically called ''root'') has its home under /Users. It's possible to put /Users in a separate partition, so you won't have to worry about moving your personal files around when reinstalling/formatting, though in typical systems it's easier to keep the whole system in a single partition so that managing free space is easier.
 {{question | what about a /Users/username/Settings directory to hold all the application generated files in one place instead of cluttering the user directory root (.kde, .zshrc, ... would become /Users/username/Settings/.kde) ?}}
-* '''/System/''' - Crucial system files. Most are managed by system applications (e.g. /System/Settings/passwd) and [[GoboLinux]] scripts (e.g. /System/Links).
+* '''/System/''' - Crucial system files. Most are managed by system applications (e.g. /System/Settings/passwd) and GoboLinux scripts (e.g. /System/Links).
 ** '''Links/''' - Contains "links" directories that index the files under /Programs.
 *** '''Environment/''' - Links to environment files. These are compiled into a Cache file and loaded by the shell, allowing programs to register their own environment variables.
 *** '''Executables/''' - Contains links to files from the programs' bin and sbin directories.
@@ -31,7 +31,7 @@
 ** '''Plugins/''' - plugins, such as the ones needed by browsers
 ** '''Compile/''' - Recipes, packages, sources, etc. used by the [[Compile]] tool.
 * '''/Mount/''' - mounting point for additional local or remote filesystems. Common subdirectories are '''CD-ROM''', '''Floppy''' and '''Zip'''.
-* '''/Depot/''' - repository for users' files. This repository is meant to be organized as the user sees fit. No subdirectories of /Depot are considered part of the standard [[GoboLinux]] hierarchy.
+* '''/Depot/''' - repository for users' files. This repository is meant to be organized as the user sees fit. No subdirectories of /Depot are considered part of the standard GoboLinux hierarchy.
 
 
 Here is an overview of the filesystem tree.

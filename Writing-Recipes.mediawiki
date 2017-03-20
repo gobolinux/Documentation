@@ -46,7 +46,7 @@ If the version of the package has not changed, and only minor recipe updates are
 
 === Naming new recipes ===
 
-One important, but often overlooked aspect of creating a recipe is naming it. There are guidelines and tools to ease this process, but nothing beats common sense really: keep in mind that the name you're giving to the recipe is the name that will show up under /Programs and in the binary package name. Pick names that won't look "out of place" in a [[GoboLinux]] setup.
+One important, but often overlooked aspect of creating a recipe is naming it. There are guidelines and tools to ease this process, but nothing beats common sense really: keep in mind that the name you're giving to the recipe is the name that will show up under /Programs and in the binary package name. Pick names that won't look "out of place" in a GoboLinux setup.
 
 You usually don't have to worry a lot about this: Compile and related tools attempt to do their best to do this job for you, suggesting a name when one is not explicitly given. But if you spot that it messed up, please abort compilation and give it a good name as a parameter.
 
@@ -56,7 +56,7 @@ What's a good name? One that follows our set of package naming guidelines:
 # If the capitalization is undefined (ie, all-lowercase) or inconsistent (for example, showing up in different forms in the README), our set of capitalization rules, as defined by the [[NamingConventions]] script, apply.
 # Applications are sovereign in defining their usage of hyphens and underscores to separate words in their names, when they are consistent.
 # Packages should never have spaces in their names. If they do, the space is simply suppressed (according to this, the name [[Acrobat_Reader]] is indeed incorrect).
-# There should never be two package names differing only in capitalization. The [[GoboLinux]] scripts refer to package, program and recipe names in a case-insensitive manner.
+# There should never be two package names differing only in capitalization. The GoboLinux scripts refer to package, program and recipe names in a case-insensitive manner.
 
 The set of rules are defined in [[NamingConventions]] and
 deal with detecting common prefix and suffix patterns, such
@@ -82,7 +82,7 @@ Note: In case it didn't, you could have passed it explicitly as parameters
 
 Wait a few minutes, and Joe will be compiled and installed on your system.  Now you have a local recipe and it will be packaged into /Files/Compile/Store by default as Joe--3.1--recipe.tar.bz2.
 
-When you create a new recipe for a program that's not yet available in the [[GoboLinux]] recipe, please consider contributing it to the community! (See section above, under Writing Recipes for details.)
+When you create a new recipe for a program that's not yet available in the GoboLinux recipe, please consider contributing it to the community! (See section above, under Writing Recipes for details.)
 
 TODO: Compile'ing progams that don't use autoconf, ones that escape the sandbox, etc.
 

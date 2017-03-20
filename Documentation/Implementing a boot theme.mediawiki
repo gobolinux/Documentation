@@ -17,7 +17,7 @@ This, as the name implies, is the standard location to perform initializations. 
 
 ==  ThemeFile ==
 
-[[GoboLinux]] boot scripts work by processing a sequence of files (again, check section "[[Customizing the initialization]]" for more details). Before starting to process each of these files, the boot scripts core will call ThemeFile passing as the first (and only) parameter the name of the file that is starting to be processed. Needless to say, you are not obligated to give feedback on what file is being processed (the "Hat" theme, example, does nothing in its implementation of ThemeFile.
+GoboLinux boot scripts work by processing a sequence of files (again, check section "[[Customizing the initialization]]" for more details). Before starting to process each of these files, the boot scripts core will call ThemeFile passing as the first (and only) parameter the name of the file that is starting to be processed. Needless to say, you are not obligated to give feedback on what file is being processed (the "Hat" theme, example, does nothing in its implementation of ThemeFile.
 
 A very simple example implementation of ThemeFile follows.
 

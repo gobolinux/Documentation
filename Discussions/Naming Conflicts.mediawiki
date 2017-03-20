@@ -1,4 +1,4 @@
-This is a discussion page for package naming conflicts, both for different projects with the same name (rare) and [[GoboLinux]] packages with the same name which refer to the same project (more common, but let's work to extinguish this).
+This is a discussion page for package naming conflicts, both for different projects with the same name (rare) and GoboLinux packages with the same name which refer to the same project (more common, but let's work to extinguish this).
 
 ==Basic conflict resolution guidelines==
 *For the vast majority of programs, we can just take the project name as found in the program's tarball (ie, "name" in "name-1.0.tar.gz") and apply the [[Package Naming Guidelines]]).

@@ -1,4 +1,4 @@
-By default, the [[GoboLinux]] boot scripts are configured to initialize and configure a relatively small number of daemons and settings that are common among most users. This page explains how to compel [[GoboLinux]] to do what you want when it goes up or down.
+By default, the GoboLinux boot scripts are configured to initialize and configure a relatively small number of daemons and settings that are common among most users. This page explains how to compel GoboLinux to do what you want when it goes up or down.
 
 == Boot-time options ==
 
@@ -19,7 +19,7 @@ The following subsections describe the available entries in the /System/Settings
 
 Mainstream distributions have boot scripts that look always the same. Sure, Red Hat boot scripts are different than Slackware boot scripts, but what I mean is that once you stuck with one of these distributions, you'll always see the same thing when starting up your computer.
 
-[[GoboLinux]], on the other hand, has support to boot themes, so that you can choose the "appearance and behavior" (''"Look and feel" always sounds like an advertisement'') of your system at boot-time. Indeed, you can even create your own boot themes, as explained on section [[Creating a boot theme]].
+GoboLinux, on the other hand, has support to boot themes, so that you can choose the "appearance and behavior" (''"Look and feel" always sounds like an advertisement'') of your system at boot-time. Indeed, you can even create your own boot themes, as explained on section [[Creating a boot theme]].
 
 Choose your favorite theme by setting the BootTheme=<~YourFavoriteTheme> option in the BootOptions file. A few of the themes currently available are:
 
@@ -37,7 +37,7 @@ You can also set the boot theme from GRUB by adding BootTheme=<~YourFavoriteThem
 
 === Clock mode ===
 
-[[GoboLinux]] needs to know if your hardware clock is set to GMT or local time (unless, of course, you happen to be lucky enough to live in a place under the Greenwich time zone). Do this by editing the ClockMode entry. Set it to GMT if your hardware clock is set to GMT. Set it to LocalTime if your hardware clock is set to local time.
+GoboLinux needs to know if your hardware clock is set to GMT or local time (unless, of course, you happen to be lucky enough to live in a place under the Greenwich time zone). Do this by editing the ClockMode entry. Set it to GMT if your hardware clock is set to GMT. Set it to LocalTime if your hardware clock is set to local time.
 
 For obtaining time zone information, Linux applications rely on information provided by Glibc, the C library. Glibc, on its turn, uses the "localtime" symlink on its Settings directory (/Programs/Glibc/Settings) to indicate which is the active time zone. This symlink is configured by the installer according to the option you selected in the time zone selection screen, but you can always reconfigure it by hand, by pointing the "localtime" symlink to a different location under /Programs/Glibc/Current/Shared/zoneinfo.
 
@@ -57,7 +57,7 @@ Some desktop environments also offer graphical tools for setting the keyboard la
 
 === Console font ===
 
-If you don't like the default, fancy and exclusive console font used by [[GoboLinux]], set the ConsoleFont of /System/Settings/[[BootOptions]] to your favorite.
+If you don't like the default, fancy and exclusive console font used by GoboLinux, set the ConsoleFont of /System/Settings/[[BootOptions]] to your favorite.
 
 This can be also set from the command line at any time using the standard setfont tool. See the setfont manual page ("man setfont") for details.
 
@@ -80,11 +80,11 @@ Like in the keyboard setup, the mouse configuration for the graphical environmen
     EndSection 
 
 
-There is nothing [[GoboLinux]]-specific about mouse setup on X. You can find HOWTOs and tutorials around the net that can give you more detailed instructions about this. (But feel free to drop by at the mailing list if you're still stuck!)
+There is nothing GoboLinux-specific about mouse setup on X. You can find HOWTOs and tutorials around the net that can give you more detailed instructions about this. (But feel free to drop by at the mailing list if you're still stuck!)
 
 === Kernel modules loaded on boot ===
 
-Through the use of Udev, [[GoboLinux]] is capable of loading a number of modules automatically at boot. However, many times they aren't capable of loading them, and that's where the user must do that manually.
+Through the use of Udev, GoboLinux is capable of loading a number of modules automatically at boot. However, many times they aren't capable of loading them, and that's where the user must do that manually.
 
 This is a job which can be done by editing /System/Settings/modprobe.conf, in the same manner as you should do in another distribution. However, the [[BootScripts]] package has a special array where the modules and their parameters can be specified, and they'll get loaded at boot time with no pain.
 
@@ -140,7 +140,7 @@ An example of resolv.conf file is:
 
 == Customizing the initialization ==
 
-A detailed description on how the [[GoboLinux]] boot scripts behave is given elsewhere (chapter "[[Boot scripts]]" is dedicated to them). For the purposes of this overview, you just need to know that when you press your computer power button, some files are magically executed.
+A detailed description on how the GoboLinux boot scripts behave is given elsewhere (chapter "[[Boot scripts]]" is dedicated to them). For the purposes of this overview, you just need to know that when you press your computer power button, some files are magically executed.
 
 These files are located at /System/Settings/[[BootScripts]] and are described below.
 

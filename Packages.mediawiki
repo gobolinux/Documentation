@@ -1,17 +1,17 @@
 {{Handbook Navigation}}
 
-'''Packages''' are binary software packages created for use in the [[GoboLinux]] alternate filesystem layout.
+'''Packages''' are binary software packages created for use in the GoboLinux alternate filesystem layout.
 All installed packages live under /Programs.  A package is essentially a tarball of all of the directories necessary
 for a typical program installation (e.g. bin, lib, sbin, etc); as such it is similar to a .tgz Slackware package ("slackage"),
 but meant to be unpacked in its own dedicated directory, not mixed into the rest of the system's software.
 
-[[GoboLinux]] features support for both binary packages and compilation from source. Binary packages are compiled, so that you can install them quickly, without having to compile them yourself (a process which, for some packages, can take up to several hours). On the other hand, with binary packages you can't use your favorite optimization flags or generate code specific to your architecture (after all, the packaged programs are already compiled, in a generic way).  [[Compiling from source]], using rule sets that in [[GoboLinux]] lingo are called [[Recipes]], gives you this freedom, but you have to compile it yourself -- for instance, you need to have compilation tools installed.
+GoboLinux features support for both binary packages and compilation from source. Binary packages are compiled, so that you can install them quickly, without having to compile them yourself (a process which, for some packages, can take up to several hours). On the other hand, with binary packages you can't use your favorite optimization flags or generate code specific to your architecture (after all, the packaged programs are already compiled, in a generic way).  [[Compiling from source]], using rule sets that in GoboLinux lingo are called [[Recipes]], gives you this freedom, but you have to compile it yourself -- for instance, you need to have compilation tools installed.
 
 So, in a few words, binary packages are nice because you don't have to compile them, while source recipes are nice because you get to compile them.
 
 == Installing packages ==
 
-A package can be easily installed using the [[InstallPackage]] script. You can either download the package yourself and hand it to [[InstallPackage]], or let the script search the [[GoboLinux]] repositories by itself and fetch the package, if available. For example, if you downloaded a package and want to install it, run:
+A package can be easily installed using the [[InstallPackage]] script. You can either download the package yourself and hand it to [[InstallPackage]], or let the script search the GoboLinux repositories by itself and fetch the package, if available. For example, if you downloaded a package and want to install it, run:
  InstallPackage Gimp--1.2.3--i686.tar.bz2
 
 If you want [[InstallPackage]] to look for the most recent Gimp package available, just run:
@@ -20,18 +20,18 @@ If you want [[InstallPackage]] to look for the most recent Gimp package availabl
 If you want to download a specific version, give it as a second parameter:
  InstallPackage Gimp 1.2.3
 
-The script will look for the availability of the package in the [[GoboLinux]] repositories (see /System/Settings/GetAvailable.conf for the specific URLs scanned -- you may add your own repositories if desired.)
+The script will look for the availability of the package in the GoboLinux repositories (see /System/Settings/GetAvailable.conf for the specific URLs scanned -- you may add your own repositories if desired.)
 
 During installation, [[InstallPackage]] will run the [[Dependencies]] script to verify if there are unresolved dependencies, i.e., if the package being installed needs other (not installed) packages to work properly. [[InstallPackage]] looks for these packages in a set of default locations, both local and remote (again, see /System/Settings/GetAvailable.conf). If these needed packages are found, [[InstallPackage]] will ask if you want to install them. You may want to pass the --batch (or -b) flag to [[InstallPackage]] to suppress all interaction. This is particularly useful when installing packages like Xorg, which have lots of dependencies.
 
-It is interesting to note that the dependency check mechanism in [[GoboLinux]] is merely informational. It will not stop you from installing a package if dependencies are missing (since it may actually work, for example, except for a single plug-in). If any unresolved dependencies remain, you are responsible to install (or not install) the packages.
+It is interesting to note that the dependency check mechanism in GoboLinux is merely informational. It will not stop you from installing a package if dependencies are missing (since it may actually work, for example, except for a single plug-in). If any unresolved dependencies remain, you are responsible to install (or not install) the packages.
 
 === Installing packages from the Live CD ===
 
 To install packages from the Live CD (after booting from the HD), you must mount the 'squashfs' file that contains the image from the Live CD system. To do that, first mount the CD:
  mount /Mount/CD-ROM
 
-Then, mount the desired [[GoboLinux]] squashfs file:
+Then, mount the desired GoboLinux squashfs file:
  mount /Mount/CD-ROM/GoboLinux-NonBase.squashfs /Mount/SquashFS -t squashfs -o loop=/System/Kernel/Devices/loop0
 
 Now, you can install the packages that are inside the Live-CD (inside its
@@ -50,9 +50,9 @@ or
 
 == Removing packages ==
 
-Due to the [[GoboLinux]] hierarchy, you can use the good and old "rm -rf" to remove installed packages. Normally, authors warn the readers to be careful when using "rm -rf". I will not do this because this doesn't work. Everybody erased the wrong things at least once. If you didn't, you didn't yet.
+Due to the GoboLinux hierarchy, you can use the good and old "rm -rf" to remove installed packages. Normally, authors warn the readers to be careful when using "rm -rf". I will not do this because this doesn't work. Everybody erased the wrong things at least once. If you didn't, you didn't yet.
 
-[[GoboLinux]] features a specific script to clean up the broken links that will emerge when programs are deleted: [[RemoveProgram]]. This script removes the program and all links that point to its files at /System/Links.
+GoboLinux features a specific script to clean up the broken links that will emerge when programs are deleted: [[RemoveProgram]]. This script removes the program and all links that point to its files at /System/Links.
 
 Sometimes you may want to "turn off" a program (i.e., remove the executables from the execution path, remove the libraries from the lookup path, headers, etc.) but not erase it from your hard disk. You could, of course, just move the program entry to a different directory (say, "mv /Programs/Foo "). This leaves broken links in /System/Links, which is usually harmless (but not always!... a few programs like Aclocal fail when broken links are found in its search path). A clean and easy way to "turn off" a package in a single step is using the script [[DisableProgram]]. Just call:
  DisableProgram gimp 1.2.3
@@ -62,7 +62,7 @@ Sometimes you may want to "turn off" a program (i.e., remove the executables fro
 To "turn the program back on", all you need to do is create the symbolic links again, using [[SymlinkProgram]]:
  SymlinkProgram gimp 1.2.3
 
-[[GoboLinux]] has also a generic script for cleaning broken symbolic links, called [[RemoveBroken]]. This is useful for performing cleanups in the /System/Links tree (typically after you move entries around in /Programs, or perform other maintenance of this kind).
+GoboLinux has also a generic script for cleaning broken symbolic links, called [[RemoveBroken]]. This is useful for performing cleanups in the /System/Links tree (typically after you move entries around in /Programs, or perform other maintenance of this kind).
 
 [[RemoveBroken]] will verify if any of the files passed to it in the command line is a broken link, and remove those. If no arguments are passed, it receives filenames from standard input (typically through a pipe).
 
@@ -72,9 +72,9 @@ The usual procedure to clean up symbolic links, is, then:
 
 == Anatomy of a package ==
 
-This section explains what is a [[GoboLinux]] package is physically, that is, what is inside a package file.
+This section explains what is a GoboLinux package is physically, that is, what is inside a package file.
 
-A [[GoboLinux]] binary package is simply a .tar.bz2 (or .tar.gz, though .tar.bz2 is the standard) archive. This archive contains all files from ''<Program>''/''<Version>'' tree. In addition to the actual program-related files (binaries, manuals, header files...), some special files are included in the package, that are installed under the ''<Program>''/''<Version>''/Resources subdirectory.
+A GoboLinux binary package is simply a .tar.bz2 (or .tar.gz, though .tar.bz2 is the standard) archive. This archive contains all files from ''<Program>''/''<Version>'' tree. In addition to the actual program-related files (binaries, manuals, header files...), some special files are included in the package, that are installed under the ''<Program>''/''<Version>''/Resources subdirectory.
 
 These files can be present under Resources (all files are optional):
 
@@ -114,7 +114,7 @@ These files can be present under Resources (all files are optional):
 * '''Unmanaged/''': Files to be inserted outside the /Programs Hierarchy only if no file exists there? 
 * '''UnmanagedFiles''': list of files/directories to not be updated in the Unmanaged directory mentioned above.
 * '''UseFlags''': List of use flags the package was built.
-* '''Wrappers/''': a directory containing additional app-specific helper scripts written especially for [[GoboLinux]].
+* '''Wrappers/''': a directory containing additional app-specific helper scripts written especially for GoboLinux.
 * '''XmlCatalogData''': something to do with XML pacakges (imports and rewrites?)
 
 In the future, Environment should evolve into a directory, containing one file per variable. The name of the file will be the variable name and its contents, the variable content. The only shell code allowed inside an environment file will be referencing other variables in $var or, preferrably, ${var} format. This is an attempt to improve portability of the declaration of Environment variables.

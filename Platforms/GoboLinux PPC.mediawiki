@@ -1,6 +1,6 @@
 === A quick note on the PowerPC port ===
 
-A while ago it was announced on the [[GoboLinux]] mailing lists that there was work ongoing for a [[PowerPC]] port. That was a one-man work (by [[hisham]]). It is now fairly complete (my main computer is now an iBook running [[GoboLinux]]) but it not as polished for release as the x86 version.
+A while ago it was announced on the GoboLinux mailing lists that there was work ongoing for a [[PowerPC]] port. That was a one-man work (by [[hisham]]). It is now fairly complete (my main computer is now an iBook running GoboLinux) but it not as polished for release as the x86 version.
 
 What's missing:
 

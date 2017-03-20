@@ -3,15 +3,15 @@
 ==  The problem ==
 
 I was just browsing around, looking for a list of all linux distros. I ended up
-at http://www.linuxiso.org/ and guess what - they don't know [[GoboLinux]].
+at http://www.linuxiso.org/ and guess what - they don't know GoboLinux.
 Then I started to google for it and was a bit disappointed by the result...
 
-While I think [[GoboLinux]] is far away from world domination for good reason, it might be a
-good idea to create some nifty "I use [[GoboLinux]]" icons (I think Darth Pingus might
+While I think GoboLinux is far away from world domination for good reason, it might be a
+good idea to create some nifty "I use GoboLinux" icons (I think Darth Pingus might
 easily adopted) and create some adverts..
 I mean this in a positive sense, just a nice text which explain the goals, ideas
-and status of [[GoboLinux]], i.e. not something like "the best distro ever - download now!"
-(This should be easy to compose of the introductory texts on the [[GoboLinux]] homepage. I'd do it myself, but I'm not a native speaker.)
+and status of GoboLinux, i.e. not something like "the best distro ever - download now!"
+(This should be easy to compose of the introductory texts on the GoboLinux homepage. I'd do it myself, but I'm not a native speaker.)
 
 A better [http://en.wikipedia.org/wiki/List_of_Linux_distributions WikiPedia]
 article springs to mind.  The [http://wiki.linuxquestions.org/wiki/GoboLinux LinuxQuestions.org] entry is also unsatisfactory.
@@ -26,14 +26,14 @@ Well, more people means more packages? (The hope never dies...)
 * http://en.wikipedia.org/wiki/GoboLinux (stub)
 * http://en.wikipedia.org/wiki/Comparison_of_Linux_distributions (not mentioned)
 * http://wiki.linuxquestions.org/wiki/GoboLinux (stub)
-* http://c2.com/cgi/wiki (has no [[GoboLinux]] article)
+* http://c2.com/cgi/wiki (has no GoboLinux article)
 * http://www.linuxiso.org/ (no entry)
-* http://distrowatch.com/table.php?distribution=gobo (looks good, though one might add a "read more" link? BTW. [[GoboLinux]] got a nice review there.)
+* http://distrowatch.com/table.php?distribution=gobo (looks good, though one might add a "read more" link? BTW. GoboLinux got a nice review there.)
 * http://freshmeat.net/projects/gobolinux/ (description is very short and two years old)
-* http://directory.google.com/Top/Computers/Software/Operating_Systems/Linux/Distributions/Live_CD/ (catalogue does not contain [[GoboLinux]])
-* http://www.frozentech.com/content/livecd.php (voting site on [[LiveCd]] linuces: 0 votes for [[GoboLinux]] - but there doesn't seem to be much traffic.)
-* http://www.linuxhq.com/dist.html ([[GoboLinux]] not mentioned)
-* http://www.linuxlinks.com/Distributions/ ([[GoboLinux]] mentioned)
+* http://directory.google.com/Top/Computers/Software/Operating_Systems/Linux/Distributions/Live_CD/ (catalogue does not contain GoboLinux)
+* http://www.frozentech.com/content/livecd.php (voting site on [[LiveCd]] linuces: 0 votes for GoboLinux - but there doesn't seem to be much traffic.)
+* http://www.linuxhq.com/dist.html (GoboLinux not mentioned)
+* http://www.linuxlinks.com/Distributions/ (GoboLinux mentioned)
 
 ==  Discussion ==
 

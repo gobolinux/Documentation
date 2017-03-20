@@ -3,7 +3,7 @@
 
 === Finding ===
 * [[UpdateRecipes]] - Update local copy of recipe store
-* [[GetAvailable]]   - Search for [[GoboLinux]] recipes and precompiled packages
+* [[GetAvailable]]   - Search for GoboLinux recipes and precompiled packages
 * [[FindPackage]] - Search for packages and recipes, locally or remotely.
 * [[SuggestUpdates]] - List packages with an update available.
 * [[SuggestDuplicates]] - Provide a list of programs that are not linked to Current
@@ -31,11 +31,11 @@
 * [[MakeRecipe]] - Create a recipe template.
 * [[EditRecipe]] - Edit a recipe.
 * [[PackRecipe]] (formerly [[GenRecipeStore]]) - Generate "packed recipes", ready for submission.
-* [[CreatePackage]] - Make a [[GoboLinux]] package.
+* [[CreatePackage]] - Make a GoboLinux package.
 * [[NewVersion]] - Update a recipe to a new version.
 * [[PrepareProgram]] - Prepares applications for instalation, running the 'configure'
-* [[KeyManager]] - Manage digital signature keys for [[GoboLinux]] packages.
-* [[Hashes]] - Manages [[FileHash]] and [[FileHash.sig]] in a [[GoboLinux]] package.
+* [[KeyManager]] - Manage digital signature keys for GoboLinux packages.
+* [[Hashes]] - Manages [[FileHash]] and [[FileHash.sig]] in a GoboLinux package.
 * [[MergeTree]] - Mirrors one directory structure into another.
 
 ===  Helper tools ===
@@ -43,8 +43,8 @@
 * [[DeduceName]] - Scan a file to find the capitalization of a program name.
 * [[FiboSandbox]] - Run the program in a protected sandbox, as a restricted user.
 * [[FixInfo]] - Remakes the entries in the info 'dir' file.
-* [[FixLibtoolLa]] - Convert a .la file created by libtool to make it [[GoboLinux]]-compliant.
-* [[NamingConventions]] - Heuristics to determine a capitalized, [[GoboLinux]]-like name.
+* [[FixLibtoolLa]] - Convert a .la file created by libtool to make it GoboLinux-compliant.
+* [[NamingConventions]] - Heuristics to determine a capitalized, GoboLinux-like name.
 * [[SandboxInstall]] - Runs 'make install', using a sandbox environment.
 
 ==  Kernel management ==
@@ -55,7 +55,7 @@
 ==  System maintenance ==
 
 * [[AddUser]] - Register a new user in this system.
-* [[EditScript]] - Create or edit a [[GoboLinux]] script.
+* [[EditScript]] - Create or edit a GoboLinux script.
 * [[SystemFind]] - Special 'find' utility for searches in the /System hierarchy.
 * [[SystemInfo]] - Display some basic system information. Useful for /etc/issue.
 

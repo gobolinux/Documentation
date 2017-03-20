@@ -1,12 +1,12 @@
 Rather than dirty up the Ideas section with pros/cons, let's consider them here.
 ----
-''What I mean is this: Boundaries should be established between "[[GoboLinux]] the OS" and the collection of [[GoboPackages]] which continues to grow. Also, the OS should be released in different versions: "[[GoboLinux]] Workgroup Server", "[[GoboLinux]] Enterprise Server", "[[GoboLinux]] Enthusiast Edition", "[[GoboLinux]] Desktop Edition", "[[GoboLinux]] Netboot", etc.''
+''What I mean is this: Boundaries should be established between "GoboLinux the OS" and the collection of [[GoboPackages]] which continues to grow. Also, the OS should be released in different versions: "GoboLinux Workgroup Server", "GoboLinux Enterprise Server", "GoboLinux Enthusiast Edition", "GoboLinux Desktop Edition", "GoboLinux Netboot", etc.''
 
 The primary difference between Workgroup and Enterprise Servers is the support contract.  What are the differences that we can affect being a small group?  Management is one.  Enterprise geared towards multiple servers/multiple users.  Workgroup (I'm thinking more SOHO, Small Office, Home Office), simplified admin.  Web based interfaces.  single server and a handful of users.
 
 I conceptually see a difference between Enthusiast and Desktop Editions, but can think of specifics.
 
-[[GoboLinux]] Netboot could be very interesting.  An off shoot could be something similar to LTSP.
+GoboLinux Netboot could be very interesting.  An off shoot could be something similar to LTSP.
 
 Can this be handled by profiles?
 

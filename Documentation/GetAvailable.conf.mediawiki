@@ -1,6 +1,6 @@
 GetAvailable.conf is the file where you can configure paths and URLs used to locate binary packages.
 
-It is stored at /Programs/Scripts/Settings/Scripts/GetAvailable.conf -- which, once installed, has a link at /System/Settings/Scripts/GetAvailable.conf (if you're used to the [[GoboLinux]] tree, you should know by now that this is the same as /etc/Scripts/GetAvailable.conf).
+It is stored at /Programs/Scripts/Settings/Scripts/GetAvailable.conf -- which, once installed, has a link at /System/Settings/Scripts/GetAvailable.conf (if you're used to the GoboLinux tree, you should know by now that this is the same as /etc/Scripts/GetAvailable.conf).
 
 These are the usual contents of the file:
 
