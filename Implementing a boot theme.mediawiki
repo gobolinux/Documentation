@@ -1,0 +1,1 @@
+Documentation/Implementing a boot theme.mediawiki

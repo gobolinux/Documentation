@@ -1,0 +1,1 @@
+Documentation/General notes about the scripts.mediawiki

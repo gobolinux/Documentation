@@ -1,0 +1,1 @@
+Documentation/install vs. real_install.mediawiki
