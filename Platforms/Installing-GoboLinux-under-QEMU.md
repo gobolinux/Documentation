@@ -14,7 +14,7 @@ This is where we will install our Linux system.
 ```
 qemu-img create gobo.img 10G
 ```
-
+<!--- perl programming language ---->
 ### Boot the installer
 
 Here is the full command you can edit and
