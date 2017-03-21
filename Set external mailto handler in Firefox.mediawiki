@@ -1,1 +1,0 @@
-Howtos/Set external mailto handler in Firefox.mediawiki

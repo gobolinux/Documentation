@@ -1,1 +1,0 @@
-Howtos/Create A Chroot Environment.mediawiki

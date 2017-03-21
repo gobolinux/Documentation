@@ -1,1 +1,0 @@
-Documentation/Testing a boot theme.mediawiki
