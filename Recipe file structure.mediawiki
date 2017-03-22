@@ -1,0 +1,23 @@
+The term "Recipe" can refer to either
+* A packed tarball, as held in the recipe-store on gobolinux.org.  These are named as
+''Foo--1.0-r1--recipe.tar.bz2''.
+* The file Foo/1.0-r1/Recipe in such a tarball.
+
+== File Layout ==
+A packed recipe is a tarball such as Program--Version-r1--recipe.tar.bz2.
+It contains a directory structure
+* '''Program/'''
+** '''Version-r1/'''
+*** '''Recipe''' - the primary file.
+*** '''[[Recipe format specification#Patches|Patches]]''', optionally.
+*** '''[[Recipe format specification#Resources Files|Resources/]]'''
+**** '''Dependencies'''
+**** '''Description'''
+**** '''Defaults/''' (optionally)
+***** '''Settings/'''
+***** '''Variable/'''
+**** '''[[Boot script tasks|Tasks/]]''' (optionally)
+**** '''Wrappers/''' (optionally)
+**** '''BuildDependencies''', '''BuildInformation''', '''Environment''', '''[[Hints File|Hints]]''', '''PostInstall''', '''Requirements''', optionally.
+*** '''Architecture''' subdirectories, such as '''arm/''', '''cell/''', '''i686/''', '''ppc/''', '''sh4/''', or '''x86_64/''', optionally.
+
