@@ -6,24 +6,24 @@ Recipes are directions to [[Compile]] on how to configure, make, and install a p
 * [[Binary recipes]]
 * [[How to Commit Recipes]]
 
-* [[http://recipes.gobolinux.org/|Online recipe browser]]
-* [[http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes | Recipes mailing list ]]
+* [http://recipes.gobolinux.org/ Online recipe browser]
+* [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes Recipes mailing list ]
 
 == Commands ==
 
-## Acquiring
-### [[UpdateRecipes]] - Update local recipe cache from the recipe store.
-### [[GetRecipe]] - Fetch a recipe and place it in the local recipe cache, /Data/Compile/Recipes/.
+=== Acquiring ===
+* [[UpdateRecipes]] - Update local recipe cache from the recipe store.
+* [[GetRecipe]] - Fetch a recipe and place it in the local recipe cache, /Data/Compile/Recipes/.
 
-## Creating
-### [[NewVersion]] - Use an existing recipe as a template for a new software version
-### [[MakeRecipe]] - Create a recipe template from a URL.
+=== Creating ===
+* [[NewVersion]] - Use an existing recipe as a template for a new software version
+* [[MakeRecipe]] - Create a recipe template from a URL.
 
-## Modifying
-### [[EditRecipe]] - Edit an existing recipe.
-### [[RecipeLint]] - Make sure a recipe has no obvious errors.
+=== Modifying ===
+* [[EditRecipe]] - Edit an existing recipe.
+* [[RecipeLint]] - Make sure a recipe has no obvious errors.
 
-## Submitting
-### [[PackRecipe]] - Generate a packed recipe tarball from local recipe cache, ready for submission.
-### [[ContributeRecipe]] - Submit a recipe to the recipe store for review and inclusion. 
+=== Submitting ===
+* [[PackRecipe]] - Generate a packed recipe tarball from local recipe cache, ready for submission.
+* [[ContributeRecipe]] - Submit a recipe to the recipe store for review and inclusion. 
 
