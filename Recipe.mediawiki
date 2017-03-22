@@ -1,17 +1,18 @@
-Recipes are directions to [[Compile]] on how to configure, make, and install a particular program.
-== See ==
+Recipes are directions to [[Compile]] on how to configure,
+make, and install a particular software package. 
+
+== Topics ==
+
 * [[Writing Recipes]]
 * [[Recipe file structure]]
 * [[Recipe Format Specification]]
 * [[Binary recipes]]
 * [[How to Commit Recipes]]
 
-* [http://recipes.gobolinux.org/ Online recipe browser]
-* [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes Recipes mailing list ]
-
 == Commands ==
 
 === Acquiring ===
+* [http://recipes.gobolinux.org/ Online recipe browser]
 * [[UpdateRecipes]] - Update local recipe cache from the recipe store.
 * [[GetRecipe]] - Fetch a recipe and place it in the local recipe cache, /Data/Compile/Recipes/.
 
@@ -26,4 +27,5 @@ Recipes are directions to [[Compile]] on how to configure, make, and install a p
 === Submitting ===
 * [[PackRecipe]] - Generate a packed recipe tarball from local recipe cache, ready for submission.
 * [[ContributeRecipe]] - Submit a recipe to the recipe store for review and inclusion. 
+* [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes Recipes mailing list ]
 
