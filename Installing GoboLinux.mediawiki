@@ -6,10 +6,6 @@ It takes care of basic configuration, package selection, and
 boot loader setup.  It can be run from the command line or via the
 window manager menu. 
 
-Before you install, you will need to prepare an appropriate disk
-partition and swap partition. See the Manual Install
-section below for details.
-
 == Graphical Install  ==
 
 The GoboLinux Live-ISO supports a complete graphical
@@ -25,124 +21,9 @@ Clicking on the top-left icon brings up a menu. Look under
 System Tools, select "Install GoboLinux", 
 follow the instructions.
 
-As a failsafe, we also provide an interactive text-based frontend for the installer. You can launch it by typing
-
 == Console install ==
 
 Type ```Installer``` in the console. Note the capital "i".
-GoboLinux utility scripts are generally named with an
-initial capital and follow the CamelCase convention.
+(GoboLinux utility scripts are generally named with an
+initial capital and follow the CamelCase convention.)
 
-== Manual install ==
-
-If for some reason the installer does not work for you neither in X or in
-the console, don't despair. You can still install GoboLinux the manual way,
-as it was done in previous versions.
-
-'''Step 1: The partition'''
-
-Initially, you will need at least two partitions, one for the system
-and one for swap (you can reuse the swap partition of another Linux
-distribution).
-
-You can create a partition by clicking on "GParted" in the
-System Tools menu on the desktop or by using the "cfdisk"
-utility on the console.
-
-Afterwards you need to format the system partition.
-
-    mkfs -t ext4 /dev/<system partition>
-
-If you created a swap partition, use mkswap:
-
-    mkswap /dev/<swap partition>
-
-
-'''Step 2: Mount your new partition and enable swap'''
-
-Mount your new partition, using a command such as
-
-    mount /dev/<system partition> /Mount/GoboLinux 
-
-Enable your swap partition, using command line as
-
-    swapon /dev/<swap partition> 
-
-
-'''Step 3: Install the system'''
-
-Now, run the script to copy the system from this CD to the new
-partition (which is mounted at /Mount/GoboLinux). There are some predefined
-'profiles' located at /System/Links/Shared/Installer/Profiles/. A profile is just a set of programs
-that will be installed if you choose it. Currently, they are:
-
-- 'Base': contains only the basic packages for a usable system (350 MB)
-- 'Typical': A more complete basic system
-- 'Full': contains all programs from this Live-ISO (1.0 GB)
-
-Go to the profiles directory and run [[ProfileInstall]], passing the
-chosen profile and the mount point used on Step 2. For example:
-
-    cd /System/Links/Shared/Installer/Profiles
-    ProfileInstall Full /Mount/GoboLinux 
-
-
-'''Step 4: Perform some basic configuration'''
-
-Before you can be able to boot your new GoboLinux system, you'll have to
-change a few of the default settings to reflect your system. The file
-
-    /Mount/GoboLinux/System/Settings/fstab 
-
-contains the partition list. Configure it as usual. Another file which
-you will have to edit is
-
-    /Mount/GoboLinux/Programs/BootScripts/Settings/BootScripts/Options 
-
-This file contains configurations for programs that are called at boot
-time, such as the system's hostname, mouse configuration and keymap
-layout.
-
-The Live-ISO has four text editors: MCEdit, which you can
-access using the convenient wrapper 'e', Nano (a clone of
-Pico), Vim, a popular programmer's editor and ed, an
-old-school line editor.
-
-'''Step 5: Bootloader'''
-
-Before you reboot the system you will need to install a bootloader and
-configure it, if you don't have one installed yet. We suggest GRUB.
-To install it just run
-
-    grub 
-    grub> root (hd*,**) 
-    grub> setup --prefix=/System/Kernel/Boot/grub (hd*) 
-    grub> quit 
-
-
-* *  The index of your GoboLinux disk: The first hard disk * is 0, the second is 1, and so on. 
-* ** The index of your GoboLinux partition: The first  partition is 0, the second is 1, etc. 
-* You can use the <tab> key to can see the choices that you have.
-
-Now you can configure Grub. Go to
-/Mount/GoboLinux/System/Kernel/Boot/grub and edit the
-menu.lst file. In this file you will find some examples.
-Most likely, all you'll need to do is put the same disk and
-partition indices used to install GRUB in the first example.
-
-'''Step 6: Reboot!'''
-
-Once you have installed the bootloader, reboot the machine,
-and remove the cd before the system starts. The machine 
-will boot from the hard disk.  Welcome to your new system!
-
-Now that your system is running, you can fine-tune it to suit
-your needs. Check out the /System/Settings/BootScripts directory for
-settings such  as network configuration, and usual Linux settings such
-as /System/Settings/hosts and /System/Settings/resolv.conf.
-See [[Bootscripts]] for details.
-
-The only login is "root", the superuser, with default password, "gobo".
-We recommend that you create a regular user account for normal use,
-and use the powers of "root" only for system administration tasks.
-For example, to create a new user called "john", type "[[AddUser]] john".
