@@ -15,9 +15,7 @@
 * [[Packages]]
 * [[Compiling From Source]]
 ** [[Compile | The Compile tool]]
-** [[Writing Recipes]]
-*** [[Recipe format specification]]
-*** [[Use flags]]
+** [[Recipe | Recipes for Compiling Software]]
 * Package management
 ** [[Updating-packages | Updates]]
 ** [[System maintenance]]
