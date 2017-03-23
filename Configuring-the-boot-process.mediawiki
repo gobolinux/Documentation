@@ -2,16 +2,17 @@ A new GoboLinux installation provides boot scripts to manage basic daemons and c
 
 == Boot-time options ==
 
-At boot-time, the boot scripts execute several programs. Their purpose is to configure things like the keyboard and the system clock and to initialize things like the swap partitions. There is an assortment of options that can be used to customize exactly how these programs are going to be executed and therefore how the system is going to be configured.
+When a GoboLinux system boots, it runs a set of boot scripts launching programs
+that configure the keyboard, set the the system clock, initialize the swap
+partitions, etc. 
 
-You can change all these options by editing the /System/Settings/BootOptions and /System/Settings/NetworkOptions files. These files are composed of a set of entries in the format:
+Settings for these program reside in /System/Settings/BootOptions and /System/Settings/NetworkOptions. Both files contain entries of the form:
 
     Option=value 
 
-
 Note that no space is allowed before or after the = character. (For the curious, yes, this is just a shell file that is "sourced" by the boot scripts.)
 
-The following subsections describe the available entries in the /System/Settings/BootOptions and NetworkOptions files and the possible values you can give them.
+The following sections describe the available options in the /System/Settings/BootOptions and NetworkOptions files and the possible values you can give them.
 
 === Configuring boot themes ===
 
