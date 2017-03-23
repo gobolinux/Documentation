@@ -14,28 +14,6 @@ Note that no space is allowed before or after the = character. (For the curious,
 
 The following sections describe the available options in the /System/Settings/BootOptions and NetworkOptions files and the possible values you can give them.
 
-=== Configuring boot themes ===
-
-:''"GoboText was so hard to debug that it motivated the creation of the TestBootTheme script." -- Hisham Muhammad''
-
-Mainstream distributions have boot scripts that look always the same. Sure, Red Hat boot scripts are different than Slackware boot scripts, but what I mean is that once you stuck with one of these distributions, you'll always see the same thing when starting up your computer.
-
-GoboLinux, on the other hand, has support to boot themes, so that you can choose the "appearance and behavior" (''"Look and feel" always sounds like an advertisement'') of your system at boot-time. Indeed, you can even create your own boot themes, as explained on section [[Creating a boot theme]].
-
-Choose your favorite theme by setting the BootTheme=<~YourFavoriteTheme> option in the BootOptions file. A few of the themes currently available are:
-
-* '''CheckList''' - Shows tasks and others that depend on them, then checks them off.
-* '''Hat''' - A Red-Hat look-alike: lots of colored [ OK ]s and [FAILED]s are echoed as things are initialized.
-* '''Progress''', '''Progress-II''', or '''Progress-III''' - Fancy themes that stress your terminal with tons of escape codes.
-* '''Quotes''' - Prints short random quotes to indicate success or failure of every initialized item.
-* '''Slack''' - This theme is inspired by the feel of old-school Slackware boots: no distracting messages, no colors, no special effects.
-
-Check /Programs/[[BootScripts]]/Current/Themes/ to see all the available themes.
-
-You can use the TestBootTheme script to see how a boot theme looks like without actually rebooting your computer. TestBootTheme is described on section [[Testing a boot theme]].
-
-You can also set the boot theme from GRUB by adding BootTheme=<~YourFavoriteTheme> to the boot line. This can be handy if [[BootOptions]] specifies a broken or nonexistent theme, because GoboLinux will not boot without a valid one.
-
 === Clock mode ===
 
 GoboLinux needs to know if your hardware clock is set to GMT or local time (unless, of course, you happen to be lucky enough to live in a place under the Greenwich time zone). Do this by editing the ClockMode entry. Set it to GMT if your hardware clock is set to GMT. Set it to LocalTime if your hardware clock is set to local time.
@@ -181,3 +159,25 @@ If you do not use KDE or want a non-GUI based solution, one way is to use runget
     Of course, replace your_username_goes_in_here with the user you want to login :) 
      
     Using another tty than 1 may be useful too. 
+
+=== Boot themes ===
+
+GoboLinux is flexible enough to offer you a choice of 
+themes to control how your GoboLinux looks when
+starting up. 
+
+You can select a theme by setting ```BootTheme=<ThemeName>``` in the BootOptions file.
+Available themes include:
+
+* '''CheckList''' - Shows tasks and others that depend on them, then checks them off.
+* '''Hat''' - A Red-Hat look-alike: lots of colored [ OK ]s and [FAILED]s are echoed as things are initialized.
+* '''Progress''', '''Progress-II''', or '''Progress-III''' - Fancy themes that stress your terminal with tons of escape codes.
+* '''Quotes''' - Prints short random quotes to indicate success or failure of every initialized item.
+* '''Slack''' - This theme is inspired by the feel of old-school Slackware boots: no distracting messages, no colors, no special effects.
+
+Check /Programs/BootScripts/Current/Themes/ to see all the available themes.
+
+You can use the TestBootTheme script to see how a boot theme looks like without actually rebooting your computer. TestBootTheme is described on section [[Testing a boot theme]].
+
+You can also set the boot theme from GRUB by adding BootTheme=<ThemeName> to the boot line. This can be handy if BootOptions file specifies a broken or nonexistent theme, because GoboLinux will not boot without a valid one.
+
