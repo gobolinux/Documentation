@@ -1,4 +1,4 @@
-By default, the GoboLinux boot scripts are configured to initialize and configure a relatively small number of daemons and settings that are common among most users. This page explains how to compel GoboLinux to do what you want when it goes up or down.
+A new GoboLinux installation provides boot scripts to manage basic daemons and configuration options. This page explains how to modify what GoboLinux does during startup and shutdown.
 
 == Boot-time options ==
 
