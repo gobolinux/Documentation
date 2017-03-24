@@ -1,12 +1,10 @@
-{{Handbook Navigation}}
-
 ```Installer``` is a program included on the GoboLinux
 Live-ISO that installs GoboLinux to your hard drive.
 It takes care of basic configuration, package selection, and
 boot loader setup.  It can be run from the command line or via the
 window manager menu. 
 
-== Graphical Install  ==
+## Graphical Install
 
 The GoboLinux Live-ISO supports a complete graphical
 display environment.
@@ -21,7 +19,7 @@ Clicking on the top-left icon brings up a menu. Look under
 System Tools, select "Install GoboLinux", 
 follow the instructions.
 
-== Console install ==
+## Console install
 
 Type ```Installer``` in the console. Note the capital "i".
 (GoboLinux utility scripts are generally named with an
