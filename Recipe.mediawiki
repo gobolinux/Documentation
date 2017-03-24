@@ -13,6 +13,7 @@ make, and install a particular software package.
 * [[Other options]]
 * [[Binary recipes]]
 * [[How to Commit Recipes]]
+* [http://recipes.gobolinux.org/ Online recipe browser]
 * [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes Recipes mailing list ]
 
 == Commands ==
@@ -20,7 +21,6 @@ make, and install a particular software package.
 === Acquiring ===
 * [[UpdateRecipes]] - Update local recipe cache from the recipe store.
 * [[GetRecipe]] - Fetch a recipe and place it in the local recipe cache, /Data/Compile/Recipes/.
-* You can also use the [http://recipes.gobolinux.org/ Online recipe browser]
 
 === Creating ===
 * [[NewVersion]] - Use an existing recipe as a template for a new software version
