@@ -192,3 +192,15 @@ Check /Programs/BootScripts/Current/Themes/ to see all the available themes.
 You can use the TestBootTheme script to see how a boot theme looks like without actually rebooting your computer. TestBootTheme is described on section [[Testing a boot theme]].
 
 You can also set the boot theme from GRUB by adding BootTheme=<ThemeName> to the boot line. This can be handy if BootOptions file specifies a broken or nonexistent theme, because GoboLinux will not boot without a valid one.
+
+Physically, a GoboLinux boot theme is a single script file located in /Programs/[[BootScripts]]/''<version>''/Themes.
+
+The theme file is loaded by the boot scripts core, and is called once for every runlevel change. Although interesting stuff can be done in the script body, a compliant boot script has only to implement the following functions:
+
+* ThemeInit
+* ThemeFile
+* ThemeBefore
+* ThemeAfter
+* ThemeFinish
+
+These functions are the hotspots that glue the theme and the boot scripts core together.
