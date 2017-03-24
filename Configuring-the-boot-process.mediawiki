@@ -3,7 +3,7 @@ A new GoboLinux installation provides boot scripts to manage basic daemons and c
 == Boot-time options ==
 
 When a GoboLinux system boots, it runs a set of boot scripts launching programs
-that configure the keyboard, set the the system clock, initialize the swap
+that configure the keyboard, set the system clock, initialize the swap
 partitions, etc. 
 
 Settings for these program reside in /System/Settings/BootOptions and /System/Settings/NetworkOptions. Both files contain entries of the form:
@@ -16,38 +16,49 @@ The following sections describe the available options in the /System/Settings/Bo
 
 === Clock mode ===
 
-GoboLinux needs to know if your hardware clock is set to GMT or local time (unless, of course, you happen to be lucky enough to live in a place under the Greenwich time zone). Do this by editing the ClockMode entry. Set it to GMT if your hardware clock is set to GMT. Set it to LocalTime if your hardware clock is set to local time.
+GoboLinux needs to know if your hardware clock is set to GMT or local time. Specify this by editing the ClockMode option. Set it to GMT if your hardware clock is set to GMT. Set it to LocalTime if your hardware clock is set to local time.
 
 For obtaining time zone information, Linux applications rely on information provided by Glibc, the C library. Glibc, on its turn, uses the "localtime" symlink on its Settings directory (/Programs/Glibc/Settings) to indicate which is the active time zone. This symlink is configured by the installer according to the option you selected in the time zone selection screen, but you can always reconfigure it by hand, by pointing the "localtime" symlink to a different location under /Programs/Glibc/Current/Shared/zoneinfo.
 
-For those curious about it, what actually happens behind the scenes is that the ClockMode information is used by the hwclock application, typically launched at boot time through the SetClock task.
+The ClockMode information is used by the hwclock application, which is launched at boot time through the SetClock task.
 
-=== Keymap layout ===
+=== Console setup ===
 
-Use the KeymapLayout entry in /System/Settings/[[BootOptions]] to choose an appropriate console keyboard layout if you don't put up with wrong key assignments.
+==== Font ====
+
+If you don't like the default console font used by GoboLinux, you can select another using the ConsoleFont option in /System/Settings/BootOptions.
+
+You can also set the console font from the command line using the setfont utility. See 'man setfont' for details.
+
+Remember that this affects only the console font. On X, applications have their own font settings.
+
+==== Keymap ====
+
+Use the KeymapLayout option in /System/Settings/BootOptions to select an appropriate console keyboard layout.
 
 The available keymaps are in the KBD package; they are the .map files. You can set the console keyboard layout at any time by running loadkeys. For example, to set the Dvorak keymap, just type in:
  loadkeys dvorak.map
 
-Keep in mind that keyboard layout configuration for the graphical environment is set in a different place. Look for the relevant "InputDevice" section in /System/Settings/xorg.conf. Likewise, you can set the keymap at runtime without restarting: just use the setxkbmap tool. For example, for configuring the keyboard to use the Dvorak layout, you could type this in at an X Terminal (such as xterm or konsole):
- setxkbmap dvorak
+==== Mouse ====
+
+The MouseType and MouseDevice options in /System/Settings/BootScripts/BootUp configure mouse support on the console. They are disabled by default.
+. 
+=== Graphical display setup (X server) ===
+
+==== Keymap ====
+
+The keyboard layout for programs running under the window manager is mapped
+according the "InputDevice" section in /System/Settings/xorg.conf when the
+graphic display controller (X server) starts. With the window manager running,
+you can change keyboard mappings and other display setting using setxkbmap,
+xmodmap, and xset tools. To select a Dvorak keyboard layout, type ```setxkbmap
+dvorak``` in a terminal. These commands can also be placed in $HOME/.xinitrc
 
 Some desktop environments also offer graphical tools for setting the keyboard layout. For example, in KDE you can configure this at the KDE Control Center.
 
-=== Console font ===
+==== Mouse ====
 
-If you don't like the default, fancy and exclusive console font used by GoboLinux, set the ConsoleFont of /System/Settings/[[BootOptions]] to your favorite.
-
-This can be also set from the command line at any time using the standard setfont tool. See the setfont manual page ("man setfont") for details.
-
-Remember that this affects only the console font. On X, applications have their own font settings.
-
-=== Mouse setup ===
-
-The MouseType and MouseDevice entries are used to setup GPM (to enable mouse support on the console). Set them to something that makes sense to your system. Please note that GPM is not enabled by default. If you want to use it take a look at 
-/System/Settings/[[BootScripts]]/[[BootUp]] (and at the section on [[#Customizing the initialization|customizing the initialization]] if you can't figure out how to edit this file).
-
-Like in the keyboard setup, the mouse configuration for the graphical environment is set in a different place. Look for the relevant "InputDevice" section in /System/Settings/xorg.conf. The [[Installer]] should have set a sane default for your system, based on hardware autodetection. If not, you can always try a failsafe setup such as:
+The mouse pointer for the graphical display is defined in an "InputDevice" section in /System/Settings/xorg.conf. The [[Installer]] should have set a sane default for your system, based on hardware autodetection. If not, you can always try a failsafe setup such as:
 
 
     Section "InputDevice" 
@@ -70,8 +81,8 @@ This is a job which can be done by editing /System/Settings/modprobe.conf, in th
 This file is called /System/Settings/[[BootOptions]]. Give it a look, and you'll see an array called UserDefinedModules, which is probably commented. This array is sourced by the boot scripts, and for every line, it will modprobe it, including any parameters following them. This is how a simple array to load i810_audio (audio driver) and sk98lin (ethernet driver) can be constructed:
 
     UserDefinedModules=( 
-    "i810_audio" 
-    "sk98lin" 
+        "i810_audio" 
+        "sk98lin" 
     ) 
 
 
@@ -91,7 +102,6 @@ First, check which are your network interfaces typing
 
 
     ifconfig 
-
 
 You should have a network interface named something like `eth0` or `enp0s3`.
 
@@ -119,9 +129,9 @@ An example of resolv.conf file is:
 
 == Customizing the initialization ==
 
-A detailed description on how the GoboLinux boot scripts behave is given elsewhere (chapter "[[Boot scripts]]" is dedicated to them). For the purposes of this overview, you just need to know that when you press your computer power button, some files are magically executed.
+A detailed description on how the GoboLinux boot scripts behave is given in [[Boot scripts]]. For the purposes of this overview, you just need to know that when you press your computer power button, some scripts are automatically executed.
 
-These files are located at /System/Settings/[[BootScripts]] and are described below.
+These scripts are located at /System/Settings/[[BootScripts]] and are described below.
 
 * '''BootUp''' - is the basic boot script. As the name implies, it runs when the system boots up. It contains generic initializations that should apply in every boot scenario. More complex boot scenarios can be built on that by using different boot scripts that start by calling BootUp and then doing additional stuff. Two of those scripts are shipped by default:
 ** '''Console''' - this calls BootUp and then runs extra initializations suited for a console session.
@@ -130,14 +140,16 @@ These files are located at /System/Settings/[[BootScripts]] and are described be
 ** '''Reboot''' - invokes Shutdown to perform the necessary terminations, and reboots the machine.
 ** '''Halt''' - invokes Shutdown and powers down the machine (or simply halts if there's no hardware support for software-controlled power down).
 
-Each of these files is essentially composed of a sequence of lines like the following one, whose meaning seems to intuitive enough.
- Exec "Message..." command-with-parameters
+Each of these files is essentially composed of a sequence of lines like the following one:
 
-As a concrete example, suppose that you want to adjust your keyboard delay and repeat rate in the console. You can do this by adding the following line to /System/Settings/[[BootScripts]]/Console:
- Exec "Making keyboard speedy..." kbdrate -r 30 -d 250
+    Exec "Message..." command-with-parameters
+
+For example, suppose that you want to adjust your keyboard delay and repeat rate in the console. You can do this by adding the following line to /System/Settings/BootScripts/Console:
+
+    Exec "Making keyboard speedy..." kbdrate -r 30 -d 250
 
 The boot scripts also support a concept of "tasks". 
-This is slightly more advanced, and is explained in section "[[Boot script tasks]]".
+This is slightly more advanced, and is explained in the section [[Boot script tasks]].
 
 === Automated login ===
 
@@ -153,12 +165,12 @@ For KDE (or KDM, it also has a configuration which allows you to tweak it a lot)
 If you do not use KDE or want a non-GUI based solution, one way is to use rungetty.
 
 
-    # In your inittab file (for example, nano /etc/inittab) find the line which includes tty1 (it's your first terminal, the default showing up on login). 
-    # Now, you will see "agetty" in there - change this "agetty" line to <blockquote>"rungetty tty1 --autologin your_username_goes_in_here"</pre> 
+# In your inittab file (for example, nano /etc/inittab) find the line which includes tty1 (it's your first terminal, the default showing up on login). 
+# Now, you will see "agetty" in there - change this "agetty" line to <code>"rungetty tty1 --autologin your_username"</code> 
      
-    Of course, replace your_username_goes_in_here with the user you want to login :) 
+Of course, replace your_username with the user you want to login as.
      
-    Using another tty than 1 may be useful too. 
+Using another tty than 1 may be useful too. 
 
 === Boot themes ===
 
@@ -180,4 +192,3 @@ Check /Programs/BootScripts/Current/Themes/ to see all the available themes.
 You can use the TestBootTheme script to see how a boot theme looks like without actually rebooting your computer. TestBootTheme is described on section [[Testing a boot theme]].
 
 You can also set the boot theme from GRUB by adding BootTheme=<ThemeName> to the boot line. This can be handy if BootOptions file specifies a broken or nonexistent theme, because GoboLinux will not boot without a valid one.
-
