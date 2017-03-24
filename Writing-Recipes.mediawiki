@@ -195,6 +195,12 @@ If <code>configure</code> or <code>autogen.sh</code> have non-standard names, yo
       configure=configure.gnu
       autogen=gen_all.sh
 
+If present at <tt><architecture>/Recipe</tt>, an architecture-specific Recipe file is sourced in addition to the base Recipe file.  Variable assignments in it will override earlier ones, so to append to a variable, you must do so explicitly, e.g.
+ configure_options=(
+    "${configure_options[@]}"
+    --with-cpu=i686
+    --enable-add-ons
+ )
 Since "compileprogram" recipes also run <code>make</code>, most of the observations about "makefile" recipes, discussed below also apply.
 
 ==== makefile recipes ====
