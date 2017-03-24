@@ -1,1 +1,0 @@
-Maybe we should make separate "base" and "base+compile". If we were to adopt some package creating process for 015 I don't think Compile is needed inside "base". Maybe Compile should have its own profile? There's quite a few package that is needed for Compile alone. [[User:Mohjive|Mohjive]]
