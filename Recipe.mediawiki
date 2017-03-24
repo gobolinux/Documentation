@@ -5,16 +5,22 @@ make, and install a particular software package.
 
 * [[Writing Recipes]]
 * [[Recipe file structure]]
-* [[Recipe Format Specification]]
+* [[Resources files]]
+* [[Recipe types]]
+* [[Hooks]]
+* [[Dynamic variables]]
+* [[Patches]]
+* [[Other options]]
 * [[Binary recipes]]
 * [[How to Commit Recipes]]
+* [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes Recipes mailing list ]
 
 == Commands ==
 
 === Acquiring ===
-* [http://recipes.gobolinux.org/ Online recipe browser]
 * [[UpdateRecipes]] - Update local recipe cache from the recipe store.
 * [[GetRecipe]] - Fetch a recipe and place it in the local recipe cache, /Data/Compile/Recipes/.
+* You can also use the [http://recipes.gobolinux.org/ Online recipe browser]
 
 === Creating ===
 * [[NewVersion]] - Use an existing recipe as a template for a new software version
@@ -27,5 +33,3 @@ make, and install a particular software package.
 === Submitting ===
 * [[PackRecipe]] - Generate a packed recipe tarball from local recipe cache, ready for submission.
 * [[ContributeRecipe]] - Submit a recipe to the recipe store for review and inclusion. 
-* [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes Recipes mailing list ]
-
