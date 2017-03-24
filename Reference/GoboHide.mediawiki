@@ -16,15 +16,17 @@ The user's interface to the GoboHide ioctl's is through a
 userspace tool, called '''gobohide''', and has the following
 options:
 
-    gobohide --help
-    
-    gobohide: Hide/Unhide a directory
-    
-    -h, --hide     Hide the directory
-    -u, --unhide   Unhide the directory
-    -l, --list     List the hidden directories
-    --version  Show the program version
-    --help     Show this message
+<pre>
+gobohide --help
+
+gobohide: Hide/Unhide a directory
+
+-h, --hide     Hide the directory
+-u, --unhide   Unhide the directory
+-l, --list     List the hidden directories
+--version  Show the program version
+--help     Show this message
+</pre>
 
 In order to hide a directory, one would need to run gobohide
 with '-h', passing the target entry. A subsequent "ls" will
@@ -32,39 +34,49 @@ not show the hidden entry, then:
 
 <pre>
 ls /
+
 Depot  Mount     System bin  etc  proc  sys  usr
 Files  Programs  Users  dev  lib  sbin  tmp  var
 
-~] gobohide -h /usr
-~] gobohide -h /etc
+gobohide -h /usr
+gobohide -h /etc
 
-~] ls /
+ls /
+
 Depot  Mount     System  bin  lib   sbin  tmp
 Files  Programs  Users   dev  proc  sys   var
 </pre>
 
-This allows entries to be ''really'' hidden from the filesystem. But don't worry, this can be only performed by the superuser, and he/she has power to ask the kernel for the entries being hidden. This ensures that nothing gets hidden without the superuser's conscience:
+This allows entries to be ''really'' hidden from the
+filesystem. But don't worry, this can be only performed by
+the superuser, and he/she has power to ask the kernel for
+the entries being hidden. This ensures that nothing gets
+hidden without the superuser's conscience:
 
 <pre>
-~] gobohide -l
+gobohide -l
+
 Hidden directories:
 /etc
 /usr
 </pre>
 
-And the best of it all: you can still access your files inside these hidden entries, and even bash would tell you that files exist in these directories:
+And the best of it all: you can still access your files
+inside these hidden entries, and even bash would tell you
+that files exist in these directories:
 
 <pre>
-~] if [ -f /etc/fstab ]; then echo "ooookay"; fi
-ooookay
+if [ -f /etc/fstab ]; then echo "okay"; fi
+okay
 
-~] l /etc/zshrc
+ls /etc/zshrc
 
 rwxrwxrwx  28 /etc/zshrc -> /Programs/ZSH/Settings/zshrc
 ========================================================
 28 in 1 file - 7614808 kB used (96%), 388760 kB free
 </pre>
 
-[[GoboHide]] currently supports hiding entries on any filesystem sitted on the top of the VFS. This includes EXT2, EXT3, ReiserFS, XFS, VFAT and any further filesystems incoming to the linux kernel tree.
-
-[[Category:Reference]]
+GoboHide currently supports hiding entries on any mounted
+filesystem. Because it is implemented at the level of the
+Linux virtual filesystem, it is independent of specific
+filesystems.
