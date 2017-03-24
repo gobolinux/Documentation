@@ -1,24 +1,37 @@
-As you might have already seen, GoboLinux adopts an alternative directory tree. As you might also be wondering, without the legacy tree a lot of common applications wouldn't work in GoboLinux. In order to allow both worlds to co-exist, a tool which allows symlinks and directories to be hidden was developed, called [[GoboHide]].
+To simplify the users' view of filesystem,
+GoboHide conceals legacy unix directories such as /usr,
+/lib, /sbin, and /etc, which contain links to files placed
+elsewhere under [[The GoboLinux Filesystem Hierarchy]]. 
 
-[[GoboHide]] works by hooking directory read operations directly in the root of the problem: since every readdir() call is translated and performed by the kernel, we have added a list which is kept in kernel, checking every readdir() operation. If the current inode being read is stored in this list, then it simply doesn't get copied onto the destination buffer, which should be returned to the user.
+GoboHide works by hooking directory read operations
+directly in the root of the problem: since every readdir()
+call is translated and performed by the kernel, we have
+added a list which is kept in kernel, checking every
+readdir() operation. If the current inode being read is
+stored in this list, then it simply doesn't get copied onto
+the destination buffer, which should be returned to the
+user.
 
-The user's interface to the [[GoboHide]] ioctl's is through a userspace tool, called '''gobohide''', and has the following options:
+The user's interface to the GoboHide ioctl's is through a
+userspace tool, called '''gobohide''', and has the following
+options:
+
+    gobohide --help
+    
+    gobohide: Hide/Unhide a directory
+    
+    -h, --hide     Hide the directory
+    -u, --unhide   Unhide the directory
+    -l, --list     List the hidden directories
+    --version  Show the program version
+    --help     Show this message
+
+In order to hide a directory, one would need to run gobohide
+with '-h', passing the target entry. A subsequent "ls" will
+not show the hidden entry, then:
+
 <pre>
-~] gobohide --help
-
-gobohide: Hide/Unhide a directory
-
--h, --hide     Hide the directory
--u, --unhide   Unhide the directory
--l, --list     List the hidden directories
---version  Show the program version
---help     Show this message
-</pre>
-
-In order to hide a directory, one would need to run gobohide with '-h', passing the target entry. A subsequent "ls" will not show the hidden entry, then:
-
-<pre>
-~] ls /
+ls /
 Depot  Mount     System bin  etc  proc  sys  usr
 Files  Programs  Users  dev  lib  sbin  tmp  var
 
