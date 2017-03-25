@@ -1,20 +1,6 @@
-(Note: This is, for now, just a copy/paste of what hisham wrote back then here:
-
-http://www.gobolinux.org/?page=doc/articles/clueless
-
-)
-
-A wiki may allow for some discussions or clarifications, so I (shevy) took the liberty of simply also making it available here.
-
-What Hisham wrote back then in 2004 I will copy 1:1 without modifications; I will however try to style it a bit, in order to make it easier to read - bear with me here please as this may take some weeks. :)
-
----
-
-# I am not clueless
-or
 # Myths and misconceptions about the design of GoboLinux
 
-Hisham H. Muhammad
+Hisham H. Muhammad, 2004
 
     ``Those who do not understand Unix
     are doomed to reinvent it, poorly.''
