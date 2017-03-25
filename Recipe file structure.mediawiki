@@ -31,5 +31,5 @@ with the following directory structure:
          
 </pre>
 Where <tt><arch></tt> represents one or more optional architecture directories 
-named <pre>i686/</pre>, <pre>x86_64/</pre>,
-<pre>arm/</pre>, <pre>ppc/</pre>, etc.
+named <code>i686/</code>, <code>x86_64/</code>,
+<code>arm/</code>, <code>ppc/</code>, etc.
