@@ -1,1 +1,0 @@
-An easy way to install GoboRootless on Mac OS X: http://github.com/thoughtsofcode/GoboRootless_Installer.

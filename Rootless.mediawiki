@@ -1,14 +1,9 @@
-<br/>
-<div align="center">
-<table style="background-color: #d0d0d0;">
-<tr><td colspan=2 style="background-color: #e0e0f0; text-align:center; font-weight: bold; font-size: larger; padding: 4px;">[[Rootless]]</td></tr>
-<tr>
-<td style="background-color: #f0f0f0; text-align:right; padding-right: 5px; padding-left: 5px;">'''Platforms'''</td>
-<td style="background-color: #ffffff; text-align:left; padding-right: 5px; padding-left: 5px; ">
-[[Rootless on Debian/Ubuntu|Debian/Ubuntu]] • 
-[[Rootless on Gentoo|Gentoo]] • 
-[[Rootless on Cygwin|Cygwin]]
-</td>
-</tr>
-</table>
-</div>
+Rootless GoboLinux is a way to install GoboLinux environment
+in unprivileged user under unixlike operating systems.
+
+You can read about it [here](http://gobolinux.org/?page=rootless)
+
+An installer [is available](http://github.com/thoughtsofcode/GoboRootless_Installer).
+
+It is also possible to install Rootless GoboLinux in the
+[Cygwin environment under Microsoft Windows](Rootless on Cygwin).
