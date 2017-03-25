@@ -4,35 +4,35 @@ The term "Recipe" can refer to either:
 
 == File Layout ==
 A packed recipe is a tarball such as SomeProgram--Version-r1--recipe.tar.bz2
-with the following directory structure:
+with the following directory structure.
 
 <pre>
     SomeProgram/
        `--Version-r1/
-            |-- Recipe
-            |-- *.patch                  (optional)
-            |-- *.patch.in               (optional)
+            |-- Recipe               (required)
+            |-- *.patch                  
+            |-- *.patch.in               
             |-- Resources/
-            |     |-- Dependencies
-            |     |-- Description
-            |     |-- Defaults/          (optional)
+            |     |-- Dependencies   (required)
+            |     |-- Description    (required)
+            |     |-- Defaults/          
             |     |     |-- Settings/
             |     |     `-- Variable/
             |     |
-            |     |-- Tasks/             (optional)
-            |     |-- Wrappers/          (optional)
-            |     |-- BuildDependencies  (optional)
-            |     |-- BuildInformation   (optional)
-            |     |-- Environment        (optional)
-            |     |-- Hints              (optional)
-            |     |-- PostInstall        (optional)
-            |     `-- Requirements       (optional)
+            |     |-- Tasks/             
+            |     |-- Wrappers/          
+            |     |-- BuildDependencies  
+            |     |-- BuildInformation   
+            |     |-- Environment        
+            |     |-- Hints              
+            |     |-- PostInstall        
+            |     `-- Requirements       
             |     
-            `-- <arch>/                  (optional)
+            `-- <arch>/                  
                   |-- Recipe
                   `-- Resources/
          
 </pre>
-Where <tt><arch></tt> represents one or more optional architecture directories 
+where <tt><arch></tt> represents one or more optional architecture directories 
 named <code>i686/</code>, <code>x86_64/</code>, 
 <code>arm/</code>, <code>ppc/</code>, etc.
