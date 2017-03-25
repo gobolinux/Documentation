@@ -2,9 +2,9 @@
 
 GoboLinux is a Linux distribution that breaks with the historical Unix directory hierarchy. Basically, this means that there are no directories such as /usr and /etc. The main idea of the alternative hierarchy is to store all files belonging to an application in its own separate subtree; therefore we have directories such as /Programs/GCC/2.95.3/lib.
 
-To allow the system to find these files, they are logically grouped in directories such as /System/Links/Executables, which, you guessed it, contains symbolic links to all executable files inside the Programs hierarchy.
+To allow the system to find these files, they are logically grouped in directories such as /System/Index/bin, which, you guessed it, contains symbolic links to all executable files inside the Programs hierarchy.
 
-To maintain backwards compatibility with traditional Unix/Linux apps, there are symbolic links that mimic the Unix tree, such as "/usr/bin -> /System/Links/Executables", and "/sbin -> /System/Links/Executables" (this example shows that arbitrary differentiations between files of the same category were also removed).
+To maintain backwards compatibility with traditional Unix/Linux apps, there are symbolic links that mimic the Unix tree, such as "/usr/bin -> /System/Index/bin", and "/sbin -> /System/Index/bin" (this example shows that arbitrary differentiations between files of the same category were also removed).
 
 ==  Is it a newbie-oriented distribution? ==
 
@@ -53,7 +53,7 @@ The short answer: yes, there is, at least theoretically, a performance loss, and
 
 The long answer: the actual impact of the use of symbolic links is probably lower than you think. In a regular Linux distribution, libraries are already accessed through symbolic links. In GoboLinux, our links point directly to the actual file, so there is really one level of indirection to reach a library.
 
-For example, take libc.so.6. It is in /lib, which is a link to /System/Links/Libraries, but the actual file is in /Programs/Glibc/Current, where Current is a link to 2.2.3, and inside Glibc's lib directory you have that libc.so.6 is in fact a link to libc-2.2.3.so. That's a lot of links right? However, libraries are acessed like this: the directory /System/Links/Libraries (which is not a link) is the only one stored in ldconfig's configuration (and LD_LIBRARY_PATH). There libc.so.6 points directly to /Programs/Glibc/2.2.3/lib/libc-2.2.3.so (no links in this whole path). So we have exactly one level of indirection, just as in regular Linux distributions. You may '''see''' a lot of links, but they are there mostly to ease the system's management.
+For example, take libc.so.6. It is in /lib, which is a link to /System/Index/lib, but the actual file is in /Programs/Glibc/Current, where Current is a link to 2.2.3, and inside Glibc's lib directory you have that libc.so.6 is in fact a link to libc-2.2.3.so. That's a lot of links right? However, libraries are acessed like this: the directory /System/Index/lib (which is not a link) is the only one stored in ldconfig's configuration (and LD_LIBRARY_PATH). There libc.so.6 points directly to /Programs/Glibc/2.2.3/lib/libc-2.2.3.so (no links in this whole path). So we have exactly one level of indirection, just as in regular Linux distributions. You may '''see''' a lot of links, but they are there mostly to ease the system's management.
 
 Applications are also compiled with the --prefix set to their "homes" at /Programs/App/version, so when a program looks for a datafile it does not go through links. Reaching executables involves going through one link, but, unlike regular Linux distributions it does not have to search through items of a PATH (and I believe the [[ReiserFS]]'s tree structuring of a directory is more optimized than the shell's traversal through elements of $PATH. Of course, there's always the shell's hash, but then, there's always the filesystem cache).
 

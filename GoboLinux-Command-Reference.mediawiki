@@ -19,10 +19,10 @@
 
 === Administration ===
 * [[SymlinkProgram]] - Link a program from the /Programs hierarchy in the /System tree.
-* [[DisableProgram]] - Unlink a program from the /System/Links hierarchy.
+* [[DisableProgram]] - Unlink a program from the /System/Index hierarchy.
 * [[RemoveProgram]] - Remove a program version from the system.
 * [[DetachProgram]] - Move a program from /Programs to a different location.
-* [[RebuildLinks]] - Rebuild /System/Links directories.
+* [[RebuildLinks]] - Rebuild /System/Index directories.
 * [[RemoveBroken]] - Remove broken links.
 
 ===  Creating recipes and packages ===

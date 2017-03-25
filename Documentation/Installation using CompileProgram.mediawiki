@@ -61,7 +61,7 @@ The syntax for [[SymlinkProgram]] is:
 
 The second argument is optional. If no version number is specified, the one linked as Current will be used.
 
-[[SymlinkProgram]] is the script responsible for creating the symbolic links under /System/Links. It can also, optionally, provide a controlled environment for safely executing 'make install', using a sandbox provided by the [[FiboSandbox]] script. To have [[SymlinkProgram]] perform 'make install', use the --make (-m) option, like this:
+[[SymlinkProgram]] is the script responsible for creating the symbolic links under /System/Index. It can also, optionally, provide a controlled environment for safely executing 'make install', using a sandbox provided by the [[FiboSandbox]] script. To have [[SymlinkProgram]] perform 'make install', use the --make (-m) option, like this:
 
 
     SymlinkProgram -m Foo 

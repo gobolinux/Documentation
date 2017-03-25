@@ -1,4 +1,4 @@
-Sometimes it's desirable to keep a program installed on its directory, but not reacheable through the /System/Links tree. [[DisableProgram]] can be used to remove all the symlinks related to a given program, while still maintaining it on the file system.
+Sometimes it's desirable to keep a program installed on its directory, but not reacheable through the /System/Index tree. [[DisableProgram]] can be used to remove all the symlinks related to a given program, while still maintaining it on the file system.
 
 Usage: '''DisableProgram''' <program> [<version>]
 

@@ -1,3 +1,3 @@
-This script is used everywhere inside many scripts. It exports shell variables such as $goboExecutables, $goboUsers, $goboKernel, and so on, which contains a string specifying where in the file system these entries are (/System/Links/Executables, /Users, /System/Kernel, and so on). Let's avoid hardcoding things, sourcing this file and using these variables makes the world a better place :-)
+This script is used everywhere inside many scripts. It exports shell variables such as $goboExecutables, $goboUsers, $goboKernel, and so on, which contains a string specifying where in the file system these entries are (/System/Index/bin, /Users, /System/Kernel, and so on). Let's avoid hardcoding things, sourcing this file and using these variables makes the world a better place :-)
 
 {{Scripts}}

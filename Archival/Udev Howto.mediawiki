@@ -26,7 +26,7 @@ Simply run
 
     ~InstallPackage Udev 
 
-This will install the latest version of udev (030 or higher).  This version of Udev has support for the /System/Links/Tasks scripts to start udev properly.
+This will install the latest version of udev (030 or higher).  This version of Udev has support for the /System/Tasks scripts to start udev properly.
 
 
 === Fstab setup ===

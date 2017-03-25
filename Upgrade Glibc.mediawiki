@@ -18,7 +18,7 @@ I was in an even worse situation, since I was using a dynamic version of those p
 
 > mount /dev/hda6 /Mount/Media
 
-3) Install the version of Glibc you want. Note that the "-r" is essential, otherwise your /Systems/Links/Executables links will point to subdirectories of /Mount/Media, which won't be mounted anymore after you reboot.
+3) Install the version of Glibc you want. Note that the "-r" is essential, otherwise your /Systems/Index/bin links will point to subdirectories of /Mount/Media, which won't be mounted anymore after you reboot.
 
 > goboPrefix="/Mount/Media" SymlinkProgram -r Glibc 2.5.1
 

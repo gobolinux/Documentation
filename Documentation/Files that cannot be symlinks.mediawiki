@@ -2,7 +2,7 @@
 
 Symbolic links play a major role in a GoboLinux system, but some programs don't behave as expected when they are used. This section lists the files that cannot be symlinks.
 
-''"That is the reason why /System/Settings is not /System/Links/Settings: it does not only contain links, by definition (or, better put, by necessity)" -- Hisham Muhammad''
+''"That is the reason why /System/Settings is not /System/Index/Settings: it does not only contain links, by definition (or, better put, by necessity)" -- Hisham Muhammad''
 
 * /System/Settings/sudoers
 

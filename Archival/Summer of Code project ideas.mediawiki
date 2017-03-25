@@ -12,7 +12,7 @@ This would require knowledge of Bash scripting and Python, as well as understand
 ==ViewFS (/System/Index)==
 Potential mentors: Lucas, Hisham
 
-/System/Index is a plan to replace the /System/Links with a FUSE-based filesystem which can present to each process a different view of the tree, showing them links that match the required dependencies of the process. ViewFS would be that filesystem, and would have application outside GoboLinux in any cases where process-specific views of the filesystem is desired.
+/System/Index is a plan to replace the /System/Index with a FUSE-based filesystem which can present to each process a different view of the tree, showing them links that match the required dependencies of the process. ViewFS would be that filesystem, and would have application outside GoboLinux in any cases where process-specific views of the filesystem is desired.
 
 There is prototype code for it written, showing it can be done, but it's a big change to the system, and we were not able to focus on this enough to make it a reality (...yet). Hisham wrote a detailed post to -devel outlining what the [http://lists.gobolinux.org/pipermail/gobolinux-devel/2007-January/001979.html goals of the /System/Index change] would be.
 

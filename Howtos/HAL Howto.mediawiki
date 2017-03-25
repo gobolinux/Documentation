@@ -123,9 +123,9 @@ Ivman 0.6.5 and earlier have the problem that mountpoints are not enclosed by qu
 
 ===  Better mountpoint names ===
 
-At least for me, my CD-ROM's got mounted as <code>/media/hde</code> and stuff like that, this patch to <code>/System/Links/Shared/hal/fdi/policy/10osvendor/10-storage-policy.fdi</code> fixed it so that media is mounted with the volume label as mountpoint:
+At least for me, my CD-ROM's got mounted as <code>/media/hde</code> and stuff like that, this patch to <code>/System/Index/share/hal/fdi/policy/10osvendor/10-storage-policy.fdi</code> fixed it so that media is mounted with the volume label as mountpoint:
 
-    --- /System/Links/Shared/hal/fdi/policy/10osvendor/10-storage-policy.fdi        2005-10-21 19:18:07.000000000 -0200 
+    --- /System/Index/share/hal/fdi/policy/10osvendor/10-storage-policy.fdi        2005-10-21 19:18:07.000000000 -0200 
     +++ /System/Settings/hal/fdi/policy/10-storage-policy.fdi       2005-10-22 13:12:44.000000000 -0200 
     @@ -96,8 +96,7 @@ 
     <match key="block.is_volume" bool="true"> 

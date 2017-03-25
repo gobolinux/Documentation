@@ -16,10 +16,10 @@ To help you in recipe writing, Compile gives you the following run-time variable
 
 Which respectively point to (by default):
 
-*/System/Links/Executables
-*/System/Links/Headers
+*/System/Index/bin
+*/System/Index/include
 */System/Kernel/Modules
-*/System/Links/Libraries
+*/System/Index/lib
 */Programs
 */System/Settings
 */System/Variable/tmp

@@ -52,9 +52,9 @@ or
 
 Due to the GoboLinux hierarchy, you can use the good and old "rm -rf" to remove installed packages. Normally, authors warn the readers to be careful when using "rm -rf". I will not do this because this doesn't work. Everybody erased the wrong things at least once. If you didn't, you didn't yet.
 
-GoboLinux features a specific script to clean up the broken links that will emerge when programs are deleted: [[RemoveProgram]]. This script removes the program and all links that point to its files at /System/Links.
+GoboLinux features a specific script to clean up the broken links that will emerge when programs are deleted: [[RemoveProgram]]. This script removes the program and all links that point to its files at /System/Index.
 
-Sometimes you may want to "turn off" a program (i.e., remove the executables from the execution path, remove the libraries from the lookup path, headers, etc.) but not erase it from your hard disk. You could, of course, just move the program entry to a different directory (say, "mv /Programs/Foo "). This leaves broken links in /System/Links, which is usually harmless (but not always!... a few programs like Aclocal fail when broken links are found in its search path). A clean and easy way to "turn off" a package in a single step is using the script [[DisableProgram]]. Just call:
+Sometimes you may want to "turn off" a program (i.e., remove the executables from the execution path, remove the libraries from the lookup path, headers, etc.) but not erase it from your hard disk. You could, of course, just move the program entry to a different directory (say, "mv /Programs/Foo "). This leaves broken links in /System/Index, which is usually harmless (but not always!... a few programs like Aclocal fail when broken links are found in its search path). A clean and easy way to "turn off" a package in a single step is using the script [[DisableProgram]]. Just call:
  DisableProgram gimp 1.2.3
 
 (As usual, the program parameter is case insensitive, and the version parameter is optional -- if not given, the "Current" link is used to infer the default version.)
@@ -62,12 +62,12 @@ Sometimes you may want to "turn off" a program (i.e., remove the executables fro
 To "turn the program back on", all you need to do is create the symbolic links again, using [[SymlinkProgram]]:
  SymlinkProgram gimp 1.2.3
 
-GoboLinux has also a generic script for cleaning broken symbolic links, called [[RemoveBroken]]. This is useful for performing cleanups in the /System/Links tree (typically after you move entries around in /Programs, or perform other maintenance of this kind).
+GoboLinux has also a generic script for cleaning broken symbolic links, called [[RemoveBroken]]. This is useful for performing cleanups in the /System/Index tree (typically after you move entries around in /Programs, or perform other maintenance of this kind).
 
 [[RemoveBroken]] will verify if any of the files passed to it in the command line is a broken link, and remove those. If no arguments are passed, it receives filenames from standard input (typically through a pipe).
 
 The usual procedure to clean up symbolic links, is, then:
- cd /System/Links
+ cd /System/Index
  find | RemoveBroken
 
 == Anatomy of a package ==

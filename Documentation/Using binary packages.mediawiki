@@ -12,7 +12,7 @@ To install binary packages, simply run [[InstallPackage]] passing the package na
     InstallPackage Foo--1.0--i686.tar.bz2 
 
 
-This will unpack the archive inside /Programs, and will call [[SymlinkProgram]] to update /System/Links.
+This will unpack the archive inside /Programs, and will call [[SymlinkProgram]] to update /System/Index.
 
 ==  Creating binary packages ==
 
@@ -35,8 +35,8 @@ GoboLinux does not feature a specific script to clean up the broken links that w
 The usual procedure to clean up symbolic links, is, then:
 
 
-    ~] cd /System/Links 
-    /System/Links] find | RemoveBroken 
+    ~] cd /System/Index 
+    /System/Index] find | RemoveBroken 
 
 
 {{Handbook}}

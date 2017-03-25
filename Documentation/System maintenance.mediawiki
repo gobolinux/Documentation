@@ -27,14 +27,14 @@ Now, say, you install a new version, 2.0, which looks like this:
 The default behavior of [[SymlinkProgram]] is to replace symlinks under /Programs that belong to a different version of the same program. So, now, we'll have the following links related to Foo under system:
 
 
-    /System/Links/Executables/foo -> /Programs/Foo/2.0/bin/foo 
-    /System/Links/Headers/foo.h -> /Programs/Foo/2.0/include/foo.h 
-    /System/Links/Libraries/libfoo.so.2 -> /Programs/Foo/2.0/lib/libfoo.so.2 
-    /System/Links/Libraries/libfoo.so -> /Programs/Foo/2.0/lib/libfoo.so.2 
-    /System/Links/Libraries/libfoo.so.1 -> /Programs/Foo/1.0/lib/libfoo.so.1 
+    /System/Index/bin/foo -> /Programs/Foo/2.0/bin/foo 
+    /System/Index/include/foo.h -> /Programs/Foo/2.0/include/foo.h 
+    /System/Index/lib/libfoo.so.2 -> /Programs/Foo/2.0/lib/libfoo.so.2 
+    /System/Index/lib/libfoo.so -> /Programs/Foo/2.0/lib/libfoo.so.2 
+    /System/Index/lib/libfoo.so.1 -> /Programs/Foo/1.0/lib/libfoo.so.1 
 
 
-So, now, when you run "foo", it will fetch version 2.0 of the program through your system $PATH (which looks at /System/Links/Executables). But, as you can see, libfoo.so.1 is still there. This way, if you have other programs installed in the system that are linked specifically to version 1 of the libfoo library will continue working.
+So, now, when you run "foo", it will fetch version 2.0 of the program through your system $PATH (which looks at /System/Index/bin). But, as you can see, libfoo.so.1 is still there. This way, if you have other programs installed in the system that are linked specifically to version 1 of the libfoo library will continue working.
 
 This means you won't have the old problem "I upgraded package Foo and now my other apps are broken". Of course, you can still break things when you ''remove'' a version which other programs depend in (or if buggy programs link to a version independent name of a library (libfoo.so) but depend on features of a specific version).
 

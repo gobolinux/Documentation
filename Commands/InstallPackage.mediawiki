@@ -1,4 +1,4 @@
-Given a GoboLinux binary package, [[InstallPackage]] uncompresses it under /Programs and creates the symlinks at /System/Links and /System/Settings. It's also responsible for checking whether dependencies are available or should be installed/upgraded.
+Given a GoboLinux binary package, [[InstallPackage]] uncompresses it under /Programs and creates the symlinks at /System/Index and /System/Settings. It's also responsible for checking whether dependencies are available or should be installed/upgraded.
 
 Usage: InstallPackage <package''file>|<package''dir>
 

@@ -212,7 +212,7 @@ of '''dir'''.
 
 This option was used in older versions of the Scripts package
 to ensure that some critical programs were symlinked into
-the /System/Links hierarchy in a single step.
+the /System/Index hierarchy in a single step.
 
 ==== override_default_options=yes ====
 ''Valid modes: configure, python, scons''
