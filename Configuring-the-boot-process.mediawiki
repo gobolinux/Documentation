@@ -1,36 +1,65 @@
-A new GoboLinux installation provides boot scripts to manage basic daemons and configuration options. This page explains how to modify what GoboLinux does during startup and shutdown.
+== Boot Scripts ==
 
-== Boot-time options ==
+GoboLinux uses boot scripts to initialize and configure the system, manage
+daemons, and perform shutdown.  They are located at /System/Settings/BootScripts.
 
-When a GoboLinux system boots, it runs a set of boot scripts launching programs
-that configure the keyboard, set the system clock, initialize the swap
-partitions, etc. 
+* '''BootUp''', the primary startup script, is invoked when you turn on the power and the system boots. It contains generic initializations common to most Linux systems. Additional scripts are provided to support particular boot scenarios. 
+** '''Console''' runs BootUp and performs initializations required for a console session.
+** '''Graphic''' runs BootUp and starts X to provide a login window. 
+* '''Shutdown''' is the primary shutdown script, analogous to BootUp. It is used by the following termination scripts:
+** '''Reboot''' runs Shutdown to terminate system services then reboots the machine.
+** '''Halt''' runs Shutdown and turns off the power, if possible. Otherwise it halts the processor.
 
-Settings for these program reside in /System/Settings/BootOptions and /System/Settings/NetworkOptions. Both files contain entries of the form:
+Each of these scripts contains lines of the form:
+
+    Exec "Message..." SomeCommand [ parameters ]
+
+For example, to adjust the keyboard delay and repeat rate in the console, you can add this line to /System/Settings/BootScripts/Console:
+
+    Exec "Making keyboard speedy..." kbdrate -r 30 -d 250
+
+GoboLinux also provides [[Boot script tasks|"boot tasks"]] as a more
+sophisticated way of managing services.
+
+== Configuration options ==
+
+When GoboLinux boots, the boot scripts launch programs to configure the
+keyboard, set the system clock, initialize the network, etc. 
+
+The parameters for calling these programs are placed in /System/Settings/BootOptions
+and /System/Settings/NetworkOptions. Both files contain entries of the form:
 
     Option=value 
 
-Note that no space is allowed before or after the = character. (For the curious, yes, this is just a shell file that is "sourced" by the boot scripts.)
+Note that no space is allowed before or after the = character. This is shell
+syntax, allowing the options to be imported into the boot scripts using the
+"source" command.
 
-The following sections describe the available options in the /System/Settings/BootOptions and NetworkOptions files and the possible values you can give them.
+The following sections document options available in
+/System/Settings/BootOptions and /System/Settings/NetworkOptions.
 
 === Clock mode ===
 
-GoboLinux needs to know if your hardware clock is set to GMT or local time. Specify this by editing the ClockMode option. Set it to GMT if your hardware clock is set to GMT. Set it to LocalTime if your hardware clock is set to local time.
+GoboLinux needs to know if your hardware clock is set to GMT or local time.
+Specify this by editing the ClockMode option. Set ```ClockMode=GMT``` if your hardware
+clock is set to GMT. Set ```ClockMode=LocalTime``` if your hardware clock is set to local
+time.
 
-For obtaining time zone information, Linux applications rely on information provided by Glibc, the C library. Glibc, on its turn, uses the "localtime" symlink on its Settings directory (/Programs/Glibc/Settings) to indicate which is the active time zone. This symlink is configured by the installer according to the option you selected in the time zone selection screen, but you can always reconfigure it by hand, by pointing the "localtime" symlink to a different location under /Programs/Glibc/Current/Shared/zoneinfo.
+For obtaining time zone information, Linux applications rely on information provided by Glibc, the C library. Glibc, on its turn, uses the "localtime" symlink in its Settings directory (/Programs/Glibc/Settings/localtime) to indicate the active time zone. This symlink is created by the installer according to the time zone you selected. You can this setting manually, by pointing the "localtime" symlink to a different file under /Programs/Glibc/Current/Shared/zoneinfo.
 
-The ClockMode information is used by the hwclock application, which is launched at boot time through the SetClock task.
+The ClockMode information is used for the hwclock utility, which is launched at boot time through the SetClock task.
 
 === Console setup ===
 
 ==== Font ====
 
-If you don't like the default console font used by GoboLinux, you can select another using the ConsoleFont option in /System/Settings/BootOptions.
+To change the default console font used by GoboLinux, use the ConsoleFont option in /System/Settings/BootOptions.
 
-You can also set the console font from the command line using the setfont utility. See 'man setfont' for details.
+You can also change the console font using the <code>setfont</code> utility.
+See 'man setfont' for details.
 
-Remember that this affects only the console font. On X, applications have their own font settings.
+Remember that this setting changes  only the console font. On X, applications
+have their own font settings.
 
 ==== Keymap ====
 
@@ -47,18 +76,20 @@ The MouseType and MouseDevice options in /System/Settings/BootScripts/BootUp con
 
 ==== Keymap ====
 
-The keyboard layout for programs running under the window manager is mapped
-according the "InputDevice" section in /System/Settings/xorg.conf when the
-graphic display controller (X server) starts. With the window manager running,
-you can change keyboard mappings and other display setting using setxkbmap,
-xmodmap, and xset tools. To select a Dvorak keyboard layout, type ```setxkbmap
-dvorak``` in a terminal. These commands can also be placed in $HOME/.xinitrc
+The keyboard layout for programs running under the window
+manager is mapped according the "InputDevice" section in
+/System/Settings/xorg.conf when the graphic display (X
+server) starts. With the window manager running, you can
+change keyboard mappings and display settings using
+setxkbmap, xmodmap, and xset tools. To select a Dvorak
+keyboard layout, type ```setxkbmap dvorak``` in a terminal.
+These commands can also be placed in $HOME/.xinitrc
 
 Some desktop environments also offer graphical tools for setting the keyboard layout. For example, in KDE you can configure this at the KDE Control Center.
 
 ==== Mouse ====
 
-The mouse pointer for the graphical display is defined in an "InputDevice" section in /System/Settings/xorg.conf. The [[Installer]] should have set a sane default for your system, based on hardware autodetection. If not, you can always try a failsafe setup such as:
+The mouse pointer for the graphical display is defined in an "InputDevice" section in /System/Settings/xorg.conf. The [[Installer]] should correctly detect your hardware and set suitable defaults for your system. If not, you can always try a failsafe setup such as:
 
 
     Section "InputDevice" 
@@ -72,18 +103,23 @@ The mouse pointer for the graphical display is defined in an "InputDevice" secti
 
 There is nothing GoboLinux-specific about mouse setup on X. You can find HOWTOs and tutorials around the net that can give you more detailed instructions about this. (But feel free to drop by at the mailing list if you're still stuck!)
 
-=== Kernel modules loaded on boot ===
+=== Kernel modules ===
 
-Through the use of Udev, GoboLinux is capable of loading a number of modules automatically at boot. However, many times they aren't capable of loading them, and that's where the user must do that manually.
+Through the use of Udev, GoboLinux is capable of loading kernel modules
+(e.g. device drivers) automatically at boot. In cases Udev doesn't load some
+wanted drivers, the user can explicitly request them.
 
-This is a job which can be done by editing /System/Settings/modprobe.conf, in the same manner as you should do in another distribution. However, the [[BootScripts]] package has a special array where the modules and their parameters can be specified, and they'll get loaded at boot time with no pain.
-
-This file is called /System/Settings/[[BootOptions]]. Give it a look, and you'll see an array called UserDefinedModules, which is probably commented. This array is sourced by the boot scripts, and for every line, it will modprobe it, including any parameters following them. This is how a simple array to load i810_audio (audio driver) and sk98lin (ethernet driver) can be constructed:
+One way is to edit /System/Settings/modprobe.conf (similar to other Linux distributions), however 
+a simpler way in GoboLinux is to list desired modules in /System/Settings/BootOptions.
+This is how to load the i810_audio audio driver and sk98lin ethernet driver:
 
     UserDefinedModules=( 
         "i810_audio" 
         "sk98lin" 
     ) 
+
+The startup scripts read this array and run modprobe each line.  The entries
+may include additional parameters.
 
 
 === Network configuration ===
@@ -100,56 +136,31 @@ If you have a wired network, initialize it on boot using standard Linux commands
 
 First, check which are your network interfaces typing
 
-
     ifconfig 
 
 You should have a network interface named something like `eth0` or `enp0s3`.
 
 Edit the /System/Settings/BootScripts/BootUp script. If you are using DHCP, just add this:
 
-
     dhcpcd eth0 & 
 
 
-If you have a static network configuration, add these two commands, adjusting them to your network setup:
+If you have a static network configuration, place commands similar to the following
+in BootUp.
 
 
     ifconfig eth0 192.168.1.5 netmask 255.255.255.0 
     route add default gateway 192.168.1.1 metric 1 dev eth0 
 
 
-The specification of the DNS servers (if specified manually) is done in the same place as the 
-traditional Unix systems, at /etc/resolv.conf (or /System/Settings/resolv.conf). 
-An example of resolv.conf file is:
+The nameserver can be specified in /etc/resolv.conf
+(/System/Settings/resolv.conf.) To use Google's nameservers, you can edit
+resolv.conf to:
+
+    nameserver 8.8.8.8 
+    nameserver 8.8.4.4 
 
 
-    nameserver 200.176.2.10 
-    nameserver 200.199.252.68 
-
-
-== Customizing the initialization ==
-
-A detailed description on how the GoboLinux boot scripts behave is given in [[Boot scripts]]. For the purposes of this overview, you just need to know that when you press your computer power button, some scripts are automatically executed.
-
-These scripts are located at /System/Settings/[[BootScripts]] and are described below.
-
-* '''BootUp''' - is the basic boot script. As the name implies, it runs when the system boots up. It contains generic initializations that should apply in every boot scenario. More complex boot scenarios can be built on that by using different boot scripts that start by calling BootUp and then doing additional stuff. Two of those scripts are shipped by default:
-** '''Console''' - this calls BootUp and then runs extra initializations suited for a console session.
-** '''Graphic''' - this calls BootUp and then starts a graphic login manager.
-* '''Shutdown''' - analogous to BootUp, this is the basic shutdown script. It is used by the other, more specialized, termination scripts:
-** '''Reboot''' - invokes Shutdown to perform the necessary terminations, and reboots the machine.
-** '''Halt''' - invokes Shutdown and powers down the machine (or simply halts if there's no hardware support for software-controlled power down).
-
-Each of these files is essentially composed of a sequence of lines like the following one:
-
-    Exec "Message..." command-with-parameters
-
-For example, suppose that you want to adjust your keyboard delay and repeat rate in the console. You can do this by adding the following line to /System/Settings/BootScripts/Console:
-
-    Exec "Making keyboard speedy..." kbdrate -r 30 -d 250
-
-The boot scripts also support a concept of "tasks". 
-This is slightly more advanced, and is explained in the section [[Boot script tasks]].
 
 === Automated login ===
 
