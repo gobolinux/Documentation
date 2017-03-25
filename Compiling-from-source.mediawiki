@@ -115,7 +115,7 @@ The final step in the compilation of a program is performed by the [[SymlinkProg
 The syntax for [[SymlinkProgram]] is:
 
 
-    SymlinkProgram <program-name> [ <version-number> ] 
+    SymlinkProgram program-name [ version-number ]
 
 
 The second argument is optional. If no version number is specified, the one linked as Current will be used. A commonly used command-line parameter is <code>-c overwrite</code>, which tells it to overwrite any existing symlinks in case of conflicts (the default action is to preserve the existing links in order to not affect previously existing applications). To integrate a program Foo into the /System structure, overwriting any links, you would type:
