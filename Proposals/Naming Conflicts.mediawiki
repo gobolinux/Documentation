@@ -25,6 +25,6 @@ This is a discussion page for package naming conflicts, both for different proje
 *Mozilla Firefox - see ''Firefox''
 
 ===P===
-*Perl CPAN Modules - prepend "Perl-" and replace "::" with "-".  For example, XML::Parser becomes '''Perl-XML-Parser'''
+*Perl CPAN Modules - these should be always managed by [[Aliens]] subsystem. When you create a recipe that depends on a CPAN module, use the syntax <tt>CPAN:module_name</tt> when listing the dependency. For example, XML::Parser becomes '''CPAN:XML::Parser'''
 
 {{Discussions}}
