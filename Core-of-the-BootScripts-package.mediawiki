@@ -1,9 +1,0 @@
-{{ToC}}
-
-The main file in the core is <code>/Programs/BootScript/<version>/bin/BootDriver</code>. This script is called by <code>init</code> (from the Sysvinit package), as indicated in the file <code>/System/Settings/inittab</code>.
-
-One of the first things done by the [[BootDriver]] is to load the boot theme file indicated in /System/Settings/BootOptions (see [[Configuring the Boot Process#Configuring boot themes|Configuring boot themes]]). This ensures that the boot procedure will behave accordingly to the user's desire.
-
-Then, depending on what is going on (system startup, shutdown...), the [[BootDriver]] script runs one of the files in <code>/System/Settings/BootScripts</code>, as described in section [[Configuring the Boot Process#Customizing the initialization|Customizing the initialization]].
-
-{{Handbook}}

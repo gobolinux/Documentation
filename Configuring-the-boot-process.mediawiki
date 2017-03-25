@@ -1,6 +1,14 @@
+== General architecture ==
+
+The [[BootDriver]] script (<code>/Programs/BootScript/<version>/bin/BootDriver</code>) manages boot-related tasks. The <code>init</code> program (from the Sysvinit package) running as PID 1 calls BootDriver as specified in <code>/System/Settings/inittab</code>.
+
+[[BootDriver]] first loads the [[Boot Themes|boot theme file]] specified in
+/System/Settings/BootOptions. Then BootDriver runs the appropriate boot script
+for the task at hand (startup, shutdown, etc.)
+
 == Boot Scripts ==
 
-GoboLinux uses boot scripts to initialize and configure the system, manage
+GoboLinux boot scripts initialize and configure the system, manage
 daemons, and perform shutdown.  They are located at /System/Settings/BootScripts.
 
 * '''BootUp''', the primary startup script, is invoked when you turn on the power and the system boots. It contains generic initializations common to most Linux systems. Additional scripts are provided to support particular boot scenarios. 
@@ -159,7 +167,6 @@ resolv.conf to:
 
     nameserver 8.8.8.8 
     nameserver 8.8.4.4 
-
 
 
 === Automated login ===
