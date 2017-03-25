@@ -36,9 +36,9 @@ The <code>--no-configure</code> option is useful for resuming a cancelled make, 
 There are several ways.
 
 * To use the development version of Compile, run 
-   [[Compile]] Compile svn
+   Compile Compile git
 * To use the latest stable version, run 
-   [[InstallPackage]] Compile
+   InstallPackage Compile
 
 In general it is recommended to always use the latest version of [[Compile]]. [[Compile]] is very important to GoboLinux so 
 if there is any problem in it, it is normally fixed very quickly.
@@ -100,7 +100,7 @@ you'll run
 
 Strictly speaking, if everything was set up correctly you can simply run "make install" after running "make". But since we're giving customized paths to applications it's a wise move to add a layer of safety to ensure that everything will install in the proper place. After all, the main advantage of GoboLinux is its modularity: let's make sure that our manual fiddling around will not break it.
 
-To help us in this task, GoboLinux includes [[SandboxInstall]], a script that creates a controlled environment for safely executing 'make install'. It uses a sandbox provided by the [[FiboSandbox]] script, which configures custom permissions for an allowed set of paths to a special user, [[fibo]]. Installation then runs as this user, who has no permission to write anywhere but the few places [[SandboxInstall]] allows it to, such as /Programs/Foo/Current and /Programs/Foo/Settings. Therefore, no files can be installed in "random places". A typical call to [[SandboxInstall]] looks like this:
+To help us in this task, GoboLinux includes [[SandboxInstall]], a script that creates a controlled environment for safely executing 'make install'. It uses a sandbox provided by the [[FiboSandbox]] script, which configures custom permissions for an allowed set of paths to a special user, [[fibo]]. On systems with a UnionFS backend (such as FunionFS, UnionFS-FUSE or OverlayFS), the sandbox is provided by the alternative script [[UnionSandbox]].  Installation then runs confined to a sandbox, with no permission to write anywhere but the few places [[SandboxInstall]] allows it to, such as /Programs/Foo/Current and /Programs/Foo/Settings. Therefore, no files can be installed in "random places". A typical call to [[SandboxInstall]] looks like this:
 
 
     SandboxInstall Foo 1.0 
@@ -110,7 +110,7 @@ If necessary, additional options can be passed. Refer to the [[SandboxInstall | 
 
 ===  Linking the sources: SymlinkProgram ===
 
-The final step in the compilation of a program is performed by the [[SymlinkProgram]]. This is the script responsible for creating the symbolic links under /System/Links.
+The final step in the compilation of a program is performed by the [[SymlinkProgram]]. This is the script responsible for creating the symbolic links under /System/Index.
 
 The syntax for [[SymlinkProgram]] is:
 
