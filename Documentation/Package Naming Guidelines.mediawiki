@@ -1,17 +1,7 @@
-[[Shell scripting coding style]]
+# If the program name already has capitals (e.g. XFree86, LyX, Qt) use it exactly as is. 
+# If the name is all lowercase or inconsistent (for example, different forms in the README), our set of capitalization rules apply.
+# If the application uses hyphens or underscores in the name, follow it exactly.
+# GoboLinux packages should never have spaces in their names. "Acrobat Reader" should become "AcrobatReader", not "Acrobat_Reader".
+# There should never be two package names differing only in capitalization. Package names differing only in capitalization should be considered to be two versions of the same app.
 
-----
-
-The package naming guidelines are:
-
-# The app authors are sovereign about the capitalization, if they define it. 	Examples are: XFree86, LyX, Qt.
-# If the capitalization is undefined (ie, all-lowercase) or inconsistent (for example, showing up in different forms in the README), our set of capitalization rules apply.
-# Applications are always sovereign in defining their usage of hyphens and underscores to separate words in their names.
-# Packages should never have spaces in their names. If they do, the space is simply suppressed (according to this, the name Acrobat_Reader is indeed incorrect).
-# There should never be two package names differing only in capitalization. They should be considered to be two versions of the same app (future versions of the [[Scripts]] may actually assume this).
-
-Our set of rules is defined in the [[NamingConventions]] script. I won't list them exhaustively here because that would be like re-implementing the script, only this time in [[literate programming]]. In short, it deals with detecting common prefix and suffix patterns, such as "Tools" and "Utils" and vowel-consonant heuristics.
-
-It is worth noting that the [[CompileProgram]] script scans the app's README file in order to search for occurence of (consistent) capitalization. This is effective for a large number of packages (one example is GtkGLArea, if my memory serves me well).
-
-{{Handbook}}
+The [[NamingConventions]] script applies these rules and several heuristics to generate a suitable GoboLinux package name from an input. 
