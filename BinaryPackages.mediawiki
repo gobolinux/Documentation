@@ -45,9 +45,13 @@ want to continue.  This is valuable, because some software
 may still work satisfactorily even if a particular plug-in
 or other dependency is missing. 
 
-=== Installing Packages from the LiveCD ===
+== Installing packages from the LiveCD ==
 
 See [[Installing packages from the LiveCD|this page.]]
+
+== Removing packages =
+
+See [[Removing programs]]
 
 == Creating packages ==
 
