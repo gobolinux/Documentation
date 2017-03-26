@@ -1,177 +1,97 @@
-== Introduction ==
-
-'''Binary packages''' in GoboLinux are precompiled software adapted
-to the GoboLinux directory tree.  Since these packages are
-already compiled, you can save the many hours
-needed to compile larger applications. On the other
-hand, with binary packages you don't have the ability to
-tune optimization flags or architecture-specific compile
-options.
-
-In GoboLinux, all binary packages as well as all
-self-compiled software is installed under /Programs in a
-"package directory" provided for each version of each
-application. 
-
-When compiling software, the installation target directories
-such as bin/, lib/, and etc/ that are required for a typical
-program are placed inside the package directory.
-
-With this self-contained directory structure, all that is
-needed to generate a package is to make a tarball of the
-program directory, copy over the Resource/ directory from
-the Compile recipe, and generate a few additional files,
-which are also placed under Resource/.
+'''Binary packages''' in GoboLinux are precompiled software
+packages built for the GoboLinux directory tree and made
+available through the GoboLinux software repository (recipe
+store). Since these packages are already compiled, you can
+save the many hours needed to build larger applications.
+On the other hand, with binary packages you don't have the
+ability to set compile flags for optimization or specific
+architectures.
 
 == Installing packages ==
 
 [[InstallPackage]] is the GoboLinux script for installing
-binary packages. You can either download the package
-yourself and pass it to [[InstallPackage]], or let
-[[InstallPackage]] search the GoboLinux repositories, fetch
-the package if available, and install it.
-
-For example, if you downloaded a package and want to install
-it, run 
-
-	InstallPackage Gimp--2.8.18--i686.tar.bz2
-
-If you want [[InstallPackage]] to look for the most recent
-Gimp package available, you can run
+binary packages.  If you want [[InstallPackage]] to look for
+the most recent Gimp package available, you can run
 
 	InstallPackage Gimp
-
-If you want to download a specific version, you can it as a second parameter:
-
-	InstallPackage Gimp 2.8.18
 
 The script will check if the package is available in the
 GoboLinux repositories. (See
 /System/Settings/GetAvailable.conf for the specific URLs
 scanned. You may add your own repositories if you desire.)
 
-During installation, [[InstallPackage]] will run the
-[[Dependencies]] script to verify if there are unresolved
-dependencies, i.e., if the requested package needs
-other softare packages to be installed in order to work properly.
-[[InstallPackage]] looks for these packages in a set of
-default locations, local and remote, as specified in 
-/System/Settings/GetAvailable.conf. If these dependencies
-are found, [[InstallPackage]] will ask if you want
-to install them. 
+If you want to select a specific version, you can pass it as the second parameter:
 
-Calling [[InstallPackage]] with the --batch (or -b) flag
-will install all dependencies withut asking the user.  This
-is particularly useful with packages like Xorg, which have
-lots of dependencies.
+	InstallPackage Gimp 2.8.18
 
-Dependency-related warnings in GoboLinux are informational,
-not fatal. These warnings will not prevent you from
-installing a package if dependencies are missing. This is
-valuable, because some software may still work
-satisfactorily even if a plug-in or other dependency is
-missing. 
+If you downloaded the package and want to install it, run:
 
-The choice of whether to install the package or not in this
-situation is left to the administrator.
+	InstallPackage Gimp--2.8.18--i686.tar.bz2
 
-=== Installing packages from the Live CD ===
+The script normally runs interactively, asking about each
+dependency of the requested package before installing it.
+You can avoid these queries by adding the
+<code>--batch</code> or <code>-b</code> flag.  This is
+particularly useful with large packages such as Gimp or Xorg,
+which have many dependencies.
 
-After installing GoboLinux and booting from the hard disk,
-you may want to choose software packages from the Live CD to
-install.  To do so, you must mount the
-'squashfs' file that contains the image from the Live CD
-system. 
+	InstallPackage -b Gimp
 
-To do that, first mount the CD then mount the desired
-GoboLinux squashfs file:
+=== Dependencies ===
 
-	mount /Mount/CD-ROM
- 	mount /Mount/CD-ROM/GoboLinux-NonBase.squashfs /Mount/SquashFS -t squashfs -o loop=/System/Kernel/Devices/loop0
+InstallPackage will warn you if dependencies of a package
+you are trying to install are unavailable and ask if you
+want to continue.  This is valuable, because some software
+may still work satisfactorily even if a particular plug-in
+or other dependency is missing. 
 
-Now, you can use [[InstallPackage]] to install software from the Program/
-directory of the Live-CD:
+=== Installing Packages from the LiveCD ===
 
-	InstallPackage /Mount/SquashFS/Programs/Inkscape
-
-Note 1: after using the squashfs file, you may want unmount it:
-
-	umount /Mount/SquashFS
-
-Note 2: To have the dependencies required by an application installed
-automatically, use the "--batch" parameter:
-
- InstallPackage --batch Gimp
-	-or-
- InstallPackage --batch /Mount/SquashFS/Programs/Gimp
-
-
-== Removing packages ==
-
-Because all installed software occupies a single package
-directory, one could remove a package by running 
-a command like
-
-	rm -rf Gimp/2.8.18 
-
-Since this leaves behind dangling symlinks and risks
-clobbering your filesystem with a mistaken argument,
-GoboLinux offers the [[RemoveProgram]] utility, which
-removes the program and all links pointing to its files in
-/System/Index.
-
-	RemoveProgram Gimp 2.8.18
-
-Sometimes you may want to "turn off" a program temporarily,
-without erasing it from your hard disk.  In other words, you
-want to remove program's executables from the execution
-path, and remove libraries and headers from the lookup path.
-
-One could simply move the directory out of the hierarchy
-leaving broken links in /System/Index. A safer, cleaner way
-is to remove the symlinks for the program:
-
-	DisableProgram gimp 2.1.18
-
-Note that the version parameter is optional: if a version
-number is not provided, the "Current" link is used to infer
-the version of the program to disable.  Also note that the
-program name is case insensitive. 
-
-To re-enable the program, all you need to do is recreate the
-symbolic links:
-
-	SymlinkProgram gimp 2.1.18
-
-GoboLinux has a script called [[RemoveBroken]]. 
-that removes dangling symlinks from /System/Index tree.
-It can be useful to run after manipulating directories
-under /Programs. 
-
-[[RemoveBroken]] takes a list of files, and removes those
-that are dangling symlinks. If no arguments are provided,
-the script takes filenames from standard input (typically
-through a pipe).
-
-The usual procedure to clean up dangling links, is
-
-	cd /System/Index
-	find | RemoveBroken
+See [[Installing packages from the LiveCD|this page.]]
 
 == Creating packages ==
 
-Once you have a program properly compiled and installed (as
-explained in the previous section), creating a binary
-package is quite easy. Simply call the [[CreatePackage]]
-script passing as parameter the package name. For example
+=== Structure ===
+
+In GoboLinux, all binary packages (as well as all
+user-compiled software) is installed under /Programs in a
+"program directory" provided for each version of each
+application, for example:
+
+	/Programs/Gimp/2.8.18
+
+When compiling software under GoboLinux the installation
+target directories such as bin/, lib/, and etc/ that are
+required for a typical program are placed inside the program
+directory. 
+
+With this self-contained directory structure, all that is
+needed to generate a binary package is to make a tarball of the
+program directory, copy over the Resources/ directory from
+the Compile recipe, and generate a few additional files,
+which are also placed under Resources/.
+
+This is accomplished by the [[CreatePackage]] command.
+
+To learn more you can read about the [[Structure of binary
+packages]].
+
+=== Preparation ===
+
+Before creating a package, be careful to vet the contents of
+the program's Settings/ directory to ensure that it does not
+include personal information. 
+
+A package submitted for inclusion in the GoboLinux packages
+repository must have sensible default settings, honoring the
+application defaults if possible. 
+
+=== The CreatePackage command ===
+
+In order to create a package, run the [[CreatePackage]]
+utility with the package name as a parameter. For example,
 
 	CreatePackage rxvt
 
 will create a binary package in the current working directory.
 
-Be careful to vet the contents of the Settings/ directory to
-ensure that it does not include personal information. 
-
-A package submitted for inclusion in the GoboLinux packages
-repository must have sensible default settings, honoring the
-application defaults if possible. 
