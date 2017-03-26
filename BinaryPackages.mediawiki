@@ -1,9 +1,9 @@
 == Introduction ==
 
-'''Packages''' in GoboLinux are precompiled software adapted
+'''Binary packages''' in GoboLinux are precompiled software adapted
 to the GoboLinux directory tree.  Since these packages are
 already compiled, you can save the many hours
-needed to compile some larger applications. On the other
+needed to compile larger applications. On the other
 hand, with binary packages you don't have the ability to
 tune optimization flags or architecture-specific compile
 options.
