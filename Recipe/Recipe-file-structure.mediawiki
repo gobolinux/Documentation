@@ -1,10 +1,10 @@
 The term "Recipe" can refer to either:
-* A packed tarball, as held in the recipe-store on gobolinux.org.  These are named as ''Foo--1.0-r1--recipe.tar.bz2''.
+* A packed recipe, as held in GoboLinux recipe store, with a name like ''Foo--1.0-r1--recipe.tar.bz2''.
 * The file Foo/1.0-r1/Recipe in such a tarball.
 
 == File Layout ==
 A packed recipe is a tarball such as SomeProgram--Version-r1--recipe.tar.bz2
-with the following directory structure.
+with the following directory structure. 
 
 <pre>
     SomeProgram/
@@ -36,3 +36,4 @@ with the following directory structure.
 where <tt><arch></tt> represents one or more optional architecture directories 
 named <code>i686/</code>, <code>x86_64/</code>, 
 <code>arm/</code>, <code>ppc/</code>, etc.
+
