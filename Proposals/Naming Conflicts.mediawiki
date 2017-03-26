@@ -1,11 +1,7 @@
-This is a discussion page for package naming conflicts, both for different projects with the same name (rare) and GoboLinux packages with the same name which refer to the same project (more common, but let's work to extinguish this).
-
 ==Basic conflict resolution guidelines==
 *For the vast majority of programs, we can just take the project name as found in the program's tarball (ie, "name" in "name-1.0.tar.gz") and apply the [[Package Naming Guidelines]]).
 *When a project has a long and a short name (as in multi-word vs. acronym), we'll use the shorter name.
 *When still in doubt, let's look at the way other distributions name them, and follow the most common name.
-*'''Capitalization''' issues are less relevant now with the recent versions of Scripts and Compile. Therefore it's not necessary to list capitalization decisions here, though a capitalization form may be suggested when reporting a conflict of some other nature.
-*Report naming decisions on this page, and check here before making decisions. 
 
 ==Conflict list==
 ===F===
@@ -23,8 +19,3 @@ This is a discussion page for package naming conflicts, both for different proje
 
 ===M===
 *Mozilla Firefox - see ''Firefox''
-
-===P===
-*Perl CPAN Modules - these should be always managed by [[Aliens]] subsystem. When you create a recipe that depends on a CPAN module, use the syntax <tt>CPAN:module_name</tt> when listing the dependency. For example, XML::Parser becomes '''CPAN:XML::Parser'''
-
-{{Discussions}}
