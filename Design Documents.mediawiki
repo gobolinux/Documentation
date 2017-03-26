@@ -1,5 +1,0 @@
-This page contains links to various design docs in various stages of development.
-
-== 015 ==
-
-* [[Stage1 Package List]]
