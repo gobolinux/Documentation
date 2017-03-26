@@ -34,7 +34,7 @@ the package if available, and install it.
 For example, if you downloaded a package and want to install
 it, run 
 
-	InstallPackage Gimp--1.2.3--i686.tar.bz2
+	InstallPackage Gimp--2.8.18--i686.tar.bz2
 
 If you want [[InstallPackage]] to look for the most recent
 Gimp package available, you can run
@@ -43,7 +43,7 @@ Gimp package available, you can run
 
 If you want to download a specific version, you can it as a second parameter:
 
-	InstallPackage Gimp 1.2.3
+	InstallPackage Gimp 2.8.18
 
 The script will check if the package is available in the
 GoboLinux repositories. (See
