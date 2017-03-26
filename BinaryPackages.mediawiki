@@ -169,7 +169,7 @@ script passing as parameter the package name. For example
 
 will create a binary package in the current working directory.
 
-Be careful to vet the contents of the Settings directory to
+Be careful to vet the contents of the Settings/ directory to
 ensure that it does not include personal information. 
 
 A package submitted for inclusion in the GoboLinux packages
