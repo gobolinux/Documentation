@@ -1,5 +1,0 @@
-The Z Shell, the default command-line shell used in GoboLinux, differently from most (perhaps all?) other Linux distributions, which enable bash, the Bourne Again Shell by default.
-
-http://www.zsh.org
-
-{{Reference}}
