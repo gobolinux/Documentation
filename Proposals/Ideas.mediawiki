@@ -1,23 +1,7 @@
 ==  Filesystem Hierarchy Standard ==
 Filesystem hierarchy should be documented as a standard,this helps software vendors (who distribute their software only in binary form) to comply gobo's filesystem.
 
-==  Internationalize Directory Names ==
-As a native English speaker, I ask why do the directory names have to be in English? Can directory names be localized in a manner that makes it easy for the user, without having to modify existing scripts?
-
 Author: Rodion
-
-==  Gobo for non-Linux systems ==
-Thoughts and strategies for bootstraping Gobo onto non-Linux systems.  Good examples, the commercial unixes, Mac OS X, Cygwin, and Microsoft's SFU.
-c
-
-Author: Carlo 
-
-==  Test with Qemu (http://fabrice.bellard.free.fr/qemu/) ==
-
-Qemu is very usefull in order for somebody to see your work without installing it for real. It will be very useful when it'll be able to boot cdroms (real devices not images as it is able now)  without a need to reboot windows.
-
-Just put an autorun.inf that calls the qemu executable with the proper parameters and it is good to go the moment you put the cd in the tray (with graphics, sound, networking etc).
-
 
 ==  zsh ideas ==
 
@@ -25,19 +9,20 @@ Tab-completion which inserts quotes instead of backslashes.
 
 * http://www.zsh.org/mla/users/2003/msg00794.html
 
-
 == Categorized programs ==
 
 The directory /Programs could be categorized too: /Programs/Net, /Programs/Graphics, etc
 
 [editor: tags are the thing now.]
 
-'''RemoveProgram (new feature):'''<br>
+== RemoveProgram (new feature) ==
+
 should test .GoboTimestamp (or program's directory) ctime against contents before removing, then print files changed after installation + ask Remove all/Nothing/Remove not changed.<br>
 Author: jan molic<br>
 This is cool. Try doing it with the program's directory, if not possible use Resources/Timestamp (no need to use dot files, we have the Resources directory for this kind of thing). Show us the code and we'll add it. :) -- [[User:Hisham|hisham]]
 
-'''Compile (small change):'''<br>
+== Compile (small change) ==
+
 If you have sources already extracted, want to use them, but don't have downloaded archive, Compile wants to download it first, even if it's not necessary (it should ask if old sources may be used first). <br>
 Author: jan molic<br>
 Compile tries to run wget -c on the file because it doesn't know if the download is complete. If the recipe contains file''md5 and file''size entries, Compile uses them to test if the file is complete before trying to run wget again. -- [[User:Hisham|hisham]]
