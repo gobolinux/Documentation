@@ -1,14 +1,18 @@
-{{Handbook Navigation}}
-
-'''Compile''' is the GoboLinux compilation system. Compile downloads source tarballs, unpacks, compiles and installs them, with a single command, using simple compilation scripts called "recipes". Compile was introduced in GoboLinux 011, but already features a considerable (and ever-growing) number of recipes, and is able to compile all kinds of software, including Glibc, GCC, KDE and the Linux kernel. 
-
-== Using Compile ==
-
-In this example we'll install '''irssi''', a text-based IRC (Internet Relay Chat) client.  To compile and install it, just type:
+With '''Compile''',  GoboLinux build utility, software
+sources can be downloaded, compiled and installed in a
+single step. To install '''irssi''', a text-based IRC client
+from the command line, you'd type
 
     Compile irssi 
 
-This will go and download a Recipe for compiling and installing Irssi.  Like cooking food, a  Recipe is a set of instructions that will tell Compile how to "cook" (compile) and "serve" (install) a package.  Depending on the speed of your computer, internet connection and what packages you have installed, Irssi should download and install in a few minutes.  Cool, huh? :-)
+Depending on the speed of your computer, internet connection
+and what packages you have installed, Irssi should download
+and install in a few minutes.
+
+Compile manages the build process using GoboLinux recipes.
+Each recipe contains a list of build directives and
+supplemental control files for compiling a particular
+software library. 
 
 === Finding recipes ===
 
@@ -16,16 +20,24 @@ Typically, you can just try the name of the recipe you want from the command lin
 
 === Command-line options ===
 
-Compile has a number of command-line options, specified in its reference guide entry: [[Compile]]. 
-Some of them are used by Compile itself, such as <code>--app-name</code>, for meta-recipes, and you probably won't use directly. But there are options provided to allow you to control which activities Compile should perform.
+Compile has a number of command-line options, which are
+[[Compile|listed here]]. The following are especially
+useful.
 
-The <code>--no-web</code> option is especially useful if you don't have a permanent internet connection. It avoids attempting to run <code>wget</code> to fetch the sources (and the delays and timeouts), looking for the necessary files exclusively in the local repositories. *fixme*{{Question | local repositories? Where is that? I think a new user will be confused by "local repositories" if that is not written where it is :)}}
+When using the <code>--batch</code> or <code>-b</code>
+automatically attempts to process all dependencies of the
+requested program.
 
-The <code>--no-build</code> is another useful option. Calling Compile with <code>--no-build</code>, it does not actually compile anything. You can use it to fetch the sources and compile it at a later time using <code>--no-web</code>. This is useful, fer example, for dial-up users, who can do all their downloads while they are connected and then do the builds while offline, or for those who don't want the CPU cycles hogged by compilations while they're working on the machine, and prefer to run their builds at night while they sleep.
+=== Separating download and compile phases ===
 
-The <code>--no-configure</code> option is useful for resuming a cancelled make, to avoid regeneration of headers files which could cause the build process to repeat itself in its entirety.
+The next two options are useful when working with
+intermittent internet access, or if you'd like to run your
+compiling jobs at night when you're asleep.
 
-'''WARNING:''' tweaking the sources to fix errors and resuming Compile with -C is a sure way to generate an invalid recipe, since the recipe does not apply the tweaks you did by hand the next time it runs. When preparing a recipe for submission to the gobolinux.org repository, make sure that it is able to run the whole way through on a cleanly unpacked source tree, without using -C.
+Calling Compile with the <code>--no-build</code> flag downloads
+sources only.  Later, you use the <code>--no-web</code> flag, directing
+Compile to search to your system's own download cache and
+build the sources found there.
 
 === Writing recipes ===
 
@@ -33,74 +45,126 @@ The <code>--no-configure</code> option is useful for resuming a cancelled make, 
 
 === Getting the latest Compile ===
 
-There are several ways.
-
 * To use the development version of Compile, run 
    Compile Compile git
+
 * To use the latest stable version, run 
    InstallPackage Compile
 
-In general it is recommended to always use the latest version of [[Compile]]. [[Compile]] is very important to GoboLinux so 
-if there is any problem in it, it is normally fixed very quickly.
+In general it is recommended to always use the latest stable
+version of [[Compile]]. [[Compile]] is very important to
+GoboLinux so if there is any problem in it, it is normally
+fixed very quickly.
 
 == Compiling manually ==
 
-Normally, you shouldn't need to compile "manually", i.e., without using the [[Compile]] tool. At the same time that it is designed as a high-level tool, one of the major goals of Compile is to give you enough flexibility so you can bend it to whatever shape you need to in order to get your programs compiled (and if it breaks while bending, let us know in the mailing list and we'll make it even more resilient). Still, to get this finer-grained control, it can be handy to know how things work under the hood. In this section we'll go through the process of manual compilation, using the same helper scripts that are used by Compile.
+Normally, you shouldn't need to compile "manually", i.e.,
+without using the [[Compile]] tool. However, it is possible
+to manually run the same commands that Compile uses.
 
 === Overview ===
 
-If you are used to compiling programs in Linux, you are aware that it is mostly a three-part process: prepare the sources (configure), compile them (make), and install the files generated by the compilation (make install). The process is basically the same in GoboLinux. However, it requires additional setup in the first step, in order to prepare the sources to compile targeting the GoboLinux directories, and additional actions after the third step, so that files installed in /Programs get linked in /System (in other words, to make the files from the programs available for the system).
+Compiling programs in Linux is typically a three-part
+process: prepare the sources with <code>./configure</code>,
+compile them with <code>make</code>, and install the
+compiled program with <code>make install</code>. 
 
-GoboLinux features some scripts that make this process more efficient
+To this process, Gobo adds a source configuration step to
+target the GoboLinux directory structure, and after the
+install phase, a step that symlinks the files from the
+application directory under /Programs to /System/Index. It
+is this last step that makes programs "visible" to the
+GoboLinux system.
+
+These are the relevant commands:
 
 * [[PrepareProgram]]
 * [[SandboxInstall]]
 * [[SymlinkProgram]]
 
-[[PrepareProgram]] is a wrapper to the first step described above. [[SandboxInstall]] is a wrapper to the third step, ensuring safe execution of "make install". [[SymlinkProgram]] performs the final operations that integrate the new program into the system.
+[[PrepareProgram]] is a wrapper to the first step described
+above. [[SandboxInstall]] is a wrapper to the third step,
+ensuring safe execution of "make install".
+[[SymlinkProgram]] performs the final operations that
+integrate the new program into the system.
 
 ===  Setting up the sources: PrepareProgram ===
 
-The [[PrepareProgram]] script does two things. It creates a directory hierarchy for the program under /Programs, and it attempts to prepare the sources for compilation.
+The [[PrepareProgram]] script does two things. It creates a
+directory hierarchy for the program under /Programs, and it
+attempts to prepare the sources for compilation.
 
 The syntax for the [[PrepareProgram]] is:.
 
-
     PrepareProgram <program-name> <version-number> [ -- <additional-options> ] 
 
-
-Passing a program name and version number is mandatory. These names are the ones used in the directories under programs. For example,
-
+Passing a program name and version number is mandatory.
+These names are the ones used in the directories under
+programs. For example,
 
     PrepareProgram --tree Foo 1.0 
 
+(the --tree switch) creates the directories
+/Programs/Foo/Settings, /Programs/Foo/1.0,
+/Programs/Foo/1.0/bin and so on.
 
-(the --tree switch) creates the directories /Programs/Foo/Settings, /Programs/Foo/1.0, /Programs/Foo/1.0/bin and so on.
+The second task performed by [[PrepareProgram]] is to
+prepare the sources. Since there isn't a standardized format
+for distribution of source-code tarballs in the free
+software world, there is no way to implement completely
+automated preparation. Fortunately, the popularization of
+the GNU AutoTools brings us much closer.
 
-The second task performed by [[PrepareProgram]] is to prepare the sources. Since there isn't a standardized format for distribution of source-code tarballs in the free software world, there is no way to implement completely automated preparation. Fortunately, the popularization of the GNU [[AutoTools]] brings us closer to such a standard.
-
-[[PrepareProgram]], in this second step, will detect availability of preparation tools and perform one of the following:
+[[PrepareProgram]], in this second step, will detect
+availability of preparation tools and perform one of the
+following:
 
 # If the program includes a 'configure' script generated by GNU autoconf, [[PrepareProgram]] will run it, passing the necessary options (mainly --prefix, --sysconfdir) as well as any additional options requested by the user in the command line (as <additional-options>).
-# Some authors develop their own 'configure' scripts, but due to the popularity of GNU autoconf, design a command line interface similar to that used by this program. [[PrepareProgram]] tries to detect if a non-autoconf 'configure' script accepts at least the --prefix option, and use it.
+# Some authors develop their own 'configure' scripts, but
+due to the popularity of GNU autoconf, design a command
+ line interface similar to that used by autoconf. [[PrepareProgram]] 
+tries to detect if a non-autoconf 'configure' script accepts at least the 
+--prefix option, and uses it.
 
-In short, [[PrepareProgram]] can be considered a wrapper to 'configure'. Instead of running, for example,
+In short, [[PrepareProgram]] can be considered a wrapper to
+'configure'. Instead of running, for example,
 
-
-    ~/foo-1.0] configure --with-shared=yes 
-
+    cd foo-1.0
+	./configure --with-shared=yes 
 
 you'll run
 
+    cd foo-1.0
+	PrepareProgram Foo 1.0 -- --with-shared=yes 
 
-    ~/foo-1.0] PrepareProgram Foo 1.0 -- --with-shared=yes 
 
+===  SandboxInstall ===
 
-===  Installing safely: SandboxInstall ===
+Strictly speaking, if everything were configured correctly
+you could simply run "make" and "make install", and all
+files would be installed under the appropriate subdirectory
+under Programs/.
 
-Strictly speaking, if everything was set up correctly you can simply run "make install" after running "make". But since we're giving customized paths to applications it's a wise move to add a layer of safety to ensure that everything will install in the proper place. After all, the main advantage of GoboLinux is its modularity: let's make sure that our manual fiddling around will not break it.
+To ensure this happens is to guarantee the modularity
+of the software installation. 
 
-To help us in this task, GoboLinux includes [[SandboxInstall]], a script that creates a controlled environment for safely executing 'make install'. It uses a sandbox provided by the [[FiboSandbox]] script, which configures custom permissions for an allowed set of paths to a special user, [[fibo]]. On systems with a UnionFS backend (such as FunionFS, UnionFS-FUSE or OverlayFS), the sandbox is provided by the alternative script [[UnionSandbox]].  Installation then runs confined to a sandbox, with no permission to write anywhere but the few places [[SandboxInstall]] allows it to, such as /Programs/Foo/Current and /Programs/Foo/Settings. Therefore, no files can be installed in "random places". A typical call to [[SandboxInstall]] looks like this:
+To prevent any possibility of files being copied elsewhere
+in the directory tree than the target under /Programs,
+GoboLinux conducts the install step in a "sandbox" that is
+isolated from the rest of the filesystem. 
+
+[[SandboxInstall]] constructs a container for 'make install'. It uses a
+sandbox provided by the [[FiboSandbox]] script, which
+configures custom permissions for an allowed set of paths to
+a special user, [[fibo]]. On systems with a UnionFS backend
+(such as FunionFS, UnionFS-FUSE or OverlayFS), the sandbox
+is provided by the alternative script [[UnionSandbox]].
+Installation then runs confined to a sandbox, with no
+permission to write anywhere but the few places
+[[SandboxInstall]] allows it to, such as
+/Programs/Foo/Current and /Programs/Foo/Settings. Therefore,
+no files can be installed in "random places". A typical call
+to [[SandboxInstall]] looks like this:
 
 
     SandboxInstall Foo 1.0 
@@ -110,7 +174,9 @@ If necessary, additional options can be passed. Refer to the [[SandboxInstall | 
 
 ===  Linking the sources: SymlinkProgram ===
 
-The final step in the compilation of a program is performed by the [[SymlinkProgram]]. This is the script responsible for creating the symbolic links under /System/Index.
+The final step in the compilation of a program is performed
+by the [[SymlinkProgram]]. This is the script responsible
+for creating the symbolic links under /System/Index.
 
 The syntax for [[SymlinkProgram]] is:
 
@@ -118,12 +184,21 @@ The syntax for [[SymlinkProgram]] is:
     SymlinkProgram program-name [ version-number ]
 
 
-The second argument is optional. If no version number is specified, the one linked as Current will be used. A commonly used command-line parameter is <code>-c overwrite</code>, which tells it to overwrite any existing symlinks in case of conflicts (the default action is to preserve the existing links in order to not affect previously existing applications). To integrate a program Foo into the /System structure, overwriting any links, you would type:
+The second argument is optional. If no version number is
+specified, the one linked as Current will be used. A
+commonly used command-line parameter is <code>-c
+overwrite</code>, which tells it to overwrite any existing
+symlinks in case of conflicts (the default action is to
+preserve the existing links in order to not affect
+previously existing applications). To integrate a program
+Foo into the /System structure, overwriting any links, you
+would type:
 
 
     SymlinkProgram -c overwrite Foo 
 
 
-[[SymlinkProgram]] features many command-line switches, to cover more advanced needs. You can refer to the [[SymlinkProgram | SymlinkProgram reference page]] for details if necessary.
-
-{{Compile}}
+[[SymlinkProgram]] features many command-line switches, to
+cover more advanced needs. You can refer to the
+[[SymlinkProgram | SymlinkProgram reference page]] for
+details if necessary.
