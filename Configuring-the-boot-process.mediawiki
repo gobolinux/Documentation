@@ -1,3 +1,7 @@
+This page describes the boot process and how to configure
+your GoboLinux system by editing the configuration files
+used for startup.
+
 == General architecture ==
 
 The [[BootDriver]] script (<code>/Programs/BootScript/<version>/bin/BootDriver</code>) manages boot-related tasks. The <code>init</code> program (from the Sysvinit package) running as PID 1 calls BootDriver as specified in <code>/System/Settings/inittab</code>.
@@ -189,4 +193,16 @@ If you do not use KDE or want a non-GUI based solution, one way is to use runget
 Of course, replace your_username with the user you want to login as.
      
 Using another tty than 1 may be useful too. 
+
+
+== Printers ==
+
+GoboLinux comes with CUPS installed by default.
+
+== Audio ==
+
+Note that ALSA is muted by default, to automatically save and restore changes done in e.g. alsamixer, add these lines to your boot scripts.
+
+	Done: Exec "Storing ALSA settings..."             alsactl store
+
 
