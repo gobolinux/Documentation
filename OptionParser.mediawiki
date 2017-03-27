@@ -1,56 +1,68 @@
-__NOTOC__
-
 This file contains a bunch of shell functions used by gobo tools to handle and parse command line options and in a convenient way. A linguistic clarification: we call options the -<something> and --<something> parameters you encounter in virtually every command line program, while arguments are the remaining parameters,that is, the actual arguments on which the program works. For example:
 
- MakeRecipe --no-web Foo 1.0 http://foo.bar
+     MakeRecipe --no-web Foo 1.0 http://foo.bar
 
 has one option and three arguments.
 
 See each function's header for a detailed description of its
 = Functions: =
 
-<!-------
-<table border="1" width="100%" cellspacing="0" cellpadding="5">
-<tr><td colspan="2" style="background:#6080C0; color:white">'''Function summary'''</td></tr>
-<tr><td WIDTH="60%">[[OptionParser#Add_Option|Add_Option]]
-<code><type> <default> <short> <long> <description> [<values>]</code></td>
-<td>Adds an option, updating options arrays accordingly.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Add_Option_Boolean|Add_Option_Boolean]]</td>
-<td>Adds an option of type boolean.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Add_Option_Entry|Add_Option_Entry]]</td>
-<td>Adds a full option entry.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Add_Option_List|Add_Option_List]]</td>
-<td>Adds an option of type list.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Add_Argument|Add_Argument]]</td>
-<td>Adds a new argument to our array of arguments.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Args_To_Array|Args_To_Array]]</td>
-<td>Converts a space separated string of arguments to a bash array.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Arg|Arg]]</td>
-<td>Returns the argument at the specified position.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Number_Of_Arguments|Number_Of_Arguments]]</td>
-<td>Prints the number of arguments.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Entry|Entry]]</td>
-<td>Checks whether a specific option of type 'Entry' exists in our list.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Is_Entry_Set|Is_Entry_Set]]</td>
-<td>Checks whether the specified Entry option has a default value.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Is_Entry|Is_Entry]]</td>
-<td>Checks whether it exists an Entry option with the specified name-value</tr>
-<tr><td WIDTH="30%">[[OptionParser#Boolean|Boolean]]</td>
-<td>Checks if the specified Boolean option exists and is active.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Set_Boolean|Set_Boolean]]</td>
-<td>Set a boolean option to 'on' or 'off', as specified by the argument.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Show_Version|Show_Version]]</td>
-<td>Prints out a short "version" message.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Show_Help|Show_Help]]</td>
-<td>Prints out a short help.</tr>
-<tr><td WIDTH="30%">[[OptionParser#List_Options|List_Options]]</td>
-<td>Prints the list of options, in the format:</tr>
-<tr><td WIDTH="30%">[[OptionParser#Get_Parsed_Options|Get_Parsed_Options]]</td>
-<td>Prints options passed to the script.</tr>
-<tr><td WIDTH="30%">[[OptionParser#Parse_Options|Parse_Options]]</td>
-<td>The actual parser. It parses options and arguments passed when invoking</tr>
-</table>
-------->
+'''Function summary'''
+
+[[OptionParser#Add_Option|Add_Option]]  
+<code><type> <default> <short> <long> <description> [<values>]</code>
+Adds an option, updating options arrays accordingly.
+
+[[OptionParser#Add_Option_Boolean|Add_Option_Boolean]]  
+Adds an option of type boolean.
+
+[[OptionParser#Add_Option_Entry|Add_Option_Entry]]  
+Adds a full option entry.
+
+[[OptionParser#Add_Option_List|Add_Option_List]]  
+Adds an option of type list.
+
+[[OptionParser#Add_Argument|Add_Argument]]  
+Adds a new argument to our array of arguments.
+
+[[OptionParser#Args_To_Array|Args_To_Array]]  
+Converts a space separated string of arguments to a bash array.
+
+[[OptionParser#Arg|Arg]]  
+Returns the argument at the specified position.
+
+[[OptionParser#Number_Of_Arguments|Number_Of_Arguments]]  
+Prints the number of arguments.
+
+[[OptionParser#Entry|Entry]]  
+Checks whether a specific option of type 'Entry' exists in our list.
+
+[[OptionParser#Is_Entry_Set|Is_Entry_Set]]  
+Checks whether the specified Entry option has a default value.
+
+[[OptionParser#Is_Entry|Is_Entry]]  
+Checks whether it exists an Entry option with the specified name-value
+
+[[OptionParser#Boolean|Boolean]]  
+Checks if the specified Boolean option exists and is active.
+
+[[OptionParser#Set_Boolean|Set_Boolean]]  
+Set a boolean option to 'on' or 'off', as specified by the argument.
+
+[[OptionParser#Show_Version|Show_Version]]  
+Prints out a short "version" message.
+
+[[OptionParser#Show_Help|Show_Help]]  
+Prints out a short help.
+
+[[OptionParser#List_Options|List_Options]]  
+Prints the list of options.
+
+[[OptionParser#Get_Parsed_Options|Get_Parsed_Options]]  
+Prints options passed to the script.
+
+[[OptionParser#Parse_Options|Parse_Options]]  
+The actual parser. It parses options and arguments passed when invoking
 
 === Add_Option ===
 ----
@@ -80,7 +92,7 @@ See each option's Add_ function header for a more detailed description.
     Adds an option of type boolean. A boolean option has only two possible values: 'on' and 'off', which respectively map to 'true' and 'false'. In fact, anything else than 'on' means 'false'. Since its values are fixed, there is no need to specify a list of possible values. Furthermore, they don't have a default value because they're evaluated at 'false' by default. 
     ==== Usage ==== 
     <code>Add_Option_Boolean <short> <long> <description></code> 
-    <blockquote>Add_Option_Boolean "d" "display" "Informative output only. Do not actually kill any process."</pre> 
+    <pre>Add_Option_Boolean "d" "display" "Informative output only. Do not actually kill any process."</pre> 
     ==== Arguments ==== 
     :; short (char) 
     :: Option's shortening 
@@ -93,7 +105,7 @@ See each option's Add_ function header for a more detailed description.
     Adds a full option entry. An option of this type can assume only one value at a time, chosen among the pool of possible values. 
     ==== Usage ==== 
     <code>Add_Option_Entry <short> <long> <description> [<default> [<values>]]</code> 
-    <blockquote>Add_Option_Entry "s" "same" "What to do when unpackaging over the same version." "ask" "keep remove ask cancel"</pre> 
+    <pre>Add_Option_Entry "s" "same" "What to do when unpackaging over the same version." "ask" "keep remove ask cancel"</pre> 
     ==== Arguments ==== 
     :; short (char) 
     :: Option's shortening 
@@ -110,7 +122,7 @@ See each option's Add_ function header for a more detailed description.
     Adds an option of type list. This is an option which can take a list of values instead of a single one. 
     ==== Usage ==== 
     <code>Add_Option_List <shor> <long> <description> [<default>]</code> 
-    <blockquote>Add_Option_List "s" "sandbox" "Colon-separated list of areas where the restricted user has write access to." "."</pre> 
+    <pre>Add_Option_List "s" "sandbox" "Colon-separated list of areas where the restricted user has write access to." "."</pre> 
     ==== Arguments ==== 
     :; short (char) 
     :: Option's shortening 
@@ -125,7 +137,7 @@ See each option's Add_ function header for a more detailed description.
     Adds a new argument to our array of arguments. 
     ==== Usage ==== 
     <code>Add_Argument <value></code> 
-    <blockquote>Add Argument</pre> 
+    <pre>Add Argument</pre> 
     ==== Arguments ==== 
     :; value (string) 
     :: The argument to be added 
@@ -135,7 +147,7 @@ See each option's Add_ function header for a more detailed description.
     ==== Usage ==== 
     <code>eval `Args_To_Array <name> [<from> [<to>]]`</code> 
     Returns an array called myArray with all non-option arguments. 
-    <blockquote>eval `Args_To_Array myArray`</pre> 
+    <pre>eval `Args_To_Array myArray`</pre> 
     ==== Arguments ==== 
     :; name (string) 
     :: Array's name 
@@ -151,7 +163,7 @@ See each option's Add_ function header for a more detailed description.
     Returns the argument at the specified position. 
     ==== Usage ==== 
     <code>Arg <position></code> 
-    <blockquote>Arg 3</pre> 
+    <pre>Arg 3</pre> 
     ==== Arguments ==== 
     :; position (number) 
     :: Argument's position 
@@ -173,7 +185,7 @@ See each option's Add_ function header for a more detailed description.
     Checks whether a specific option of type 'Entry' exists in our list. 
     ==== Usage ==== 
     <code>Entry <name></code> 
-    <blockquote>Entry "s"</pre> 
+    <pre>Entry "s"</pre> 
     ==== Arguments ==== 
     :; char/string () 
     :: Option's shortening/full name 
@@ -192,7 +204,7 @@ See each option's Add_ function header for a more detailed description.
     Checks whether the specified Entry option has a default value. 
     ==== Usage ==== 
     <code>Is_Entry_Set <name></code> 
-    <blockquote>Is_Entry_Set "s"</pre> 
+    <pre>Is_Entry_Set "s"</pre> 
     ==== Arguments ==== 
     :; char/string () 
     :: Option's shortening/full name 
@@ -208,7 +220,7 @@ See each option's Add_ function header for a more detailed description.
     Checks whether it exists an Entry option with the specified name-value pair. The value can also be empty, in which case the option just has to exist. 
     ==== Usage ==== 
     <code>Is_Entry <option> [<compare>]</code> 
-    <blockquote>Is_Entry "s" "ask"</pre> 
+    <pre>Is_Entry "s" "ask"</pre> 
     ==== Arguments ==== 
     :; option (string) 
     :: Option's name 
@@ -222,7 +234,7 @@ See each option's Add_ function header for a more detailed description.
     Checks if the specified Boolean option exists and is active. 
     ==== Usage ==== 
     <code>Boolean <name></code> 
-    <blockquote>Boolean "no-web"</pre> 
+    <pre>Boolean "no-web"</pre> 
     ==== Arguments ==== 
     :; char/string () 
     :: Option's shortening/full name 
@@ -238,7 +250,7 @@ See each option's Add_ function header for a more detailed description.
     Set a boolean option to 'on' or 'off', as specified by the argument. Defaults to 'on' when no argument is present. 
     ==== Usage ==== 
     <code>Set_Boolean <name> [<value>]</code> 
-    <blockquote>Set_Boolean "batch"</pre> 
+    <pre>Set_Boolean "batch"</pre> 
     ==== Arguments ==== 
     :; char/string () 
     :: Option's shortening/full name 
