@@ -5,9 +5,9 @@ How to access windows shared printers from GoboLinux:<br>
 
 As root:
 
-    mkdir /Programs/Samba/Current/Shared/cups 
-    mkdir /Programs/Samba/Current/Shared/cups/backend 
-    ln -s /Programs/Samba/Current/bin/smbspool /Programs/Samba/Current/Shared/cups/backend/smb 
+    mkdir /Programs/Samba/Current/share/cups 
+    mkdir /Programs/Samba/Current/share/cups/backend 
+    ln -s /Programs/Samba/Current/bin/smbspool /Programs/Samba/Current/share/cups/backend/smb 
     SymlinkProgram samba 
     StopTask cups 
     StartTask cups 
