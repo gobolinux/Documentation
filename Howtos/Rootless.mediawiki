@@ -1,9 +1,0 @@
-Rootless GoboLinux is a way to install GoboLinux environment
-in unprivileged user under unixlike operating systems.
-
-You can read about it [here](http://gobolinux.org/?page=rootless)
-
-An installer [is available](http://github.com/thoughtsofcode/GoboRootless_Installer).
-
-It is also possible to install Rootless GoboLinux in the
-[Cygwin environment under Microsoft Windows](Rootless on Cygwin).
