@@ -1,11 +1,6 @@
-{{ToC}}
+GoboLinux has some design quirks that developed as solutions
+to building software for the GoboLinux file system. 
 
-Sometimes it looks like the World is conspiring against us. People create software packages, utilities and tools in such a way that they can't be seamlessly integrated with GoboLinux. Then, weird solutions are necessary. Unfortunately, weird solutions are weird by definition, and this can lead to confusion. This chapter documents these unusual solutions that had to be used in GoboLinux. Being aware of them can avoid problems.
-
-
-===  Subtopics: ===
-# [[install vs. real_install]]
-# [[Files that cannot be symlinks]]
-# [[Replacements for standard commands]]
-
-{{Handbook}}
+[[install vs. real_install]]
+[[Files that cannot be symlinks]]
+[[Replacements for standard commands]]

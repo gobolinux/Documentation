@@ -28,3 +28,8 @@ The theme file is loaded by the boot scripts core, and is called once for every 
 * ThemeFinish
 
 These functions are the hotspots that glue the theme and the boot scripts core together.
+
+** [[Creating a boot theme]]
+** [[Implementing a boot theme]]
+** [[Testing a boot theme]]
+

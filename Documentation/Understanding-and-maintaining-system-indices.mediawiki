@@ -1,5 +1,3 @@
-{{ToC}}
-
 The two main parts of GoboLinux are /Programs and /System. If you stick to using [[InstallPackage]] and [[Compile]], these two parts will be implicitly kept in sync by [[SymlinkProgram]]. But a lot of power lies in the fact that you can tune how these two worlds interact.
 
 Program entries under /Programs feature a "Current" symlink pointing to a specific version that is "active" in the system. This Current version is taken as the default version when you don't specify a version in scripts, and the link is updated when you install a new version with [[InstallPackage]] or [[Compile]].
@@ -44,4 +42,4 @@ With [[DisableProgram]], you can remove from /System all links that refer to a s
 
 With [[RemoveProgram]], you can remove a program from /Programs and its references from /System in a single step.
 
-{{Handbook}}
+See [[Removing programs]] for more details.

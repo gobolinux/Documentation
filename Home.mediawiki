@@ -1,43 +1,35 @@
 <div style="float:right; border: 1px solid #6eb927; padding: .3em; width: 30%; background-color:#ecf2e6; margin-top: 0; margin-left: 10px; margin-bottom: 10px;">
-* [[The GoboLinux Way]]
+* Overview
+** [[The GoboLinux Way]]
 ** [[The GoboLinux Filesystem Hierarchy]]
-* GoboLinux 016
-** [[Running under VirtualBox]]
-** [[Running under VMWare Workstation Player]]
-** [[Installing-GoboLinux-under-QEMU|Installing and running under QEMU]]
-** [[Installing to external storage devices]]
-** [[Filesystem virtualization with Runner]]
-** [[Installing Dconf]]
-* [[Configuring GoboLinux]]
-** [[Configuring the Boot Process]]
-** [[Hardware configuration]]
-** [[Environment variables]]
+
+* Platforms
+** [[Running under VirtualBox|VirtualBox]]
+** [[Running under VMWare Workstation Player|VMWare Workstation Player]]
+** [[Installing-GoboLinux-under-QEMU|QEMU]]
+** [[Installing to external storage devices|External storage devices]]
+
+* Installation
+** [[Installing GoboLinux]]
+** [[Configuring-the-boot-process| Startup and system settings]]
+
 * [[Packages]]
-* [[Compiling From Source]]
-** [[Compile | The Compile tool]]
-** [[Recipe | Recipes for Compiling Software]]
+* [[Compiling from source]]
+** [[Recipe | Recipes for compiling software]]
+
 * Package management
+** [[Removing programs]]
+** [[Understanding and maintaining system indices]]
 ** [[Updating-packages | Updates]]
-** [[System maintenance]]
 ** [[Freshen]]
-* Boot scripts
-** [[The boot scripts anatomy]]
-*** [[Core of the BootScripts package]]
-*** [[Boot themes]]
-** [[Boot script tasks]]
-** [[Creating a boot theme]]
-*** [[Implementing a boot theme]]
-*** [[Testing a boot theme]]
+
 * [[GoboLinux Command Reference]]
+
 * GoboLinux scripts
-** [[General notes about the scripts]]
-** [[Guidelines for script authors]]
+** [[General notes about the scripts|General notes]]
+** [[Guidelines for script authors|Guidelines for developers]]
+
 * [[Linux kernel topics]]
-** [[Installing a kernel]]
-** [[Kernel patches]]
-*** [[GoboHide]]
-* [[GoboLinux dark corners]]
-** [[install vs. real_install]]
-** [[Files that cannot be symlinks]]
-** [[Replacements for standard commands]]
+
+* [[GoboLinux dark corners|GoboLinux design quirks]]
 </div>
