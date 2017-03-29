@@ -8,6 +8,7 @@
 ** [[Running under VMWare Workstation Player|VMWare Workstation Player]]
 ** [[Installing-GoboLinux-under-QEMU|QEMU]]
 ** [[Installing to external storage devices|External storage devices]]
+** [[https://gobolinux.org/doc/articles/going_embedded.html | Embedded devices ]]
 
 * Installation
 ** [[Installing GoboLinux]]
