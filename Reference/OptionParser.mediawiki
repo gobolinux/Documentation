@@ -92,7 +92,7 @@ See each option's Add_ function header for a more detailed description.
     Adds an option of type boolean. A boolean option has only two possible values: 'on' and 'off', which respectively map to 'true' and 'false'. In fact, anything else than 'on' means 'false'. Since its values are fixed, there is no need to specify a list of possible values. Furthermore, they don't have a default value because they're evaluated at 'false' by default. 
     ==== Usage ==== 
     <code>Add_Option_Boolean <short> <long> <description></code> 
-    <pre>Add_Option_Boolean "d" "display" "Informative output only. Do not actually kill any process."</pre> 
+    <code>Add_Option_Boolean "d" "display" "Informative output only. Do not actually kill any process."</code> 
     ==== Arguments ==== 
     :; short (char) 
     :: Option's shortening 
@@ -105,7 +105,7 @@ See each option's Add_ function header for a more detailed description.
     Adds a full option entry. An option of this type can assume only one value at a time, chosen among the pool of possible values. 
     ==== Usage ==== 
     <code>Add_Option_Entry <short> <long> <description> [<default> [<values>]]</code> 
-    <pre>Add_Option_Entry "s" "same" "What to do when unpackaging over the same version." "ask" "keep remove ask cancel"</pre> 
+    <code>Add_Option_Entry "s" "same" "What to do when unpackaging over the same version." "ask" "keep remove ask cancel"</code> 
     ==== Arguments ==== 
     :; short (char) 
     :: Option's shortening 
@@ -122,7 +122,7 @@ See each option's Add_ function header for a more detailed description.
     Adds an option of type list. This is an option which can take a list of values instead of a single one. 
     ==== Usage ==== 
     <code>Add_Option_List <shor> <long> <description> [<default>]</code> 
-    <pre>Add_Option_List "s" "sandbox" "Colon-separated list of areas where the restricted user has write access to." "."</pre> 
+    <code>Add_Option_List "s" "sandbox" "Colon-separated list of areas where the restricted user has write access to." "."</code> 
     ==== Arguments ==== 
     :; short (char) 
     :: Option's shortening 
@@ -137,7 +137,7 @@ See each option's Add_ function header for a more detailed description.
     Adds a new argument to our array of arguments. 
     ==== Usage ==== 
     <code>Add_Argument <value></code> 
-    <pre>Add Argument</pre> 
+    <code>Add Argument</code> 
     ==== Arguments ==== 
     :; value (string) 
     :: The argument to be added 
@@ -147,7 +147,7 @@ See each option's Add_ function header for a more detailed description.
     ==== Usage ==== 
     <code>eval `Args_To_Array <name> [<from> [<to>]]`</code> 
     Returns an array called myArray with all non-option arguments. 
-    <pre>eval `Args_To_Array myArray`</pre> 
+    <code>eval `Args_To_Array myArray`</code> 
     ==== Arguments ==== 
     :; name (string) 
     :: Array's name 
@@ -163,7 +163,7 @@ See each option's Add_ function header for a more detailed description.
     Returns the argument at the specified position. 
     ==== Usage ==== 
     <code>Arg <position></code> 
-    <pre>Arg 3</pre> 
+    <code>Arg 3</code> 
     ==== Arguments ==== 
     :; position (number) 
     :: Argument's position 
@@ -185,7 +185,7 @@ See each option's Add_ function header for a more detailed description.
     Checks whether a specific option of type 'Entry' exists in our list. 
     ==== Usage ==== 
     <code>Entry <name></code> 
-    <pre>Entry "s"</pre> 
+    <code>Entry "s"</code> 
     ==== Arguments ==== 
     :; char/string () 
     :: Option's shortening/full name 
@@ -204,7 +204,7 @@ See each option's Add_ function header for a more detailed description.
     Checks whether the specified Entry option has a default value. 
     ==== Usage ==== 
     <code>Is_Entry_Set <name></code> 
-    <pre>Is_Entry_Set "s"</pre> 
+    <code>Is_Entry_Set "s"</code> 
     ==== Arguments ==== 
     :; char/string () 
     :: Option's shortening/full name 
@@ -220,7 +220,7 @@ See each option's Add_ function header for a more detailed description.
     Checks whether it exists an Entry option with the specified name-value pair. The value can also be empty, in which case the option just has to exist. 
     ==== Usage ==== 
     <code>Is_Entry <option> [<compare>]</code> 
-    <pre>Is_Entry "s" "ask"</pre> 
+    <code>Is_Entry "s" "ask"</code> 
     ==== Arguments ==== 
     :; option (string) 
     :: Option's name 
@@ -234,7 +234,7 @@ See each option's Add_ function header for a more detailed description.
     Checks if the specified Boolean option exists and is active. 
     ==== Usage ==== 
     <code>Boolean <name></code> 
-    <pre>Boolean "no-web"</pre> 
+    <code>Boolean "no-web"</code> 
     ==== Arguments ==== 
     :; char/string () 
     :: Option's shortening/full name 
@@ -250,7 +250,7 @@ See each option's Add_ function header for a more detailed description.
     Set a boolean option to 'on' or 'off', as specified by the argument. Defaults to 'on' when no argument is present. 
     ==== Usage ==== 
     <code>Set_Boolean <name> [<value>]</code> 
-    <pre>Set_Boolean "batch"</pre> 
+    <code>Set_Boolean "batch"</code> 
     ==== Arguments ==== 
     :; char/string () 
     :: Option's shortening/full name 
