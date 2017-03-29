@@ -17,7 +17,7 @@
 * Packages
 ** [[Using binary packages]]
 ** [[Compiling from source]]
-** [[Steps of the Compile process]]
+** [[https://gobolinux.org/scripts.html|Steps of the Compile process]]
 ** [[Recipe|Recipes for compiling software]]
 
 * Package management
