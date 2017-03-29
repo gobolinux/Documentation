@@ -43,19 +43,12 @@
 * [[DeduceName]] - Scan a file to find the capitalization of a program name.
 * [[FiboSandbox]] - Run the program in a protected sandbox, as a restricted user.
 * [[FixInfo]] - Remakes the entries in the info 'dir' file.
-* [[FixLibtoolLa]] - Convert a .la file created by libtool to make it GoboLinux-compliant.
 * [[NamingConventions]] - Heuristics to determine a capitalized, GoboLinux-like name.
 * [[SandboxInstall]] - Runs 'make install', using a sandbox environment.
-
-==  Kernel management ==
-
-* [[CleanModules]] - Clean up all kernel modules that can be removed.
-* [[CreateInitRD]]
 
 ==  System maintenance ==
 
 * [[AddUser]] - Register a new user in this system.
-* [[EditScript]] - Create or edit a GoboLinux script.
 * [[SystemFind]] - Special 'find' utility for searches in the /System hierarchy.
 * [[SystemInfo]] - Display some basic system information. Useful for /etc/issue.
 
@@ -67,7 +60,6 @@
 * [[GrepReplace]] - Swaps occurrences of a regex for another word in a series of files.
 * [[IsExecutable]] - Determines if a file is executable.
 * [[RemoveEmpty]] - Remove all empty directories inside current (or a given) directory.
-* [[RenameCaps]] - Rename files, capitalizing them.
 
 ==  Wrappers ==
 
@@ -88,6 +80,5 @@
 
 * [[GoboPath]]
 * [[ScriptFunctions]]
-* [[TemplateScript]]
 
 {{Reference}}
