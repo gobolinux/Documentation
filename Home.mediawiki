@@ -17,7 +17,7 @@
 ** [[Using binary packages]]
 ** [[Compiling from source]]
 ** [[Steps of the Compile process]]
-** [[Recipe | Recipes for compiling software]]
+** [[Recipe|Recipes for compiling software]]
 
 * Package management
 ** [[Removing programs]]
