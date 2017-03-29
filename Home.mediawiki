@@ -14,7 +14,9 @@
 ** [[Configuring-the-boot-process| Startup and system settings]]
 
 * [[Packages]]
-* [[Compiling from source]]
+** [[Using binary packages]]
+** [[Compiling from source]]
+** [[Steps of the Compile process]]
 ** [[Recipe | Recipes for compiling software]]
 
 * Package management
