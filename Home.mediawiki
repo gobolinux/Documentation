@@ -1,7 +1,10 @@
 <div style="float:right; border: 1px solid #6eb927; padding: .3em; width: 30%; background-color:#ecf2e6; margin-top: 0; margin-left: 10px; margin-bottom: 10px;">
-* Overview
+
 ** [[The GoboLinux Way]]
 ** [[The GoboLinux Filesystem Hierarchy]]
+
+** [[Installing GoboLinux]]
+** [[Configuring-the-boot-process| Startup and system settings]]
 
 * Platforms
 ** [[Running under VirtualBox|VirtualBox]]
@@ -10,11 +13,7 @@
 ** [[Installing to external storage devices|External storage devices]]
 ** [[https://gobolinux.org/doc/articles/going_embedded.html | Embedded devices ]]
 
-* Installation
-** [[Installing GoboLinux]]
-** [[Configuring-the-boot-process| Startup and system settings]]
-
-* Packages
+* Installing software
 ** [[Using binary packages]]
 ** [[Compiling from source]]
 ** [[https://gobolinux.org/scripts.html|Steps of the Compile process]]
@@ -25,6 +24,7 @@
 ** [[Understanding and maintaining system indices]]
 ** [[Updating-packages | Updates]]
 ** [[Freshen]]
+** [[Dependencies blacklisting]]
 
 * [[GoboLinux Command Reference]]
 
@@ -32,7 +32,6 @@
 ** [[General notes about the scripts|General notes]]
 ** [[Guidelines for script authors|Guidelines for developers]]
 
-* [[Linux kernel topics]]
-
-* [[GoboLinux dark corners|GoboLinux design quirks]]
+** [[Linux kernel topics]]
+** [[GoboLinux dark corners|GoboLinux design quirks]]
 </div>
