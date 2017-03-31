@@ -1,7 +1,0 @@
-[[Image:Que.png|right|Que]]
-Our mascot. It's a penguin wearing [[Fibo]]'s coat.
-
-Memorable quote:
-"Tux is ugly." -- Que
-
-{{Reference|2009|April|4|Kundor}}
