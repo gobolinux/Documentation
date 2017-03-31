@@ -1,3 +1,0 @@
-Following [[StartTask]], [[StopTask]] has the same usage syntax, allowing a running task to be finished. "[[StopTask]] <[[TaskName]]>" does the job.
-
-{{Reference}}

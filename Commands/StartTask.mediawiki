@@ -1,5 +1,0 @@
-Tasks are contained within some special packages, and the available tasks can be found at /System/Tasks.
-
-In order to start a task, one has to call "[[StartTask]] ''TaskName''". Tasks are written so that they are automatically put into background, making it unnecessary to explicitly include the control operator "&" after this command.
-
-{{Reference}}
