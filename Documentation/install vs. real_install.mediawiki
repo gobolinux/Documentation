@@ -1,10 +1,14 @@
 {{ToC}}
 
-Usually, during software installation, the <code>install</code> program is used to copy files to their destination directories with the proper attributes. Many times, the ownership of files must be given to the superuser and programs that are not aware of GoboLinux do this by running <code>install</code> passing the superuser name hardcoded to <code>root</code>. Since the superuser name in GoboLinux is configurable (as a sample, in the LiveCD it is set to <code>gobo</code>), this results in an error. The hack used to solve this problem follows.
+The installation of programs on GoboLinux is typically protected by a sandbox. The distribution ships with two different sandbox implementations: UnionSandbox and FiboSandbox. The former is a modern implementation which uses file system unions to achieve isolation. The latter creates an isolated environment with commands orchestrated by a special user account (named fibo) with no special privileges. FiboSandbox is also the default installation method of GoboLinux Rootless.
+
+Usually, during software installation, the <code>install</code> program is used to copy files to their destination directories with the proper attributes. Many times, the ownership of files must be given to the superuser and programs that are not aware of GoboLinux do this by running <code>install</code> passing the superuser name set to <code>root</code>.
+
+When the isolation is provided by FiboSandbox, any attempts to change ownership of installed files results in an error. Thus, we employ the following workaround to enable the compilation of recipes using Compile on GoboLinux Rootless.
 
 /System/Index/bin/install points to the <code>install</code> script from the Scripts package,
-not to the <code>install</code> program from the FileUtils package. This <code>install</code> script
+not to the <code>install</code> program from the CoreUtils package. This <code>install</code> script
 translates the superuser name and forwards the real installation
-work to <code>real_install</code>, which is, as the name suggests, a symlink to the "real" <code>install</code> from FileUtils.
+work to <code>real_install</code>, which is, as the name suggests, a symlink to the "real" <code>install</code> from CoreUtils.
 
 {{Handbook}}
