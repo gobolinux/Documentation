@@ -2,5 +2,7 @@ GoboLinux has some design quirks that developed as solutions
 to building software for the GoboLinux file system. 
 
 [[install vs. real_install]]
+
 [[Files that cannot be symlinks]]
+
 [[Replacements for standard commands]]
