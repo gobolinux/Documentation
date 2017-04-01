@@ -1,6 +1,18 @@
-Runner is a brand new filesystem virtualization tool, specifically designed for GoboLinux. It dynamically changes a process' view of /System/Index based on the program's Dependencies file.
+Runner is a utility for launching programs under GoboLinux
+that ensures filesystem view of the process will match its dependencies. 
+In other words, Runner eliminates the possibility for library conflicts when
+running an executable.
 
-Instead of using full-fledged containers (which carry an entire distro inside them!) just to avoid library conflicts when running an executable, in GoboLinux you can launch a program with Runner to make sure the filesystem view of the process will match its dependencies. Runner builds a custom mount table for the process, like container tools do, but without all the file duplication: it dynamically picks the correct parts of your /Programs tree. This approach is only feasible because in GoboLinux programs are logically organized in the filesystem.
+Runner is a filesystem virtualization tool that sets up a
+view of the /System/Index for a process based on the
+executable program's Dependencies file.  It is run as a
+wrapper, e.g. ```Runner SomeApp``.
+
+Runner builds a custom mount table for the process, like
+container tools do, but without duplicating files. It
+dynamically picks the correct parts of your /Programs tree.
+This approach is feasible in GoboLinux due to way programs
+are each confined to their own subdirectories. 
 
 # Preparing the filesystem view
 
@@ -8,9 +20,15 @@ All you have to do is to make sure the dependencies of the program you want to r
 
 Most likely, the program you want to run will already have a sane Dependencies file -- every binary package we distribute will have one, just like every compilation recipe do.
 
-# GoboLinux Runner and the Compile tool
+# The Compile tool
 
-Our Compile tool is fully integrated with Runner. When you type `Compile Foo`, Compile fetches the recipe for Foo and passes both the Dependencies and BuildDependencies files of that recipe to Runner. By doing so, we ensure that the right versions of the libraries, headers, and executables needed by that package will be mapped onto /System/Index.
+Compile makes use of Runner to control the environment
+for building software packages. When you type `Compile Foo`,
+Compile fetches the recipe for Foo and passes both the
+Dependencies and BuildDependencies files of that recipe to
+Runner. This ensure that the right versions of
+the libraries, headers, and executables needed by that
+package will be mapped onto /System/Index.
 
 # Spawning an application with Runner
 
