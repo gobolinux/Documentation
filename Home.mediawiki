@@ -1,5 +1,3 @@
-<div style="float:right; border: 1px solid #6eb927; padding: .3em; width: 30%; background-color:#ecf2e6; margin-top: 0; margin-left: 10px; margin-bottom: 10px;">
-
 * [[The GoboLinux Way]]
 * [[The GoboLinux Filesystem Hierarchy]]
 
@@ -33,6 +31,5 @@
 ** [[General notes about the scripts|General notes]]
 ** [[Guidelines for script authors|Guidelines for developers]]
 
-** [[Linux kernel topics]]
-** [[GoboLinux dark corners|GoboLinux design quirks]]
-</div>
+* [[Linux kernel topics]]
+* [[GoboLinux dark corners|GoboLinux design quirks]]
