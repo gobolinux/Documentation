@@ -1,7 +1,7 @@
-GoboLinux has some design quirks that developed as solutions
-to building software for the GoboLinux file system. 
+GoboLinux has some design features to assist adapting
+software builds to the GoboLinux directory structure.
 
-[[install vs. real_install]]
+[[Sandboxing under GoboLinux]]
 
 [[Files that cannot be symlinks]]
 
