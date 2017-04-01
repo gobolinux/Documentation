@@ -1,4 +1,4 @@
-Runner is a utility for launching programs under GoboLinux
+[[Runner]] is a utility for launching programs under GoboLinux
 that ensures filesystem view of the process will match its dependencies. 
 In other words, Runner eliminates the possibility for library conflicts when
 running an executable.
