@@ -28,12 +28,12 @@
 * [[GetRecipe]] - Fetch a recipe and insert it in the recipes tree.
 * [[MakeRecipe]] - Create a recipe template.
 * [[EditRecipe]] - Edit a recipe.
-* [[PackRecipe]] (formerly [[GenRecipeStore]]) - Generate "packed recipes", ready for submission.
+* [[PackRecipe]] - Generate a recipe tarball, ready for submission.
 * [[CreatePackage]] - Make a GoboLinux package.
 * [[NewVersion]] - Update a recipe to a new version.
 * [[PrepareProgram]] - Prepares applications for instalation, running the 'configure'
 * [[KeyManager]] - Manage digital signature keys for GoboLinux packages.
-* [[Hashes]] - Manages [[FileHash]] and [[FileHash.sig]] in a GoboLinux package.
+* [[Hashes]] - Manages FileHash and FileHash.sig files in a GoboLinux package.
 * [[MergeTree]] - Mirrors one directory structure into another.
 
 ===  Helper tools ===
