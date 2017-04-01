@@ -5,14 +5,14 @@ install phase are limited to an appropriate part of the
 filesystem. GoboLinux 016 ships with two different sandbox
 implementations. 
 
-[[UnionSandbox]]  is a modern implementation
-which uses file system unions to achieve isolation.
-FiboSandbox sets up an isolated environment and commands
-run by a special user (named fibo) without root
-privileges. 
+[[UnionSandbox]] is a modern implementation which uses file
+system unions to achieve isolation. It is the default
+sandbox installer.
 
-[[FiboSandbox]] is the default software installation
-method for GoboLinux Rootless.
+FiboSandbox sets up an isolated environment and commands are
+run by a special user (named fibo) without root privileges.
+[[FiboSandbox]] is the sandbox installer for GoboLinux
+Rootless.
 
 During the installation phase of the software build process, 
 most build systems call the <code>install</code>
