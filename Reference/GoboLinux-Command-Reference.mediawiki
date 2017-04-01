@@ -72,11 +72,8 @@
 * [[BootDriver]] - The boot controller script.
 * [[StartTask]] - Run a boot task from the command line.
 * [[StopTask]] - Stop a boot task from the command line.
-* [[TestBootTheme]]
 
 ==  Special files ==
 
 * [[GoboPath]]
-* [[ScriptFunctions]]
-
-{{Reference}}
+* ScriptFunctions
