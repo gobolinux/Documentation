@@ -12,7 +12,7 @@
 ** [[Running under HyperV|Hyper-V]]
 ** [[Installing-GoboLinux-under-QEMU|QEMU]]
 ** [[Installing to external storage devices|External storage devices]]
-** [https://gobolinux.org/doc/articles/going_embedded.html Embedded devices ]]
+** [https://gobolinux.org/doc/articles/going_embedded.html Embedded devices]
 
 * Installing software
 ** [[Using binary packages]]
@@ -25,7 +25,7 @@
 ** [[Understanding and maintaining system indices]]
 ** [[Updating-packages | Updates]]
 ** [[Freshen]]
-** [[Dependencies blacklisting]]
+** [[Dependencies blacklist]]
 
 * [[GoboLinux Command Reference]]
 
