@@ -1,4 +1,3 @@
-
 ==  Package management ==
 
 === Finding ===
@@ -9,7 +8,6 @@
 * [[SuggestDuplicates]] - Provide a list of programs that are not linked to Current
 * [[PrioritiseUpdates]] - Order output of [[SuggestUpdates]] by dependency
 * [[Dependencies]] - Queries dependencies in a GoboLinux package.
-* [[AllDependencies]] - Show the entire dependency hierarchy for a package.
 
 === Installing ===
 * [[Compile]] - Compile and install software from sources using GoboLinux recipe.

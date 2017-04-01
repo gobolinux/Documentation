@@ -5,6 +5,7 @@
 * [[Configuring-the-boot-process| Startup and system settings]]
 
 * Platforms
+** [http://gobolinux.org/?page=rootless Rootless Gobo: Installing GoboLinux as an unprivileged user]
 ** [[Running under VirtualBox|VirtualBox]]
 ** [[Running under VMWare Workstation Player|VMWare Workstation Player]]
 ** [[Running under HyperV|Hyper-V]]
