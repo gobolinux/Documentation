@@ -1,140 +1,136 @@
-[[Installing-GoboLinux.md]]
+[[Installing-GoboLinux]]
 
-[[Boot-script-tasks.mediawiki]]
+[[Boot-script-tasks]]
 
-[[Using-binary-packages.mediawiki]]
+[[Using-binary-packages]]
 
-[[Home.mediawiki]]
+[[Removing-programs]]
 
-[[Removing-programs.mediawiki]]
+[[General notes about the scripts]]
 
-[[allarts]]
+[[Files that cannot be symlinks]]
 
-[[General notes about the scripts.mediawiki]]
+[[GoboLinux dark corners]]
 
-[[Files that cannot be symlinks.mediawiki]]
+[[Testing a boot theme]]
 
-[[GoboLinux dark corners.mediawiki]]
+[[The GoboLinux Filesystem Hierarchy]]
 
-[[Testing a boot theme.mediawiki]]
+[[Installer]]
 
-[[The GoboLinux Filesystem Hierarchy.mediawiki]]
+[[Linux kernel topics]]
 
-[[Installer.mediawiki]]
+[[install vs. real_install]]
 
-[[Linux kernel topics.mediawiki]]
+[[Replacements for standard commands]]
 
-[[install vs. real_install.mediawiki]]
+[[Understanding-and-maintaining-system-indices]]
 
-[[Replacements for standard commands.mediawiki]]
+[[Fibo]]
 
-[[Understanding-and-maintaining-system-indices.mediawiki]]
+[[Configuration files]]
 
-[[Fibo.mediawiki]]
+[[Implementing a boot theme]]
 
-[[Configuration files.mediawiki]]
+[[Guidelines for script authors]]
 
-[[Implementing a boot theme.mediawiki]]
+[[Package Naming Guidelines]]
 
-[[Guidelines for script authors.mediawiki]]
+[[Notes on command-line switches]]
 
-[[Package Naming Guidelines.mediawiki]]
+[[Creating a boot theme]]
 
-[[Notes on command-line switches.mediawiki]]
+[[Compiling-from-source]]
 
-[[Creating a boot theme.mediawiki]]
+[[Compile.conf]]
 
-[[Compiling-from-source.mediawiki]]
+[[Shell Scripting Coding Style]]
 
-[[Compile.conf.mediawiki]]
+[[GetAvailable.conf]]
 
-[[Shell Scripting Coding Style.mediawiki]]
+[[Installing-GoboLinux-under-QEMU]]
 
-[[GetAvailable.conf.mediawiki]]
+[[Rootless on Cygwin]]
 
-[[Installing-GoboLinux-under-QEMU.md]]
+[[GoboLinux PPC]]
 
-[[Rootless on Cygwin.mediawiki]]
+[[Running-under-VirtualBox]]
 
-[[GoboLinux PPC.mediawiki]]
+[[Mactel]]
 
-[[Running-under-VirtualBox.md]]
+[[Installing GoboLinux under vmware]]
 
-[[Mactel.mediawiki]]
+[[Running-under-HyperV]]
 
-[[Installing GoboLinux under vmware.mediawiki]]
+[[GoboLinux Embedded]]
 
-[[Running-under-HyperV.md]]
-
-[[GoboLinux Embedded.mediawiki]]
-
-[[Running-under-VMWare-Workstation-Player.md]]
+[[Running-under-VMWare-Workstation-Player]]
 
 [[history-of-compile]]
 
-[[Environment variables.mediawiki]]
+[[Environment variables]]
 
-[[Configuring-the-boot-process.mediawiki]]
+[[Configuring-the-boot-process]]
 
-[[Installing-packages-from-the-LiveCD.mediawiki]]
+[[Installing-packages-from-the-LiveCD]]
 
-[[SandboxInstall.mediawiki]]
+[[SandboxInstall]]
 
-[[Filesystem-virtualization-with-Runner.md]]
+[[Filesystem-virtualization-with-Runner]]
 
-[[Using-Ndiswrapper-with-proprietary-wireless-drivers.mediawiki]]
+[[Using-Ndiswrapper-with-proprietary-wireless-drivers]]
 
-[[GAMPS Howto.mediawiki]]
+[[GAMPS Howto]]
 
-[[Manual Compile.mediawiki]]
+[[Manual Compile]]
 
-[[Set external mailto handler in Firefox.mediawiki]]
+[[Set external mailto handler in Firefox]]
 
-[[Installing-to-external-storage-devices.md]]
+[[Installing-to-external-storage-devices]]
 
-[[PackageSigning.mediawiki]]
+[[PackageSigning]]
 
-[[Upgrade Glibc.mediawiki]]
+[[Upgrade Glibc]]
 
-[[HAL Howto.mediawiki]]
+[[HAL Howto]]
 
-[[Java on GoboLinux.mediawiki]]
+[[Java on GoboLinux]]
 
-[[Updating-packages.mediawiki]]
+[[Updating-packages]]
 
-[[Dependencies-blacklist.mediawiki]]
+[[Dependencies-blacklist]]
 
-[[General disclaimer.mediawiki]]
+[[General disclaimer]]
 
-[[Boot-Themes.mediawiki]]
+[[Boot-Themes]]
 
-[[The GoboLinux Way.mediawiki]]
+[[The GoboLinux Way]]
 
-[[Recipe types.mediawiki]]
+[[Recipe types]]
 
-[[Other options.mediawiki]]
+[[Other options]]
 
-[[Dynamic variables.mediawiki]]
+[[Dynamic variables]]
 
-[[Hooks.mediawiki]]
+[[Hooks]]
 
-[[Patches.mediawiki]]
+[[Patches]]
 
-[[Resources-files.mediawiki]]
+[[Resources-files]]
 
-[[How-to-commit-recipes.mediawiki]]
+[[How-to-commit-recipes]]
 
-[[Writing-Recipes.mediawiki]]
+[[Writing-Recipes]]
 
-[[Use-flags.md]]
+[[Use-flags]]
 
-[[Recipe.mediawiki]]
+[[Recipe]]
 
-[[Available use flags.mediawiki]]
+[[Available use flags]]
 
-[[Binary-Recipes.mediawiki]]
+[[Binary-Recipes]]
 
-[[Recipe-file-structure.mediawiki]]
+[[Recipe-file-structure]]
 
-[[Hints File.mediawiki]]
+[[Hints File]]
 
