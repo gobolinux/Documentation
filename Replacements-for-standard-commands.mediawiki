@@ -12,7 +12,7 @@ The replacements are provided by several different packages. All except <code>in
 * make - aliased to [[ColorMake]] in the Scripts package to produce colorful output
 * info - aliased to Info in the Pinfo package
 * man - aliased to Man in the Pinfo package
-* install - install in CoreUtils has been renamed to real_install with install in the Scripts package as a wrapper (see section "[[install vs. real_install]]" for a detailed explanation)
+* install - install in CoreUtils has been renamed to real_install with install in the Scripts package as a wrapper (see section [[Sandboxing under GoboLinux]] for a detailed explanation)
 * which - the Scripts package provides a "which" script which resolves symlinks in the path of the returned program, so that it indicates the /Programs path the binary refers to.
 
 Aliases enabling "enhanced replacements" such as Htop and Pinfo are set in the Environment section of these packages. This way, if you want to stick to plain <code>top</code> and/or <code>info</code>, all you need to do is to remove (or just not install) these replacements.
