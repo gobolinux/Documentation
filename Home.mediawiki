@@ -15,7 +15,7 @@
 * Installing software
 ** [[Using binary packages]]
 ** [[Compiling from source]]
-** [https://gobolinux.org/scripts.html Steps of the Compile process]
+** [[Steps of the Compile process]]
 ** [[Recipe|Recipes for compiling software]]
 
 * Package management
