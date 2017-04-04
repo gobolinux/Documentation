@@ -18,15 +18,15 @@ To be visible to other software, these files are symlinked into standard
 locations in the new directory hierarchy under `/System/Index`:
 
       
-    /System/Index/Executables/ping  
-    /System/Index/Libraries/libpng.so.3  
+    /System/Index/bin/ping  
+    /System/Index/lib/libpng.so.3  
 
 Traditional Unix paths are also symlinks to the `/System/Index`
 directory structure:
       
-    /bin     -> /System/Index/Executables  
-    /usr/bin -> /System/Index/Executables  
-    /usr/lib -> /System/Index/Libraries  
+    /bin     -> /System/Index/bin  
+    /usr/bin -> /System/Index/bin  
+    /usr/lib -> /System/Index/lib  
     /etc     -> /System/Settings
 
 As a result, most things just work. :-)  For example,
