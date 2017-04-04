@@ -5,8 +5,8 @@ make, and install a particular software package.
 
 * [[Writing Recipes]]
 * [[Recipe file structure]]
-* [[Resources files]]
 * [[Recipe types]]
+* [[Resources files]]
 * [[Hooks]]
 * [[Dynamic variables]]
 * [[Patches]]
