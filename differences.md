@@ -29,10 +29,10 @@ directory structure:
     /usr/lib -> /System/Index/Libraries  
     /etc     -> /System/Settings
 
-As a result, most things just work. :-)  For example,
-GoboLinux will correctly dispatch a script with a
-`#!/usr/bin/env perl` style shebang line or hardcoded path
-such as `#!/usr/bin/python` to the proper interpreter.
+As a result, most things just work. For example, GoboLinux will
+correctly dispatch scripts with shebang lines such as
+`#!/usr/bin/env perl` or `#!/usr/bin/python` to the proper
+interpreter.
 
 This architecture -- installing each program under its own directory,
 and making executables, headers other resources available via symlinks
@@ -44,6 +44,6 @@ and making executables, headers other resources available via symlinks
 
 The system is administered through a limited set of
 [utility programs](GoboLinux-Command-Reference).
-Managing dependency relations among software is accomplished
+Tracking dependency relations among software is accomplished
 through the [GoboLinux build system](Compiling-from-source)
 and its library of ["compile recipes"](Recipe).
