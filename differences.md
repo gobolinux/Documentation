@@ -4,20 +4,13 @@ In short: What makes GoboLinux unique?
 GoboLinux has a directory structure different from other Linux
 distributions. In GoboLinux, all files for a program, including
 executables, headers and libraries, are installed below a single
-directory that belongs to that program. So the
-
-    ping
-
+directory that belongs to that program. So the `ping`
 utility might reside in
 
       
     /Programs/Netkit-Base/0.17/bin/ping  
 
-and
-
-    libpng.so.3
-
-in
+and `libpng.so.3` in
 
     /Programs/LibPNG/1.2.5/lib/libpng.so.3  
 
@@ -37,7 +30,7 @@ directory structure:
     /usr/lib -> /System/Index/Libraries  
 
 So for example, a shell script expecting to run `/usr/bin/ping`, will
-continue to do so under GoboLinux.
+continue to find it under GoboLinux.
 
 This architecture -- installing each program under its own directory,
 and making executables, headers other resources available via symlinks
@@ -53,6 +46,6 @@ adminster the system could be reasonably implemented as shell scripts,
 which GoboLinux developers chose to do.
 
 Managing dependency relations among software is accomplished through the
-[GoboLinux build system](?page=compile) and its library of ["compile
+[GoboLinux build system](Compiling-from-source) and its library of ["compile
 recipes"](Recipe).
 
