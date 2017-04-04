@@ -1,71 +1,41 @@
-{{Template:Handbook Navigation}}
-
-* '''/Programs/''' - The programs directories. Under this directory, you find a subdirectory per program. Each program directory, on its turn, contains one or more version directories, and optionally, Settings and Variable subdirectories. See section "[[Anatomy of a package]]" for details on the structure of programs directories.
-* '''/Users/''' - The users' home directories. Let's say you have a user on your system called ''will''. The ''will'' home directory will be /Users/will. Even the superuser (typically called ''root'') has its home under /Users. It's possible to put /Users in a separate partition, so you won't have to worry about moving your personal files around when reinstalling/formatting, though in typical systems it's easier to keep the whole system in a single partition so that managing free space is easier.
-{{question | what about a /Users/username/Settings directory to hold all the application generated files in one place instead of cluttering the user directory root (.kde, .zshrc, ... would become /Users/username/Settings/.kde) ?}}
-* '''/System/''' - Crucial system files. Most are managed by system applications (e.g. /System/Settings/passwd) and GoboLinux scripts (e.g. /System/Index).
-** '''Links/''' - Contains "links" directories that index the files under /Programs.
-*** '''Environment/''' - Links to environment files. These are compiled into a Cache file and loaded by the shell, allowing programs to register their own environment variables.
-*** '''Executables/''' - Contains links to files from the programs' bin and sbin directories.
-*** '''Headers/''' - This directory contains links to files from the programs' include directories.
-*** '''Libraries/''' - Links to files from the programs' lib directories.
-*** '''Manuals/''' - Contents of manuals and info directories.
-**** '''info''' - Links to files from the programs' info directories.
-**** '''man{1-9}/''' - Links to files from the programs' man{1-9} directories.
-*** '''Shared/''' - Links to files from the programs' share directories.
-*** '''Tasks/''' - Links to the programs' boot tasks from their Resources/Tasks directories.
-** '''Settings/''' - Configuration files and links to files from the programs' Settings directories.
-*** '''BootScripts/''' - Scripts used during system boot. Actually, this is a symlink to Settings/BootScripts/ on /Programs/BootScripts.
-** '''Variable/''' - Multi-purpose log, temporary, transient and spool files.
-*** '''tmp/''' - Temporary files.
-** '''Kernel/''' - Kernel-related directories.
-*** '''Boot/''' - Programs and configuration files used during operating system bootstrap. This is where the kernel image and bootloader configuration files are located.
-*** '''Devices/''' - Device files (managed by Udev).
-*** '''Modules/''' - Contains the various kernel modules, organized by the kernel release.
-*** '''Objects/''' - Provides a view of the kernel's device tree (introduced with the sysfs filesystem in the kernel 2.6 series).
-*** '''Status/''' - Kernel status files (managed by the proc filesystem ).
-* '''/Files/''' - Files hold structured data that are used by programs but that are not part of the programs themselves. Those files are usually stand-alone entities, like fonts, codecs and plugins (and as such, do not require package management). Additionally, applications may define subdirectories of their own to store site-specific data -- [[Compile]] uses it.
-** '''Codecs/''' - multimedia players such as MPlayer are configured with this path as the location to find external codecs.
-** '''Documentation/''' - how-to documents on various subjects
-** '''Fonts/''' - fonts (character typefaces, as used by the X Window System, Ghostscript and the Linux console). Contains subdirectories such as '''TrueType'''. Font path configuration for X can be found in /System/Settings/X11/xorg.conf and /System/Settings/fonts/fonts.conf.
-** '''Plugins/''' - plugins, such as the ones needed by browsers
-** '''Compile/''' - Recipes, packages, sources, etc. used by the [[Compile]] tool.
-* '''/Mount/''' - mounting point for additional local or remote filesystems. Common subdirectories are '''CD-ROM''', '''Floppy''' and '''Zip'''.
-* '''/Depot/''' - repository for users' files. This repository is meant to be organized as the user sees fit. No subdirectories of /Depot are considered part of the standard GoboLinux hierarchy.
-
-
-Here is an overview of the filesystem tree.
-The legacy folders (on the ":" part of the tree) are hidden by [[GoboHide]]; as you can see they are links to the GoboLinux folders.
+Here is an overview of the GoboLinux filesystem tree.  The legacy folders (on
+the ":" part of the tree) are links to the corresponding GoboLinux folders.
+The legacy folders are excluded from default directory view by [[GoboHide]].
 
     / 
-    |-- Depot 
-    |-- Files 
-    |   |-- Compile 
+    |-- Depot                 - user files, ignored by GoboLinux
+    |-- Files                 - for resources belonging to the system and to individual programs 
+    |   |-- Codecs            - multimedia players use this path to find external codecs.
+    |   |-- Compile           - sources and other files used by the Compile tool
     |   |   |-- Archives 
     |   |   |-- Sources 
     |   |   `-- Store 
     |   |-- Descriptions 
     |   |-- Fonts 
+    |   |-- Plugins           - for browsers or other applications
     |   `-- Wallpapers 
-    |-- Mount 
-    |-- Programs 
+    |-- Mount                 - mountpoints for filesystems
+    |-- Programs              - installed software
     |-- System 
-    |   |-- Kernel 
-    |   |   |-- Boot 
-    |   |   |-- Devices 
-    |   |   |-- Modules 
-    |   |   |-- Objects 
-    |   |   `-- Status 
-    |   |-- Links 
-    |   |   |-- Environment 
-    |   |   |-- Executables 
-    |   |   |-- Headers 
-    |   |   |-- Libraries 
-    |   |   |-- Manuals 
-    |   |   |-- Shared 
-    |   |   `-- Tasks 
-    |   |-- Settings 
-    |   `-- Variable 
+    |   |-- Kernel
+    |   |   |-- Boot          - kernel images, config files and programs needed to boot
+    |   |   |-- Devices       - device files (managed by Udev).
+    |   |   |-- Modules       - loadable kernel modules (device drivers)
+    |   |   |-- Objects       - a view of the kernel's device tree 
+    |   |   `-- Status        - kernel status files (belonging to the /proc filesystem)
+    |   |-- Index             - Links to various resources under /Programs.
+    |   |   |-- Environment   - links to program files declaring environment variables. 
+    |   |   |-- Executables   - links to files in programs' bin/ and sbin/ directories
+    |   |   |-- Headers       - links to files in programs' include/ directories
+    |   |   |-- Libraries     - links to files in programs' lib/ directories.
+    |   |   |-- Manuals       - documentation resources
+    |   |        |-- info     - links to files in programs' info directories.
+    |   |        `-- man{1-9} - links to files in programs' man{1-9} directories.
+    |   |   |-- Shared        - links to files in programs' share/ directories.
+    |   |   `-- Tasks         - links to programs' boot tasks (from their Resources/Tasks/ directory)
+    |   |-- Settings          - system config files and links to files in program's Settings/ directories.
+    |   |   `-- BootScripts   - scripts used for boot, symlink to /Programs/BootScripts/Settings/BootScripts/
+    |   `-- Variable          - for various log, temporary, transient and spool files
     |       |-- cache 
     |       |-- empty 
     |       |-- lib 
@@ -73,8 +43,8 @@ The legacy folders (on the ":" part of the tree) are hidden by [[GoboHide]]; as 
     |       |-- log 
     |       |-- run 
     |       |-- spool 
-    |       `-- tmp 
-    |-- Users 
+    |       `-- tmp
+    |-- Users                 - contains users' home directories
     : 
     : 
     :-- etc  -> System/Settings 
@@ -95,6 +65,3 @@ The legacy folders (on the ":" part of the tree) are hidden by [[GoboHide]]; as 
         |-- lib     -> ../System/Index/lib 
         |-- man     -> ../System/Index/share/man 
         `-- share   -> ../System/Index/share 
-
-
-{{Handbook}}
