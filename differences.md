@@ -23,17 +23,16 @@ locations in the new directory hierarchy under `/System/Index`:
 
 Traditional Unix paths are also symlinks to the `/System/Index`
 directory structure:
-
       
-    /bin -> /System/Index/Executables  
+    /bin     -> /System/Index/Executables  
     /usr/bin -> /System/Index/Executables  
     /usr/lib -> /System/Index/Libraries  
+    /etc     -> /System/Settings
 
-This means that GoboLinux will correctly dispatch
-scripts with a shebang line to the proper interpreter.
-The `#!/usr/bin/env perl` idiom, and hardcoded
-interpreter paths such as `#!/usr/bin/python` will be handled
-correctly.
+As a result, most things just work. :-)  For example,
+GoboLinux will correctly dispatch a script with a
+`#!/usr/bin/env perl` style shebang line or hardcoded path
+such as `#!/usr/bin/python` to the proper interpreter.
 
 This architecture -- installing each program under its own directory,
 and making executables, headers other resources available via symlinks
