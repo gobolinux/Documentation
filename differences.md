@@ -40,7 +40,7 @@ and making executables, headers other resources available via symlinks
 
 -   different versions of libraries can coexist
 -   it's trivial to uninstall software
--   there is no need for a package database.
+-   there's no need for a database of installed files
 
 The system is administered through a limited set of
 [utility programs](GoboLinux-Command-Reference).
