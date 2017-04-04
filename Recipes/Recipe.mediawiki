@@ -1,19 +1,19 @@
 Recipes are directions to [[Compile]] on how to configure,
-make, and install a particular software package. 
+build, and install a particular software package. 
 
 == Topics ==
 
+* [http://recipes.gobolinux.org/ Online recipe browser]
 * [[Writing Recipes]]
-* [[Recipe file structure]]
+* [[How to Commit Recipes]]
 * [[Recipe types]]
+* [[Recipe file structure]]
 * [[Resources files]]
 * [[Hooks]]
 * [[Dynamic variables]]
 * [[Patches]]
 * [[Other options]]
-* [[Binary recipes]]
-* [[How to Commit Recipes]]
-* [http://recipes.gobolinux.org/ Online recipe browser]
+* [[Binary Recipes|Recipes for precompiled software (such as * Skype or Adobe Flash Player)]]
 * [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes Recipes mailing list ]
 
 == Commands ==
