@@ -29,8 +29,11 @@ directory structure:
     /usr/bin -> /System/Index/Executables  
     /usr/lib -> /System/Index/Libraries  
 
-So for example, C program that depends on `/usr/include/stdio.h`
-to compile will find it under GoboLinux.
+This means that GoboLinux will correctly dispatch
+scripts with a shebang line to the proper interpreter.
+The `#!/usr/bin/env perl` idiom, and hardcoded
+interpreter paths such as `#!/usr/bin/python` will be handled
+correctly.
 
 This architecture -- installing each program under its own directory,
 and making executables, headers other resources available via symlinks
@@ -40,8 +43,8 @@ and making executables, headers other resources available via symlinks
 -   it's trivial to uninstall software
 -   there is no need for a package database.
 
-The system is administered through a limited set of utility programs.
+The system is administered through a limited set of
+[utility programs](GoboLinux-Command-Reference).
 Managing dependency relations among software is accomplished
 through the [GoboLinux build system](Compiling-from-source)
 and its library of ["compile recipes"](Recipe).
-
