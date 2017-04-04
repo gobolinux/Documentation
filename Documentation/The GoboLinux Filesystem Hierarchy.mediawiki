@@ -29,8 +29,8 @@ The legacy folders are excluded from default directory view by [[GoboHide]].
     |   |   |-- Headers       - links to files in programs' include/ directories
     |   |   |-- Libraries     - links to files in programs' lib/ directories.
     |   |   |-- Manuals       - documentation resources
-    |   |        |-- info     - links to files in programs' info directories.
-    |   |        `-- man{1-9} - links to files in programs' man{1-9} directories.
+    |   |   |    |-- info     - links to files in programs' info directories.
+    |   |   |    `-- man{1-9} - links to files in programs' man{1-9} directories.
     |   |   |-- Shared        - links to files in programs' share/ directories.
     |   |   `-- Tasks         - links to programs' boot tasks (from their Resources/Tasks/ directory)
     |   |-- Settings          - system config files and links to files in program's Settings/ directories.
