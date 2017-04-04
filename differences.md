@@ -1,4 +1,4 @@
-In short: What makes GoboLinux unique?
+What makes GoboLinux unique?
 --------------------------------------
 
 GoboLinux has a directory structure different from other Linux
