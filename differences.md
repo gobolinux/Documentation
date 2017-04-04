@@ -40,9 +40,7 @@ and making executables, headers other resources available via symlinks
 -   it's trivial to uninstall software
 -   there is no need for a package database.
 
-The system is administered through a set of mature and
-well-documented utility programs.
-
+The system is administered through a limited set of utility programs.
 Managing dependency relations among software is accomplished
 through the [GoboLinux build system](Compiling-from-source)
 and its library of ["compile recipes"](Recipe).
