@@ -63,7 +63,18 @@ The ClockMode information is used for the hwclock utility, which is launched at 
 
 === Console setup ===
 
-==== Font ====
+==== Fonts ====
+
+Fonts in GoboLinux are stored under ```/Files/Fonts``` to
+provide character typefaces for the Linux console, the X Window System,
+and the Linux postscript interpreter ```ghostscript```.  
+
+```/Files/Fonts``` contains subdirectories such as
+'''TrueType'''. 
+
+Font path configuration for X can be found in
+/System/Settings/X11/xorg.conf and
+/System/Settings/fonts/fonts.conf.
 
 To change the default console font used by GoboLinux, use the ConsoleFont option in /System/Settings/BootOptions.
 
@@ -71,7 +82,7 @@ You can also change the console font using the <code>setfont</code> utility.
 See 'man setfont' for details.
 
 Remember that this setting changes  only the console font. On X, applications
-have their own font settings.
+have their own font settings. 
 
 ==== Keymap ====
 
