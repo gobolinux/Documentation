@@ -1,6 +1,3 @@
-In short: What makes GoboLinux unique?
---------------------------------------
-
 GoboLinux has a directory structure different from other Linux
 distributions. In GoboLinux, all files for a program, including
 executables, headers and libraries, are installed below a single
