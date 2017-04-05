@@ -4,7 +4,7 @@ The legacy folders are excluded from default directory view by [[GoboHide]].
 
     / 
     |-- Data                  - for resources belonging to the system and to individual programs 
-    |   |-- Compile           - sources and other files used by the Compile tool
+    |   |-- Compile           - sources, recipes and other files used by the Compile tool
     |   |   |-- Archives 
     |   |   |-- LocalRecipes
     |   |   |-- Recipes
