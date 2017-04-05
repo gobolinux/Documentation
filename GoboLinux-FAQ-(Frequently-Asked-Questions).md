@@ -31,4 +31,4 @@ Q: How do I compile/install a program on GoboLinux?
 
 Q: How do I uninstall a program on GoboLinux again?
 
-Q: What is /System/Index?
+Q: What is **/System/Index**?
