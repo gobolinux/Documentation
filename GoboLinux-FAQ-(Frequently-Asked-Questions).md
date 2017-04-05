@@ -10,3 +10,13 @@ to be asked again at a later time).
 That way if a user runs into a problem, or wants to understand this or that about GoboLinux, then
 this can be used as a "jumper" page to jump to the proper documentation - either within the wiki
 itself, or as part of a program's --help option or elsewhere.
+
+The **old** FAQ can be found here:
+
+  https://gobolinux.org/faq.html
+
+But keep in mind that this was written quite a long time ago; a lot of things have changed including
+who runs/maintains/invests time to keep GoboLinux running and so on and so forth.
+
+The attempt for this FAQ here is to refer to the *present* GoboLinux - the latter is mostly to 
+dive into history. And who knows which FAQ may be the current one in 5 years from now (2017). :)
