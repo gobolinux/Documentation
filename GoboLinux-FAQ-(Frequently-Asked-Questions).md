@@ -20,3 +20,15 @@ who runs/maintains/invests time to keep GoboLinux running and so on and so forth
 
 The attempt for this FAQ here is to refer to the *present* GoboLinux - the latter is mostly to 
 dive into history. And who knows which FAQ may be the current one in 5 years from now (2017). :)
+
+
+----
+(The following subsection is incomplete... I just wanted to get things started going for easy
+"setup"... please remove this sentence here and the ---- once this FAQ has a few more entries
+answered.)
+
+Q: How do I compile/install a program on GoboLinux?
+
+Q: How do I uninstall a program on GoboLinux again?
+
+Q: What is /System/Index?
