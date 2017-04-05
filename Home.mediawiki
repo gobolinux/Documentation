@@ -1,6 +1,6 @@
+* [[What makes GoboLinux unique?]]
 * [[The GoboLinux Way]]
-* [[The GoboLinux Filesystem Hierarchy]]
-* [[differences|In short: What makes GoboLinux unique?]]
+* [[The GoboLinux Filesystem Hierarchy|Our Directory Structure]]
 
 * [[Installing GoboLinux]]
 * [[Configuring-the-boot-process| Startup and system settings]]
