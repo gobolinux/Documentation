@@ -9,7 +9,7 @@ The legacy folders are excluded from default directory view by [[GoboHide]].
     |   |   |-- LocalRecipes
     |   |   |-- Recipes
     |   |   `-- Sources 
-    |   `-- Variable          - for various log, temporary, transient and spool files
+    |   `-- Variable          - for spool files, log files, temporary files, etc.
     |       |-- cache 
     |       |-- empty 
     |       |-- lib 
@@ -19,19 +19,19 @@ The legacy folders are excluded from default directory view by [[GoboHide]].
     |       |-- spool 
     |       `-- tmp
     |-- Mount                 - mountpoints for filesystems
-    |-- Programs              - installed software
+    |-- Programs              - where programs (with all their files) are installed 
     |-- System
     |   |-- Aliens            - files managed by programming language package managers
-    |   |-- Environment       - links to program files declaring environment variables. 
-    |   |-- Index             - Links to various resources under /Programs.
-    |   |   |-- bin           - links to files in programs' bin/ and sbin/ directories
-    |   |   |-- include       - links to files in programs' include/ directories
-    |   |   |-- lib           - links to files in programs' lib/ directories.
-    |   |   |-- libexec       - links to files in programs' libexec/ directories.
-    |   |   `-- share         - links to files in programs' share/ directories.
-    |   |       `-- man           - documentation resources
-    |   |            |-- info     - links to files in programs' info directories.
-    |   |            `-- man{1-9} - links to files in programs' man{1-9} directories.
+    |   |-- Environment       - links to program files declaring environment variables
+    |   |-- Index             - links to files in the programs'
+    |   |   |-- bin               + bin/ and sbin/ directories
+    |   |   |-- include           + include/ directory
+    |   |   |-- lib               + lib/ directory
+    |   |   |-- libexec           + libexec/ directory
+    |   |   `-- share             + share/ directory
+    |   |       `-- man
+    |   |            |-- info     + info/ directory
+    |   |            `-- man{1-9} + man{1-9}/ directories
     |   |-- Kernel
     |   |   |-- Boot          - kernel images, config files and programs needed to boot
     |   |   |-- Devices       - device files (managed by Udev).
