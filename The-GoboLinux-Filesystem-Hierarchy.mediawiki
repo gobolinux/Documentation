@@ -23,7 +23,7 @@ The legacy folders are excluded from default directory view by [[GoboHide]].
     |-- System
     |   |-- Aliens            - files managed by programming language package managers
     |   |-- Environment       - links to program files declaring environment variables
-    |   |-- Index             - links to files in the programs'
+    |   |-- Index             - links to files in each program's
     |   |   |-- bin               + bin/ and sbin/ directories
     |   |   |-- include           + include/ directory
     |   |   |-- lib               + lib/ directory
