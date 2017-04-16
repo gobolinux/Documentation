@@ -11,8 +11,6 @@ sandbox installer.
 
 FiboSandbox sets up an isolated environment and commands are
 run by a special user (named fibo) without root privileges.
-[[FiboSandbox]] is the sandbox installer for GoboLinux
-Rootless.
 
 During the installation phase of the software build process, 
 most build systems call the <code>install</code>
