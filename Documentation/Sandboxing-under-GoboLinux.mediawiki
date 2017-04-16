@@ -9,7 +9,9 @@ implementations.
 system unions to achieve isolation. It is the default
 sandbox installer.
 
-FiboSandbox sets up an isolated environment and commands are
+FiboSandbox is a fallback method used when a union-filesystem
+implementation is not available in the running kernel.
+It sets up an isolated environment and commands are
 run by a special user (named fibo) without root privileges.
 
 During the installation phase of the software build process, 
