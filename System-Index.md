@@ -1,6 +1,6 @@
 Compiled programs in C and C++ typically have a lib/ directory and often also a bin/ directory.
 
-On GoboLinux, these will be symlinked into /System/Index such as for ping:
+On **GoboLinux**, these will be symlinked into /System/Index such as for ping:
 
     /System/Index/bin/ping  
     /System/Index/lib/libpng.so.3  
