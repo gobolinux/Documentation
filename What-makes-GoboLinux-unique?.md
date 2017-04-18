@@ -1,9 +1,9 @@
-GoboLinux has a directory structure different from other Linux
-distributions. In GoboLinux, all files for a program, including
+**GoboLinux** has a directory structure different from most other
+Linux distributions. In **GoboLinux**, all files for a program, including
 executables, headers and libraries, are installed below a single
-directory that belongs to that program. So the `ping`
-utility might reside in
+directory that belongs to that program.
 
+So the `ping` utility might reside in
       
     /Programs/Netkit-Base/0.17/bin/ping  
 
@@ -13,7 +13,6 @@ and `libpng.so.3` in
 
 To be visible to other software, these files are symlinked into standard
 locations in the new directory hierarchy under `/System/Index`:
-
       
     /System/Index/bin/ping  
     /System/Index/lib/libpng.so.3  
