@@ -1,5 +1,6 @@
 * [[What makes GoboLinux unique?]]
 * [[The GoboLinux Way]]
+* [[/System/Index]]
 * [[The GoboLinux Filesystem Hierarchy|Our Directory Structure]]
 
 * [[Installing GoboLinux]]
