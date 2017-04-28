@@ -6,7 +6,7 @@ SYNOPSIS
        EditRecipe [<recipe-url>|<recipe-path>|<program-name> [program-version]]
 
 DESCRIPTION
-       Fetch a recipe and place it in , chopping its revision number.  Calls a text editor on the Recipe file afterwards.
+       Fetch a recipe and place it in /Data/Compile/LocalRecipes, chopping its revision number.  Calls a text editor on the Recipe file afterwards.
 
 OPTIONS
        --terse
