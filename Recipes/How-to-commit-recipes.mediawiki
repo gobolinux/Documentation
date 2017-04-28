@@ -1,4 +1,4 @@
-This is a page with information for GoboLinux contributors who were granted commit access to the recipes repository. The idea is that frequent recipe contributors are offered commit access. If you'd like to have commit access (or would like to nominate a fellow user to get commit access), contact the developers with CVS access (gobo at gobolinux.org) and we'll work things out.
+This page is for GoboLinux contributors who have been granted commit access to the recipes repository. This privilege is intended to help those who frequently contribute recipes. If you'd like to have commit access (or would like to nominate a fellow user to get commit access) contact the developers (gobo at gobolinux.org) and we'll work things out.
 
 To commit recipes, you need the [[DevelScripts]] package installed, and [[Subversion]]. The good news is that you don't need to manipulate Subversion directly; the DevelScripts take care of that.
 
