@@ -1,7 +1,7 @@
 * [[What makes GoboLinux unique?]]
 * [[The GoboLinux Way]]
 * [[/System/Index]]
-* [[The GoboLinux Filesystem Hierarchy|Our Directory Structure]]
+* [[The GoboLinux Filesystem Hierarchy|Directory Layout]]
 
 * [[Installing GoboLinux]]
 * [[Configuring-the-boot-process| Startup and system settings]]
@@ -14,7 +14,7 @@
 ** [[Installing to external storage devices|External storage devices]]
 
 * Installing software
-** [[Using binary packages]]
+** [[Using binary packages|Installing binary packages]]
 ** [[Compiling from source]]
 ** [[Steps of the Compile process]]
 ** [[Recipe|Recipes for compiling software]]
