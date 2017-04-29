@@ -34,9 +34,9 @@ The old bzImage and System.map files aren't overwritten, though. They're just sy
 
 To install a kernel which is newer than the available recipe, or one other than vanilla, you may use NewVersion.
 * Download a kernel from [http://www.kernel.org/ kernel.org]
-:: If you already have a kernel downloaded, or have a special source package, you may place it in /Files/Compile/Archives.
+:: If you already have a kernel downloaded, or have a special source package, you may place it in /Data/Compile/Archives.
 * Use NewVersion Linux <Version> <nowiki>http://kernel.org/pub/linux/kernel/v2.6/<your-archive-name></nowiki> to create a recipe.  Using a fake URL is all right if you don't intend to distribute the recipe.  
-* Place any custom patches you need to apply into the /Files/Compile/LocalRecipes/Linux/<Version> directory.
+* Place any custom patches you need to apply into the /Data/Compile/LocalRecipes/Linux/<Version> directory.
 * Then Compile as usual.
 
 == Kernel patches ==
