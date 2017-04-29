@@ -7,6 +7,7 @@ The legacy folders are excluded from default directory view by [[GoboHide]].
     |   |-- Compile           - sources, recipes and other files used by the Compile tool
     |   |   |-- Archives 
     |   |   |-- LocalRecipes
+    |   |   |-- PackedRecipes
     |   |   |-- Recipes
     |   |   `-- Sources 
     |   `-- Variable          - for spool files, log files, temporary files, etc.
