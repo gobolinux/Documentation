@@ -49,7 +49,7 @@ or other dependency is missing.
 
 See [[Installing packages from the LiveCD|this page.]]
 
-== Removing packages =
+== Removing packages ==
 
 See [[Removing programs]]
 
