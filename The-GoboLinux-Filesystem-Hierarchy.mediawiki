@@ -29,6 +29,8 @@ The legacy folders are excluded from default directory view by [[GoboHide]].
     |   |   |-- lib               + lib/ directory
     |   |   |-- libexec           + libexec/ directory
     |   |   `-- share             + share/ directory
+    |   |       |-- consolefonts
+    |   |       |-- fonts 
     |   |       `-- man
     |   |            |-- info     + info/ directory
     |   |            `-- man{1-9} + man{1-9}/ directories
