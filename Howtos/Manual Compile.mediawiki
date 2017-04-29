@@ -1,6 +1,6 @@
 Building and installing manually from source. ''This should only be done if one is unable to [[Writing recipes|create a recipe]] or as an excercise. With very few exceptions, the work of creating a recipe is rewarded by the ease of using [[Compile]].''
 
-Note: If you use a local tarball, be sure to have the tarball placed at /Files/Compile/Archives.
+Note: If you use a local tarball, be sure to have the tarball placed at /Data/Compile/Archives.
 Also make sure you know whether you have a recipe locally or not, if you i.e. do not have 
 access to the www on that machine.
 

@@ -10,7 +10,7 @@ You should fetch DevelScripts from CVS. This can be done using its Compile recip
     Compile develscripts 
 
 
-This will add a file called /System/Settings/DevelScripts/CompileSubversion.conf -- take a look at this file. It lists the default locations where DevelScripts expects to find the local copy of the Subversion repository. You could change these locations, but for simplicity let's keep the provided default: /Files/Compile/Subversion
+This will add a file called /System/Settings/DevelScripts/CompileSubversion.conf -- take a look at this file. It lists the default locations where DevelScripts expects to find the local copy of the Subversion repository. You could change these locations, but for simplicity let's keep the provided default: /Data/Compile/Subversion
 
 ==Committing recipes==
 
@@ -20,7 +20,7 @@ To commit a recipe, use the [[PutRecipe]] script. It takes care of incrementing 
     PutRecipe firefox 
 
 
-By default, it will look for a recipe in /Files/Compile/LocalRecipes. If there is more than one version there, the script will complain and will ask you to give it a second parameter specifying the version number.
+By default, it will look for a recipe in /Data/Compile/LocalRecipes. If there is more than one version there, the script will complain and will ask you to give it a second parameter specifying the version number.
 
 Note that committing the recipe to SVN does not immediately generate a tarball of it in the public recipe store. Recipe store updates are done periodically from the svn repository in an automated fashion.
 

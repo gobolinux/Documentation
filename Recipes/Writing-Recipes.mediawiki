@@ -4,7 +4,7 @@ creating one from scratch. To assist in this, we have the
 programs [[NewVersion]], [[EditRecipe]] and [[MakeRecipe]]
 
 However you do it, once the recipe is done and compiled, a
-packed version of it will show up in /Files/Compile/Store
+packed version of it will show up in /Data/Compile/PackedRecipes
 (or any other location configured at
 /System/Settings/Compile/[[Compile.conf]]). We encourage you
 to contribute your recipes, so that the community can
@@ -35,7 +35,7 @@ When a recipe for an older version of a given package already exists, it's not n
 The following examples show its usage:
  $ NewVersion GCC 4.4.4
 
-This command will fetch the latest GCC recipe, create a new subdir called "4.4.4" inside /Files/Compile/LocalRecipes/GCC and will replace the package version in "$url" by 4.4.4.
+This command will fetch the latest GCC recipe, create a new subdir called "4.4.4" inside /Data/Compile/LocalRecipes/GCC and will replace the package version in "$url" by 4.4.4.
 
 On the other hand, users may also tell the full URL for the package sources, just in case the replace isn't executed properly, or if the URL has changed in the server:
  $ NewVersion GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
@@ -80,7 +80,7 @@ Note: In case it didn't, you could have passed it explicitly as parameters
 
       Compile joe
 
-Wait a few minutes, and Joe will be compiled and installed on your system.  Now you have a local recipe and it will be packaged into /Files/Compile/Store by default as Joe--3.1--recipe.tar.bz2.
+Wait a few minutes, and Joe will be compiled and installed on your system.  Now you have a local recipe and it will be packaged into /Data/Compile/PackedRecipes by default as Joe--3.1--recipe.tar.bz2.
 
 When you create a new recipe for a program that's not yet available in the GoboLinux recipe, please consider contributing it to the community! (See section above, under Writing Recipes for details.)
 
@@ -105,13 +105,13 @@ It simplify installation and can help too in some case with stubborn project tha
 
 == Share your recipes ==
 
-Share your recipes with the Gobo community!  Recipes you create or update will be located in /Files/Compile/LocalRecipes.  Consider using a text editor to write a Description file for your recipe before you share it.
+Share your recipes with the Gobo community!  Recipes you create or update will be located in /Data/Compile/LocalRecipes.  Consider using a text editor to write a Description file for your recipe before you share it.
 
 To share your recipe:
 
  $ ContributeRecipe [Program Name]
 
-[[ContributeRecipe]] will create a .tar.bz2 file in /Files/Compile/PackedRecipes and automatically submit it for review at http://recipes.gobolinux.org/review/ .  You will be e-mailed when your recipe is accepted or rejected.
+[[ContributeRecipe]] will create a .tar.bz2 file in /Data/Compile/PackedRecipes and automatically submit it for review at http://recipes.gobolinux.org/review/ .  You will be e-mailed when your recipe is accepted or rejected.
 
 == Advanced topics ==
 
@@ -146,7 +146,7 @@ This diff should then be in a file, say '01-root_to_uid.patch', wich is placed i
 
 To create a patch you need the edited source and the "clean" source, then use 'diff' to create the patch. To create the patch in the example above I used
 
-      cd /Files/Compile/Sources
+      cd /Data/Compile/Sources
       diff -Naur rlocate-0.4.3 rlocate-0.4.3.new > 01-root_to_uid.patch
 
 where rlocate-0.4.3.new was the directory holding the edited source. This may work if you only have one type of change made. But if you made several different edits and want them in different patches one can specify the exact file to 'diff' or you can make a full diff and edit the resulting file, spliting it into smaller patches.

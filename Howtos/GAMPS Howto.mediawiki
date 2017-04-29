@@ -10,7 +10,7 @@ GAMPS is a GoboLinux/Apache/MySql/P/SSL web serving system.  This document is in
     StartTask MySQL 
 
 #:'''Note:'''<br/>
-#:If the server crashes at this moment you might want to check the permissions of /Files/MySQL. Owner and group must both be mysql. You can achieve this by typing 
+#:If the server crashes at this moment you might want to check the permissions of /Data/MySQL. Owner and group must both be mysql. You can achieve this by typing 
 
     and starting the server again. 
     # The next step is to set a password for the mysql root user. Type <blockquote>mysqladmin -u root password mYNewpAsSw0rD</pre> 

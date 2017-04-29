@@ -62,7 +62,7 @@ delete the data that was just unpacked).
 Using "files_in_root", Compile assumes files are stored in the
 archive without a directory. A directory is created so that
 files are unpacked inside it, avoiding scattering files in
-$compileSourcesDir (typically /Files/Compile/Sources).
+$compileSourcesDir (typically /Data/Compile/Sources).
 
 ==== dir=<directory> ====
 ==== dirs=(<array of directories>) ====
