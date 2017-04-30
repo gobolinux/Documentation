@@ -278,3 +278,6 @@ The Compile tool ships 2 sample files for the ARM and SH4 architectures. Let's g
 * '''cross_compiler''': prefix to the cross-compiler's executable files, such as ''arm-xscale-linux-gnu-''gcc and ''arm-xscale-linux-gnu-''strip.
 
 {{Platforms}}
+
+__NOTOC__
+

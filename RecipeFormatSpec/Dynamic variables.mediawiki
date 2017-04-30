@@ -51,3 +51,6 @@ There will also be variables for every dependency listed in the Dependency file.
 
 ''Note that these variables will point to the latest installed version of '''Foo''', instead of the version listed in the Dependency file.''<!-- it seems better to me to emphasize this fact -->
 ''Also note that special characters will be replaced with underscore. If, for example, GTK+ is listed in the Dependency file, the variable will be called $gtk__path, and Tcl-Tk will be $tcl_tk_path.''
+
+__NOTOC__
+

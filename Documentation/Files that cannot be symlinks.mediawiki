@@ -13,3 +13,5 @@ The configuration file for ''sudo'' must be a regular file. If it is not, <code>
 The settings files used by the Shadow package are quite interesting. Theoretically, they can be symlinks, but there is a caveat: utilities like useradd don't just modify these files; they remove and recreate them as regular files. Hence, in practice, they cannot be symbolic links.
 
 {{Handbook}}
+__NOTOC__
+

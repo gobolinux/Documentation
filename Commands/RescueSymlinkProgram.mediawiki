@@ -7,3 +7,5 @@ A minimal functionality [[SymlinkProgram]] that can be used when the original sc
    [[RescueSymlinkProgram]] /Programs/Glibc/Current /System/Index
 
 {{Scripts}}
+__NOTOC__
+

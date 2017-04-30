@@ -6,3 +6,6 @@ Installer uses a common framework for command-line and GUI interfaces.
 *[[Installing GoboLinux]]
 
 {{Handbook}}
+
+__NOTOC__
+

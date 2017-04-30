@@ -13,3 +13,6 @@ Note: Some themes may not display correctly in an Xterm/Konsole/other graphical 
 <!--/-->
 
 {{Handbook}}
+
+__NOTOC__
+

@@ -50,3 +50,6 @@ The usual procedure to clean up dangling links, is
 
 	cd /System/Index
 	find | RemoveBroken
+
+__NOTOC__
+

@@ -34,3 +34,6 @@
 
 * [[Linux kernel topics]]
 * [[GoboLinux dark corners|GoboLinux design quirks]]
+
+__NOTOC__
+

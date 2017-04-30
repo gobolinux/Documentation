@@ -295,3 +295,6 @@ These options are included for compatibility with old recipes.  They should not 
 *  '''is_manifest=yes''' is equivalent to ''' recipe_type=manifest'''
 *  '''is_meta=yes''' is equivalent to '''recipe_type=meta'''
 -->
+
+__NOTOC__
+

@@ -65,3 +65,6 @@ Options to use with the make command. This can be used to run multiple threads i
 
 
 {{Reference}}
+
+__NOTOC__
+

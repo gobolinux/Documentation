@@ -233,3 +233,6 @@ Note that ALSA is muted by default, to automatically save and restore changes do
 	Done: Exec "Storing ALSA settings..."             alsactl store
 
 
+
+__NOTOC__
+

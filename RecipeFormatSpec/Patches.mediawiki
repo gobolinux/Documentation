@@ -23,3 +23,6 @@ The [[#Dynamic variables|dynamic variables]] may be used, prefixed with the stri
 * @%Compile_foo_path%@
 * @%Compile_foo_settings_path%@
 * @%Compile_foo_variable_path%@
+
+__NOTOC__
+

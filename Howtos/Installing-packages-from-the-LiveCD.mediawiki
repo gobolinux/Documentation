@@ -25,3 +25,6 @@ automatically, use the <code>--batch</code> or <code>-b</code> parameter:
  InstallPackage --batch Gimp
 	-or-
  InstallPackage --batch /Mount/SquashFS/Programs/Gimp
+
+__NOTOC__
+

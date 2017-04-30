@@ -33,3 +33,6 @@ arguments.
 
 Under FiboSandbox, the wrapper discards change-of-owner directives
 before calling ```real_install```.
+
+__NOTOC__
+

@@ -36,3 +36,5 @@ Example: PATH, LD_LIBRARY_PATH
 Example: compileRecipeDirs, editKeymapLayout
 
 {{Documentation}}
+__NOTOC__
+

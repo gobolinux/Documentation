@@ -47,3 +47,6 @@ is not.
 All scripts have a --help option (or, in short form, -h). When a program that needs arguments is run without arguments, the help text will be displayed. (Note: Actually, not all scripts conform to this yet, but this is being worked on).
 
 {{Handbook}}
+
+__NOTOC__
+

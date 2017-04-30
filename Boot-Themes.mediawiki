@@ -33,3 +33,6 @@ These functions are the hotspots that glue the theme and the boot scripts core t
 ** [[Implementing a boot theme]]
 ** [[Testing a boot theme]]
 
+
+__NOTOC__
+

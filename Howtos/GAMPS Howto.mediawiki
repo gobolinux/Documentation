@@ -82,3 +82,6 @@ If everything worked, you'll be prompted for a password, then taken to the MySQL
 You're done! All you have to do now is place your websites at /Depot/WWW/Documents
 
 [[Category:Howtos]]
+
+__NOTOC__
+

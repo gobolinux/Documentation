@@ -8,3 +8,5 @@ The script scans the given file looking for instances of name, and returns which
    DeduceName README gtkglarea
 
 {{Scripts}}
+__NOTOC__
+

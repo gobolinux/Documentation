@@ -11,3 +11,6 @@ Example:
 This is functionally equivalent to
  find /System/Index -xtype l -delete
 {{Scripts}}
+
+__NOTOC__
+

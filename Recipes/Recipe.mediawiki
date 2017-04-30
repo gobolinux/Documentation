@@ -33,3 +33,6 @@ build, and install a particular software package.
 === Submitting ===
 * [[PackRecipe]] - Generate a packed recipe tarball from local recipe cache, ready for submission.
 * [[ContributeRecipe]] - Submit a recipe to the recipe store for review and inclusion. 
+
+__NOTOC__
+

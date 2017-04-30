@@ -19,3 +19,5 @@ install wlan0 modprobe ndiswrapper && iwconfig wlan0 ... (put your usual command
 and then adding wlan0 to /S/S/[[BootOptions]] with the right config.
 
 [[Category:Howtos]]
+__NOTOC__
+

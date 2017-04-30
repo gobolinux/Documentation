@@ -33,3 +33,5 @@ To make this relatively painless, make sure to compile Glibc with using this com
 > Compile -l no Glibc
 
 as it will stop Compile from symlinking Glibc after a successful compile and install.
+__NOTOC__
+

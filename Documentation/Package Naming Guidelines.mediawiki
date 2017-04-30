@@ -5,3 +5,6 @@
 # There should never be two package names differing only in capitalization. Package names differing only in capitalization should be considered to be two versions of the same app.
 
 The [[NamingConventions]] script applies these rules and several heuristics to generate a suitable GoboLinux package name from an input. 
+
+__NOTOC__
+

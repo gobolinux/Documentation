@@ -116,3 +116,6 @@ Implies '''keep_existing_target'''.
 
 ==== update_each_settings=yes ====
 In meta-recipes, Compile only calls UpdateSettings for the meta-recipe and not for its sub-recipes. Set this variable to override this behavior and have UpdateSettings called in every sub-recipe.
+
+__NOTOC__
+

@@ -21,3 +21,5 @@ shows all lines from foo.txt that contain the regexp "bla" and don't contain "go
 shows all lines from foo.txt that don't contain "bla", "goob", "mac" or "ops"
 
 {{Scripts}}
+__NOTOC__
+

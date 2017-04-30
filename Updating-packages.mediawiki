@@ -7,3 +7,6 @@ Use the [[UpdateRecipes]] command to refresh your local cache of the GoboLinux r
 You can query available updates using the utilities [[SuggestUpdates]], [[SuggestDuplicates]] and [[PrioritiseUpdates]]. Outputs are suitable for piping into commands.
 
 The [[FindPackage]] and [[GetAvailable]] commands may also be useful. 
+
+__NOTOC__
+

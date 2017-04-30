@@ -126,3 +126,6 @@ Notice that this will ''not'' perform the standard configuration steps. If you n
     # ... steps ...
     # ... here ...
   }
+
+__NOTOC__
+

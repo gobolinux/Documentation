@@ -19,3 +19,6 @@ Some useful ways of using this method is to establish a script to launch a web s
 
 
 [[Category:Howtos]]
+
+__NOTOC__
+

@@ -73,3 +73,6 @@ Update everything except Qt and anything that depends upon it.
     Freshen -s Firefox Kopete 
 
 Ordered list of upgrades '''needed''' in order to upgrade Firefox and Kopete to their newest releases. Add '''-U''' to perform the upgrade.
+
+__NOTOC__
+

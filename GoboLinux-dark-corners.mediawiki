@@ -6,3 +6,6 @@ software builds to the GoboLinux directory structure.
 [[Files that cannot be symlinks]]
 
 [[Replacements for standard commands]]
+
+__NOTOC__
+

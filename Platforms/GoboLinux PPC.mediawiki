@@ -15,3 +15,5 @@ I intend to integrate the changes/additions I did to the recipe store on this wo
 That's it for now, have a nice day.
 
 {{Platforms}}
+__NOTOC__
+

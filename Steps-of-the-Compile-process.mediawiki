@@ -136,3 +136,6 @@ would type:
 cover more advanced needs. You can refer to the
 [[SymlinkProgram | SymlinkProgram reference page]] for
 details if necessary.
+
+__NOTOC__
+

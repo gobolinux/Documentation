@@ -10,3 +10,6 @@ If I wanted to run make my self, what would I need to do to sandbox it? It would
     SymlinkProgram Foo 1.0 
 
 Also see [[Manual Compile]]
+
+__NOTOC__
+

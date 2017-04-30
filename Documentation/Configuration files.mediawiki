@@ -2,3 +2,5 @@
 * [[GetAvailable.conf]]
 
 {{Handbook}}
+__NOTOC__
+

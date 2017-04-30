@@ -48,3 +48,6 @@ For a better overview of how it looks and feels right,
 nothing beats giving the Live CD a spin.  You'll be running
 a full GoboLinux system without having to install anything.
 Just burn a CD-ROM and give it a go!
+
+__NOTOC__
+

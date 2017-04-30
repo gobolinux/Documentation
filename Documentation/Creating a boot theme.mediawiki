@@ -12,3 +12,5 @@ So, if you want to create a boot theme for GoboLinux, all you have to do is to c
 # [[Testing a boot theme]]
 
 {{Documentation}}
+__NOTOC__
+

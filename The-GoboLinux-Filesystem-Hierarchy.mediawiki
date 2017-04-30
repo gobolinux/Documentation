@@ -67,3 +67,6 @@ The legacy folders are excluded from default directory view by [[GoboHide]].
         |-- lib64   -> ../System/Index/lib 
         |-- libexec -> ../System/Index/libexec
         `-- share   -> ../System/Index/share 
+
+__NOTOC__
+

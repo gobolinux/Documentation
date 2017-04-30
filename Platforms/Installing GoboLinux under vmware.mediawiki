@@ -54,3 +54,5 @@ sC
 {{Platforms}}
 
 [[Category:Howtos]]
+__NOTOC__
+

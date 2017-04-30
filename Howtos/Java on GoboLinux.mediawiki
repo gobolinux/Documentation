@@ -10,3 +10,5 @@ Recipes: GCC-Java Sun-JDK Sun-JRE
 
 
 [[Category:Howtos]]
+__NOTOC__
+

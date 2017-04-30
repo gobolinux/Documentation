@@ -72,3 +72,6 @@ And at last, run SymlinkProgram to link it into the LHS tree.
 And then we're done. Enjoy!
 
 [[Category:Howtos]]
+
+__NOTOC__
+

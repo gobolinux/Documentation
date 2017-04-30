@@ -80,3 +80,6 @@ GoboHide currently supports hiding entries on any mounted
 filesystem. Because it is implemented at the level of the
 Linux virtual filesystem, it is independent of specific
 filesystems.
+
+__NOTOC__
+

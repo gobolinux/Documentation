@@ -58,3 +58,6 @@ version of [[Compile]]. [[Compile]] is very important to
 GoboLinux so if there is any problem in it, it is normally
 fixed very quickly.
 
+
+__NOTOC__
+

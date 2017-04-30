@@ -66,3 +66,6 @@ The following example shows a sample ThemeFinish implementation that just writes
 
 
 {{Handbook}}
+
+__NOTOC__
+

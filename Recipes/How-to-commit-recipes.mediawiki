@@ -36,3 +36,6 @@ You don't need to actually compile the recipe in order to test it, but only comm
 ==In case of doubt==
 
 If you're unsure about anything about a recipe, don't hesitate to use the [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes/ gobolinux-recipes] mailing list to ask questions, submit recipes for discussion, etc.
+
+__NOTOC__
+

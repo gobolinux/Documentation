@@ -17,3 +17,6 @@ Examples:
 
 
 {{Reference}}
+
+__NOTOC__
+

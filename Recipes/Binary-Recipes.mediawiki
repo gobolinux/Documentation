@@ -16,3 +16,5 @@ Each program is assessed individually, and some may be accepted outside these gu
 * Submitters should append an extra '_bin' string to the application's version. This is the adopted convention to identify binary recipes.
 * Everything specific to a given architecture shall be inside its arch subdir. This includes url=, file=, file_md5=, file_size= and any functions dealing with specific tarball contents that might change from one architecture's tarball to another. MD5 sums are especially important for binary recipes are they are used to assess the validity of the installed data, which could not be verified as usual by looking at the sources. Make sure the file_md5 entry exists.
 * Distribution license must be filled in Resouces/Description. If the license is unknown, Resources/Description should set it as "[License] Other" (or the license name as appropriate), and a file named Resources/COPYING should contain the license in question. "Known licenses" are those found in these [http://www.opensource.org/licenses/alphabetical OSI list] or the [http://www.fsf.org/licensing/licenses/ FSF list].
+__NOTOC__
+

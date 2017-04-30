@@ -43,3 +43,6 @@ With [[DisableProgram]], you can remove from /System all links that refer to a s
 With [[RemoveProgram]], you can remove a program from /Programs and its references from /System in a single step.
 
 See [[Removing programs]] for more details.
+
+__NOTOC__
+
