@@ -63,7 +63,7 @@
 
 * [[FindQuick]] (alias: f) - Find files.
 * [[GrepQuick]] (alias: g) - Shorthand for 'grep'.
-* [[List]] (alias: l) - A fancy front-end for 'ls'.
+* l - alias for 'ls' with some options set.
 * [[KillProcess]] - Enhanced process killing utility.
 * [[Rename]] - Performs a sed-based search/replace in a set of filenames.
 
