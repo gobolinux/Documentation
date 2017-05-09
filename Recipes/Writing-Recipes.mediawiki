@@ -264,5 +264,5 @@ This is for recipes based on SCons.
 
 {{Compile}}
 
-__NOTOC__
+
 
