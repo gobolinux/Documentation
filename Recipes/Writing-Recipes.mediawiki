@@ -113,6 +113,8 @@ To share your recipe:
 
 [[ContributeRecipe]] will create a .tar.bz2 file in /Data/Compile/PackedRecipes and automatically submit it for review at http://recipes.gobolinux.org/review/ .  You will be e-mailed when your recipe is accepted or rejected.
 
+Approved committers should refer to these [[How to Commit Recipes | Guidelines]] (others should use [[ContributeRecipe]].)
+
 == Advanced topics ==
 
 === Patches ===
