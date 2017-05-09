@@ -19,6 +19,7 @@ build, and install a particular software package.
 == Commands ==
 
 === Acquiring ===
+* [[FindPackage]] - Search for recipes and packages
 * [[UpdateRecipes]] - Update local recipe cache from the recipe store.
 * [[GetRecipe]] - Fetch a recipe and place it in the local recipe cache, /Data/Compile/Recipes/.
 
