@@ -1,11 +1,8 @@
-In this section, you'll learn to create recipes. Basically,
-there are two ways to do it: updating an existing one, or
-creating one from scratch. To assist in this, we have the
-programs [[NewVersion]], [[EditRecipe]] and [[MakeRecipe]]
-
-However you do it, once the recipe is done and compiled, a
+There are two ways to create recipes: updating an existing one, or
+creating one from scratch. The utilities for accomplishing this are: [[NewVersion]], [[EditRecipe]] and [[MakeRecipe]].
+Once the recipe is done and compiled, a
 packed version of it will show up in /Data/Compile/PackedRecipes
-(or any other location configured at
+(or the location specified in 
 /System/Settings/Compile/[[Compile.conf]]). We encourage you
 to contribute your recipes, so that the community can
 benefit. To send a recipe for inclusion in the main compile
@@ -16,8 +13,7 @@ it for review.
 
 We only need to do one thing here, add your name to
 Compile.conf (for credits on Recipes you may make).  Open
-Compile.conf in a '''text editor'''. In this example, we'll
-use nano (use whichever is your favorite):
+Compile.conf in a text editor such as nano:
 
   nano /System/Settings/Compile/Compile.conf
 
@@ -29,16 +25,15 @@ Then save the file and exit nano (Control+O, Enter, Control+X).
 
 == Updating old recipes ==
 
+When a recipe for an older version of a given package already exists, you don't need to run [[MakeRecipe]] again. Instead, use [[NewVersion]] with the package name and version to create a new recipe starting with the previous recipe contents. For example:
 
-When a recipe for an older version of a given package already exists, it's not needed to run [[MakeRecipe]] again. [[NewVersion]] is a script which takes a package name and version as parameters and creates a new one based on the previous' contents.
-
-The following examples show its usage:
- $ NewVersion GCC 4.4.4
+  NewVersion GCC 4.4.4
 
 This command will fetch the latest GCC recipe, create a new subdir called "4.4.4" inside /Data/Compile/LocalRecipes/GCC and will replace the package version in "$url" by 4.4.4.
 
-On the other hand, users may also tell the full URL for the package sources, just in case the replace isn't executed properly, or if the URL has changed in the server:
- $ NewVersion GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
+You can also give the full URL for the package sources:
+   
+   NewVersion GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
 
 If the version of the package has not changed, and only minor recipe updates are needed, [[NewVersion]] will not work as it will not copy the same version of a recipe over.  In this case, [[EditRecipe]] is the tool to use. 
 
@@ -107,9 +102,9 @@ It simplify installation and can help too in some case with stubborn project tha
 
 Share your recipes with the Gobo community!  Recipes you create or update will be located in /Data/Compile/LocalRecipes.  Consider using a text editor to write a Description file for your recipe before you share it.
 
-To share your recipe:
+To share your recipe, use this command:
 
- $ ContributeRecipe [Program Name]
+ ContributeRecipe [Program Name]
 
 [[ContributeRecipe]] will create a .tar.bz2 file in /Data/Compile/PackedRecipes and automatically submit it for review at http://recipes.gobolinux.org/review/ .  You will be e-mailed when your recipe is accepted or rejected.
 
