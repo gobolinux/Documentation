@@ -12,7 +12,7 @@ build, and install a particular software package.
 * [[Dynamic variables]]
 * [[Patches]]
 * [[Other options]]
-* [[Binary Recipes|Recipes for precompiled software (such as * Skype or Adobe Flash Player)]]
+* [[Binary Recipes|Recipes for precompiled software (such as Skype or Adobe Flash Player)]]
 * [http://lists.gobolinux.org/mailman/listinfo/gobolinux-recipes Recipes mailing list ]
 * [https://github.com/gobolinux/Documentation/wiki/Writing-Recipes#share-your-recipes Sharing recipes]
 
