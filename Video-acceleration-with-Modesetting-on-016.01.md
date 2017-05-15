@@ -28,4 +28,6 @@ EndSection
 
 Now you should be able to get 2D acceleration the next time you launch the X server.
 
-Link to Mailing List for the issue: http://lists.gobolinux.org/pipermail/gobolinux-users/2017-May/009865.html
+Link to Mailing List for this issue:
+
+  http://lists.gobolinux.org/pipermail/gobolinux-users/2017-May/009865.html
