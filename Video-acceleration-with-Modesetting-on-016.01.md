@@ -8,7 +8,7 @@ You will have to recompile the **following packages** to achieve Gallium-based 2
 4. `Compile mesa`
 5. `Compile xorg-server 1.18.4`
 
-Furthermore, you will need to modify **two Xorg settings files*:
+Furthermore, you will need to modify **two Xorg settings files**:
 
 1. Edit `/System/Index/share/X11/xorg.conf.d/20-intel.conf` and add an "AccelMethod" entry to the "Device" section:
 ```
