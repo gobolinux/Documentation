@@ -1,10 +1,12 @@
-GoboLinux 016.01 ships with the xf86-video-modesetting driver overriding the deprecated xf86-video-intel driver. Modesetting is noticeable more stable, but it won't offer acceleration for 2D operations by default. You'll need to recompile the following packages to achieve Gallium-based 2D acceleration on 016.01 systems:
+GoboLinux 016.01 ships with the xf86-video-modesetting driver overriding the deprecated xf86-video-intel driver. Modesetting is noticeable more stable, but it won't offer acceleration for 2D operations by default.
 
-1. `Compile libdrm`
-2. `Compile libva`
-3. `Compile intel-vaapi-driver`
-4. `Compile mesa`
-5. `Compile xorg-server 1.18.4`
+You will have to recompile the **following packages** to achieve Gallium-based 2D acceleration on 016.01 systems:
+
+1. `**Compile libdrm**`
+2. `**Compile libva**`
+3. `**Compile intel-vaapi-driver**`
+4. `**Compile mesa**`
+5. `**Compile xorg-server 1.18.4**`
 
 Further, you need to modify two Xorg settings files:
 
