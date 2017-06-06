@@ -1,22 +1,4 @@
-When running the GoboLinux 016 live ISO through VirtualBox, you will notice that `startx` does not start correctly by default. There are two solutions for this: running the graphical environment in VESA mode (low resolution, 1024x768) or building VirtualBox's own graphics drivers.
-
-### The quick solution: Setting up VESA mode
-
-Run the following command:
-
-```
-SymlinkProgram xorg-server
-```
-
-This will activate in /System/Settings/X11 a fallback version of xorg.conf, preconfigured to use the `vesa` driver. Then you'll be able to start X normally with:
-
-```
-startx
-```
-
-Once you install the system to a VirtualBox disk image, you will have to do the same procedure.
-
-### The nice solution: Setting up VirtualBox guest additions
+### Setting up VirtualBox guest additions
 
 VirtualBox requires its own graphics drivers in order to perform advanced features such as smart mouse sharing and running at a window-dependent full resolution.
 
