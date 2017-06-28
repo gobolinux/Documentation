@@ -93,6 +93,7 @@ Example:
     "some_script:bin"
     "include/a_header.h:include"
     "lib/libfoo.so:lib"
+    "some_script.1:man/man1/some_script.1"
  )
 
 === meta ===
