@@ -42,9 +42,13 @@ intermittent internet access, or if you'd like to run your
 compiling jobs at night when you're asleep.
 
 Calling Compile with the <code>--no-build</code> flag downloads
-sources only.  Later, you use the <code>--no-web</code> flag, directing
-Compile to search to your system's own download cache and
-build the sources found there.
+sources only.
+
+Later, in the event that you wish to use the <code>--no-web</code> flag,
+this will direct Compile to search to your system's own download cache
+and build the sources found there instead. This commandline switch is
+obviously very useful if you do not have a working internet connection
+for the time being.
 
 === Writing recipes ===
 
