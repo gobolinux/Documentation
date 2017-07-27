@@ -2,8 +2,7 @@ This script is used everywhere inside many scripts. It **exports shell variables
 
 For example, in the Scripts package, within the bin/ subdirectory are files such as ScriptFunctions or SuggestUpdates, among others. These source GoboPath via:
 
-  . GoboPath
-
+    . GoboPath
 
 Let's avoid hardcoding things, sourcing this file and using these variables makes the world a better place :-)
 
