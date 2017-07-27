@@ -2,8 +2,11 @@
 
 With '''Compile''',  GoboLinux build utility, software
 sources can be downloaded, compiled and installed in a
-single step. To install '''irssi''', a text-based IRC client
-from the command line, you'd type
+single step. An example will follow next.
+
+In order to install '''irssi''', a text-based IRC client
+from the command line, you would type the following 
+instruction:
 
     Compile irssi 
 
