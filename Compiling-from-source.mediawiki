@@ -21,7 +21,9 @@ software library.
 
 === Finding recipes ===
 
-Typically, you can just try the name of the recipe you want from the command line. There is also an [http://recipes.gobolinux.org online recipe viewer].
+Typically, you can just try the name of the recipe you want from the command line. There is
+also an [http://recipes.gobolinux.org online recipe viewer], listing the most
+recently uploaded recipes first.
 
 === Command-line options ===
 
