@@ -1,10 +1,10 @@
-In GoboLinux, all programs, whether binary packages 
-or user-compiled software is installed in a single directory
-under /Programs, for example:
+In GoboLinux, all programs, whether binary packages or user-compiled
+software, are installed into a single directory under the /Programs
+hierarchy, such as, for instance, gimp:
 
     /Programs/Gimp/2.8.18
 
-Removing it can be as simple as:
+Removing this program can be, in theory, as simple as:
 
     rm -rf Gimp/2.8.18 
 
