@@ -16,9 +16,10 @@ program and all links pointing to its files in
     RemoveProgram Gimp 2.8.18
 
 Sometimes you may want to "turn off" a program temporarily,
-without erasing it from your hard disk.  In other words, you
+without erasing it from your hard disk. In other words, you
 want to remove program's executables from the execution
 path, and remove libraries and headers from the lookup path.
+
 In GoboLinux, this can be accomplished by removing the
 associated symlinks for /System/Index
 
