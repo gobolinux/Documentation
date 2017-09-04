@@ -1,7 +1,7 @@
 There are two ways to create recipes:
 
-  (1) updating an existing one, or
-  (2) creating one from scratch.
+ (1) updating an existing one, or
+ (2) creating one from scratch.
 
 The utilities for accomplishing this are: [[NewVersion]], [[EditRecipe]] and [[MakeRecipe]].
 
