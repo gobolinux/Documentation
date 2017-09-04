@@ -3,7 +3,9 @@ There are two ways to create recipes:
     (1) updating an existing one, or
     (2) creating one from scratch.
 
-The utilities for accomplishing this are: [[NewVersion]], [[EditRecipe]] and [[MakeRecipe]].
+The utilities for accomplishing this are:
+
+  [[NewVersion]], [[EditRecipe]] and [[MakeRecipe]].
 
 Once the recipe is done and compiled, a
 packed version of it will show up in /Data/Compile/PackedRecipes
