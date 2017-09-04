@@ -12,11 +12,14 @@ The utilities for accomplishing this are:
 Once the recipe is done and compiled, a
 packed version of it will show up in /Data/Compile/PackedRecipes
 (or the location specified in 
-/System/Settings/Compile/[[Compile.conf]]). We encourage you
-to contribute your recipes, so that the community can
-benefit. To send a recipe for inclusion in the main compile
-tree, just run "[[ContributeRecipe]] [program name]" to submit
-it for review.
+/System/Settings/Compile/[[Compile.conf]]).
+
+The GoboLinux developers encourage you to contribute your recipes,
+so that the community can benefit.
+
+To send a recipe for inclusion in the main compile tree, just
+run "[[ContributeRecipe]] [program name]" to submit it for
+review.
 
 == Setting up Compile.conf ==
 
