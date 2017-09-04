@@ -36,3 +36,8 @@ OPTIONS
 GoboLinux                                                March 2017                                     NAMINGCONVENTIONS(1)
 
 ```
+
+Here are some usage examples; note that presently NamingConventions appears
+to prefer only the program name, so if you have a full remote URL, make sure
+to only pass the name of the program towards NamingConventions.
+
