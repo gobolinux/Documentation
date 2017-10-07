@@ -66,12 +66,12 @@ In short, [[PrepareProgram]] can be considered a wrapper to
 'configure'. Instead of running, for example,
 
     cd foo-1.0
-	./configure --with-shared=yes 
+    ./configure --with-shared=yes 
 
 you'll run
 
     cd foo-1.0
-	PrepareProgram Foo 1.0 -- --with-shared=yes 
+    PrepareProgram Foo 1.0 -- --with-shared=yes 
 
 
 ==  SandboxInstall ==
