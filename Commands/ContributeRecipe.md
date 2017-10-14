@@ -46,3 +46,6 @@ COPYRIGHT
 GoboLinux                                                March 2017                                      CONTRIBUTERECIPE(1)
 
 ```
+Usage examples:
+  ContributeRecipe <name>
+  ContributeRecipe Bash
