@@ -58,3 +58,8 @@ COPYRIGHT
 GoboLinux                                                March 2017                                            NEWVERSION(1)
 
 ```
+
+Usage example:
+
+  NewVersion Bash 4.4.12
+
