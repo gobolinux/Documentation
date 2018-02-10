@@ -216,9 +216,9 @@ If you do not use KDE or want a non-GUI based solution, one way is to use runget
 
 # In your inittab file (for example, nano /etc/inittab) find the line which includes tty1 (it's your first terminal, the default showing up on login). 
 # Now, you will see "agetty" in there - change this "agetty" line to <code>"rungetty tty1 --autologin your_username"</code> 
-     
+
 Of course, replace your_username with the user you want to login as.
-     
+
 Using another tty than 1 may be useful too. 
 
 
@@ -230,7 +230,8 @@ GoboLinux comes with CUPS installed by default.
 
 Note that ALSA is muted by default, to automatically save and restore changes done in e.g. alsamixer, add these lines to your boot scripts.
 
-	Done: Exec "Storing ALSA settings..."             alsactl store
+        Done: Exec "Storing ALSA settings..."
+        alsactl store
 
 
 
