@@ -1,5 +1,4 @@
-{{ToC}}
-The build system in GoboLinux uses sandboxing to
+The **build system** in GoboLinux uses sandboxing to
 ensure that all the filesystem writes during the software
 install phase are limited to an appropriate part of the
 filesystem. GoboLinux 016 ships with two different sandbox
