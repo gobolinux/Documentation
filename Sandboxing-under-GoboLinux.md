@@ -9,19 +9,18 @@ implementations.
 system unions to achieve isolation. It is the default
 sandbox installer.
 
-FiboSandbox is a fallback method used when a union-filesystem
+**FiboSandbox** is a fallback method used when a union-filesystem
 implementation is not available in the running kernel.
 It sets up an isolated environment and commands are
 run by a special user (named fibo) without root privileges.
 
 During the installation phase of the software build process, 
 most build systems call the <code>install</code>
-program 
-to copy files to their destination
+program to copy files to their destination
 directories with the proper ownership and attributes.
 <code>install</code> belongs to the CoreUtils package.
 
-Since user fibo lacks authority to change file ownership, 
+Since user **fibo** lacks authority to change file ownership, 
 the link at <code>/System/Index/bin/install</code> points
 to a wrapper script in the Scripts package.
 
@@ -31,7 +30,7 @@ superuser name if necessary and calls
 <code>install</code> utility, passing along the modified
 arguments.
 
-Under FiboSandbox, the wrapper discards change-of-owner directives
+Under **FiboSandbox**, the wrapper discards change-of-owner directives
 before calling ```real_install```.
 
 __NOTOC__
