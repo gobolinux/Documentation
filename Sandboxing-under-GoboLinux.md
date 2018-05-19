@@ -25,7 +25,7 @@ Since user fibo lacks authority to change file ownership,
 the link at <code>/System/Index/bin/install</code> points
 to a wrapper script in the Scripts package.
 
-Under UnionSandbox, this wrapper script translates the
+Under **UnionSandbox**, this wrapper script translates the
 superuser name if necessary and calls
 <code>real_install</code>, a symlink to the CoreUtils
 <code>install</code> utility, passing along the modified
