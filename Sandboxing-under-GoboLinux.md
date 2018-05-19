@@ -32,5 +32,7 @@ arguments.
 Under **FiboSandbox**, the wrapper discards change-of-owner directives
 before calling ```real_install```.
 
+[GoboLinux dark corners](https://github.com/gobolinux/Documentation/wiki/GoboLinux-dark-corners)
+
 __NOTOC__
 
