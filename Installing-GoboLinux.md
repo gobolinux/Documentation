@@ -1,4 +1,4 @@
-```Installer``` is a program included on the GoboLinux
+`Installer` is a program included on the GoboLinux
 Live-ISO that installs GoboLinux to your hard drive.
 
 It takes care of **basic configuration**, **package selection**, and
