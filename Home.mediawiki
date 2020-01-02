@@ -18,6 +18,7 @@
 ** [[Compiling from source]]
 ** [[Steps of the Compile process]]
 ** [[Recipe|Recipes for compiling software]]
+*** [[Recipe Format Specification]]
 
 * Package management
 ** [[Removing programs]]
