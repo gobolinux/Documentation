@@ -1,7 +1,6 @@
 Given a file name, this script verifies if it's a broken link or not. Being a broken one, it gets deleted. 
 
-This script is very useful when used together with "find" to find stray, broken links, as in 
-"find /System/Index | [[RemoveBroken]]".
+This script is very useful when used together with <code>find</code> to find stray, broken links.
 
 Example:
 
