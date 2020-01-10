@@ -8,3 +8,11 @@ Running Gobolinux under GNOME Boxes is quite easy, even more so than under Virtu
 4. Boxes will be ready to create a virtual machine with 2GB of RAM and 21.5GB of storage. If that is sufficient, click "Create".
 5. Otherwise you can click "Customize" and adjust the sliders for RAM and storage respectively, then click the back arrow. 
 6. The LiveCD session will then start. Continue normal installation procedures. Remember to eject the LiveCD prior to reboot by going to the top right menu and clicking "Properties" -> "Devices & Shares" and then clicking "Remove" beside the CD/DVD section. 
+
+Installing SPICE
+
+Spice allows for integration with the host system including setting native resolutions, file transfers, clipboard support etc. 
+
+1. Compile SPICE-VDAgent
+2. Run StartTask Spice-VDAgent at boot
+3. Remember to run xrandr --output Virtual-0 --preferred to update the resolution
