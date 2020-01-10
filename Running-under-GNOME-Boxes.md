@@ -1,7 +1,6 @@
-GNOME Boxes is a new virtual machine manager and remote desktop manager powered by QEMU, KVM, and libvirt virtualisation technologies.
+GNOME Boxes is a new virtual machine manager and remote desktop manager powered by QEMU, KVM, and libvirt virtualisation technologies. Running Gobolinux under GNOME Boxes is quite easy, even more so than under Virtualbox.
 
-Running Gobolinux under GNOME Boxes is quite easy, even more so than under Virtualbox.
-
+## Setup Instructions
 1. Create a new Virtual Machine by clicking "New" in the top left corner.
 2. Click "Select a file".
 3. Select the Gobolinux LiveCD ISO file. 
@@ -10,7 +9,6 @@ Running Gobolinux under GNOME Boxes is quite easy, even more so than under Virtu
 6. The LiveCD session will then start. Continue normal installation procedures. Remember to eject the LiveCD prior to reboot by going to the top right menu and clicking "Properties" -> "Devices & Shares" and then clicking "Remove" beside the CD/DVD section. 
 
 ## Installing SPICE
-
 Spice allows for integration with the host system including setting native resolutions, file transfers, clipboard support etc. 
 
 1. Compile SPICE-VDAgent
