@@ -12,5 +12,5 @@ GNOME Boxes is a new virtual machine manager and remote desktop manager powered 
 Spice allows for integration with the host system including setting native resolutions, file transfers, clipboard support etc. 
 
 1. Compile SPICE-VDAgent
-2. Run StartTask Spice-VDAgent at boot
+2. Add `Exec "Starting SPICE-VDAgent Daemon" Spice-VDAgent Start` to /System/Settings/BootScripts/BootUp
 3. Remember to run xrandr --output Virtual-0 --preferred to update the resolution
