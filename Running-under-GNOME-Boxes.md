@@ -1,5 +1,3 @@
-# Running Under GNOME Boxes
-
 GNOME Boxes is a new virtual machine manager and remote desktop manager powered by QEMU, KVM, and libvirt virtualisation technologies.
 
 Running Gobolinux under GNOME Boxes is quite easy, even more so than under Virtualbox.
