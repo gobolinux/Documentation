@@ -14,4 +14,4 @@ Spice allows for integration with the host system including setting native resol
 1. Compile SPICE-VDAgent
 2. Run StartTask Spice-VDAgent after login
 3. Run spice-vdagent
-3. Run xrandr --output Virtual-0 --preferred to update the resolution
+4. Run xrandr --output Virtual-0 --preferred to update the resolution
