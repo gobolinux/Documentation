@@ -9,8 +9,8 @@ LXDE is a lightweight desktop environment.
 
 
 ### TODO
-[] Add LXDM to LXDE recipes
-[] Add option to set LXDM as default display manager 
+* Add LXDM to LXDE recipes
+* Add option to set LXDM as default display manager 
 
 
 
