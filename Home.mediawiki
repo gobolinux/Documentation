@@ -37,5 +37,13 @@
 * [[Linux kernel topics]]
 * [[GoboLinux dark corners|GoboLinux design quirks]]
 
+* Desktop Environments
+** [[Awesome]]
+** [[Enlightenment]]
+** [[LXDE]]
+** [[Pantheon]]
+** [[XFCE]]
+** [[KDE]]
+
 __NOTOC__
 
