@@ -1,5 +1,4 @@
-Homepage: https://awesomewm.org/
-
+### Overview
 Awesome is the current desktop manager for Gobolinux. 
 
 Several modules have been created for Awesome for use by Gobolinux:
@@ -9,3 +8,6 @@ Several modules have been created for Awesome for use by Gobolinux:
 * https://github.com/gobolinux/gobo-awesome-battery
 * https://github.com/gobolinux/gobo-awesome-light
 * https://github.com/gobolinux/gobo-awesome-sound
+
+### Links
+* Homepage: https://awesomewm.org/
