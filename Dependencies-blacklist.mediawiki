@@ -4,8 +4,9 @@ Today there are many programs implementing a given feature in different ways. On
 === Dependencies.blacklist ===
 This file allows one to specify packages that should not appear in the Dependencies file after creating a new recipe. Its format is pretty simple: one package per line, without the need to specify its version.
 
-==== An Dependencies.blacklist example ====
-The following example blacklists the packages Glibc and Nvidia. Comments and blank lines are ignored by the parser, so it's ok to include them.
+==== A <code>Dependencies.blacklist</code> example ====
+The following example blacklists the packages Glibc and Nvidia.
+Comments and blank lines are ignored by the parser, so it's ok to include them.
 
     # Dependencies.blacklist is documented in detail at 
     #  http://wiki.gobolinux.org/Dependencies 
