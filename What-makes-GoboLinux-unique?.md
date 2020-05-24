@@ -30,9 +30,9 @@ correctly dispatch scripts with shebang lines such as
 `#!/usr/bin/env perl` or `#!/usr/bin/python` to the proper
 interpreter.
 
-This architecture -- installing each program under its own directory,
-and making executables, headers other resources available via symlinks
--- has significant advantages:
+This architecture —installing each program under its own directory,
+and making executables, headers other resources available via symlinks—
+has significant advantages:
 
 -   different versions of libraries can coexist
 -   it's trivial to uninstall software
