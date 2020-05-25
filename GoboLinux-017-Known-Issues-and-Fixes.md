@@ -18,3 +18,11 @@ Loopback network interface needs to be brought up. As root, run:
 ifconfig lo up
 echo ifconfig lo up >> /System/Settings/BootScripts/BootUp
 ```
+
+### InstallPackage searches for packages from GoboLinux 016 rather than 017
+
+Update the search URL used by the Scripts package:
+
+```
+GrepReplace -B "016" "017" /System/Settings/Scripts/GetAvailable.conf
+```
