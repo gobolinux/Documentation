@@ -10,10 +10,11 @@ InstallPackage https://gobolinux.org/packages/017/UnionFS-Fuse--2.1--x86_64.tar.
 
 ## Installed system 
 
-### Loopback network interface needs to be mounted
+### Git-related errors when invoking Compile for the first time
 
-...(todo)...
+Loopback network interface needs to be brought up. As root, run:
 
-### Running Compile
-
-...(todo)...
+```
+ifconfig lo up
+echo ifconfig lo up >> /System/Settings/BootScripts/BootUp
+```
