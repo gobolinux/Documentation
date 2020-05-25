@@ -1,6 +1,6 @@
 ## Live environment
 
-### Running Compile on the Live environment
+### Running Compile
 
 ...(todo)...
 
@@ -10,6 +10,6 @@
 
 ...(todo)...
 
-### Running Compile on the installed system
+### Running Compile
 
 ...(todo)...
