@@ -26,3 +26,17 @@ Update the search URL used by the Scripts package:
 ```
 GrepReplace -B "016" "017" /System/Settings/Scripts/GetAvailable.conf
 ```
+
+### Update of Compile and Scripts tools
+
+Compile and Scripts are always evolving. Make sure to update your copies by
+running the following commands after you boot into your installed system for
+the first time:
+
+```
+cd /Programs/Scripts/Current
+git pull && UpdateSettings --auto Scripts
+
+cd /Programs/Compile/Current
+git pull && UpdateSettings --auto Compile
+```
