@@ -4,6 +4,8 @@
 * [[The GoboLinux Filesystem Hierarchy|Directory Layout]]
 
 * [[Installing GoboLinux]]
+  * Release specific notes
+    * [[GoboLinux 017 Known Issues and Fixes]]
 * [[Configuring-the-boot-process| Startup and system settings]]
 
 * Platforms
