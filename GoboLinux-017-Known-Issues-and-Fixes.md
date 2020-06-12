@@ -40,3 +40,13 @@ git pull && UpdateSettings --auto Scripts
 cd /Programs/Compile/Current
 git pull && UpdateSettings --auto Compile
 ```
+
+### Wrong version of SQLite
+
+The version under /Programs/SQLite/3310100 is actually 3.8.2. Please run the
+following commands to update to its most recent version:
+
+```
+Compile SQLite
+RemoveProgram SQLite 331011
+```
