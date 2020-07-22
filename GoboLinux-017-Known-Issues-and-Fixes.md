@@ -50,3 +50,12 @@ following commands to update to its most recent version:
 Compile SQLite
 RemoveProgram SQLite 331011
 ```
+
+### Dependencies files with reference to Ncurses
+
+Ncurses has been replaced by NcursesW, but some packages' metadata still hold
+references to the former. The following command fixes that:
+
+```
+GrepReplace -B "^Ncurses " "NcursesW " /Programs/*/*/Resources/Dependencies
+```
