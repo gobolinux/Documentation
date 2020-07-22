@@ -57,6 +57,13 @@ Variables to be defined in the environment during the execution of ''cmake''.
 '''recipe_type=makefile''' is used for Programs based on Makefiles.
 No options are relevant only for ''makefile''.
 
+=== meson ===
+'''recipe_type=meson''' is used for Programs based on Meson.
+Some options are only relevant for ''meson'':
+
+==== meson_variables=(<array of assignments>) ====
+Variables to be defined in the environment during the execution of ''meson''.
+
 === python ===
 '''recipe_type=python''' is used for Programs based on Python Distutils.
 Some options are only relevant for ''python'':
