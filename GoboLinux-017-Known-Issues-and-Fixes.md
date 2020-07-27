@@ -35,7 +35,7 @@ the first time:
 
 ```
 cd /Programs/Scripts/Current
-git pull && UpdateSettings --auto Scripts
+git pull && UpdateSettings --auto Scripts && make
 
 cd /Programs/Compile/Current
 git pull && UpdateSettings --auto Compile
