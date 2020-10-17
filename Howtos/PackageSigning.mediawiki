@@ -18,6 +18,5 @@ Resources/FileHash.sig is the gpg signature for [[FileHash]].
 
 <!--/-->
 
-{{Howtos}}
 __NOTOC__
 
