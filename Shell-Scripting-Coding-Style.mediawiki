@@ -35,6 +35,5 @@ Example: PATH, LD_LIBRARY_PATH
 * Configuration variables used in [[.conf files]] start with the script name in lowercase, resulting in a case style similar to that used in Java variables
 Example: compileRecipeDirs, editKeymapLayout
 
-{{Reference}}
 __NOTOC__
 
