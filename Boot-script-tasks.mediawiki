@@ -1,5 +1,3 @@
-{{ToC}}
-
 Your boot scripts can make use of "boot tasks", which are little service scripts that can be shipped by programs. A program includes its tasks under Resources/Tasks, and they're linked in /System/Tasks. This is roughly equivalent to the /etc/init.d scripts found in many distributions.
 
 You can launch or stop tasks from the command line, using [[StartTask]] and [[StopTask]]. For example, the following command will load the SSH daemon:
