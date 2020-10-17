@@ -1,4 +1,3 @@
-{{ToC}}
 Fortunately you don't have to reboot your computer to test every feature you add to your boot theme. The [[TestBootTheme]] script is your friend. Just run it passing your boot script name as a parameter:
 
 
@@ -11,8 +10,6 @@ Of course, this script is also useful to see how the various boot themes are, so
 
 Note: Some themes may not display correctly in an Xterm/Konsole/other graphical terminal, or with a non-standard console font. It's probably best to run TestBootTheme in the same environment you boot in!
 <!--/-->
-
-{{Handbook}}
 
 __NOTOC__
 
