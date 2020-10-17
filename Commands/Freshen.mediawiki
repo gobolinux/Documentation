@@ -1,4 +1,3 @@
-{{ToC}}
 Checks for updated GoboLinux recipes and packages
 
 Usage: Freshen [ <opts> ] [ <list> ]
