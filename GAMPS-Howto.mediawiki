@@ -39,7 +39,7 @@ If everything worked, you'll be prompted for a password, then taken to the MySQL
 
 == OpenSSL - Part 2 ==
 
-{{Todo|To be written.}}
+TODO
 
 == PHP ==
 # To install Apache PHP Module, type
