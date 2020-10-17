@@ -268,8 +268,3 @@ This is for recipes based on SCons.
 ==== manifest recipes ====
 
 "Manifest" recipes are used for programs that just need to copy files over. The '''manifest''' array-style entry lists colon-separated pairs, indicating source file and target destination, relative to '''target'''. (See "[[Recipe format specification]]" for details).
-
-{{Compile}}
-
-
-
