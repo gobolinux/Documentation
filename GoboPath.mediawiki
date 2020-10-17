@@ -8,6 +8,5 @@ This is normally within the <code>Scripts</code> package, at <code>bin/GoboPath<
 
 Let's avoid hardcoding things, sourcing this file and using these variables makes the world a better place :-)
 
-{{Scripts}}
 __NOTOC__
 
