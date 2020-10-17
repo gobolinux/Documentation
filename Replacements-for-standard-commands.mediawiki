@@ -1,5 +1,3 @@
-{{ToC}}
-
 GoboLinux has its own replacements for a few standard commands like <code>su</code> and <code>make</code>. The reasons for making a replacement ranges from adding necessary functionality (<code>su</code>) to making prettier output (<code>make</code>).
 
 While having these "replaced programs" is not a problem in itself (in fact, most provide enhanced functionality which adds to the GoboLinux experience), it's important to point out these differences here so that you can know what's going on with these perhaps unexpected behaviors.
@@ -17,6 +15,5 @@ The replacements are provided by several different packages. All except <code>in
 
 Aliases enabling "enhanced replacements" such as Htop and Pinfo are set in the Environment section of these packages. This way, if you want to stick to plain <code>top</code> and/or <code>info</code>, all you need to do is to remove (or just not install) these replacements.
 
-{{Handbook}}
 __NOTOC__
 
