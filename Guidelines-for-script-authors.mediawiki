@@ -1,5 +1,3 @@
-{{ToC}}
-
 This section documents the coding style used in GoboLinux shell scripts.
 
 It's important to note that not all scripts follow these guidelines, because of historical baggage (some of the scripts are older than GoboLinux itself). Patches to correct the non-conformities are welcome.
@@ -35,6 +33,5 @@ Example: PATH, LD_LIBRARY_PATH
 * Configuration variables used in [[.conf files]] start with the script name in lowercase, resulting in a case style similar to that used in Java variables
 Example: compileRecipeDirs, editKeymapLayout
 
-{{Documentation}}
 __NOTOC__
 
