@@ -20,6 +20,5 @@
 
 '''Remaster ISO''' Unless there is demand, wait until 014.
 
-{{Platforms}}
 __NOTOC__
 
