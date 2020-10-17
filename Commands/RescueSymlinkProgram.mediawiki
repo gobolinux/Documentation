@@ -6,6 +6,5 @@ A minimal functionality [[SymlinkProgram]] that can be used when the original sc
 ==Example==
    [[RescueSymlinkProgram]] /Programs/Glibc/Current /System/Index
 
-{{Scripts}}
 __NOTOC__
 
