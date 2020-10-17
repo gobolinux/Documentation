@@ -7,6 +7,5 @@ The script scans the given file looking for instances of name, and returns which
 ==Example==
    DeduceName README gtkglarea
 
-{{Scripts}}
 __NOTOC__
 
