@@ -1,5 +1,3 @@
-{{ToC}}
-
 This section explains how you can create your own boot script theme.
 
 Section "[[The boot scripts anatomy]]" already explained that a theme is a single script file.  In fact, if you really want, you can create a theme that spreads through multiple files (but this is not necessarily a good idea). The point here is that one file is enough. This file implements a five functions: ThemeInit, ThemeFinish, ThemeBefore ThemeAfter, and ThemeFile.
@@ -11,6 +9,4 @@ So, if you want to create a boot theme for GoboLinux, all you have to do is to c
 # [[Implementing a boot theme]]
 # [[Testing a boot theme]]
 
-{{Documentation}}
 __NOTOC__
-
