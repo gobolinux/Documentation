@@ -17,7 +17,7 @@ This is a work in progress by [[Sy]]
 * reboot
 
 * edit the grub boot line to point it towards root=/dev/hda1 (as appropriate)
-{{todo| add edit instructions before rebooting (mount, edit a file, reinstall grub?)}}
+* TODO: add edit instructions before rebooting (mount, edit a file, reinstall grub?)
 * I'm stuck here.. rebooting does not find a valid partition.  Probably because of vmware reverting back to an unformatted snapshot when I rebooted.  Whoops.  =)
 
 --
