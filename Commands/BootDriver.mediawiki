@@ -22,8 +22,5 @@ BootDriver takes a parameter, indicating which "runlevel" script should be execu
     4:2345:respawn:/System/Index/bin/agetty tty4 9600 
     5:2345:respawn:/System/Index/bin/agetty tty5 9600 
 
-
-{{Reference}}
-
 __NOTOC__
 
