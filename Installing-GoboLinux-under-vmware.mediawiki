@@ -51,8 +51,6 @@ If anyone could tell me how to install vmware tools in gobolinux i would have no
 gobovm@tschanness.de
 sC
 
-{{Platforms}}
-
 [[Category:Howtos]]
 __NOTOC__
 
