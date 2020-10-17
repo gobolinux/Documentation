@@ -1,5 +1,3 @@
-{{ToC}}
-
 ==  Notes on command-line switches ==
 
 Many scripts accept command-line options. All options feature a short, one-letter form, and a long form. Following the GNU conventions, short form options are preceded by a single hyphen (as in -a, -b) and long form options are preceded by two hyphend (as in --foo, --bar).
@@ -47,8 +45,6 @@ is not.
 * All scripts have a --help option (or, in short form, -h). When a program that needs arguments is run without arguments, the help text will be displayed. (Note: Actually, not all scripts conform to this yet, but this is being worked on).
 
 Note: Many of the restrictions above are actually implementation limitations. "Fixing" them is not a high-priority in the project, but patches to lift this restrictions are welcome. See /Programs/Scripts/Current/Functions/[[OptionParser]] if you're curious.
-
-{{Handbook}}
 
 __NOTOC__
 
