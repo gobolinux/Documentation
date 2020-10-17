@@ -1,5 +1,3 @@
-{{Handbook Navigation}}
-
 ==  Welcome to GoboLinux ==
 
 The main task of a Linux distribution is to keep track of and organize the programs in your computer, so that they work properly. GoboLinux is no different from the others in this goal, but it adopts a fundamentally different approach in solving this problem. Instead of scattering the files of programs around, following the [https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard decades-old conventions] of ancient UNIX systems, and then adding a layer of control (a "package manager") to try to give order to chaos, in GoboLinux we organize the files that comprise the programs in an ordered way in the first place.
