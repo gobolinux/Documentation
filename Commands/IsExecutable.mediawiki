@@ -2,6 +2,5 @@ Returns 0 (success) if the file looks like a Linux executable (starting with a h
 
 This helper is used by the [[FixAttributes]] script.
 
-{{Scripts}}
 __NOTOC__
 
