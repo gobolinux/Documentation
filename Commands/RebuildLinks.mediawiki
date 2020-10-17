@@ -16,7 +16,5 @@ Examples:
     RebuildLinks --shared 
 
 
-{{Reference}}
-
 __NOTOC__
 
