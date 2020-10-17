@@ -8,7 +8,6 @@ Example:
 
 This is functionally equivalent to
     find /System/Index -xtype l -delete
-{{Scripts}}
 
 The source code to RemoveBroken can be found here:
 
