@@ -214,7 +214,5 @@ With ROX, it's also possible to have the inserted media get an icon that represe
 
 * And put some icons for <code>other.png</code>, <code>cdr.png</code> and <code>usb.png</code> in <code>~/.ivman/</code> and you're done!
 
-{{Howtos}}
-
 __NOTOC__
 
