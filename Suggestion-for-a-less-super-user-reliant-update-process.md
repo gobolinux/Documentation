@@ -8,5 +8,5 @@ In the following, a rough sketch of how to remedy this is proposed.
 * Add a sudoers snippet that allows members of the `gobo` group to run system-update related scripts with no password for convenience
 * Ensure that `/Data/Compile/{Archives,Recipes,Sources}` are reset to `chown -Rc gobo:gobo` and `chmod ug+rw` on each system-update related script run, possibly in a function (a script version of which should be part of the set of commands allowed to run without a sudo password for convenience).
 * Find a clever way to not clutter commands that require being run as `root` or `gobo` -- possibly using functions?
-** This should make it easy to discern which commands need what privileges.
+  * This should make it easy to discern which commands need what privileges.
 
