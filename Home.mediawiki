@@ -27,7 +27,7 @@
 ** [[Removing programs]]
 ** [[Understanding and maintaining system indices]]
 ** [[Updating-packages | Updates]]
-** [[Freshen]]
+** [[Freshen]] (moved to legacy status -- doesn't function at this time)
 ** [[Dependencies blacklist]]
 
 * [[GoboLinux Command Reference]]
