@@ -11,7 +11,7 @@ compileRecipeAuthor="A. Random Contributor <somebody@some-email-address>"
 
 If you are not comfortable using your real name, using a nick/alias is also acceptable.
 
-For more options, check out the dedicated [Compile.conf] page.
+For more options, check out the dedicated [Compile.conf](../Compile.conf) page.
 
 ## Create a GitHub pull request using `ContributeRecipe`
 
