@@ -32,7 +32,6 @@
 * [[CreatePackage]] - Make a GoboLinux package.
 * [[NewVersion]] - Update a recipe to a new version.
 * [[PrepareProgram]] - Prepares applications for instalation, running the 'configure'
-* [[KeyManager]] - Manage digital signature keys for GoboLinux packages.
 * [[Hashes]] - Manages FileHash and FileHash.sig files in a GoboLinux package.
 * [[MergeTree]] - Mirrors one directory structure into another.
 
