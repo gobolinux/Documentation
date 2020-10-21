@@ -1,7 +1,8 @@
 == Overview ==
+
 Use the [[UpdateRecipes]] command to refresh your local cache of the GoboLinux recipe store.
 
-You can query available updates using the utilities [[SuggestUpdates]], [[SuggestDuplicates]] and [[PrioritiseUpdates]]. The output of each of these commands is suitable for piping into commands.
+You can query available updates using the utilities [[SuggestUpdates]] and [[SuggestDuplicates]]. The output of each of these commands is suitable for piping into commands.
 
 The [[FindPackage]] and [[GetAvailable]] commands may also be useful.
 
@@ -25,9 +26,15 @@ Keep in mind that most operations that change the file-system state in Gobo requ
  sudo UpdateRecipes
 
 ==== SuggestUpdates - List packages with an update available ====
+
+ cd /Data/Compile/Recipes
  SuggestUpdates
 
-==== PrioritiseUpdates - Order output of SuggestUpdates by dependency ====
- FIXME
+==== Install updates ====
+
+Currently, there is no automated way to install packages automatically.  This used to be done with the [[Freshen]] script, which is currently not in working order.
+
+Updates thus need to be installed manually via [[InstallPackage]] or [[Compile]] as appropriate.
+
 
 __NOTOC__
