@@ -12,39 +12,10 @@ Your name here so that credit is added to recipes.
 
 The standard locations for your local Compile files.
 
-    compileDir="${goboPrefix}/Files/Compile" 
-    compileDependenciesDir="$compileDir/Recipes" 
-    compileArchivesDir="$compileDir/Archives" 
-    compileSourcesDir="$compileDir/Sources" 
-
-
-You can have a series of local directories to search for unpacked recipes (ie, directories containing recipe subdirectories):
-
-    compileRecipeDirs=( 
-    "$compileDir/LocalRecipes" 
-    "$compileDir/Recipes" 
-    ) 
-
-Please note that if you comment the "$compileDir/LocalRecipes" line, then you can ignore local recipes.
-
-
-This is where the remote recipes are fetched.
-
-    getRecipeStores=( 
-    "http://gobolinux.org/recipe-store" 
-    "http://gobo.calica.com/recipe-store" 
-    ) 
-
-
-The following variable indicates where [[GetRecipe]] places its recipes. Ideally, it should match $compileRecipeDirs:
-
-    compileGetRecipeDir="$compileDir/Recipes" 
-
-
-These specify the source and destination to [[PackRecipe]]:
-
-    compileLocalRecipesDir="$compileDir/LocalRecipes" 
-    compilePackedRecipesDir="$compileDir/PackedRecipes" 
+    compileDir="${goboPrefix}/Files/Compile"
+    compileArchivesDir="$compileDir/Archives"
+    compileSourcesDir="$compileDir/Sources"
+    compileRecipeDirs="$compileDir/Recipes"
 
 
 Some of the main free software repositories are treated especially: recipes use these variables in their <code>url</code> declarations, so that you can pick your favorite mirror without having to edit recipes one by one:
@@ -52,6 +23,12 @@ Some of the main free software repositories are treated especially: recipes use 
     ftpGnu=ftp://ftp.gnu.org/gnu/ 
     ftpAlphaGnu=ftp://alpha.gnu.org/gnu/ 
     httpSourceforge=http://unc.dl.sourceforge.net/sourceforge/ 
+
+
+The Compile recipe tree is managed by Git. The git repository and the upstream branch are both configurable through the following variables:
+
+    compileRecipesRepository=https://github.com/gobolinux/Recipes.git
+    compileUpstreamBranch=master
 
 
 A variable to set the "make" command called by Compile. ColorMake provides the highlighting that GoboLinux has by default:
