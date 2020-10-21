@@ -32,7 +32,7 @@ Keep in mind that most operations that change the file-system state in Gobo requ
 
 ==== Install updates ====
 
-Currently, there is no automated way to install packages automatically.  This used to be done with the [[Freshen]] script, which is currently not in working order.
+Currently, there is no way to update packages automatically.  This used to be done with the [[Freshen]] script, which is currently not in working order.
 
 Updates thus need to be installed manually via [[InstallPackage]] or [[Compile]] as appropriate.
 
