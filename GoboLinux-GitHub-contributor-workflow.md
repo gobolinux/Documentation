@@ -24,4 +24,24 @@ In short, ContributeRecipe does the following:
 
 ### Set up git to use the correct user GitHub account
 
-FIXME: This needs a proper re-think.
+Currently, ContributeRecipe needs to be run as the root user.  This means that git needs to be set up to use the same git `user.name` and `user.email` combination as the one used in `Compile.conf` in the `compileRecipeAuthor=` key.
+
+```
+cd /Data/Compile/Recipes
+sudo git config --global user.name="A. Random Contributor"
+sudo git config --global user.email="somebody@some-email-address"
+# list the git configuration
+sudo git config --get user.name
+sudo git config --get user.email
+```
+
+## Run ContributeRecipe
+
+This is the easy part.  It is simply a matter of supplying a name and a version to `ContributeRecipe` like so:
+
+```
+sudo ContributeRecipe ExampleRecipe 0.0.1
+```
+
+`ContributeRecipe` prompt for your GitHub username and passwords three times and the end result will be a nice pull request which will hopefully get merged.
+
