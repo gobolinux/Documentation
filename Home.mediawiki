@@ -26,7 +26,7 @@
 * Package management
 ** [[Removing programs]]
 ** [[Understanding and maintaining system indices]]
-** [[Updating-packages | Updates]]
+** [[Updating packages]]
 ** [[Freshen]] (moved to legacy status -- doesn't function at this time)
 ** [[Dependencies blacklist]]
 
