@@ -28,7 +28,7 @@
 * [[GetRecipe]] - Fetch a recipe and insert it in the recipes tree.
 * [[MakeRecipe]] - Create a recipe template.
 * [[EditRecipe]] - Edit a recipe.
-* [[PackRecipe]] - Generate a recipe tarball, ready for submission.
+* [[ContributeRecipe]] - Submit recipe changes via a GitHub PR.
 * [[CreatePackage]] - Make a GoboLinux package.
 * [[NewVersion]] - Update a recipe to a new version.
 * [[PrepareProgram]] - Prepares applications for instalation, running the 'configure'
