@@ -35,16 +35,26 @@ git config --get user.name
 git config --get user.email
 ```
 
-### Run ContributeRecipe
+### Check changes to the Recipe with `git diff`
 
-Once the attribution is correctly set up, it's time to run the `ContributeRecipe` script.
-
-The script has been designed such that all there is to the contribution process is to suply a name and a version to `ContributeRecipe` like so:
+It is considered good practice to double check the changes about to be committed by ContributeRecipe
 
 ```
+cd /Data/Compile/Recipes
+git diff ExampleRecipe
+```
+
+### Run `ContributeRecipe`
+
+Once the attribution is correctly set up and the changes have been double checked, it's time to run the `ContributeRecipe` script.
+
+The script has been designed such that all there is to the contribution process is to suply a name and a version to `ContributeRecipe`:
+
+```
+# cd into /Data/Compile/Recipes if you haven't already
 sudo ContributeRecipe ExampleRecipe 0.0.1
 ```
 
-NB! Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a verified GitHub identity when using `ContributeRecipe`.
+**NOTE:** Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a **verified GitHub identity** when using `ContributeRecipe`.
 
-`ContributeRecipe` will prompt for your GitHub username and password a couple of times, do its magic and the end result will be a nice pull request which will hopefully get merged.
+`ContributeRecipe` will prompt for your GitHub username and password a couple of times, do its magic and the end result will be a nice GoboLinux GitHub Pull Request which will hopefully get merged.
