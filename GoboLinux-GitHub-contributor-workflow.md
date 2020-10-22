@@ -26,8 +26,6 @@ In short, ContributeRecipe does the following:
 
 Git needs to be set up to use the same git `user.name` and `user.email` combination as the one used in `Compile.conf` in the `compileRecipeAuthor=` key.
 
-Currently, ContributeRecipe needs to be run as the root user.
-
 ```
 cd
 git config --global user.name="A. Random Contributor"
@@ -50,4 +48,3 @@ sudo ContributeRecipe ExampleRecipe 0.0.1
 NB! Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a verified GitHub identity when using `ContributeRecipe`.
 
 `ContributeRecipe` will prompt for your GitHub username and password a couple of times, do its magic and the end result will be a nice pull request which will hopefully get merged.
-
