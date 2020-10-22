@@ -19,8 +19,8 @@ In short, ContributeRecipe does the following:
 
 * Creates a fork of the Recipe tree on the user's GitHub space
 * Creates and checks out a branch on said fork
-* Commits the modifications to the given package in said branch
-* Sends a PR to the GoboLinux project
+* Commits the modifications to the given Recipe in said branch
+* Sends a GitHub PR to the GoboLinux project
 
 ### Set up git to use the correct user name and e-mail
 
@@ -47,6 +47,7 @@ The script has been designed such that all there is to the contribution process 
 sudo ContributeRecipe ExampleRecipe 0.0.1
 ```
 
-`ContributeRecipe` will prompt for your GitHub username and password a couple of time and the end result will be a nice pull request which will hopefully get merged.
+NB! Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a verified GitHub identity when using `ContributeRecipe`.
 
-Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a verified GitHub identity.
+`ContributeRecipe` will prompt for your GitHub username and password a couple of times, do its magic and the end result will be a nice pull request which will hopefully get merged.
+
