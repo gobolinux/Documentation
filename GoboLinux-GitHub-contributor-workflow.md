@@ -1,4 +1,4 @@
-This page is intended to document the workflow from setting up Compile.conf for proper attribution, to Compiling and testing a package, to creating a commit with a good commit message to finally submitting a GitHub Pull Request (PR).
+This page is intended to document the new GitHub workflow for contributing to GoboLinux.
 
 ## Compile.conf and attribution
 
@@ -22,26 +22,31 @@ In short, ContributeRecipe does the following:
 * Commits the modifications to the given package in said branch
 * Sends a PR to the GoboLinux project
 
-### Set up git to use the correct user GitHub account
+### Set up git to use the correct user name and e-mail
 
-Currently, ContributeRecipe needs to be run as the root user.  This means that git needs to be set up to use the same git `user.name` and `user.email` combination as the one used in `Compile.conf` in the `compileRecipeAuthor=` key.
+Git needs to be set up to use the same git `user.name` and `user.email` combination as the one used in `Compile.conf` in the `compileRecipeAuthor=` key.
+
+Currently, ContributeRecipe needs to be run as the root user.
 
 ```
-cd /Data/Compile/Recipes
-sudo git config --global user.name="A. Random Contributor"
-sudo git config --global user.email="somebody@some-email-address"
+cd
+git config --global user.name="A. Random Contributor"
+git config --global user.email="somebody@some-email-address"
 # list the git configuration
-sudo git config --get user.name
-sudo git config --get user.email
+git config --get user.name
+git config --get user.email
 ```
 
-## Run ContributeRecipe
+### Run ContributeRecipe
 
-This is the easy part.  It is simply a matter of supplying a name and a version to `ContributeRecipe` like so:
+Once the attribution is correctly set up, it's time to run the `ContributeRecipe` script.
+
+The script has been designed such that all there is to the contribution process is to suply a name and a version to `ContributeRecipe` like so:
 
 ```
 sudo ContributeRecipe ExampleRecipe 0.0.1
 ```
 
-`ContributeRecipe` prompt for your GitHub username and passwords three times and the end result will be a nice pull request which will hopefully get merged.
+`ContributeRecipe` will prompt for your GitHub username and password a couple of time and the end result will be a nice pull request which will hopefully get merged.
 
+Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a verified GitHub identity.
