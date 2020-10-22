@@ -30,6 +30,8 @@
 ** [[Freshen]] (moved to legacy status -- doesn't function at this time)
 ** [[Dependencies blacklist]]
 
+* [[GoboLinux GitHub contributor workflow]]
+
 * [[GoboLinux Command Reference]]
 
 * GoboLinux scripts
