@@ -58,3 +58,21 @@ sudo ContributeRecipe ExampleRecipe 0.0.1
 **NOTE:** Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a **verified GitHub identity** when using `ContributeRecipe`.
 
 `ContributeRecipe` will prompt for your GitHub username and password a couple of times, do its magic and the end result will be a nice GoboLinux GitHub Pull Request which will hopefully get merged.
+
+### Configure `hub` to use `GITHUB_TOKEN` for authentication
+
+As part of its first run, ContributeRecipe will call the `hub` tool, which is used to interface with the GitHub API.  During this first run, `hub` will create a GitHub API token and save it in `~/.config/hub`.
+
+For convenience, `hub` can be set up to re-use this token for authentication with your GitHub account by exporting the environment variable `GITHUB_TOKEN` in your shell's configuration file (by default, this is `~/.zshrc`):
+
+``` bash
+export GITHUB_TOKEN="<the value of oauth_token in ~/.config/hub>"
+```
+
+To verify that `GITHUB_TOKEN` works as expected, this example might prove useful:
+
+``` bash
+. ~/.zshrc
+echo "${GITHUB_TOKEN}"
+echo "My first gist sent via hub" | hub gist create
+```
