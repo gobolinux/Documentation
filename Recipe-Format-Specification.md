@@ -1167,6 +1167,9 @@ The format is like
 The tags such as `[lame]` specify [Use Flags], optional dependencies which
 affect the compilation of the package, if present.
 
+When the range string (i.e., "=", ">=", etc) is omitted, the dependency
+resolution algorithm assumes it to be ">=".
+
 The exact algorithm for complex dependencies is specified in
 [CheckDependencies] but allows for a sequence of options separated by `|`
 (or) each of which is a sequence of versions separated by "," (and). 
