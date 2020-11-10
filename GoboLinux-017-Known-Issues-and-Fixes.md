@@ -64,5 +64,5 @@ GrepReplace -B "^Ncurses " "NcursesW " /Programs/*/*/Resources/Dependencies
 
 Some problems have been reported by our users and are currently being fixed by our team. They are:
 
-- `ContributePackage` is not working
+- `ContributePackage` is not working -- use [[ContributeRecipe|GoboLinux GitHub contributor workflow]] instead.
 - Cut-and-paste does not work out of the box from a VM. Compiling `spice-vdagent` and loading its daemon should fix that.
