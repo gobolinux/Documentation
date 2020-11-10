@@ -48,7 +48,7 @@ following commands to update to its most recent version:
 
 ```
 Compile SQLite
-RemoveProgram SQLite 331011
+RemoveProgram SQLite 3310100
 ```
 
 ### Dependencies files with reference to Ncurses
