@@ -268,7 +268,7 @@ Supported recipe types (also known as modes), to be given as argument to
 #### configure_options=(<array of options>) 
 
 Flags to be passed to the configure script. These flags are
-passed in addition to default flags detected by [PrepareProgram]
+passed in addition to default flags detected by [[PrepareProgram]]
 (such as --prefix and --sysconfdir on autoconf-based configure
 scripts), unless the override_default_options declaration is used.
 
@@ -312,7 +312,7 @@ Some options are only relevant for *cabal*:
 Flags to be passed to the Cabal configure operation.
 
 These flags are passed in addition to default flags detected by
-[PrepareProgram] (such as --prefix) unless the override_default_options
+[[PrepareProgram]] (such as --prefix) unless the override_default_options
 declaration is used.
 
 
@@ -573,7 +573,7 @@ docs=(
 
 By default, Compile only generates directories in the target location
 right before the installation step. This is useful for the --no-install
-option (see the [Compile] reference entry). Unfortunately, some
+option (see the [[Compile]] reference entry). Unfortunately, some
 programs fail during the configuration of compilation step if the
 target directory does not already exist. Use this entry to appease those
 programs.
@@ -750,7 +750,7 @@ A message to display to the user after installation.
 
 *Valid modes: all*
 
-Additional options to be passed to [SandboxInstall]. This
+Additional options to be passed to [[SandboxInstall]]. This
 is typically used to expand the sandbox to allow additional
 directories in *special* situations (such as the installation
 of kernel modules). *Avoid* using this option as much as
@@ -769,7 +769,7 @@ sandbox_options=(
 
 *Valid modes: all*
 
-Additional options to be passed to [SymlinkProgram]. This
+Additional options to be passed to [[SymlinkProgram]]. This
 should be used sparingly, in order to remedy unusual situations
 (the FreeType package used it to avoid a XFree86 conflict which
 affected the proper functioning of the system). *Avoid* using
@@ -821,7 +821,7 @@ Or to add multiple configure options:
  )
 ```
 
-See [Use flags].
+See [[Use flags]].
 
 
 ## Hooks 
@@ -938,7 +938,7 @@ time of execution.  Instead, use `using_<flag>_<hook>()`.  For instance,
 `using_gtk_pre_build()` is run at the time specified above, in the event that
 the `gtk` use flag is set.
 
-See [Use flags].
+See [[Use flags]].
 
 
 ### New Hooks 
@@ -1138,7 +1138,7 @@ against when compiling.
 This is a directory which may contain, in `Defaults/Settings`, the default
 contents of the `/Programs/Foo/Settings` directory.  The contents of this
 directory will be reconciled with the currently active settings, if any, by
-[UpdateSettings].  The original defaults will remain in
+[[UpdateSettings]].  The original defaults will remain in
 `/Programs/Foo/Version/Resources/Defaults`, so that a user may revert to them as
 necessary.
 
@@ -1164,14 +1164,14 @@ The format is like
     ZLib 1.2.3 
 ```
 
-The tags such as `[lame]` specify [Use Flags], optional dependencies which
+The tags such as `[lame]` specify [[Use Flags]], optional dependencies which
 affect the compilation of the package, if present.
 
-When the range string (i.e., "=", ">=", etc) is omitted, the dependency
-resolution algorithm assumes it to be ">=".
+When the range string (i.e., `=`, `>=`, etc) is omitted, the dependency
+resolution algorithm assumes it to be `>=`.
 
 The exact algorithm for complex dependencies is specified in
-[CheckDependencies] but allows for a sequence of options separated by `|`
+[[CheckDependencies]] but allows for a sequence of options separated by `|`
 (or) each of which is a sequence of versions separated by "," (and). 
 Precedence is left to right.  Thus:
 
@@ -1181,10 +1181,10 @@ Precedence is left to right.  Thus:
 
 means a GCC version less than 4.0.0 or a GCC version greater than 4.1.0 but
 not equal to 4.1.2 or an ICC version greater than 2.0.0.  See the code for
-[CheckDependencies] for the exact algorithm.
+[[CheckDependencies]] for the exact algorithm.
 
 Dependencies to language-specific package managers can be fulfilled using the
-[Aliens] subsystem, using the syntax `AlienType:alien_package`, as in
+[[Aliens]] subsystem, using the syntax `AlienType:alien_package`, as in
 the examples above.
 
 Note that there are limitations in version handling for Aliens, as it depends
@@ -1193,7 +1193,7 @@ on the Alien provider and the package manager itself:
 * CPAN dependencies ignore version information ([CPAN only installs the latest
   version](http://stackoverflow.com/questions/260593/how-can-i-install-a-specific-version-of-a-set-of-perl-modules))
 
-For more info, see [Dependencies] and [Use Flags].
+For more info, see [[Dependencies]] and [[Use Flags]].
 
 
 #### Description 
@@ -1222,11 +1222,11 @@ export MOZ_PLUGIN_PATH=${goboLibraries}/browser-plugins
 #### Hints 
 
 These contain hints for UpdateSettings on when to overwrite, delete, or skip
-updating of certain settings. See [Hints File].
+updating of certain settings. See [[Hints File]].
 
 #### PostInstall 
 
-A bash script which is executed by [Compile]] (or [[InstallPackage]) after
+A bash script which is executed by [[Compile]] (or [[InstallPackage]]) after
 installation.  This is for one-time actions which should not be associated
 with any stage of the compilation or installation process, but run after the
 Program is symlinked.  They are kept separate from the Recipe file so that
@@ -1262,7 +1262,7 @@ thread](http://thread.gmane.org/gmane.linux.distributions.gobo.devel/2267).
 
 #### Tasks/
 
-Files in this subdirectory are [boot script tasks], linked to `System/Tasks`.
+Files in this subdirectory are [[boot script tasks]], linked to `System/Tasks`.
 These are roughly equivalent to the `/etc/init.d` scripts found in many
 distributions.
 
