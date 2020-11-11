@@ -35,13 +35,15 @@ git config --get user.name
 git config --get user.email
 ```
 
-### Check changes to the Recipe with `git diff`
+### Check for changed files in the Recipes repository
 
-It is considered good practice to double check the changes about to be committed by ContributeRecipe
+It is considered good practice to double check the changes about to be committed by ContributeRecipe:
 
 ```
 cd /Data/Compile/Recipes
-git diff ExampleRecipe
+git status
+# if existing files have been modified, you can run:
+git diff
 ```
 
 ### Run `ContributeRecipe`
@@ -59,11 +61,13 @@ sudo ContributeRecipe ExampleRecipe 0.0.1
 
 `ContributeRecipe` will prompt for your GitHub username and password a couple of times, do its magic and the end result will be a nice GoboLinux GitHub Pull Request which will hopefully get merged.
 
-### Configure `git` and `hub` to use `GITHUB_TOKEN` for authentication
+### Configure `hub` to use `GITHUB_TOKEN` for authentication
 
 As part of its first run, ContributeRecipe will call both `git` and `hub` (`hub` is used to interface with the GitHub API).  During this first run, `hub` will create a GitHub API token and save it in `~/.config/hub`.
 
-For convenience, both `git` and `hub` can be set up to re-use this token for authentication with your GitHub account by exporting the environment variables `GITHUB_USER` and `GITHUB_TOKEN` in your shell's configuration file (by default, this is `~/.zshrc`):
+Note that, if you have 2-Factor Authentication (2FA) enabled, `git` and `hub` expect you to supply the oauth token that was saved in `~/.config/hub` and NOT your normal password when authenticating.
+
+For convenience, `hub` can be set up to re-use this token for authentication with your GitHub account by exporting the environment variable `GITHUB_TOKEN` in your shell's configuration file (by default, this is `~/.zshrc`):
 
 ``` bash
 export GITHUB_USER="<the value of your github username>"
@@ -80,7 +84,7 @@ echo "My first gist sent via hub" | hub gist create
 
 ### How to recover from GitHub login failures
 
-If you accidentally type the wrong user or password during a `ContributeRecipe` run, you might need to delete the remote branch for subsequent `ContributeRecipe` attempts to be successful.
+If something goes awry during a `ContributeRecipe` run, you might need to delete the remote branch for subsequent `ContributeRecipe` attempts to be successful.
 
 Once you know the name of the branch that was created, it's as simple as firing off a `git push <remote> --delete <branch>` command.  
 
