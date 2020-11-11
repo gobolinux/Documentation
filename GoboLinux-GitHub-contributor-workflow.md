@@ -59,7 +59,7 @@ sudo ContributeRecipe ExampleRecipe 0.0.1
 
 NOTE: Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a verified GitHub identity when using `ContributeRecipe`.
 
-`ContributeRecipe` will prompt for your GitHub username and password a couple of times, do its magic and the end result will be a nice GoboLinux GitHub Pull Request which will hopefully get merged.
+`ContributeRecipe` will prompt for your GitHub username and password a couple of times (_see note about **2FA** below_), do its magic and the end result will be a nice GoboLinux GitHub Pull Request which will hopefully get merged.
 
 ### Configure `hub` to use `GITHUB_TOKEN` for authentication
 
