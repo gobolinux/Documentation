@@ -80,9 +80,9 @@ echo "My first gist sent via hub" | hub gist create
 
 ### How to recover from GitHub login failures
 
-If you accidentally type the wrong user or password during a `ContributeRecipe` run, you'll need to delete any local and remote branches created for subsequent `ContributeRecipe` attempts to be successful.
+If you accidentally type the wrong user or password during a `ContributeRecipe` run, you might need to delete the remote branch for subsequent `ContributeRecipe` attempts to be successful.
 
-Once you know the name of the branch that was created, it's as simple as firing off a `git branch -d <branch>` to delete the local branch and a `git push <remote> --delete <branch>` command.  
+Once you know the name of the branch that was created, it's as simple as firing off a `git push <remote> --delete <branch>` command.  
 
 Typically, for remote branches the necessary command will look something like `git push origin-fork --delete submit-<recipe>-<version>`.
 
