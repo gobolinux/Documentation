@@ -50,14 +50,14 @@ git diff
 
 Once the attribution is correctly set up and the changes have been double checked, it's time to run the `ContributeRecipe` script.
 
-The script has been designed such that all there is to the contribution process is to suply a name and a version to `ContributeRecipe`:
+The script has been designed such that all there is to the contribution process is to supply a name and a version to `ContributeRecipe`:
 
 ```
 # cd into /Data/Compile/Recipes if you haven't already
 sudo ContributeRecipe ExampleRecipe 0.0.1
 ```
 
-**NOTE:** Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a **verified GitHub identity** when using `ContributeRecipe`.
+NOTE: Please ensure that you use a GitHub account where your name/alias and e-mail address has been added as a verified GitHub identity when using `ContributeRecipe`.
 
 `ContributeRecipe` will prompt for your GitHub username and password a couple of times, do its magic and the end result will be a nice GoboLinux GitHub Pull Request which will hopefully get merged.
 
@@ -65,7 +65,7 @@ sudo ContributeRecipe ExampleRecipe 0.0.1
 
 As part of its first run, ContributeRecipe will call both `git` and `hub` (`hub` is used to interface with the GitHub API).  During this first run, `hub` will create a GitHub API token and save it in `~/.config/hub`.
 
-Note that, if you have 2-Factor Authentication (2FA) enabled, `git` and `hub` expect you to supply the oauth token that was saved in `~/.config/hub` and NOT your normal password when authenticating.
+NOTE: if you have 2-Factor Authentication (**2FA**) enabled, `git` and `hub` expect you to supply the oauth token that was saved in `~/.config/hub` and NOT your normal password when authenticating.
 
 For convenience, `hub` can be set up to re-use this token for authentication with your GitHub account by exporting the environment variable `GITHUB_TOKEN` in your shell's configuration file (by default, this is `~/.zshrc`):
 
@@ -82,7 +82,7 @@ echo "${GITHUB_TOKEN}"
 echo "My first gist sent via hub" | hub gist create
 ```
 
-### How to recover from GitHub login failures
+### How to recover from mistakes/failures and start over
 
 If something goes awry during a `ContributeRecipe` run, you might need to delete the remote branch for subsequent `ContributeRecipe` attempts to be successful.
 
