@@ -28,8 +28,8 @@ Git needs to be set up to use the same git `user.name` and `user.email` combinat
 
 ```
 cd
-git config --global user.name="A. Random Contributor"
-git config --global user.email="somebody@some-email-address"
+git config --global user.name "A. Random Contributor"
+git config --global user.email "somebody@some-email-address"
 # list the git configuration
 git config --get user.name
 git config --get user.email
