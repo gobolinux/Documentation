@@ -1046,9 +1046,9 @@ program.
 * `$variable_target`
 
 For the recipe for `Foobar 2.1` those variables will have the values of
-`$goboPrograms/<nowiki>FooBar</nowiki>/2.1`,
-`$goboPrograms/<nowiki>FooBar</nowiki>/Settings` and
-`$goboPrograms/<nowiki>FooBar</nowiki>/<b></b>Variable` respectively.
+`$goboPrograms/FooBar/2.1`,
+`$goboPrograms/FooBar/Settings` and
+`$goboPrograms/FooBar/<b></b>Variable` respectively.
 
 
 ### Dependency variables 
