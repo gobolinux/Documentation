@@ -9,39 +9,38 @@ DESCRIPTION
        Contribute a recipe to the global store
 
 OPTIONS
-       --terse
+    --terse
+        Enable terse messages.
 
-              Enable terse messages.
+    --debug
+        Enable debug messages.
 
-       --debug
+    -h, --help
+        Show this help.
 
-              Enable debug messages.
+    --version
+        Show program version.
 
-       -h, --help
+    -v, --verbose
+        Enable verbose mode.
 
-              Show this help.
+    --logfile <entry>
+        Log all output to specified file.
 
-       --version
+    -g, --gobo
+        GoboLinux developer: push straight to repo.
 
-              Show program version.
+    -p, --pretend
+        Don't really submit, just dump the report to stdout.
 
-       -v, --verbose
-
-              Enable verbose mode.
-
-       --logfile <entry>
-
-              Log all output to specified file.
-
-       -p, --pretend
-
-              Don't really submit, just dump the report to stdout.
+    -s, --show-secret
+        Show secret GitHub oauth token on stdout.
 
 EXAMPLES
               ContributeRecipe firefox
 
 COPYRIGHT
-       Copyright © 2008-2009 Michael Homer. Released under the GNU GPL.
+       Copyright © 2008-2009 Michael Homer, 2020 Rune Morling. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                      CONTRIBUTERECIPE(1)
 
