@@ -79,7 +79,7 @@ If you face this problem, please run the following commands on your installed sy
 ```
 fname=
 xattr_pattern="trusted.overlay."
-getfattr -P -R -d -m "$xattr_pattern" --absolute-names /Programs | while read i
+getfattr -P -R -d -m "$xattr_pattern" --absolute-names /Programs 2> /dev/null | while read i
 do
    if echo "$i" | grep -q "^# file:"
    then
