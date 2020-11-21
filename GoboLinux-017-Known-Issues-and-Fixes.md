@@ -60,9 +60,34 @@ references to the former. The following command fixes that:
 GrepReplace -B "^Ncurses " "NcursesW " /Programs/*/*/Resources/Dependencies
 ```
 
-## Outstanding issues
+### Outstanding issues
 
 Some problems have been reported by our users and are currently being fixed by our team. They are:
 
 - `ContributePackage` is not working -- use [[ContributeRecipe|GoboLinux GitHub contributor workflow]] instead.
 - Cut-and-paste does not work out of the box from a VM. Compiling `spice-vdagent` and loading its daemon should fix that.
+
+### Compile fails stating that some headers or libraries could not be found, when they are there
+
+The installation process used by Compile had a problem in that certain extended attributes used by `overlayfs` were
+carried over from the sandbox to the installation directory. Some of those extended attributes tell `overlayfs` to
+consider the corresponding files or directories as deleted objects. Since we use `overlayfs` to sandbox the compilation
+process, this bug may impact Compile in the sense that existing files may be considered as non-existent.
+
+If you face this problem, please run the following commands on your installed system to remove those attributes:
+
+```
+fname=
+xattr_pattern="trusted.overlay."
+getfattr -P -R -d -m "$xattr_pattern" --absolute-names /Programs | while read i
+do
+   if echo "$i" | grep -q "^# file:"
+   then
+      fname="$(echo "$i" | awk {'print $3'})"
+   elif echo "$i" | grep -q "^${xattr_pattern}"
+   then
+      xattr="$(echo "$i" | cut -d= -f1)"
+      setfattr --remove "$xattr" "$fname"
+   fi
+done
+```
