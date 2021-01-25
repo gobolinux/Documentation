@@ -16,7 +16,7 @@ are each confined to their own subdirectories.
 
 # Preparing the filesystem view
 
-All you have to do is to make sure the dependencies of the program you want to run are correctly listed under the program's [Resources directory](https://github.com/gobolinux/Documentation/wiki/Resources-files) - more specifically, in the [Dependencies](https://github.com/gobolinux/Documentation/wiki/Resources-files#Dependencies) file at `/Programs/Name/Version/Resources/Dependencies`. You may list program names (e.g., `LibPNG`), specify a particular version (as in `LibPNG 1.4.4`) or even let Runner pick the best version given a certain range (e.g., `LibPNG >= 1.4.0, < 1.5.0`).
+All you have to do is to make sure the dependencies of the program you want to run are correctly listed under the program's [[Resources directory|Recipe-Format-Specification#resources]] - more specifically, in the [[Dependencies|Recipe-Format-Specification#dependencies]] file at `/Programs/Name/Version/Resources/Dependencies`. You may list program names (e.g., `LibPNG`), specify a particular version (as in `LibPNG 1.4.4`) or even let Runner pick the best version given a certain range (e.g., `LibPNG >= 1.4.0, < 1.5.0`).
 
 Most likely, the program you want to run will already have a sane `Dependencies` file - every binary package we distribute will have one, just like every compilation recipe do.
 
