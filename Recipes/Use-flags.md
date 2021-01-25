@@ -55,7 +55,7 @@ flags from above could be applied with:
 
 ## Use Flags in Recipes
 
-Flags should be listed in the Dependencies or BuildDependencies file
+Flags should be listed in the [[Dependencies|Recipe-Format-Specification#dependencies]] or [[BuildDependencies|Recipe-Format-Specification#builddependencies]] file
 in the same manner as the existing cross/!cross flag:
 
 ```
