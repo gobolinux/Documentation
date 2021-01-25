@@ -41,7 +41,7 @@ When a recipe for an older version of a given package already exists, you don't 
 
   NewVersion GCC 4.4.4
 
-This command will fetch the latest GCC recipe, create a new subdir called "4.4.4" inside /Data/Compile/LocalRecipes/GCC and will replace the package version in "$url" by 4.4.4.
+This command will fetch the latest GCC recipe, create a new subdir called "4.4.4" inside /Data/Compile/Recipes/GCC and will replace the package version in "$url" by 4.4.4.
 
 You can also give the full URL for the package sources:
    
@@ -87,7 +87,7 @@ Note: In case it didn't, you could have passed it explicitly as parameters
 
       Compile joe
 
-Wait a few minutes, and Joe will be compiled and installed on your system.  Now you have a local recipe and it will be packaged into /Data/Compile/PackedRecipes by default as Joe--3.1--recipe.tar.bz2.
+Wait a few minutes, and Joe will be compiled and installed on your system.
 
 When you create a new recipe for a program that's not yet available in the GoboLinux recipe, please consider contributing it to the community! (See section above, under Writing Recipes for details.)
 
@@ -112,13 +112,13 @@ It simplify installation and can help too in some case with stubborn project tha
 
 == Share your recipes ==
 
-Share your recipes with the Gobo community!  Recipes you create or update will be located in /Data/Compile/LocalRecipes.  Consider using a text editor to write a Description file for your recipe before you share it.
+Share your recipes with the Gobo community!  Recipes you create or update will be located in /Data/Compile/Recipes.  Consider using a text editor to write a Description file for your recipe before you share it.
 
 To share your recipe, use this command:
 
  ContributeRecipe [Program Name]
 
-[[ContributeRecipe]] will create a .tar.bz2 file in /Data/Compile/PackedRecipes and automatically submit it for review at http://recipes.gobolinux.org/review/ .  You will be e-mailed when your recipe is accepted or rejected.
+[[ContributeRecipe]] will submit a Pull Request on GitHub so that the project maintainers can review it and merge it. Please note that you will need a valid account at github.com in order to contribute recipes.
 
 Approved committers should refer to these [[How to Commit Recipes | Guidelines]] (others should use [[ContributeRecipe]].)
 
