@@ -1128,6 +1128,18 @@ This file lists dependencies which must be present to successfully compile the
 Program.  They may include compilers or build tools.  The format is the same
 as Dependencies, below.
 
+Example:
+
+```
+Autoconf 2.60
+Automake 1.11
+GTK-Doc 1.9 [doc]
+Intltool 0.35.0
+LibTool 2.4.0
+Pkgconfig 0.20
+Vala [vala]
+```
+
 #### BuildInformation 
 
 Informational file about which versions of dependencies were actually linked
