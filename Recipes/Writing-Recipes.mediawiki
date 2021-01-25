@@ -5,9 +5,7 @@ There are two ways to create recipes:
 
 The utilities for accomplishing this are:
 
-[[NewVersion]]
-[[EditRecipe]] and
-[[MakeRecipe]].
+[[NewVersion]], [[EditRecipe]] and [[MakeRecipe]].
 
 Once the recipe is done and compiled, a
 packed version of it will show up in /Data/Compile/PackedRecipes
@@ -50,6 +48,8 @@ You can also give the full URL for the package sources:
 If the version of the package has not changed, and only minor recipe updates are needed, [[NewVersion]] will not work as it will not copy the same version of a recipe over.  In this case, [[EditRecipe]] is the tool to use. 
 
 == Creating new recipes ==
+
+If you are writing a recipe from scratch, the [[Recipe-Format-Specification]] documentation will prove useful.
 
 === Naming new recipes ===
 
