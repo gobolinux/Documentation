@@ -1002,25 +1002,18 @@ Compile automatically creates variables that can be used in the functions.
 To help you in recipe writing, Compile gives you the following run-time
 variables to use, each referring to a specific filesystem hierarchy's member.
 
-* `$goboExecutables`
-* `$goboHeaders`
-* `$goboModules`
-* `$goboLibraries`
-* `$goboPrograms`
-* `$goboSettings`
-* `$goboTemp`
-* `$goboVariable`
-
-Which respectively point to (by default):
-
-* `/System/Index/bin`
-* `/System/Index/include`
-* `/System/Kernel/Modules`
-* `/System/Index/lib`
-* `/Programs`
-* `/System/Settings`
-* `/System/Variable/tmp`
-* `/System/Variable`
+```
+$VARIABLE       :       DEFAULT PATH
+============================================== 
+$goboExecutables:       /System/Index/bin
+$goboHeaders    :       /System/Index/include
+$goboModules    :       /System/Kernel/Modules
+$goboLibraries  :       /System/Index/lib
+$goboPrograms   :       /Programs
+$goboSettings   :       /System/Settings
+$goboTemp       :       /System/Variable/tmp
+$goboVariable   :       /System/Variable
+```
 
 Thus, if you're writing a recipe for some program which accepts configure
 options and for which you need to manually specify a library path, you can use
