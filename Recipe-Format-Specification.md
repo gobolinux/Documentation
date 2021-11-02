@@ -1271,6 +1271,8 @@ Files in this subdirectory are [[boot script tasks]], linked to `System/Tasks`.
 These are roughly equivalent to the `/etc/init.d` scripts found in many
 distributions.
 
+Note that all files under `System/Tasks/` should be marked as executable! Otherwise they will fail to execute during boot!
+
 #### Wrappers/
 
 This subdirectory contains scripts which are typically GoboLinux-specific
