@@ -21,7 +21,7 @@ echo ifconfig lo up >> /System/Settings/BootScripts/BootUp
 
 ### Update expired SSL certificates!
 
-The recent [Let's encrypt fiasko](https://www.reddit.com/r/PFSENSE/comments/pyce7q/sept_29th_lets_encrypt_intermediate_ca_expiration/) requires our users to update their certificate database on the system.
+The recent [Let's encrypt fiasko](https://www.reddit.com/r/PFSENSE/comments/pyce7q/sept_29th_lets_encrypt_intermediate_ca_expiration/) requires our users to update their certificate database on the system. Otherwise tools like `git`, `wget`, `Compile` etc might not work correctly.
 
 The appropriate way to resolve this, is by running:
 
