@@ -10,6 +10,23 @@ InstallPackage https://gobolinux.org/packages/017/UnionFS-Fuse--2.1--x86_64.tar.
 
 ## Installed system 
 
+### Update expired SSL certificates!
+
+The recent [Let's encrypt fiasko](https://www.reddit.com/r/PFSENSE/comments/pyce7q/sept_29th_lets_encrypt_intermediate_ca_expiration/) requires our users to update their certificate database on the system.
+
+The appropriate way to resolve this, is by running:
+
+```bash
+sudo Compile --no-check-certificate CA-Certificates
+```
+and
+
+```bash
+sudo sh /System/Index/bin/update-ca-certificates
+```
+
+afterwards.
+
 ### Git-related errors when invoking Compile for the first time
 
 Loopback network interface needs to be brought up. As root, run:
