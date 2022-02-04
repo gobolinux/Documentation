@@ -1,3 +1,7 @@
+---
+title: "Docs"
+---
+
 ```
 NAME
        Docs -

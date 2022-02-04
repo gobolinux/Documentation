@@ -1,3 +1,7 @@
+---
+title: "UpdateKdeRecipe"
+---
+
 ```
 
 The UpdateKdeRecipe script is assumingly aiding in updating KDE recipes.

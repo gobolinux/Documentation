@@ -1,3 +1,7 @@
+---
+title: "SuggestDuplicates"
+---
+
 ```
 NAME
        SuggestDuplicates -

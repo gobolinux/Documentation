@@ -1,3 +1,7 @@
+---
+title: "ApplyVariables"
+---
+
 ```
 NAME
        ApplyVariables -

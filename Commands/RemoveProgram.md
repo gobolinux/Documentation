@@ -1,3 +1,7 @@
+---
+title: "RemoveProgram"
+---
+
 ```
 NAME
        RemoveProgram -

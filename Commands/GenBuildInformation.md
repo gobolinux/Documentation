@@ -1,3 +1,7 @@
+---
+title: "GenBuildInfo"
+---
+
 ```
 NAME
        GenBuildInformation -

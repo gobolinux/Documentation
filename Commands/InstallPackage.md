@@ -1,3 +1,7 @@
+---
+title: "InstallPackage"
+---
+
 ```
 NAME
        InstallPackage -

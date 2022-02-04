@@ -1,3 +1,7 @@
+---
+title: "Compile"
+---
+
 ```
 NAME
        Compile - Build software from GoboLinux recipe

@@ -1,3 +1,7 @@
+---
+title: "KeyManager"
+---
+
 Manage digital signature keys for GoboLinux packages.
 
 	Usage: KeyManager [ <key_file> ]

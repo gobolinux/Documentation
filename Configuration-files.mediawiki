@@ -1,5 +1,0 @@
-* [[Compile.conf]]
-* [[GetAvailable.conf]]
-
-__NOTOC__
-

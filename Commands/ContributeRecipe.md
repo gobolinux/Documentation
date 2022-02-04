@@ -1,3 +1,7 @@
+---
+title: "ContributeRecipe"
+---
+
 ```
 NAME
        ContributeRecipe -

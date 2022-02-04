@@ -1,3 +1,7 @@
+---
+title: "install"
+---
+
 ```
 NAME
        install - copy files and set attributes

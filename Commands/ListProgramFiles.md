@@ -1,3 +1,7 @@
+---
+title: "ListProgramFiles"
+---
+
 Gives you the list of files which belong to some program you have installed on your machine.
 
 Which files belong the current installed version of

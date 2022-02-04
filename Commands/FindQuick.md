@@ -1,3 +1,7 @@
+---
+title: "FindQuick"
+---
+
 ```
 NAME
        FindQuick -

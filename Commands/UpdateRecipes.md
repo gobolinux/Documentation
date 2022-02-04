@@ -1,3 +1,7 @@
+---
+title: "UpdateRecipes"
+---
+
 ```
 NAME
        UpdateRecipes -

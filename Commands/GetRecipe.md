@@ -1,3 +1,7 @@
+---
+title: "GetRecipe"
+---
+
 ```
 NAME
        GetRecipe -

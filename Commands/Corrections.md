@@ -1,3 +1,7 @@
+---
+title: "Corrections"
+---
+
 ```
 Usage: Corrections [options]
 
