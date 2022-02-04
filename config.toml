@@ -1,0 +1,62 @@
+baseURL = 'https://wiki.gobolinux.org/'
+languageCode = 'en-us'
+title = 'GoboLinux Documentation'
+disablePathToLower = true
+
+# Required in cases the project is *not* hosted under the root directory of the domain
+# canonifyURLs = true
+
+# Change the default theme to be use when building the site with Hugo
+theme = "hugo-theme-relearn"
+
+[params]
+  editURL = "https://github.com/gobolinux/Documentation/edit/master/content/"
+  description = "Documentation for GoboLinux"
+  themeVariant = "gobolinux"
+  titleSeparator = "::"
+  disableLandingPageButton = true
+  showVisitedLinks = true
+  disableInlineCopyToClipBoard = true
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 5
+    ordered = false
+  [markup.highlight]
+    style = "rrt" # choose a color theme or create your own
+    guessSyntax = false # if set to true, avoid unstyled code if no language was given but mermaid code fences will not work anymore
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-fw fa-globe'></i> Homepage"
+url = "https://gobolinux.org/"
+weight = 0
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> Repository"
+url = "https://github.com/gobolinux"
+weight = 1
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-fw fa-users'></i> Community"
+url = "https://gobolinux.discourse.group/"
+weight = 2
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-fw fa-book'></i> Recipes"
+url = "https://github.com/gobolinux/Recipes"
+weight = 3
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-fw fa-download'></i> Download ISO"
+url = "https://gobolinux.org/downloads.html"
+weight = 4
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-fw fa-camera'></i> Showcases"
+url = "https://gobolinux.org/screenshots.html"
+weight = 5

@@ -1,0 +1,104 @@
+:root {
+    --MAIN-TEXT-color: #323232; /* Color of text by default */
+    --MAIN-TITLES-TEXT-color: #5e5e5e; /* Color of titles h2-h3-h4-h5-h6 */
+    --MAIN-LINK-color: #1C90F3; /* Color of links */
+    --MAIN-LINK-HOVER-color: #167ad0; /* Color of hovered links */
+    --MAIN-ANCHOR-color: #1C90F3; /* color of anchors on titles */
+
+    --MAIN-CODE-color: #e2e4e5; /* fallback color for code background */
+    --MAIN-CODE-BG-color: #282a36; /* fallback color for code text */
+
+    --MENU-HOME-LINK-color: #323232; /* Color of the home button text */
+    --MENU-HOME-LINK-HOVER-color: #5e5e5e; /* Color of the hovered home button text */
+
+    --MENU-HEADER-BG-color: unset; /* Background color of menu header */
+    --MENU-HEADER-BORDER-color: #33a1ff; /*Color of menu header border */
+
+    --MENU-SEARCH-BG-color: #167ad0; /* Search field background color (by default borders + icons) */
+    --MENU-SEARCH-BOX-color: #33a1ff; /* Override search field border color */
+    --MENU-SEARCH-BOX-ICONS-color: #a1d2fd; /* Override search field icons color */
+
+    --MENU-SECTIONS-ACTIVE-BG-color: rgba(0,0,0,.2); /* Background color of the active section and its children */
+    /* --MENU-SECTIONS-BG: linear-gradient(150deg, rgba(126,0,255,1) 0%, rgba(0,224,244,1) 75%, rgba(0,255,90,1) 100%); Background color of other sections */
+    --MENU-SECTIONS-BG: linear-gradient(150deg, rgba(128, 0, 255, 1) 0%, rgba(0, 188, 244, 1) 75%, rgba(0,255,90, 1) 100%); /* Background color of other sections */
+    --MENU-SECTIONS-LINK-color: #fff; /* Color of links in menu */
+    --MENU-SECTIONS-LINK-HOVER-color: #e6e6e6;  /* Color of links in menu, when hovered */
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #777; /* Color of active category text */
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */
+
+    --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
+    --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
+}
+
+html {
+    font-size: 20px;
+}
+
+#sidebar {
+    background: var(--MENU-SECTIONS-BG);
+    font-size: 0.75rem;
+}
+
+#header-wrapper, #sidebar hr {
+    border-bottom: unset;
+}
+
+body {
+    font-family: "Public Sans";
+    font-size: 0.85rem !important;
+    letter-spacing: -.015rem;
+}
+
+h1 {
+    font-family: "Metropolis";
+    font-size: 2.5rem !important;
+    text-transform: unset;
+}
+
+h2 {
+    font-family: "Metropolis";
+    font-size: 1.5rem !important;
+}
+
+code {
+    font-family: "Fira Code";
+}
+
+#footer {
+    color: #fff;
+}
+
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url("/fonts/PublicSans-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url("/fonts/PublicSans-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 500;
+    src: url("/fonts/metropolis-bold-webfont.woff2") format("woff2");
+}
+
+/* @font-face {
+    font-family: 'Lode Sans Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: url("/fonts/LodeSansMono.otf") format("opentype");
+} */
+
+@font-face {
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/FiraCode-Regular.ttf") format("truetype");
+}
