@@ -158,7 +158,7 @@ The mouse pointer for the graphical display is defined in an
 and set suitable defaults for your system. If not, you can always try a
 failsafe setup such as:
 
-```bash
+```shell
 Section "InputDevice"
 Identifier  "Mouse0"
 Driver      "mouse"
@@ -278,7 +278,7 @@ GoboLinux comes with CUPS installed by default.
 Note that ALSA is muted by default, to automatically save and restore
 changes done in e.g. alsamixer, add these lines to your boot scripts.
 
-```bash
+```shell
 Done: Exec "Storing ALSA settings..."
 alsactl store
 ```

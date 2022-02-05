@@ -31,12 +31,12 @@ The recent [Let's Encrypt fiasko](https://www.reddit.com/r/PFSENSE/comments/pyce
 
 The appropriate way to resolve this, is by running:
 
-```bash
+```shell
 sudo Compile --no-check-certificate CA-Certificates
 ```
 and
 
-```bash
+```shell
 sudo sh /System/Index/bin/update-ca-certificates
 ```
 

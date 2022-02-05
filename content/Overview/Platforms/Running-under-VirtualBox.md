@@ -16,7 +16,7 @@ The catch is that we are already using the virtual CD drive from VirtualBox to r
 
 Then, boot GoboLinux normally in VirtalBox, and do the following:
 
-```bash
+```shell
 mount /dev/sr1 /Mount/CD-ROM
 cd /Mount/CD-ROM
 ./VBoxLinuxAdditions.run

@@ -2,14 +2,12 @@
 title: "FindPackage"
 ---
 
+`FindPackage`
+Searches, chooses an occurence and prints where some package (or recipe) can
+be found, based only on the program name (case insesitive) or on the
+program name and program version.
+
 ```
-
-FindPackage
- Searches, chooses an occurence and prints where some package (or recipe) can
- be found, based only on the program name (case insesitive) or on the
- program name and program version.
-
-
 Options:
  -t [t1,t2,...]
  --types=[t1,t2,...]  Sets what kind of packages can be searched, in the
@@ -47,17 +45,19 @@ Options:
 
  -p
  --gobo-programs      Override default /Programs as path of installed packages
+ ```
 
 Examples of usage:
- FindPackage kde
- FindPackage kde 3.2.3
- FindPackage KDE 3.2.3
- FindPackage --types=recipe kde 3.2.3
- FindPackage --types=local_package,official_package kde 3.2.3
- FindPackage -t l,o kde 3.2.3
- FindPackage --full-list kde 3.2.3
- FindPackage --force-update --full-list kde 3.2.3
- FindPackage --types=recipe kde-base 3.2.3
- FindPackage --types=recipe --substring kd 3.2.3
- FindPackage --types=installed gcc
+```shell
+FindPackage kde
+FindPackage kde 3.2.3
+FindPackage KDE 3.2.3
+FindPackage --types=recipe kde 3.2.3
+FindPackage --types=local_package,official_package kde 3.2.3
+FindPackage -t l,o kde 3.2.3
+FindPackage --full-list kde 3.2.3
+FindPackage --force-update --full-list kde 3.2.3
+FindPackage --types=recipe kde-base 3.2.3
+FindPackage --types=recipe --substring kd 3.2.3
+FindPackage --types=installed gcc
 ```

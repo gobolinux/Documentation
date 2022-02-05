@@ -11,7 +11,7 @@ follow next.
 
 In order to install **irssi**, a text-based IRC client from the command
 line, you would type the following instruction:
-```bash
+```shell
 Compile irssi
 ```
 Depending on the speed of your computer, internet connection and what

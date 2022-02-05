@@ -49,7 +49,7 @@ panel).
 
 -   Install HAL, Pmount and Ivman:
 
-```bash
+```shell
 ] Compile hal 
 ... 
 ] Compile pmount 
@@ -94,7 +94,7 @@ src/manager.c:619)
 NOTE: If all this works, don't forget to check that hald and ivman is
 started in your bootscripts:
 
-```bash
+```shell
 Exec "Starting D-Bus system bus..."             messagebus  
 Exec "Starting HAL daemon..."                   StartTask hald  
 Exec "Starting Volume Manager..."               ivman
@@ -103,7 +103,7 @@ Exec "Starting Volume Manager..."               ivman
 -   Make sure Ivman is started as your user too: Add this script in your
     AutoStart folder:
 
-```bash
+```shell
 #!/bin/sh 
 exec 1>&2 
 echo -n "Launching volume manager... " 
@@ -125,7 +125,7 @@ fi
 ## Ivman rules to add devices to your ROX panel
 
 -   Create a script named `~/bin/rox.panelput` and make it executable:
-```bash
+```shell
     #!/bin/sh 
     ### Change "Top" below to the panel you want your devices on... 
     rox --RPC << EOF 
@@ -160,7 +160,7 @@ This lets you unmount your media and also FUSE mountpoints with the
 *Eject* entry on the right-click menu on mountpoints. Don't forget to
 make the script executable.
 
-```bash
+```shell
 #!/bin/sh
 pumount "$1" 2>/dev/null || fusermount -u "$1" 2>/dev/null ||
 echo "Could not unmount with pumount or fusermount -u" >&2
@@ -210,8 +210,6 @@ represents the type of media inserted.
 
 -   Patch rox-filer to add SOAP calls for setting icons:
     <http://kymatica.com/stuff/rox-2.3-iconsoap.patch>
-
-<!-- -->
 
 -   Add this `/System/Settings/hal/fdi/information/10-usb-flash.fdi` to
     detect usb flash sticks:

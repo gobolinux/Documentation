@@ -37,6 +37,6 @@ same behaviour can be achieved by creating an empty directory in the
 `/Programs` directory. For example, to blacklist GCC version 4.1.2 you
 may:
 
-```bash
+```shell
 mkdir /Programs/GCC/4.1.2
 ```

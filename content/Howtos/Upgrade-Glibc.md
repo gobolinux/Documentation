@@ -17,31 +17,35 @@ segfault, and then the kernel started to panic at boot time. But I've
 found a solution which can be used either to fix the above ailment, or
 to cleanly install a new Glibc.
 
-1\) Boot using the live-CD.
+1. Boot using the live-CD.
 
-2\) Mount your root partition to /Mount/Media.
+2. Mount your root partition to /Mount/Media:
+   ```shell
+   mount /dev/hda6 /Mount/Media
+   ```
 
-&gt; mount /dev/hda6 /Mount/Media
-
-3\) Install the version of Glibc you want. Note that the "-r" is
+3. Install the version of Glibc you want. Note that the "-r" is
 essential, otherwise your /Systems/Index/bin links will point to
 subdirectories of /Mount/Media, which won't be mounted anymore after you
 reboot.
-
-&gt; goboPrefix="/Mount/Media" SymlinkProgram -r Glibc 2.5.1
-
-4\) Relink against the new Glibc. If you forget this step, all non
+    ```shell
+    goboPrefix="/Mount/Media" SymlinkProgram -r Glibc 2.5.1
+    ```
+4. Relink against the new Glibc. If you forget this step, all non
 statically-linked programs will segfault. If your boot process involves
 any (which it probably does), you won't even be able to reboot!
+    ```shell
+    chroot /Mount/Media ldconfig -v
+    ```
 
-&gt; chroot /Mount/Media ldconfig -v
-
--- [Gelisam](User:Gelisam "wikilink")
+-- Gelisam
 
 To make this relatively painless, make sure to compile Glibc with using
 this command
 
-&gt; Compile -l no Glibc
+```shell
+Compile -l no Glibc
+```
 
 as it will stop Compile from symlinking Glibc after a successful compile
 and install.

@@ -31,7 +31,7 @@ appropriate directory, which accepts "start" and "stop" parameters. In
 this imaginary example, one could have a file
 `/Programs/Foo/1.0/Resources/Tasks/Foo` with these contents:
 
-```bash
+```shell
 #!/bin/sh 
 
 case "$1" in 

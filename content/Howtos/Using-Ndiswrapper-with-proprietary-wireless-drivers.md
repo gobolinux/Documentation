@@ -17,7 +17,7 @@ What I needed to have it working was basically:
 -   Use ndiswrapper to install the driver. This is the easy part, just
     run:
 
-```bash
+```shell
 ndiswrapper -i DRIVER.inf
 ndiswrapper -m
 ```

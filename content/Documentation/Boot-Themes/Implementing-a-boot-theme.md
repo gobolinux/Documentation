@@ -13,7 +13,7 @@ initializations. Below is an example on how you can use the standard
 $PREVLEVEL variable (from the Sysvinit `init` program) to echo some
 message when system initializes or goes down.
 
-```bash
+```shell
 if [ "$PREVLEVEL" = "N" ]
 then
 echo "GoboLinux is initializing..."
@@ -36,7 +36,7 @@ implementation of ThemeFile.
 
 A very simple example implementation of ThemeFile follows.
 
-```bash
+```shell
 function ThemeFile()
     {
     echo "Entering file '$1'..."
@@ -65,7 +65,7 @@ CheckList theme is an attempt at that).
 
 Here's a quick example of ThemeBefore and ThemeAfter:
 
-```bash
+```shell
 function ThemeBefore() {
     shift # ignore id
     echo -n "===> $@... "
@@ -90,7 +90,7 @@ ThemeFinish parameter.
 The following example shows a sample ThemeFinish implementation that
 just writes an issue file that clears the screen.
 
-```bash
+```shell
 function ThemeFinish() {
     clear > $1
     echo "Welcome!!" >> $1

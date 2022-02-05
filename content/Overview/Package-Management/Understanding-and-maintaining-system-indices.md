@@ -26,7 +26,7 @@ new package are still linked -- this is especially useful for libraries.
 
 For example, say program Foo 1.0 looks like this:
 
-```bash
+```shell
 /Programs/Foo/1.0/bin/foo
 /Programs/Foo/1.0/include/foo.h
 /Programs/Foo/1.0/lib/libfoo.so.1
@@ -35,7 +35,7 @@ For example, say program Foo 1.0 looks like this:
 
 Now, say, you install a new version, 2.0, which looks like this:
 
-```bash
+```shell
 /Programs/Foo/2.0/bin/foo
 /Programs/Foo/2.0/include/foo.h
 /Programs/Foo/2.0/lib/libfoo.so.2
@@ -47,7 +47,7 @@ to replace symlinks under /Programs that belong to a different version
 of the same program. So, now, we'll have the following links related to
 Foo under system:
 
-```bash
+```shell
 /System/Index/bin/foo -> /Programs/Foo/2.0/bin/foo
 /System/Index/include/foo.h -> /Programs/Foo/2.0/include/foo.h
 /System/Index/lib/libfoo.so.2 -> /Programs/Foo/2.0/lib/libfoo.so.2

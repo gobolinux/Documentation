@@ -5,8 +5,8 @@ weight: 4
 
 There are two ways to create recipes:
 
-1. updating an existing one, or
-2. creating one from scratch.
+1. Updating an existing one, or
+2. Creating one from scratch.
 
 The utilities for accomplishing this are:
 
@@ -14,14 +14,14 @@ The utilities for accomplishing this are:
 and [MakeRecipe](/Commands/MakeRecipe).
 
 Once the recipe is done and compiled, a packed version of it will show
-up in /Data/Compile/PackedRecipes (or the location specified in
-/System/Settings/Compile/[Compile.conf](/Documentation/Configuration-files/Compile.conf/)).
+up in `/Data/Compile/PackedRecipes` (or the location specified in
+`/System/Settings/Compile/Compile.conf`.
 
 The GoboLinux developers encourage you to contribute your recipes, so
 that the community can benefit.
 
 To send a recipe for inclusion in the main compile tree, just run
-"[ContributeRecipe](/Commands/ContributeRecipe) \[program name\]" to
+`ContributeRecipe <program name>` to
 submit it for review.
 
 {{% toc %}}
@@ -32,7 +32,7 @@ We only need to do one thing here, add your name to Compile.conf (for
 credits on Recipes you may make). Open Compile.conf in a text editor
 such as nano:
 
-```bash
+```shell
 nano /System/Settings/Compile/Compile.conf
 ```
 
@@ -53,7 +53,7 @@ Instead, use [NewVersion](/Commands/NewVersion) with the package name
 and version to create a new recipe starting with the previous recipe
 contents. For example:
 
-```bash
+```shell
 NewVersion GCC 4.4.4
 ```
 
@@ -63,7 +63,7 @@ package version in "$url" by 4.4.4.
 
 You can also give the full URL for the package sources:
 
-```bash
+```shell
 NewVersion GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
 ```
 
@@ -130,7 +130,7 @@ program on your computer. We'll use
 based). This is my first recipe, and it is now in the main Compile tree.
 
 ```
-MakeRecipehttp://unc.dl.sourceforge.net/sourceforge/joe-editor/joe-3.1.tar.gz
+MakeRecipe http://unc.dl.sourceforge.net/sourceforge/joe-editor/joe-3.1.tar.gz
 ```
 
 Based on the filename of the URL, [MakeRecipe](/Commands/MakeRecipe)
@@ -150,7 +150,7 @@ downloaded the sources, and found that it uses autoconf. Which is a good
 thing, as that means there is very little work to be done on our part.
 So now we compile and install the package on our machine.
 
-```bash
+```shell
 Compile joe
 ```
 
@@ -169,7 +169,7 @@ sandbox, etc.
 Writing Meta recipe is like putting small things inside some larger
 container. For example consider the following meta recipe:
 
-```
+```s
 # Recipe for version 1.4.5 by Hisham Muhammad, on Wed Jan 23 01:28:21 BRST 2008
 # Recipe (MakeRecipe) for Audacious by Andre Detsch <detsch@gobolinux.org>, on Wed Nov 30 15:01:27 BRST 2005
 compile_version=1.8.2
@@ -192,13 +192,13 @@ nicer and modular later.
 ## Share your recipes
 
 Share your recipes with the Gobo community! Recipes you create or update
-will be located in /Data/Compile/Recipes. Consider using a text editor
+will be located in `/Data/Compile/Recipes`. Consider using a text editor
 to write a Description file for your recipe before you share it.
 
 To share your recipe, use this command:
 
 ```
-ContributeRecipe [Program Name]
+ContributeRecipe <program name>
 ```
 
 [ContributeRecipe](/Commands/ContributeRecipe) will submit a Pull
@@ -228,7 +228,7 @@ Compile applies the patch from within the source directory with the
 is to ensure that the patch is appliable without editing even if the
 recipe is updated. The patch should therefore add one level to the
 source directory in the path. An example taken from the rlocate recipe,
-created with 'diff':
+created with `diff`:
 
      --- rlocate-0.4.3/doc/rlocate.html  2006-01-19 10:04:52.000000000 +0100
      +++ rlocate-0.4.3.new/doc/rlocate.html  2006-01-19 19:10:20.000000000 +0100
@@ -241,8 +241,8 @@ execute the following commands:
      +        chown 0:rlocate /usr/local/bin/rlocate
               chmod 2755 /usr/local/bin/rlocate
 
-This diff should then be in a file, say '01-root\_to\_uid.patch', wich
-is placed in the Rlocate 0.4.3 recipe directory. Of course the filename
+This diff should then be in a file, say `01-root\_to\_uid.patch`, wich
+is placed in the `Rlocate 0.4.3` recipe directory. Of course the filename
 should be somewhat descriptive to what the patch does. The filename
 should also be prefixed with a number, which ensures that the patches
 are applied in the correct order, as there can be a number of patches,
@@ -282,63 +282,48 @@ just as when you create a new patch.
 Sometimes you want to add paths to the patches that are dependent on the
 host system the application is installed on. Instead of adding the path
 statically to the patch Compile has support for dynamically created
-patches. By placing the suffix **'.in**', e.g.
-**01-root_to_uid.patch.in**, on the patch you tell Compile that it
+patches. By placing the suffix `.in`, e.g.
+`01-root_to_uid.patch.in`, on the patch you tell Compile that it
 should parse the file and generate the patch `01-root_to_uid.patch`,
 with certain strings replaced with values dependant on the system. The
 same [variables used in
 recipes](/Recipes/Recipe-Format-Specification/#dynamic-variables) can
-be used in patches but prefixed with the string **'Compile_**' and
-padded with **'@%**' and **'%@**'. So, for example, if rlocate depended
-on the application *foo*, the variable used in recipes to reference
-*foo's* installation directory would be **$foo_path** and therefore the
+be used in patches but prefixed with the string `Compile_` and
+padded with `@%` and `%@`. So, for example, if rlocate depended
+on the application `foo`, the variable used in recipes to reference
+`foo`'s installation directory would be `$foo_path` and therefore the
 string used in patches to reference this path would be
-**'@%Compile\_foo\_path%@**'. Below are valid variables for target
-application as well as directories belonging to the dependency 'foo':
+`@%Compile_foo_path%@`. Below are valid variables for target
+application as well as directories belonging to the dependency `foo`:
 
--   @%Compile\_target%@
--   @%Compile\_settings\_target%@
--   @%Compile\_variable\_target%@
--   @%Compile\_foo\_path%@
--   @%Compile\_foo\_settings\_path%@
--   @%Compile\_foo\_variable\_path%@
+- `@%Compile_target%@`
+- `@%Compile_settings_target%@`
+- `@%Compile_variable_target%@`
+- `@%Compile_foo_path%@`
+- `@%Compile_foo_settings_path%@`
+- `@%Compile_foo_variable_path%@`
 
 ### Binary recipes
 
   
 Full article: [Binary recipes](/Recipes/Binary-Recipes/)
 
-Binary recipes are used to install vendor-supplied precompiled binaries
-of software. They are usually created using the manifest recipe type,
-and have \_bin suffixed to their version.
+Binary recipes are used to install vendor-supplied precompiled binaries of software. They are usually created using the manifest recipe type, and have `_bin` suffixed to their version.
 
 ### Recipe types
 
-The Compile tool can handle numerous types of packages, each of them
-with a different build technique.
+The Compile tool can handle numerous types of packages, each of them with a different build technique.
 
-When [MakeRecipe](/Commands/MakeRecipe) is invoked, it downloads the
-program's source, uncompresses it and tries to detect what kind of build
-system it uses. And, surely, there are some packages on which
-[MakeRecipe](/Commands/MakeRecipe) cannot detect that. This is when the
-user's interaction is needed, and some manual modifications on the
-Recipe must be done.
+When [MakeRecipe](/Commands/MakeRecipe) is invoked, it downloads the program's source, uncompresses it and tries to detect what kind of build system it uses. And, surely, there are some packages on which [MakeRecipe](/Commands/MakeRecipe) cannot detect that. This is when the user's interaction is needed, and some manual modifications on the Recipe must be done.
 
-As presented in the [Compile](/Commands/Compile) section, Compile
-handles compilation of programs according to a few number of "recipe
-types". For each type, there are valid declarations that you can
-specify, to adapt the behavior of Compile to the needs of the program
-that is about to be compiled. The full list of declarations is at
-Appendix "[Recipe format
-specification](/Recipes/Recipe-Format-Specification/)". Let's see some
-of the main options for each type:
+As presented in the [Compile](/Commands/Compile) section, Compile handles compilation of programs according to a few number of "recipe types". For each type, there are valid declarations that you can specify, to adapt the behavior of Compile to the needs of the program that is about to be compiled. The full list of declarations is at Appendix "[Recipe format specification](/Recipes/Recipe-Format-Specification/)". Let's see some of the main options for each type:
 
 #### configure recipes
 
 These are autoconf-based packages, and are indicated with
-**recipe_type=configure**. The most common variation in recipes of this
+`recipe_type=configure`. The most common variation in recipes of this
 type is the need to pass additional flags to the `configure` script. You
-can do so with the **configure_options** flag, like this:
+can do so with the `configure_options` flag, like this:
 
       configure_options=(
           "--enable-shared"
@@ -358,18 +343,18 @@ In configure-based recipes, Compile uses
 parameters such as --prefix are supported by the configure script. If
 the program does not support these parameters and
 [PrepareProgram](/Commands/PrepareProgram) detects them incorrectly,
-you can use **override_default_options=yes** to have `configure` use
-*only* the options given by you in **configure_options**.
+you can use `override_default_options=yes` to have `configure` use
+*only* the options given by you in `configure_options`.
 
 Another occasionally necessary flag is
-**autogen_before_configure=yes**. Some programs distribute the
+`autogen_before_configure=yes`. Some programs distribute the
 necessary input files for generating `configure` (such as `configure.ac`
 or `configure.in`) but do not ship the generated script, only a builder
 script `autogen.sh`. Using this flag, `autogen.sh` will be executed as a
 first step.
 
 If `configure` or `autogen.sh` have non-standard names, you can
-explicitly provide them with **configure** and **autogen**, like this:
+explicitly provide them with `configure` and `autogen`, like this:
 
       configure=configure.gnu
       autogen=gen_all.sh
@@ -397,19 +382,19 @@ they are recipes of this kind.
 
 For this kind of recipe, Compile runs `make` twice: the "build" run and
 the "install" run. A few programs require only one run; you can disable
-either with **do_build=no** and **do_install=no**.
+either with `do_build=no` and `do_install=no`.
 
 In "makefile" recipes, you will always have to pass at least one
 additional option in the recipe, to tell the Makefile to use the
-/Programs/&lt;program-name>/&lt;version> directory. If we're lucky, the
+`/Programs/program-name>/version>` directory. If we're lucky, the
 Makefile has one main variable that controls the installation prefix.
 Variables of this kind are usually called PREFIX, DESTDIR, INSTDIR...
 you'll have to look inside the Makefile to find out. Remember that the
-installation prefix is set by Compile as the **target** shell variable.
-To give `make` variables, we can either use **build_variables** and
-**install_variables**, which give options to the "build" and "install"
-runs of `make`, or just **make_variables** which passes options to both
-runs. Their use is similar to that of **configure_options**.
+installation prefix is set by Compile as the `target` shell variable.
+To give `make` variables, we can either use `build_variables` and
+`install_variables`, which give options to the "build" and "install"
+runs of `make`, or just `make_variables` which passes options to both
+runs. Their use is similar to that of `configure_options`.
 
       make_variables=(
           "DESTDIR=$target"
@@ -429,9 +414,9 @@ Makefile has hard-coded locations in its installation rules, then
 unfortunately you'll have to patch the Makefile (and possibly the source
 code, look for references to paths like `/usr` using `grep`).
 
-Like with **configure** and **autogen**, if the makefile uses a
+Like with `configure` and `autogen`, if the makefile uses a
 different name from the standard (`Makefile`), you can pass it
-explicitly using the **makefile** variable:
+explicitly using the `makefile` variable:
 
     makefile=GNUmakefile
 
@@ -444,12 +429,12 @@ build.py, etc.) -- "python" tries to detect these variations where
 possible, but ultimately there are flags to specify special cases
 explicitly.
 
-The name of the build script can be given with **build_script**. You
+The name of the build script can be given with `build_script`. You
 can control the two runs of the Python build script using the same
-options as "makefile recipes" (**do\_build=no** and **do_install=no**
-to disable runs, **build_target** and **install_target** to name the
-runs). Custom options can be passed with **python_options**. Again,
-**override_default\_options=yes** can be passed to skip auto-detected
+options as "makefile recipes" (`do_build=no` and `do_install=no`
+to disable runs, `build_target` and `install_target` to name the
+runs). Custom options can be passed with `python_options`. Again,
+`override_default_options=yes` can be passed to skip auto-detected
 flags if needed.
 
 #### xmkmf recipes
@@ -465,7 +450,6 @@ This is for recipes based on SCons.
 #### manifest recipes
 
 "Manifest" recipes are used for programs that just need to copy files
-over. The **manifest** array-style entry lists colon-separated pairs,
-indicating source file and target destination, relative to **target**.
-(See "[Recipe format
-specification](/Recipes/Recipe-Format-Specification/)" for details).
+over. The `manifest` array-style entry lists colon-separated pairs,
+indicating source file and target destination, relative to `target`.
+(See "[Recipe format specification](/Recipes/Recipe-Format-Specification/)" for details).

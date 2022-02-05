@@ -406,7 +406,7 @@ repository. The current stable release is 1.1, and it can be downloaded
 [here](http://gobolinux.org/download/bootstrap). SVN snapshots can be
 obtained in the following way:
 
-```bash
+```shell
 svn checkout http://svn.gobolinux.org/tools/trunk/Bootstrap
 ```
 

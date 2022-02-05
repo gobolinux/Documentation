@@ -31,13 +31,13 @@ passed as the word following the argument, both in short and long forms.
 For example, say that -s and --long are options that take a parameter.
 This is the correct way to use them:
 
-```bash
+```shell
 FooScript -s value --long another
 ```
 
 These are not recognized:
 
-```bash
+```shell
 FooScript -s=value --long another      # WRONG! Use distinct tokens.
 ```
 
@@ -47,13 +47,13 @@ Each option should be passed in a separate token, even when in short
 mode. If -a, -b and -c are options for an imaginary
 `FooScript`, then
 
-```bash
+```shell
 FooScript -a -b -c blah.txt
 ```
 
 is correct, but
 
-```bash
+```shell
 FooScript -abc blah.txt      # WRONG! Options must be separated.
 ```
 
