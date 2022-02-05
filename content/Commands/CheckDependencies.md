@@ -3,7 +3,6 @@ title: "CheckDependencies"
 ---
 
 ```
-
 CheckDependencies
  Check dependencies. No decent help yet.
 
@@ -70,6 +69,4 @@ Examples of usage:
  CheckDependencies kde-libs 3.5.0 recipe
  CheckDependencies -t official_package,recipe kde-libs 3.5.0 recipe
  CheckDependencies -t official_package,recipe kde-libs 3.5.0 recipe
- 
-
 ```

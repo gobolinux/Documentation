@@ -44,5 +44,4 @@ OPTIONS
        (C) 2006 Andre Detsch. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                            EDITRECIPE(1)
-
 ```

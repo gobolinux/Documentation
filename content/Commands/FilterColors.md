@@ -45,5 +45,4 @@ EXAMPLES
               FilterColors is usually used through a pipe: some_command | FilterColors
 
 GoboLinux                                                March 2017                                          FILTERCOLORS(1)
-
 ```

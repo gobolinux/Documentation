@@ -31,5 +31,4 @@ EXAMPLES
        Released under the GNU GPL.
 
 GoboLinux                                               October 2008                                             STOPTASK(1)
-
 ```

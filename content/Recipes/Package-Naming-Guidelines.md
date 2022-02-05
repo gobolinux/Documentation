@@ -1,5 +1,5 @@
 ---
-title: "Package naming guidelines"
+title: "Package Naming Guidelines"
 weight: 5
 ---
 

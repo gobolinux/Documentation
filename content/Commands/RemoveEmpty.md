@@ -49,5 +49,4 @@ COPYRIGHT
        Copyright © 2001-2003 Hisham Muhammad - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                           REMOVEEMPTY(1)
-
 ```

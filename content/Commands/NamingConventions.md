@@ -38,8 +38,8 @@ OPTIONS
               Log all output to specified file.
 
 GoboLinux                                                March 2017                                     NAMINGCONVENTIONS(1)
-
 ```
+
 Note that NamingConventions is part of the "Scripts" package. You can
 find in the bin/ subdirectory there.
 

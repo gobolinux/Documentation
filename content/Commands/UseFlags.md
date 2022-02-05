@@ -2,10 +2,13 @@
 title: "UseFlags"
 ---
 
-```
 
-UseFlags
-Usage: UseFlags [<program> [<flag-to-test>]]
+`UseFlags`
+
+Usage:
+```
+UseFlags [<program> [<flag-to-test>]]
+```
 
 When program and flag both specified, the return code is true if the flag is
 enabled, and false otherwise.
@@ -15,5 +18,3 @@ of flags enabled for that program or overall.
 
 program may be the path to a recipe directory to include only flags actually
 used by prog.
-
-```

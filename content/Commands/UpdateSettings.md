@@ -75,5 +75,4 @@ OPTIONS
               Maintained by Dan Charney and the GoboLinux team
 
 GoboLinux                                                March 2017                                        UPDATESETTINGS(1)
-
 ```

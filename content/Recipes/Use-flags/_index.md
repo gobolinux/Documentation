@@ -5,7 +5,7 @@ weight: 8
 
 Use Flags are a way to affect the compilation of a [Recipe](/Recipes) based on the Programs installed on a system and the user's preferences, without having to edit the Recipe explicitly.  Different configure options may be passed to the program being compiled, and additional hook functions may be run by Compile, depending on which flags are activated.  Flags may be activated by the presence of installed dependencies, or explicitly by the user.
 
-Also see [Available use flags](Available-use-flags).
+Also see [Available use flags](Available-Use-Flags).
 
 ## Use Flags Names
 

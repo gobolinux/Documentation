@@ -97,5 +97,4 @@ OPTIONS
        Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                          DEPENDENCIES(1)
-
 ```

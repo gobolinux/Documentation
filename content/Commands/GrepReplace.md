@@ -52,5 +52,4 @@ COPYRIGHT
        Copyright © 2000-2003 Hisham Muhammad - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                           GREPREPLACE(1)
-
 ```

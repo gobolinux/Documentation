@@ -3,7 +3,6 @@ title: "GetAvailable"
 ---
 
 ```
-
 GetAvailable
  Get available packages, recipes and tracked versions.
 
@@ -35,10 +34,9 @@ Options:
 
  -p
  --gobo-programs      Override default /Programs as path of installed packages
+```
 
 Examples of usage:
- GetAvailable --types=recipe
 
- 
+    GetAvailable --types=recipe
 
-```

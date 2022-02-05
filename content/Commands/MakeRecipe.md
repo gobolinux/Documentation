@@ -64,5 +64,4 @@ COPYRIGHT
        Copyright © 2003, Hisham Muhammad - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                            MAKERECIPE(1)
-
 ```

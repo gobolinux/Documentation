@@ -128,5 +128,4 @@ COPYRIGHT
        Copyright © Hisham Muhammad, 2001-2005 - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                        SYMLINKPROGRAM(1)
-
 ```

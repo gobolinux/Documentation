@@ -2,7 +2,7 @@
 title: "SuggestUpdates"
 ---
 
+Usage:
 ```
-Usage: /usr/bin/SuggestUpdates [--recipe|--debug]
-
+/usr/bin/SuggestUpdates [--recipe|--debug]
 ```

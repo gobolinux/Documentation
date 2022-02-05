@@ -62,5 +62,4 @@ COPYRIGHT
        Copyright © 2004 Carlo Calica. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                         DETACHPROGRAM(1)
-
 ```

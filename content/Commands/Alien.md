@@ -23,5 +23,4 @@ Valid options for AlienType are:
 Example:
     Alien --install CPAN:XML::Parser
     Alien --install PIP:burn
-
 ```

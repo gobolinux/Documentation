@@ -83,5 +83,4 @@ COPYRIGHT
        Copyright © 2001-2005 Hisham Muhammad - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                        PREPAREPROGRAM(1)
-
 ```

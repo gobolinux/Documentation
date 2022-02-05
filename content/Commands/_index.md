@@ -1,10 +1,10 @@
-+++
-title = "GoboLinux Command Reference"
-menuTitle = "Commands"
-weight = 5
-chapter = false
-pre = "<b>005 </b>"
-+++
+---
+title: "GoboLinux Command Reference"
+menuTitle: "Commands"
+weight: 5
+chapter:  false
+pre: "<b>005 </b>"
+---
 
 ## Package management
 

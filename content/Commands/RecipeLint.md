@@ -55,5 +55,4 @@ EXAMPLES
        (C)2005-2006 Hisham Muhammad, released under the GNU GPL.
 
 GoboLinux                                                March 2017                                            RECIPELINT(1)
-
 ```

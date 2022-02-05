@@ -60,6 +60,4 @@ Examples of usage:
  FindPackage --types=recipe kde-base 3.2.3
  FindPackage --types=recipe --substring kd 3.2.3
  FindPackage --types=installed gcc
- 
-
 ```

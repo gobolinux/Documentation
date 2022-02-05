@@ -90,5 +90,4 @@ gadu_gadu: ekg
 motif: openmotif lesstif
 
 GenericFlags.conf
-
 ```

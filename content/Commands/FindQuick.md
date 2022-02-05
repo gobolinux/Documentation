@@ -46,5 +46,4 @@ EXAMPLES
               FindQuick "*.c" ..  FindQuick # Note the added quotes to avoid shell expansion.
 
 GoboLinux                                                March 2017                                             FINDQUICK(1)
-
 ```

@@ -43,5 +43,4 @@ EXAMPLES
        Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                                 WHICH(1)
-
 ```

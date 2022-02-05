@@ -43,5 +43,4 @@ OPTIONS
        (C)2003-2007 by Andre Detsch et al. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                      GUESSPROGRAMCASE(1)
-
 ```

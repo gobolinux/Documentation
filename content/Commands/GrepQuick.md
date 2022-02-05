@@ -63,5 +63,4 @@ COPYRIGHT
        Copyright © 2001-2002 Hisham Muhammad. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                             GREPQUICK(1)
-
 ```

@@ -12,5 +12,4 @@ Options:
   --stdin               read options from stdin
   --threshold=THRESHOLD
                         leniency in matching
-
 ```

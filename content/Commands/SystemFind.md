@@ -71,5 +71,4 @@ COPYRIGHT
        Copyright © 2003-2005 Hisham Muhammad. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                            SYSTEMFIND(1)
-
 ```

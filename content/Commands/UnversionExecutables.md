@@ -51,5 +51,4 @@ COPYRIGHT
        Copyright © 2008 Michael Homer. Released under the GNU GPL version 2 or later.
 
 GoboLinux                                                March 2017                                  UNVERSIONEXECUTABLES(1)
-
 ```

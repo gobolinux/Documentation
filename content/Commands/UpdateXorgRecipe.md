@@ -2,7 +2,4 @@
 title: "UpdateXorgRecipe"
 ---
 
-```
-Parsing the URL for Xorg module xcb
-
-```
+Parsing the URL for Xorg module xcb.

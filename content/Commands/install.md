@@ -114,5 +114,4 @@ SEE ALSO
        or available locally via: info '(coreutils) install invocation'
 
 GNU coreutils 8.25                                      January 2016                                              INSTALL(1)
-
 ```

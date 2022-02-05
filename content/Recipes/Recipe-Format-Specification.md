@@ -1110,7 +1110,7 @@ variables include (where the Program being compiled has some dependency
 * `@%Compile_foo_variable_path%@`
 
 
-# Resources/ 
+# `Resources/`
 
 The Recipe subdirectory `Resources/` can contain various metadata.  These
 files are copied to `/Programs/Foo/Version/Resources` upon installation. All
@@ -1267,7 +1267,7 @@ required_users=(
 See the [mailing list
 thread](http://thread.gmane.org/gmane.linux.distributions.gobo.devel/2267).
 
-#### Tasks/
+#### `Tasks/`
 
 Files in this subdirectory are [boot script tasks](/Documentation/Boot-script-tasks/), linked to `System/Tasks`.
 These are roughly equivalent to the `/etc/init.d` scripts found in many
@@ -1275,10 +1275,9 @@ distributions.
 
 Note that files under `System/Tasks/` should be marked as executable! Otherwise they will fail to execute during boot time!
 
-#### Wrappers/
+#### `Wrappers/`
 
 This subdirectory contains scripts which are typically GoboLinux-specific
 wrappers for commands in the installed package. They may call the real program
 with options or environment appropriate for a GoboLinux system. They are
 linked into the `/System/Index/bin` directory along with the normal binaries.
-

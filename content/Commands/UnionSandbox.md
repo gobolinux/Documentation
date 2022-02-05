@@ -66,5 +66,4 @@ COPYRIGHT
        Copyright © 2003. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                          UNIONSANDBOX(1)
-
 ```

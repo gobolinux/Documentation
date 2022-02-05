@@ -41,5 +41,4 @@ COPYRIGHT
        Copyright 2005 MJ Ray. Released under GNU GPL v2.
 
 GoboLinux                                                March 2017                                     SUGGESTDUPLICATES(1)
-
 ```

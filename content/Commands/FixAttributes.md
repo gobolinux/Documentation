@@ -56,5 +56,4 @@ COPYRIGHT
        Copyright © Hisham Muhammad, 2000-2003 - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                         FIXATTRIBUTES(1)
-
 ```

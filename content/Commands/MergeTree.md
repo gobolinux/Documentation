@@ -48,5 +48,4 @@ EXAMPLES
               MergeTree /Programs/KOffice/Current /Programs/KDE/Current
 
 GoboLinux                                                March 2017                                             MERGETREE(1)
-
 ```

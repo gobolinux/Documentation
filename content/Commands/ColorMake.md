@@ -12,11 +12,11 @@ MAKEOPTS option or by modifying the simple ColorMake script.
 
 At
 
-` makecmd=`
+    makecmd=
 
 Edit the line to i.e.:
 
-` makecmd='/bin/make -j5'`
+    makecmd='/bin/make -j5'
 
 About the -j5 part, the rule of thumb is that the number after -j should
 equal the number of your cores +1: on a typical dual-core machine, the

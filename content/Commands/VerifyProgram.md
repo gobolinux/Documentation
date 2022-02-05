@@ -65,5 +65,4 @@ COPYRIGHT
        Copyright © 2003 Carlo Calica. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                         VERIFYPROGRAM(1)
-
 ```

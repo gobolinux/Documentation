@@ -38,5 +38,4 @@ OPTIONS
               Log all output to specified file.
 
 GoboLinux                                                March 2017                                            SYSTEMINFO(1)
-
 ```

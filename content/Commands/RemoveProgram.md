@@ -53,5 +53,4 @@ COPYRIGHT
        Copyright © 2004 Andre Detsch. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                         REMOVEPROGRAM(1)
-
 ```

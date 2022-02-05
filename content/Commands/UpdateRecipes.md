@@ -59,5 +59,4 @@ OPTIONS
        (C) 2003-2004 Carlo Calica et al. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                         UPDATERECIPES(1)
-
 ```

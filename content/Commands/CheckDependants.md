@@ -59,5 +59,4 @@ COPYRIGHT
        Copyright © 2007 Jonas Karlsson - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                       CHECKDEPENDANTS(1)
-
 ```

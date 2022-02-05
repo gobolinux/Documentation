@@ -21,6 +21,4 @@ Examples of usage:
  DescribeProgram gimp
  DescribeProgram -W gimp
  DescribeProgram -a
- 
-
 ```

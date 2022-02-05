@@ -60,10 +60,8 @@ COPYRIGHT
        Copyright © 2003, Hisham Muhammad - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                            NEWVERSION(1)
-
 ```
 
 Usage example:
 
-  NewVersion Bash 4.4.12
-
+    NewVersion Bash 4.4.12

@@ -45,5 +45,4 @@ COPYRIGHT
        Copyright © 2002-2003 Leandro Motta Barros. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                               FIXINFO(1)
-
 ```

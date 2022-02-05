@@ -48,5 +48,4 @@ COPYRIGHT
        Copyright © Hisham Muhammad, 2014 - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                             AUTOPATCH(1)
-
 ```

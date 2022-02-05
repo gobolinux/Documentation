@@ -78,5 +78,4 @@ COPYRIGHT
        Copyright © 2002-2003 Hisham Muhammad - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                         CREATEPACKAGE(1)
-
 ```

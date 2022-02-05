@@ -47,8 +47,14 @@ COPYRIGHT
        Copyright © 2008-2009 Michael Homer, 2020 Rune Morling. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                      CONTRIBUTERECIPE(1)
+```
+
+Usage examples:
 
 ```
-Usage examples:
-  ContributeRecipe <name>
-  ContributeRecipe Bash
+ContributeRecipe <name>
+```
+
+```
+ContributeRecipe Bash
+```

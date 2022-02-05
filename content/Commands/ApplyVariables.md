@@ -52,5 +52,4 @@ OPTIONS
        with special indicators ('@%', '%@' by default) with the contents of equivalent environment variables.
 
 GoboLinux                                                March 2017                                        APPLYVARIABLES(1)
-
 ```

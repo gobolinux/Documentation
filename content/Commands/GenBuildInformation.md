@@ -50,6 +50,5 @@ OPTIONS
 
        Released under the GNU GPL.
 
-GoboLinux                                                March 2017                                   GENBUILDINFORMATION(1)
-
+GoboLinux                                                March 2017                                   GENBUILDINFORMATION(1
 ```

@@ -2,8 +2,6 @@
 title: "UpdateKdeRecipe"
 ---
 
-```
-
 The UpdateKdeRecipe script is assumingly aiding in updating KDE recipes.
 
 It is a component of the Scripts collection and will normally reside 
@@ -15,12 +13,6 @@ changes to kde.
 
 Parsing the URL for KDE at ftp://ftp.kde.org/pub/kde/stable/--help/src
 
-KDE Plasma upstream can be found here:
+KDE Plasma upstream can be found here: https://download.kde.org/stable/plasma/
 
-  https://download.kde.org/stable/plasma/
-
-KDE Applications can be found here:
-
-  https://download.kde.org/stable/applications/
-
-```
+KDE Applications can be found here: https://download.kde.org/stable/applications/

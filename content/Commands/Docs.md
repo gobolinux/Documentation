@@ -48,5 +48,4 @@ COPYRIGHT
        Copyright © Hisham Muhammad, 2017 - Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                                  DOCS(1)
-
 ```

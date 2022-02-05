@@ -61,5 +61,4 @@ EXAMPLES
               FetchArchive /K3B/0.10/Recipe
 
 GoboLinux                                                March 2017                                          FETCHARCHIVE(1)
-
 ```

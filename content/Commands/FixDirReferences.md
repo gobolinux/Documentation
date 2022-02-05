@@ -48,5 +48,4 @@ COPYRIGHT
        Copyright © Hisham H. Muhammad et al, 2003-2007. Released under the GNU GPL.
 
 GoboLinux                                                March 2017                                      FIXDIRREFERENCES(1)
-
 ```

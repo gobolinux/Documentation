@@ -10,12 +10,10 @@ broken links.
 
 Example:
 
-`   find /System/Index | RemoveBroken `
+    find /System/Index | RemoveBroken
 
 This is functionally equivalent to
 
-`   find /System/Index -xtype l -delete`
+    find /System/Index -xtype l -delete
 
-The source code to RemoveBroken can be found here:
-
-<https://github.com/gobolinux/Scripts/blob/master/bin/RemoveBroken>
+The source code to RemoveBroken can be found [here](https://github.com/gobolinux/Scripts/blob/master/bin/RemoveBroken):

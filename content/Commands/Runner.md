@@ -19,6 +19,4 @@ Available options are:
   -c, --check               Check if Runner can be used in this system
   -f, --fallback            Run the command without the sandbox in case this is not available
   -R, --no-removedeps       Do not remove conflicting versions of dependencies from /System/Index view
-
-
 ```

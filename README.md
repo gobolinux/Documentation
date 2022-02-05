@@ -22,7 +22,7 @@ If you need more info consult the official [Hugo](https://gohugo.io/documentatio
 git clone --recurse-submodules https://github.com/gobolinux/Documentation.git
 ```
 
-3. Enter the Project directory and type `hugo serve`
+3. Enter the project directory and type `hugo serve`
 
 4. Open http://localhost:1313/ (by default)
 
@@ -30,7 +30,7 @@ git clone --recurse-submodules https://github.com/gobolinux/Documentation.git
 
 ## Note to Contributors
 
-Our documentation (everything within `content/*`) will be generously licensed under the CC BY-SA 3.0.
+Our documentation (everything within `content/`) is generously licensed under the CC BY-SA 3.0.
 
 The rest of the project is licensed under the MIT License.
 

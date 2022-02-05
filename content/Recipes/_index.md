@@ -1,9 +1,9 @@
-+++
-title = "Recipes"
-weight = 3
-chapter = false
-pre = "<b>003 </b>"
-+++
+---
+title: "Recipes"
+weight: 3
+chapter: false
+pre: "<b>003 </b>"
+---
 
 Recipes are directions to [Compile](/Commands/Compile) on how to
 configure, build, and install a particular software package.
