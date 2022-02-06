@@ -3,7 +3,7 @@
     /* The following vars are standard definitions used and provided by the Hugo Relearn Theme.
        See https://mcshelby.github.io/hugo-theme-relearn/basics/customization/#mine-variant */
     --MAIN-TEXT-color: #fff; /* Color of text by default */
-    --MAIN-TITLES-TEXT-color: #f300b2; /* Color of titles h2-h3-h4-h5-h6 */
+    --MAIN-TITLES-TEXT-color: unset; /* Color of titles h2-h3-h4-h5-h6 */
     --MAIN-LINK-color: #00a3f3; /* Color of links */
     --MAIN-LINK-HOVER-color: #7bc5eb; /* Color of hovered links */
     --MAIN-ANCHOR-color: #00a3f3; /* color of anchors on titles */
@@ -37,6 +37,11 @@
     --MENU-SECTIONS-BG: linear-gradient(150deg, #8000ffb3 0%, #00bcf4b3 75%, #00ff5ab3 100%); /* Background color of side bar */
     --MAIN-BG-color: #202020; /* Background color of main content */
     --MAIN-H1-color: #0060f3; /* Color of h1 headlines */
+    --MAIN-H2-color: #f300b2; /* Color of h2 headlines */
+    --MAIN-H3-color: #00f3d3; /* Color of h3 headlines */
+    --MAIN-H4-color: #ffffff; /* Color of h4 headlines */
+    --MAIN-H5-color: #ffffff; /* Color of h5 headlines */
+    --MAIN-H6-color: #ffffff; /* Color of h6 headlines */
     --MAIN-INLINECODE-color: #00f3d3; /* Color for inline code (code enclosed in single backticks` */
     --MAIN-INLINECODE-BG-color:#2d2e33; /* Background inline code */
     --MAIN-INLINECODE-BORDER-color:#2d2e33; /* Box border color inline code */
@@ -56,24 +61,39 @@ body {
     background-color: var(--MAIN-BG-color);
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Metropolis";
-    font-size: 2.5rem !important;
+}
+
+body h1 {
+    font-size: 2.5rem;
     text-transform: unset;
     color: var(--MAIN-H1-color);
 }
 
-h2, h3, h4, h5, h6 {
-    font-family: "Metropolis";
-    font-size: 1.5rem !important;
+body h2 {
+    font-size: 1.8rem !important;
+    color: var(--MAIN-H2-color) !important;
 }
 
-h3 {
+body h3 {
+    font-size: 1.4rem !important;
+    color: var(--MAIN-H3-color) !important;
+}
+
+body h4 {
+    font-size: 1.3rem !important;
+    color: var(--MAIN-H4-color) !important;
+}
+
+body h5 {
     font-size: 1.2rem !important;
+    color: var(--MAIN-H5-color) !important;
 }
 
-h4 {
+body h6 {
     font-size: 1.1rem !important;
+    color: var(--MAIN-H6-color) !important;
 }
 
 /* Links */
