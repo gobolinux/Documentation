@@ -14,8 +14,8 @@ You will have to recompile the **following packages** to achieve Gallium-based 2
 
 Furthermore, you will need to modify **two Xorg settings files**:
 
-1. Edit `/System/Index/share/X11/xorg.conf.d/20-intel.conf` and add an "AccelMethod" entry to the "Device" section:
-```
+1. Edit `/System/Index/share/X11/xorg.conf.d/20-intel.conf` and add an `"AccelMethod"` entry to the `"Device"` section:
+```xorg
 Section "Device"
   Identifier "Intel Graphics"
   Driver     "modesetting"
@@ -24,7 +24,7 @@ EndSection
 ```
 
 2. Edit `/System/Index/share/X11/xorg.conf.d/glamor.conf` so it reads:
-```
+```xorg
 Section "Module"
     Load  "dri2"
     Load  "dri3"

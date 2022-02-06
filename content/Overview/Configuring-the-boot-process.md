@@ -1,6 +1,6 @@
 ---
-title: "Configuring the boot process"
-menuTitle: "Startup and system settings"
+title: "Configuring the Boot Process"
+menuTitle: "Startup and System settings"
 weight: 7
 ---
 
@@ -25,23 +25,23 @@ GoboLinux boot scripts initialize and configure the system, manage
 daemons, and perform shutdown. They are located at
 `/System/Settings/BootScripts`.
 
--   **BootUp**, the primary startup script, is invoked when you turn on
+-   `BootUp`, the primary startup script, is invoked when you turn on
     the power and the system boots. It contains generic initializations
     common to most Linux systems. Additional scripts are provided to
     support particular boot scenarios.
-    -   **Console** runs BootUp and performs initializations required
+    -   `Console` runs BootUp and performs initializations required
         for a console session.
-    -   **Graphic** runs BootUp and starts X to provide a login window.
--   **Shutdown** is the primary shutdown script, analogous to BootUp. It
+    -   `Graphic` runs BootUp and starts X to provide a login window.
+-   `Shutdown` is the primary shutdown script, analogous to BootUp. It
     is used by the following termination scripts:
-    -   **Reboot** runs Shutdown to terminate system services then
+    -   `Reboot` runs Shutdown to terminate system services then
         reboots the machine.
-    -   **Halt** runs Shutdown and turns off the power, if possible.
+    -   `Halt` runs Shutdown and turns off the power, if possible.
         Otherwise it halts the processor.
 
 Each of these scripts contains lines of the form:
 
-```shell
+```fish
 Exec "Message..." SomeCommand [ parameters ]
 ```
 
@@ -49,7 +49,7 @@ For example, to adjust the keyboard delay and repeat rate in the
 console, you can add this line to
 `/System/Settings/BootScripts/Console`:
 
-```shell
+```fish
 Exec "Making keyboard speedy..." kbdrate -r 30 -d 250
 ```
 
@@ -65,7 +65,7 @@ The parameters for calling these programs are placed in
 `/System/Settings/BootOptions` and `/System/Settings/NetworkOptions`.
 Both files contain entries of the form:
 
-```
+```ini
 Option=value
 ```
 
@@ -125,9 +125,9 @@ an appropriate console keyboard layout.
 The available keymaps are in the KBD package; they are the .map files.
 You can set the console keyboard layout at any time by running loadkeys.
 For example, to set the Dvorak keymap, just type in:
-
-`loadkeys dvorak.map`
-
+```fish
+loadkeys dvorak.map
+```
 #### Mouse
 
 The MouseType and MouseDevice options in
@@ -158,7 +158,7 @@ The mouse pointer for the graphical display is defined in an
 and set suitable defaults for your system. If not, you can always try a
 failsafe setup such as:
 
-```shell
+```xorg
 Section "InputDevice"
 Identifier  "Mouse0"
 Driver      "mouse"
@@ -184,7 +184,7 @@ Linux distributions), however a simpler way in GoboLinux is to list
 desired modules in `/System/Settings/BootOptions`. This is how to load
 the i810\_audio audio driver and sk98lin ethernet driver:
 
-```
+```fish
 UserDefinedModules=(
     "i810_audio"
     "sk98lin"
@@ -211,7 +211,7 @@ commands in your bootscripts sequence.
 
 First, check which are your network interfaces typing
 
-```
+```fish
 ifconfig
 ```
 
@@ -221,14 +221,14 @@ You should have a network interface named something like `eth0` or
 Edit the `/System/Settings/BootScripts/BootUp` script. If you are using
 DHCP, just add this:
 
-```
+```fish
 dhcpcd eth0 &
 ```
 
 If you have a static network configuration, place commands similar to
 the following in BootUp.
 
-```
+```fish
 ifconfig eth0 192.168.1.5 netmask 255.255.255.0
 route add default gateway 192.168.1.1 metric 1 dev eth0
 ```
@@ -237,7 +237,7 @@ The nameserver can be specified in `/etc/resolv.conf`
 (`/System/Settings/resolv.conf`). To use Google's nameservers, you can
 edit resolv.conf to:
 
-```
+```fish
 nameserver 8.8.8.8  
 nameserver 8.8.4.4
 ```
@@ -253,7 +253,7 @@ it a lot) you can use this:
 1.  Open Control Center in administrative mode.
 2.  Select Login Manager.
 3.  Under the Convenience tab check "Enable auto-login" and select
-    which\_user you should log in as.
+    which user you should log in as.
 4.  Click "Apply".
 
 If you do not use KDE or want a non-GUI based solution, one way is to
@@ -278,7 +278,7 @@ GoboLinux comes with CUPS installed by default.
 Note that ALSA is muted by default, to automatically save and restore
 changes done in e.g. alsamixer, add these lines to your boot scripts.
 
-```shell
+```fish
 Done: Exec "Storing ALSA settings..."
 alsactl store
 ```

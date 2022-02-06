@@ -21,9 +21,9 @@ level directory `/Programs`; e.g you'll find Xorg 7.0 at
 To see what programs are installed in the system, all you need to do is
 look in the `/Programs` directory:
 
-
-    $ ls /Programs
-
+```fish
+ls /Programs
+```
 
 For each category of files, there is a directory under `/System/Index`
 grouping files from each application as symbolic links: `bin`, `lib`,
@@ -119,8 +119,6 @@ acquainted to the system.
     always be in `/lib` (and in `/usr/lib`, because they point to the same
     place! -- no worries about compatibility).
 
-<!-- -->
-
 -   There are symbolic links relating most of the usual UNIX directories
     to the GoboLinux tree. Therefore, you will find directories such as
     `/etc`, `/var/log` and `/usr/bin` in the expected places. However, some
@@ -130,8 +128,6 @@ acquainted to the system.
     also that the superuser's directory is no different than the ones
     from the other users, so, root's directory is at `/Users/root`. Mount
     points are under `/Mount`, not `/mnt`.
-
-<!-- -->
 
 -   Another major difference between GoboLinux and most Linux
     distributions is that it does not use a BSD nor a System V

@@ -4,17 +4,17 @@ title: "KeyManager"
 
 Manage digital signature keys for GoboLinux packages.
 ```
-	Usage: KeyManager [ <key_file> ]
+Usage: KeyManager [ <key_file> ]
 
-    Options: 
+Options: 
 
-    -h, --help         Shows this help. 
+-h, --help         Shows this help. 
 
-    -v, --version      Show program version. 
+-v, --version      Show program version. 
 
-    -V, --verbose      Enable verbose mode. 
+-V, --verbose      Enable verbose mode. 
 
-    -i, --import       Import key 
+-i, --import       Import key 
 
-    -l, --list         List public keys 
+-l, --list         List public keys 
 ```

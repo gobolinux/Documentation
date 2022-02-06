@@ -14,7 +14,7 @@ The term "Recipe" can refer to either:
 A packed recipe is a tarball such as `SomeProgram--Version-r1--recipe.tar.bz2`
 with the following directory structure. 
 
-```
+```fish
 SomeProgram/
    `--Version-r1/
         |-- Recipe               (required)
@@ -70,31 +70,31 @@ All these options are valid for all recipe types.
 
 ### Static URLs 
 
-#### url=&lt;url&gt; 
+#### url=\<url> 
 
 Note: For Sourceforge URLs, use the variable $httpSourceforge, as in
 
-```
- url=$httpSourceforge/&lt;project name&gt;/&lt;filename&gt;
+```fish
+url=$httpSourceforge/<project name>;/<filename>;
 ```
 
 e.g.
 
-```
- url=$httpSourceforge/xmule/xmule-1.8.2.tar.bz2
+```fish
+url=$httpSourceforge/xmule/xmule-1.8.2.tar.bz2
 ```
 
 Similarly, use `$ftpGnu`, and `$ftpAlphaGnu`, for downloads from GNU's ftp servers.
 
-#### urls=(&lt;array of urls&gt;) 
+#### urls=(\<array of urls>) 
 
 If the Program has multiple source packages, you may specify a list of them.
 If a partial file exists, resumption is
 attempted. FTP transfers are always performed in passive mode.
 
-#### mirror_url=&lt;url&gt; 
+#### mirror_url=\<url> 
 
-#### mirror_urls=(&lt;array of urls&gt;) 
+#### mirror_urls=(\<array of urls>) 
 
 URLs to be used, in case the URLs listed in `url`/`urls` fail.
 Multiple mirrors may be specified. For sets of URLs, each mirror
@@ -102,7 +102,7 @@ needs to specify the same number of URLs.
 
 Example:
 
-```
+```fish
 urls=(
    "http://www.main-site.org/file1"
    "http://www.main-site.org/file2"
@@ -115,10 +115,10 @@ mirror_urls=(
 )
 ```
 
-#### file=&lt;filename&gt; 
+#### file=\<filename> 
 
 
-#### files=(&lt;array of filenames&gt;) 
+#### files=(\<array of filenames>) 
 
 The name of the package file containing the program's sources.
 If not specified, it is assumed to be the same as the final part
@@ -129,29 +129,29 @@ unpacked relative to the same directory by default.  To change this
 behaviour see [unpack_files](#unpack_files) below.
 
 
-#### file_size=&lt;size&gt; 
+#### file_size=\<size> 
 
 
-#### file_sizes=(&lt;array of sizes&gt;) 
+#### file_sizes=(\<array of sizes>) 
 
 This is the file size(s), in bytes, of the packed archive(s) (e.g. foo.tar.gz)
 as reported by `ls -l`.
 
-```
+```fish
 user@gobo /Files/Compile/Archives]ls -l gettext-0.16.1.tar.gz
 -rw-r--r-- 1 root root 8539634 Jul 11 01:08 gettext-0.16.1.tar.gz
 ```
 
-#### file_md5=&lt;md5sum&gt; 
+#### file_md5=\<md5sum> 
 
 
-#### file_md5s=(&lt;array of md5sums&gt;) 
+#### file_md5s=(\<array of md5sums>) 
 
 This value contains the [MD5Sum](http://en.wikipedia.org/wiki/MD5) of the
 package file defined by the `file` value. You can find
 this MD5Sum by using the `md5sum` command.
 
-```
+```fish
 user@gobo /Files/Compile/Archives]md5sum gettext-0.16.1.tar.gz
 3d9ad24301c6d6b17ec30704a13fe127  gettext-0.16.1.tar.gz
 ```
@@ -159,10 +159,10 @@ user@gobo /Files/Compile/Archives]md5sum gettext-0.16.1.tar.gz
 ### Version Control Systems 
 
 
-#### cvs=&lt;CVS server&gt; 
+#### cvs=\<CVS server> 
 
 
-#### cvss=(&lt;array of CVS servers&gt;) 
+#### cvss=(\<array of CVS servers>) 
 
 Specify the CVS server and repository to be used. Note that
 `cvs`, `svn` and `url` are mutually exclusive, since you should be either
@@ -170,27 +170,27 @@ fetching from SCM or getting a tarball.
 
 Example:
 
-```
+```fish
 cvs=:pserver:anonymous:@anoncvs.gimp.org:/cvs/gnome
 ```
 
-#### cvs_module=&lt;module name to checkout&gt; 
+#### cvs_module=\<module name to checkout> 
 
 
-#### cvs_modules=(&lt;array of module names to checkout&gt;) 
+#### cvs_modules=(\<array of module names to checkout>) 
 
 CVS module to be checked out.
 
 Example:
 
-```
+```fish
 cvs_module=gimp
 ```
 
-#### cvs_opts=&lt;string added to cvs operation&gt; 
+#### cvs_opts=\<string added to cvs operation> 
 
 
-#### cvs_options=&lt;string added to cvs operation&gt; 
+#### cvs_options=\<string added to cvs operation> 
 
 Some server configurations require additional options to be
 passed to the cvs command. You shouldn't normally
@@ -201,28 +201,28 @@ options to cvs.
 `cvs_options` is a synonym to `cvs_opts`.
 
 
-#### cvs_password=&lt;password&gt; 
+#### cvs_password=\<password> 
 
 Password to log into the cvs server.
 
 
-#### cvs_checkout_options=&lt;string added to cvs checkout operation&gt; 
+#### cvs_checkout_options=\<string added to cvs checkout operation> 
 
 Some configurations require additional options to be passed
 specifically to the cvs checkout command, such as for getting
 a snapshot from a specific date. Normally, you shouldn't need this command.
 
 
-#### cvs_rsh=&lt;string&gt; 
+#### cvs_rsh=\<string> 
 
 Specify a value for the CVS_RSH variable (see cvs documentation
 for details). If unset, `ssh` is used by default.
 
 
-#### svn=&lt;SVN server&gt; 
+#### svn=\<SVN server> 
 
 
-#### svns=(&lt;array of SVN servers&gt;) 
+#### svns=(\<array of SVN servers>) 
 
 Specify the Subversion server and repository to be used. Note that
 `cvs`, `svn` and `url` are mutually exclusive, since you should be either
@@ -230,27 +230,27 @@ fetching from a SCM or getting a tarball.
 
 Example:
 
-```
+```fish
 svn=http://svn.apache.org/repos/asf/httpd/httpd/branches/2.2.x
 ```
 
-#### bzr=&lt;bazaar server&gt; 
+#### bzr=\<bazaar server> 
 
 
-#### bzrs=(&lt;array of bazaar servers&gt;) 
+#### bzrs=(\<array of bazaar servers>) 
 
 
 
-#### git=&lt;git server&gt; 
+#### git=\<git server> 
 
 
-#### gits=(&lt;array of git servers&gt;) 
+#### gits=(\<array of git servers>) 
 
 
-#### hg=&lt;mercurial server&gt; 
+#### hg=\<mercurial server> 
 
 
-#### hgs=(&lt;array of mercurial servers&gt;) 
+#### hgs=(\<array of mercurial servers>) 
 
 Similarly, specify an URL for checkout from a Bazaar, Git, or Mercurial
 server, respectively.
@@ -268,11 +268,11 @@ Supported recipe types (also known as modes), to be given as argument to
 (autoconf or not.) Some options are only relevant for *configure*:
 
 
-#### configure_options=(<array of options>) 
+#### configure_options=(\<array of options>`) 
 
 Flags to be passed to the configure script. These flags are
-passed in addition to default flags detected by [PrepareProgram](/Commands/PrepareProgram)
-(such as --prefix and --sysconfdir on autoconf-based configure
+passed in addition to default flags detected by [`PrepareProgram`](/Commands/PrepareProgram)
+(such as `--prefix` and `--sysconfdir` on autoconf-based configure
 scripts), unless the override_default_options declaration is used.
 
 
@@ -287,7 +287,7 @@ script.
 The program to run for the above.  Defaults to `autogen.sh`.
 
 
-#### configure=<program name> 
+#### configure=\<program name> 
 
 By default the configure script is assumed to be called
 `configure`. Use this variable to override this value.
@@ -298,9 +298,9 @@ If the behavior you intended is for Compile to `cd` to the `unix`
 directory and run its build sequence there, use `dir` instead.
 
 Examples (only one applies at a time):
-```
- configure=Configure.gnu
- configure=unix/configure
+```fish
+configure=Configure.gnu
+configure=unix/configure
 ```
 
 ### cabal 
@@ -310,19 +310,19 @@ package manager for Haskell.
 Some options are only relevant for *cabal*:
 
 
-#### cabal_options=(<array of options>) 
+#### cabal_options=(\<array of options>) 
 
 Flags to be passed to the Cabal configure operation.
 
 These flags are passed in addition to default flags detected by
-[PrepareProgram](/Commands/PrepareProgram) (such as --prefix) unless the override_default_options
+[`PrepareProgram`](/Commands/PrepareProgram) (such as --prefix) unless the override_default_options
 declaration is used.
 
 
 #### runhaskell 
 
 Specifies the method of invoking Haskell to perform a Cabal-based compilation.
- The default is `runhaskell`.
+The default is `runhaskell`.
 
 
 ### cmake 
@@ -331,13 +331,13 @@ Specifies the method of invoking Haskell to perform a Cabal-based compilation.
 Some options are only relevant for *cmake*:
 
 
-#### cmake_options=(<array of options>) 
+#### cmake_options=(\<array of options>) 
 
 Flags to be passed to the CMake configure operation.
 These flags are passed in addition to default flags (such as -DCMAKE_INSTALL_PREFIX).
 
 
-#### cmake_variables=(<array of assignments>) 
+#### cmake_variables=(\<array of assignments>) 
 
 Variables to be defined in the environment during the execution of *cmake*.
 
@@ -354,13 +354,13 @@ No options are relevant only for *makefile*.
 Some options are only relevant for *python*:
 
 
-#### python_options=(<array of options>) 
+#### python_options=(\<array of options>) 
 
 Array of options to be passed to the Python Distutils build script.
 This works similarly to the `configure_options` array.
 
 
-#### build_script=<name> 
+#### build_script=\<name> 
 
 Specify the same for the Python build script. If none
 is given, Compile tries a few default ones, such as setup.py.
@@ -372,7 +372,7 @@ is given, Compile tries a few default ones, such as setup.py.
 Some options are only relevant for *scons*:
 
 
-#### scons_variables=(<array of assignments>) 
+#### scons_variables=(\<array of assignments>) 
 
 Variables to be passed to *scons*.
 
@@ -389,14 +389,14 @@ No options are relevant only for *xmkmf*.
 archive into place. Some options are only relevant for *manifest*:
 
 
-#### manifest=(<array of "file:dir">) 
+#### manifest=(\<array of "file:dir">) 
 
 Specify which files should be copied over, and to where.
 Destination is relative to `target`.
 
 Example:
 
-```
+```fish
 manifest=(
    "some_script:bin"
    "include/a_header.h:include"
@@ -411,7 +411,7 @@ All included recipes are built relative to the same installation prefix.
 Some options are only relevant for *meta*:
 
 
-#### include=(<array of recipes>) 
+#### include=(\<array of recipes>) 
 
 In a meta-recipe, this array holds the list of recipes that should
 be built to constitute the complete program. Recipe names should
@@ -422,7 +422,7 @@ a meta-package that's already installed may cover up ordering
 problems.
 
 
-#### part_of=<parent> 
+#### part_of=\<parent> 
 
 Indicates that this recipe is generally included as part of a meta-recipe. 
 Unless Compile is called with `-i`/`--install-separately`, the Program will be
@@ -438,14 +438,14 @@ UpdateSettings called in every sub-recipe.
 
 ## Other directives 
 
-#### compile_version=<version-number> 
+#### compile_version=\<version-number> 
 
 *Valid modes: all*
 
 The version number of Compile used to create this recipe.
 
 
-#### environment=(<array of variables>) 
+#### environment=(\<array of variables>) 
 
 *Valid modes: all*
 
@@ -454,7 +454,7 @@ place. Each entry of the array must be in the format `variable=value`.
 
 Example:
 
-```
+```fish
 environment=(
    "PYTHONOPTIMIZE=2"
 )
@@ -533,10 +533,10 @@ files are unpacked inside it, avoiding scattering files in
 $compileSourcesDir (typically `/Data/Compile/Sources`).
 
 
-#### dir=<directory> 
+#### dir=\<directory> 
 
 
-#### dirs=(<array of directories>) 
+#### dirs=(\<array of directories>) 
 
 *Valid modes: all*
 
@@ -552,7 +552,7 @@ The usage of `dirs` affects the way files are unpacked. See
 `unpack_files` for details.
 
 
-#### docs=(<array of filenames>) 
+#### docs=(\<array of filenames>) 
 
 *Valid modes: all*
 
@@ -564,7 +564,7 @@ AUTHORS and TODO are automatically fetched.
 
 Example:
 
-```
+```fish
 docs=(
    'docs/*.html'
 )
@@ -592,7 +592,7 @@ This is implicitly set if the `dirs` array contains any reference
 to `target`. See `unpack_files` for details.
 
 
-#### build_variables=(<array of assignments>) 
+#### build_variables=(\<array of assignments>) 
 
 *Valid modes: configure, makefile, scons*
 
@@ -601,21 +601,21 @@ of make
 
 Example:
 
-```
+```fish
 build_variables=(
    "DESTDIR=$target"
    "MANDIR=$target/man/man1"
 )
 ```
 
-#### install_variables=(<array of assignments>) 
+#### install_variables=(\<array of assignments>) 
 
 *Valid modes: configure, makefile, scons*
 
 Variables to be passed to `make install`. See `build_variables`.
 
 
-#### make_variables=(<array of assignments>) 
+#### make_variables=(\<array of assignments>) 
 
 *Valid modes: configure, makefile*
 
@@ -624,7 +624,7 @@ A shorthand to avoid having to set everything twice, once
 in `build_variables` and then again in `install_variables`.
 
 
-#### makefile=<makefile name> 
+#### makefile=\<makefile name> 
 
 *Valid modes: configure, makefile, xmkmf*
 
@@ -635,13 +635,13 @@ directory names given in variables of this kind.
 
 Examples (only one applies at a time):
 
-```
- makefile=GNUmakefile
- makefile=makefile
- makefile=Makefile.linux
+```fish
+makefile=GNUmakefile
+makefile=makefile
+makefile=Makefile.linux
 ```
 
-#### make=<make command> 
+#### make=\<make command> 
 
 *Valid modes: configure, makefile, xmkmf*
 
@@ -650,11 +650,11 @@ This variable can be used to override this value.
 
 Example:
 
-```
+```fish
 make=unsermake
 ```
 
-#### build_target=<make target> 
+#### build_target=\<make target> 
 
 *Valid modes: configure, makefile, xmkmf, python, scons*
 
@@ -665,12 +665,12 @@ a single declaration (you must use quotes).
 
 Examples (only one applies at a time):
 
-```
- build_target=World
- build_target="all shared"
+```fish
+build_target=World
+build_target="all shared"
 ```
 
-#### install_target=<make target> 
+#### install_target=\<make target> 
 
 *Valid modes: configure, makefile, xmkmf, python, scons*
 
@@ -681,7 +681,7 @@ a single declaration (you must use quotes).
 
 Example:
 
-```
+```fish
 install_target="install install.man install_shared"
 ```
 
@@ -749,11 +749,11 @@ instead of append the option list.
 A message to display to the user after installation.
 
 
-#### sandbox_options=(<array of options>) 
+#### sandbox_options=(\<array of options>) 
 
 *Valid modes: all*
 
-Additional options to be passed to [SandboxInstall](/Commands/SandboxInstall). This is typically used to expand the sandbox to allow additional
+Additional options to be passed to [`SandboxInstall`](/Commands/SandboxInstall). This is typically used to expand the sandbox to allow additional
 directories in *special* situations (such as the installation
 of kernel modules). *Avoid* using this option as much as
 possible, and make sure you know what you're doing when
@@ -761,17 +761,17 @@ you do use it.
 
 Example:
 
-```
+```fish
 sandbox_options=(
   "--no-sandbox"
 )
 ```
 
-#### symlink_options=(<array of options>) 
+#### symlink_options=(\<array of options>) 
 
 *Valid modes: all*
 
-Additional options to be passed to [SymlinkProgram](/Commands/SymlinkProgram). This
+Additional options to be passed to [`SymlinkProgram`](/Commands/SymlinkProgram). This
 should be used sparingly, in order to remedy unusual situations
 (the FreeType package used it to avoid a XFree86 conflict which
 affected the proper functioning of the system). *Avoid* using
@@ -779,13 +779,13 @@ this option if possible; there are almost always better alternatives.
 
 Example:
 
-```
+```fish
 symlink_options=(
   "--conflict overwrite"
 )
 ```
 
-#### unmanaged_files=(<files>) 
+#### unmanaged_files=(\<files>) 
 
 *Valid modes: all*
 
@@ -802,7 +802,7 @@ Good examples of such files are kernel modules, which can't be linked but need
 to be actually present under `/System/Kernel/Modules.`
 
 
-#### with_<flag> 
+#### with_\<flag> 
 
 *Valid modes: cabal, cmake, configure, makefile, python, scons*
 
@@ -810,17 +810,17 @@ These are options to be appended to configure_options (or equivalent) in the
 event that the use flag `flag` is set.
 
 For instance,
-```
- with_gtk="--with-gtk=$gtk__path"
+```fish
+with_gtk="--with-gtk=$gtk__path"
 ```
 
 Or to add multiple configure options:
-```
- with_gtk=(
-    "--with-gtk=$gtk_path"
-    "--with-foo=$foo_path"
-    "--with-bar=$bar_path"
- )
+```fish
+with_gtk=(
+  "--with-gtk=$gtk_path"
+  "--with-foo=$foo_path"
+  "--with-bar=$bar_path"
+)
 ```
 
 See [Use flags](/Recipes/Use-flags/).
@@ -966,10 +966,10 @@ of performing the standard corresponding step for the recipe type you are
 using. So, for instance, if your recipe needs to perform the installation step
 in some nonstandard way, your recipe should include something like this:
 
-```
-  do_install() {
-    # ... your code for nonstandard installation goes here ...
-  }
+```fish
+do_install() {
+  # ... your code for nonstandard installation goes here ...
+}
 ```
 
 Notice that this will *not* perform the standard configuration steps. If you
@@ -979,18 +979,18 @@ that performs the default installation step for recipes of type manifest, for
 instance, is called `manifest_do_install()`. Using it would look like
 this:
 
-```
-  do_install() {
-    # Perform the regular installation (for recipes with manifest type)
-    manifest_do_install "$@"
-    
-    # Perform some additional, nonstandard steps
-    # ... some ...
-    # ... nonstandard ...
-    # ... installation ...
-    # ... steps ...
-    # ... here ...
-  }
+```fish
+do_install() {
+  # Perform the regular installation (for recipes with manifest type)
+  manifest_do_install "$@"
+  
+  # Perform some additional, nonstandard steps
+  # ... some ...
+  # ... nonstandard ...
+  # ... installation ...
+  # ... steps ...
+  # ... here ...
+}
 ```
 
 ## Dynamic variables 
@@ -1021,10 +1021,10 @@ Thus, if you're writing a recipe for some program which accepts configure
 options and for which you need to manually specify a library path, you can use
 the $goboLibraries variable like
 
-```
- configure_options=(
-    "--with-extra-libraries=$goboLibraries/<path_to_the_library>"
- )
+```fish
+configure_options=(
+  "--with-extra-libraries=$goboLibraries/<path_to_the_library>"
+)
 ```
 
 The same applies to the remaining as well, depending on specific program's needs.
@@ -1069,14 +1069,14 @@ called
 
 Patches are applied in filename order, with the `-p1` option.  Creation by
 
-```
- diff -Naur old_dir new_dir
+```fish
+diff -Naur old_dir new_dir
 ```
 
 or
 
-```
- diff -Nau old_file new_file
+```fish
+diff -Nau old_file new_file
 ```
 
 works well. They should be named `01-explanation.patch`, where the initial
@@ -1084,7 +1084,7 @@ numbers increase in the order for patches to be applied, and `explanation` is
 a short title giving some inkling of the patch's purpose. Additionally, the
 first few lines of the patch (before the
 
-```
+```diff
  --- foo/1.0/file.bad
  +++ foo/1.0/file.good
 ```
@@ -1110,7 +1110,7 @@ variables include (where the Program being compiled has some dependency
 * `@%Compile_foo_variable_path%@`
 
 
-# `Resources/`
+# Resources/
 
 The Recipe subdirectory `Resources/` can contain various metadata.  These
 files are copied to `/Programs/Foo/Version/Resources` upon installation. All
@@ -1125,7 +1125,7 @@ as Dependencies, below.
 
 Example:
 
-```
+```fish
 Autoconf 2.60
 Automake 1.11
 GTK-Doc 1.9 [doc]
@@ -1140,12 +1140,12 @@ Vala [vala]
 Informational file about which versions of dependencies were actually linked
 against when compiling.
 
-#### `Defaults/`
+#### Defaults/
 
 This is a directory which may contain, in `Defaults/Settings`, the default
 contents of the `/Programs/Foo/Settings` directory.  The contents of this
 directory will be reconciled with the currently active settings, if any, by
-[UpdateSettings](/Commands/UpdateSettings).  The original defaults will remain in
+[`UpdateSettings`](/Commands/UpdateSettings).  The original defaults will remain in
 `/Programs/Foo/Version/Resources/Defaults`, so that a user may revert to them as
 necessary.
 
@@ -1157,18 +1157,18 @@ to `/System/Variable/`, if not already present.
 This file lists programs which should be installed for this Program to work properly.
 The format is like
 
-```
-    Fontconfig 2.4.2 
-    FreeType 2.1.10 
-    GCC >= 3.0.0, < 4.0.0, != 3.1.0 
-    Glibc 2.5 
-    Lame >= 3.96.1 [lame] 
-    Mesa 6.5.2 
-    Qt >= 3.3.8, < 4.0 [qt] 
-    LuaRocks:luafilesystem 
-    CPAN:XML::Parser 
-    Xorg 7.2 
-    ZLib 1.2.3 
+```fish
+Fontconfig 2.4.2 
+FreeType 2.1.10 
+GCC >= 3.0.0, < 4.0.0, != 3.1.0 
+Glibc 2.5 
+Lame >= 3.96.1 [lame] 
+Mesa 6.5.2 
+Qt >= 3.3.8, < 4.0 [qt] 
+LuaRocks:luafilesystem 
+CPAN:XML::Parser 
+Xorg 7.2 
+ZLib 1.2.3 
 ```
 
 The tags such as `[lame]` specify [Use Flags](/Recipes/Use-flags/), optional dependencies which
@@ -1178,17 +1178,17 @@ When the range string (i.e., `=`, `>=`, etc) is omitted, the dependency
 resolution algorithm assumes it to be `>=`.
 
 The exact algorithm for complex dependencies is specified in
-[CheckDependencies](/Commands/CheckDependencies) but allows for a sequence of options separated by `|`
+[`CheckDependencies`](/Commands/CheckDependencies) but allows for a sequence of options separated by `|`
 (or) each of which is a sequence of versions separated by "," (and). 
 Precedence is left to right.  Thus:
 
-```
-    GCC < 4.0.0 | >= 4.1.0, != 4.1.2 | ICC > 2.0.0 
+```fish
+GCC < 4.0.0 | >= 4.1.0, != 4.1.2 | ICC > 2.0.0 
 ```
 
 means a GCC version less than 4.0.0 or a GCC version greater than 4.1.0 but
 not equal to 4.1.2 or an ICC version greater than 2.0.0.  See the code for
-[CheckDependencies](/Commands/CheckDependencies) for the exact algorithm.
+[`CheckDependencies`](/Commands/CheckDependencies) for the exact algorithm.
 
 Dependencies to language-specific package managers can be fulfilled using the
 [Aliens](https://github.com/gobolinux/AlienVFS) subsystem, using the syntax `AlienType:alien_package`, as in
@@ -1222,18 +1222,18 @@ Objective-C, Fortran, Java, and Ada...
 This file contains environment variables which should be set for this program,
 as bash assignments. For example, the Firefox recipe has
 
-```
+```shell
 export MOZ_PLUGIN_PATH=${goboLibraries}/browser-plugins
 ```
 
 #### Hints 
 
-These contain hints for UpdateSettings on when to overwrite, delete, or skip
+These contain hints for `UpdateSettings` on when to overwrite, delete, or skip
 updating of certain settings. See [[Hints File]].
 
 #### PostInstall 
 
-A bash script which is executed by [Compile](/Commands/Compile) (or [InstallPackage](/Commands/InstallPackage)) after
+A bash script which is executed by [`Compile`](/Commands/Compile) (or [`InstallPackage`](/Commands/InstallPackage)) after
 installation.  This is for one-time actions which should not be associated
 with any stage of the compilation or installation process, but run after the
 Program is symlinked.  They are kept separate from the Recipe file so that
@@ -1247,7 +1247,7 @@ an action unless they're not met. The only implemented requirements so far are
 
 Entries in `required_groups` can have a gid parameter, as seen in this example:
 
-```
+```fish
 required_groups=(
   "users"
   "yes gid=90125"
@@ -1255,9 +1255,9 @@ required_groups=(
 ```
 
 Individual entries in `required_users`, on the other hand, can have
-uid=<num> and groups=<name[,name]*> options, as in:
+`uid=<num>` and `groups=<name[,name]*>` options, as in:
 
-```
+```fish
 required_users=(
   "scripts"
   "wakeman uid=2112 groups=yes,users"

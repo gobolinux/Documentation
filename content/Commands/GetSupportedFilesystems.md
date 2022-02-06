@@ -2,7 +2,7 @@
 title: "GetSupportedFilesystems"
 ---
 
-```
+```fish
 sysfs
 rootfs
 ramfs

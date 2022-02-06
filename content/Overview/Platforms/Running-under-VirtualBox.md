@@ -16,7 +16,7 @@ The catch is that we are already using the virtual CD drive from VirtualBox to r
 
 Then, boot GoboLinux normally in VirtalBox, and do the following:
 
-```shell
+```fish
 mount /dev/sr1 /Mount/CD-ROM
 cd /Mount/CD-ROM
 ./VBoxLinuxAdditions.run
@@ -27,13 +27,13 @@ When you run `udevadm trigger` the drivers should be loaded, and the console wil
 
 Now, you can start Xorg normally with:
 
-```
+```fish
 startx
 ```
 
 If you want to resize your VirtualBox window, make sure "Auto-resize guest display" is turned on in the VirtualBox "Machine" menu, then, after resizing the VirtualBox window, type in the GoboLinux terminal the following
 
-```
+```xorg
 xrandr --output VGA-0 --preferred
 ```
 

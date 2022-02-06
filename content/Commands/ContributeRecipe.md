@@ -51,10 +51,10 @@ GoboLinux                                                March 2017             
 
 Usage examples:
 
-```
+```fish
 ContributeRecipe <name>
 ```
 
-```
+```fish
 ContributeRecipe Bash
 ```

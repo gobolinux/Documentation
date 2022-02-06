@@ -18,9 +18,9 @@ display environment.
 In most cases, the X server automatically detects the
 keyboard and display hardware, so you can start the
 graphical mode by typing:
-
-    startx
-
+```fish
+startx
+```
 Clicking on the top-left icon brings up a menu. Look under
 System Tools, select "Install GoboLinux", 
 follow the instructions.

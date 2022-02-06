@@ -21,10 +21,10 @@ simple: one package per line, without the need to specify its version.
 
 #### A `Dependencies.blacklist` example
 
-The following example blacklists the packages Glibc and Nvidia. Comments
+The following example blacklists the packages `Glibc` and `Nvidia`. Comments
 and blank lines are ignored by the parser, so it's ok to include them.
 
-```
+```fish
 # Dependencies.blacklist is documented in detail at
 #  http://wiki.gobolinux.org/Dependencies
 
@@ -34,9 +34,9 @@ Nvidia
 
 Note: presently blacklisting specific versions is not supported, but the
 same behaviour can be achieved by creating an empty directory in the
-`/Programs` directory. For example, to blacklist GCC version 4.1.2 you
+`/Programs` directory. For example, to blacklist `GCC` version `4.1.2` you
 may:
 
-```shell
+```fish
 mkdir /Programs/GCC/4.1.2
 ```

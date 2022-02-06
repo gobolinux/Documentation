@@ -21,5 +21,6 @@ this tool because it would render the system in an inconsistent state
 during the program's execution.
 
 Examples:
-
-    RebuildLinks --shared
+```fish
+RebuildLinks --shared
+```

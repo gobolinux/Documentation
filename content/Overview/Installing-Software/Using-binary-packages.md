@@ -17,7 +17,7 @@ installing binary packages. If you want
 [InstallPackage](/Commands/InstallPackage/) to look for the most recent
 Gimp package available, you can run
 
-```
+```fish
 InstallPackage Gimp
 ```
 
@@ -28,13 +28,13 @@ URLs scanned. You may add your own repositories if you desire.)
 If you want to select a specific version, you can pass it as the second
 parameter:
 
-```
+```fish
 InstallPackage Gimp 2.8.18
 ```
 
 If you downloaded the package and want to install it, run:
 
-```
+```fish
 InstallPackage Gimp--2.8.18--i686.tar.bz2
 ```
 
@@ -43,7 +43,7 @@ the requested package before installing it. You can avoid these queries
 by adding the `--batch` or `-b` flag. This is particularly useful with
 large packages such as Gimp or Xorg, which have many dependencies.
 
-```
+```fish
 InstallPackage -b Gimp
 ```
 
@@ -70,7 +70,7 @@ In GoboLinux, all binary packages (as well as all user-compiled
 software) is installed under `/Programs` in a "program directory"
 provided for each version of each application, for example:
 
-```
+```fish
 /Programs/Gimp/2.8.18
 ```
 
@@ -103,7 +103,7 @@ In order to create a package, run the
 [CreatePackage](/Commands/CreatePackage) utility with the package name
 as a parameter. For example,
 
-```
+```fish
 CreatePackage rxvt
 ```
 

@@ -9,7 +9,7 @@ weight: 1
 ### Running Compile
 
 Install UnionFS-Fuse to workaround limitations with the sandbox in the Live environment:
-```
+```fish
 InstallPackage https://gobolinux.org/packages/017/Fuse--2.9.7--x86_64.tar.bz2
 InstallPackage https://gobolinux.org/packages/017/UnionFS-Fuse--2.1--x86_64.tar.bz2
 ```
@@ -20,7 +20,7 @@ InstallPackage https://gobolinux.org/packages/017/UnionFS-Fuse--2.1--x86_64.tar.
 
 Loopback network interface needs to be brought up. As root, run:
 
-```
+```fish
 ifconfig lo up
 echo ifconfig lo up >> /System/Settings/BootScripts/BootUp
 ```
@@ -31,12 +31,12 @@ The recent [Let's Encrypt fiasko](https://www.reddit.com/r/PFSENSE/comments/pyce
 
 The appropriate way to resolve this, is by running:
 
-```shell
+```fish
 sudo Compile --no-check-certificate CA-Certificates
 ```
 and
 
-```shell
+```fish
 sudo sh /System/Index/bin/update-ca-certificates
 ```
 
@@ -46,7 +46,7 @@ afterwards.
 
 Update the search URL used by the Scripts package:
 
-```
+```fish
 GrepReplace -B "016" "017" /System/Settings/Scripts/GetAvailable.conf
 ```
 
@@ -56,7 +56,7 @@ Compile and Scripts are always evolving. Make sure to update your copies by
 running the following commands after you boot into your installed system for
 the first time:
 
-```
+```fish
 cd /Programs/Scripts/Current
 git pull && UpdateSettings --auto Scripts && make
 
@@ -69,7 +69,7 @@ git pull && UpdateSettings --auto Compile
 The version under /Programs/SQLite/3310100 is actually 3.8.2. Please run the
 following commands to update to its most recent version:
 
-```
+```fish
 Compile SQLite
 RemoveProgram SQLite 3310100
 ```
@@ -79,7 +79,7 @@ RemoveProgram SQLite 3310100
 Ncurses has been replaced by NcursesW, but some packages' metadata still hold
 references to the former. The following command fixes that:
 
-```
+```fish
 GrepReplace -B "^Ncurses " "NcursesW " /Programs/*/*/Resources/Dependencies
 ```
 
@@ -100,7 +100,7 @@ process, this bug may impact Compile in the sense that existing files may be con
 
 If you face this problem, please run the following commands on your installed system to remove those attributes:
 
-```
+```shell
 fname=
 xattr_pattern="trusted.overlay."
 getfattr -P -R -d -m "$xattr_pattern" --absolute-names /Programs 2> /dev/null | while read i

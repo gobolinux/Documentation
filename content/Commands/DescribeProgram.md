@@ -1,9 +1,8 @@
 ---
-title: "DisableProgram"
+title: "DescribeProgram"
 ---
 
 ```
-
 DescribeProgram
  Returns the description of the program, if available.
 
@@ -16,9 +15,11 @@ DescribeProgram
 
  -W, --no-web         do not try to download remote descriptions if they are not
                       locally available
+```
 
 Examples of usage:
- DescribeProgram gimp
- DescribeProgram -W gimp
- DescribeProgram -a
+```fish
+DescribeProgram gimp
+DescribeProgram -W gimp
+DescribeProgram -a
 ```

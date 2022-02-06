@@ -1,6 +1,6 @@
 ---
-title: "GoboLinux dark corners"
-menuTitle: "GoboLinux design quirks"
+title: "GoboLinux Dark Corners"
+menuTitle: "GoboLinux Design Quirks"
 weight: 13
 ---
 

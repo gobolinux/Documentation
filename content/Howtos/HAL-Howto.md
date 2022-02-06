@@ -49,7 +49,7 @@ panel).
 
 -   Install HAL, Pmount and Ivman:
 
-```shell
+```fish
 ] Compile hal 
 ... 
 ] Compile pmount 
@@ -94,7 +94,7 @@ src/manager.c:619)
 NOTE: If all this works, don't forget to check that hald and ivman is
 started in your bootscripts:
 
-```shell
+```fish
 Exec "Starting D-Bus system bus..."             messagebus  
 Exec "Starting HAL daemon..."                   StartTask hald  
 Exec "Starting Volume Manager..."               ivman
@@ -108,12 +108,12 @@ Exec "Starting Volume Manager..."               ivman
 exec 1>&2 
 echo -n "Launching volume manager... " 
 if ps -C ivman -o user | grep -q $USER 
-then 
-echo "Already running." 
-exit 
-else
-echo "OK"
-exec ivman
+  then 
+    echo "Already running." 
+    exit 
+  else
+    echo "OK"
+    exec ivman
 fi
 ```
 
@@ -125,33 +125,33 @@ fi
 ## Ivman rules to add devices to your ROX panel
 
 -   Create a script named `~/bin/rox.panelput` and make it executable:
-```shell
-    #!/bin/sh 
-    ### Change "Top" below to the panel you want your devices on... 
-    rox --RPC << EOF 
-    <?xml version="1.0"?> 
-    <env:Envelope xmlns:env="http://www.w3.org/2001/12/soap-envelope"> 
-    <env:Body xmlns="http://rox.sourceforge.net/SOAP/ROX-Filer"> 
-    <Panel$1> 
-    <Side>Top</side> 
-    <Path>$2</path> 
-    </panel$1> 
-    </env:body> 
-    </env:envelope> 
-    EOF 
+```fish
+#!/bin/sh 
+### Change "Top" below to the panel you want your devices on... 
+rox --RPC << EOF 
+<?xml version="1.0"?> 
+<env:Envelope xmlns:env="http://www.w3.org/2001/12/soap-envelope"> 
+<env:Body xmlns="http://rox.sourceforge.net/SOAP/ROX-Filer"> 
+<Panel$1> 
+<Side>Top</side> 
+<Path>$2</path> 
+</panel$1> 
+</env:body> 
+</env:envelope> 
+EOF 
 ```
 
 -   And here comes the ivman rule, which should be inserted in your
     `~/.ivman/IvmConfigProperties.xml` (this files is created first time
     you run ivman as a user)
 
-```
-    <ivm:Match name="ivm.mountable" value="true"> 
-    <ivm:Property name="hal.volume.is_mounted"> 
-    <ivm:Action value="true" exec='rox.panelput Add "$hal.volume.mount_point$"' /> 
-    <ivm:Action value="false" exec='rox.panelput Remove "$hal.volume.mount_point$"' /> 
-    </ivm:property> 
-    </ivm:match>
+```xml
+<ivm:Match name="ivm.mountable" value="true"> 
+<ivm:Property name="hal.volume.is_mounted"> 
+<ivm:Action value="true" exec='rox.panelput Add "$hal.volume.mount_point$"' /> 
+<ivm:Action value="false" exec='rox.panelput Remove "$hal.volume.mount_point$"' /> 
+</ivm:property> 
+</ivm:match>
 ```
 
 ## A nice `~/bin/eject` script:
@@ -160,7 +160,7 @@ This lets you unmount your media and also FUSE mountpoints with the
 *Eject* entry on the right-click menu on mountpoints. Don't forget to
 make the script executable.
 
-```shell
+```fish
 #!/bin/sh
 pumount "$1" 2>/dev/null || fusermount -u "$1" 2>/dev/null ||
 echo "Could not unmount with pumount or fusermount -u" >&2
@@ -183,7 +183,7 @@ At least for me, my CD-ROM's got mounted as `/media/hde` and stuff like
 that, this patch to
 `/System/Index/share/hal/fdi/policy/10osvendor/10-storage-policy.fdi`
 fixed it so that media is mounted with the volume label as mountpoint:
-```
+```patch
 -       <match key="@block.storage_device:storage.no_partitions_hint" bool="false"> 
 - 
 + 

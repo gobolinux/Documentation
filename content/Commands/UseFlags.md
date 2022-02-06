@@ -6,7 +6,7 @@ title: "UseFlags"
 `UseFlags`
 
 Usage:
-```
+```fish
 UseFlags [<program> [<flag-to-test>]]
 ```
 

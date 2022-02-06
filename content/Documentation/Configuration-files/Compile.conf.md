@@ -14,37 +14,43 @@ tree, you should know by now that this is the same as
 These are the usual contents of the file:
 
 Your name here so that credit is added to recipes.
-
-    compileRecipeAuthor="Paul McCartney" 
-    # example only! change the name (unless of course, you're Paul ;) ) 
+```shell
+compileRecipeAuthor="Paul McCartney" 
+# example only! change the name (unless of course, you're Paul ;) ) 
+```
 
 The standard locations for your local Compile files.
-
-    compileDir="${goboPrefix}/Files/Compile"
-    compileArchivesDir="$compileDir/Archives"
-    compileSourcesDir="$compileDir/Sources"
-    compileRecipeDirs="$compileDir/Recipes"
+```shell
+compileDir="${goboPrefix}/Files/Compile"
+compileArchivesDir="$compileDir/Archives"
+compileSourcesDir="$compileDir/Sources"
+compileRecipeDirs="$compileDir/Recipes"
+```
 
 Some of the main free software repositories are treated especially:
 recipes use these variables in their `url` declarations, so that you can
 pick your favorite mirror without having to edit recipes one by one:
-
-    ftpGnu=ftp://ftp.gnu.org/gnu/ 
-    ftpAlphaGnu=ftp://alpha.gnu.org/gnu/ 
-    httpSourceforge=http://unc.dl.sourceforge.net/sourceforge/ 
+```shell
+ftpGnu=ftp://ftp.gnu.org/gnu/ 
+ftpAlphaGnu=ftp://alpha.gnu.org/gnu/ 
+httpSourceforge=http://unc.dl.sourceforge.net/sourceforge/ 
+```
 
 The Compile recipe tree is managed by Git. The git repository and the
 upstream branch are both configurable through the following variables:
-
-    compileRecipesRepository=https://github.com/gobolinux/Recipes.git
-    compileUpstreamBranch=master
+```shell
+compileRecipesRepository=https://github.com/gobolinux/Recipes.git
+compileUpstreamBranch=master
+```
 
 A variable to set the "make" command called by Compile. ColorMake
 provides the highlighting that GoboLinux has by default:
-
-    compileMakeCommand="ColorMake"
+```shell
+compileMakeCommand="ColorMake"
+```
 
 Options to use with the make command. This can be used to run multiple
 threads in parallel on different CPUs or for other customisation:
-
-    compileMakeOptions="-j2"
+```shell
+compileMakeOptions="-j2"
+```

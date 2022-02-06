@@ -54,37 +54,43 @@ both a recipe and a package.
 
 The mnemonics mean:
 
--   I - Installed
--   U - Upgrade
--   D - Downgrade (color code: red)
--   R - Recipe available (color code: green)
--   B - Binary available (color code: yellow/brown)
--   X - Recipe and binary available (color code: blue)
+-   **I** - Installed
+-   **U** - Upgrade
+-   **D** - Downgrade (color code: red)
+-   **R** - Recipe available (color code: green)
+-   **B** - Binary available (color code: yellow/brown)
+-   **X** - Recipe and binary available (color code: blue)
 
 Examples:
-
-    Freshen
+```fish
+Freshen
+```
 
 Produce an ordered list of everything that can be updated on the system.
-
-    Freshen -R
+```fish
+Freshen -R
+```
 
 Produce an ordered list of everything that can be updated on the system
 using only binary packages.
-
-    Freshen -U -l 5
+```fish
+Freshen -U -l 5
+```
 
 Update the first five programs on the list.
-
-    Freshen -U Firefox
+```fish
+Freshen -U Firefox
+```
 
 Update Firefox and its dependencies
-
-    Freshen -U -x Qt
+```fish
+Freshen -U -x Qt
+```
 
 Update everything except Qt and anything that depends upon it.
-
-    Freshen -s Firefox Kopete
+```fish
+Freshen -s Firefox Kopete
+```
 
 Ordered list of upgrades **needed** in order to upgrade Firefox and
 Kopete to their newest releases. Add **-U** to perform the upgrade.

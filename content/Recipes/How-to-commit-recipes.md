@@ -19,8 +19,9 @@ DevelScripts take care of that.
 
 You should fetch DevelScripts from CVS. This can be done using its
 Compile recipe. Just run:
-
-    Compile develscripts
+```fish
+Compile develscripts
+```
 
 This will add a file called
 `/System/Settings/DevelScripts/CompileSubversion.conf` -- take a look at
@@ -36,8 +37,9 @@ takes care of incrementing the revision number, copying the files into
 the local repository and runs svn to commit them to the GoboLinux
 repository. PutRecipe takes as a parameter a directory containing a
 recipe, like this:
-
-    PutRecipe firefox
+```fish
+PutRecipe firefox
+```
 
 By default, it will look for a recipe in /Data/Compile/LocalRecipes. If
 there is more than one version there, the script will complain and will

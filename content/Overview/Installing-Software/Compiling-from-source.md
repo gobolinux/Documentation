@@ -11,7 +11,7 @@ follow next.
 
 In order to install **irssi**, a text-based IRC client from the command
 line, you would type the following instruction:
-```shell
+```fish
 Compile irssi
 ```
 Depending on the speed of your computer, internet connection and what
@@ -59,11 +59,11 @@ time being.
 ### Getting the latest Compile
 
 -   To use the development version of Compile, run
-```
-  Compile Compile git`
+```fish
+Compile Compile git
 ```
 -   To use the latest stable version, run
-```
+```fish
 InstallPackage Compile
 ```
 In general it is recommended to always use the latest stable version of

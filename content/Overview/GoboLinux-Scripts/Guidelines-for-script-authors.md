@@ -14,18 +14,18 @@ GoboLinux itself). Patches to correct the non-conformities are welcome.
 
 A few rules of thumb:
 
--   Three spaces for indentation. Avoid joining "do" and "then" in the
-    same line with ";", instead put it on a line by itself, aligned with
-    "for", "while" or "if".
--   Prefer using "if" rather than idioms like " && { }", but apply your common sense.
+-   Three spaces for indentation. Avoid joining `do` and `then` in the
+    same line with `;`, instead put it on a line by itself, aligned with
+    `for`, `while` or `if`.
+-   Prefer using `if` rather than idioms like ` && { }`, but apply your common sense.
 -   Be generous in you use of quotes whenever referring or defining
-    variables, and the "${x}" syntax when merging variables inside
+    variables, and the `${x}` syntax when merging variables inside
     strings.
--   Bear in mind that esac is ridiculous.
+-   Bear in mind that `esac` is ridiculous.
 -   When doing weird stuff such as functional-like programming with
     eval, hide it in a pretty function to pretend it is a bit more
     readable. Eventually we might make a
-    `Functional` module. By now, Map() is defined
+    `Functional` module. By now, `Map()` is defined
     in the `Array` module.
 
 It's hard to believe, but the only shell module containing

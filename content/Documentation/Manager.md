@@ -2,7 +2,7 @@
 title: "Manager"
 ---
 
-The **Manager** program is presently (August 2017) no longer maintained.
+The `Manager` program is presently (August 2017) no longer maintained.
 
 More information about it may be provided at a later time here at the wiki.
 

@@ -16,7 +16,7 @@ case, press "e" at the Grub menu, make this same edit, and press Ctrl-X
 to boot once only with the new command line.
 
 Run `X -configure`. It will generate a file `xorg.conf.new`. Edit this
-file, and change `vesa` to `fbdev`. Move the file to /etc/X11/xorg.conf.
+file, and change `vesa` to `fbdev`. Move the file to `/etc/X11/xorg.conf`.
 
 Reboot. `startx` will now work normally.
 

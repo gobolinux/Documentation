@@ -2,7 +2,7 @@
 title: "ProblemReport"
 ---
 
-```
+```fish
 Scripts version: 016.01
 Compile version: 016.01-r1
 BootScripts version: 016.01-r1

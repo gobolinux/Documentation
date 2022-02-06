@@ -2,17 +2,17 @@
 title: "RescueSymlinkProgram"
 ---
 
-A minimal functionality [SymlinkProgram](../SymlinkProgram) that
+A minimal functionality [`SymlinkProgram`](../SymlinkProgram) that
 can be used when the original script is not working.
 
 ## Usage
 
-```shell
+```fish
 RescueSymlinkProgram <program_path> [goboLinks]
 ```
 
 ## Example
 
-```shell
+```fish
 RescueSymlinkProgram /Programs/Glibc/Current /System/Index
 ```

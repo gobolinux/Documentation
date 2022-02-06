@@ -23,7 +23,7 @@ directory.
 -   sudo - aliased to Sudo in the Sudo package to handle names other
     than root as super user
 -   top - aliased to htop in the Htop package
--   make - aliased to [ColorMake](/Commands/ColorMake) in the Scripts
+-   make - aliased to [`ColorMake`](/Commands/ColorMake) in the Scripts
     package to produce colorful output
 -   info - aliased to Info in the Pinfo package
 -   man - aliased to Man in the Pinfo package

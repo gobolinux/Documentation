@@ -5,23 +5,27 @@ title: "ListProgramFiles"
 Gives you the list of files which belong to some program you have installed on your machine.
 
 Which files belong the current installed version of
-'Wireless-Tools'?
-
-	ListProgramFiles wireless-tools
+`Wireless-Tools`?
+```fish
+ListProgramFiles wireless-tools
+```
 
 or, equivalently: 
+```fish
+ListProgramFiles wireless-tools Current
+```
 
-	ListProgramFiles wireless-tools Current
+Which files belong to version 28 of `Wireless-Tools`?
+```fish
+ListProgramFiles wireless-tools 28
+```
 
-Which files belong to version 28 of 'Wireless-Tools'?
-
-	ListProgramFiles wireless-tools 28
-
-Notice how '''<program>''' field is not case-sensitive although '''<version>''' field is. 
+Notice how `<program>` field is not case-sensitive although `<version>` field is. 
  
-Which files belong to all versions of 'Wireless-Tools'?
-
-	ListProgramFiles /Programs/Wireless-Tools
+Which files belong to all versions of `Wireless-Tools`?
+```fish
+ListProgramFiles /Programs/Wireless-Tools
+```
 
 Notice that we passed the program's directory instead of its name. 
 

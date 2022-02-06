@@ -35,10 +35,10 @@ specification apply only to those programs. Only one flag
 specification should be included on each line, and everything after a #
 is ignored as a comment. An example file for clarity:
 
-```
- +foo # Enable foo globally. This text is ignored.
- -bar
- +bar FooBar
+```diff
++foo # Enable foo globally. This text is ignored.
+-bar
++bar FooBar
 ```
 
 This enables the foo flag globally and disables bar, but then enables
@@ -54,8 +54,8 @@ programs to go with a flag. It takes the ugly syntax because it's
 likely to be by far the least common way of using it. The same set of
 flags from above could be applied with:
 
-```
- USE="+foo -bar +bar@FooBar"
+```fish
+USE="+foo -bar +bar@FooBar"
 ```
 
 ## Use Flags in Recipes
@@ -63,7 +63,7 @@ flags from above could be applied with:
 Flags should be listed in the [Dependencies](/Recipes/Recipe-Format-Specification/#dependencies) or [BuildDependencies](/Recipes/Recipe-Format-Specification/#builddependencies) file
 in the same manner as the existing cross/!cross flag:
 
-```
+```fish
 FooBar >= 1.2 [foo,bar]
 ```
 
@@ -77,7 +77,7 @@ necessary at all, or whether support should just be enabled by
 default. If the flag is necessary, it should be listed at the end of
 the Dependencies file as an entry without a corresponding dependency:
 
-```
+```fish
 FooBar >= 1.2 [foo,bar]
 [baz,quux]
 ```
@@ -89,17 +89,17 @@ incompatibility associated with them.
 Within a Recipe file, the `with_<flag>` variable may be set for the
 common case of adding a configure option:
 
-```
+```fish
 with_gtk="--with-gtk=$gtk__path"
 ```
 
 Or to add multiple configure options:
-```
+```fish
 with_gtk=(
     "--with-gtk=$gtk_path"
     "--with-foo=$foo_path"
     "--with-bar=$bar_path"
- )
+)
 ```
 
 This will add the value of the variables to the most common
@@ -109,7 +109,7 @@ scons, scons_variables; cmake, cmake_options; cabal, cabal_options. In
 the case where more complicated changes are needed to enable support,
 there is a function `using_<flag>()` available:
 
-```
+```fish
 using_gtk() {
    configure_options=( "${configure_options[@]}" "--with-gtk=$gtk__path" )
 }
@@ -122,7 +122,7 @@ hook functions are for. Each of the existing hook functions (`pre_link`,
 `pre_patch`, `pre_build`, `pre_install`, `post_install`) has a corresponding
 `using_<flag>_<hook>()` function:
 
-```
+```fish
 using_gtk_pre_build() {
    rm -rf *
 }

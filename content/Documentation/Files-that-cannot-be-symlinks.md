@@ -10,12 +10,12 @@ the files that cannot be symlinks.
 it does not only contain links, by definition (or, better put, by
 necessity)" -- Hisham Muhammad*
 
--   /System/Settings/sudoers
+-   `/System/Settings/sudoers`
 
 The configuration file for *sudo* must be a regular file. If it is not,
 `sudo` will complain and do nothing.
 
--   /System/Settings/passwd and friends
+-   `/System/Settings/passwd` and friends
 
 The settings files used by the Shadow package are quite interesting.
 Theoretically, they can be symlinks, but there is a caveat: utilities

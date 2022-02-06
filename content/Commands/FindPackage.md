@@ -48,7 +48,7 @@ Options:
  ```
 
 Examples of usage:
-```shell
+```fish
 FindPackage kde
 FindPackage kde 3.2.3
 FindPackage KDE 3.2.3

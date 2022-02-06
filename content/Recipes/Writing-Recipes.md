@@ -32,7 +32,7 @@ We only need to do one thing here, add your name to Compile.conf (for
 credits on Recipes you may make). Open Compile.conf in a text editor
 such as nano:
 
-```shell
+```fish
 nano /System/Settings/Compile/Compile.conf
 ```
 
@@ -53,7 +53,7 @@ Instead, use [NewVersion](/Commands/NewVersion) with the package name
 and version to create a new recipe starting with the previous recipe
 contents. For example:
 
-```shell
+```fish
 NewVersion GCC 4.4.4
 ```
 
@@ -63,7 +63,7 @@ package version in "$url" by 4.4.4.
 
 You can also give the full URL for the package sources:
 
-```shell
+```fish
 NewVersion GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
 ```
 
@@ -129,7 +129,7 @@ program on your computer. We'll use
 [joe](http://sf.net/projects/joe-editor/), a text editor (console
 based). This is my first recipe, and it is now in the main Compile tree.
 
-```
+```fish
 MakeRecipe http://unc.dl.sourceforge.net/sourceforge/joe-editor/joe-3.1.tar.gz
 ```
 
@@ -141,7 +141,7 @@ becomes Joe), and that the version is 3.1.
 Note: In case it didn't, you could have passed it explicitly as
 parameters
 
-```
+```fish
 MakeRecipe HardToDetect 2.0http://example.org/htd_2_0.tar.bz2
 ```
 
@@ -150,7 +150,7 @@ downloaded the sources, and found that it uses autoconf. Which is a good
 thing, as that means there is very little work to be done on our part.
 So now we compile and install the package on our machine.
 
-```shell
+```fish
 Compile joe
 ```
 
@@ -169,7 +169,7 @@ sandbox, etc.
 Writing Meta recipe is like putting small things inside some larger
 container. For example consider the following meta recipe:
 
-```s
+```fish
 # Recipe for version 1.4.5 by Hisham Muhammad, on Wed Jan 23 01:28:21 BRST 2008
 # Recipe (MakeRecipe) for Audacious by Andre Detsch <detsch@gobolinux.org>, on Wed Nov 30 15:01:27 BRST 2005
 compile_version=1.8.2
@@ -197,7 +197,7 @@ to write a Description file for your recipe before you share it.
 
 To share your recipe, use this command:
 
-```
+```fish
 ContributeRecipe <program name>
 ```
 
@@ -229,17 +229,19 @@ is to ensure that the patch is appliable without editing even if the
 recipe is updated. The patch should therefore add one level to the
 source directory in the path. An example taken from the rlocate recipe,
 created with `diff`:
-
-     --- rlocate-0.4.3/doc/rlocate.html  2006-01-19 10:04:52.000000000 +0100
-     +++ rlocate-0.4.3.new/doc/rlocate.html  2006-01-19 19:10:20.000000000 +0100
-     @@ -223,6 +223,6 @@
+```diff
+--- rlocate-0.4.3/doc/rlocate.html  2006-01-19 10:04:52.000000000 +0100
++++ rlocate-0.4.3.new/doc/rlocate.html  2006-01-19 19:10:20.000000000 +0100
+@@ -223,6 +223,6 @@
+```
 
 Set the permissions of the rlocate and rlocated binaries. To do this
 execute the following commands:
-
-     -        chown root:rlocate /usr/local/bin/rlocate
-     +        chown 0:rlocate /usr/local/bin/rlocate
-              chmod 2755 /usr/local/bin/rlocate
+```diff
+-        chown root:rlocate /usr/local/bin/rlocate
++        chown 0:rlocate /usr/local/bin/rlocate
+         chmod 2755 /usr/local/bin/rlocate
+```
 
 This diff should then be in a file, say `01-root\_to\_uid.patch`, wich
 is placed in the `Rlocate 0.4.3` recipe directory. Of course the filename
@@ -253,9 +255,10 @@ some of them being applied to the same source file.
 To create a patch you need the edited source and the "clean" source,
 then use 'diff' to create the patch. To create the patch in the example
 above I used
-
-      cd /Data/Compile/Sources
-      diff -Naur rlocate-0.4.3 rlocate-0.4.3.new > 01-root_to_uid.patch
+```fish
+cd /Data/Compile/Sources
+diff -Naur rlocate-0.4.3 rlocate-0.4.3.new > 01-root_to_uid.patch
+```
 
 where rlocate-0.4.3.new was the directory holding the edited source.
 This may work if you only have one type of change made. But if you made
@@ -324,11 +327,12 @@ These are autoconf-based packages, and are indicated with
 `recipe_type=configure`. The most common variation in recipes of this
 type is the need to pass additional flags to the `configure` script. You
 can do so with the `configure_options` flag, like this:
-
-      configure_options=(
-          "--enable-shared"
-          "--with-foo"
-      )
+```fish
+configure_options=(
+    "--enable-shared"
+    "--with-foo"
+)
+```
 
 Keep in mind that by passing explicit flags to `configure`, you are
 affecting the dependencies of the package. Ideally, the `configure`
@@ -355,20 +359,22 @@ first step.
 
 If `configure` or `autogen.sh` have non-standard names, you can
 explicitly provide them with `configure` and `autogen`, like this:
-
-      configure=configure.gnu
-      autogen=gen_all.sh
+```fish
+configure=configure.gnu
+autogen=gen_all.sh
+```
 
 If present at <architecture>`/Recipe`, an architecture-specific Recipe
 file is sourced in addition to the base Recipe file. Variable
 assignments in it will override earlier ones, so to append to a
 variable, you must do so explicitly, e.g.
-
-    configure_options=(
-        "${configure_options[@]}"
-        --with-cpu=i686
-        --enable-add-ons
-    )
+```fish
+configure_options=(
+    "${configure_options[@]}"
+    --with-cpu=i686
+    --enable-add-ons
+)
+```
 
 Since "compileprogram" recipes also run `make`, most of the observations
 about "makefile" recipes, discussed below also apply.
@@ -395,19 +401,21 @@ To give `make` variables, we can either use `build_variables` and
 `install_variables`, which give options to the "build" and "install"
 runs of `make`, or just `make_variables` which passes options to both
 runs. Their use is similar to that of `configure_options`.
-
-      make_variables=(
-          "DESTDIR=$target"
-      )
+```fish
+make_variables=(
+    "DESTDIR=$target"
+)
+```
 
 Sometimes, paths are defined in several variables of the Makefile. No
 problem:
-
-      make_variables=(
-          "BINDIR=$target/bin"
-          "LIBDIR=$target/lib"
-          "ETCDIR=$target/../Settings"
-      )
+```fish
+make_variables=(
+    "BINDIR=$target/bin"
+    "LIBDIR=$target/lib"
+    "ETCDIR=$target/../Settings"
+)
+```
 
 If there are no variables of this kind in the Makefile, that is, if the
 Makefile has hard-coded locations in its installation rules, then
@@ -417,8 +425,9 @@ code, look for references to paths like `/usr` using `grep`).
 Like with `configure` and `autogen`, if the makefile uses a
 different name from the standard (`Makefile`), you can pass it
 explicitly using the `makefile` variable:
-
-    makefile=GNUmakefile
+```fish
+makefile=GNUmakefile
+```
 
 #### python recipes
 

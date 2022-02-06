@@ -1,5 +1,5 @@
 ---
-title: "GitHub contributor workflow"
+title: "GitHub Contributor Workflow"
 weight: 7
 ---
 
@@ -9,7 +9,7 @@ This page is intended to document the new GitHub workflow for contributing to Go
 
 Fire up your favourite editor, open `/Programs/Compile/Settings/Compile/Compile.conf` and edit the `compileRecipeAuthor` key as appropriate:
 
-```
+```fish
 # set up proper attribution for GitHub pull requests
 compileRecipeAuthor="A. Random Contributor <somebody@some-email-address>"
 ```
@@ -31,7 +31,7 @@ In short, ContributeRecipe does the following:
 
 Git needs to be set up to use the same git `user.name` and `user.email` combination as the one used in `Compile.conf` in the `compileRecipeAuthor=` key.
 
-```
+```fish
 cd
 git config --global user.name "A. Random Contributor"
 git config --global user.email "somebody@some-email-address"
@@ -44,7 +44,7 @@ git config --get user.email
 
 It is considered good practice to double check the changes about to be committed by ContributeRecipe:
 
-```
+```fish
 cd /Data/Compile/Recipes
 git status
 # if existing files have been modified, you can run:
@@ -57,7 +57,7 @@ Once the attribution is correctly set up and the changes have been double checke
 
 The script has been designed such that all there is to the contribution process is to supply a name and a version to `ContributeRecipe`:
 
-```
+```fish
 # cd into /Data/Compile/Recipes if you haven't already
 sudo ContributeRecipe ExampleRecipe 0.0.1
 ```
@@ -74,14 +74,14 @@ NOTE: if you have 2-Factor Authentication (**2FA**) enabled, `git` and `hub` exp
 
 For convenience, `hub` can be set up to re-use this token for authentication with your GitHub account by exporting the environment variable `GITHUB_TOKEN` in your shell's configuration file (by default, this is `~/.zshrc`):
 
-``` bash
+```fish
 export GITHUB_USER="<the value of your github username>"
 export GITHUB_TOKEN="<the value of oauth_token in ~/.config/hub>"
 ```
 
 To verify that `GITHUB_TOKEN` works as expected, this example might prove useful:
 
-``` bash
+```shell
 . ~/.zshrc
 echo "${GITHUB_TOKEN}"
 echo "My first gist sent via hub" | hub gist create

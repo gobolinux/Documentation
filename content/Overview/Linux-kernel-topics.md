@@ -1,5 +1,5 @@
 ---
-title: "Linux kernel topics"
+title: "Linux Kernel Topics"
 weight: 12
 ---
 
@@ -53,8 +53,6 @@ other than vanilla, you may use NewVersion.
 
 -   Download a kernel from [kernel.org](http://www.kernel.org/)
 
-  
-  
 If you already have a kernel downloaded, or have a special source
 package, you may place it in /Data/Compile/Archives.
 

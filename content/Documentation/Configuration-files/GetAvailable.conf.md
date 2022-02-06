@@ -15,44 +15,48 @@ These are the usual contents of the file:
 
 The timeout (in seconds) when trying to fetch the packages list from a
 sever.
-    
-    timeout=15
-
+```shell
+timeout=15
+```
 The paths from which local packages will be automatically be found.
 Notice that both compressed (e.g.
 `/Depot/Packages/Qt--4.0.0--i686.tar.bz2`) and uncompressed (e.g.
 `/Mount/SquashFS/Programs/Qt/4.0.0`) packages can
 be matched.
-
-    defaultLocalPackagesPaths=( 
-    "/Depot/Packages" 
-    "/Mount/SquashFS/Programs" 
-    "/Mount/CD-ROM/Depot/Packages/" 
-    "." 
-    ) 
+```shell
+defaultLocalPackagesPaths=( 
+"/Depot/Packages" 
+"/Mount/SquashFS/Programs" 
+"/Mount/CD-ROM/Depot/Packages/" 
+"." 
+) 
+```
 
 The URLS from which lists of official binary packages (packed by some
 core developer) will be retrieved.
-
-    officialPackagesLists=( 
-    'http://kundor.org/gobo/packages/official/MANIFEST.bz2' 
-    'http://gobo.calica.com/packages/official/MANIFEST.bz2' 
-    ) 
+```shell
+officialPackagesLists=( 
+'http://kundor.org/gobo/packages/official/MANIFEST.bz2' 
+'http://gobo.calica.com/packages/official/MANIFEST.bz2' 
+) 
+```
 
 The URLS from which lists of contributed binary packages (contributed by
 some user, and placed, without garanties, at our servers) will be
 retrieved.
-
-    contribPackagesLists=( 
-    'http://kundor.org/gobo/packages/contrib/MANIFEST.bz2' 
-    'http://gobo.calica.com/packages/contrib/MANIFEST.bz2' 
-    ) 
+```shell
+contribPackagesLists=( 
+'http://kundor.org/gobo/packages/contrib/MANIFEST.bz2' 
+'http://gobo.calica.com/packages/contrib/MANIFEST.bz2' 
+) 
+```
 
 The URLS from which lists of tracked versions will be retrieved. A
 tracked version is a program version that actually may not have a
 correspondent Recipe or binary package, but that is already made
 available by the program developers
-
-    trackedVersionsLists=( 
-    'http://gobolinux.org/version-tracker/TrackedVersions.bz2' 
-    ) 
+```shell
+trackedVersionsLists=( 
+'http://gobolinux.org/version-tracker/TrackedVersions.bz2' 
+) 
+```

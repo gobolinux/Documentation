@@ -17,16 +17,16 @@ We'll illustrate how to:
 
 This is where we will install our Linux system.
 
-```
+```fish
 qemu-img create gobo.img 10G
 ```
-<!--- perl programming language ---->
+
 ### Boot the installer
 
 Here is the full command you can edit and
 paste into the terminal:
 
-```
+```fish
 sudo qemu-system-x86_64 \
 -cdrom GoboLinux-016.01-alpha-x86_64.iso \
 -hda gobo.img \
@@ -44,7 +44,7 @@ After you've finished the installation, shutdown the guest
 OS and terminate QEMU. Start QEMU again, this time booting
 from the disk image:
 
-```
+```fish
 sudo qemu-system-x86_64 \
 -hda gobo.img \
 -boot c \
@@ -62,7 +62,7 @@ ssh to the host.
 The only extra setup needed is to run Gobo's DHCP client
 inside the guest. 
 
-```
+```fish
 dhcpcd
 ```
 
@@ -76,43 +76,43 @@ Details can be found
 
 ## Helper script
 
-<code>Qemust</code> is a perl5 script you can use to start
+`Qemust` is a perl5 script you can use to start
 your QEMU processes. With most options defined in the script,
 the command line becomes much simpler.
 
 ### To boot from an ISO and install to a disk image:
 
-```
+```fish
 qemust --iso=GoboLinux-016.01-alpha-x86_64.iso --image=gobo.img
 ```
 
 ### To boot from the disk image
 
-```
+```fish
 qemust  --image=gobo.img
 ```
 
 ### To test an ISO:
 
-```
+```fish
 qemust --iso=GoboLinux-016.01-alpha-x86_64.iso 
 ```
 
 The script has some library dependencies. The
 most convenient way to install them (and any CPAN modules)
-is to use _cpanminus_ (cpanm). So install _cpanminus_, then
+is to use `cpanminus` (cpanm). So install `cpanminus`, then
 the dependencies:
 
-```
+```fish
 cpan App::cpanminus
 cpanm Getopt::Long::Descriptive
 ```
 
 The script follows below. Edit the QEMU options to your
-liking, put the script in somewhere in your $PATH, and make
-it executable with something like <code>chmod a+x ~/bin/qemust</code>.
+liking, put the script in somewhere in your `$PATH`, and make
+it executable with something like `chmod a+x ~/bin/qemust`.
 
-```
+```perl
 #!/usr/bin/env perl
 use strict;
 use warnings;

@@ -10,7 +10,7 @@ Supported recipe types (also known as modes), to be given as argument to recipe_
 
 **`configure_options=(<array></array>)`**
 
-Flags to be passed to the configure script. These flags are passed in addition to default flags detected by [PrepareProgram](/Commands/PrepareProgram) (such as --prefix and --sysconfdir on autoconf-based configure scripts), unless the override_default_options declaration is used.
+Flags to be passed to the configure script. These flags are passed in addition to default flags detected by [`PrepareProgram`](/Commands/PrepareProgram) (such as --prefix and --sysconfdir on autoconf-based configure scripts), unless the override_default_options declaration is used.
 
 **`autogen_before_configure=yes`**
 
@@ -24,9 +24,9 @@ The program to run for the above. Defaults to `autogen.sh`.
 By default the configure script is assumed to be called "configure". Use this variable to override this value. Remember that the current directory during execution will still be the one set by the dir variable, even if a directory path is given (as in the second example below). If the behavior you intended is for Compile to "cd" to the "unix" directory and run its build sequence there, use dir instead.
 
 Examples (only one applies at a time):
-```
- configure=Configure.gnu
- configure=unix/configure
+```fish
+configure=Configure.gnu
+configure=unix/configure
 ```
 
 ### cabal
@@ -34,7 +34,7 @@ Examples (only one applies at a time):
 
 **`cabal_options=(<array></array>)`**
 
-Flags to be passed to the Cabal configure operation. These flags are passed in addition to default flags detected by [PrepareProgram](/Commands/PrepareProgram) (such as --prefix) unless the override_default_options declaration is used.
+Flags to be passed to the Cabal configure operation. These flags are passed in addition to default flags detected by [`PrepareProgram`](/Commands/PrepareProgram) (such as --prefix) unless the override_default_options declaration is used.
 
 #### runhaskell
 Specifies the method of invoking Haskell to perform a Cabal-based compilation. The default is "runhaskell".
@@ -90,7 +90,7 @@ Specify which files should be copied over, and to where. Destination is relative
 
 Example:
 
-```
+```fish
 manifest=(
    "some_script:bin"
    "include/a_header.h:include"

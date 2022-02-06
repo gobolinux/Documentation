@@ -63,10 +63,21 @@ Options:
 
  --local-dirs=[d1,..] Where to look for local binary packages. By default,
                       uses the paths defined at GetAvailable.conf.
+```
 
 Examples of usage:
- CheckDependencies kde-libs 3.5.0
- CheckDependencies kde-libs 3.5.0 recipe
- CheckDependencies -t official_package,recipe kde-libs 3.5.0 recipe
- CheckDependencies -t official_package,recipe kde-libs 3.5.0 recipe
+```fish
+CheckDependencies kde-libs 3.5.0
+```
+
+```fish
+CheckDependencies kde-libs 3.5.0 recipe
+```
+
+```fish
+CheckDependencies -t official_package,recipe kde-libs 3.5.0 recipe
+```
+
+```fish
+CheckDependencies -t official_package,recipe kde-libs 3.5.0 recipe
 ```

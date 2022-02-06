@@ -1,5 +1,5 @@
 ---
-title: "Package management"
+title: "Package Management"
 weight: 9
 ---
 

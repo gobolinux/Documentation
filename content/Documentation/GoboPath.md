@@ -12,7 +12,7 @@ For example, in the `Scripts` package, within the `bin/` subdirectory
 are files such as `ScriptFunctions` or `SuggestUpdates`, among others.
 These source `GoboPath` via:
 
-```shell
+```fish
 . GoboPath
 ```
 

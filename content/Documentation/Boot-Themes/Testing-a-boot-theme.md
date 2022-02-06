@@ -8,7 +8,7 @@ you add to your boot theme. The
 `TestBootTheme` script is your friend. Just
 run it passing your boot script name as a parameter:
 
-```shell
+```fish
 TestBootTheme MyVeryOwnBootTheme
 ```
 

@@ -37,6 +37,6 @@ Options:
 ```
 
 Examples of usage:
-
-    GetAvailable --types=recipe
-
+```fish
+GetAvailable --types=recipe
+```

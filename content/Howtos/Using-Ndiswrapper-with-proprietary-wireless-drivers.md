@@ -1,6 +1,6 @@
 ---
-title: "Using Ndiswrapper with proprietary wireless drivers"
-menuTitle: "Ndiswrapper & proprietary wifi drivers"
+title: "Using Ndiswrapper with Proprietary Wireless Drivers"
+menuTitle: "Ndiswrapper & Proprietary WIFI drivers"
 ---
 
 First of all, my network card is a Broadcom 802.11b/g WLAN pci card
@@ -17,7 +17,7 @@ What I needed to have it working was basically:
 -   Use ndiswrapper to install the driver. This is the easy part, just
     run:
 
-```shell
+```fish
 ndiswrapper -i DRIVER.inf
 ndiswrapper -m
 ```

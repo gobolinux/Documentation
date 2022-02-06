@@ -2,7 +2,7 @@
 title: "Available Use Flags"
 weight: 1
 ---
-```shell
+```fish
 acl 
 avahi # use avahi for bonjour support 
 bonjour 

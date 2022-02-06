@@ -5,7 +5,7 @@ chapter: false
 pre: "<b>003 </b>"
 ---
 
-Recipes are directions to [Compile](/Commands/Compile) on how to
+Recipes are directions to [`Compile`](/Commands/Compile) on how to
 configure, build, and install a particular software package.
 
 ## Topics
