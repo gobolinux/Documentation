@@ -1,13 +1,15 @@
-/* Main colors */
+/* Main color scheme */
 :root {
+    /* The following vars are standard definitions used and provided by the Hugo Relearn Theme.
+       See https://mcshelby.github.io/hugo-theme-relearn/basics/customization/#mine-variant */
     --MAIN-TEXT-color: #fff; /* Color of text by default */
     --MAIN-TITLES-TEXT-color: #f300b2; /* Color of titles h2-h3-h4-h5-h6 */
     --MAIN-LINK-color: #00a3f3; /* Color of links */
     --MAIN-LINK-HOVER-color: #7bc5eb; /* Color of hovered links */
     --MAIN-ANCHOR-color: #00a3f3; /* color of anchors on titles */
 
-    --MAIN-CODE-color: #f8f8f2; /* fallback color for code background */
-    --MAIN-CODE-BG-color: #000000; /* fallback color for code text */
+    --MAIN-CODE-color: #f8f8f2; /* fallback color for code block background */
+    --MAIN-CODE-BG-color: #000000; /* fallback color for code block text */
 
     --MENU-HOME-LINK-color: unset; /* Color of the home button text */
     --MENU-HOME-LINK-HOVER-color: unset; /* Color of the hovered home button text */
@@ -20,8 +22,8 @@
     --MENU-SEARCH-BOX-ICONS-color: #a1d2fd; /* Override search field icons color */
 
     --MENU-SECTIONS-ACTIVE-BG-color: #00000033; /* Background color of the active section and its children */
-    /*--MENU-SECTIONS-BG: linear-gradient(150deg, #7e00ff 0%, #00e0f4 75%, #00ff5a 100%); */ /* Background color of other sections */
-    --MENU-SECTIONS-BG: linear-gradient(150deg, #8000ffb3 0%, #00bcf4b3 75%, #00ff5ab3 100%); /* Background color of other sections */
+    
+    --MENU-SECTIONS-BG-color: unset; /* Background color of other sections */
     --MENU-SECTIONS-LINK-color: #fff; /* Color of links in menu */
     --MENU-SECTIONS-LINK-HOVER-color: #cfcfcf;  /* Color of links in menu, when hovered */
     --MENU-SECTION-ACTIVE-CATEGORY-color: #fff; /* Color of active category text */
@@ -29,6 +31,17 @@
 
     --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
     --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
+
+    /* The following vars were added by us */
+    /*--MENU-SECTIONS-BG: linear-gradient(150deg, #7e00ff 0%, #00e0f4 75%, #00ff5a 100%); */
+    --MENU-SECTIONS-BG: linear-gradient(150deg, #8000ffb3 0%, #00bcf4b3 75%, #00ff5ab3 100%); /* Background color of side bar */
+    --MAIN-BG-color: #202020; /* The main content background-color */
+    --MAIN-H1-color: #0060f3; /* Color of h1 headlines */
+    --MAIN-CODETEXT-color: #00f3d3; /* Color for code enclosed in single backticks */
+    --MAIN-CODETEXT-BG-color:#2d2e33; /* Background color for code enclosed in single backticks */
+    --MAIN-CODETEXT-BORDER-color:#2d2e33; /* Box border color for code enclosed in single backticks */
+    --NAV-TOPBAR-BG-color: #2a2a2a; /* Background color of the navigation header/top bar */
+    --FOOTER-TEXT-color: #fff; /* Footer text color. The one holding the copyright disclaimer. */
 }
 
 /* General */
@@ -40,14 +53,14 @@ body {
     font-family: "Public Sans";
     font-size: 0.85rem !important;
     letter-spacing: -.015rem;
-    background-color: #202020;
+    background-color: var(--MAIN-BG-color);
 }
 
 h1 {
     font-family: "Metropolis";
     font-size: 2.5rem !important;
     text-transform: unset;
-    color: #0060f3;
+    color: var(--MAIN-H1-color);
 }
 
 h2, h3, h4, h5, h6 {
@@ -55,30 +68,32 @@ h2, h3, h4, h5, h6 {
     font-size: 1.5rem !important;
 }
 
+/* Links */
 #body a.highlight:after {
     height: unset;
 }
 
 #body a.highlight:hover {
-    text-shadow: 0px 0px 8px var(--MAIN-LINK-color);
+    text-shadow: 0 0 0.4rem var(--MAIN-LINK-color);
 }
 
+/* Code within single backticks */
 code {
     font-family: "Fira Code";
-    background-color: #2d2e33;
-    border-color: #2d2e33;
-    color: #00f3d3;
+    background-color: var(--MAIN-CODETEXT-BG-color);
+    border-color: var(--MAIN-CODETEXT-BORDER-color);
+    color: var(--MAIN-CODETEXT-color);
 }
 
-/* Copy-to-clipboard in code blocks */
+/* Custom Copy-to-clipboard button style in code blocks */
 pre .copy-to-clipboard {
     background-image: url(../images/clippy.svg);
     background-color: #303030ab;
     border-color: #00000000;
-    border-radius: 13px;
-    padding: 12.5px;
-    right: 17px;
-    top: 15px;
+    border-radius: 0.65rem;
+    padding: 0.625rem;
+    right: 0.85rem;
+    top: 0.75rem;
 }
 
 /* Sidebar */
@@ -98,12 +113,12 @@ pre .copy-to-clipboard {
 
 /* Header */
 #top-bar{
-    background-color: #2a2a2a;
+    background-color: var(--NAV-TOPBAR-BG-color);
 }
 
 /* Footer */
 #footer {
-    color: #fff;
+    color: var(--FOOTER-TEXT-color);
 }
 
 /* Fonts */
@@ -145,7 +160,9 @@ pre .copy-to-clipboard {
     src: url("/fonts/LodeSansMono.otf") format("opentype");
 } */
 
-/* Navigation header restructure starts here */
+/* --- Navigation button restructuring starts here --- */
+/* Our navigation header is deviating from the Hugo Relearn theme currently.
+   For that reason we need to re-style the [pevious/next] navigation buttons. */
 #navigation {
     position: relative;
     top: 23%;
@@ -162,7 +179,7 @@ pre .copy-to-clipboard {
 }
 
 #body .nav {
-    font-size: 25px;
+    font-size: 1.25rem;
     position: inherit;
 }
 
@@ -189,4 +206,4 @@ pre .copy-to-clipboard {
         display: inherit;
     }
 }
-/* Navigation header restructure ends here */
+/* --- Navigation button restructuring ends here --- */
