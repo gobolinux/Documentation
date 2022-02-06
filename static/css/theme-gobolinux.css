@@ -35,11 +35,11 @@
     /* The following vars were added by us */
     /*--MENU-SECTIONS-BG: linear-gradient(150deg, #7e00ff 0%, #00e0f4 75%, #00ff5a 100%); */
     --MENU-SECTIONS-BG: linear-gradient(150deg, #8000ffb3 0%, #00bcf4b3 75%, #00ff5ab3 100%); /* Background color of side bar */
-    --MAIN-BG-color: #202020; /* The main content background-color */
+    --MAIN-BG-color: #202020; /* Background color of main content */
     --MAIN-H1-color: #0060f3; /* Color of h1 headlines */
-    --MAIN-CODETEXT-color: #00f3d3; /* Color for code enclosed in single backticks */
-    --MAIN-CODETEXT-BG-color:#2d2e33; /* Background color for code enclosed in single backticks */
-    --MAIN-CODETEXT-BORDER-color:#2d2e33; /* Box border color for code enclosed in single backticks */
+    --MAIN-INLINECODE-color: #00f3d3; /* Color for inline code (code enclosed in single backticks` */
+    --MAIN-INLINECODE-BG-color:#2d2e33; /* Background inline code */
+    --MAIN-INLINECODE-BORDER-color:#2d2e33; /* Box border color inline code */
     --NAV-TOPBAR-BG-color: #2a2a2a; /* Background color of the navigation header/top bar */
     --FOOTER-TEXT-color: #fff; /* Footer text color. The one holding the copyright disclaimer. */
 }
@@ -68,6 +68,14 @@ h2, h3, h4, h5, h6 {
     font-size: 1.5rem !important;
 }
 
+h3 {
+    font-size: 1.2rem !important;
+}
+
+h4 {
+    font-size: 1.1rem !important;
+}
+
 /* Links */
 #body a.highlight:after {
     height: unset;
@@ -77,12 +85,12 @@ h2, h3, h4, h5, h6 {
     text-shadow: 0 0 0.4rem var(--MAIN-LINK-color);
 }
 
-/* Code within single backticks */
+/* Inline code */
 code {
     font-family: "Fira Code";
-    background-color: var(--MAIN-CODETEXT-BG-color);
-    border-color: var(--MAIN-CODETEXT-BORDER-color);
-    color: var(--MAIN-CODETEXT-color);
+    background-color: var(--MAIN-INLINECODE-BG-color);
+    border-color: var(--MAIN-INLINECODE-BORDER-color);
+    color: var(--MAIN-INLINECODE-color);
 }
 
 /* Custom Copy-to-clipboard button style in code blocks */
