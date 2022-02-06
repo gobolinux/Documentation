@@ -30,8 +30,8 @@ git clone --recurse-submodules https://github.com/gobolinux/Documentation.git
 
 ## Note to Contributors
 
-Our documentation (everything within `content/`) is generously licensed under the CC BY-SA 3.0.
+Contributions to the documentation (residing within `content/`) are licensed under CC BY-SA 3.0.
 
-The rest of the project is licensed under the MIT License.
+The project source code is licensed under the MIT License.
 
-So feel free and even encouraged to submit your contributions! :)
+So feel free and even encouraged to submit your contributions! <3
