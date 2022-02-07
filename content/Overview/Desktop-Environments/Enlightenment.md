@@ -5,8 +5,9 @@ weight: 2
 
 ### Overview
 
-Enlightenment was the previous default DE used by Gobolinux. Its current compile status is unknown
+Enlightenment was the previous default DE used by Gobolinux. Its current compile
+status is unknown
 
+### Links
 
-### Links 
-* Homepage - https://www.enlightenment.org/
+-   Homepage - https://www.enlightenment.org/

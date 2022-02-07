@@ -16,11 +16,12 @@ Options:
 -   -n, --environment - Rebuild /System/Environment.
 ```
 
-Not all directories in the /System/Index hierarchy can be rebuilt using
-this tool because it would render the system in an inconsistent state
-during the program's execution.
+Not all directories in the /System/Index hierarchy can be rebuilt using this
+tool because it would render the system in an inconsistent state during the
+program's execution.
 
 Examples:
+
 ```fish
 RebuildLinks --shared
 ```

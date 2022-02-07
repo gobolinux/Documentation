@@ -22,10 +22,10 @@
     --MENU-SEARCH-BOX-ICONS-color: #a1d2fd; /* Override search field icons color */
 
     --MENU-SECTIONS-ACTIVE-BG-color: #00000033; /* Background color of the active section and its children */
-    
+
     --MENU-SECTIONS-BG-color: unset; /* Background color of other sections */
     --MENU-SECTIONS-LINK-color: #fff; /* Color of links in menu */
-    --MENU-SECTIONS-LINK-HOVER-color: #cfcfcf;  /* Color of links in menu, when hovered */
+    --MENU-SECTIONS-LINK-HOVER-color: #cfcfcf; /* Color of links in menu, when hovered */
     --MENU-SECTION-ACTIVE-CATEGORY-color: #fff; /* Color of active category text */
     --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #ffffff1c; /* Color of background for the active category (only) */
 
@@ -34,7 +34,12 @@
 
     /* The following vars were added by us */
     /*--MENU-SECTIONS-BG: linear-gradient(150deg, #7e00ff 0%, #00e0f4 75%, #00ff5a 100%); */
-    --MENU-SECTIONS-BG: linear-gradient(150deg, #8000ffb3 0%, #00bcf4b3 75%, #00ff5ab3 100%); /* Background color of side bar */
+    --MENU-SECTIONS-BG: linear-gradient(
+        150deg,
+        #8000ffb3 0%,
+        #00bcf4b3 75%,
+        #00ff5ab3 100%
+    ); /* Background color of side bar */
     --MAIN-BG-color: #202020; /* Background color of main content */
     --MAIN-H1-color: #0060f3; /* Color of h1 headlines */
     --MAIN-H2-color: #f300b2; /* Color of h2 headlines */
@@ -43,8 +48,8 @@
     --MAIN-H5-color: #ffffff; /* Color of h5 headlines */
     --MAIN-H6-color: #ffffff; /* Color of h6 headlines */
     --MAIN-INLINECODE-color: #00f3d3; /* Color for inline code (code enclosed in single backticks` */
-    --MAIN-INLINECODE-BG-color:#2d2e33; /* Background inline code */
-    --MAIN-INLINECODE-BORDER-color:#2d2e33; /* Box border color inline code */
+    --MAIN-INLINECODE-BG-color: #2d2e33; /* Background inline code */
+    --MAIN-INLINECODE-BORDER-color: #2d2e33; /* Box border color inline code */
     --NAV-TOPBAR-BG-color: #2a2a2a; /* Background color of the navigation header/top bar */
     --FOOTER-TEXT-color: #fff; /* Footer text color. The one holding the copyright disclaimer. */
 }
@@ -57,11 +62,16 @@ html {
 body {
     font-family: "Public Sans";
     font-size: 0.85rem !important;
-    letter-spacing: -.015rem;
+    letter-spacing: -0.015rem;
     background-color: var(--MAIN-BG-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Metropolis";
 }
 
@@ -135,12 +145,13 @@ pre .copy-to-clipboard {
     padding-top: 1rem;
 }
 
-#header-wrapper, #sidebar hr {
+#header-wrapper,
+#sidebar hr {
     border-bottom: unset;
 }
 
 /* Header */
-#top-bar{
+#top-bar {
     background-color: var(--NAV-TOPBAR-BG-color);
 }
 
@@ -152,14 +163,14 @@ pre .copy-to-clipboard {
 /* Fonts */
 /* Main font */
 @font-face {
-    font-family: 'Public Sans';
+    font-family: "Public Sans";
     font-style: normal;
     font-weight: 300;
     src: url("/fonts/PublicSans-Light.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: 'Public Sans';
+    font-family: "Public Sans";
     font-style: normal;
     font-weight: 600;
     src: url("/fonts/PublicSans-SemiBold.woff2") format("woff2");
@@ -167,7 +178,7 @@ pre .copy-to-clipboard {
 
 /* Headline font */
 @font-face {
-    font-family: 'Metropolis';
+    font-family: "Metropolis";
     font-style: normal;
     font-weight: 500;
     src: url("/fonts/metropolis-bold-webfont.woff2") format("woff2");
@@ -175,7 +186,7 @@ pre .copy-to-clipboard {
 
 /* Code font */
 @font-face {
-    font-family: 'Fira Code';
+    font-family: "Fira Code";
     font-style: normal;
     font-weight: 400;
     src: url("/fonts/FiraCode-Regular.ttf") format("truetype");

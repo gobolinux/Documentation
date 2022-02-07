@@ -2,9 +2,8 @@
 title: "FindPackage"
 ---
 
-`FindPackage`
-Searches, chooses an occurence and prints where some package (or recipe) can
-be found, based only on the program name (case insesitive) or on the
+`FindPackage` Searches, chooses an occurence and prints where some package (or
+recipe) can be found, based only on the program name (case insesitive) or on the
 program name and program version.
 
 ```
@@ -45,9 +44,10 @@ Options:
 
  -p
  --gobo-programs      Override default /Programs as path of installed packages
- ```
+```
 
 Examples of usage:
+
 ```fish
 FindPackage kde
 FindPackage kde 3.2.3

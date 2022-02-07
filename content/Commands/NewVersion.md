@@ -63,6 +63,7 @@ GoboLinux                                                March 2017             
 ```
 
 Usage example:
+
 ```fish
 NewVersion Bash 4.4.12
 ```

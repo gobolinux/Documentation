@@ -37,6 +37,7 @@ Options:
 ```
 
 Examples of usage:
+
 ```fish
 GetAvailable --types=recipe
 ```

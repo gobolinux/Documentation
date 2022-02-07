@@ -18,6 +18,7 @@ DescribeProgram
 ```
 
 Examples of usage:
+
 ```fish
 DescribeProgram gimp
 DescribeProgram -W gimp

@@ -8,13 +8,15 @@ weight: 1
 
 ### Running Compile
 
-Install UnionFS-Fuse to workaround limitations with the sandbox in the Live environment:
+Install UnionFS-Fuse to workaround limitations with the sandbox in the Live
+environment:
+
 ```fish
 InstallPackage https://gobolinux.org/packages/017/Fuse--2.9.7--x86_64.tar.bz2
 InstallPackage https://gobolinux.org/packages/017/UnionFS-Fuse--2.1--x86_64.tar.bz2
 ```
 
-## Installed system 
+## Installed system
 
 ### Git-related errors when invoking Compile for the first time
 
@@ -27,13 +29,17 @@ echo ifconfig lo up >> /System/Settings/BootScripts/BootUp
 
 ### Update expired SSL certificates!
 
-The recent [Let's Encrypt fiasko](https://www.reddit.com/r/PFSENSE/comments/pyce7q/sept_29th_lets_encrypt_intermediate_ca_expiration/) requires our users to update their certificate database on the system. Otherwise tools like `git`, `wget`, `Compile` etc might not work correctly.
+The recent
+[Let's Encrypt fiasko](https://www.reddit.com/r/PFSENSE/comments/pyce7q/sept_29th_lets_encrypt_intermediate_ca_expiration/)
+requires our users to update their certificate database on the system. Otherwise
+tools like `git`, `wget`, `Compile` etc might not work correctly.
 
 The appropriate way to resolve this, is by running:
 
 ```fish
 sudo Compile --no-check-certificate CA-Certificates
 ```
+
 and
 
 ```fish
@@ -53,8 +59,8 @@ GrepReplace -B "016" "017" /System/Settings/Scripts/GetAvailable.conf
 ### Update of Compile and Scripts tools
 
 Compile and Scripts are always evolving. Make sure to update your copies by
-running the following commands after you boot into your installed system for
-the first time:
+running the following commands after you boot into your installed system for the
+first time:
 
 ```fish
 cd /Programs/Scripts/Current
@@ -85,20 +91,32 @@ GrepReplace -B "^Ncurses " "NcursesW " /Programs/*/*/Resources/Dependencies
 
 ### Outstanding issues
 
-Some problems have been reported by our users and are currently being fixed by our team. They are:
+Some problems have been reported by our users and are currently being fixed by
+our team. They are:
 
-- `ContributePackage` is not working -- use [[ContributeRecipe|GoboLinux GitHub contributor workflow]] instead.
-- Cut-and-paste does not work out of the box from a VM. Compiling `spice-vdagent` and loading its daemon should fix that.
-- Sometimes when trying to `Compile` an already-installed Program, the build process will fail (see [Compile bug 51](https://github.com/gobolinux/Compile/issues/51)).  Sometimes this can be worked around by first manually doing a `RemoveProgram <failing program>` before re-attempting to `Compile` it. Note that it is generally a _**Bad Idea™**_ to try to `RemoveProgram`, say, `Python3` like this as it will break `Compile`.
+-   `ContributePackage` is not working -- use
+    [[ContributeRecipe|GoboLinux GitHub contributor workflow]] instead.
+-   Cut-and-paste does not work out of the box from a VM. Compiling
+    `spice-vdagent` and loading its daemon should fix that.
+-   Sometimes when trying to `Compile` an already-installed Program, the build
+    process will fail (see
+    [Compile bug 51](https://github.com/gobolinux/Compile/issues/51)). Sometimes
+    this can be worked around by first manually doing a
+    `RemoveProgram <failing program>` before re-attempting to `Compile` it. Note
+    that it is generally a _**Bad Idea™**_ to try to `RemoveProgram`, say,
+    `Python3` like this as it will break `Compile`.
 
 ### Compile fails stating that some headers or libraries could not be found, when they are there
 
-The installation process used by Compile had a problem in that certain extended attributes used by `overlayfs` were
-carried over from the sandbox to the installation directory. Some of those extended attributes tell `overlayfs` to
-consider the corresponding files or directories as deleted objects. Since we use `overlayfs` to sandbox the compilation
-process, this bug may impact Compile in the sense that existing files may be considered as non-existent.
+The installation process used by Compile had a problem in that certain extended
+attributes used by `overlayfs` were carried over from the sandbox to the
+installation directory. Some of those extended attributes tell `overlayfs` to
+consider the corresponding files or directories as deleted objects. Since we use
+`overlayfs` to sandbox the compilation process, this bug may impact Compile in
+the sense that existing files may be considered as non-existent.
 
-If you face this problem, please run the following commands on your installed system to remove those attributes:
+If you face this problem, please run the following commands on your installed
+system to remove those attributes:
 
 ```shell
 fname=

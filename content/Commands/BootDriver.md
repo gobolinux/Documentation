@@ -2,12 +2,13 @@
 title: "BootDriver"
 ---
 
-The BootDriver script should not be run directly from the command line.
-It is intended to be specified in the `inittab` file
-(`/System/Settings/inittab`), to be launched by process 1, `init`.
+The BootDriver script should not be run directly from the command line. It is
+intended to be specified in the `inittab` file (`/System/Settings/inittab`), to
+be launched by process 1, `init`.
 
-BootDriver takes a parameter, indicating which "runlevel" script should
-be executed. Here's a sample `inittab` with calls to BootDriver:
+BootDriver takes a parameter, indicating which "runlevel" script should be
+executed. Here's a sample `inittab` with calls to BootDriver:
+
 ```fish
 id:2:initdefault:
 

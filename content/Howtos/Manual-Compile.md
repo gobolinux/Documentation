@@ -2,27 +2,27 @@
 title: "Manual Compile"
 ---
 
-Building and installing manually from source. *This should only be done
-if one is unable to [create a recipe](/Recipes/Writing-Recipes/) or as
-an excercise. With very few exceptions, the work of creating a recipe is
-rewarded by the ease of using [Compile](/Commands/Compile).*
+Building and installing manually from source. _This should only be done if one
+is unable to [create a recipe](/Recipes/Writing-Recipes/) or as an excercise.
+With very few exceptions, the work of creating a recipe is rewarded by the ease
+of using [Compile](/Commands/Compile)._
 
 Note: If you use a local tarball, be sure to have the tarball placed at
-/Data/Compile/Archives. Also make sure you know whether you have a
-recipe locally or not, if you i.e. do not have access to the www on that
-machine.
+/Data/Compile/Archives. Also make sure you know whether you have a recipe
+locally or not, if you i.e. do not have access to the www on that machine.
 
 I'm using dosbox from CVS as an example here.
 
-**First**, go into the folder where you have the source (**change
-directory**).
+**First**, go into the folder where you have the source (**change directory**).
+
 ```
 phed@Arjuna ~/]cd dosbox
 phed@Arjuna ~/dosbox]
 ```
 
-Run PrepareProgram with the option -t or --tree to generate the
-directory tree in `/Programs/DOSBox/CVS`.
+Run PrepareProgram with the option -t or --tree to generate the directory tree
+in `/Programs/DOSBox/CVS`.
+
 ```
 phed@Arjuna ~/dosbox]PrepareProgram -t DOSBox CVS
 phed@Arjuna ~/dosbox]
@@ -47,9 +47,9 @@ config.status: executing depfiles commands
 phed@Arjuna ~/dosbox]
 ```
 
-Then we have to do whatever is required in order to build the
-application. In the case of DosBox we have to issue "make" in order to
-compile the program.
+Then we have to do whatever is required in order to build the application. In
+the case of DosBox we have to issue "make" in order to compile the program.
+
 ```
 phed@Arjuna ~/dosbox]make
 make[1]: L/bin/make  all-recursive
@@ -60,6 +60,7 @@ phed@Arjuna ~/dosbox]
 ```
 
 Next run SandboxInstall to install the program into the Programs-tree
+
 ```
 phed@Arjuna ~/dosbox]SandboxInstall dosbox CVS
 SandboxInstall: unionfs is available.  Using UnionSandbox!
@@ -70,6 +71,7 @@ phed@Arjuna ~/dosbox]
 ```
 
 And at last, run SymlinkProgram to link it into the LHS tree.
+
 ```
 phed@Arjuna ~/dosbox]SymlinkProgram DOSBox CVS
 SymlinkProgram: Symlinking DOSBox CVS.

@@ -66,6 +66,7 @@ Options:
 ```
 
 Examples of usage:
+
 ```fish
 CheckDependencies kde-libs 3.5.0
 ```

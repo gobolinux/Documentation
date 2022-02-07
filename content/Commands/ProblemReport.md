@@ -11,9 +11,9 @@ Linux-Headers version: 4.7.4
 Xorg-Lib version: 7.7-r1
 GCC version: 6.2.0-r4
 Python version: 3.6.0-r5
-KDE-Libs version: 
+KDE-Libs version:
 Linux version: 4.9.4-r1
---help version: 
+--help version:
 
 Installed versions of --help
 
@@ -66,7 +66,7 @@ UseFlags.conf
 #-baz
 
 # Generic flags specify a functionality to be enabled, and may list
-# several different specific flags that provide it. 
+# several different specific flags that provide it.
 # Specific flags are ordered by preference for each generic flag. Only the
 # first valid specific flag will be enabled for each generic flag.
 ssl: openssl gnutls nss

@@ -3,6 +3,7 @@ title: "Freshen"
 ---
 
 Checks for updated GoboLinux recipes and packages
+
 ```
 Usage:
 
@@ -24,15 +25,15 @@ Options:
 -    --lower-limit, -L <n>  - Skip the first *n* updates
 -    --no-binaries, -B  - Do not include binary packages
 -    --no-cache, -C  - Do not use cached data for /Programs
--    --no-downgrades, -D  - Do not include downgrades.  [default] 
+-    --no-downgrades, -D  - Do not include downgrades.  [default]
 -    --no-recipes, -R  - Do not include recipes
 -    --no-upgrades, -N  - Do not include upgrades
--    --recipes, -r  - Include recipes  [default] 
+-    --recipes, -r  - Include recipes  [default]
 -    --shallow, -s  - Shallow mode: don't include any upgrades that
     aren't strictly necessary. Requires *list*
 -    --upgrade-system, -U  - Upgrade all programs, or *list* and
     dependencies if specified.
--    --upgrades, -n  - Include upgrades  [default] 
+-    --upgrades, -n  - Include upgrades  [default]
 -    --verbose, -V  - Enable verbose mode
 -    --version, -v  - Show program version
 
@@ -49,8 +50,8 @@ Freshen outputs its update lists in the form:
 
     [IUX] Foo 2.0                    1.0
 
-Meaning an upgrade to Foo version 2.0, from 1.0, which is available as
-both a recipe and a package.
+Meaning an upgrade to Foo version 2.0, from 1.0, which is available as both a
+recipe and a package.
 
 The mnemonics mean:
 
@@ -62,35 +63,41 @@ The mnemonics mean:
 -   **X** - Recipe and binary available (color code: blue)
 
 Examples:
+
 ```fish
 Freshen
 ```
 
 Produce an ordered list of everything that can be updated on the system.
+
 ```fish
 Freshen -R
 ```
 
-Produce an ordered list of everything that can be updated on the system
-using only binary packages.
+Produce an ordered list of everything that can be updated on the system using
+only binary packages.
+
 ```fish
 Freshen -U -l 5
 ```
 
 Update the first five programs on the list.
+
 ```fish
 Freshen -U Firefox
 ```
 
 Update Firefox and its dependencies
+
 ```fish
 Freshen -U -x Qt
 ```
 
 Update everything except Qt and anything that depends upon it.
+
 ```fish
 Freshen -s Firefox Kopete
 ```
 
-Ordered list of upgrades **needed** in order to upgrade Firefox and
-Kopete to their newest releases. Add **-U** to perform the upgrade.
+Ordered list of upgrades **needed** in order to upgrade Firefox and Kopete to
+their newest releases. Add **-U** to perform the upgrade.
