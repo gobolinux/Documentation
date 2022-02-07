@@ -48,10 +48,35 @@
     --MAIN-H5-color: #ffffff; /* Color of h5 headlines */
     --MAIN-H6-color: #ffffff; /* Color of h6 headlines */
     --MAIN-INLINECODE-color: #00f3d3; /* Color for inline code (code enclosed in single backticks` */
-    --MAIN-INLINECODE-BG-color: #2d2e33; /* Background inline code */
-    --MAIN-INLINECODE-BORDER-color: #2d2e33; /* Box border color inline code */
+    --MAIN-INLINECODE-BG-color: #2d2e33a8; /* Background inline code */
+    --MAIN-INLINECODE-BORDER-color: unset; /* Border color of inline code (Note: borders disabled by default) */
     --NAV-TOPBAR-BG-color: #2a2a2a; /* Background color of the navigation header/top bar */
     --FOOTER-TEXT-color: #fff; /* Footer text color. The one holding the copyright disclaimer. */
+}
+
+/* Notices */
+div.notices.warning {
+    border-color: #b90000;
+    background-color: #000000;
+    color: #ff0000;
+}
+
+div.notices.tip {
+    border-color: #00b901;
+    background-color: #000000;
+    color: #2bff00;
+}
+
+div.notices.note {
+    border-color: #b97300;
+    background-color: #000000;
+    color: #ffb200;
+}
+
+div.notices.info {
+    border-color: #002cb9;
+    background-color: #000000;
+    color: #0094ff;
 }
 
 /* General */
@@ -122,9 +147,13 @@ pre code {
 
 code {
     font-family: "Fira Code";
-    background-color: var(--MAIN-INLINECODE-BG-color);
-    border-color: var(--MAIN-INLINECODE-BORDER-color);
     color: var(--MAIN-INLINECODE-color);
+    background-color: var(--MAIN-INLINECODE-BG-color);
+    /* Disable borders for inline code completely.
+       If desired, comment the line below and set 
+       border-color instead. */
+    border: 0;
+    /* border-color: var(--MAIN-INLINECODE-BORDER-color);  */
 }
 
 /* Custom Copy-to-clipboard button style in code blocks */
