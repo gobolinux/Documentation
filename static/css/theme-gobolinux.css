@@ -115,7 +115,11 @@ body h6 {
     text-shadow: 0 0 0.4rem var(--MAIN-LINK-color);
 }
 
-/* Inline code */
+/* Inline code & code blocks */
+pre code {
+    white-space: pre;
+}
+
 code {
     font-family: "Fira Code";
     background-color: var(--MAIN-INLINECODE-BG-color);
