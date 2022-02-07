@@ -71,9 +71,9 @@ is to supply a name and a version to `ContributeRecipe`:
 sudo ContributeRecipe ExampleRecipe 0.0.1
 ```
 
-NOTE: Please ensure that you use a GitHub account where your name/alias and
-e-mail address has been added as a verified GitHub identity when using
-`ContributeRecipe`.
+{{% notice note %}} Please ensure that you use a GitHub account where your
+name/alias and e-mail address has been added as a verified GitHub identity when
+using `ContributeRecipe`. {{% /notice %}}
 
 `ContributeRecipe` will prompt for your GitHub username and password a couple of
 times (_see note about **2FA** below_), do its magic and the end result will be
@@ -81,13 +81,13 @@ a nice GoboLinux GitHub Pull Request which will hopefully get merged.
 
 ### Configure `hub` to use `GITHUB_TOKEN` for authentication
 
-As part of its first run, ContributeRecipe will call both `git` and `hub` (`hub`
-is used to interface with the GitHub API). During this first run, `hub` will
-create a GitHub API token and save it in `~/.config/hub`.
+As part of its first run, `ContributeRecipe` will call both `git` and `hub`
+(`hub` is used to interface with the GitHub API). During this first run, `hub`
+will create a GitHub API token and save it in `~/.config/hub`.
 
-NOTE: if you have 2-Factor Authentication (**2FA**) enabled, `git` and `hub`
-expect you to supply the oauth token that was saved in `~/.config/hub` and NOT
-your normal password when authenticating.
+{{% notice note %}} If you have 2-Factor Authentication (**2FA**) enabled, `git`
+and `hub` expect you to supply the oauth token that was saved in `~/.config/hub`
+and NOT your normal password when authenticating. {{% /notice %}}
 
 For convenience, `hub` can be set up to re-use this token for authentication
 with your GitHub account by exporting the environment variable `GITHUB_TOKEN` in

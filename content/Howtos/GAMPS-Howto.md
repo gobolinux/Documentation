@@ -8,7 +8,7 @@ Apache web server with PHP/Python/Perl/SSL support in GoboLinux.
 
 ## MySQL
 
-1. First, you have to install MySQL. Fire up a console and type
+1. First, you have to install MySQL. Fire up a console and type `Compile mysql`.
 
 Once you've answered Compile's initial wave of questions, you should have enough
 time to make yourself some coffee.
@@ -17,26 +17,26 @@ time to make yourself some coffee.
     mysql configuration is stored in `/Programs/MySQL/Settings/mysql`, and the
     config file actually used has to be named `my.cnf`. The default config file
     is `my-small.cnf`. If you're happy with this, go to the next step; otherwise
-    choose one of the other config files and overwrite my.cnf with it.
+    choose one of the other config files and overwrite `my.cnf` with it.
 -   Now it's time to start the MySQL server. Do this by typing
 
 ```fish
 StartTask MySQL
 ```
 
-Note: If the server crashes at this moment you might want to check the
-permissions of /Data/MySQL. Owner and group must both be mysql. You can achieve
-this by typing
+{{% notice note %}} If the server crashes at this moment you might want to check
+the permissions of `/Data/MySQL`. Owner and group must both be `mysql`. You can
+achieve this by typing
 
-and starting the server again.
+and starting the server again. {{% /notice %}}
 
--   The next step is to set a password for the mysql root user. Type
+-   The next step is to set a password for the MySQL root user. Type
 
 ```fish
 mysqladmin -u root password mYNewpAsSw0rD
 ```
 
--   If you want to start the mysql server automatically at boot time, type
+-   If you want to start the MySQL server automatically at boot time, type
 
 ```fish
 echo 'Exec "Starting MySQL Database Server..." MySQL Start' \ >> /System/Settings/BootScripts/BootUp
@@ -85,8 +85,8 @@ TODO
 Compile Mod_PHP
 ```
 
-You have to restart Apache to load the new PHP module StopTask HTTPD StartTask
-HTTPD
+You have to restart Apache to load the new PHP module: `StopTask HTTPD` then
+`StartTask HTTPD`.
 
 ## Python
 
@@ -102,7 +102,7 @@ Restart Apache again
 
 If you use HTTPD 2.0.x you have to edit your `httpd.conf`
 (`/Programs/HTTPD/Settings/httpd/httpd.conf`) to load the Python module with
-Apache. Add the following line after the other LoadModule directives:
+Apache. Add the following line after the other `LoadModule` directives:
 
 ```fish
 LoadModule python_module modules/mod_python.so AddType application/x-python-code pyo pyc AddType text/x-python py
@@ -115,4 +115,4 @@ TODO
 ## Celebrate!
 
 You're done! All you have to do now is place your websites at
-/Depot/WWW/Documents
+`/Depot/WWW/Documents`

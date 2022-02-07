@@ -20,6 +20,7 @@ from `/Programs/BootScripts/Current/Themes/` instead.
 Of course, this script is also useful to see how the various boot themes are, so
 that you can choose which one is your favorite.
 
-Note: Some themes may not display correctly in an Xterm/Konsole/other graphical
-terminal, or with a non-standard console font. It's probably best to run
-TestBootTheme in the same environment you boot in!
+{{% notice note %}} Some themes may not display correctly in an
+Xterm/Konsole/other graphical terminal, or with a non-standard console font.
+It's probably best to run TestBootTheme in the same environment you boot in!
+{{% /notice %}}

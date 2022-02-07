@@ -21,12 +21,13 @@ each confined to their own subdirectories.
 ## Preparing the filesystem view
 
 All you have to do is to make sure the dependencies of the program you want to
-run are correctly listed under the program's
-[[Resources directory|Recipe-Format-Specification#resources]] - more
-specifically, in the [[Dependencies|Recipe-Format-Specification#dependencies]]
-file at `/Programs/Name/Version/Resources/Dependencies`. You may list program
-names (e.g., `LibPNG`), specify a particular version (as in `LibPNG 1.4.4`) or
-even let Runner pick the best version given a certain range (e.g.,
+run are correctly listed under the program's [Resources
+directory]({{<ref "Recipe-Format-Specification#resources">}}) - more
+specifically, in the
+[Dependencies]({{<ref "Recipe-Format-Specification#dependencies">}}) file at
+`/Programs/Name/Version/Resources/Dependencies`. You may list program names
+(e.g., `LibPNG`), specify a particular version (as in `LibPNG 1.4.4`) or even
+let Runner pick the best version given a certain range (e.g.,
 `LibPNG >= 1.4.0, < 1.5.0`).
 
 Most likely, the program you want to run will already have a sane `Dependencies`
@@ -57,6 +58,6 @@ provide that file to Runner, as in
 
 Running a 32-bit application on a 64-bit distro is no different with Runner.
 Provided that you have the 32-bit dependencies installed under `/Programs` (such
-as `Glibc/2.18-i686` and `Bash/3.1-i686`), the Dependencies file of your program
-simply needs to state the versions of the 32-bit packages it relies on.
-Afterwards, simply type `Runner application_name` and you are all set.
+as `Glibc/2.18-i686` and `Bash/3.1-i686`), the `Dependencies` file of your
+program simply needs to state the versions of the 32-bit packages it relies on.
+Afterwards, simply type `Runner <application_name>` and you are all set.

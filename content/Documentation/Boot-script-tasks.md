@@ -45,5 +45,5 @@ esac
 ```
 
 It's a good idea to use the above example as a template for tasks you create.
-The `\[Ss\]` syntax ensures that both `start` and `Start` are recognized, which
-is nice to avoid typos.
+The `[Ss]` syntax ensures that both `start` and `Start` are recognized, which is
+nice to avoid typos.

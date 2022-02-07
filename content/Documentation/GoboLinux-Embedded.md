@@ -93,8 +93,8 @@ You'll probably want to take a look at `/System/Settings/NetworkOptions` and at
 `/System/Settings/BootScripts`, which holds the bootscripts. The latter has a
 file named BootUp, which is the script launched by init at boot time.
 
-There are also tasks, which are simple scripts with start/stop commands. They
-are stored at `/System/Tasks`, where you'll see files such as GoboHide,
+There are also tasks, which are simple scripts with `start`/`stop` commands.
+They are stored at `/System/Tasks`, where you'll see files such as GoboHide,
 LoadModules, Mouse and Swap. Take a look there if you have something to modify
 on these standard tasks.
 

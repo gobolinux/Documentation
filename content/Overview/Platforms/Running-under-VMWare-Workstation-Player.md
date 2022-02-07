@@ -31,10 +31,10 @@ sata0:1.fileName = "GoboLinux 016.vmdk"
 sata0:1.deviceType = "disk"
 ```
 
-The fileName may look different on your machine. You will want to keep whatever
-name your config file presents. Also, make sure that the following lines do
-exist in the vmx file (again, pciSlotNumber may look different on your vmx
-file):
+The `fileName` may look different on your machine. You will want to keep
+whatever name your config file presents. Also, make sure that the following
+lines do exist in the vmx file (again, `pciSlotNumber` may look different on
+your vmx file):
 
 ```ini
 sata0.present = "TRUE"

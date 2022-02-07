@@ -20,29 +20,25 @@ removed from your panel.
 -   **Dbus** is an IPC service that lets all these components communicate with
     each other.
 
-NOTE: HAL and Ivman are not limited to storage devices, but also handle stuff
-like network cards and other hotpluggable devices on USB, Firewire, PCMCIA,
-etc...
+{{% notice note %}} HAL and Ivman are not limited to storage devices, but also
+handle stuff like network cards and other hotpluggable devices on USB, Firewire,
+PCMCIA, etc... {{% /notice %}}
 
 ## Setup
 
-The following was tried with _Udev 070_, _HAL 0.5.4_, _DBus 0.50_, _Ivman
-0.6.4_, and _pmount 0.9.3_. We are going to set things up so that Ivman is run
-as root and handles the automounting under `/Mount/Media` , with the help of
-pmount. Then users can run their own instances of Ivman too, to handle desktop
-specific stuff (like adding devices to the panel).
+The following was tried with `Udev 070`, `HAL 0.5.4`, `DBus 0.50`,
+`Ivman 0.6.4`, and `Pmount 0.9.3`. We are going to set things up so that Ivman
+is run as root and handles the automounting under `/Mount/Media` , with the help
+of pmount. Then users can run their own instances of Ivman too, to handle
+desktop specific stuff (like adding devices to the panel).
 
 -   You need to be running Udev and DBus, make sure that's the case and that the
     DBus system bus is started at boot. (Use
     [`StartTask`](/Commands/StartTask)` messagebus`)
 
-<!-- -->
-
 -   You also need a recent kernel and glibc compiled against recent headers.
-    This was tested with _Glibc 2.3.5_ with NPTL compiled against
-    _Linux-Libc-Headers 2.6.12.0_
-
-<!-- -->
+    This was tested with `Glibc 2.3.5` with NPTL compiled against
+    `Linux-Libc-Headers 2.6.12.0`
 
 -   Install HAL, Pmount and Ivman:
 
@@ -55,25 +51,20 @@ specific stuff (like adding devices to the panel).
 ...
 ```
 
-Pmount should be patched with
-<http://kymatica.com/stuff/pmount-0.9.3-lijon.patch> and HAL should be patched
-with <http://kymatica.com/stuff/hal-0.5.4-lijon.patch> (These patches should be
-included with the recipes, together with the small patch that escapes the
-$hal.volume.mount\_point$ in ivmans src/manager.c:619)
+Pmount should be patched with http://kymatica.com/stuff/pmount-0.9.3-lijon.patch
+and HAL should be patched with http://kymatica.com/stuff/hal-0.5.4-lijon.patch
+(These patches should be included with the recipes, together with the small
+patch that escapes the $hal.volume.mount\_point$ in ivmans src/manager.c:619)
 
 -   Make sure there is nothing in `/System/Settings/hal/device.d` that does any
     mounting, becouse we want ivman to handle the mounting! (Actually I don't
-    think device.d works in HAL 0.5.4 since they moved to `info.callouts.*`
+    think `device.d` works in `HAL 0.5.4` since they moved to `info.callouts.*`
     instead...)
-
-<!-- -->
 
 -   Make sure there is a `haldaemon` system group and user, and a `plugdev`
     group. Add all users that should be able to access and unmount removable
     media to the `plugdev` group. _Note that users must log out and in again for
     the group changes to take effect_
-
-<!-- -->
 
 -   Start HAL as root:
 
@@ -87,8 +78,8 @@ $hal.volume.mount\_point$ in ivmans src/manager.c:619)
 ] ivman
 ```
 
-NOTE: If all this works, don't forget to check that hald and ivman is started in
-your bootscripts:
+{{% notice note %}} If all this works, don't forget to check that hald and ivman
+is started in your bootscripts: {{% /notice %}}
 
 ```fish
 Exec "Starting D-Bus system bus..."             messagebus
@@ -170,8 +161,8 @@ echo "Could not unmount with pumount or fusermount -u" >&2
 Ivman 0.6.5 and earlier have the problem that mountpoints are not enclosed by
 quotes when passed as arg to `pmount`. So if a inserted media has spaces in the
 desired mount point, pmount will fail! look in ivmans `src/manager.c:619` and
-put \\" around the `$hal.volume.desired`_`mount`_`point$` thing... This bug was
-fixed upstream in Ivman 0.6.6, thus this workaround is no longer required.
+put `"` around the `$hal.volume.desired`_`mount`_`point$` thing... This bug was
+fixed upstream in `Ivman 0.6.6`, thus this workaround is no longer required.
 
 ### Better mountpoint names
 
@@ -197,8 +188,8 @@ so that media is mounted with the volume label as mountpoint:
 </match>
 ```
 
-Note that you can put a copy of this file under /System/Settings/hal/fdi/policy
-and patch that one instead.
+Note that you can put a copy of this file under
+`/System/Settings/hal/fdi/policy` and patch that one instead.
 
 # Making different types of media get different icons
 

@@ -16,8 +16,9 @@ Also see [Available use flags](Available-Use-Flags).
 
 Flags are lower-case alphanumeric plus underscore, and should be named after
 what they do - the other program, tool, hardware, or functionality they enable,
-with any other characters stripped out if necessary. Example names would be
-`python`, `ipw2200`, `gtk`.
+with any other characters stripped out if necessary.
+
+Example names would be `python`, `ipw2200`, `gtk`.
 
 ## Enabling Use Flags
 
@@ -28,14 +29,14 @@ for packages and the ISO. The second is the local flags, set in
 `/System/Settings/UseFlags.conf`. Finally, the `USE` environment variable is
 read for flag specifications. It is intended that this be used for single
 Compile runs, such as for testing recipes, and not to set flags for your system
-(use UseFlags.conf for that). Later flag specifications overwrite earlier ones,
-both in the order listed above and within the files.
+(use `UseFlags.conf` for that). Later flag specifications overwrite earlier
+ones, both in the order listed above and within the files.
 
 A flag specification has the format `(-|+)<flag>[ program1[ program2 ...]]`. `+`
 enables the flag, `-` disables it, and providing a space-separated list of
 programs after the flag makes that specification apply only to those programs.
 Only one flag specification should be included on each line, and everything
-after a # is ignored as a comment. An example file for clarity:
+after a `#` is ignored as a comment. An example file for clarity:
 
 ```diff
 +foo # Enable foo globally. This text is ignored.
@@ -90,13 +91,13 @@ there is some lengthy compilation, large filesize, or mutual incompatibility
 associated with them.
 
 Within a Recipe file, the `with_<flag>` variable may be set for the common case
-of adding a configure option:
+of adding a `configure` option:
 
 ```fish
 with_gtk="--with-gtk=$gtk__path"
 ```
 
-Or to add multiple configure options:
+Or to add multiple `configure` options:
 
 ```fish
 with_gtk=(
@@ -107,10 +108,11 @@ with_gtk=(
 ```
 
 This will add the value of the variables to the most common configuration array
-for the recipe type. For configure, this is configure*options; python,
-python_options; makefile, build_variables; scons, scons_variables; cmake,
-cmake_options; cabal, cabal_options. In the case where more complicated changes
-are needed to enable support, there is a function `using*<flag>()` available:
+for the recipe type. For `configure`, this is `configure_options`; Other options
+are: `python`, `python_options`; `makefile`, `build_variables`; `scons`,
+`scons_variables`; cmake, `cmake_options`; `cabal`, `cabal_options`. In the case
+where more complicated changes are needed to enable support, there is a function
+`using_<flag>()` available:
 
 ```fish
 using_gtk() {
@@ -131,10 +133,10 @@ using_gtk_pre_build() {
 }
 ```
 
-These are run through Run_Hook and so are sudoed the same as the bare hooks (for
-the moment). This may cause problems if you create files or directories from the
-hook, so keep it in mind (it applies to all hook functions, but it should be
-noted especially too). If necessary, you can unsudo yourself with
+These are run through `Run_Hook` and so are sudoed the same as the bare hooks
+(for the moment). This may cause problems if you create files or directories
+from the hook, so keep it in mind (it applies to all hook functions, but it
+should be noted especially too). If necessary, you can unsudo yourself with
 `exec sudo -u "$SUDO_USER" -H env SUDO_OK=1 $0 "${@}"`. That won't affect
 anything other than the currently-executing hook, so it should be safe.
 
@@ -147,7 +149,7 @@ in even if the flag is disabled, if the dependency is installed and autodetected
 correctly. Compilations using ChrootCompile will not experience this effect, as
 the dependency will be left out of the chroot environment.
 
-This means that in the ideal world of well-behaved software, the Recipe file
+This means that in the ideal world of well-behaved software, the `Recipe` file
 itself should need no modification at all. Complex or less well-behaved software
 will inevitably end up with longer and more complicated recipes, but in most
 cases they should be concise and simple.
@@ -164,7 +166,7 @@ or find programs that could benefit from recompilation.
 
 ## Use Flags in Tools Development
 
-Flags are accessed from the shell through the UseFlags script, which takes
+Flags are accessed from the shell through the `UseFlags` script, which takes
 either a program name or a recipe directory as its first argument. The latter
 method is preferred where possible, because it will read the Dependencies file
 and limit the flags to only those listed there; giving just a name will include
@@ -174,7 +176,7 @@ standard output, one per line, suitable for iterating in a script or saving to a
 file. If called with no arguments, it will do the same for only global flags.
 
 Given a second argument of a flag to test, the script returns true if the flag
-is enabled, and false otherwise. If the -v option is specified, it will also
+is enabled, and false otherwise. If the `-v` option is specified, it will also
 output a message giving the state of the flag.
 
 From Python, the module is named `UseFlags` and may be imported as usual. The
