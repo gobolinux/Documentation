@@ -8,7 +8,7 @@ weight: 1
 
 ### Running Compile
 
-Install UnionFS-Fuse to workaround limitations with the sandbox in the Live
+Install `UnionFS-Fuse` to workaround limitations with the sandbox in the Live
 environment:
 
 ```fish
@@ -50,7 +50,7 @@ afterwards.
 
 ### InstallPackage searches for packages from GoboLinux 016 rather than 017
 
-Update the search URL used by the Scripts package:
+Update the search URL used by the `Scripts` package:
 
 ```fish
 GrepReplace -B "016" "017" /System/Settings/Scripts/GetAvailable.conf
@@ -58,7 +58,7 @@ GrepReplace -B "016" "017" /System/Settings/Scripts/GetAvailable.conf
 
 ### Update of Compile and Scripts tools
 
-Compile and Scripts are always evolving. Make sure to update your copies by
+`Compile` and `Scripts` are always evolving. Make sure to update your copies by
 running the following commands after you boot into your installed system for the
 first time:
 
@@ -72,7 +72,7 @@ git pull && UpdateSettings --auto Compile
 
 ### Wrong version of SQLite
 
-The version under /Programs/SQLite/3310100 is actually 3.8.2. Please run the
+The version under `/Programs/SQLite/3310100` is actually `3.8.2`. Please run the
 following commands to update to its most recent version:
 
 ```fish
@@ -82,8 +82,8 @@ RemoveProgram SQLite 3310100
 
 ### Dependencies files with reference to Ncurses
 
-Ncurses has been replaced by NcursesW, but some packages' metadata still hold
-references to the former. The following command fixes that:
+`Ncurses` has been replaced by `NcursesW`, but some packages' metadata still
+hold references to the former. The following command fixes that:
 
 ```fish
 GrepReplace -B "^Ncurses " "NcursesW " /Programs/*/*/Resources/Dependencies
@@ -95,8 +95,8 @@ Some problems have been reported by our users and are currently being fixed by
 our team. They are:
 
 -   `ContributePackage` is not working -- use
-    [[ContributeRecipe|GoboLinux GitHub contributor workflow]] instead.
--   Cut-and-paste does not work out of the box from a VM. Compiling
+    [ContributeRecipe]({{<ref "GitHub-contributor-workflow" >}}) instead.
+-   Copy-and-paste does not work out of the box from a VM. Compiling
     `spice-vdagent` and loading its daemon should fix that.
 -   Sometimes when trying to `Compile` an already-installed Program, the build
     process will fail (see

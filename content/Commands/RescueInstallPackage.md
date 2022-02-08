@@ -4,8 +4,8 @@ title: "RescueInstallPackage"
 
 `RescueInstallPackage`
 
-A minimal functionality InstallPackage that can be used when the original script
-is not working
+A minimal functionality `InstallPackage` that can be used when the original
+script is not working
 
 Usage:
 

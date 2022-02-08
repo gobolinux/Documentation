@@ -2,7 +2,7 @@
 title: "ColorMake"
 ---
 
-In default GoboLinux systems, "make" is an alias to ColorMake.
+In default GoboLinux systems, `make` is an alias to `ColorMake`.
 
 ## Multiple CPUs
 

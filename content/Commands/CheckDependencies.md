@@ -69,16 +69,7 @@ Examples of usage:
 
 ```fish
 CheckDependencies kde-libs 3.5.0
-```
-
-```fish
 CheckDependencies kde-libs 3.5.0 recipe
-```
-
-```fish
 CheckDependencies -t official_package,recipe kde-libs 3.5.0 recipe
-```
-
-```fish
 CheckDependencies -t official_package,recipe kde-libs 3.5.0 recipe
 ```

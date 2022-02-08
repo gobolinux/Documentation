@@ -43,9 +43,9 @@ GoboLinux                                                March 2017             
 Note that NamingConventions is part of the `Scripts` package. You can find in
 the `bin/` subdirectory there.
 
-Here are some usage examples; note that presently NamingConventions appears to
+Here are some usage examples; note that presently `NamingConventions` appears to
 prefer only the program name, so if you have a full remote URL, make sure to
-only pass the name of the program towards NamingConventions.
+only pass the name of the program towards `NamingConventions`.
 
 ```fish
 NamingConventions glib => GLib
