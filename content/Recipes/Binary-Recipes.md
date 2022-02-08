@@ -5,7 +5,7 @@ weight: 3
 
 Binary recipes (recipes that install precompiled binaries of software, rather
 than compiling it from source) are permitted but discouraged where possible.
-These recipes should have \_bin suffixed to the version number as a marker, for
+These recipes should have `_bin` suffixed to the version number as a marker, for
 example `Sun-JDK 1.6.0_03_bin`, even where there is no corresponding source
 recipe.
 
@@ -27,8 +27,8 @@ binary recipe will be accepted if it meets one of the following criteria:
         `Eclipse-SDK`.
 4.  The software requires a copy of itself to build, and isn't shipped with the
     default system. GHC is an example of this. In this case, the binary version
-    should be named differently: GHC-Bin installs the pre-built GHC, which can
-    be used to compile the source GHC.
+    should be named differently: `GHC-Bin` installs the pre-built GHC, which can
+    be used to compile the source `GHC`.
 5.  A source recipe would present some difficulty, and nobody has made one yet.
 
 Each program is assessed individually, and some may be accepted outside these

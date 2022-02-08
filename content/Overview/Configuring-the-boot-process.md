@@ -9,15 +9,15 @@ by editing the configuration files used for startup.
 
 ## General architecture
 
-The [BootDriver](/Commands/BootDriver/) script
+The [BootDriver]({{<ref "BootDriver" >}}) script
 (`/Programs/BootScript/`<version>`/bin/BootDriver`) manages boot-related tasks.
 The `init` program (from the Sysvinit package) running as `PID 1` calls
 BootDriver as specified in `/System/Settings/inittab`.
 
-[BootDriver](/Commands/BootDriver/) first loads the
-[boot theme file](/Documentation/Boot-Themes/) specified in
-`/System/Settings/BootOptions`. Then BootDriver runs the appropriate boot script
-for the task at hand (startup, shutdown, etc.)
+[BootDriver]({{<ref "BootDriver" >}}) first loads the [boot theme
+file]({{<ref "Boot-Themes" >}}) specified in `/System/Settings/BootOptions`.
+Then BootDriver runs the appropriate boot script for the task at hand (startup,
+shutdown, etc.)
 
 ## Boot Scripts
 
@@ -51,8 +51,8 @@ can add this line to `/System/Settings/BootScripts/Console`:
 Exec "Making keyboard speedy..." kbdrate -r 30 -d 250
 ```
 
-GoboLinux also provides ["boot tasks"](/Documentation/Boot-script-tasks/) as a
-more sophisticated way of managing services.
+GoboLinux also provides ["boot tasks"]({{<ref "Boot-script-tasks" >}}) as a more
+sophisticated way of managing services.
 
 ## Configuration options
 
@@ -148,7 +148,7 @@ layout. For example, in KDE you can configure this at the KDE Control Center.
 #### Mouse
 
 The mouse pointer for the graphical display is defined in an `InputDevice`
-section in `/System/Settings/xorg.conf`. The [Installer](/Commands/Installer/)
+section in `/System/Settings/xorg.conf`. The [Installer]({{<ref "Installer" >}})
 should correctly detect your hardware and set suitable defaults for your system.
 If not, you can always try a failsafe setup such as:
 
@@ -195,7 +195,7 @@ If you are using Wi-Fi, just select your network using the
 [GoboNet](http://github.com/gobolinux/GoboNet) widget in the AwesomeWM system
 tray:
 
-<https://gobolinux.org/images/gobo016gobonet.png>
+![GoboNet Widget](https://gobolinux.org/images/gobo016gobonet.png)
 
 #### Wired network
 

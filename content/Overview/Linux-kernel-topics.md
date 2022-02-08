@@ -69,8 +69,8 @@ The Linux recipe comes with a few patches in order to improve the user's
 experience with the system. The patchset includes, but is not restricted to, the
 following modifications:
 
--   [GoboHide](/Documentation/GoboHide): allows the legacy tree to be hidden
-    from userspace applications
+-   [GoboHide]({{<ref "GoboHide" >}}): allows the legacy tree to be hidden from
+    userspace applications
 -   SquashFS: a compressed filesystem which gets uncompressed on demand. This
     filesystem is currently used on the GoboLinux ISO, and so it's interesting
     to have it in order to get the CD contents easily accessible through the

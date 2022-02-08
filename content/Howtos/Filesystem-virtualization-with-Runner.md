@@ -4,10 +4,10 @@ menuTitle: "Virtualization with Runner"
 weight: 1
 ---
 
-[Runner](/Commands/Runner) is a utility for launching programs under GoboLinux
-that ensures that the filesystem view of a process will match its dependencies.
-In other words, Runner eliminates the possibility of library conflicts when
-running an executable.
+[Runner]({{<ref "Runner" >}}) is a utility for launching programs under
+GoboLinux that ensures that the filesystem view of a process will match its
+dependencies. In other words, Runner eliminates the possibility of library
+conflicts when running an executable.
 
 Runner is a filesystem virtualization tool that sets up a constrained view of
 `/System/Index` for a process based on the executable program's `Dependencies`

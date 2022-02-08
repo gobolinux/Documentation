@@ -8,8 +8,8 @@ that can be shipped by programs. A program includes its tasks under
 equivalent to the `/etc/init.d` scripts found in many distributions.
 
 You can launch or stop tasks from the command line, using
-[`StartTask`](/Commands/StartTask) and [`StopTask`](/Commands/StopTask). For
-example, the following command will load the SSH daemon:
+[`StartTask`]({{<ref "StartTask" >}}) and [`StopTask`]({{<ref "StopTask" >}}).
+For example, the following command will load the SSH daemon:
 
 ```fish
 StartTask OpenSSH

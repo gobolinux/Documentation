@@ -10,8 +10,8 @@ There are two ways to create recipes:
 
 The utilities for accomplishing this are:
 
-[`NewVersion`](/Commands/NewVersion), [`EditRecipe`](/Commands/EditRecipe) and
-[`MakeRecipe`](/Commands/MakeRecipe).
+[`NewVersion`]({{<ref "NewVersion" >}}), [`EditRecipe`]({{<ref "EditRecipe" >}})
+and [`MakeRecipe`]({{<ref "MakeRecipe" >}}).
 
 Once the recipe is done and compiled, a packed version of it will show up in
 `/Data/Compile/PackedRecipes` (or the location specified in
@@ -46,9 +46,9 @@ Then save the file and exit `nano` (`Control`+`O`, `Enter`, `Control`+`X`).
 ## Updating old recipes
 
 When a recipe for an older version of a given package already exists, you don't
-need to run [`MakeRecipe`](/Commands/MakeRecipe) again. Instead, use
-[`NewVersion`](/Commands/NewVersion) with the package name and version to create
-a new recipe starting with the previous recipe contents. For example:
+need to run [`MakeRecipe`]({{<ref "MakeRecipe" >}}) again. Instead, use
+[`NewVersion`]({{<ref "NewVersion" >}}) with the package name and version to
+create a new recipe starting with the previous recipe contents. For example:
 
 ```fish
 NewVersion GCC 4.4.4
@@ -65,9 +65,9 @@ NewVersion GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
 ```
 
 If the version of the package has not changed, and only minor recipe updates are
-needed, [`NewVersion`](/Commands/NewVersion) will not work as it will not copy
-the same version of a recipe over. In this case,
-[`EditRecipe`](/Commands/EditRecipe) is the tool to use.
+needed, [`NewVersion`]({{<ref "NewVersion" >}}) will not work as it will not
+copy the same version of a recipe over. In this case,
+[`EditRecipe`]({{<ref "EditRecipe" >}}) is the tool to use.
 
 ## Creating new recipes
 
@@ -95,7 +95,7 @@ What's a good name? One that follows our set of package naming guidelines:
 2. If the capitalization is undefined (ie, all-lowercase) or inconsistent (for
    example, showing up in different forms in the README), our set of
    capitalization rules, as defined by the
-   [`NamingConventions`](/Commands/NamingConventions) script, apply.
+   [`NamingConventions`]({{<ref "NamingConventions" >}}) script, apply.
 3. Applications are sovereign in defining their usage of hyphens and underscores
    to separate words in their names, when they are consistent.
 4. Packages should never have spaces in their names. For example, use
@@ -105,13 +105,13 @@ What's a good name? One that follows our set of package naming guidelines:
    case-insensitive manner.
 
 The set of rules are defined in
-[`NamingConventions`](/Commands/NamingConventions) and deal with detecting
+[`NamingConventions`]({{<ref "NamingConventions" >}}) and deal with detecting
 common prefix and suffix patterns, such as "Tools" and "Utils" and
 vowel-consonant heuristics.
 
 When a program name is not explicitly given to `Compile` (e.g., if it assumes it
 from an URL), it passes the inferred name through
-[`NamingConventions`](/Commands/NamingConventions). In recent versions, some
+[`NamingConventions`]({{<ref "NamingConventions" >}}). In recent versions, some
 rules are enforced even in explicitly given names -- one of them is that all
 program names must start with a capital letter.
 
@@ -126,10 +126,10 @@ editor (console based). This is my first recipe, and it is now in the main
 MakeRecipe http://unc.dl.sourceforge.net/sourceforge/joe-editor/joe-3.1.tar.gz
 ```
 
-Based on the filename of the URL, [`MakeRecipe`](/Commands/MakeRecipe) detects
-that the program it is compiling is called joe (which, after a run of the
-[`NamingConventions`](/Commands/NamingConventions) script, becomes Joe), and
-that the version is 3.1.
+Based on the filename of the URL, [`MakeRecipe`]({{<ref "MakeRecipe" >}})
+detects that the program it is compiling is called joe (which, after a run of
+the [`NamingConventions`]({{<ref "NamingConventions" >}}) script, becomes Joe),
+and that the version is 3.1.
 
 {{% notice note %}} In case it didn't, you could have passed it explicitly as
 parameters: {{% /notice %}}
@@ -138,7 +138,7 @@ parameters: {{% /notice %}}
 MakeRecipe HardToDetect 2.0 http://example.org/htd_2_0.tar.bz2
 ```
 
-[`MakeRecipe`](/Commands/MakeRecipe) should now report that it has downloaded
+[`MakeRecipe`]({{<ref "MakeRecipe" >}}) should now report that it has downloaded
 the sources, and found that it uses **autoconf**. Which is a good thing, as that
 means there is very little work to be done on our part. So now we compile and
 install the package on our machine.
@@ -193,13 +193,13 @@ To share your recipe, use this command:
 ContributeRecipe <program name>
 ```
 
-[ContributeRecipe](/Commands/ContributeRecipe) will submit a Pull Request on
+[ContributeRecipe]({{<ref "ContributeRecipe" >}}) will submit a Pull Request on
 GitHub so that the project maintainers can review it and merge it. Please note
 that you will need a valid account at github.com in order to contribute recipes.
 
-Approved committers should refer to these
-[ Guidelines](/Recipes/How-to-commit-recipes/) (others should use
-[`ContributeRecipe`](/Commands/ContributeRecipe).)
+Approved committers should refer to these [
+Guidelines]({{<ref "How-to-commit-recipes" >}}) (others should use
+[`ContributeRecipe`]({{<ref "ContributeRecipe" >}}).)
 
 ## Advanced topics
 
@@ -278,11 +278,12 @@ the patch `Compile` has support for dynamically created patches. By placing the
 suffix `.in`, e.g. `01-root_to_uid.patch.in`, on the patch you tell `Compile`
 that it should parse the file and generate the patch `01-root_to_uid.patch`,
 with certain strings replaced with values dependant on the system. The same
-[variables used in recipes](/Recipes/Recipe-Format-Specification/#dynamic-variables)
-can be used in patches but prefixed with the string `Compile_` and padded with
-`@%` and `%@`. So, for example, if `rlocate` depended on the application `foo`,
-the variable used in recipes to reference `foo`'s installation directory would
-be `$foo_path` and therefore the string used in patches to reference this path
+[variables used in
+recipes]({{<ref "Recipe-Format-Specification#dynamic-variables" >}}) can be used
+in patches but prefixed with the string `Compile_` and padded with `@%` and
+`%@`. So, for example, if `rlocate` depended on the application `foo`, the
+variable used in recipes to reference `foo`'s installation directory would be
+`$foo_path` and therefore the string used in patches to reference this path
 would be `@%Compile_foo_path%@`. Below are valid variables for target
 application as well as directories belonging to the dependency `foo`:
 
@@ -295,7 +296,7 @@ application as well as directories belonging to the dependency `foo`:
 
 ### Binary recipes
 
-Full article: [Binary recipes](/Recipes/Binary-Recipes/)
+Full article: [Binary recipes]({{<ref "Binary-Recipes" >}})
 
 Binary recipes are used to install vendor-supplied precompiled binaries of
 software. They are usually created using the manifest recipe type, and have
@@ -306,19 +307,20 @@ software. They are usually created using the manifest recipe type, and have
 The `Compile` tool can handle numerous types of packages, each of them with a
 different build technique.
 
-When [`MakeRecipe`](/Commands/MakeRecipe) is invoked, it downloads the program's
-source, uncompresses it and tries to detect what kind of build system it uses.
-And, surely, there are some packages on which
-[`MakeRecipe`](/Commands/MakeRecipe) cannot detect that. This is when the user's
-interaction is needed, and some manual modifications on the Recipe must be done.
+When [`MakeRecipe`]({{<ref "MakeRecipe" >}}) is invoked, it downloads the
+program's source, uncompresses it and tries to detect what kind of build system
+it uses. And, surely, there are some packages on which
+[`MakeRecipe`]({{<ref "MakeRecipe" >}}) cannot detect that. This is when the
+user's interaction is needed, and some manual modifications on the Recipe must
+be done.
 
-As presented in the [`Compile`](/Commands/Compile) section, `Compile` handles
+As presented in the [`Compile`]({{<ref "Compile" >}}) section, `Compile` handles
 compilation of programs according to a few number of "recipe types". For each
 type, there are valid declarations that you can specify, to adapt the behavior
 of `Compile` to the needs of the program that is about to be compiled. The full
-list of declarations is at Appendix
-"[Recipe format specification](/Recipes/Recipe-Format-Specification/)". Let's
-see some of the main options for each type:
+list of declarations is at Appendix "[Recipe format
+specification]({{<ref "Recipe-Format-Specification" >}})". Let's see some of the
+main options for each type:
 
 #### configure recipes
 
@@ -342,12 +344,12 @@ Much progress in this area has been made in the last few years, especially with
 flags to be passed explicitly.
 
 In **configure**-based recipes, `Compile` uses
-[`PrepareProgram`](/Commands/PrepareProgram) to detect if some standard
+[`PrepareProgram`]({{<ref "PrepareProgram" >}}) to detect if some standard
 parameters such as `--prefix` are supported by the configure script. If the
 program does not support these parameters and
-[`PrepareProgram`](/Commands/PrepareProgram) detects them incorrectly, you can
-use `override_default_options=yes` to have `configure` use _only_ the options
-given by you in `configure_options`.
+[`PrepareProgram`]({{<ref "PrepareProgram" >}}) detects them incorrectly, you
+can use `override_default_options=yes` to have `configure` use _only_ the
+options given by you in `configure_options`.
 
 Another occasionally necessary flag is `autogen_before_configure=yes`. Some
 programs distribute the necessary input files for generating `configure` (such
@@ -458,6 +460,5 @@ This is for recipes based on SCons.
 
 "Manifest" recipes are used for programs that just need to copy files over. The
 `manifest` array-style entry lists colon-separated pairs, indicating source file
-and target destination, relative to `target`. (See
-"[Recipe format specification](/Recipes/Recipe-Format-Specification/)" for
-details).
+and target destination, relative to `target`. (See "[Recipe format
+specification]({{<ref "Recipe-Format-Specification" >}})" for details).

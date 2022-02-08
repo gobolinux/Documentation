@@ -34,10 +34,10 @@ for simplicity let's keep the provided default: `/Data/Compile/Subversion`
 
 ## Committing recipes
 
-To commit a recipe, use the [`PutRecipe`](/Commands/PutRecipe) script. It takes
-care of incrementing the revision number, copying the files into the local
-repository and runs svn to commit them to the GoboLinux repository. `PutRecipe`
-takes as a parameter a directory containing a recipe, like this:
+To commit a recipe, use the `PutRecipe` script. It takes care of incrementing
+the revision number, copying the files into the local repository and runs svn to
+commit them to the GoboLinux repository. `PutRecipe` takes as a parameter a
+directory containing a recipe, like this:
 
 ```fish
 PutRecipe firefox

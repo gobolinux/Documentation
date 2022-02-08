@@ -60,7 +60,7 @@ there's no point on shipping one with the distribution. There is, however, an
 optional patch used to hide the legacy tree, so that only the GoboLinux tree
 appears in the filesystem (`/System`, `/Programs` and so on). This patch is
 called GoboHide, and it can be downloaded for various kernel releases on its
-[documentation page](/Documentation/GoboHide/).
+[documentation page]({{<ref "GoboHide" >}}).
 
 ## Installing the distribution
 
@@ -401,7 +401,7 @@ port which happened in parallel in another projects.
 The remaining sections are going to focus on 2 ways of porting Gobo to a new
 system: by cross-compiling and by using an existing distribution as a basis to
 compile packages using the Gobo hierarchy. The latter has not been written yet;
-see <http://www.gobolinux.org/index.php?page=doc/articles/porting_guide> for
+see http://www.gobolinux.org/index.php?page=doc/articles/porting_guide for
 inspiration.
 
 ## Preparing the cross-compiler's terrain
@@ -416,12 +416,11 @@ help you to acquire some of that knowledge.
 ### Requirements
 
 Finished with the introduction, let's make a list of what you'll need. Firstly,
-this tutorial assumes that you have <b>a host computer running GoboLinux</b>.
-The Gobo team has developed numerous tools to help on the automation of the
-system, such as compiling programs based on simple description files, detecting
-the latest versions of a given application, enjauling the compile process so
-that the host system doesn't interfere in the compilation environment, and so
-on.
+this tutorial assumes that you have **a host computer running GoboLinux**. The
+Gobo team has developed numerous tools to help on the automation of the system,
+such as compiling programs based on simple description files, detecting the
+latest versions of a given application, enjauling the compile process so that
+the host system doesn't interfere in the compilation environment, and so on.
 
 For this reason, the tools developed to aid on the port are based on Gobo's own
 infrastructure. After all, since you're porting Gobo to a new architecture we

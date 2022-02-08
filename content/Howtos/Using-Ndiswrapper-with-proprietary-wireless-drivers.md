@@ -22,9 +22,10 @@ ndiswrapper -m
 
 as gobo.
 
--   Use [`WirelessTools`](/Commands/WirelessTools) to configure the interface
-    and to find an wireless network available
--   Use ifconfig to open the interface and DHCP to configure the connection.
+-   Use
+    [`WirelessTools`](https://github.com/gobolinux/Recipes/tree/master/Wireless-Tools)
+    to configure the interface and to find an wireless network available
+-   Use `ifconfig` to open the interface and DHCP to configure the connection.
 -   Browse the web
 
 You can automate some of this by adding a line to

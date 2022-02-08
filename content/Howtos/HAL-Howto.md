@@ -34,7 +34,7 @@ desktop specific stuff (like adding devices to the panel).
 
 -   You need to be running Udev and DBus, make sure that's the case and that the
     DBus system bus is started at boot. (Use
-    [`StartTask`](/Commands/StartTask)` messagebus`)
+    [`StartTask`]({{<ref "StartTask" >}})` messagebus`)
 
 -   You also need a recent kernel and glibc compiled against recent headers.
     This was tested with `Glibc 2.3.5` with NPTL compiled against

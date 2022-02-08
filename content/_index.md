@@ -16,22 +16,22 @@ section first.
 
 ## How to find yourself around
 
-You can start with the [**Overview**](/Overview) section on the left. This
-should get you started.
+You can start with the [**Overview**]({{<ref "Overview" >}}) section on the
+left. This should get you started.
 
-The main [**Documentation**](/Documentation) section contains some further and
-advanced topics , but if you're serious about your GoboLinux journey you should
-read this one, too!
+The main [**Documentation**]({{<ref "Documentation" >}}) section contains some
+further and advanced topics , but if you're serious about your GoboLinux journey
+you should read this one, too!
 
-The [**Howtos**](/Howtos) section holds articles to solve a specific problem and
-guides you through step-by-step. We rely heavily on the community contributions
-here. If you feel something important is not covered, feel encouraged to submit
-your contributions!
+The [**Howtos**]({{<ref "Howtos" >}}) section holds articles to solve a specific
+problem and guides you through step-by-step. We rely heavily on the community
+contributions here. If you feel something important is not covered, feel
+encouraged to submit your contributions!
 
-The [**Commands**](/Commands) section is a list of GoboLinux specific commands
-and tooling, that will make your life with GoboLinux much easier. They are what
-makes GoboLinux so enjoyable and are very much in the spirit of: **_„Do One
-Thing and Do It Well!"_**.
+The [**Commands**]({{<ref "Commands" >}}) section is a list of GoboLinux
+specific commands and tooling, that will make your life with GoboLinux much
+easier. They are what makes GoboLinux so enjoyable and are very much in the
+spirit of: **_„Do One Thing and Do It Well!"_**.
 
 ### Couldn't find what you were looking for?
 

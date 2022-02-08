@@ -36,7 +36,7 @@ functions for inclusion in one of the modules.
 The idea in the naming convention is to orthogonally describe scope and purpose
 of each name. We define "local scope" as names that are specific to a given
 script, and "library scope" as names defined in `Scripts` modules such as
-[`GoboPath`](/Documentation/GoboPath/), `ScriptFunctions` or one of the imported
+[`GoboPath`]({{<ref "GoboPath" >}}), `ScriptFunctions` or one of the imported
 function modules.
 
 These are the guidelines:
@@ -61,9 +61,8 @@ Example: `local_function`, `localvariable`
 
 Example: `PATH`, `LD_LIBRARY_PATH`
 
--   Configuration variables used in
-    [.conf files](/Documentation/Configuration-files/) start with the script
-    name in lowercase, resulting in a case style similar to that used in Java
-    variables
+-   Configuration variables used in [.conf
+    files]({{<ref "Configuration-files" >}}) start with the script name in
+    lowercase, resulting in a case style similar to that used in Java variables
 
 Example: `compileRecipeDirs`, `editKeymapLayout`

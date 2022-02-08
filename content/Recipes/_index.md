@@ -5,42 +5,43 @@ chapter: false
 pre: "<b>003 </b>"
 ---
 
-Recipes are directions to [`Compile`](/Commands/Compile) on how to configure,
+Recipes are directions to [`Compile`]({{<ref "Compile" >}}) on how to configure,
 build, and install a particular software package.
 
 ## Topics
 
 -   [Online recipe browser](http://recipes.gobolinux.org/)
--   [Writing Recipes](/Recipes/Writing-Recipes)
--   [Recipe Format Specification](/Recipes/Recipe-Format-Specification/)
--   [Recipes for precompiled software (such as Skype or Adobe Flash Player)](/Recipes/Binary-Recipes/)
--   [Sharing recipes](/Recipes/Writing-Recipes/#share-your-recipes)
+-   [Writing Recipes]({{<ref "Writing-Recipes" >}})
+-   [Recipe Format Specification]({{<ref "Recipe-Format-Specification" >}})
+-   [Recipes for precompiled software (such as Skype or Adobe Flash
+    Player)]({{<ref "Binary-Recipes" >}})
+-   [Sharing recipes]({{<ref "Writing-Recipes#share-your-recipes" >}})
 
 ## Commands
 
 ### Acquiring
 
--   [FindPackage](/Commands/FindPackage) - Search for recipes and packages
--   [UpdateRecipes](/Commands/UpdateRecipes) - Update local recipe cache from
+-   [FindPackage]({{<ref "FindPackage" >}}) - Search for recipes and packages
+-   [UpdateRecipes]({{<ref "UpdateRecipes" >}}) - Update local recipe cache from
     the recipe store.
--   [GetRecipe](/Commands/GetRecipe) - Fetch a recipe and place it in the local
-    recipe cache, /Data/Compile/Recipes/.
+-   [GetRecipe]({{<ref "GetRecipe" >}}) - Fetch a recipe and place it in the
+    local recipe cache, /Data/Compile/Recipes/.
 
 ### Creating
 
--   [NewVersion](/Commands/NewVersion) - Use an existing recipe as a template
+-   [NewVersion]({{<ref "NewVersion" >}}) - Use an existing recipe as a template
     for a new software version
--   [MakeRecipe](/Commands/MakeRecipe) - Create a recipe template from a URL.
+-   [MakeRecipe]({{<ref "MakeRecipe" >}}) - Create a recipe template from a URL.
 
 ### Modifying
 
--   [EditRecipe](/Commands/EditRecipe) - Edit an existing recipe.
--   [RecipeLint](/Commands/RecipeLint) - Make sure a recipe has no obvious
+-   [EditRecipe]({{<ref "EditRecipe" >}}) - Edit an existing recipe.
+-   [RecipeLint]({{<ref "RecipeLint" >}}) - Make sure a recipe has no obvious
     errors.
 
 ### Submitting
 
--   [PackRecipe](/Commands/PackRecipe) - Generate a packed recipe tarball from
-    local recipe cache, ready for submission.
--   [ContributeRecipe](/Commands/ContributeRecipe) - Submit a recipe to the
+-   [PackRecipe]({{<ref "PackRecipe" >}}) - Generate a packed recipe tarball
+    from local recipe cache, ready for submission.
+-   [ContributeRecipe]({{<ref "ContributeRecipe" >}}) - Submit a recipe to the
     recipe store for review and inclusion.

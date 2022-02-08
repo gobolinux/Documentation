@@ -4,8 +4,8 @@ title: "GoboHide"
 
 To simplify the users' view of filesystem, GoboHide conceals legacy unix
 directories such as `/usr`, `/lib`, `/sbin`, and `/etc`, which contain links to
-files placed elsewhere under
-[The GoboLinux Filesystem Hierarchy](/Overview/GoboLinux-Filesystem-Hierarchy/).
+files placed elsewhere under [The GoboLinux Filesystem
+Hierarchy]({{<ref "GoboLinux-Filesystem-Hierarchy" >}}).
 
 GoboHide works by hooking directory read operations directly in the root of the
 problem: since every `readdir()` call is translated and performed by the kernel,

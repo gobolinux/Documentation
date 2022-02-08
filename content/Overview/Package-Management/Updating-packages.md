@@ -5,16 +5,16 @@ weight: 3
 
 ## Overview
 
-Use the [`UpdateRecipes`](/Commands/UpdateRecipes) command to refresh your local
-cache of the GoboLinux recipe store.
+Use the [`UpdateRecipes`]({{<ref "UpdateRecipes" >}}) command to refresh your
+local cache of the GoboLinux recipe store.
 
 You can query available updates using the utilities
-[`SuggestUpdates`](/Commands/SuggestUpdates) and
-[`SuggestDuplicates`](/Commands/SuggestDuplicates). The output of each of these
-commands is suitable for piping into commands.
+[`SuggestUpdates`]({{<ref "SuggestUpdates" >}}) and
+[`SuggestDuplicates`]({{<ref "SuggestDuplicates" >}}). The output of each of
+these commands is suitable for piping into commands.
 
-The [`FindPackage`](/Commands/FindPackage) and
-[`GetAvailable`](/Commands/GetAvailable) commands may also be useful.
+The [`FindPackage`]({{<ref "FindPackage" >}}) and
+[`GetAvailable`]({{<ref "GetAvailable" >}}) commands may also be useful.
 
 ### Example Update Process
 
@@ -52,9 +52,9 @@ SuggestUpdates
 #### Install updates
 
 Currently, there is no way to update packages automatically. This used to be
-done with the [`Freshen`](/Commands/Freshen) script, which is currently not in
-working order.
+done with the [`Freshen`]({{<ref "Freshen" >}}) script, which is currently not
+in working order.
 
 Updates thus need to be installed manually via
-[`InstallPackage`](/Commands/InstallPackage) or [`Compile`](/Commands/Compile)
-as appropriate.
+[`InstallPackage`]({{<ref "InstallPackage" >}}) or
+[`Compile`]({{<ref "Compile" >}}) as appropriate.

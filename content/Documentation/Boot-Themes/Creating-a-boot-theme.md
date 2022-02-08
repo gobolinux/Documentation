@@ -19,5 +19,5 @@ and whistles you want.
 
 ### Subtopics:
 
-1.  [Implementing a boot theme](/Documentation/Boot-Themes/Implementing-a-boot-theme/)
-2.  [Testing a boot theme](/Documentation/Boot-Themes/Testing-a-boot-theme/)
+1.  [Implementing a boot theme]({{<ref "Implementing-a-boot-theme" >}})
+2.  [Testing a boot theme]({{<ref "Testing-a-boot-theme" >}})

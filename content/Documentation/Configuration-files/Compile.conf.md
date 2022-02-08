@@ -3,7 +3,7 @@ title: "Compile"
 ---
 
 Compile.conf is the file where you can configure the various paths and URLs used
-by [Compile](/Commands/Compile).
+by [Compile]({{<ref "Compile" >}}).
 
 It is stored at `/Programs/Compile/Settings/Compile/Compile.conf` -- which, once
 installed, has a link at `/System/Settings/Compile/Compile.conf` (if you're used

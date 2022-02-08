@@ -22,14 +22,14 @@ Resources/Wrappers inside the program directory.
 -   sudo - aliased to Sudo in the Sudo package to handle names other than root
     as super user
 -   top - aliased to htop in the Htop package
--   make - aliased to [`ColorMake`](/Commands/ColorMake) in the Scripts package
-    to produce colorful output
+-   make - aliased to [`ColorMake`]({{<ref "ColorMake" >}}) in the Scripts
+    package to produce colorful output
 -   info - aliased to Info in the Pinfo package
 -   man - aliased to Man in the Pinfo package
 -   install - install in CoreUtils has been renamed to real_install with install
-    in the Scripts package as a wrapper (see section
-    [Sandboxing under GoboLinux](/Documentation/Sandboxing-under-GoboLinux/) for
-    a detailed explanation)
+    in the Scripts package as a wrapper (see section [Sandboxing under
+    GoboLinux]({{<ref "Sandboxing-under-GoboLinux" >}}) for a detailed
+    explanation)
 -   which - the Scripts package provides a "which" script which resolves
     symlinks in the path of the returned program, so that it indicates the
     /Programs path the binary refers to.

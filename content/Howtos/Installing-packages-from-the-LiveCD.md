@@ -1,5 +1,5 @@
 ---
-title: "Installing packages from the LiveCD"
+title: "Installing Packages from the LiveCD"
 ---
 
 After installing GoboLinux and booting from the hard disk, you may want to
@@ -13,7 +13,7 @@ mount /Mount/CD-ROM
 mount /Mount/CD-ROM/GoboLinux-NonBase.squashfs /Mount/ SquashFS -t squashfs -o loop=/System/Kernel/Devices/loop0`
 ```
 
-Now, you can use [`InstallPackage`](/Commands/InstallPackage) to install
+Now, you can use [`InstallPackage`]({{<ref "InstallPackage" >}}) to install
 software from the `Program/` directory of the Live-CD:
 
 ```fish

@@ -42,8 +42,8 @@ advantages:
 -   it's trivial to uninstall software
 -   there's no need for a database of installed files
 
-The system is administered through a limited set of
-[utility programs](/Commands). Tracking dependency relations among software is
-accomplished through the
-[GoboLinux build system](/Overview/Installing-Software/Compiling-from-source)
-and its library of ["compile recipes"](/Recipes).
+The system is administered through a limited set of [utility
+programs]({{<ref "Commands" >}}). Tracking dependency relations among software
+is accomplished through the [GoboLinux build
+system]({{<ref "Compiling-from-source" >}}) and its library of
+["compile recipes"](/Recipes).

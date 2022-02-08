@@ -250,9 +250,9 @@ Supported recipe types (also known as modes), to be given as argument to
 #### configure_options=(\<array of options>`)
 
 Flags to be passed to the configure script. These flags are passed in addition
-to default flags detected by [`PrepareProgram`](/Commands/PrepareProgram) (such
-as `--prefix` and `--sysconfdir` on autoconf-based configure scripts), unless
-the override_default_options declaration is used.
+to default flags detected by [`PrepareProgram`]({{<ref "PrepareProgram" >}})
+(such as `--prefix` and `--sysconfdir` on autoconf-based configure scripts),
+unless the override_default_options declaration is used.
 
 #### autogen_before_configure=yes
 
@@ -289,7 +289,7 @@ Haskell. Some options are only relevant for _cabal_:
 Flags to be passed to the Cabal configure operation.
 
 These flags are passed in addition to default flags detected by
-[`PrepareProgram`](/Commands/PrepareProgram) (such as --prefix) unless the
+[`PrepareProgram`]({{<ref "PrepareProgram" >}}) (such as --prefix) unless the
 override_default_options declaration is used.
 
 #### runhaskell
@@ -519,9 +519,9 @@ _Valid modes: configure, makefile_
 
 By default, Compile only generates directories in the target location right
 before the installation step. This is useful for the --no-install option (see
-the [Compile](/Commands/Compile) reference entry). Unfortunately, some programs
-fail during the configuration of compilation step if the target directory does
-not already exist. Use this entry to appease those programs.
+the [Compile]({{<ref "Compile" >}}) reference entry). Unfortunately, some
+programs fail during the configuration of compilation step if the target
+directory does not already exist. Use this entry to appease those programs.
 
 #### keep_existing_target=yes
 
@@ -674,11 +674,11 @@ A message to display to the user after installation.
 
 _Valid modes: all_
 
-Additional options to be passed to [`SandboxInstall`](/Commands/SandboxInstall).
-This is typically used to expand the sandbox to allow additional directories in
-_special_ situations (such as the installation of kernel modules). _Avoid_ using
-this option as much as possible, and make sure you know what you're doing when
-you do use it.
+Additional options to be passed to
+[`SandboxInstall`]({{<ref "SandboxInstall" >}}). This is typically used to
+expand the sandbox to allow additional directories in _special_ situations (such
+as the installation of kernel modules). _Avoid_ using this option as much as
+possible, and make sure you know what you're doing when you do use it.
 
 Example:
 
@@ -692,11 +692,11 @@ sandbox_options=(
 
 _Valid modes: all_
 
-Additional options to be passed to [`SymlinkProgram`](/Commands/SymlinkProgram).
-This should be used sparingly, in order to remedy unusual situations (the
-FreeType package used it to avoid a XFree86 conflict which affected the proper
-functioning of the system). _Avoid_ using this option if possible; there are
-almost always better alternatives.
+Additional options to be passed to
+[`SymlinkProgram`]({{<ref "SymlinkProgram" >}}). This should be used sparingly,
+in order to remedy unusual situations (the FreeType package used it to avoid a
+XFree86 conflict which affected the proper functioning of the system). _Avoid_
+using this option if possible; there are almost always better alternatives.
 
 Example:
 
@@ -745,7 +745,7 @@ with_gtk=(
 )
 ```
 
-See [Use flags](/Recipes/Use-flags/).
+See [Use flags]({{<ref "Use-flags" >}}).
 
 ## Hooks
 
@@ -854,7 +854,7 @@ execution. Instead, use `using_<flag>_<hook>()`. For instance,
 `using_gtk_pre_build()` is run at the time specified above, in the event that
 the `gtk` use flag is set.
 
-See [Use flags](/Recipes/Use-flags/).
+See [Use flags]({{<ref "Use-flags" >}}).
 
 ### New Hooks
 
@@ -1047,9 +1047,9 @@ against when compiling.
 This is a directory which may contain, in `Defaults/Settings`, the default
 contents of the `/Programs/Foo/Settings` directory. The contents of this
 directory will be reconciled with the currently active settings, if any, by
-[`UpdateSettings`](/Commands/UpdateSettings). The original defaults will remain
-in `/Programs/Foo/Version/Resources/Defaults`, so that a user may revert to them
-as necessary.
+[`UpdateSettings`]({{<ref "UpdateSettings" >}}). The original defaults will
+remain in `/Programs/Foo/Version/Resources/Defaults`, so that a user may revert
+to them as necessary.
 
 `Defaults/` may also contain a subdirectory `Variable/`. These files are copied
 to `/System/Variable/`, if not already present.
@@ -1073,16 +1073,16 @@ Xorg 7.2
 ZLib 1.2.3
 ```
 
-The tags such as `[lame]` specify [Use Flags](/Recipes/Use-flags/), optional
+The tags such as `[lame]` specify [Use Flags]({{<ref "Use-flags" >}}), optional
 dependencies which affect the compilation of the package, if present.
 
 When the range string (i.e., `=`, `>=`, etc) is omitted, the dependency
 resolution algorithm assumes it to be `>=`.
 
 The exact algorithm for complex dependencies is specified in
-[`CheckDependencies`](/Commands/CheckDependencies) but allows for a sequence of
-options separated by `|` (or) each of which is a sequence of versions separated
-by "," (and). Precedence is left to right. Thus:
+[`CheckDependencies`]({{<ref "CheckDependencies" >}}) but allows for a sequence
+of options separated by `|` (or) each of which is a sequence of versions
+separated by "," (and). Precedence is left to right. Thus:
 
 ```fish
 GCC < 4.0.0 | >= 4.1.0, != 4.1.2 | ICC > 2.0.0
@@ -1090,7 +1090,7 @@ GCC < 4.0.0 | >= 4.1.0, != 4.1.2 | ICC > 2.0.0
 
 means a GCC version less than 4.0.0 or a GCC version greater than 4.1.0 but not
 equal to 4.1.2 or an ICC version greater than 2.0.0. See the code for
-[`CheckDependencies`](/Commands/CheckDependencies) for the exact algorithm.
+[`CheckDependencies`]({{<ref "CheckDependencies" >}}) for the exact algorithm.
 
 Dependencies to language-specific package managers can be fulfilled using the
 [Aliens](https://github.com/gobolinux/AlienVFS) subsystem, using the syntax
@@ -1102,8 +1102,8 @@ the Alien provider and the package manager itself:
 -   CPAN dependencies ignore version information
     ([CPAN only installs the latest version](http://stackoverflow.com/questions/260593/how-can-i-install-a-specific-version-of-a-set-of-perl-modules))
 
-For more info, see [Dependencies](/Commands/Dependencies) and
-[Use Flags](/Recipes/Use-flags/).
+For more info, see [Dependencies]({{<ref "Dependencies" >}}) and [Use
+Flags]({{<ref "Use-flags" >}}).
 
 #### Description
 
@@ -1135,8 +1135,8 @@ updating of certain settings. See [[Hints File]].
 
 #### PostInstall
 
-A bash script which is executed by [`Compile`](/Commands/Compile) (or
-[`InstallPackage`](/Commands/InstallPackage)) after installation. This is for
+A bash script which is executed by [`Compile`]({{<ref "Compile" >}}) (or
+[`InstallPackage`]({{<ref "InstallPackage" >}})) after installation. This is for
 one-time actions which should not be associated with any stage of the
 compilation or installation process, but run after the Program is symlinked.
 They are kept separate from the Recipe file so that they are retained in binary
@@ -1172,10 +1172,9 @@ See the
 
 #### `Tasks/`
 
-Files in this subdirectory are
-[boot script tasks](/Documentation/Boot-script-tasks/), linked to
-`System/Tasks`. These are roughly equivalent to the `/etc/init.d` scripts found
-in many distributions.
+Files in this subdirectory are [boot script
+tasks]({{<ref "Boot-script-tasks" >}}), linked to `System/Tasks`. These are
+roughly equivalent to the `/etc/init.d` scripts found in many distributions.
 
 Note that files under `System/Tasks/` should be marked as executable! Otherwise
 they will fail to execute during boot time!
