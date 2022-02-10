@@ -14,7 +14,7 @@
     --MENU-HOME-LINK-color: unset; /* Color of the home button text */
     --MENU-HOME-LINK-HOVER-color: unset; /* Color of the hovered home button text */
 
-    --MENU-HEADER-BG-color: unset; /* Background color of menu header */
+    --MENU-HEADER-BG-color: unset; /* Background color of menu header (NOTE: We use --MENU-HEADER-BG instead) */
     --MENU-HEADER-BORDER-color: unset; /*Color of menu header border */
 
     --MENU-SEARCH-BG-color: #167ad0; /* Search field background color (by default borders + icons) */
@@ -39,7 +39,8 @@
         #8000ffb3 0%,
         #00bcf4b3 75%,
         #00ff5ab3 100%
-    ); /* Background color of side bar */
+    );
+    /* Background color of side bar */
     --MAIN-BG-color: #202020; /* Background color of main content */
     --MAIN-H1-color: #0060f3; /* Color of h1 headlines */
     --MAIN-H2-color: #f300b2; /* Color of h2 headlines */
@@ -47,9 +48,9 @@
     --MAIN-H4-color: #ffffff; /* Color of h4 headlines */
     --MAIN-H5-color: #ffffff; /* Color of h5 headlines */
     --MAIN-H6-color: #ffffff; /* Color of h6 headlines */
-    --MAIN-INLINECODE-color: #00f3d3; /* Color for inline code (code enclosed in single backticks` */
-    --MAIN-INLINECODE-BG-color: #2d2e33a8; /* Background inline code */
-    --MAIN-INLINECODE-BORDER-color: unset; /* Border color of inline code (Note: borders disabled by default) */
+    --MAIN-INLINECODE-color: #00f3d3; /* Color of inline code (code enclosed in `single backticks`) */
+    --MAIN-INLINECODE-BG-color: #2d2e33a8; /* Background color of inline code */
+    --MAIN-INLINECODE-BORDER-color: unset; /* Border color of inline code (NOTE: We disabled borders by default) */
     --NAV-TOPBAR-BG-color: #2a2a2a; /* Background color of the navigation header/top bar */
     --FOOTER-TEXT-color: #fff; /* Footer text color. The one holding the copyright disclaimer. */
 }
@@ -77,6 +78,10 @@ div.notices.info {
     border-color: #002cb9;
     background-color: #000000;
     color: #0094ff;
+}
+
+.notices pre {
+    background-color:#141414 !important;
 }
 
 /* General */
@@ -144,6 +149,7 @@ body h6 {
 pre code {
     white-space: pre;
 }
+
 
 code {
     font-family: "Fira Code";
