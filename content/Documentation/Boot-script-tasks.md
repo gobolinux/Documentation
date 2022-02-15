@@ -1,5 +1,5 @@
 ---
-title: "Boot Scipt Tasks"
+title: "Boot Script Tasks"
 ---
 
 Your boot scripts can make use of "boot tasks", which are little service scripts
