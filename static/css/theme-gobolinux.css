@@ -33,6 +33,7 @@
     --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
 
     /* The following vars were added by us */
+    /* Background color of side bar: */
     /*--MENU-SECTIONS-BG: linear-gradient(150deg, #7e00ff 0%, #00e0f4 75%, #00ff5a 100%); */
     --MENU-SECTIONS-BG: linear-gradient(
         150deg,
@@ -40,18 +41,22 @@
         #00bcf4b3 75%,
         #00ff5ab3 100%
     );
-    /* Background color of side bar */
+
     --MAIN-BG-color: #202020; /* Background color of main content */
+
     --MAIN-H1-color: #0060f3; /* Color of h1 headlines */
     --MAIN-H2-color: #f300b2; /* Color of h2 headlines */
     --MAIN-H3-color: #00f3d3; /* Color of h3 headlines */
     --MAIN-H4-color: #ffffff; /* Color of h4 headlines */
     --MAIN-H5-color: #ffffff; /* Color of h5 headlines */
     --MAIN-H6-color: #ffffff; /* Color of h6 headlines */
+
     --MAIN-INLINECODE-color: #00f3d3; /* Color of inline code (code enclosed in `single backticks`) */
     --MAIN-INLINECODE-BG-color: #2d2e33a8; /* Background color of inline code */
     --MAIN-INLINECODE-BORDER-color: unset; /* Border color of inline code (NOTE: We disabled borders by default) */
+
     --NAV-TOPBAR-BG-color: #2a2a2a; /* Background color of the navigation header/top bar */
+
     --FOOTER-TEXT-color: #fff; /* Footer text color. The one holding the copyright disclaimer. */
 }
 
