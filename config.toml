@@ -2,25 +2,25 @@ baseURL = 'https://wiki.gobolinux.org/'
 languageCode = 'en-us'
 title = 'GoboLinux Documentation'
 disablePathToLower = true
+theme = "hugo-theme-relearn"
 
 # Required in cases the project is *not* hosted under the root directory of the domain
-# canonifyURLs = true
+# relativeURLs = false
 
-# Change the default theme to be use when building the site with Hugo
-theme = "hugo-theme-relearn"
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
 
 [params]
   editURL = "https://github.com/gobolinux/Documentation/edit/master/content/"
   description = "Documentation for GoboLinux"
+  author = "NEONsys.org"
   themeVariant = "gobolinux"
   titleSeparator = "::"
   disableLandingPageButton = true
   showVisitedLinks = true
   disableInlineCopyToClipBoard = true
-
-# For search functionality
-[outputs]
-home = [ "HTML", "RSS", "JSON"]
+  disableSeoHiddenPages = true
 
 [markup]
   [markup.tableOfContents]

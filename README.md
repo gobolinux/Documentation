@@ -9,8 +9,7 @@ on the wonderful
 ## Project Structure
 
 You will find the documentation under `contents/` in markdown format. The
-relearn theme resides under `themes/`, theme modifications are under `layouts/`
-and `static/css/`. Images are under `static/images/`.
+projects main stylesheet lays under `static/css/`.
 
 The main configuration is stored in `config.toml`.
 

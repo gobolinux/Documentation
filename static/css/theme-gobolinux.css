@@ -1,92 +1,57 @@
 /* Main color scheme */
 :root {
-    /* The following vars are standard definitions used and provided by the Hugo Relearn Theme.
-       See https://mcshelby.github.io/hugo-theme-relearn/basics/customization/#mine-variant */
+    /* General */
     --MAIN-TEXT-color: #fff; /* Color of text by default */
     --MAIN-TITLES-TEXT-color: unset; /* Color of titles h2-h3-h4-h5-h6 */
     --MAIN-LINK-color: #00a3f3; /* Color of links */
     --MAIN-LINK-HOVER-color: #7bc5eb; /* Color of hovered links */
     --MAIN-ANCHOR-color: #00a3f3; /* color of anchors on titles */
+    --MENU-HEADER-BG-color: #00000000; /* Background color of menu header */
 
-    --MAIN-CODE-color: #f8f8f2; /* fallback color for code block background */
-    --MAIN-CODE-BG-color: #000000; /* fallback color for code block text */
-
-    --MENU-HOME-LINK-color: unset; /* Color of the home button text */
-    --MENU-HOME-LINK-HOVER-color: unset; /* Color of the hovered home button text */
-
-    --MENU-HEADER-BG-color: unset; /* Background color of menu header (NOTE: We use --MENU-HEADER-BG instead) */
-    --MENU-HEADER-BORDER-color: unset; /*Color of menu header border */
-
-    --MENU-SEARCH-BG-color: #167ad0; /* Search field background color (by default borders + icons) */
+    /* Sidebar */
+    --MENU-SEARCH-BG-color: #167ad0; /* Search field background color */
     --MENU-SEARCH-BOX-color: #33a1ff; /* Override search field border color */
     --MENU-SEARCH-BOX-ICONS-color: #a1d2fd; /* Override search field icons color */
 
-    --MENU-SECTIONS-ACTIVE-BG-color: #00000033; /* Background color of the active section and its children */
-
-    --MENU-SECTIONS-BG-color: unset; /* Background color of other sections */
-    --MENU-SECTIONS-LINK-color: #fff; /* Color of links in menu */
-    --MENU-SECTIONS-LINK-HOVER-color: #cfcfcf; /* Color of links in menu, when hovered */
     --MENU-SECTION-ACTIVE-CATEGORY-color: #fff; /* Color of active category text */
     --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #ffffff1c; /* Color of background for the active category (only) */
-
-    --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
-    --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
-
-    /* The following vars were added by us */
-    /* Background color of side bar: */
-    /*--MENU-SECTIONS-BG: linear-gradient(150deg, #7e00ff 0%, #00e0f4 75%, #00ff5a 100%); */
-    --MENU-SECTIONS-BG: linear-gradient(
+    --MENU-SECTIONS-BG-color: linear-gradient(
         150deg,
         #8000ffb3 0%,
         #00bcf4b3 75%,
         #00ff5ab3 100%
-    );
+    ); /* Background color of side bar */
+    --MENU-SECTIONS-ACTIVE-BG-color: #00000033; /* Background color of the active section and its children */
+    --MENU-SECTIONS-LINK-color: #fff; /* Color of links in menu */
+    --MENU-SECTIONS-LINK-HOVER-color: #cfcfcf; /* Color of links in menu, when hovered */
 
+    --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
     --MAIN-BG-color: #202020; /* Background color of main content */
 
-    --MAIN-H1-color: #0060f3; /* Color of h1 headlines */
-    --MAIN-H2-color: #f300b2; /* Color of h2 headlines */
-    --MAIN-H3-color: #00f3d3; /* Color of h3 headlines */
-    --MAIN-H4-color: #ffffff; /* Color of h4 headlines */
-    --MAIN-H5-color: #ffffff; /* Color of h5 headlines */
-    --MAIN-H6-color: #ffffff; /* Color of h6 headlines */
+    /* Code blocks and inline code */
+    --CODE-BLOCK-color: #f8f8f2; /* Color of code block font */
+    --CODE-BLOCK-BG-color: #000000; /* Background color of code block */
+    --CODE-INLINE-color: #00f3d3; /* Color of inline code (code enclosed in `single backticks`) */
+    --CODE-INLINE-BG-color: #2d2e33a8; /* Background color of inline code */
 
-    --MAIN-INLINECODE-color: #00f3d3; /* Color of inline code (code enclosed in `single backticks`) */
-    --MAIN-INLINECODE-BG-color: #2d2e33a8; /* Background color of inline code */
-    --MAIN-INLINECODE-BORDER-color: unset; /* Border color of inline code (NOTE: We disabled borders by default) */
+    /* Headlines */
+    --MAIN-TITLES-H1-color: #0060f3; /* Color of h1 headlines */
+    --MAIN-TITLES-H2-color: #f300b2; /* Color of h2 headlines */
+    --MAIN-TITLES-H3-color: #00f3d3; /* Color of h3 headlines */
+    --MAIN-TITLES-H4-color: #ffffff; /* Color of h4 headlines */
+    --MAIN-TITLES-H5-color: #ffffff; /* Color of h5 headlines */
+    --MAIN-TITLES-H6-color: #ffffff; /* Color of h6 headlines */
 
-    --NAV-TOPBAR-BG-color: #2a2a2a; /* Background color of the navigation header/top bar */
-
-    --FOOTER-TEXT-color: #fff; /* Footer text color. The one holding the copyright disclaimer. */
-}
-
-/* Notices */
-div.notices.warning {
-    border-color: #b90000;
-    background-color: #000000;
-    color: #ff0000;
-}
-
-div.notices.tip {
-    border-color: #00b901;
-    background-color: #000000;
-    color: #2bff00;
-}
-
-div.notices.note {
-    border-color: #b97300;
-    background-color: #000000;
-    color: #ffb200;
-}
-
-div.notices.info {
-    border-color: #002cb9;
-    background-color: #000000;
-    color: #0094ff;
-}
-
-.notices pre {
-    background-color:#141414 !important;
+    /* Notices */
+    --BOX-BG-color: #000;
+    --BOX-ORANGE-color: #b97300;
+    --BOX-ORANGE-TEXT-color: #ffb200;
+    --BOX-BLUE-color: #002cb9;
+    --BOX-BLUE-TEXT-color: #0094ff;
+    --BOX-GREEN-color: #00b901;
+    --BOX-GREEN-TEXT-color: #2bff00;
+    --BOX-RED-color: #b90000;
+    --BOX-RED-TEXT-color: #ff0000;
 }
 
 /* General */
@@ -96,9 +61,12 @@ html {
 
 body {
     font-family: "Public Sans";
-    font-size: 0.85rem !important;
+    font-size: 0.85rem;
     letter-spacing: -0.015rem;
-    background-color: var(--MAIN-BG-color);
+}
+
+#body-inner {
+    padding: 0 2rem 4rem 2rem;
 }
 
 h1,
@@ -113,74 +81,38 @@ h6 {
 body h1 {
     font-size: 2.5rem;
     text-transform: unset;
-    color: var(--MAIN-H1-color);
 }
 
 body h2 {
     font-size: 1.8rem !important;
-    color: var(--MAIN-H2-color) !important;
 }
 
 body h3 {
     font-size: 1.4rem !important;
-    color: var(--MAIN-H3-color) !important;
 }
 
 body h4 {
     font-size: 1.3rem !important;
-    color: var(--MAIN-H4-color) !important;
 }
 
 body h5 {
     font-size: 1.2rem !important;
-    color: var(--MAIN-H5-color) !important;
 }
 
 body h6 {
     font-size: 1.1rem !important;
-    color: var(--MAIN-H6-color) !important;
 }
 
-/* Links */
 #body a.highlight:after {
     height: unset;
 }
 
-#body a.highlight:hover {
+#body a:hover {
     text-shadow: 0 0 0.4rem var(--MAIN-LINK-color);
-}
-
-/* Inline code & code blocks */
-pre code {
-    white-space: pre;
-}
-
-
-code {
-    font-family: "Fira Code";
-    color: var(--MAIN-INLINECODE-color);
-    background-color: var(--MAIN-INLINECODE-BG-color);
-    /* Disable borders for inline code completely.
-       If desired, comment the line below and set 
-       border-color instead. */
-    border: 0;
-    /* border-color: var(--MAIN-INLINECODE-BORDER-color);  */
-}
-
-/* Custom Copy-to-clipboard button style in code blocks */
-pre .copy-to-clipboard {
-    background-image: url(../images/clippy.svg);
-    background-color: #303030ab;
-    border-color: #00000000;
-    border-radius: 0.65rem;
-    padding: 0.625rem;
-    right: 0.85rem;
-    top: 0.75rem;
 }
 
 /* Sidebar */
 #sidebar {
-    background: var(--MENU-SECTIONS-BG);
     font-size: 0.75rem;
 }
 
@@ -194,14 +126,55 @@ pre .copy-to-clipboard {
     border-bottom: unset;
 }
 
-/* Header */
-#top-bar {
-    background-color: var(--NAV-TOPBAR-BG-color);
-}
-
 /* Footer */
 #footer {
-    color: var(--FOOTER-TEXT-color);
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.65rem;
+    text-align: center;
+}
+
+#footer p {
+    margin: 0;
+}
+
+/* Inline code & code blocks */
+pre code {
+    white-space: pre;
+}
+
+code {
+    font-family: "Fira Code";
+    /* Disable borders for inline code completely.
+    If desired, comment the line below and set 
+       border-color instead. */
+    border: 0;
+}
+
+/* Searchbox icon color */
+.searchbox label,
+.searchbox span {
+    color: var(--MENU-SEARCH-BOX-ICONS-color);
+}
+
+/* Custom Copy-to-clipboard button style in code blocks */
+pre .copy-to-clipboard-button {
+    border-radius: 1rem;
+    border-color: #00000000 !important;
+    color: #000 !important;
+    font-size: 110%;
+    padding: 4px 2px 3px 22px;
+    right: 0.65rem;
+    top: 0.55rem;
+}
+
+pre .copy-to-clipboard-button:hover {
+    background-color: #fff !important;
+}
+
+/* Notices */
+.notices pre {
+    background-color: #141414 !important;
 }
 
 /* Fonts */
@@ -211,6 +184,7 @@ pre .copy-to-clipboard {
     font-style: normal;
     font-weight: 300;
     src: url("/fonts/PublicSans-Light.woff2") format("woff2");
+    font-display: swap;
 }
 
 @font-face {
@@ -218,6 +192,7 @@ pre .copy-to-clipboard {
     font-style: normal;
     font-weight: 600;
     src: url("/fonts/PublicSans-SemiBold.woff2") format("woff2");
+    font-display: swap;
 }
 
 /* Headline font */
@@ -226,6 +201,7 @@ pre .copy-to-clipboard {
     font-style: normal;
     font-weight: 500;
     src: url("/fonts/metropolis-bold-webfont.woff2") format("woff2");
+    font-display: swap;
 }
 
 /* Code font */
@@ -234,6 +210,7 @@ pre .copy-to-clipboard {
     font-style: normal;
     font-weight: 400;
     src: url("/fonts/FiraCode-Regular.ttf") format("truetype");
+    font-display: swap;
 }
 
 /* @font-face {
@@ -241,52 +218,5 @@ pre .copy-to-clipboard {
     font-style: normal;
     font-weight: 300;
     src: url("/fonts/LodeSansMono.otf") format("opentype");
+    font-display: swap;
 } */
-
-/* --- Navigation button restructuring starts here --- */
-/* Our navigation header is deviating from the Hugo Relearn theme currently.
-   For that reason we need to re-style the [pevious/next] navigation buttons. */
-#navigation {
-    position: relative;
-    top: 23%;
-    float: right;
-}
-
-#navigation a.highlight:after {
-    display: none;
-}
-
-/* Workaround for white background on hover */
-#navigation .nav {
-    background-color: #ffffff00 !important;
-}
-
-#body .nav {
-    font-size: 1.25rem;
-    position: inherit;
-}
-
-#body .nav > i {
-    display: unset;
-}
-
-#top-github-link {
-    padding-right: 2rem;
-}
-
-/* Workaround for breadcrumb bar pushing "Edit this page" down on smaller horizontal res */
-#body #breadcrumbs {
-    width: unset;
-    max-width: 70%;
-}
-
-/* Media queries */
-@media only all and (max-width: 59.938em) {
-    #body #navigation {
-        position: inherit;
-        margin-right: inherit !important;
-        width: inherit;
-        display: inherit;
-    }
-}
-/* --- Navigation button restructuring ends here --- */

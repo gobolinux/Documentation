@@ -19,7 +19,7 @@ right-click the image, then at the Storage pane, add a second optical drive, and
 insert the `VBoxGuestAdditions.iso` file that should be somewhere in your
 VirtualBox installation:
 
-![VirtualBox Settings - Storage](/images/virtualbox_storage.png)
+![VirtualBox Settings - Storage](../images/virtualbox_storage.png)
 
 Then, boot GoboLinux normally in VirtalBox, and do the following:
 
