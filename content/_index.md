@@ -1,3 +1,7 @@
+---
+title: Wiki
+---
+
 # GoboLinux Wiki
 
 ## Welcome !
@@ -31,7 +35,7 @@ encouraged to submit your contributions!
 The [**Commands**]({{<ref "Commands" >}}) section is a list of GoboLinux
 specific commands and tooling, that will make your life with GoboLinux much
 easier. They are what makes GoboLinux so enjoyable and are very much in the
-spirit of: **_„Do One Thing and Do It Well!"_**.
+spirit of: **_„Do One Thing and Do It Well!”_**.
 
 ### Couldn't find what you were looking for?
 

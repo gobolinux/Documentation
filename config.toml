@@ -1,8 +1,8 @@
 baseURL = 'https://wiki.gobolinux.org/'
 languageCode = 'en-us'
 title = 'GoboLinux Documentation'
-disablePathToLower = true
 theme = "hugo-theme-relearn"
+disablePathToLower = true
 
 # Required in cases the project is *not* hosted under the root directory of the domain
 # relativeURLs = false
