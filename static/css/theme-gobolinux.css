@@ -1,6 +1,7 @@
 /* Main color scheme */
 :root {
     /* General */
+    --MAIN-font: "Public Sans"; /* Font family of main content */
     --MAIN-BG-color: #202020; /* Background color of main content */
     --MAIN-TEXT-color: #fff; /* Color of text by default */
     --MAIN-LINK-color: #00a3f3; /* Color of links */
@@ -8,6 +9,7 @@
     --MAIN-ANCHOR-color: #00a3f3; /* color of anchors on headlines */
 
     /* Headlines */
+    --MAIN-TITLES-TEXT-font: "Metropolis"; /* Font family of headlines */
     --MAIN-TITLES-H1-color: #0060f3; /* Color of h1 headlines */
     --MAIN-TITLES-H2-color: #f300b2; /* Color of h2 headlines */
     --MAIN-TITLES-H3-color: #00f3d3; /* Color of h3 headlines */
@@ -36,6 +38,7 @@
     --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
 
     /* Code blocks and inline code */
+    --CODE-font: "Fira Code"; /* Font family of code */
     --CODE-BLOCK-color: #f8f8f2; /* Color of code block font */
     --CODE-BLOCK-BG-color: #000000; /* Background color of code block */
     --CODE-INLINE-color: #00f3d3; /* Color of inline code (code enclosed in `single backticks`) */
@@ -59,22 +62,12 @@ html {
 }
 
 body {
-    font-family: "Public Sans";
     font-size: 0.85rem;
     letter-spacing: -0.015rem;
 }
 
-#body-inner {
-    padding: 0 2rem 4rem 2rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Metropolis";
+h1 {
+    font-family: var(--MAIN-TITLES-TEXT-font) !important;
 }
 
 body h1 {
@@ -143,10 +136,6 @@ pre code {
 }
 
 code {
-    font-family: "Fira Code";
-    /* Disable borders for inline code completely.
-    If desired, comment the line below and set 
-       border-color instead. */
     border: 0;
 }
 
