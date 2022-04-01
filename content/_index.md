@@ -18,7 +18,7 @@ If you have just installed GoboLinux on your PC, make sure to check out the
 [Known Issues and Fixes]({{<ref "GoboLinux-017-Known-Issues-and-Fixes" >}})
 section first.
 
-## How to find yourself around
+## How to find your way around
 
 You can start with the [**Overview**]({{<ref "Overview" >}}) section on the
 left. This should get you started.
