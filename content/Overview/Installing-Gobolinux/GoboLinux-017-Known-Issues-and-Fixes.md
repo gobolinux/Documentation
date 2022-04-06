@@ -27,27 +27,6 @@ ifconfig lo up
 echo ifconfig lo up >> /System/Settings/BootScripts/BootUp
 ```
 
-### Update expired SSL certificates!
-
-The recent
-[Let's Encrypt fiasko](https://www.reddit.com/r/PFSENSE/comments/pyce7q/sept_29th_lets_encrypt_intermediate_ca_expiration/)
-requires our users to update their certificate database on the system. Otherwise
-tools like `git`, `wget`, `Compile` etc might not work correctly.
-
-The appropriate way to resolve this, is by running:
-
-```fish
-sudo Compile --no-check-certificate CA-Certificates
-```
-
-and
-
-```fish
-sudo sh /System/Index/bin/update-ca-certificates
-```
-
-afterwards.
-
 ### InstallPackage searches for packages from GoboLinux 016 rather than 017
 
 Update the search URL used by the `Scripts` package:
@@ -88,6 +67,27 @@ hold references to the former. The following command fixes that:
 ```fish
 GrepReplace -B "^Ncurses " "NcursesW " /Programs/*/*/Resources/Dependencies
 ```
+
+### Update expired SSL certificates!
+
+The recent
+[Let's Encrypt fiasko](https://www.reddit.com/r/PFSENSE/comments/pyce7q/sept_29th_lets_encrypt_intermediate_ca_expiration/)
+requires our users to update their certificate database on the system. Otherwise
+tools like `git`, `wget`, `Compile` etc might not work correctly.
+
+The appropriate way to resolve this, is by running:
+
+```fish
+sudo Compile --no-check-certificate CA-Certificates
+```
+
+and
+
+```fish
+sudo sh /System/Index/bin/update-ca-certificates
+```
+
+afterwards.
 
 ### Outstanding issues
 
