@@ -40,7 +40,7 @@
     --CODE-font: "Fira Code"; /* Font family of code */
     --CODE-BLOCK-color: #f8f8f2; /* Color of code block font */
     --CODE-BLOCK-BG-color: var(--MAIN-BG-color); /* Background color of code block */
-    --CODE-BLOCK-BORDER-color: #00f3d365; /* Background color of code block border */
+    --CODE-BLOCK-BORDER-color: #00f3d3a9; /* Background color of code block border */
     --CODE-INLINE-color: #00f3d3; /* Color of inline code (code enclosed in `single backticks`) */
     --CODE-INLINE-BG-color: #2d2e33a8; /* Background color of inline code */
 
@@ -147,7 +147,7 @@ body h6 {
 /* Inline code & code blocks */
 pre {
     background-color: var(--CODE-BLOCK-BG-color) !important;
-    border-radius: 0.8rem
+    border-radius: 0.8rem;
 }
 
 pre code {
