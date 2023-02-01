@@ -2,7 +2,7 @@
 title: Wiki
 ---
 
-# GoboLinux Wiki
+# GoboLinux Knowledge Base
 
 ## Welcome !
 
