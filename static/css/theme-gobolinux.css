@@ -2,20 +2,19 @@
 :root {
     /* General */
     --MAIN-font: "Public Sans"; /* Font family of main content */
-    --MAIN-BG-color: #202020; /* Background color of main content */
+    --MAIN-BG-color: #171717; /* Background color of main content */
     --MAIN-TEXT-color: #fff; /* Color of text by default */
-    --MAIN-LINK-color: #00a3f3; /* Color of links */
-    --MAIN-LINK-HOVER-color: #7bc5eb; /* Color of hovered links */
-    --MAIN-ANCHOR-color: #00a3f3; /* color of anchors on headlines */
+    --MAIN-LINK-color: #21d0f3; /* Color of links */
+    --MAIN-LINK-HOVER-color: #21f3c0; /* Color of hovered links */
 
     /* Headlines */
     --MAIN-TITLES-TEXT-font: "Metropolis"; /* Font family of headlines */
-    --MAIN-TITLES-H1-color: #0060f3; /* Color of h1 headlines */
-    --MAIN-TITLES-H2-color: #f300b2; /* Color of h2 headlines */
-    --MAIN-TITLES-H3-color: #00f3d3; /* Color of h3 headlines */
-    --MAIN-TITLES-H4-color: #ffffff; /* Color of h4 headlines */
-    --MAIN-TITLES-H5-color: #ffffff; /* Color of h5 headlines */
-    --MAIN-TITLES-H6-color: #ffffff; /* Color of h6 headlines */
+    --MAIN-TITLES-H1-color: #9f75f9; /* Color of h1 headlines */
+    --MAIN-TITLES-H2-color: #21c5f3; /* Color of h2 headlines */
+    --MAIN-TITLES-H3-color: #21f3c0; /* Color of h3 headlines */
+    --MAIN-TITLES-H4-color: #fff; /* Color of h4 headlines */
+    --MAIN-TITLES-H5-color: #fff; /* Color of h5 headlines */
+    --MAIN-TITLES-H6-color: #fff; /* Color of h6 headlines */
 
     /* Sidebar */
     --MENU-HEADER-BG-color: #00000000; /* Background color of menu header */
@@ -35,28 +34,39 @@
     --MENU-SECTIONS-ACTIVE-BG-color: #00000033; /* Background color of the active section and its children */
     --MENU-SECTIONS-LINK-color: #fff; /* Color of links in menu */
     --MENU-SECTIONS-LINK-HOVER-color: #cfcfcf; /* Color of links in menu, when hovered */
-    --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
+    --MENU-VISITED-color: #21f3c0; /* Color of 'page visited' icons in menu */
 
     /* Code blocks and inline code */
     --CODE-font: "Fira Code"; /* Font family of code */
     --CODE-BLOCK-color: #f8f8f2; /* Color of code block font */
-    --CODE-BLOCK-BG-color: #000000; /* Background color of code block */
+    --CODE-BLOCK-BG-color: var(--MAIN-BG-color); /* Background color of code block */
+    --CODE-BLOCK-BORDER-color: #00f3d3a9; /* Background color of code block border */
     --CODE-INLINE-color: #00f3d3; /* Color of inline code (code enclosed in `single backticks`) */
     --CODE-INLINE-BG-color: #2d2e33a8; /* Background color of inline code */
 
     /* Notices */
-    --BOX-BG-color: #000;
+    --BOX-BG-color: var(--MAIN-BG-color);
     --BOX-ORANGE-color: #b97300;
     --BOX-ORANGE-TEXT-color: #ffb200;
     --BOX-BLUE-color: #002cb9;
     --BOX-BLUE-TEXT-color: #0094ff;
     --BOX-GREEN-color: #00b901;
     --BOX-GREEN-TEXT-color: #2bff00;
-    --BOX-RED-color: #b90000;
+    --BOX-RED-color: #a11414;
     --BOX-RED-TEXT-color: #ff0000;
 }
 
 /* General */
+
+/* Widen content width */
+@media screen and (min-width: 1430px) {
+    #body .flex-block-wrapper {
+        min-width: calc( 1430px - 300px - 2 * 3.25rem );
+        width: calc( 1430px - 300px - 2 * 3.25rem );
+        max-width: calc( 1430px - 300px - 2 * 3.25rem );
+    }
+}
+
 html {
     font-size: 20px;
 }
@@ -113,6 +123,10 @@ body h6 {
     padding-top: 1rem;
 }
 
+#sidebar ul.topics > li > a b {
+    opacity: 0.6;
+}
+
 #header-wrapper,
 #sidebar hr {
     border-bottom: unset;
@@ -131,6 +145,11 @@ body h6 {
 }
 
 /* Inline code & code blocks */
+pre {
+    background-color: var(--CODE-BLOCK-BG-color) !important;
+    border-radius: 0.8rem;
+}
+
 pre code {
     white-space: pre;
 }
@@ -163,6 +182,15 @@ pre .copy-to-clipboard-button:hover {
 /* Notices */
 .notices pre {
     background-color: #141414 !important;
+}
+
+div.box {
+    border: 1px solid;
+    border-color: var(--VARIABLE-BOX-color);
+}
+
+div.box, div.box > .box-content {
+    border-radius: 0.8rem;
 }
 
 /* Fonts */
