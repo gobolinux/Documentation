@@ -49,16 +49,6 @@ cd /Programs/Compile/Current
 git pull && UpdateSettings --auto Compile
 ```
 
-### Wrong version of SQLite
-
-The version under `/Programs/SQLite/3310100` is actually `3.8.2`. Please run the
-following commands to update to its most recent version:
-
-```fish
-Compile SQLite
-RemoveProgram SQLite 3310100
-```
-
 ### Dependencies files with reference to Ncurses
 
 `Ncurses` has been replaced by `NcursesW`, but some packages' metadata still
@@ -78,6 +68,7 @@ tools like `git`, `wget`, `Compile` etc might not work correctly.
 The appropriate way to resolve this, is by running:
 
 ```fish
+sudo Compile --no-check-certificate Automake
 sudo Compile --no-check-certificate CA-Certificates
 ```
 
@@ -88,6 +79,16 @@ sudo sh /System/Index/bin/update-ca-certificates
 ```
 
 afterwards.
+
+### Wrong version of SQLite
+
+The version under `/Programs/SQLite/3310100` is actually `3.8.2`. Please run the
+following commands to update to its most recent version:
+
+```fish
+Compile SQLite
+RemoveProgram SQLite 3310100
+```
 
 ### Outstanding issues
 
