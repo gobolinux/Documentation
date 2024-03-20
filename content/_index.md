@@ -21,16 +21,17 @@ section first.
 ## How to find your way around
 
 You can start with the [**Overview**]({{<ref "Overview" >}}) section on the
-left. This should get you started.
+left. This should get you started. You can use your ←left/→right buttons to
+navigate. Or use the our text search!
 
 The main [**Documentation**]({{<ref "Documentation" >}}) section contains some
 further and advanced topics , but if you're serious about your GoboLinux journey
 you should read this one, too!
 
 The [**Howtos**]({{<ref "Howtos" >}}) section holds articles to solve a specific
-problem and guides you through step-by-step. We rely heavily on the community
-contributions here. If you feel something important is not covered, feel
-encouraged to submit your contributions!
+problem and guides you through step-by-step. We rely heavily on community
+contributions here. If you feel something important is not covered, be
+encouraged to submit your contribution!
 
 The [**Commands**]({{<ref "Commands" >}}) section is a list of GoboLinux
 specific commands and tooling, that will make your life with GoboLinux much
@@ -39,8 +40,8 @@ spirit of: **_„Do One Thing and Do It Well!”_**.
 
 ### Couldn't find what you were looking for?
 
-GoboLinux is a very broad project, that has its roots back to almighty 2002!
-Thus you might find outdated or even missing documentation... but do not
+GoboLinux is a very broad project, that has its roots back to 2002!
+Thus you may find outdated or even missing documentation... but do not
 despair!!
 
 Our community is here to help you out. If you have read the documentation but
@@ -48,17 +49,21 @@ still require further assistance, reach out to us on:
 
 -   **IRC chat:** [#gobolinux](irc://irc.libera.chat/gobolinux) at
     irc.libera.chat
--   **Our forums:** https://gobolinux.discourse.group/
+-   **our forums:** https://gobolinux.discourse.group/
 
 Please be patient, we are a small community but we do make an effort to help
 everybody out.
 
 ## Contributing
 
-We rely heavily on community contributions for our wiki! Therefore if you find
-the documentation lacking or even erroneous we depend on your contribution!
+We rely heavily on community contributions for our wiki! Therefore, if you find
+the documentation lacking or even erroneous – you are in charge! 😀
 
-You will find the wiki's source code along with its contents living in a
-[dedicated repository](https://github.com/gobolinux/Documentation) on Github!
+As you see, there is a an edit button ✏️ on the top right corner of each wiki article, leading you directly to an editable form on GitHub! We're using [Markdown](https://mcshelby.github.io/hugo-theme-relearn/cont/markdown/index.html) formatting BTW.
 
-Please refer the to README there to find yourself around, or file an issue! 😀
+You will the wiki's contents along its source code living in a
+[dedicated repository](https://github.com/gobolinux/Documentation) on Github, too!
+
+Please refer its to README to find yourself around the wikis code, or just file an issue! 😄
+
+You're already on a great journey with Gobo! ![gobo](../images/goboicon.png.png)
