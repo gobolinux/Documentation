@@ -57,7 +57,7 @@ Example: `Library_Function`, `LibraryVariable`
 
 Example: `local_function`, `localvariable`
 
--   All-upercase variables are reserved for standard Unix usage
+-   All-uppercase variables are reserved for standard Unix usage
 
 Example: `PATH`, `LD_LIBRARY_PATH`
 
