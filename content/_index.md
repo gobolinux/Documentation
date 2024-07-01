@@ -66,4 +66,4 @@ You will the wiki's contents along its source code living in a
 
 Please refer its to README to find yourself around the wikis code, or just file an issue! 😄
 
-You're already on a great journey with Gobo! ![gobo](../images/goboicon.png.png)
+You're already on a great journey with Gobo! ![gobo](../images/goboicon.png)
