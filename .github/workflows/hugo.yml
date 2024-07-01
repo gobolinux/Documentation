@@ -81,6 +81,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.DREAMHOST_DEPLOY_KEY }}
 
+      - name: Add Dreamhost to known hosts
+        run: ssh-keyscan ${{ secrets.DREAMHOST_HOST }} >> ~/.ssh/known_hosts
+
       - name: Sync files to Dreamhost
         env:
           DREAMHOST_USER: ${{ secrets.DREAMHOST_USER }}
