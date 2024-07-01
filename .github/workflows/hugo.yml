@@ -84,6 +84,14 @@ jobs:
       - name: Add Dreamhost to known hosts
         run: ssh-keyscan ${{ secrets.DREAMHOST_HOST }} >> ~/.ssh/known_hosts
 
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: ./public
+
+      - name: Display structure of downloaded files
+        run: ls -R
+
       - name: Sync files to Dreamhost
         env:
           DREAMHOST_USER: ${{ secrets.DREAMHOST_USER }}
