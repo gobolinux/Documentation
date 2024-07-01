@@ -92,10 +92,11 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
 
-      - name: Sync files to Dreamhost
+      - name: Sync files and uncompress on Dreamhost
         env:
           DREAMHOST_USER: ${{ secrets.DREAMHOST_USER }}
           DREAMHOST_HOST: ${{ secrets.DREAMHOST_HOST }}
           DREAMHOST_PATH: ${{ secrets.DREAMHOST_PATH }}
         run: |
           rsync -avz --delete public/ $DREAMHOST_USER@$DREAMHOST_HOST:$DREAMHOST_PATH
+          ssh $DREAMHOST_USER@$DREAMHOST_HOST "tar -xvf $DREAMHOST_PATH/github-pages/artifact.tar -C $DREAMHOST_PATH"
