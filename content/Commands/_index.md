@@ -10,7 +10,7 @@ pre: "<b>005 </b>"
 
 ### Finding
 
--   [UpdateRecipesd](UpdateRecipes) - Update local copy of recipe store
+-   [UpdateRecipes](UpdateRecipes) - Update local copy of recipe store
 -   [GetAvailable](GetAvailable) - Search for GoboLinux recipes and precompiled
     packages
 -   [FindPackage](FindPackage) - Search for packages and recipes, locally or
