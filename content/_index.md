@@ -48,7 +48,7 @@ Our community is here to help you out. If you have read the documentation but
 still require further assistance, reach out to us on:
 
 -   **IRC chat:** [#gobolinux](irc://irc.libera.chat/gobolinux) at
-    irc.libera.chat
+    irc.libera.chat (slow channel, please be patient and wait up to 24h for a response)
 -   **Our forums:** https://github.com/orgs/gobolinux/discussions
 
 Please be patient, we are a small community but we do make an effort to help
