@@ -48,7 +48,7 @@ Our community is here to help you out. If you have read the documentation but
 still require further assistance, reach out to us on:
 
 -   **IRC chat:** [#gobolinux](irc://irc.libera.chat/gobolinux) at
-    irc.libera.chat (slow channel, please be patient and wait up to 24h for a response)
+    irc.libera.chat (slow channel, please be patient and wait up to 24h for a response!)
 -   **Our forums:** https://github.com/orgs/gobolinux/discussions
 
 Please be patient, we are a small community but we do make an effort to help
@@ -61,9 +61,9 @@ the documentation lacking or even erroneous – you are in charge! 😀
 
 As you see, there is a an edit button ✏️ on the top right corner of each wiki article, leading you directly to an editable form on GitHub! We're using [Markdown](https://mcshelby.github.io/hugo-theme-relearn/cont/markdown/index.html) formatting BTW.
 
-You will the wiki's contents along its source code living in a
-[dedicated repository](https://github.com/gobolinux/Documentation) on Github, too!
+You'll find the wiki's contents and source code living in a
+[dedicated repository](https://github.com/gobolinux/Documentation) on Github.
 
 Please refer its to README to find yourself around the wikis code, or just file an issue! 😄
 
-You're already on a great journey with Gobo! ![gobo](../images/goboicon.png)
+You're great journey with Gobo has just begun! ![gobo](../images/goboicon.png)
