@@ -1,6 +1,6 @@
 ---
 title: "Running under HyperV"
-menuTitle: "HyperV"
+linkTitle: "HyperV"
 weight: 4
 ---
 

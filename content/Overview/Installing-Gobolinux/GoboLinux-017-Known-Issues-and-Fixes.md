@@ -1,6 +1,6 @@
 ---
 title: "GoboLinux 017 Known Issues and Fixes"
-menuTitle: "Known Issues and Fixes"
+linkTitle: "Known Issues and Fixes"
 weight: 1
 ---
 
@@ -96,7 +96,7 @@ Some problems have been reported by our users and are currently being fixed by
 our team. They are:
 
 -   `ContributePackage` is not working -- use
-    [ContributeRecipe]({{<ref "GitHub-contributor-workflow" >}}) instead.
+    [ContributeRecipe]({{%relref "GitHub-contributor-workflow" %}}) instead.
 -   Copy-and-paste does not work out of the box from a VM. Compiling
     `spice-vdagent` and loading its daemon should fix that.
 -   Sometimes when trying to `Compile` an already-installed Program, the build

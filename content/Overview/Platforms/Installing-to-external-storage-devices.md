@@ -1,6 +1,6 @@
 ---
 title: "Installing to external storage devices"
-menuTitle: "External storage devices"
+linkTitle: "External storage devices"
 weight: 6
 ---
 

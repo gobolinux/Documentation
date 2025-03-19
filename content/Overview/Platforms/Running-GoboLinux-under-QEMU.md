@@ -1,6 +1,6 @@
 ---
 title: "Running GoboLinux under QEMU"
-menuTitle: "QEMU"
+linkTitle: "QEMU"
 weight: 5
 ---
 

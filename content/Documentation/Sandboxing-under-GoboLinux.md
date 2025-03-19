@@ -7,7 +7,7 @@ filesystem writes during the software install phase are limited to an
 appropriate part of the filesystem. GoboLinux 016 ships with two different
 sandbox implementations.
 
-[UnionSandbox]({{<ref "UnionSandbox" >}}) is a modern implementation which uses
+[UnionSandbox]({{%relref "UnionSandbox" %}}) is a modern implementation which uses
 file system unions to achieve isolation. It is the default sandbox installer.
 
 **FiboSandbox** is a fallback method used when a union-filesystem implementation
@@ -29,4 +29,4 @@ utility, passing along the modified arguments.
 Under **FiboSandbox**, the wrapper discards change-of-owner directives before
 calling `real_install`.
 
-[GoboLinux dark corners]({{<ref "GoboLinux-dark-corners" >}})
+[GoboLinux dark corners]({{%relref "GoboLinux-dark-corners" %}})

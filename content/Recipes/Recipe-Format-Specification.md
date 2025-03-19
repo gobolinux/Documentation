@@ -250,7 +250,7 @@ Supported recipe types (also known as modes), to be given as argument to
 #### configure_options=(\<array of options>`)
 
 Flags to be passed to the configure script. These flags are passed in addition
-to default flags detected by [`PrepareProgram`]({{<ref "PrepareProgram" >}})
+to default flags detected by [`PrepareProgram`]({{%relref "PrepareProgram" %}})
 (such as `--prefix` and `--sysconfdir` on autoconf-based configure scripts),
 unless the override_default_options declaration is used.
 
@@ -289,7 +289,7 @@ Haskell. Some options are only relevant for _cabal_:
 Flags to be passed to the Cabal configure operation.
 
 These flags are passed in addition to default flags detected by
-[`PrepareProgram`]({{<ref "PrepareProgram" >}}) (such as --prefix) unless the
+[`PrepareProgram`]({{%relref "PrepareProgram" %}}) (such as --prefix) unless the
 override_default_options declaration is used.
 
 #### runhaskell
@@ -519,7 +519,7 @@ _Valid modes: configure, makefile_
 
 By default, Compile only generates directories in the target location right
 before the installation step. This is useful for the --no-install option (see
-the [Compile]({{<ref "Compile" >}}) reference entry). Unfortunately, some
+the [Compile]({{%relref "Compile" %}}) reference entry). Unfortunately, some
 programs fail during the configuration of compilation step if the target
 directory does not already exist. Use this entry to appease those programs.
 
@@ -675,7 +675,7 @@ A message to display to the user after installation.
 _Valid modes: all_
 
 Additional options to be passed to
-[`SandboxInstall`]({{<ref "SandboxInstall" >}}). This is typically used to
+[`SandboxInstall`]({{%relref "SandboxInstall" %}}). This is typically used to
 expand the sandbox to allow additional directories in _special_ situations (such
 as the installation of kernel modules). _Avoid_ using this option as much as
 possible, and make sure you know what you're doing when you do use it.
@@ -693,7 +693,7 @@ sandbox_options=(
 _Valid modes: all_
 
 Additional options to be passed to
-[`SymlinkProgram`]({{<ref "SymlinkProgram" >}}). This should be used sparingly,
+[`SymlinkProgram`]({{%relref "SymlinkProgram" %}}). This should be used sparingly,
 in order to remedy unusual situations (the FreeType package used it to avoid a
 XFree86 conflict which affected the proper functioning of the system). _Avoid_
 using this option if possible; there are almost always better alternatives.
@@ -745,7 +745,7 @@ with_gtk=(
 )
 ```
 
-See [Use flags]({{<ref "Use-flags" >}}).
+See [Use flags]({{%relref "Use-flags" %}}).
 
 ## Hooks
 
@@ -854,7 +854,7 @@ execution. Instead, use `using_<flag>_<hook>()`. For instance,
 `using_gtk_pre_build()` is run at the time specified above, in the event that
 the `gtk` use flag is set.
 
-See [Use flags]({{<ref "Use-flags" >}}).
+See [Use flags]({{%relref "Use-flags" %}}).
 
 ### New Hooks
 
@@ -1047,7 +1047,7 @@ against when compiling.
 This is a directory which may contain, in `Defaults/Settings`, the default
 contents of the `/Programs/Foo/Settings` directory. The contents of this
 directory will be reconciled with the currently active settings, if any, by
-[`UpdateSettings`]({{<ref "UpdateSettings" >}}). The original defaults will
+[`UpdateSettings`]({{%relref "UpdateSettings" %}}). The original defaults will
 remain in `/Programs/Foo/Version/Resources/Defaults`, so that a user may revert
 to them as necessary.
 
@@ -1073,14 +1073,14 @@ Xorg 7.2
 ZLib 1.2.3
 ```
 
-The tags such as `[lame]` specify [Use Flags]({{<ref "Use-flags" >}}), optional
+The tags such as `[lame]` specify [Use Flags]({{%relref "Use-flags" %}}), optional
 dependencies which affect the compilation of the package, if present.
 
 When the range string (i.e., `=`, `>=`, etc) is omitted, the dependency
 resolution algorithm assumes it to be `>=`.
 
 The exact algorithm for complex dependencies is specified in
-[`CheckDependencies`]({{<ref "CheckDependencies" >}}) but allows for a sequence
+[`CheckDependencies`]({{%relref "CheckDependencies" %}}) but allows for a sequence
 of options separated by `|` (or) each of which is a sequence of versions
 separated by "," (and). Precedence is left to right. Thus:
 
@@ -1090,7 +1090,7 @@ GCC < 4.0.0 | >= 4.1.0, != 4.1.2 | ICC > 2.0.0
 
 means a GCC version less than 4.0.0 or a GCC version greater than 4.1.0 but not
 equal to 4.1.2 or an ICC version greater than 2.0.0. See the code for
-[`CheckDependencies`]({{<ref "CheckDependencies" >}}) for the exact algorithm.
+[`CheckDependencies`]({{%relref "CheckDependencies" %}}) for the exact algorithm.
 
 Dependencies to language-specific package managers can be fulfilled using the
 [Aliens](https://github.com/gobolinux/AlienVFS) subsystem, using the syntax
@@ -1102,8 +1102,8 @@ the Alien provider and the package manager itself:
 -   CPAN dependencies ignore version information
     ([CPAN only installs the latest version](http://stackoverflow.com/questions/260593/how-can-i-install-a-specific-version-of-a-set-of-perl-modules))
 
-For more info, see [Dependencies]({{<ref "Dependencies" >}}) and [Use
-Flags]({{<ref "Use-flags" >}}).
+For more info, see [Dependencies]({{%relref "Dependencies" %}}) and [Use
+Flags]({{%relref "Use-flags" %}}).
 
 #### Description
 
@@ -1135,8 +1135,8 @@ updating of certain settings. See [[Hints File]].
 
 #### PostInstall
 
-A bash script which is executed by [`Compile`]({{<ref "Compile" >}}) (or
-[`InstallPackage`]({{<ref "InstallPackage" >}})) after installation. This is for
+A bash script which is executed by [`Compile`]({{%relref "Compile" %}}) (or
+[`InstallPackage`]({{%relref "InstallPackage" %}})) after installation. This is for
 one-time actions which should not be associated with any stage of the
 compilation or installation process, but run after the Program is symlinked.
 They are kept separate from the Recipe file so that they are retained in binary
@@ -1173,7 +1173,7 @@ See the
 #### `Tasks/`
 
 Files in this subdirectory are [boot script
-tasks]({{<ref "Boot-script-tasks" >}}), linked to `System/Tasks`. These are
+tasks]({{%relref "Boot-script-tasks" %}}), linked to `System/Tasks`. These are
 roughly equivalent to the `/etc/init.d` scripts found in many distributions.
 
 Note that files under `System/Tasks/` should be marked as executable! Otherwise

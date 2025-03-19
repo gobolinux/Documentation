@@ -1,6 +1,6 @@
 ---
 title: "Running under VirtualBox"
-menuTitle: "VirtualBox"
+linkTitle: "VirtualBox"
 weight: 2
 ---
 

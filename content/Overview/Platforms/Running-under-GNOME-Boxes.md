@@ -1,6 +1,6 @@
 ---
 title: "Running under GNOME Boxes"
-menuTitle: "GNOME Boxes"
+linkTitle: "GNOME Boxes"
 weight: 1
 ---
 

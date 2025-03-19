@@ -12,9 +12,9 @@ or specific architectures.
 
 ## Installing packages
 
-[InstallPackage]({{<ref "InstallPackage" >}}) is the GoboLinux script for
+[InstallPackage]({{%relref "InstallPackage" %}}) is the GoboLinux script for
 installing binary packages. If you want
-[InstallPackage]({{<ref "InstallPackage" >}}) to look for the most recent Gimp
+[InstallPackage]({{%relref "InstallPackage" %}}) to look for the most recent Gimp
 package available, you can run
 
 ```fish
@@ -57,11 +57,11 @@ or other dependency is missing.
 ## Installing packages from the LiveCD
 
 See [Installing Packages from the
-LiveCD]({{<ref "Installing-packages-from-the-LiveCD" >}}).
+LiveCD]({{%relref "Installing-packages-from-the-LiveCD" %}}).
 
 ## Removing packages
 
-See [Removing programs]({{<ref "Commands" >}}Removing-programs/)
+See [Removing programs]({{%relref "Commands" %}}Removing-programs/)
 
 ## Creating packages
 
@@ -84,7 +84,7 @@ binary package is to make a tarball of the program directory, copy over the
 `Resources/` directory from the Compile recipe, and generate a few additional
 files, which are also placed under `Resources/`.
 
-This is accomplished by the [CreatePackage]({{<ref "CreatePackage" >}}) command.
+This is accomplished by the [CreatePackage]({{%relref "CreatePackage" %}}) command.
 
 ### Preparation
 
@@ -97,7 +97,7 @@ sensible default settings, honoring the application defaults if possible.
 ### The CreatePackage command
 
 In order to create a package, run the
-[CreatePackage]({{<ref "CreatePackage" >}}) utility with the package name as a
+[CreatePackage]({{%relref "CreatePackage" %}}) utility with the package name as a
 parameter. For example,
 
 ```fish

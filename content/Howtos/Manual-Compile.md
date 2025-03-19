@@ -3,9 +3,9 @@ title: "Manual Compile"
 ---
 
 Building and installing manually from source. _This should only be done if one
-is unable to [create a recipe]({{<ref "Writing-Recipes" >}}) or as an excercise.
+is unable to [create a recipe]({{%relref "Writing-Recipes" %}}) or as an excercise.
 With very few exceptions, the work of creating a recipe is rewarded by the ease
-of using [Compile]({{<ref "Compile" >}})._
+of using [Compile]({{%relref "Compile" %}})._
 
 {{% notice note %}} If you use a local tarball, be sure to have the tarball
 placed at `/Data/Compile/Archives`. Also make sure you know whether you have a

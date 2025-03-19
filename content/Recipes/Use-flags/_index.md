@@ -63,8 +63,8 @@ USE="+foo -bar +bar@FooBar"
 ## Use Flags in Recipes
 
 Flags should be listed in the
-[Dependencies]({{<ref "Recipe-Format-Specification#dependencies" >}}) or
-[BuildDependencies]({{<ref "Recipe-Format-Specification#builddependencies" >}})
+[Dependencies]({{%relref "Recipe-Format-Specification#dependencies" %}}) or
+[BuildDependencies]({{%relref "Recipe-Format-Specification#builddependencies" %}})
 file in the same manner as the existing cross/!cross flag:
 
 ```fish

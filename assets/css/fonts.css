@@ -1,0 +1,42 @@
+/* Main font */
+@font-face {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/PublicSans-Light.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/PublicSans-SemiBold.woff2") format("woff2");
+    font-display: swap;
+}
+
+/* Headline font */
+@font-face {
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/metropolis-bold-webfont.woff2") format("woff2");
+    font-display: swap;
+}
+
+/* Code font */
+@font-face {
+    font-family: "Krypton";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/MonaspaceKryptonVarVF[wght,wdth,slnt].woff2") format("woff2");
+    font-display: swap;
+}
+
+/* @font-face {
+    font-family: 'Lode Sans Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/LodeSansMono.otf") format("opentype");
+    font-display: swap;
+} */

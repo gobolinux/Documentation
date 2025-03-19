@@ -9,7 +9,7 @@ on the wonderful
 ## Project Structure
 
 You will find the documentation under `contents/` in markdown format. The
-projects main stylesheet lays under `static/css/`.
+projects main stylesheet lays under `assets/css/`.
 
 The main configuration is stored in `config.toml`.
 
@@ -17,7 +17,7 @@ If you need more info consult the official
 [Hugo](https://gohugo.io/documentation/) and
 [Hugo Relearn Theme](https://mcshelby.github.io/hugo-theme-relearn/) docs.
 
-## How to run locally
+## How to run Documentation locally
 
 1. Install [Hugo](https://gohugo.io/). If you are on GoboLinux simply run
    `Compile Hugo`.

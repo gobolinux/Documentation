@@ -21,7 +21,7 @@ If you are not comfortable using your real name, using a nick/alias is also
 acceptable.
 
 For more options, check out the dedicated
-[Compile.conf]({{<ref "Compile.conf" >}}) page.
+[Compile.conf]({{%relref "Compile.conf" %}}) page.
 
 ## Create a GitHub pull request using `ContributeRecipe`
 

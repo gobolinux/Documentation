@@ -15,6 +15,6 @@ weight: 5
     Package names differing only in capitalization should be considered to be
     two versions of the same app.
 
-The [`NamingConventions`]({{<ref "NamingConventions" >}}) script applies these
+The [`NamingConventions`]({{%relref "NamingConventions" %}}) script applies these
 rules and several heuristics to generate a suitable GoboLinux package name from
 an input.

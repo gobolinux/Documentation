@@ -18,7 +18,7 @@ rm -rf Gimp/2.8.18 
 ```
 
 But since this leaves behind dangling symlinks, GoboLinux offers the
-[`RemoveProgram`]({{<ref "RemoveProgram" >}}) utility, which removes the program
+[`RemoveProgram`]({{%relref "RemoveProgram" %}}) utility, which removes the program
 and all links pointing to its files in `/System/Index`.
 
 ```fish
@@ -49,11 +49,11 @@ SymlinkProgram gimp 2.1.18
 
 ## Maintaining symlinks
 
-GoboLinux has a script called [`RemoveBroken`]({{<ref "RemoveBroken" >}}). that
+GoboLinux has a script called [`RemoveBroken`]({{%relref "RemoveBroken" %}}). that
 removes dangling symlinks from `/System/Index` tree. It can be useful to run
 after manipulating directories under `/Programs`.
 
-[`RemoveBroken`]({{<ref "RemoveBroken" >}}) takes a list of files, and removes
+[`RemoveBroken`]({{%relref "RemoveBroken" %}}) takes a list of files, and removes
 those that are dangling symlinks. If no arguments are provided, the script takes
 filenames from standard input (typically through a pipe).
 

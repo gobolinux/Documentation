@@ -75,7 +75,7 @@ tree.
 A detail that might surprise you at first is that when you look at the root
 directory (with `ls` or graphical tools), you don't see the legacy directories,
 even though you can `cd` into them. They are certainly there — they are just
-kept hidden using [GoboHide]({{<ref "GoboHide" >}}), a kernel modification
+kept hidden using [GoboHide]({{%relref "GoboHide" %}}), a kernel modification
 designed to conceal the legacy tree from the usual system view. (GoboHide is of
 course optional — GoboLinux works just as well using standard Linux kernels.)
 

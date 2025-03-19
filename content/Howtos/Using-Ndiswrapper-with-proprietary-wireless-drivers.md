@@ -1,6 +1,6 @@
 ---
 title: "Using Ndiswrapper with Proprietary Wireless Drivers"
-menuTitle: "Ndiswrapper & Proprietary WIFI drivers"
+linkTitle: "Ndiswrapper & Proprietary WIFI drivers"
 ---
 
 First of all, my network card is a Broadcom 802.11b/g WLAN pci card built-in in

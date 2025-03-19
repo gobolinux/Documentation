@@ -1,6 +1,6 @@
 ---
 title: "Configuring the Boot Process"
-menuTitle: "Startup and System settings"
+linkTitle: "Startup and System settings"
 weight: 7
 ---
 
@@ -9,13 +9,13 @@ by editing the configuration files used for startup.
 
 ## General architecture
 
-The [BootDriver]({{<ref "BootDriver" >}}) script
-(`/Programs/BootScript/`<version>`/bin/BootDriver`) manages boot-related tasks.
+The [BootDriver]({{%relref "BootDriver" %}}) script
+(`/Programs/BootScript/<version>/bin/BootDriver`) manages boot-related tasks.
 The `init` program (from the Sysvinit package) running as `PID 1` calls
 BootDriver as specified in `/System/Settings/inittab`.
 
-[BootDriver]({{<ref "BootDriver" >}}) first loads the [boot theme
-file]({{<ref "Boot-Themes" >}}) specified in `/System/Settings/BootOptions`.
+[BootDriver]({{%relref "BootDriver" %}}) first loads the [boot theme
+file]({{%relref "Boot-Themes" %}}) specified in `/System/Settings/BootOptions`.
 Then BootDriver runs the appropriate boot script for the task at hand (startup,
 shutdown, etc.)
 
@@ -51,7 +51,7 @@ can add this line to `/System/Settings/BootScripts/Console`:
 Exec "Making keyboard speedy..." kbdrate -r 30 -d 250
 ```
 
-GoboLinux also provides ["boot tasks"]({{<ref "Boot-script-tasks" >}}) as a more
+GoboLinux also provides ["boot tasks"]({{%relref "Boot-script-tasks" %}}) as a more
 sophisticated way of managing services.
 
 ## Configuration options
@@ -148,7 +148,7 @@ layout. For example, in KDE you can configure this at the KDE Control Center.
 #### Mouse
 
 The mouse pointer for the graphical display is defined in an `InputDevice`
-section in `/System/Settings/xorg.conf`. The [Installer]({{<ref "Installer" >}})
+section in `/System/Settings/xorg.conf`. The [Installer]({{%relref "Installer" %}})
 should correctly detect your hardware and set suitable defaults for your system.
 If not, you can always try a failsafe setup such as:
 

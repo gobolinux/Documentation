@@ -1,0 +1,279 @@
+/* Main color scheme */
+:root {
+    /* General */
+    font-size: 20px;
+    --MAIN-WIDTH-MAX: 71.5rem; /* Width of main content */
+    --MAIN-BG-color: #171717; /* Background color of main content */
+    --MAIN-font: "Public Sans"; /* Font family of main content */
+    --MAIN-letter-spacing: -0.015rem; /* Default letter spacing */
+    --MAIN-TEXT-color: #fff; /* Default text color */
+    --MAIN-LINK-color: #21d0f3; /* Default link color */
+    --MAIN-LINK-HOVER-color: #21f3c0; /* Default color of hovered links */
+
+    /* Headlines */
+    --MAIN-TITLES-font: "Metropolis"; /* Font family of headlines */
+    --MAIN-TITLES-H1-font: "Metropolis"; /* Font family of h1 headlines */
+    --MAIN-TITLES-letter-spacing: -1px; /* Letter spacing of headlines */
+    --MAIN-TITLES-H1-TEXT-color: #9f75f9; /* Color of h1 headlines */
+    --MAIN-TITLES-H2-TEXT-color: #21c5f3; /* Color of h2 headlines */
+    --MAIN-TITLES-H3-TEXT-color: #21f3c0; /* Color of h3 headlines */
+    --MAIN-TITLES-H4-TEXT-color: #fff; /* Color of h4 headlines */
+    --MAIN-TITLES-H5-TEXT-color: #fff; /* Color of h5 headlines */
+    --MAIN-TITLES-H6-TEXT-color: #fff; /* Color of h6 headlines */
+
+    /* Sidebar */
+    --MENU-WIDTH-L: 15rem; /* Sidebar width */
+    --MENU-HEADER-BG-color: #00000000; /* Background color of menu header */
+    --MENU-SEARCH-BG-color: #167ad0; /* Search field background color */
+    --MENU-SEARCH-BORDER-color: unset; /* Search field border color */
+    --MENU-SEARCH-BOX-ICONS-color: #a1d2fd; /* Search field icons color */
+
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #fff; /* Color of active category text */
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #ffffff1c; /* Color of background for the active category */
+
+    --MENU-SECTIONS-BG-color: linear-gradient(
+        150deg,
+        #8000ffb3 0%,
+        #00bcf4b3 75%,
+        #00ff5ab3 100%
+    ); /* Background color of side bar */
+    --MENU-SECTIONS-ACTIVE-BG-color: #00000033; /* Background color of the active section and its children */
+    --MENU-HOME-LINK-color: #fff; /* Color of version selector */
+    --MENU-HOME-LINK-HOVER-color: #cfcfcf; /* Color of version selector, when hovered */
+    --MENU-SECTIONS-LINK-color: #fff; /* Color of links in menu */
+    --MENU-SECTIONS-LINK-HOVER-color: #cfcfcf; /* Color of links in menu, when hovered */
+    --MENU-VISITED-color: #21f3c0; /* Color of "page visited" icons in menu */
+
+    /* Code blocks and inline code */
+    --CODE-font: "Krypton"; /* Font family of code */
+    --CODE-BLOCK-color: #f8f8f2; /* Color of code block font */
+    --CODE-BLOCK-BG-color: var(--MAIN-BG-color); /* Background color of code block */
+    --CODE-BLOCK-BORDER-color: #00f3d3a9; /* Background color of code block border */
+    --CODE-INLINE-color: #00f3d3; /* Color of inline code (code enclosed in `single backticks`) */
+    --CODE-INLINE-BG-color: #2d2e3380; /* Background color of inline code */
+
+    /* Notices */
+    --BOX-BG-color: var(--MAIN-BG-color);
+    --BOX-ORANGE-color: #b97300;
+    --BOX-ORANGE-TEXT-color: #ffb200;
+    --BOX-BLUE-color: #002cb9;
+    --BOX-BLUE-TEXT-color: #0094ff;
+    --BOX-GREEN-color: #00b901;
+    --BOX-GREEN-TEXT-color: #2bff00;
+    --BOX-RED-color: #a11414;
+    --BOX-RED-TEXT-color: #ff0000;
+}
+
+/* General */
+::selection {
+    color: darkslategray;
+    background: #00ffec;
+}
+
+li::marker {
+    color: var(--MAIN-TITLES-H1-TEXT-color);
+}
+
+a:visited {
+    color: var(--MAIN-TITLES-H1-TEXT-color);
+}
+
+body {
+    font-size: 0.85rem;
+}
+
+body h1 {
+    font-size: 2.5rem;
+    text-transform: unset;
+}
+
+body h2 {
+    font-size: 1.8rem;
+}
+
+body h3 {
+    font-size: 1.4rem;
+}
+
+body h4 {
+    font-size: 1.2rem;
+}
+
+body h5 {
+    font-size: 1.1rem;
+}
+
+body h6 {
+    font-size: 1rem;
+}
+
+body h2, h3, .article-subheading, h4, h5, h6 {
+    margin: 2rem 0 1rem 0;
+}
+
+
+#R-body a.highlight:after {
+    height: unset;
+}
+
+#R-body a:hover {
+    text-shadow: 0 0 0.4rem var(--MAIN-LINK-color);
+    text-decoration: none;
+}
+
+/* Inline code & code blocks */
+pre {
+    background-color: black;
+    border-radius: 0.8rem;
+    line-height: 17.25px;
+    code {
+        font-size: .75rem;
+        white-space: pre;
+    }
+}
+
+code {
+    font-size: 92%;
+    border: 0;
+    border-radius: 7px;
+    letter-spacing: -0.015rem;
+    &.highlight {
+        padding: 1px 3px;
+    }
+}
+
+/* Searchbox */
+.searchbox {
+    input {
+       height: 1.375rem;
+    }
+    > button {
+        top: .14rem;
+    }
+    label, span {
+       color: var(--MENU-SEARCH-BOX-ICONS-color);
+    }
+}
+
+/* Search page */
+#R-searchresults .autocomplete-suggestion {
+    &:hover {
+        border-radius: .8rem;
+        background: rgb(56 56 56 / 37%);
+        .context {
+            background: unset;
+        }
+    }
+    > .breadcrumbs {
+        color: unset;
+    }
+}
+
+/* Search result highlighter */
+mark.search {
+    padding: 0 0.4rem;
+}
+
+/* Custom Copy-to-clipboard button style in code blocks */
+button.block-copy-to-clipboard-button {
+    color: var(--CODE-BLOCK-BORDER-color);
+    border-radius: 1rem;
+    right: 0.65rem;
+    top: 0.55rem;
+}
+
+button.block-copy-to-clipboard-button:hover {
+    color: var(--CODE-BLOCK-BG-color);
+    background-color: var(--CODE-BLOCK-BORDER-color);
+    border-color: transparent;
+}
+
+/* Notices */
+details.box {
+    border: 1px solid;
+    border-color: var(--VARIABLE-BOX-color);
+    > .box-content {
+        background-color: black;
+    }
+}
+
+details.box, details.box > .box-content {
+    border-radius: 0.8rem;
+}
+
+.notices pre {
+    background-color: #141414 !important;
+}
+
+/* Sidebar */
+#R-sidebar {
+    font-size: 0.75rem;
+    .nav-title {
+        font-family: var(--MAIN-font);
+        color: var(--MENU-SECTIONS-LINK-HOVER-color);
+        text-transform: unset;
+        padding-top: 1rem;
+    }
+    .R-sidebarmenu > ul {
+        margin-top: .6rem;
+    }
+    .R-sidebarmenu > ul > li > a b {
+        font-family: var(--CODE-font);
+        font-weight: 400;
+        font-variation-settings: "wght" 350;
+        opacity: 0.6;
+        padding-left: .2rem;
+    }
+}
+
+#R-header-wrapper, #R-homelinks, #R-content-wrapper > * {
+    /* Get rid of 1px wide border in sidebar */
+    border-inline-end-style: none;
+}
+
+/* Center and align collapsable arrows */
+/* big arrows: */
+#R-sidebar ul.collapsible-menu.enlarge > li > label {
+    display: flex;
+    height: 2.4rem;
+    align-items: center;
+    padding-left: .2rem;
+}
+
+/* small arrows: */
+#R-sidebar ul.collapsible-menu ul.collapsible-menu > li {
+    > label {
+        display: flex;
+        height: 1.7rem;
+        align-items: center;
+        padding-right: 0.35rem;
+        .fas {
+            font-size: .6rem;
+        }
+    }
+    > input:checked + label > .fa-chevron-right {
+        transform: rotate(90deg) translateX(-3px);
+    }
+}
+/* Fix weird hover glitch */
+#R-sidebar ul.collapsible-menu > li > label:after  {
+    content: none;
+}
+
+/* History cleaner */
+#R-shortcutmenu-controls {
+    .R-historyclearer {
+        padding-top: 1rem;
+    }
+}
+
+/* Sidebar footer */
+#R-footer {
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.65rem;
+    text-align: center;
+    p {
+        margin: 0;
+    }
+}

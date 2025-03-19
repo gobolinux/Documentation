@@ -1,26 +1,32 @@
 baseURL = 'https://wiki.gobolinux.org/'
+
 languageCode = 'en-us'
 title = 'GoboLinux Documentation'
 theme = "hugo-theme-relearn"
 disablePathToLower = true
 
-# Required in cases the project is *not* hosted under the root directory of the domain
-# relativeURLs = false
-
-# For search functionality
 [outputs]
-home = [ "HTML", "RSS", "JSON"]
+  home = [ "html", "rss", "print"]
+  page = ['html', 'rss', 'print']
+  section = ['html', 'rss', 'print']
 
 [params]
   editURL = "https://github.com/gobolinux/Documentation/edit/master/content/"
-  description = "Documentation for GoboLinux"
-  author = "NEONsys.org"
   themeVariant = "gobolinux"
-  titleSeparator = "::"
+  titleSeparator = "|"
   disableLandingPageButton = true
   showVisitedLinks = true
   disableInlineCopyToClipBoard = true
   disableSeoHiddenPages = true
+  alwaysopen = false
+  collapsibleMenu = true
+  [params.author]
+    author = "NEONsys.org"
+  [[params.sidebarfootermenus]]
+    identifier='controls'
+    type = 'custom'
+    [[params.sidebarfootermenus.elements]]
+      type = 'historyclearer'
 
 [markup]
   [markup.tableOfContents]
@@ -32,31 +38,37 @@ home = [ "HTML", "RSS", "JSON"]
     guessSyntax = false # if set to true, avoid unstyled code if no language was given but mermaid code fences will not work anymore
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-fw fa-globe'></i> Homepage"
+name = "Homepage"
+pre = "<i class='fas fa-fw fa-globe'></i> "
 url = "https://gobolinux.org/"
-weight = 0
-
-[[menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> Repository"
-url = "https://github.com/gobolinux"
 weight = 1
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-fw fa-users'></i> Community"
-url = "https://gobolinux.discourse.group/"
+name = "Repository"
+pre = "<i class='fab fa-fw fa-github'></i> "
+url = "https://github.com/gobolinux"
 weight = 2
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-fw fa-book'></i> Recipes"
-url = "https://github.com/gobolinux/Recipes"
+name = "Community"
+pre = "<i class='fas fa-fw fa-users'></i> "
+url = "https://gobolinux.discourse.group/"
 weight = 3
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-fw fa-download'></i> Download ISO"
-url = "https://gobolinux.org/downloads.html"
+name = "Recipes"
+pre = "<i class='fas fa-fw fa-book'></i> "
+url = "https://github.com/gobolinux/Recipes"
 weight = 4
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> Showcases"
-url = "https://gobolinux.org/screenshots.html"
+name = "Download ISO"
+pre = "<i class='fas fa-fw fa-download'></i> "
+url = "https://gobolinux.org/downloads.html"
 weight = 5
+
+[[menu.shortcuts]]
+name = "Showcases"
+pre = "<i class='fas fa-fw fa-camera'></i> "
+url = "https://gobolinux.org/screenshots.html"
+weight = 6

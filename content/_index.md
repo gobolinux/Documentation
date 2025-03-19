@@ -1,8 +1,8 @@
 ---
-title: Wiki
+title: GoboLinux Knowledge Base
+description: Documentation for GoboLinux
+type: home
 ---
-
-# GoboLinux Knowledge Base
 
 ## Welcome !
 
@@ -15,25 +15,25 @@ distribution. Therefore to make your journey as enjoyable possible, you should
 carefully **read** and **consult** the documentation.
 
 If you have just installed GoboLinux on your PC, make sure to check out the
-[Known Issues and Fixes]({{<ref "GoboLinux-017-Known-Issues-and-Fixes" >}})
+[Known Issues and Fixes]({{%relref "GoboLinux-017-Known-Issues-and-Fixes" %}})
 section first.
 
 ## How to find your way around
 
-You can start with the [**Overview**]({{<ref "Overview" >}}) section on the
+You can start with the [**Overview**]({{%relref "Overview" %}}) section on the
 left. This should get you started. You can use your ←left/→right buttons to
 navigate. Or use the our text search!
 
-The main [**Documentation**]({{<ref "Documentation" >}}) section contains some
+The main [**Documentation**]({{%relref "Documentation" %}}) section contains some
 further and advanced topics , but if you're serious about your GoboLinux journey
 you should read this one, too!
 
-The [**Howtos**]({{<ref "Howtos" >}}) section holds articles to solve a specific
+The [**Howtos**]({{%relref "Howtos" %}}) section holds articles to solve a specific
 problem and guides you through step-by-step. We rely heavily on community
 contributions here. If you feel something important is not covered, be
 encouraged to submit your contribution!
 
-The [**Commands**]({{<ref "Commands" >}}) section is a list of GoboLinux
+The [**Commands**]({{%relref "Commands" %}}) section is a list of GoboLinux
 specific commands and tooling, that will make your life with GoboLinux much
 easier. They are what makes GoboLinux so enjoyable and are very much in the
 spirit of: **_„Do One Thing and Do It Well!”_**.
@@ -66,4 +66,4 @@ You'll find the wiki's contents and source code living in a
 
 Please refer its to README to find yourself around the wikis code, or just file an issue! 😄
 
-You're great journey with Gobo has just begun! ![gobo](../images/goboicon.png)
+You're great journey with Gobo has begun! ![gobo](images/goboicon.png)

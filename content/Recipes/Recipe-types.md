@@ -14,7 +14,7 @@ recipe_type:
 **`configure_options=(<array></array>)`**
 
 Flags to be passed to the configure script. These flags are passed in addition
-to default flags detected by [`PrepareProgram`]({{<ref "PrepareProgram" >}})
+to default flags detected by [`PrepareProgram`]({{%relref "PrepareProgram" %}})
 (such as --prefix and --sysconfdir on autoconf-based configure scripts), unless
 the override_default_options declaration is used.
 
@@ -52,7 +52,7 @@ options are only relevant for cabal:
 
 Flags to be passed to the Cabal configure operation. These flags are passed in
 addition to default flags detected by
-[`PrepareProgram`]({{<ref "PrepareProgram" >}}) (such as --prefix) unless the
+[`PrepareProgram`]({{%relref "PrepareProgram" %}}) (such as --prefix) unless the
 override_default_options declaration is used.
 
 #### runhaskell

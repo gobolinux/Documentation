@@ -1,9 +1,9 @@
 ---
 title: "GoboLinux Command Reference"
-menuTitle: "Commands"
+linkTitle: "Commands"
 weight: 5
 chapter: false
-pre: "<b>005 </b>"
+pre: "<b>005&thinsp;</b>"
 ---
 
 ## Package management

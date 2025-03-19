@@ -60,7 +60,7 @@ there's no point on shipping one with the distribution. There is, however, an
 optional patch used to hide the legacy tree, so that only the GoboLinux tree
 appears in the filesystem (`/System`, `/Programs` and so on). This patch is
 called GoboHide, and it can be downloaded for various kernel releases on its
-[documentation page]({{<ref "GoboHide" >}}).
+[documentation page]({{%relref "GoboHide" %}}).
 
 ## Installing the distribution
 

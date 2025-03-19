@@ -10,8 +10,8 @@ There are two ways to create recipes:
 
 The utilities for accomplishing this are:
 
-[`NewVersion`]({{<ref "NewVersion" >}}), [`EditRecipe`]({{<ref "EditRecipe" >}})
-and [`MakeRecipe`]({{<ref "MakeRecipe" >}}).
+[`NewVersion`]({{%relref "NewVersion" %}}), [`EditRecipe`]({{%relref "EditRecipe" %}})
+and [`MakeRecipe`]({{%relref "MakeRecipe" %}}).
 
 Once the recipe is done and compiled, a packed version of it will show up in
 `/Data/Compile/PackedRecipes` (or the location specified in
@@ -46,8 +46,8 @@ Then save the file and exit `nano` (`Control`+`O`, `Enter`, `Control`+`X`).
 ## Updating old recipes
 
 When a recipe for an older version of a given package already exists, you don't
-need to run [`MakeRecipe`]({{<ref "MakeRecipe" >}}) again. Instead, use
-[`NewVersion`]({{<ref "NewVersion" >}}) with the package name and version to
+need to run [`MakeRecipe`]({{%relref "MakeRecipe" %}}) again. Instead, use
+[`NewVersion`]({{%relref "NewVersion" %}}) with the package name and version to
 create a new recipe starting with the previous recipe contents. For example:
 
 ```fish
@@ -65,14 +65,14 @@ NewVersion GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
 ```
 
 If the version of the package has not changed, and only minor recipe updates are
-needed, [`NewVersion`]({{<ref "NewVersion" >}}) will not work as it will not
+needed, [`NewVersion`]({{%relref "NewVersion" %}}) will not work as it will not
 copy the same version of a recipe over. In this case,
-[`EditRecipe`]({{<ref "EditRecipe" >}}) is the tool to use.
+[`EditRecipe`]({{%relref "EditRecipe" %}}) is the tool to use.
 
 ## Creating new recipes
 
 If you are writing a recipe from scratch, the "[Recipe Format
-Specification]({{<ref Recipe-Format-Specification>}})" documentation will prove
+Specification]({{%relref Recipe-Format-Specification %}})" documentation will prove
 useful.
 
 ### Naming new recipes
@@ -95,7 +95,7 @@ What's a good name? One that follows our set of package naming guidelines:
 2. If the capitalization is undefined (ie, all-lowercase) or inconsistent (for
    example, showing up in different forms in the README), our set of
    capitalization rules, as defined by the
-   [`NamingConventions`]({{<ref "NamingConventions" >}}) script, apply.
+   [`NamingConventions`]({{%relref "NamingConventions" %}}) script, apply.
 3. Applications are sovereign in defining their usage of hyphens and underscores
    to separate words in their names, when they are consistent.
 4. Packages should never have spaces in their names. For example, use
@@ -105,13 +105,13 @@ What's a good name? One that follows our set of package naming guidelines:
    case-insensitive manner.
 
 The set of rules are defined in
-[`NamingConventions`]({{<ref "NamingConventions" >}}) and deal with detecting
+[`NamingConventions`]({{%relref "NamingConventions" %}}) and deal with detecting
 common prefix and suffix patterns, such as "Tools" and "Utils" and
 vowel-consonant heuristics.
 
 When a program name is not explicitly given to `Compile` (e.g., if it assumes it
 from an URL), it passes the inferred name through
-[`NamingConventions`]({{<ref "NamingConventions" >}}). In recent versions, some
+[`NamingConventions`]({{%relref "NamingConventions" %}}). In recent versions, some
 rules are enforced even in explicitly given names -- one of them is that all
 program names must start with a capital letter.
 
@@ -126,9 +126,9 @@ editor (console based). This is my first recipe, and it is now in the main
 MakeRecipe http://unc.dl.sourceforge.net/sourceforge/joe-editor/joe-3.1.tar.gz
 ```
 
-Based on the filename of the URL, [`MakeRecipe`]({{<ref "MakeRecipe" >}})
+Based on the filename of the URL, [`MakeRecipe`]({{%relref "MakeRecipe" %}})
 detects that the program it is compiling is called joe (which, after a run of
-the [`NamingConventions`]({{<ref "NamingConventions" >}}) script, becomes Joe),
+the [`NamingConventions`]({{%relref "NamingConventions" %}}) script, becomes Joe),
 and that the version is 3.1.
 
 {{% notice note %}} In case it didn't, you could have passed it explicitly as
@@ -138,7 +138,7 @@ parameters: {{% /notice %}}
 MakeRecipe HardToDetect 2.0 http://example.org/htd_2_0.tar.bz2
 ```
 
-[`MakeRecipe`]({{<ref "MakeRecipe" >}}) should now report that it has downloaded
+[`MakeRecipe`]({{%relref "MakeRecipe" %}}) should now report that it has downloaded
 the sources, and found that it uses **autoconf**. Which is a good thing, as that
 means there is very little work to be done on our part. So now we compile and
 install the package on our machine.
@@ -151,7 +151,7 @@ Wait a few minutes, and Joe will be compiled and installed on your system.
 
 When you create a new recipe for a program that's not yet available in the
 GoboLinux recipe, please consider contributing it to the community! (See section
-"[GitHub Contributor Workflow]({{<ref GitHub-contributor-workflow>}})" for
+"[GitHub Contributor Workflow]({{%relref GitHub-contributor-workflow %}})" for
 details.)
 
 TODO: `Compile`'ing progams that don't use **autoconf**, ones that escape the
@@ -193,13 +193,13 @@ To share your recipe, use this command:
 ContributeRecipe <program name>
 ```
 
-[ContributeRecipe]({{<ref "ContributeRecipe" >}}) will submit a Pull Request on
+[ContributeRecipe]({{%relref "ContributeRecipe" %}}) will submit a Pull Request on
 GitHub so that the project maintainers can review it and merge it. Please note
 that you will need a valid account at github.com in order to contribute recipes.
 
 Approved committers should refer to these [
-Guidelines]({{<ref "How-to-commit-recipes" >}}) (others should use
-[`ContributeRecipe`]({{<ref "ContributeRecipe" >}}).)
+Guidelines]({{%relref "How-to-commit-recipes" %}}) (others should use
+[`ContributeRecipe`]({{%relref "ContributeRecipe" %}}).)
 
 ## Advanced topics
 
@@ -279,7 +279,7 @@ suffix `.in`, e.g. `01-root_to_uid.patch.in`, on the patch you tell `Compile`
 that it should parse the file and generate the patch `01-root_to_uid.patch`,
 with certain strings replaced with values dependant on the system. The same
 [variables used in
-recipes]({{<ref "Recipe-Format-Specification#dynamic-variables" >}}) can be used
+recipes]({{%relref "Recipe-Format-Specification#dynamic-variables" %}}) can be used
 in patches but prefixed with the string `Compile_` and padded with `@%` and
 `%@`. So, for example, if `rlocate` depended on the application `foo`, the
 variable used in recipes to reference `foo`'s installation directory would be
@@ -296,7 +296,7 @@ application as well as directories belonging to the dependency `foo`:
 
 ### Binary recipes
 
-Full article: [Binary recipes]({{<ref "Binary-Recipes" >}})
+Full article: [Binary recipes]({{%relref "Binary-Recipes" %}})
 
 Binary recipes are used to install vendor-supplied precompiled binaries of
 software. They are usually created using the manifest recipe type, and have
@@ -307,19 +307,19 @@ software. They are usually created using the manifest recipe type, and have
 The `Compile` tool can handle numerous types of packages, each of them with a
 different build technique.
 
-When [`MakeRecipe`]({{<ref "MakeRecipe" >}}) is invoked, it downloads the
+When [`MakeRecipe`]({{%relref "MakeRecipe" %}}) is invoked, it downloads the
 program's source, uncompresses it and tries to detect what kind of build system
 it uses. And, surely, there are some packages on which
-[`MakeRecipe`]({{<ref "MakeRecipe" >}}) cannot detect that. This is when the
+[`MakeRecipe`]({{%relref "MakeRecipe" %}}) cannot detect that. This is when the
 user's interaction is needed, and some manual modifications on the Recipe must
 be done.
 
-As presented in the [`Compile`]({{<ref "Compile" >}}) section, `Compile` handles
+As presented in the [`Compile`]({{%relref "Compile" %}}) section, `Compile` handles
 compilation of programs according to a few number of "recipe types". For each
 type, there are valid declarations that you can specify, to adapt the behavior
 of `Compile` to the needs of the program that is about to be compiled. The full
 list of declarations is at Appendix "[Recipe format
-specification]({{<ref "Recipe-Format-Specification" >}})". Let's see some of the
+specification]({{%relref "Recipe-Format-Specification" %}})". Let's see some of the
 main options for each type:
 
 #### configure recipes
@@ -344,10 +344,10 @@ Much progress in this area has been made in the last few years, especially with
 flags to be passed explicitly.
 
 In **configure**-based recipes, `Compile` uses
-[`PrepareProgram`]({{<ref "PrepareProgram" >}}) to detect if some standard
+[`PrepareProgram`]({{%relref "PrepareProgram" %}}) to detect if some standard
 parameters such as `--prefix` are supported by the configure script. If the
 program does not support these parameters and
-[`PrepareProgram`]({{<ref "PrepareProgram" >}}) detects them incorrectly, you
+[`PrepareProgram`]({{%relref "PrepareProgram" %}}) detects them incorrectly, you
 can use `override_default_options=yes` to have `configure` use _only_ the
 options given by you in `configure_options`.
 
@@ -461,4 +461,4 @@ This is for recipes based on SCons.
 "Manifest" recipes are used for programs that just need to copy files over. The
 `manifest` array-style entry lists colon-separated pairs, indicating source file
 and target destination, relative to `target`. (See "[Recipe format
-specification]({{<ref "Recipe-Format-Specification" >}})" for details).
+specification]({{%relref "Recipe-Format-Specification" %}})" for details).

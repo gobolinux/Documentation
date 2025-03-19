@@ -13,7 +13,7 @@ mount /Mount/CD-ROM
 mount /Mount/CD-ROM/GoboLinux-NonBase.squashfs /Mount/ SquashFS -t squashfs -o loop=/System/Kernel/Devices/loop0`
 ```
 
-Now, you can use [`InstallPackage`]({{<ref "InstallPackage" >}}) to install
+Now, you can use [`InstallPackage`]({{%relref "InstallPackage" %}}) to install
 software from the `Program/` directory of the Live-CD:
 
 ```fish

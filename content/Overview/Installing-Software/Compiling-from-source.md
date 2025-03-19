@@ -31,7 +31,7 @@ listing the most recently uploaded recipes first.
 ### Command-line options
 
 Compile has a number of command-line options, which are [listed
-here]({{<ref "Compile" >}}). The following are especially useful.
+here]({{%relref "Compile" %}}). The following are especially useful.
 
 When using the `--batch` or `-b` automatically attempts to process all
 dependencies of the requested program.
@@ -50,7 +50,7 @@ not have a working internet connection for the time being.
 
 ### Writing recipes
 
-_Main article:_ [Writing recipes]({{<ref "Writing-Recipes" >}})
+_Main article:_ [Writing recipes]({{%relref "Writing-Recipes" %}})
 
 ### Getting the latest Compile
 
@@ -67,5 +67,5 @@ InstallPackage Compile
 ```
 
 In general it is recommended to always use the latest stable version of
-[Compile]({{<ref "Compile" >}}). `Compile` is very important to GoboLinux so if
+[Compile]({{%relref "Compile" %}}). `Compile` is very important to GoboLinux so if
 there is any problem in it, it is normally fixed very quickly.

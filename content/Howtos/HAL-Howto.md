@@ -34,7 +34,7 @@ desktop specific stuff (like adding devices to the panel).
 
 -   You need to be running Udev and DBus, make sure that's the case and that the
     DBus system bus is started at boot. (Use
-    [`StartTask`]({{<ref "StartTask" >}})` messagebus`)
+    [`StartTask`]({{%relref "StartTask" %}})` messagebus`)
 
 -   You also need a recent kernel and glibc compiled against recent headers.
     This was tested with `Glibc 2.3.5` with NPTL compiled against
@@ -191,7 +191,7 @@ so that media is mounted with the volume label as mountpoint:
 Note that you can put a copy of this file under
 `/System/Settings/hal/fdi/policy` and patch that one instead.
 
-# Making different types of media get different icons
+## Making different types of media get different icons
 
 With ROX, it's also possible to have the inserted media get an icon that
 represents the type of media inserted.

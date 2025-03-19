@@ -6,7 +6,7 @@ weight: 4
 Here is an overview of the GoboLinux filesystem tree. The legacy folders (on the
 ":" part of the tree) are links to the corresponding GoboLinux folders. The
 legacy folders are excluded from default directory view by
-[GoboHide]({{<ref "GoboHide" >}}).
+[GoboHide]({{%relref "GoboHide" %}}).
 
 ```
 /

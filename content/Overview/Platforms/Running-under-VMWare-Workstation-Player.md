@@ -1,6 +1,6 @@
 ---
 title: "Running under VMWare Workstation Player"
-menuTitle: "VMWare Workstation Player"
+linkTitle: "VMWare Workstation Player"
 weight: 3
 ---
 

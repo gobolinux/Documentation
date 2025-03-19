@@ -1,25 +1,25 @@
 ---
 title: "Understanding and Maintaining system indices"
-menuTitle: "Understanding system indices"
+linkTitle: "Understanding system indices"
 weight: 2
 ---
 
 The two main parts of GoboLinux are `/Programs` and `/System`. If you stick to
-using [`InstallPackage`]({{<ref "InstallPackage" >}}) and
-[`Compile`]({{<ref "Compile" >}}), these two parts will be implicitly kept in
-sync by [`SymlinkProgram`]({{<ref "SymlinkProgram" >}}). But a lot of power lies
+using [`InstallPackage`]({{%relref "InstallPackage" %}}) and
+[`Compile`]({{%relref "Compile" %}}), these two parts will be implicitly kept in
+sync by [`SymlinkProgram`]({{%relref "SymlinkProgram" %}}). But a lot of power lies
 in the fact that you can tune how these two worlds interact.
 
 Program entries under `/Programs` feature a `Current` symlink pointing to a
 specific version that is "active" in the system. This `Current` version is taken
 as the default version when you don't specify a version in scripts, and the link
 is updated when you install a new version with
-[`InstallPackage`]({{<ref "InstallPackage" >}}) or
-[`Compile`]({{<ref "Compile" >}}).
+[`InstallPackage`]({{%relref "InstallPackage" %}}) or
+[`Compile`]({{%relref "Compile" %}}).
 
 That doesn't mean that you can only have one version linked into the system: you
 can have files of multiple versions show up in `/Programs`. In fact, when you
-install a new version with [`InstallPackage`]({{<ref "InstallPackage" >}}) but
+install a new version with [`InstallPackage`]({{%relref "InstallPackage" %}}) but
 keep the old version in `/Programs`, files for which there's no version with the
 same name in the new package are still linked -- this is especially useful for
 libraries.
@@ -38,7 +38,7 @@ Now, say, you install a new version, 2.0, which looks like this:
     /Programs/Foo/2.0/lib/libfoo.so.2
     /Programs/Foo/2.0/lib/libfoo.so -> libfoo.so.2
 
-The default behavior of [`SymlinkProgram`]({{<ref "SymlinkProgram" >}}) is to
+The default behavior of [`SymlinkProgram`]({{%relref "SymlinkProgram" %}}) is to
 replace symlinks under `/Programs` that belong to a different version of the
 same program. So, now, we'll have the following links related to Foo under
 system:
@@ -61,16 +61,16 @@ a version which other programs depend in (or if buggy programs link to a version
 independent name of a library (`libfoo.so`) but depend on features of a specific
 version).
 
-Besides [`SymlinkProgram`]({{<ref "SymlinkProgram" >}}) (see section "[Compiling
-manually]({{<ref "Manual-Compile" >}})" and its [ reference
-entry]({{<ref "SymlinkProgram" >}}) for details on it), there are other scripts
+Besides [`SymlinkProgram`]({{%relref "SymlinkProgram" %}}) (see section "[Compiling
+manually]({{%relref "Manual-Compile" %}})" and its [ reference
+entry]({{%relref "SymlinkProgram" %}}) for details on it), there are other scripts
 that give you more control over what is linked in the system and what is not.
 
-With [`DisableProgram`]({{<ref "DisableProgram" >}}), you can remove from
+With [`DisableProgram`]({{%relref "DisableProgram" %}}), you can remove from
 `/System` all links that refer to a specific version of a program, effectively
 "turning it off" -- it is as if it were not present in the system.
 
-With [`RemoveProgram`]({{<ref "RemoveProgram" >}}), you can remove a program
+With [`RemoveProgram`]({{%relref "RemoveProgram" %}}), you can remove a program
 from `/Programs` and its references from `/System` in a single step.
 
-See [Removing programs]({{<ref "Removing-programs" >}}) for more details.
+See [Removing programs]({{%relref "Removing-programs" %}}) for more details.

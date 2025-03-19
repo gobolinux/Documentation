@@ -1,10 +1,10 @@
 ---
 title: "Filesystem Virtualization with Runner"
-menuTitle: "Virtualization with Runner"
+linkTitle: "Virtualization with Runner"
 weight: 1
 ---
 
-[Runner]({{<ref "Runner" >}}) is a utility for launching programs under
+[Runner]({{%relref "Runner" %}}) is a utility for launching programs under
 GoboLinux that ensures that the filesystem view of a process will match its
 dependencies. In other words, Runner eliminates the possibility of library
 conflicts when running an executable.
@@ -22,9 +22,9 @@ each confined to their own subdirectories.
 
 All you have to do is to make sure the dependencies of the program you want to
 run are correctly listed under the program's [Resources
-directory]({{<ref "Recipe-Format-Specification#resources">}}) - more
+directory]({{%relref "Recipe-Format-Specification#resources" %}}) - more
 specifically, in the
-[Dependencies]({{<ref "Recipe-Format-Specification#dependencies">}}) file at
+[Dependencies]({{%relref "Recipe-Format-Specification#dependencies" %}}) file at
 `/Programs/Name/Version/Resources/Dependencies`. You may list program names
 (e.g., `LibPNG`), specify a particular version (as in `LibPNG 1.4.4`) or even
 let Runner pick the best version given a certain range (e.g.,

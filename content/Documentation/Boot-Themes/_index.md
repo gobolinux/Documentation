@@ -23,7 +23,7 @@ Check `/Programs/BootScripts/Current/Themes/` to see all the available themes.
 
 You can use the TestBootTheme script to see how a boot theme looks like without
 actually rebooting your computer. TestBootTheme is described on section [Testing
-a boot theme]({{<ref "Testing-a-boot-theme" >}}).
+a boot theme]({{%relref "Testing-a-boot-theme" %}}).
 
 You can also set the boot theme from GRUB by adding `BootTheme=<ThemeName>` to
 the boot line. This can be handy if BootOptions file specifies a broken or
@@ -45,6 +45,6 @@ compliant boot script has only to implement the following functions:
 These functions are the hotspots that glue the theme and the boot scripts core
 together.
 
--   [Creating a boot theme]({{<ref "Creating-a-boot-theme" >}})
--   [Implementing a boot theme]({{<ref "Implementing-a-boot-theme" >}})
--   [Testing a boot theme]({{<ref "Testing-a-boot-theme" >}})
+-   [Creating a boot theme]({{%relref "Creating-a-boot-theme" %}})
+-   [Implementing a boot theme]({{%relref "Implementing-a-boot-theme" %}})
+-   [Testing a boot theme]({{%relref "Testing-a-boot-theme" %}})

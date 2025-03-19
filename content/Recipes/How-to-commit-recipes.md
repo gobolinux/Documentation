@@ -4,7 +4,7 @@ weight: 6
 ---
 
 {{% notice warning %}} This article is potentially out of date!! Please refer to
-the "[GitHub Contributor Workflow]({{<ref GitHub-contributor-workflow>}})"
+the "[GitHub Contributor Workflow]({{%relref GitHub-contributor-workflow %}})"
 article instead! {{% /notice %}}
 
 This page is for GoboLinux contributors who have been granted commit access to
