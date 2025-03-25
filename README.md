@@ -8,10 +8,10 @@ on the wonderful
 
 ## Project Structure
 
-You will find the documentation under `contents/` in markdown format. The
+You will find the documentation under the `content/` in markdown format. The
 projects main stylesheet lays under `assets/css/`.
 
-The main configuration is stored in `config.toml`.
+The projects configuration is stored under `config/`.
 
 If you need more info consult the official
 [Hugo](https://gohugo.io/documentation/) and

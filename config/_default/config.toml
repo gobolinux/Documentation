@@ -1,4 +1,5 @@
 baseURL = 'https://wiki.gobolinux.org/'
+contentDir = "content/latest"
 
 languageCode = 'en-us'
 title = 'GoboLinux Documentation'
@@ -11,7 +12,8 @@ disablePathToLower = true
   section = ['html', 'rss', 'print']
 
 [params]
-  editURL = "https://github.com/gobolinux/Documentation/edit/master/content/"
+  version="017.01"
+  editURL = "https://github.com/gobolinux/Documentation/edit/master/content/latest/"
   themeVariant = "gobolinux"
   titleSeparator = "|"
   disableLandingPageButton = true
@@ -22,11 +24,26 @@ disablePathToLower = true
   collapsibleMenu = true
   [params.author]
     author = "NEONsys.org"
+  [[params.versions]]
+    baseURL = "https://wiki.gobolinux.org/"
+    identifier = "017.01"
+    title = "017.01 (latest)"
+    isLatest = true
+  [[params.versions]]
+    baseURL = "https://wiki.gobolinux.org/v017/"
+    identifier = "017"
+    title = "017"
+  # Disable version switcher in header:
+  [[params.sidebarheadermenus]]
+    type = 'custom'
+  # Put version switcher (and history clearer) at the bottom
   [[params.sidebarfootermenus]]
     identifier='controls'
     type = 'custom'
     [[params.sidebarfootermenus.elements]]
       type = 'historyclearer'
+    [[params.sidebarfootermenus.elements]]
+      type = 'versionswitcher'
 
 [markup]
   [markup.tableOfContents]

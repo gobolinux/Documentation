@@ -1,0 +1,8 @@
+# Archived docs of GoboLinux v017
+baseURL = 'https://wiki.gobolinux.org/v017/'
+contentDir = "content/v017"
+publishDir = "public/v017"
+
+[params]
+  version="017"
+  editURL = "https://github.com/gobolinux/Documentation/edit/master/content/v017/"

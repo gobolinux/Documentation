@@ -260,10 +260,26 @@ details.box, details.box > .box-content {
     content: none;
 }
 
-/* History cleaner */
-#R-shortcutmenu-controls {
+/* Version switcher & history cleaner */
+#R-content-wrapper {
     .R-historyclearer {
         padding-top: 1rem;
+    }
+    .R-versionswitcher {
+        padding-top: 3rem;
+        text-align: center;
+        .menu-control {
+            display: inline-flex;
+            align-items: baseline;
+            font-family: var(--MAIN-TITLES-font);
+            border: 1px solid var(--CODE-BLOCK-BORDER-color);
+            border-radius: .8rem;
+            box-shadow: 0 0 7px #5d5d5d;
+            select#R-select-version {
+                text-align: center;
+                appearance: auto;
+            }
+        }
     }
 }
 
