@@ -29,7 +29,7 @@
     --MENU-SEARCH-BOX-ICONS-color: #a1d2fd; /* Search field icons color */
 
     --MENU-SECTION-ACTIVE-CATEGORY-color: #fff; /* Color of active category text */
-    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #ffffff1c; /* Color of background for the active category */
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #ffffff14; /* Color of background for the active category */
 
     --MENU-SECTIONS-BG-color: linear-gradient(
         150deg,
@@ -38,6 +38,7 @@
         #00ff5ab3 100%
     ); /* Background color of side bar */
     --MENU-SECTIONS-ACTIVE-BG-color: #00000033; /* Background color of the active section and its children */
+    --MENU-BORDER-color: var(--MENU-SECTIONS-ACTIVE-BG-color);
     --MENU-HOME-LINK-color: #fff; /* Color of version selector */
     --MENU-HOME-LINK-HOVER-color: #cfcfcf; /* Color of version selector, when hovered */
     --MENU-SECTIONS-LINK-color: #fff; /* Color of links in menu */
@@ -96,11 +97,11 @@ body h3 {
 }
 
 body h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 body h5 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 body h6 {
@@ -226,9 +227,24 @@ details.box, details.box > .box-content {
     }
 }
 
-#R-header-wrapper, #R-homelinks, #R-content-wrapper > * {
-    /* Get rid of 1px wide border in sidebar */
-    border-inline-end-style: none;
+#R-sidebar ul.enlarge > li.parent {
+    border-top: 2px solid #00779591;
+    border-bottom: 2px solid #00779591;
+    border-image: radial-gradient(#fff, #00779591) 1;
+}
+
+#R-sidebar ul.collapsible-menu li.active > a {
+    box-shadow: -1px 8px 9px #00000014;
+    border-width: 0;
+    backdrop-filter: brightness(0.9);
+    border-radius: 1px 1px 1px .8rem;
+
+}
+
+#R-sidebar ul.collapsible-menu li.active > a:not(.R-sidebarmenu>ul.collapsible-menu>li.parent > a) {
+    border-radius: .8rem 1px 1px 1px;
+    border-width: 1px;
+    backdrop-filter: unset;
 }
 
 /* Center and align collapsable arrows */

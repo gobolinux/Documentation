@@ -1,6 +1,7 @@
 ---
 title: "How to commit recipes"
 weight: 6
+hidden: true
 ---
 
 {{% notice warning %}} This article is potentially out of date!! Please refer to

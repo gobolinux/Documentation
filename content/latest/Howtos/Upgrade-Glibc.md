@@ -1,5 +1,6 @@
 ---
 title: "Upgrade Glibc"
+hidden: true
 ---
 
 ## Question:

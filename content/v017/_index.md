@@ -15,7 +15,7 @@ distribution. Therefore to make your journey as enjoyable possible, you should
 carefully **read** and **consult** the documentation.
 
 If you have just installed GoboLinux on your PC, make sure to check out the
-[Known Issues and Fixes]({{%relref "GoboLinux-017-Known-Issues-and-Fixes" %}})
+[Known Issues and Fixes]({{%relref "GoboLinux-Known-Issues-and-Fixes" %}})
 section first.
 
 ## How to find your way around

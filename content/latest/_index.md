@@ -15,16 +15,16 @@ distribution. Therefore to make your journey as enjoyable possible, you should
 carefully **read** and **consult** the documentation.
 
 If you have just installed GoboLinux on your PC, make sure to check out the
-[Known Issues and Fixes]({{%relref "GoboLinux-017-Known-Issues-and-Fixes" %}})
+[Known Issues and Fixes]({{%relref "GoboLinux-Known-Issues-and-Fixes" %}})
 section first.
 
 ## How to find your way around
 
-You can start with the [**Overview**]({{%relref "Overview" %}}) section on the
-left. This should get you started. You can use your ←left/→right buttons to
+You can start with the [**Getting Started**]({{%relref "Getting-Started" %}}) section on the
+left. This should get you going. You can use your ←left/→right buttons to
 navigate. Or use the our text search!
 
-The main [**Documentation**]({{%relref "Documentation" %}}) section contains some
+The [**Advanced**]({{%relref "Advanced" %}}) section contains some
 further and advanced topics , but if you're serious about your GoboLinux journey
 you should read this one, too!
 
@@ -54,16 +54,15 @@ still require further assistance, reach out to us on:
 Please be patient, we are a small community but we do make an effort to help
 everybody out.
 
-## Contributing
+## Expectations
 
-We rely heavily on community contributions for our wiki! Therefore, if you find
-the documentation lacking or even erroneous – you are in charge! 😀
+As an experimental distribution, you might run into some bugs along the way. We encourage you to tackle these
+challenges on your own or with the support of our friendly community. While we can't promise everything will be
+handed to you, your discoveries and solutions are invaluable to us—please share them!
 
-As you see, there is a an edit button ✏️ on the top right corner of each wiki article, leading you directly to an editable form on GitHub! We're using [Markdown](https://mcshelby.github.io/hugo-theme-relearn/authoring/markdown/) formatting BTW.
+If you find this documentation to be lacking in any regard please refer to [this]({{%relref "Contributing-to-the-wiki" %}}) article.
 
-You'll find the wiki's contents and source code living in a
-[dedicated repository](https://github.com/gobolinux/Documentation) on Github.
+GoboLinux thrives on the
+passion and contributions of its users, and together, we can make it even better.
 
-Please refer its to README to find yourself around the wikis code, or just file an issue! 😄
-
-You're great journey with Gobo has begun! ![gobo](images/goboicon.png)
+Your exciting journey with GoboLinux has just begun! ![gobo](images/goboicon.png)

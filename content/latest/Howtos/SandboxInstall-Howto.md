@@ -2,8 +2,9 @@
 title: "Sandbox Install"
 ---
 
-If I wanted to run make my self, what would I need to do to sandbox it? It would
-be useful to know how its done.
+> If I wanted to run make my self, what would I need to do to sandbox it?
+
+This is how its done.
 
 ```fish
 tar xvzf Foo.tar.gz
@@ -15,4 +16,4 @@ SandboxInstall Foo 1.0
 SymlinkProgram Foo 1.0
 ```
 
-Also see [Manual Compile]({{%relref "Manual-Compile" %}})
+Also consult [Manual Compile]({{%relref "Manual-Compile" %}}).

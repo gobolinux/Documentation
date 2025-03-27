@@ -1,5 +1,6 @@
 ---
 title: "Manual Compile"
+weight: 5
 ---
 
 Building and installing manually from source. _This should only be done if one

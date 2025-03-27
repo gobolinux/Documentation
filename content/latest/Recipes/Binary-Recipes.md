@@ -1,6 +1,6 @@
 ---
 title: "Binary Recipes"
-weight: 3
+weight: 4
 ---
 
 Binary recipes (recipes that install precompiled binaries of software, rather

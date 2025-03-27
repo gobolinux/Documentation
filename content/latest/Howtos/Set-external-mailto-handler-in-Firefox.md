@@ -1,6 +1,7 @@
 ---
 title: "Set external mailto handler in Firefox"
 linkTitle: "External Firefox mailto handler"
+hidden: true
 ---
 
 If you use Firefox and are not running it in KDE or Gnome you'll often times

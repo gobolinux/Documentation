@@ -1,5 +1,6 @@
 ---
 title: "GAMPS Howto"
+hidden: true
 ---
 
 GAMPS is a GoboLinux/Apache/MySql/P/SSL web serving system. This document is

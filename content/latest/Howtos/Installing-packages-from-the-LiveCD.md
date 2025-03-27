@@ -1,5 +1,6 @@
 ---
 title: "Installing Packages from the LiveCD"
+weight: 3
 ---
 
 After installing GoboLinux and booting from the hard disk, you may want to

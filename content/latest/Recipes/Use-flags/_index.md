@@ -3,6 +3,10 @@ title: "Use Flags"
 weight: 8
 ---
 
+{{% notice note %}} Although Use Flags are fully functional, currently - due to
+increased maintainance - they are rarely employed in our recipes.
+{{% /notice %}}
+
 Use Flags are a way to affect the compilation of a [Recipe](/Recipes) based on
 the Programs installed on a system and the user's preferences, without having to
 edit the Recipe explicitly. Different configure options may be passed to the

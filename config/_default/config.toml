@@ -22,6 +22,7 @@ disablePathToLower = true
   disableSeoHiddenPages = true
   alwaysopen = false
   collapsibleMenu = true
+  disableSearchHiddenPages = true
   [params.author]
     author = "NEONsys.org"
   [[params.versions]]
