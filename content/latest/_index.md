@@ -4,7 +4,7 @@ description: Documentation for GoboLinux
 type: home
 ---
 
-## Welcome !
+## Welcome to this wiki !
 
 Hello and welcome to the official documentation and wiki of the GoboLinux
 project!
@@ -20,15 +20,15 @@ section first.
 
 ## How to find your way around
 
-You can start with the [**Getting Started**]({{%relref "Getting-Started" %}}) section on the
-left. This should get you going. You can use your ←left/→right buttons to
-navigate. Or use the our text search!
+You can begin with the [**Getting Started**]({{%relref "Getting-Started" %}}) section on the
+left. This should get you going. You can use your `←left`/`right→` for
+navigation. Or make use of our full-text search!
 
 The [**Advanced**]({{%relref "Advanced" %}}) section contains some
 further and advanced topics , but if you're serious about your GoboLinux journey
 you should read this one, too!
 
-The [**Howtos**]({{%relref "Howtos" %}}) section holds articles to solve a specific
+The [**How-To's**]({{%relref "How-tos" %}}) section holds articles to solve a specific
 problem and guides you through step-by-step. We rely heavily on community
 contributions here. If you feel something important is not covered, be
 encouraged to submit your contribution!

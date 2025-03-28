@@ -35,14 +35,14 @@ cd /Programs/Compile/Current
 sudo git pull && sudo UpdateSettings --auto Compile
 ```
 
-#### UpdateRecipes - Update local copy of recipe store
+#### `UpdateRecipes` - Update local copy of recipe store
 
 ```fish
 cd /Data/Compile/Recipes
 sudo UpdateRecipes
 ```
 
-#### SuggestUpdates - List packages with an update available
+#### `SuggestUpdates` - List packages with an update available
 
 ```fish
 cd /Data/Compile/Recipes

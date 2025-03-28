@@ -3,8 +3,6 @@ title: "Hooks"
 weight: 4
 ---
 
-## Hooks
-
 Besides the declarative variables, recipes can also contain imperative commands,
 in the form of bash shell functions. This is the order the functions are called
 for each recipe type:
@@ -96,13 +94,13 @@ for each recipe type:
 -   symlink
 -   `post_install()`
 
-### Private shell functions
+## Private shell functions
 
 For shell functionality to be shared, for example between sub-recipes of
 different architectures, it is possible to define additional shell functions in
 the recipe. Their names must be prefixed with `private__`.
 
-### Use flag hooks
+## Use flag hooks
 
 Additional shell functions `using_<flag>()` will be run for each use flag `flag`
 which is set. Do not do anything in such a function which depends on time of
@@ -110,9 +108,9 @@ execution. Instead, use `using_<flag>_<hook>()`. For instance,
 `using_gtk_pre_build()` is run at the time specified above, in the event that
 the `gtk` use flag is set.
 
-See [Use flags]({{%relref "Use-flags" %}}).
+See [ Use flags]({{%relref "Use-flags" %}}).
 
-### New Hooks
+## New Hooks
 
 Since version 1.12.0, Compile supports a new set of hooks. These hooks can be
 used to override any of the steps in the compilation process, and are available

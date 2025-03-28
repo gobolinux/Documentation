@@ -1,6 +1,6 @@
 ---
 title: "Boot Themes"
-weight: 3
+weight: 2
 ---
 
 GoboLinux is flexible enough to offer you a choice of themes to control how your

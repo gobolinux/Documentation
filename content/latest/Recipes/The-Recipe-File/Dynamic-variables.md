@@ -1,6 +1,6 @@
 ---
 title: "Dynamic variables"
-weight: 5
+weight: 6
 ---
 
 ## Dynamic variables

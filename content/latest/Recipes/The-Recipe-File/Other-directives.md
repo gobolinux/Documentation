@@ -3,20 +3,20 @@ title: "Other directives"
 weight: 3
 ---
 
-#### compile_version=\<version-number>
+#### `compile_version=<version-number>`
 
 _Valid modes: all_
 
 The version number of Compile used to create this recipe.
 
-#### environment=(\<array of variables>)
+#### `environment=(<array of variables>)`
 
 _Valid modes: all_
 
 Environment variables to be applied to the shell where the compilation takes
 place. Each entry of the array must be in the format `variable=value`.
 
-Example:
+*Example:*
 
 ```fish
 environment=(
@@ -24,14 +24,14 @@ environment=(
 )
 ```
 
-#### uncompress=no
+#### `uncompress=no`
 
 _Valid modes: all_
 
 Used for urls where the files are going to be used directly. Not a common
 option.
 
-#### unpack_files
+#### `unpack_files`
 
 _Valid modes: all_
 
@@ -51,13 +51,13 @@ directory.
 `dirs` tells it to use the directories explicitly specified in the `dirs` array
 as destinations for each file.
 
-For example, if `files` is (foo.tar.gz bar.tar.gz) and foo.tar.gz contains
+For example, if `files` is `(foo.tar.gz bar.tar.gz)` and `foo.tar.gz` contains
 
 ```
 foo/1      foo/2
 ```
 
-and bar.tar.gz contains
+and `bar.tar.gz` contains
 
 ```
 foo/3      bar/4      bar/5
@@ -91,9 +91,9 @@ Using `files_in_root`, Compile assumes files are stored in the archive without a
 directory. A directory is created so that files are unpacked inside it, avoiding
 scattering files in $compileSourcesDir (typically `/Data/Compile/Sources`).
 
-#### dir=\<directory>
+#### `dir=<directory>`
 
-#### dirs=(\<array of directories>)
+#### `dirs=(<array of directories>)`
 
 _Valid modes: all_
 
@@ -105,7 +105,7 @@ compilation method is applied only on the first directory. To compile multiple
 packages into a single program, use meta-packages (`is_meta`). The usage of
 `dirs` affects the way files are unpacked. See `unpack_files` for details.
 
-#### docs=(\<array of filenames>)
+#### `docs=(<array of filenames>)`
 
 _Valid modes: all_
 
@@ -114,7 +114,7 @@ copied to the program's `doc/` dir (or `doc/$app/` for meta-packages). Wildcards
 are supported but must be single-quoted. Note that some default names such as
 README\*, AUTHORS and TODO are automatically fetched.
 
-Example:
+*Example:*
 
 ```fish
 docs=(
@@ -122,7 +122,7 @@ docs=(
 )
 ```
 
-#### create_dirs_first=yes
+#### `create_dirs_first=yes`
 
 _Valid modes: configure, makefile_
 
@@ -132,7 +132,7 @@ the [Compile]({{%relref "Compile" %}}) reference entry). Unfortunately, some
 programs fail during the configuration of compilation step if the target
 directory does not already exist. Use this entry to appease those programs.
 
-#### keep_existing_target=yes
+#### `keep_existing_target=yes`
 
 _Valid modes: all_
 
@@ -140,13 +140,13 @@ When set, it will not ask the user if they want to erase the contents of the
 $target (if any) prior to compiling the program. This is implicitly set if the
 `dirs` array contains any reference to `target`. See `unpack_files` for details.
 
-#### build_variables=(\<array of assignments>)
+#### `build_variables=(<array of assignments>)`
 
 _Valid modes: configure, makefile, scons_
 
 An array used when redefining variables for the first execution of make
 
-Example:
+*Example:*
 
 ```fish
 build_variables=(
@@ -155,13 +155,13 @@ build_variables=(
 )
 ```
 
-#### install_variables=(\<array of assignments>)
+#### `install_variables=(<array of assignments>)`
 
 _Valid modes: configure, makefile, scons_
 
 Variables to be passed to `make install`. See `build_variables`.
 
-#### make_variables=(\<array of assignments>)
+#### `make_variables=(<array of assignments>)`
 
 _Valid modes: configure, makefile_
 
@@ -169,7 +169,7 @@ Variables to be passed to both `make` and `make install`. A shorthand to avoid
 having to set everything twice, once in `build_variables` and then again in
 `install_variables`.
 
-#### makefile=\<makefile name>
+#### `makefile=<makefile name>`
 
 _Valid modes: configure, makefile, xmkmf_
 
@@ -185,20 +185,20 @@ makefile=makefile
 makefile=Makefile.linux
 ```
 
-#### make=\<make command>
+#### `make=<make command>`
 
 _Valid modes: configure, makefile, xmkmf_
 
 By default the make command is assumed to be called `make`. This variable can be
 used to override this value.
 
-Example:
+*Example:*
 
 ```fish
 make=unsermake
 ```
 
-#### build_target=\<make target>
+#### `build_target=<make target>`
 
 _Valid modes: configure, makefile, xmkmf, python, scons_
 
@@ -213,7 +213,7 @@ build_target=World
 build_target="all shared"
 ```
 
-#### install_target=\<make target>
+#### `install_target=<make target>`
 
 _Valid modes: configure, makefile, xmkmf, python, scons_
 
@@ -221,27 +221,27 @@ The target to be used when calling make or equivalent build script/program to
 build the program. More than one target may be given at a time, separating them
 with spaces in a single declaration (you must use quotes).
 
-Example:
+*Example:*
 
 ```fish
 install_target="install install.man install_shared"
 ```
 
-#### do_build=no
+#### `do_build=no`
 
 _Valid modes: configure, makefile, python_
 
 Compile should skip the `build` phase, and only do the `install` run. That is,
 for Makefile-based recipes, it should run make only once.
 
-#### do_install=no
+#### `do_install=no`
 
 _Valid modes: configure, makefile, xmkmf, python, scons_
 
 Compile should skip the `install` phase, and only do the `build` run. That is,
 for Makefile-based recipes, it should run make only once.
 
-#### needs_build_directory=yes
+#### `needs_build_directory=yes`
 
 _Valid modes: configure_
 
@@ -251,7 +251,7 @@ transparent to other relative paths in other variables (such as `configure`),
 but be aware that this special `build` directory will be active as a working
 directory during the hook shell functions, instead of `dir`.
 
-#### needs_safe_linking=yes
+#### `needs_safe_linking=yes`
 
 Deprecated
 
@@ -261,7 +261,7 @@ This option was used in older versions of the Scripts package to ensure that
 some critical programs were symlinked into the `/System/Index` hierarchy in a
 single step.
 
-#### override_default_options=yes
+#### `override_default_options=yes`
 
 _Valid modes: configure, python, scons_
 
@@ -273,13 +273,13 @@ option to disable those options and have your own options (given in
 configure_options or python_options) overwrite instead of append the option
 list.
 
-#### post_install_message="message"
+#### `post_install_message="message"`
 
 _Valid modes: all_
 
 A message to display to the user after installation.
 
-#### sandbox_options=(\<array of options>)
+#### `sandbox_options=(<array of options>)`
 
 _Valid modes: all_
 
@@ -289,7 +289,7 @@ expand the sandbox to allow additional directories in _special_ situations (such
 as the installation of kernel modules). _Avoid_ using this option as much as
 possible, and make sure you know what you're doing when you do use it.
 
-Example:
+*Example:*
 
 ```fish
 sandbox_options=(
@@ -297,7 +297,7 @@ sandbox_options=(
 )
 ```
 
-#### symlink_options=(\<array of options>)
+#### `symlink_options=(<array of options>)`
 
 _Valid modes: all_
 
@@ -307,7 +307,7 @@ in order to remedy unusual situations (the FreeType package used it to avoid a
 XFree86 conflict which affected the proper functioning of the system). _Avoid_
 using this option if possible; there are almost always better alternatives.
 
-Example:
+*Example:*
 
 ```fish
 symlink_options=(
@@ -315,7 +315,7 @@ symlink_options=(
 )
 ```
 
-#### unmanaged_files=(\<files>)
+#### `unmanaged_files=(<files>)`
 
 _Valid modes: all_
 
@@ -331,7 +331,7 @@ by changing the makefile variable defining it to $target).
 Good examples of such files are kernel modules, which can't be linked but need
 to be actually present under `/System/Kernel/Modules.`
 
-#### with\_\<flag>
+#### `with_<flag>`
 
 _Valid modes: cabal, cmake, configure, makefile, python, scons_
 
@@ -354,4 +354,4 @@ with_gtk=(
 )
 ```
 
-See [Use flags]({{%relref "Use-flags" %}}).
+See also: [Recipes → Writing Recipes → Use flags]({{%relref "Use-flags" %}}).

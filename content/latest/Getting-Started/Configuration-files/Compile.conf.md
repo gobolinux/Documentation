@@ -1,8 +1,9 @@
 ---
-title: "Compile"
+title: "Compile.conf"
+weight: 1
 ---
 
-Compile.conf is the file where you can configure the various paths and URLs used
+`Compile.conf` is the file where you can configure the various paths and URLs used
 by [Compile]({{%relref "Compile" %}}).
 
 It is stored at `/Programs/Compile/Settings/Compile/Compile.conf` -- which, once
@@ -19,7 +20,7 @@ compileRecipeAuthor="Paul McCartney"
 # example only! change the name (unless of course, you're Paul ;) )
 ```
 
-The standard locations for your local Compile files.
+The standard locations for your local `Compile` files.
 
 ```shell
 compileDir="${goboPrefix}/Files/Compile"
@@ -38,7 +39,7 @@ ftpAlphaGnu=ftp://alpha.gnu.org/gnu/
 httpSourceforge=http://unc.dl.sourceforge.net/sourceforge/
 ```
 
-The Compile recipe tree is managed by Git. The git repository and the upstream
+The `Compile` recipe tree is managed by Git. The git repository and the upstream
 branch are both configurable through the following variables:
 
 ```shell
@@ -46,14 +47,14 @@ compileRecipesRepository=https://github.com/gobolinux/Recipes.git
 compileUpstreamBranch=master
 ```
 
-A variable to set the "make" command called by Compile. ColorMake provides the
+A variable to set the `make` command called by `Compile`. `ColorMake` provides the
 highlighting that GoboLinux has by default:
 
 ```shell
 compileMakeCommand="ColorMake"
 ```
 
-Options to use with the make command. This can be used to run multiple threads
+Options to use with the `make` command. This can be used to run multiple threads
 in parallel on different CPUs or for other customisation:
 
 ```shell

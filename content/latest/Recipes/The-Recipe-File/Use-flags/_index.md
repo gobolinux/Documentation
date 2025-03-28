@@ -1,6 +1,6 @@
 ---
 title: "Use Flags"
-weight: 8
+weight: 9
 ---
 
 {{% notice note %}} Although Use Flags are fully functional, currently - due to
@@ -14,7 +14,7 @@ program being compiled, and additional hook functions may be run by Compile,
 depending on which flags are activated. Flags may be activated by the presence
 of installed dependencies, or explicitly by the user.
 
-Also see [Available use flags](Available-Use-Flags).
+See also: [→ Available use flags](Available-Use-Flags)
 
 ## Use Flags Names
 
@@ -193,6 +193,3 @@ directory and returns a frozenset of all the flags that could possibly be
 enabled for that recipe. Freshen uses that to provide output on which flags
 could be enabled, modeled after emerge, only without the ugliness. The other
 methods should be treated as private.
-
-See the
-[mailing list thread](http://thread.gmane.org/gmane.linux.distributions.gobo.devel/2593).

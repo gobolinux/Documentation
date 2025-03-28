@@ -6,12 +6,14 @@ weight: 4
 Binary recipes (recipes that install precompiled binaries of software, rather
 than compiling it from source) are permitted but discouraged where possible.
 These recipes should have `_bin` suffixed to the version number as a marker, for
-example `Sun-JDK 1.6.0_03_bin`, even where there is no corresponding source
+example`Firefox 1.36.0_bin`, even where there is no corresponding source
 recipe.
 
 Source recipes are preferred where possible, as these allow optimisation and
-bugfixing, but binaries are acceptable in some circumstances. In general, a
-binary recipe will be accepted if it meets one of the following criteria:
+bugfixing, but binaries are acceptable in some circumstances.
+
+In general, a binary recipe will be accepted if it meets one of the following
+criteria:
 
 1.  The software is only available in this form from the vendor. `Sun-JDK` is an
     example of this.
@@ -19,7 +21,7 @@ binary recipe will be accepted if it meets one of the following criteria:
     yet. Programs using the Maven build system are an example of this.
 3.  The vendor provides prebuilt binaries in addition to the source, and:
     1.  The software is sufficiently large for compilation to be a large task
-        with little gain (OpenOffice)
+        with little gain (Firefox, Chromium, LibreOffice)
     2.  The vendor binaries are customised in some fashion, or multiple parallel
         products from the same source are built with different tasks (the
         various Eclipse builds: -Java, -C++, -EE, etc). In this case, the
@@ -48,7 +50,7 @@ unsure.
     sure the `file_md5` entry exists.
 -   Distribution license must be filled in `Resouces/Description`. If the
     license is unknown, `Resources/Description` should set it as
-    `[License\] Other` (or the license name as appropriate), and a file named
+    `[License] Other` (or the license name as appropriate), and a file named
     `Resources/COPYING` should contain the license in question. "Known licenses"
     are those found in these
     [OSI list](http://www.opensource.org/licenses/alphabetical) or the

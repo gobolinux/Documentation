@@ -1,6 +1,6 @@
 ---
 title: "The Recipe file"
-weight: 1
+weight: 3
 ---
 
 The Recipe file contains a series of directives using shell assignment and shell

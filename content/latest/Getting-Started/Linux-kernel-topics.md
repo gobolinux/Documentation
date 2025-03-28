@@ -25,14 +25,14 @@ called `/System/Kernel`. This tree is organized in the following way:
 
 Thanks to Compile, installing a new kernel is pretty straightforward on
 GoboLinux. The Linux recipe takes into account the existence of a file called
-config.gz inside `/System/Kernel/Status`. This file contains the current
+`config.gz` inside `/System/Kernel/Status`. This file contains the current
 configuration for the running kernel, and is used thereby to feed the new kernel
 options.
 
 In short, running `Compile Linux` will fetch the latest available recipe
 (which already contains GoboLinux optional patches). After doing that, the
 kernel itself is automatically downloaded, patched and filled with the current
-configuration, taken from config.gz.
+configuration, taken from `config.gz`.
 
 The menuconfig entry then appears, and allows for the user to modify their
 kernel options. Just selecting *Exit* and telling the script to save the changes
@@ -53,7 +53,7 @@ vanilla, you may use `NewVersion`.
 -   Download a kernel from [kernel.org](https://www.kernel.org/)
 
 If you already have a kernel downloaded, or have a special source package, you
-may place it in /Data/Compile/Archives.
+may place it in `/Data/Compile/Archives`.
 
 -   Use
     `NewVersion Linux <Version> https://kernel.org/pub/linux/kernel/v6.12/<your-archive-name>`

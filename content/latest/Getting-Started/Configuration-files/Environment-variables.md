@@ -4,7 +4,7 @@ weight: 3
 ---
 
 Some environment variables influence the behavior of some GoboLinux tools. You
-may want to set them. Just remember that GoboLinux uses zsh (not bash) as its
+may want to set them. Just remember that GoboLinux uses `zsh` (not `bash`) as its
 default shell, so you should edit `.zshrc` (not `.bashrc`). Zsh is a
 Bourne-style shell, though, so the syntax you're used to is still valid.
 

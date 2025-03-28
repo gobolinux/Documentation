@@ -1,13 +1,13 @@
 ---
 title: "Steps of the compile process"
-weight: 3
+weight: 5
 ---
 
 Normally, you shouldn't need to compile "manually", i.e., without using the
 [`Compile`]({{%relref "Compile" %}}) tool. However, it is possible to manually run
 the same commands that `Compile` uses.
 
-Also refer to [Manual Compile]({{%relref Manual-Compile %}}).
+See also: [How To's → Manual Compile]({{%relref Manual-Compile %}})
 
 ## Overview
 

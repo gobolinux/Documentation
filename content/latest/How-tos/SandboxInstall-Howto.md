@@ -16,4 +16,4 @@ SandboxInstall Foo 1.0
 SymlinkProgram Foo 1.0
 ```
 
-Also consult [Manual Compile]({{%relref "Manual-Compile" %}}).
+See also: [How To's → Manual Compile]({{%relref Manual-Compile %}})

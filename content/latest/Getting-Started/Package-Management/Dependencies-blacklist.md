@@ -13,7 +13,7 @@ Dependencies list generated after creating a recipe? This problem is now fixed
 with a configurable file called
 `/Programs/Scripts/Settings/Scripts/Dependencies.blacklist`.
 
-### Dependencies.blacklist
+### `Dependencies.blacklist`
 
 This file allows one to specify packages that should not appear in the
 Dependencies file after creating a new recipe. Its format is pretty simple: one

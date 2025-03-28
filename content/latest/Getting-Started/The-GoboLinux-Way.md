@@ -60,13 +60,13 @@ say, a user's home directory.
 As much as we'd like to see this done in the long term, patching all
 applications is not an option. For this reason, GoboLinux keeps, as stated
 earlier, a legacy tree where all usual Unix paths are mapped to GoboLinux
-equivalents. That way, if a Makefile looks for
+equivalents. That way, if a `Makefile` looks for
 `/usr/X11R6/include/X11/Xaw3d/XawInit.h`, it will find it, although it is really
 at `/Programs/Xaw3d/1.5/include/X11/Xaw3d/XawInit.h`, where it belongs. When two
 applications have a directory entry with the same name, the GoboLinux scripts
-recursively expand them. Both Xorg and Xaw3d have X11 under `include`. A
+recursively expand them. Both `Xorg` and `Xaw3d` have `X11` under `include`. A
 directory `/System/Index/include/X11` is created automatically, holding links
-from both X11 directories.
+from both `X11` directories.
 
 Another interesting feature is that the GoboLinux scripts execute `make install`
 using a special user id that only has write permissions inside the program's
@@ -77,7 +77,7 @@ tree.
 A detail that might surprise you at first is that when you look at the root
 directory (with `ls` or graphical tools), you don't see the legacy directories,
 even though you can `cd` into them. They are certainly there — they are just
-kept hidden using [GoboHide]({{%relref "GoboHide" %}}), a kernel modification
+kept hidden using [`GoboHide`]({{%relref "GoboHide" %}}), a kernel modification
 designed to conceal the legacy tree from the usual system view. (GoboHide is of
 course optional — GoboLinux works just as well using standard Linux kernels.)
 
@@ -137,5 +137,7 @@ of facts that are good to know when you are getting acquainted to the system.
     by the apps).
 
 For a better overview of how it looks and feels right, nothing beats giving the
-Live CD a spin. You'll be running a full GoboLinux system without having to
-install anything. Just burn a CD-ROM and give it a go!
+LiveCD a spin. You'll be running a full GoboLinux system without having to
+install anything.
+
+**Just flash a USB-Drive and give it a go !!**

@@ -1,6 +1,6 @@
 ---
 title: "Package Naming Guidelines"
-weight: 5
+weight: 2
 ---
 
 1.  If the program name already has capitals (e.g. XFree86, LyX, Qt) use it

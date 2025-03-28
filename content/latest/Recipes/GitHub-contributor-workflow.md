@@ -6,7 +6,7 @@ weight: 7
 This page is intended to document the new GitHub workflow for contributing to
 GoboLinux.
 
-## Compile.conf and attribution
+## `Compile.conf` and attribution
 
 Fire up your favourite editor, open
 `/Programs/Compile/Settings/Compile/Compile.conf` and edit the
@@ -21,7 +21,7 @@ If you are not comfortable using your real name, using a nick/alias is also
 acceptable.
 
 For more options, check out the dedicated
-[Compile.conf]({{%relref "Compile.conf" %}}) page.
+[Compile.conf](Getting-Started/Configuration-files/Compile.conf) page.
 
 ## Create a GitHub pull request using `ContributeRecipe`
 

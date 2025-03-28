@@ -1,7 +1,7 @@
 ---
 title: "Running under GNOME Boxes"
 linkTitle: "GNOME Boxes"
-weight: 1
+weight: 3
 ---
 
 GNOME Boxes is a new virtual machine manager and remote desktop manager powered

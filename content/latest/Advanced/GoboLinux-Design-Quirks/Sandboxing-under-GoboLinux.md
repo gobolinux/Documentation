@@ -1,6 +1,6 @@
 ---
 title: "Sandboxing under GoboLinux"
-weight: 1
+weight: 2
 ---
 
 The **build system** in GoboLinux uses sandboxing to ensure that all the

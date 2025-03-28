@@ -1,14 +1,14 @@
 ---
 title: "GoboLinux 017.01 Known Issues and Fixes"
 linkTitle: "Known Issues and Fixes"
-weight: 1
+weight: 9
 ---
 
 ## Installation in a VM
 
-In a VM environment, installing GoboLinux' bootloader onto a GPT partion currently fails. Please use an MBR partition.
+In a VM environment, installing GoboLinux' bootloader onto a GPT partion currently fails. Please set up MBR partitioning!
 
-On bare metal GPT partitions worked fine in our testing (if in doubt, configure your bootloader manually).
+On bare metal systems GPT partitions worked fine in our testing (if in doubt, configure your bootloader manually).
 
 ## Other outstanding issues
 

@@ -1,6 +1,6 @@
 ---
 title: "Files that cannot be symlinks"
-weight: 2
+weight: 1
 ---
 
 Symbolic links play a major role in a GoboLinux system, but some programs don't

@@ -1,19 +1,19 @@
 ---
 title: "Resources/"
-weight: 6
+weight: 8
 ---
 
 The Recipe subdirectory `Resources/` can contain various metadata. These files
 are copied to `/Programs/Foo/Version/Resources` upon installation. All these
-files are optional except for Dependencies and Description.
+files are optional except for `Dependencies` and `Description`.
 
-#### BuildDependencies
+### `BuildDependencies`
 
 This file lists dependencies which must be present to successfully compile the
 Program. They may include compilers or build tools. The format is the same as
 Dependencies, below.
 
-Example:
+*Example:*
 
 ```fish
 Autoconf 2.60
@@ -25,12 +25,12 @@ Pkgconfig 0.20
 Vala [vala]
 ```
 
-#### BuildInformation
+### `BuildInformation`
 
 Informational file about which versions of dependencies were actually linked
 against when compiling.
 
-#### Defaults/
+### `Defaults/`
 
 This is a directory which may contain, in `Defaults/Settings`, the default
 contents of the `/Programs/Foo/Settings` directory. The contents of this
@@ -42,7 +42,7 @@ to them as necessary.
 `Defaults/` may also contain a subdirectory `Variable/`. These files are copied
 to `/System/Variable/`, if not already present.
 
-#### Dependencies
+### `Dependencies`
 
 This file lists programs which should be installed for this Program to work
 properly. The format is like
@@ -90,10 +90,10 @@ the Alien provider and the package manager itself:
 -   CPAN dependencies ignore version information
     ([CPAN only installs the latest version](http://stackoverflow.com/questions/260593/how-can-i-install-a-specific-version-of-a-set-of-perl-modules))
 
-For more info, see [Dependencies]({{%relref "Dependencies" %}}) and [Use
+For more info, see [Dependencies](#dependencies) and [Use
 Flags]({{%relref "Use-flags" %}}).
 
-#### Description
+### `Description`
 
 This file contains information of interest to humans regarding the program. A
 typical example is
@@ -107,7 +107,7 @@ Objective-C, Fortran, Java, and Ada...
 [Homepage] http://gcc.gnu.org/
 ```
 
-#### Environment
+### `Environment`
 
 This file contains environment variables which should be set for this program,
 as bash assignments. For example, the Firefox recipe has
@@ -116,12 +116,12 @@ as bash assignments. For example, the Firefox recipe has
 export MOZ_PLUGIN_PATH=${goboLibraries}/browser-plugins
 ```
 
-#### Hints
+### `Hints`
 
 These contain hints for `UpdateSettings` on when to overwrite, delete, or skip
 updating of certain settings. See [[Hints File]].
 
-#### PostInstall
+### `PostInstall`
 
 A bash script which is executed by [`Compile`]({{%relref "Compile" %}}) (or
 [`InstallPackage`]({{%relref "InstallPackage" %}})) after installation. This is for
@@ -130,7 +130,7 @@ compilation or installation process, but run after the Program is symlinked.
 They are kept separate from the Recipe file so that they are retained in binary
 packages which may be distributed.
 
-#### Requirements
+### `Requirements`
 
 These list conditions that must be met on the system, but which do not entail an
 action unless they're not met. The only implemented requirements so far are
@@ -155,10 +155,7 @@ required_users=(
 )
 ```
 
-See the
-[mailing list thread](http://thread.gmane.org/gmane.linux.distributions.gobo.devel/2267).
-
-#### `Tasks/`
+### `Tasks/`
 
 Files in this subdirectory are [boot script
 tasks]({{%relref "Boot-script-tasks" %}}), linked to `System/Tasks`. These are
@@ -167,7 +164,7 @@ roughly equivalent to the `/etc/init.d` scripts found in many distributions.
 Note that files under `System/Tasks/` should be marked as executable! Otherwise
 they will fail to execute during boot time!
 
-#### `Wrappers/`
+### `Wrappers/`
 
 This subdirectory contains scripts which are typically GoboLinux-specific
 wrappers for commands in the installed package. They may call the real program

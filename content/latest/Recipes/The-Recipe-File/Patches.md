@@ -1,6 +1,6 @@
 ---
 title: "Patches"
-weight: 6
+weight: 7
 ---
 
 Patches are applied in filename order, with the `-p1` option. Creation by

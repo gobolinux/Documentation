@@ -1,6 +1,6 @@
 ---
 title: "GoboHide"
-weight: 5
+weight: 4
 ---
 
 To simplify the users' view of filesystem, GoboHide conceals legacy unix

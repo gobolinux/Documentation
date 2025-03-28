@@ -1,7 +1,7 @@
 ---
 title: "Running GoboLinux under QEMU"
 linkTitle: "QEMU"
-weight: 5
+weight: 1
 ---
 
 {{% notice note %}} This article has been written for an older GoboLinux

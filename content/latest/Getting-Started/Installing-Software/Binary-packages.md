@@ -15,9 +15,9 @@ or specific architectures.
 
 ## Installing packages
 
-[InstallPackage]({{%relref "InstallPackage" %}}) is the GoboLinux script for
+[`InstallPackage`]({{%relref "InstallPackage" %}}) is the GoboLinux script for
 installing binary packages. If you want
-[InstallPackage]({{%relref "InstallPackage" %}}) to look for the most recent Gimp
+[`InstallPackage`]({{%relref "InstallPackage" %}}) to look for the most recent Gimp
 package available, you can run
 
 ```fish
@@ -52,7 +52,7 @@ InstallPackage -b Gimp
 
 ### Dependencies
 
-InstallPackage will warn you if dependencies of a package you are trying to
+`InstallPackage` will warn you if dependencies of a package you are trying to
 install are unavailable and ask if you want to continue. This is valuable,
 because some software may still work satisfactorily even if a particular plug-in
 or other dependency is missing.
@@ -64,7 +64,7 @@ LiveCD]({{%relref "Installing-packages-from-the-LiveCD" %}}).
 
 ## Removing packages
 
-See [Removing programs]({{%relref "Commands" %}}Removing-programs/)
+See [Removing programs]({{%relref "Commands" %}}Removing-programs/).
 
 ## Creating packages
 
@@ -97,7 +97,7 @@ Before creating a package, be careful to vet the contents of the program's
 A package submitted for inclusion in the GoboLinux packages repository must have
 sensible default settings, honoring the application defaults if possible.
 
-### The CreatePackage command
+### The `CreatePackage` command
 
 In order to create a package, run the
 [CreatePackage]({{%relref "CreatePackage" %}}) utility with the package name as a
