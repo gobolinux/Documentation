@@ -1,6 +1,6 @@
 ---
 title: "Writing Recipes"
-weight: 3
+weight: 4
 ---
 
 There are two ways to create recipes:
