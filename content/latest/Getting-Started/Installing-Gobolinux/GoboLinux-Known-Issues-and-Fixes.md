@@ -9,7 +9,7 @@ weight: 9
 A last -minute bug has sneaked into our GRUB/GRUB-EFI recipe.
 
 Please install the updated revision of GRUB/GRUB-EFI, before attempting to install GoboLinux from the LiveCD:
-```
+```fish
 InstallPackage https://gobonextgen.org/Packages/017.01/GRUB--2.12-r1--x86_64.tar.bz2
 InstallPackage https://gobonextgen.org/Packages/017.01/GRUB-EFI--2.12-r1--x86_64.tar.bz2
 ```
