@@ -13,7 +13,9 @@ Please install the updated revision of GRUB/GRUB-EFI, before attempting to insta
 InstallPackage https://gobonextgen.org/Packages/017.01/GRUB--2.12-r1--x86_64.tar.bz2
 InstallPackage https://gobonextgen.org/Packages/017.01/GRUB-EFI--2.12-r1--x86_64.tar.bz2
 ```
-The installation of the GRUB bootloader should now finish successfully.
+You will be prompted to update some settings. Select "U" on each prompt.
+
+Now you can proceed the installation of GoboLinux 017.01 via our `Installer`.
 
 ## Other outstanding issues
 
