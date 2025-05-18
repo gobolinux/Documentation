@@ -33,3 +33,17 @@ our team. They are:
     `Python3` like this as it will break `Compile`.
 -   `ContributePackage` is not working -- use
     [ContributeRecipe]({{%relref "GitHub-contributor-workflow" %}}) instead.
+
+### Update of Compile and Scripts tools
+
+`Compile` and `Scripts` are always evolving. Make sure to update your copies by
+running the following commands after you boot into your installed system for the
+first time:
+
+```fish
+cd /Programs/Scripts/Current
+git pull && UpdateSettings --auto Scripts && make
+
+cd /Programs/Compile/Current
+git pull && UpdateSettings --auto Compile
+```
