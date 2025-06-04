@@ -79,7 +79,7 @@ This is the file size(s), in bytes, of the packed archive(s) (e.g. foo.tar.gz)
 as reported by `ls -l`.
 
 ```fish
-user@gobo /Files/Compile/Archives]ls -l gettext-0.16.1.tar.gz
+user@gobo /Data/Compile/Archives]ls -l gettext-0.16.1.tar.gz
 -rw-r--r-- 1 root root 8539634 Jul 11 01:08 gettext-0.16.1.tar.gz
 ```
 
@@ -92,7 +92,7 @@ package file defined by the `file` value. You can find this MD5Sum by using the
 `md5sum` command.
 
 ```fish
-user@gobo /Files/Compile/Archives]md5sum gettext-0.16.1.tar.gz
+user@gobo /Data/Compile/Archives]md5sum gettext-0.16.1.tar.gz
 3d9ad24301c6d6b17ec30704a13fe127  gettext-0.16.1.tar.gz
 ```
 
