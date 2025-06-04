@@ -23,7 +23,6 @@ compileRecipeAuthor="Paul McCartney"
 The standard locations for your local `Compile` files.
 
 ```shell
-compileDir="${goboPrefix}/Files/Compile"
 compileArchivesDir="$compileDir/Archives"
 compileSourcesDir="$compileDir/Sources"
 compileRecipeDirs="$compileDir/Recipes"
