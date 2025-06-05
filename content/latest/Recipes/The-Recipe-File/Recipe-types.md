@@ -90,9 +90,9 @@ are relevant only for *makefile*.
 is used for Programs based on Meson. Some options are
 only relevant for *meson*:
 
-###### **`meson_variables=(<array of assignments>)`**
+###### **`meson_options=(<array of assignments>)`**
 
-Variables to be defined in the environment during the execution of meson.
+Flags to be passed to the Meson setup operation.
 
 ## python
 
