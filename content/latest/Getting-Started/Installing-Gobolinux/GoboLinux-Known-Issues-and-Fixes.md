@@ -4,7 +4,9 @@ linkTitle: "Known Issues and Fixes"
 weight: 9
 ---
 
-## Fix grub install error
+## Live CD
+
+### Fix grub install error
 
 A last -minute bug has sneaked into our GRUB/GRUB-EFI recipe.
 
@@ -17,7 +19,9 @@ You will be prompted to update some settings. Select "U" on each prompt.
 
 Now you can proceed the installation of GoboLinux 017.01 via our `Installer`.
 
-## Update of Compile and Scripts tools
+## Installed System
+
+### Update of Compile and Scripts tools
 
 `Compile` and `Scripts` are always evolving. Make sure to update your copies by
 running the following commands after you boot into your installed system for the
