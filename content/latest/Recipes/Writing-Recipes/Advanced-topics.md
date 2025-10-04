@@ -199,7 +199,7 @@ option in the recipe, to tell the Makefile to use the
 one main variable that controls the installation prefix. Variables of this kind
 are usually called `PREFIX`, `DESTDIR`, `INSTDIR`... you'll have to look inside
 the `Makefile` to find out. Remember that the installation prefix is set by
-`Compile` as the `target` shell variable. To give `make` variables, we can
+`Compile` as the `$target` shell variable. To give `make` variables, we can
 either use `build_variables` and `install_variables`, which give options to the
 "build" and "install" runs of `make`, or just `make_variables` which passes
 options to both runs. Their use is similar to that of `configure_options`.
