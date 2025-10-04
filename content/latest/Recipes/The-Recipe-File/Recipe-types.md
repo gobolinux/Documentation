@@ -17,7 +17,7 @@ is used for Programs based on "configure" scripts,
 Flags to be passed to the configure script. These flags are passed in addition
 to default flags detected by [`PrepareProgram`]({{%relref "PrepareProgram" %}})
 (such as `--prefix` and `--sysconfdir` on autoconf-based configure scripts), unless
-the override_default_options declaration is used.
+the `override_default_options` declaration is used.
 
 ###### **`autogen_before_configure=yes`**
 
