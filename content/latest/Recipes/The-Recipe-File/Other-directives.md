@@ -89,7 +89,7 @@ recipe, but then the user might delete the data that was just unpacked).
 
 Using `files_in_root`, Compile assumes files are stored in the archive without a
 directory. A directory is created so that files are unpacked inside it, avoiding
-scattering files in $compileSourcesDir (typically `/Data/Compile/Sources`).
+scattering files in `$compileSourcesDir` (typically `/Data/Compile/Sources`).
 
 #### `dir=<directory>`
 
@@ -127,7 +127,7 @@ docs=(
 _Valid modes: configure, makefile_
 
 By default, Compile only generates directories in the target location right
-before the installation step. This is useful for the --no-install option (see
+before the installation step. This is useful for the `--no-install` option (see
 the [Compile]({{%relref "Compile" %}}) reference entry). Unfortunately, some
 programs fail during the configuration of compilation step if the target
 directory does not already exist. Use this entry to appease those programs.
@@ -137,7 +137,7 @@ directory does not already exist. Use this entry to appease those programs.
 _Valid modes: all_
 
 When set, it will not ask the user if they want to erase the contents of the
-$target (if any) prior to compiling the program. This is implicitly set if the
+`$target` (if any) prior to compiling the program. This is implicitly set if the
 `dirs` array contains any reference to `target`. See `unpack_files` for details.
 
 #### `build_variables=(<array of assignments>)`
@@ -268,9 +268,9 @@ _Valid modes: configure, python, scons_
 Compile chooses some options by default according to the specified target type.
 In configure recipes, it passes some standard autoconf options to the configure
 script; in python recipes, distutils options for the Python build script; in
-scons recipes, some standard options passed in invocations of scons.py. Use this
+scons recipes, some standard options passed in invocations of `scons.py`. Use this
 option to disable those options and have your own options (given in
-configure_options or python_options) overwrite instead of append the option
+`configure_options` or `python_options`) overwrite instead of append the option
 list.
 
 #### `post_install_message="message"`
@@ -322,11 +322,11 @@ _Valid modes: all_
 Files to be installed in an unmanaged way to system locations such as
 `/System/Variable.` One cannot install files under `/Programs` using this array.
 
-Basically, unmanaged files are used to place files outside a program's $target
+Basically, unmanaged files are used to place files outside a program's `$target`
 directory, and are to be used only when no real alternatives exist. That is, you
 should not use this array to install files under `/usr` just because the
 recipe's makefile define it as the default install location (this can be fixed
-by changing the makefile variable defining it to $target).
+by changing the makefile variable defining it to `$target`).
 
 Good examples of such files are kernel modules, which can't be linked but need
 to be actually present under `/System/Kernel/Modules.`
@@ -335,7 +335,7 @@ to be actually present under `/System/Kernel/Modules.`
 
 _Valid modes: cabal, cmake, configure, makefile, python, scons_
 
-These are options to be appended to configure_options (or equivalent) in the
+These are options to be appended to `configure_options` (or equivalent) in the
 event that the use flag `flag` is set.
 
 For instance,
