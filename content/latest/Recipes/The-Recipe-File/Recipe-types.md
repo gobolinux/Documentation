@@ -55,8 +55,8 @@ options are only relevant for *cabal*:
 Flags to be passed to the Cabal configure operation.
 
 These flags are passed in addition to default flags detected by
-[`PrepareProgram`]({{%relref "PrepareProgram" %}}) (such as --prefix) unless the
-override_default_options declaration is used.
+[`PrepareProgram`]({{%relref "PrepareProgram" %}}) (such as `--prefix`) unless the
+`override_default_options` declaration is used.
 
 ### runhaskell
 
