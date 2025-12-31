@@ -23,8 +23,11 @@ disablePathToLower = true
   alwaysopen = false
   collapsibleMenu = true
   disableSearchHiddenPages = true
+  linkTitle = ""
   [params.author]
     author = "NEONsys.org"
+  [params.logo]
+    src = '/images/logo.png'
   [[params.versions]]
     baseURL = "https://wiki.gobolinux.org/"
     identifier = "017.01"
@@ -54,6 +57,8 @@ disablePathToLower = true
   [markup.highlight]
     style = "rrt" # choose a color theme or create your own
     guessSyntax = false # if set to true, avoid unstyled code if no language was given but mermaid code fences will not work anymore
+  [markup.goldmark.parser.attribute]
+    block=true
 
 [[menu.shortcuts]]
 name = "Homepage"

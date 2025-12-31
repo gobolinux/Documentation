@@ -2,6 +2,7 @@
 :root {
     /* General */
     font-size: 20px;
+    --LOGO-IMAGE-width: 6rem;
     --MAIN-WIDTH-MAX: 71.5rem; /* Width of main content */
     --MAIN-BG-color: #171717; /* Background color of main content */
     --MAIN-font: "Public Sans"; /* Font family of main content */
@@ -12,7 +13,6 @@
 
     /* Headlines */
     --MAIN-TITLES-font: "Metropolis"; /* Font family of headlines */
-    --MAIN-TITLES-H1-font: "Metropolis"; /* Font family of h1 headlines */
     --MAIN-TITLES-letter-spacing: -1px; /* Letter spacing of headlines */
     --MAIN-TITLES-H1-TEXT-color: #9f75f9; /* Color of h1 headlines */
     --MAIN-TITLES-H2-TEXT-color: #21c5f3; /* Color of h2 headlines */
@@ -112,6 +112,11 @@ body h2, h3, .article-subheading, h4, h5, h6 {
     margin: 2rem 0 1rem 0;
 }
 
+.anchor {
+    button {
+        background-color: unset;
+    }
+}
 
 #R-body a.highlight:after {
     height: unset;
@@ -143,6 +148,12 @@ code {
     }
 }
 
+/* Main Logo */
+#R-logo {
+    padding-top: .5rem;
+    padding-bottom: .7rem;
+}
+
 /* Searchbox */
 .searchbox {
     input {
@@ -157,16 +168,18 @@ code {
 }
 
 /* Search page */
+/* #R-html .autocomplete-suggestion > .breadcrumbs */
+
 #R-searchresults .autocomplete-suggestion {
-    &:hover {
+    &:hover, &:focus {
         border-radius: .8rem;
         background: rgb(56 56 56 / 37%);
-        .context {
-            background: unset;
-        }
     }
     > .breadcrumbs {
         color: unset;
+    }
+    .link {
+        text-decoration: unset;
     }
 }
 
@@ -176,17 +189,25 @@ mark.search {
 }
 
 /* Custom Copy-to-clipboard button style in code blocks */
-button.block-copy-to-clipboard-button {
-    color: var(--CODE-BLOCK-BORDER-color);
-    border-radius: 1rem;
+.actionbar {
     right: 0.65rem;
-    top: 0.55rem;
+    top: 0.65rem;
+    > span {
+        border-radius: 1rem;
+        > button {
+            border-radius: 1rem;
+            color: var(--CODE-BLOCK-BORDER-color);
+            &:hover {
+                color: var(--CODE-BLOCK-BG-color);
+                background-color: var(--CODE-BLOCK-BORDER-color);
+            }
+        }
+    }
 }
 
-button.block-copy-to-clipboard-button:hover {
-    color: var(--CODE-BLOCK-BG-color);
-    background-color: var(--CODE-BLOCK-BORDER-color);
-    border-color: transparent;
+.toast {
+    padding: .5rem 1rem;
+    background-color: #00f3d3;
 }
 
 /* Notices */
@@ -204,6 +225,28 @@ details.box, details.box > .box-content {
 
 .notices pre {
     background-color: #141414 !important;
+}
+
+/* Top Bar */
+.topbar-wrapper {
+    .btn.notitle > * {
+        padding: 0 .5rem;
+    }
+    .btn.interactive > *:hover,
+    .btn.interactive > *:active,
+    .btn.interactive > *:focus {
+        background-color: unset;
+    }
+    i {
+        font-size: .85rem;
+    }
+    .topbar-breadcrumbs {
+        padding-left: 1rem;
+    }
+}
+
+.topbar-wrapper > * {
+    height: 1.35rem;
 }
 
 /* Sidebar */
