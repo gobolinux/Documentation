@@ -65,4 +65,4 @@ If you find this documentation to be lacking in any regard please refer to [this
 GoboLinux thrives on the
 passion and contributions of its users, and together, we can make it even better.
 
-Your exciting journey with GoboLinux has just begun! ![gobo](images/goboicon.png)
+Your exciting journey with GoboLinux has just begun! ![gobo](images/favicon.png)
