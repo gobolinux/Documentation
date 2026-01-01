@@ -6,7 +6,7 @@ weight: 3
 ## Alien Packages
 
 GoboLinux has a concept of "Alien" packages. These are programs that are usually packaged via external, distro-independant package managers.
-Common examples are: pip (Python), npm (Javascript), cargo (Rust), LuaRocks (Lua), RubyGems (Ruby), CPAN (Perl.
+Common examples are: pip (Python), npm (Javascript), cargo (Rust), LuaRocks (Lua), RubyGems (Ruby), CPAN (Perl).
 
 GoboLinux currently supports the following backends:
  - LuaRocks
@@ -22,7 +22,7 @@ In order to install a foreign package we can use the following syntax:
 sudo Alien --install <package_manager>:<package_name>
 ```
 
-For example in order to install or update meson you would type:
+For instance, in order to install or update meson you would type:
 
 ```fish
 sudo Alien --install pip3:meson
@@ -30,6 +30,6 @@ sudo Alien --install pip3:meson
 
 ## Limitations
 
-Sadly, at the moment we are lacking support for some popular package managers like npm or cargo.
+Sadly, at the moment we are lacking support for some popular package managers, like npm or cargo.
 
 If you want to contribute support for these package manager look here: https://github.com/gobolinux/AlienVFS/tree/master/gobo/alienvfs
