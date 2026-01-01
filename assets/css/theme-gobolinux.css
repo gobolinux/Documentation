@@ -168,8 +168,6 @@ code {
 }
 
 /* Search page */
-/* #R-html .autocomplete-suggestion > .breadcrumbs */
-
 #R-searchresults .autocomplete-suggestion {
     &:hover, &:focus {
         border-radius: .8rem;
