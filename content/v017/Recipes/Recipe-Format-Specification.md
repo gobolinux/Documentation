@@ -753,8 +753,8 @@ Besides the declarative variables, recipes can also contain imperative commands,
 in the form of bash shell functions. This is the order the functions are called
 for each recipe type:
 
-{{% notice note %}} `pre_patch` will not be called if there are no patches.
-{{% /notice %}}
+> [!NOTE]
+> `pre_patch` will not be called if there are no patches.
 
 #### configure:
 
@@ -962,14 +962,14 @@ If for example `Foo 1.2` is listed as dependency, the variables will be called
 -   `$foo_settings_path`
 -   `$foo_variable_path`
 
-{{% notice note %}}
-
--   Note that these variables will point to the latest installed version of
-    `Foo`, instead of the version listed in the Dependency file.
-
--   Also note that special characters will be replaced with underscore. If, for
-    example, GTK+ is listed in the Dependency file, the variable will be called
-    `$gtk__path`, and Tcl-Tk will be `$tcl_tk_path`. {{% /notice %}}
+> [!NOTE]
+>
+> -   Note that these variables will point to the latest installed version of
+>     `Foo`, instead of the version listed in the Dependency file.
+> 
+> -   Also note that special characters will be replaced with underscore. If, for
+>     example, GTK+ is listed in the Dependency file, the variable will be called
+>     `$gtk__path`, and Tcl-Tk will be `$tcl_tk_path`.
 
 # Patches
 

@@ -62,8 +62,8 @@ that needs arguments is run without arguments, the help text will be
 displayed. (Note: Actually, not all scripts conform to this yet, but this is
 being worked on).
 
-{{% notice note %}} Many of the restrictions above are actually
-implementation limitations. "Fixing" them is not a high-priority in the project,
-but patches to lift this restrictions are welcome. See
-`/Programs/Scripts/Current/Functions/OptionParser` if you're curious.
-{{% /notice %}}
+> [!INFO]
+>Many of the restrictions above are actually
+>implementation limitations. "Fixing" them is not a high-priority in the project,
+>but patches to lift this restrictions are welcome. See
+>`/Programs/Scripts/Current/Functions/OptionParser` if you're curious.

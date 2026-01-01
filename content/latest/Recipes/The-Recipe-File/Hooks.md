@@ -7,8 +7,8 @@ Besides the declarative variables, recipes can also contain imperative commands,
 in the form of bash shell functions. This is the order the functions are called
 for each recipe type:
 
-{{% notice note %}} `pre_patch` will not be called if there are no patches.
-{{% /notice %}}
+> [!NOTE]
+> `pre_patch` will not be called if there are no patches.
 
 #### configure:
 

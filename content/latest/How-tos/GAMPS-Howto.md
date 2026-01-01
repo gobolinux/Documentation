@@ -25,11 +25,11 @@ time to make yourself some coffee.
 StartTask MySQL
 ```
 
-{{% notice note %}} If the server crashes at this moment you might want to check
-the permissions of `/Data/MySQL`. Owner and group must both be `mysql`. You can
-achieve this by typing
-
-and starting the server again. {{% /notice %}}
+> [!NOTE]
+> If the server crashes at this moment you might want to check
+> the permissions of `/Data/MySQL`. Owner and group must both be `mysql`. You can
+> achieve this by typing `chown -R mysql:mysql /Files/MySQL` and starting the
+> server again.
 
 -   The next step is to set a password for the MySQL root user. Type
 

@@ -160,9 +160,11 @@ for *meta*:
 In a meta-recipe, this array holds the list of recipes that should be built to
 constitute the complete program. Recipe names should be in the format
 `App--1.0`. The order of the entries in the array is significant, because it is
-the order in which the recipes are built. {{% notice note %}} Be careful with
-the order, because re-building a meta-package that's already installed may cover
-up ordering problems. {{% /notice %}}
+the order in which the recipes are built. 
+
+> [!NOTE]
+> Be careful with the order, because re-building a meta-package that's already
+> installed may cover up ordering problems.
 
 ###### **`part_of=<parent>`**
 

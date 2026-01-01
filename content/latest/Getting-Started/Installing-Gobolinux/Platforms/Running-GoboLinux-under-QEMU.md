@@ -4,8 +4,9 @@ linkTitle: "QEMU"
 weight: 1
 ---
 
-{{% notice note %}} This article has been written for an older GoboLinux
- release and is potentially out of date!! {{% /notice %}}
+> [!NOTE]
+> This article has been written for an older GoboLinux
+> release and is potentially out of date!!
 
 We'll illustrate how to:
 

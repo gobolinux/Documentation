@@ -61,11 +61,10 @@ If for example `Foo 1.2` is listed as dependency, the variables will be called
 -   `$foo_settings_path`
 -   `$foo_variable_path`
 
-{{% notice note %}}
-
--   Note that these variables will point to the latest installed version of
-    `Foo`, instead of the version listed in the Dependency file.
-
--   Also note that special characters will be replaced with underscore. If, for
-    example, GTK+ is listed in the Dependency file, the variable will be called
-    `$gtk__path`, and Tcl-Tk will be `$tcl_tk_path`. {{% /notice %}}
+> [!NOTE]
+> -   Note that these variables will point to the latest installed version of
+>    `Foo`, instead of the version listed in the Dependency file.
+>
+> -   Also note that special characters will be replaced with underscore. If, for
+>     example, GTK+ is listed in the Dependency file, the variable will be called
+>    `$gtk__path`, and Tcl-Tk will be `$tcl_tk_path`.

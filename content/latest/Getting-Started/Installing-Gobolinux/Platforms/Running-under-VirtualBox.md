@@ -4,8 +4,9 @@ linkTitle: "VirtualBox"
 weight: 2
 ---
 
-{{% notice note %}} This article has been written for an older GoboLinux
- release, and is potentially out of date!! {{% /notice %}}
+> [!NOTE] Note
+> This article has been written for an older GoboLinux
+> release, and is potentially out of date!!
 
 ### Setting up VirtualBox guest additions
 

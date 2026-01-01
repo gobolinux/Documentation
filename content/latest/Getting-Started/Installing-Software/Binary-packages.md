@@ -3,8 +3,8 @@ title: "Binary packages"
 weight: 3
 ---
 
-{{% notice warning %}} We do not maintain a binary package repository at this time! |
-Please build your packages from source using [`Compile`]({{%relref Compiling-from-source %}})! {{% /notice %}}
+> [!WARNING] We do not maintain a binary package repository at this time!
+> Please build your packages from source using [`Compile`]({{%relref Compiling-from-source %}})!
 
 **Binary packages** in GoboLinux are precompiled software packages built for the
 GoboLinux directory tree and made available through the GoboLinux software

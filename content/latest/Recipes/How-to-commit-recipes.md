@@ -4,9 +4,9 @@ weight: 6
 hidden: true
 ---
 
-{{% notice warning %}} This article is potentially out of date!! Please refer to
-the "[GitHub Contributor Workflow]({{%relref GitHub-contributor-workflow %}})"
-article instead! {{% /notice %}}
+> [!WARNING] This article is potentially out of date!
+> Please refer to the "[GitHub Contributor Workflow]({{%relref GitHub-contributor-workflow %}})"
+> article instead!
 
 This page is for GoboLinux contributors who have been granted commit access to
 the recipes repository. The privilege is intended to help those who frequently

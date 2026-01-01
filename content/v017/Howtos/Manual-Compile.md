@@ -7,10 +7,10 @@ is unable to [create a recipe]({{%relref "Writing-Recipes" %}}) or as an excerci
 With very few exceptions, the work of creating a recipe is rewarded by the ease
 of using [Compile]({{%relref "Compile" %}})._
 
-{{% notice note %}} If you use a local tarball, be sure to have the tarball
-placed at `/Data/Compile/Archives`. Also make sure you know whether you have a
-recipe locally or not, if you ie do not have access to the www on that machine.
-{{% /notice %}}
+> [!NOTE]
+> If you use a local tarball, be sure to have the tarball
+> placed at `/Data/Compile/Archives`. Also make sure you know whether you have a
+> recipe locally or not, if you ie do not have access to the www on that machine.
 
 I'm using dosbox from CVS as an example here.
 

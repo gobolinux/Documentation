@@ -60,8 +60,8 @@ is not.
     displayed. (Note: Actually, not all scripts conform to this yet, but this is
     being worked on).
 
-{{% notice note %}} Note: Many of the restrictions above are actually
-implementation limitations. "Fixing" them is not a high-priority in the project,
-but patches to lift this restrictions are welcome. See
-`/Programs/Scripts/Current/Functions/OptionParser` if you're curious.
-{{% /notice %}}
+> [!NOTE]
+> Many of the restrictions above are actually
+> implementation limitations. "Fixing" them is not a high-priority in the project,
+> but patches to lift this restrictions are welcome. See
+> `/Programs/Scripts/Current/Functions/OptionParser` if you're curious.

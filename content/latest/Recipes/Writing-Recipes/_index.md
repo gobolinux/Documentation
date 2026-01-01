@@ -131,12 +131,12 @@ detects that the program it is compiling is called joe (which, after a run of
 the [`NamingConventions`]({{%relref "NamingConventions" %}}) script, becomes Joe),
 and that the version is 3.1.
 
-{{% notice note %}} In case it didn't, you could have passed it explicitly as
-parameters: {{% /notice %}}
-
-```fish
-MakeRecipe HardToDetect 2.0 http://example.org/htd_2_0.tar.bz2
-```
+> [!TIP] Pro Tip
+> In case it didn't, you could have passed it explicitly as parameters:
+>
+> ```fish
+> MakeRecipe HardToDetect 2.0 http://example.org/htd_2_0.tar.bz2
+> ```
 
 [`MakeRecipe`]({{%relref "MakeRecipe" %}}) should now report that it has downloaded
 the sources, and found that it uses **autoconf**. Which is a good thing, as that

@@ -20,9 +20,10 @@ removed from your panel.
 -   **Dbus** is an IPC service that lets all these components communicate with
     each other.
 
-{{% notice note %}} HAL and Ivman are not limited to storage devices, but also
-handle stuff like network cards and other hotpluggable devices on USB, Firewire,
-PCMCIA, etc... {{% /notice %}}
+> [!NOTE]
+> HAL and Ivman are not limited to storage devices, but also
+> handle stuff like network cards and other hotpluggable devices on USB,
+> Firewire, PCMCIA, etc...
 
 ## Setup
 
@@ -78,8 +79,9 @@ patch that escapes the $hal.volume.mount\_point$ in ivmans src/manager.c:619)
 ] ivman
 ```
 
-{{% notice note %}} If all this works, don't forget to check that hald and ivman
-is started in your bootscripts: {{% /notice %}}
+> [!NOTE]
+> If all this works, don't forget to check that hald and ivman
+> is started in your bootscripts:
 
 ```fish
 Exec "Starting D-Bus system bus..."             messagebus

@@ -4,8 +4,9 @@ linkTitle: "External storage devices"
 weight: 6
 ---
 
-{{% notice note %}} This article has been written for an older GoboLinux
- release and is potentially out of date!! {{% /notice %}}
+> [!NOTE]
+> This article has been written for an older GoboLinux
+> release and is potentially out of date!!
 
 GoboLinux 016 comes with two installation modes: UEFI and BIOS-compatibility
 mode. Depending on how your computer firmware is configured you may need to

@@ -11,10 +11,10 @@ of using [Compile]({{%relref "Compile" %}})._
 
 See also: [Advanced → Steps of the compile process]({{%relref Steps-of-the-Compile-process %}})
 
-{{% notice note %}} If you use a local tarball, be sure to have the tarball
-placed at `/Data/Compile/Archives`. Also make sure you know whether you have a
-recipe locally or not, if you ie do not have access to the www on that machine.
-{{% /notice %}}
+> [!NOTE]
+> If you use a local tarball, be sure to have the tarball
+> placed at `/Data/Compile/Archives`. Also make sure you know whether you have a
+> recipe locally or not, if you ie do not have access to the www on that machine.
 
 I'm using dosbox from CVS as an example here.
 

@@ -5,8 +5,9 @@ weight: 3
 hidden: true
 ---
 
-{{% notice note %}} This article has been written for an older GoboLinux
- release, and is potentially out of date!! {{% /notice %}}
+> [!NOTE] Note
+> This article has been written for an older GoboLinux
+> release, and is potentially out of date!!
 
 When you install GoboLinux 016 on VMWare and boot it for the first time, you
 will get a black screen after the GRUB boot selection menu. The underlying
