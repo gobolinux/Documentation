@@ -4,7 +4,7 @@ description: Documentation for GoboLinux
 type: home
 ---
 
-> [!CAUTION] Caution: Limited Maintainance
+> [!CAUTION] Caution: Limited Maintainance (01/01/2026)
 > GoboLinux is currently in "maintainance mode". What does this mean?
 > At the moment there is only one developer working on GoboLinux and
 > at the moment this developer (myself) got other IRL stuff to tend to.
@@ -13,15 +13,15 @@ type: home
 > 
 > Please refrain from posting feature request (these will be closed).
 > If you are ready to work on GoboLinux *yourself* you are highly encouraged to do so.
-> This project is **not** dead, it needs active maintainers. The state you will
-> expreience will most closely rememble an "Alpha"-state.
-> When will "maintainence mode be over? At least once I release GoboLinux 017.02
+> This project is **not** dead, it needs active maintainers. The state you **will**
+> experience will most closely rememble an "Alpha"-state.
+> When will "maintainence mode" be over? At least once I release GoboLinux 017.02
 > or even 020 (the next one in line).
 > 
 > Why? Because people come to GoboLinux with the *wrong expectations* and it is
-> actively taking up time and energy that would better be invested elsewhere
-> Trust me: most issues we have at the moment are _**known**_. We (as in me, and
-> some occasional helpers) just didn't get aroudn to adress them. This will happen
+> actively taking up time and energy that would better be invested elsewhere...
+> Trust me: most issues we have at the moment are _**known**_. We (as in: me, and
+> some occasional helpers) just didn't get around to adress them. This will happen
 > within the next releases, at which point posting issues and feature requests will
 > be highlry welcomed :)) Have fun!!
 
