@@ -13,7 +13,7 @@ type: home
 > 
 > Please refrain from posting feature request (these will be closed).
 > If you are ready to work on GoboLinux *yourself* you are highly encouraged to do so.
-> This project is **not** dead, it needs active maintainers. The state you **will**
+> This project is **not** dead, it needs active maintainers. The state you ***will***
 > experience will most closely rememble an "Alpha"-state.
 > When will "maintainence mode" be over? At least once I release GoboLinux 017.02
 > or even 020 (the next one in line).
@@ -22,8 +22,8 @@ type: home
 > actively taking up time and energy that would better be invested elsewhere...
 > Trust me: most issues we have at the moment are _**known**_. We (as in: me, and
 > some occasional helpers) just didn't get around to adress them. This will happen
-> within the next releases, at which point posting issues and feature requests will
-> be highlry welcomed :)) Have fun!!
+> within the next releases — at which point posting bug reports and feature requests will
+> be highly welcomed again :)) Have fun!!
 
 ## Welcome to this wiki !
 
