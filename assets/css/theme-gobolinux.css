@@ -17,7 +17,7 @@
     --MAIN-TITLES-H1-TEXT-color: #9f75f9; /* Color of h1 headlines */
     --MAIN-TITLES-H2-TEXT-color: #21c5f3; /* Color of h2 headlines */
     --MAIN-TITLES-H3-TEXT-color: #21f3c0; /* Color of h3 headlines */
-    --MAIN-TITLES-H4-TEXT-color: #fff; /* Color of h4 headlines */
+    --MAIN-TITLES-H4-TEXT-color: #9f75f9; /* Color of h4 headlines */
     --MAIN-TITLES-H5-TEXT-color: #fff; /* Color of h5 headlines */
     --MAIN-TITLES-H6-TEXT-color: #fff; /* Color of h6 headlines */
 
@@ -86,6 +86,13 @@ body {
 body h1 {
     font-size: 2.5rem;
     text-transform: unset;
+    /* font gradient for h1 */
+    background: linear-gradient(346deg, #9f75f9 27%, #21c5f3 71%, #21f3c0 85%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 
 body h2 {
