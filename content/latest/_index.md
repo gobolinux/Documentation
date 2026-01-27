@@ -24,6 +24,8 @@ type: home
 > some occasional helpers) just didn't get around to adress them. This will happen
 > within the next releases — at which point posting bug reports and feature requests will
 > be highly welcomed again :)) Have fun!!
+>
+> -- fyrak1s (steward & lead dev)
 
 ## Welcome to this wiki !
 
