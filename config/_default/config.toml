@@ -25,7 +25,7 @@ disablePathToLower = true
   disableSearchHiddenPages = true
   linkTitle = ""
   [params.author]
-    author = "NEONsys.org"
+    author = "fyrak1s"
   [params.logo]
     src = '/images/logo.png'
   [[params.versions]]
