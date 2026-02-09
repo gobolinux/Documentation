@@ -70,6 +70,7 @@ despair!!
 Our community is here to help you out. If you have read the documentation but
 still require further assistance, reach out to us on:
 
+-   **Zulip Chat**: https://gobolinux.zulipchat.com/
 -   **IRC chat:** [#gobolinux](irc://irc.libera.chat/gobolinux) at
     irc.libera.chat (slow channel, please be patient and wait up to 24h for a response!)
 -   **Our forums:** https://github.com/orgs/gobolinux/discussions
