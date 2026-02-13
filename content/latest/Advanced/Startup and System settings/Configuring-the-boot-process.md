@@ -70,6 +70,11 @@ Note that no space is allowed before or after the `=` character. This is shell
 syntax, allowing the options to be imported into the boot scripts using the
 `source` command.
 
+> [!tip]
+> In case you are having issues, you can enable "debug mode" by setting `DEBUG=1`
+> inside `/System/Settings/BootOptions`. A debug log will be saved to
+> `/Data/Variable/log/BootScripts.log`.
+
 The following sections document options available in
 `/System/Settings/BootOptions` and `/System/Settings/NetworkOptions`.
 
