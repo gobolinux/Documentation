@@ -4,9 +4,9 @@ linkTitle: "QEMU"
 weight: 1
 ---
 
-> [!NOTE]
-> This article has been written for an older GoboLinux
-> release and is potentially out of date!!
+> [!NOTE] This article is potentially out of date!
+> You can find a more up-to-date approach here: https://gist.github.com/fyrak1s/fd58e1bcb3a9ead77588a83e087ed376.
+> These resources are meant to be merged in the future.
 
 We'll illustrate how to:
 

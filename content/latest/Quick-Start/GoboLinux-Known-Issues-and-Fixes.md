@@ -1,13 +1,16 @@
 ---
-title: "GoboLinux 017.01 Known Issues and Fixes"
-linkTitle: "Known Issues and Fixes"
+title: "Known Issues and Fixes"
+linkTitle: "Known Issues and Fixes ⚠️"
 weight: 9
 ---
 
 > [!IMPORTANT]
 > *This page holds the __most important fixes__ for GoboLinux and __always held up-to-date__ – so always keep an eye on it!*
 
-## Live CD
+> [!INFO]
+> The following information is valid for GoboLinux release: `017.01`
+
+## Live CD issues (fix this before running `Installer`)
 
 ### Fix grub install error
 
@@ -34,7 +37,7 @@ our team. They are:
     [Compile bug 51](https://github.com/gobolinux/Compile/issues/51)). Sometimes
     this can be worked around by first manually doing a
     `RemoveProgram <failing program>` before re-attempting to `Compile` it. Note
-    that it is generally a _**Bad Idea™**_ to try to `RemoveProgram`, say,
-    `Python3` like this as it will break `Compile`.
+    that it is generally a bad idea to try to `RemoveProgram`, say,
+    `Python3` like this as it will break `Compile`. UPDATE: This bug has been mitigated for 99% of cases.
 -   `ContributePackage` is not working -- use
     [ContributeRecipe]({{%relref "GitHub-contributor-workflow" %}}) instead.

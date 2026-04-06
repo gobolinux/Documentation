@@ -1,5 +1,6 @@
 ---
-title: "Recipes & Packages"
+LinkTitle: "Recipes & Packages"
+title: "Chapter 4: Recipes & Packages"
 weight: 4
 chapter: false
 pre: "<b>004&thinsp;</b>"
@@ -8,13 +9,17 @@ pre: "<b>004&thinsp;</b>"
 Recipes are directions to [`Compile`]({{%relref "Compile" %}}) on how to configure,
 build, and install a particular software package.
 
+Packages in gobolinux are _compiled recipes_ which are subsequently stored within the `/Programs/**` tree.
+
+At the moment GoboLinux does not offer (almost) any precompiled packages. We solely rely on compiling recipes
+ourselves. This may change in the future as our infrustructure and user base grows.
+
 ## Topics
 
 -   [Online recipe browser](http://recipes.gobolinux.org/)
 -   [Writing Recipes]({{%relref "Writing-Recipes" %}})
 -   [Recipe Format Specification]({{%relref "Recipe-Format-Specification" %}})
--   [Recipes for precompiled software (such as Skype or Adobe Flash
-    Player)]({{%relref "Binary-Recipes" %}})
+-   [Recipes for precompiled/binary software (such as Firefox or Brave-Browser)]({{%relref "Binary-Recipes" %}})
 -   [Sharing recipes]({{%relref "Writing-Recipes#share-your-recipes" %}})
 
 ## Commands
@@ -41,7 +46,7 @@ build, and install a particular software package.
 
 ### Submitting
 
--   [PackRecipe]({{%relref "PackRecipe" %}}) - Generate a packed recipe tarball
+-   [PackRecipe]({{%relref "PackRecipe" %}}) (obsolete) - Generate a packed recipe tarball
     from local recipe cache, ready for submission.
 -   [ContributeRecipe]({{%relref "ContributeRecipe" %}}) - Submit a recipe to the
     recipe store for review and inclusion.

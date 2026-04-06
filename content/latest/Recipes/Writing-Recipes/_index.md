@@ -183,6 +183,13 @@ same prefix), before making it nicer and modular later.
 
 ## Share your recipes
 
+> [!NOTE]
+> Even though we recommend using [`ContributeRecipe`]({{%relref "ContributeRecipe" %}})
+> below, we do admit that this tool has some sharp edges. If you are proficient
+> with git it might be easier to perform such a PR manually.
+> Please use [`RecipeLint`]({{%relref "RecipeLint" %}}) to check for obvious issues before
+> contribuing (eg missing [`Description`]({{%relref Resources1 %}}/#description) file etc...).
+
 Share your recipes with the Gobo community! Recipes you create or update will be
 located in `/Data/Compile/Recipes`. Consider using a text editor to write a
 Description file for your recipe before you share it.
@@ -193,10 +200,9 @@ To share your recipe, use this command:
 ContributeRecipe <program name>
 ```
 
-[ContributeRecipe]({{%relref "ContributeRecipe" %}}) will submit a Pull Request on
+[`ContributeRecipe`]({{%relref "ContributeRecipe" %}}) will submit a Pull Request on
 GitHub so that the project maintainers can review it and merge it. Please note
 that you will need a valid account at github.com in order to contribute recipes.
 
-Approved committers should refer to these [
-Guidelines]({{%relref "How-to-commit-recipes" %}}) (others should use
-[`ContributeRecipe`]({{%relref "ContributeRecipe" %}}).)
+For more in-depth information refer to the
+[GitHub contributor workflow]({{%relref "GitHub-contributor-workflow" %}}).

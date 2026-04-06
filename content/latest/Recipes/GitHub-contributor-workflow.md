@@ -3,6 +3,13 @@ title: "GitHub Contributor Workflow"
 weight: 7
 ---
 
+> [!NOTE]
+> Even though we recommend using [`ContributeRecipe`]({{%relref "ContributeRecipe" %}})
+> in this article, we do admit that this tool has some sharp edges. If you are proficient
+> with git it might be easier to perform such a PR manually.
+> Please use [`RecipeLint`]({{%relref "RecipeLint" %}}) to check for obvious issues before
+> contribuing (eg missing [`Description`]({{%relref Resources1 %}}/#description) file etc...).
+
 This page is intended to document the new GitHub workflow for contributing to
 GoboLinux.
 
@@ -122,4 +129,6 @@ Typically, for remote branches the necessary command will look something like
 
 #### Example:
 
-`git push origin-fork --delete submit-Python-2.7.18`
+```fish
+git push origin-fork --delete submit-Python-2.7.18
+```

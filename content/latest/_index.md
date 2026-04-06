@@ -27,7 +27,7 @@ type: home
 >
 > -- fyrak1s (steward & lead dev)
 
-## Welcome to this wiki !
+## Welcome to our wiki!
 
 Hello and welcome to the official documentation and wiki of the GoboLinux
 project!
@@ -37,32 +37,36 @@ GoboLinux is [quite](https://gobolinux.org/k5.html)
 distribution. Therefore to make your journey as enjoyable possible, you should
 carefully **read** and **consult** the documentation.
 
-***If you have just installed GoboLinux on your PC, make sure to check out the
-[Known Issues and Fixes]({{%relref "GoboLinux-Known-Issues-and-Fixes" %}})
-section first!***
+
+> [!IMPORTANT]
+> If you have just installed GoboLinux on your PC, make sure to check out the
+> [Known Issues and Fixes]({{%relref "GoboLinux-Known-Issues-and-Fixes" %}})
+> chapter first.
 
 ## How to find your way around
 
-Start with the [**Quick Start**]({{%relref "Quick-Start" %}}) section on the
+**This wiki is purposely written in chapters in the adviced reading sequence.**
+
+Start with the [**Quick Start**]({{%relref "Quick-Start" %}}) chapter on the
 left, this should get you going! 🙂. You can use your `←left`/`right→` for
 navigation, or make use of our full-text search.
 
 We advice you to proceed with our [**Concepts**]({{%relref "Concepts" %}}) page in order to get a basic understanding of GoboLinux and it's philosophy.
 
-Under [**Usage**]({{%relref "Usage" %}}) you will find hand-on information how to deal with daily tasks. Don't skip on this section!
+Under [**Usage**]({{%relref "Usage" %}}) you will find hand-on information how to deal with daily tasks. Don't skip on this chapter!
 
 [**Recipes & Packages**]({{%relref "Recipes" %}}) goes into the innerworkings of GoboLinux packaging and will teach you, how to create your own recipes and packages if you desire to do so!
 
-The [**Advanced**]({{%relref "Advanced" %}}) section contains some
+The [**Advanced**]({{%relref "Advanced" %}}) chapter contains some
 further and advanced topics , but if you're serious about your GoboLinux journey
 you should read this one, too!
 
-The [**How-To's**]({{%relref "How-tos" %}}) section holds articles to solve a specific
+The [**How-To's**]({{%relref "How-tos" %}}) chapter holds articles to solve a specific
 problem and guides you through step-by-step. We rely heavily on community
 contributions here. If you feel something important is not covered, be
 encouraged to submit your contribution!
 
-The [**Commands**]({{%relref "Commands" %}}) section is a list of GoboLinux
+The [**Commands**]({{%relref "Commands" %}}) chapter is a list of GoboLinux
 specific commands and tooling, that will make your life with GoboLinux much
 easier. They are what makes GoboLinux so enjoyable and are very much in the
 spirit of: **_„Do One Thing and Do It Well!”_**.

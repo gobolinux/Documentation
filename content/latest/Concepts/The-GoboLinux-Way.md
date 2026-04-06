@@ -3,52 +3,54 @@ title: "The GoboLinux Way"
 weight: 1
 ---
 
-## What makes GoboLinux unique
+## Welcome to the world of GoboLinux
 
-**GoboLinux** has a directory structure different from most other Linux
-distributions. In **GoboLinux**, all files for a program, including executables,
-headers and libraries, are installed below a single directory that belongs to
-that program.
+The main task of a Linux distribution is to keep track of and organize the
+programs in your computer, so that they work properly. **GoboLinux** is no different
+from the others in this goal, but it adopts a fundamentally different approach
+in solving this problem.
 
-So the `ping` utility might reside in
+Instead of scattering the files of programs around,
+following the
+[decades-old conventions](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)
+of ancient UNIX systems, and then adding a layer of control (a "package
+manager") to try to give order to chaos, in **GoboLinux** we organize the files that
+comprise the programs in an ordered way in the first place.
 
-    /Programs/Netkit-Base/0.17/bin/ping
+In **GoboLinux**, every program lives in its own subdirectory. Under the top level
+directory `/Programs`; e.g you may find `GCC 14.2.0` at `/Programs/GCC/14.2.0`, and
+`ping` at `/Programs/InetUtils/1.9.4/bin/ping`. To see what programs are
+installed in the system, all you need to do is look in the `/Programs`
+directory:
 
-and `libpng.so.3` in
+```fish
+ls /Programs
+```
 
-    /Programs/LibPNG/1.2.5/lib/libpng.so.3
+For each category of files, there is a directory under `/System/Index` grouping
+files from each application as symbolic links: `bin`, `lib`, `libexec`,
+`include`, `share`, and `man`. For compatibility, each "legacy" UNIX directory
+is a link to a corresponding category. Therefore, `/bin`, `/sbin`, `/usr/bin`,
+`/usr/local/bin` (and so on) are all symlinks to entries under `/System/Index`.
 
-To be visible to other software, these files are symlinked into standard
-locations in the new directory hierarchy under `/System/Index`:
+In short, what we have is a database-less package management system: the
+directory structure itself organizes the system. Wasn't that its original
+purpose, after all? Each program directory (for example, `/Programs/Awesome`) may hold
+version directories (`/Programs/Awesome/4.3`, `/Programs/Awesome/5.2`), and a
+version-neutral directory for settings (`/Programs/Awesome/Settings`), to keep files
+that would normally be in `/etc`.
 
-    /System/Index/bin/ping
-    /System/Index/lib/libpng.so.3
+Keeping two or more versions of a library is
+trivial: upgrading `LibPNG` to `1.2.8` means adding `/Programs/LibPNG/1.2.8`, but
+does not automatically imply that `LibPNG 1.2.7` is removed. This way, if a
+program depends on the previous version, it won't break. As you can see,
+**GoboLinux** gives you a finer control of what is and isn't in the system.
 
-Traditional Unix paths are also symlinks to the `/System/Index` directory
-structure:
-
-    /bin     -> /System/Index/bin
-    /usr/bin -> /System/Index/bin
-    /usr/lib -> /System/Index/lib
-    /etc     -> /System/Settings
-
-As a result, most things just work. For example, GoboLinux will correctly
-dispatch scripts with shebang lines such as `#!/usr/bin/env perl` or
-`#!/usr/bin/python` to the proper interpreter.
-
-This architecture —installing each program under its own directory, and making
-executables, headers other resources available via symlinks— has significant
-advantages:
-
--   different versions of libraries can coexist
--   it's trivial to uninstall software
--   there's no need for a database of installed files
-
-The system is administered through a limited set of [utility
-programs]({{%relref "Commands" %}}). Tracking dependency relations among software
-is accomplished through the [GoboLinux build
-system]({{%relref "Compiling-from-source" %}}) and its library of
-["compile recipes"](/Recipes).
+_Historical tidbit: When most distributions switched to GCC 3 they released a
+new major version, mostly incompatible with previous ones. In contrast, when the
+006 series of GoboLinux adopted GCC 3, compatibility was preserved by simply
+keeping old versions of libraries alongside the new ones, while they were
+gradually phased out. No "compat" packages were needed._
 
 ## The "legacy" tree
 

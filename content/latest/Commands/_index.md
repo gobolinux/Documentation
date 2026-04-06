@@ -34,14 +34,16 @@ pre: "<b>007&thinsp;</b>"
 
 ### Administration
 
--   [SymlinkProgram](SymlinkProgram) - Link a program from the /Programs
-    hierarchy in the /System tree.
--   [DisableProgram](DisableProgram) - Unlink a program from the /System/Index
+-   [SymlinkProgram](SymlinkProgram) - Link a program from the `/Programs`
+    hierarchy in the `/System` tree.
+-   [RescueSymlinkProgram](RescueSymlinkProgram) - A minimal functionality [`SymlinkProgram`](SymlinkProgram) that can be used
+when the original script is not working.
+-   [DisableProgram](DisableProgram) - Unlink a program from the `/System/Index`
     hierarchy.
 -   [RemoveProgram](RemoveProgram) - Remove a program version from the system.
--   [DetachProgram](DetachProgram) - Move a program from /Programs to a
+-   [DetachProgram](DetachProgram) - Move a program from `/Programs` to a
     different location.
--   [RebuildLinks](RebuildLinks) - Rebuild /System/Index directories.
+-   [RebuildLinks](RebuildLinks) - Rebuild `/System/Index` directories.
 -   [RemoveBroken](RemoveBroken) - Remove broken links.
 
 ### Creating recipes and packages
@@ -55,7 +57,7 @@ pre: "<b>007&thinsp;</b>"
 -   [NewVersion](NewVersion) - Update a recipe to a new version.
 -   [PrepareProgram](PrepareProgram) - Prepares applications for instalation,
     running the 'configure'
--   [Hashes](Hashes) - Manages FileHash and FileHash.sig files in a GoboLinux
+-   [Hashes](Hashes) (Obsolete, atm we do not utilize hashes) - Manages FileHash and FileHash.sig files in a GoboLinux
     package.
 -   [MergeTree](MergeTree) - Mirrors one directory structure into another.
 

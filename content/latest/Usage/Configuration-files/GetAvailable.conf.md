@@ -2,8 +2,10 @@
 title: "GetAvailable"
 ---
 
-> [!WARNING] We do not maintain a binary package repository at this time!
-> Please build your packages from source using [`Compile`]({{%relref Compiling-from-source %}})!
+> [!WARNING] Warning: Article outdated!
+> For now you can neglect this article, since do not maintain a binary package repository at this time.
+>
+> **Please build your packages _from source_ using [`Compile`]({{%relref Compiling-from-source %}}).**
 
 `GetAvailable.conf` is the file where you can configure paths and URLs used to
 locate binary packages.

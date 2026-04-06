@@ -1,7 +1,7 @@
 ---
 linkTitle: "Understanding system indices"
 title: "Understanding and Maintaining system indices"
-weight: 3
+weight: 4
 ---
 
 The two main parts of GoboLinux are `/Programs` and `/System`. If you stick to

@@ -1,8 +1,9 @@
 ---
 title: "Sandbox Install"
+weight: 3
 ---
 
-> If I wanted to run make my self, what would I need to do to sandbox it?
+> If I wanted to run `make` my self, what would I need to do to sandbox it?
 
 This is how its done.
 

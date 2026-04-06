@@ -1,7 +1,10 @@
 ---
-title: "Upgrade Glibc"
-hidden: true
+title: "Rescue broken Glibc upgrade"
 ---
+
+>[!NOTE]
+> This is very old content but until we redo this article we leave it here in
+> case it somehone is in dire need.
 
 ## Question:
 
