@@ -56,11 +56,11 @@ sophisticated way of managing services.
 ## Configuration options
 
 When GoboLinux boots, the boot scripts launch programs to configure the
-keyboard, set the system clock, initialize the network, etc.
+keyboard, set the system clock, etc.
 
 The parameters for calling these programs are placed in
-`/System/Settings/BootOptions` and `/System/Settings/NetworkOptions`. Both files
-contain entries of the form:
+`/System/Settings/BootOptions`. It
+contains entries of the form:
 
 ```ini
 Option=value
@@ -70,7 +70,7 @@ Note that no space is allowed before or after the `=` character. This is shell
 syntax, allowing the options to be imported into the boot scripts using the
 `source` command.
 
-> [!tip]
+> [!tip] Tip: Debug Mode
 > In case you are having issues, you can enable "debug mode" by setting `DEBUG=1`
 > inside `/System/Settings/BootOptions`. A debug log will be saved to
 > `/Data/Variable/log/BootScripts.log`.
@@ -93,8 +93,8 @@ according to the time zone you selected. You can set this setting manually, by
 pointing the `localtime` symlink to a different file under
 `/Programs/Glibc/Current/Shared/zoneinfo`.
 
-The ClockMode information is used for the hwclock utility, which is launched at
-boot time through the SetClock task.
+The `ClockMode` information is used for the hwclock utility, which is launched at
+boot time through the `SetClock` task.
 
 ### Console setup
 
@@ -108,7 +108,7 @@ interpreter.
 Font path configuration for X can be found in `/System/Settings/X11/xorg.conf`
 and `/System/Settings/fonts/fonts.conf`.
 
-To change the default console font used by GoboLinux, use the ConsoleFont option
+To change the default console font used by GoboLinux, use the `ConsoleFont` option
 in `/System/Settings/BootOptions`.
 
 You can also change the console font using the `setfont` utility. See
@@ -122,7 +122,7 @@ have their own font settings.
 Use the KeymapLayout option in `/System/Settings/BootOptions` to select an
 appropriate console keyboard layout.
 
-The available keymaps are in the KBD package; they are the .map files. You can
+The available keymaps are in the `KBD` package; they are the `.map` files. You can
 set the console keyboard layout at any time by running loadkeys. For example, to
 set the Dvorak keymap, just type in:
 
@@ -132,43 +132,29 @@ loadkeys dvorak.map
 
 #### Mouse
 
-The MouseType and MouseDevice options in `/System/Settings/BootScripts/BootUp`
+The `MouseType` and `MouseDevice` options in `/System/Settings/BootOptions`
 configure mouse support on the console. They are disabled by default.
 
 ### Graphical display setup (X server)
 
 #### Keymap
 
-The keyboard layout for programs running under the window manager is mapped
-according the `InputDevice` section in `/System/Settings/xorg.conf` when the
-graphic display (X server) starts. With the window manager running, you can
+With the window manager running, you can
 change keyboard mappings and display settings using `setxkbmap`, `xmodmap`, and
 `xset` tools. To select a Dvorak keyboard layout, type `setxkbmap dvorak` in a
 terminal. These commands can also be placed in `$HOME/.xinitrc`.
 
+For persistent configuration, you could define this inside a
+`/System/Settings/X11/xorg.conf.d/00-keyboard.conf` file, as you would on other
+Linux distro's, for example consult
+[ArchLinux wiki → Xorg/Keyboard configuration](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files).
+
+The keyboard layout for programs running under the window manager is mapped
+according the `InputDevice` section in `/System/Settings/xorg.conf` when the
+graphic display (X server) starts. 
+
 Some desktop environments also offer graphical tools for setting the keyboard
-layout. For example, in KDE you can configure this at the KDE Control Center.
-
-#### Mouse
-
-The mouse pointer for the graphical display is defined in an `InputDevice`
-section in `/System/Settings/xorg.conf`. The [Installer]({{%relref "Installer" %}})
-should correctly detect your hardware and set suitable defaults for your system.
-If not, you can always try a failsafe setup such as:
-
-```xorg
-Section "InputDevice"
-Identifier  "Mouse0"
-Driver      "mouse"
-Option      "Protocol" "auto"
-Option      "Device" "/dev/input/mice"
-Option      "ZAxisMapping" "4 5"
-EndSection
-```
-
-There is nothing GoboLinux-specific about mouse setup on X. You can find HOWTOs
-and tutorials around the net that can give you more detailed instructions about
-this. (But feel free to drop by at the mailing list if you're still stuck!)
+layout.
 
 ### Kernel modules
 
@@ -178,8 +164,10 @@ drivers, the user can explicitly request them.
 
 One way is to edit `/System/Settings/modprobe.conf` (similar to other Linux
 distributions), however a simpler way in GoboLinux is to list desired modules in
-`/System/Settings/BootOptions`. This is how to load the i810_audio audio driver
-and sk98lin ethernet driver:
+`/System/Settings/BootOptions`.
+
+For instance, this is how to load the `i810_audio`
+audio driver and `sk98lin` ethernet driver:
 
 ```fish
 UserDefinedModules=(
@@ -222,7 +210,7 @@ dhcpcd eth0 &
 ```
 
 If you have a static network configuration, place commands similar to the
-following in BootUp.
+following in `BootUp`.
 
 ```fish
 ifconfig eth0 192.168.1.5 netmask 255.255.255.0
@@ -231,7 +219,7 @@ route add default gateway 192.168.1.1 metric 1 dev eth0
 
 The nameserver can be specified in `/etc/resolv.conf`
 (`/System/Settings/resolv.conf`). To use Google's nameservers, you can edit
-resolv.conf to:
+`resolv.conf` to:
 
 ```fish
 nameserver 8.8.8.8
@@ -241,26 +229,21 @@ nameserver 8.8.4.4
 ### Automated login
 
 If you wish to use an automated login, there are several ways to achieve this
-goal.
+goal, but in general this depends on your login manager or desktop environment.
 
-For KDE (or KDM, it also has a configuration which allows you to tweak it a lot)
-you can use this:
+Some desktop environments allow you to enable "auto-login" in their system
+settings GUI. Else configure this according to the documentaion in your login
+manager in its configuration files.
 
-1.  Open Control Center in administrative mode.
-2.  Select Login Manager.
-3.  Under the Convenience tab check "Enable auto-login" and select which user
-    you should log in as.
-4.  Click "Apply".
-
-If you do not use KDE or want a non-GUI based solution, one way is to use
-rungetty.
+If you do not use such a login manager or desire a simplistic non-GUI based
+solution, one way is to use `rungetty`.
 
 1.  In your inittab file (for example, `nano /etc/inittab`) find the line which
     includes `tty1` (it's your first terminal, the default showing up on login).
 2.  Now, you will see `agetty` in there - change this `agetty` line to
     `rungetty tty1 --autologin your_username`.
 
-Of course, replace your_username with the user you want to login as.
+Of course, replace "your_username" with the user you want to login as.
 
 Using another tty than 1 may be useful too.
 
@@ -269,6 +252,10 @@ Using another tty than 1 may be useful too.
 GoboLinux comes with CUPS installed by default.
 
 ## Audio
+
+>[!NOTE]
+> This information might be outdated as our latest release uses PulseAudio.
+> Applicability has to be verified.
 
 Note that ALSA is muted by default, to automatically save and restore changes
 done in e.g. alsamixer, add these lines to your boot scripts.
