@@ -1,6 +1,6 @@
 ---
 title: "Configuration files"
-weight: 6
+weight: 2
 ---
 
 {{% children depth="1" %}}

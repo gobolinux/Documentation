@@ -1,6 +1,6 @@
 ---
 title: "Compiling from source"
-weight: 2
+weight: 1
 ---
 
 ### Introduction
@@ -54,18 +54,9 @@ _Main article:_ [Writing recipes]({{%relref "Writing-Recipes" %}})
 
 ### Getting the latest Compile
 
--   To use the development version of Compile, run
+To use the version of Compile, run
 
 ```fish
-Compile Compile git
+cd /Programs/Compile/Current
+git pull && UpdateSettings --auto Compile
 ```
-
--   To use the latest stable version, run
-
-```fish
-InstallPackage Compile
-```
-
-In general it is recommended to always use the latest stable version of
-[Compile]({{%relref "Compile" %}}). `Compile` is very important to GoboLinux so if
-there is any problem in it, it is normally fixed very quickly.

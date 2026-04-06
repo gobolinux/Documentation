@@ -273,6 +273,9 @@ details.box, details.box > .box-content {
         opacity: 0.6;
         padding-left: .2rem;
     }
+    .read-icon {
+        inset-inline-end: .5rem;
+    }
 }
 
 #R-sidebar ul.enlarge > li.parent {

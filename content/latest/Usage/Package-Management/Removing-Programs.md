@@ -1,5 +1,5 @@
 ---
-title: "Removing programs"
+title: "Removing"
 weight: 3
 ---
 

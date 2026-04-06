@@ -1,8 +1,8 @@
 ---
-title: "Recipes"
-weight: 3
+title: "Recipes & Packages"
+weight: 4
 chapter: false
-pre: "<b>003&thinsp;</b>"
+pre: "<b>004&thinsp;</b>"
 ---
 
 Recipes are directions to [`Compile`]({{%relref "Compile" %}}) on how to configure,

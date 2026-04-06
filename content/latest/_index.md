@@ -37,15 +37,21 @@ GoboLinux is [quite](https://gobolinux.org/k5.html)
 distribution. Therefore to make your journey as enjoyable possible, you should
 carefully **read** and **consult** the documentation.
 
-If you have just installed GoboLinux on your PC, make sure to check out the
+***If you have just installed GoboLinux on your PC, make sure to check out the
 [Known Issues and Fixes]({{%relref "GoboLinux-Known-Issues-and-Fixes" %}})
-section first.
+section first!***
 
 ## How to find your way around
 
-You can begin with the [**Getting Started**]({{%relref "Getting-Started" %}}) section on the
-left. This should get you going. You can use your `←left`/`right→` for
-navigation. Or make use of our full-text search!
+Start with the [**Quick Start**]({{%relref "Quick-Start" %}}) section on the
+left, this should get you going! 🙂. You can use your `←left`/`right→` for
+navigation, or make use of our full-text search.
+
+We advice you to proceed with our [**Concepts**]({{%relref "Concepts" %}}) page in order to get a basic understanding of GoboLinux and it's philosophy.
+
+Under [**Usage**]({{%relref "Usage" %}}) you will find hand-on information how to deal with daily tasks. Don't skip on this section!
+
+[**Recipes & Packages**]({{%relref "Recipes" %}}) goes into the innerworkings of GoboLinux packaging and will teach you, how to create your own recipes and packages if you desire to do so!
 
 The [**Advanced**]({{%relref "Advanced" %}}) section contains some
 further and advanced topics , but if you're serious about your GoboLinux journey

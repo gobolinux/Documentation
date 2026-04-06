@@ -1,5 +1,5 @@
 ---
-title: "Getting Started"
+title: "Quick Start"
 weight: 1
 chapter: false
 pre: "<b>001&thinsp;</b>"

@@ -1,6 +1,8 @@
 ---
 title: "Installing Software"
-weight: 4
+weight: 1
+build:
+  render: never
 ---
 
 {{% children depth="2" %}}

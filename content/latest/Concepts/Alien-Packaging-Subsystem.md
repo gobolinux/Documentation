@@ -1,6 +1,6 @@
 ---
 title: "Alien Packaging Subsystem"
-weight: 3
+weight: 4
 ---
 
 ## Alien Packages
@@ -16,17 +16,7 @@ GoboLinux currently supports the following backends:
 
 ## How to install and update Alien packages
 
-In order to install a foreign package we can use the following syntax:
-
-```fish
-sudo Alien --install <package_manager>:<package_name>
-```
-
-For instance, in order to install or update meson you would type:
-
-```fish
-sudo Alien --install pip3:meson
-```
+Main article: [**Managing Alien Packages**]({{%relref "Managing-Alien-Packages" %}})
 
 ## Limitations
 

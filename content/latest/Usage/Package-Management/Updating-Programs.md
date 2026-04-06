@@ -1,5 +1,5 @@
 ---
-title: "Updating programs"
+title: "Updating"
 weight: 2
 ---
 

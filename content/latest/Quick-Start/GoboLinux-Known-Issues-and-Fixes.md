@@ -4,6 +4,9 @@ linkTitle: "Known Issues and Fixes"
 weight: 9
 ---
 
+> [!IMPORTANT]
+> *This page holds the __most important fixes__ for GoboLinux and __always held up-to-date__ – so always keep an eye on it!*
+
 ## Live CD
 
 ### Fix grub install error
@@ -18,22 +21,6 @@ InstallPackage https://gobonextgen.org/Packages/017.01/GRUB-EFI--2.12-r1--x86_64
 You will be prompted to update some settings. Select "U" on each prompt.
 
 Now you can proceed the installation of GoboLinux 017.01 via our `Installer`.
-
-## Installed System
-
-### Update of Compile and Scripts tools
-
-`Compile` and `Scripts` are always evolving. Make sure to update your copies by
-running the following commands after you boot into your installed system for the
-first time:
-
-```fish
-cd /Programs/Scripts/Current
-git pull && UpdateSettings --auto Scripts && make
-
-cd /Programs/Compile/Current
-git pull && UpdateSettings --auto Compile
-```
 
 ## Other outstanding issues
 
