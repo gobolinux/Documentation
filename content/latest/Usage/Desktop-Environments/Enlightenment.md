@@ -1,6 +1,7 @@
 ---
 title: "Enlightenment"
 weight: 2
+hidden: true
 ---
 
 ### Overview

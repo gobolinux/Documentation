@@ -1,6 +1,7 @@
 ---
 title: "LXDE"
 weight: 3
+hidden: true
 ---
 
 # Overview

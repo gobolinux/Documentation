@@ -4,7 +4,7 @@ weight: 1
 ---
 
 `Compile.conf` is the file where you can configure the various paths and URLs used
-by [Compile]({{%relref "Compile" %}}).
+by [`Compile`]({{%relref "Compile" %}}).
 
 It is stored at `/Programs/Compile/Settings/Compile/Compile.conf` -- which, once
 installed, has a link at `/System/Settings/Compile/Compile.conf` (if you're used
@@ -53,9 +53,14 @@ highlighting that GoboLinux has by default:
 compileMakeCommand="ColorMake"
 ```
 
-Options to use with the `make` command. This can be used to run multiple threads
-in parallel on different CPUs or for other customisation:
+Next, you many define options to use with the `make` command. This is especially useful
+if you want to run `make` multi-threaded on multicore CPUs (or for other customisation).
+
+For instance on an 8-thread CPU you might set:
 
 ```shell
-compileMakeOptions="-j2"
+compileMakeOptions="-j8"
 ```
+
+Note that this will fully occupy your CPU, so if you want use your system while
+compiling, it might be better to reserve a few cpu threads (eg `-j6`).

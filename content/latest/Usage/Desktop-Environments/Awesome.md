@@ -3,6 +3,10 @@ title: "Awesome"
 weight: 1
 ---
 
+> [!NOTE]
+> At the moment the only officially supported desktop environment is
+> AwesomeWM!
+
 ### Overview
 
 Awesome is the current desktop manager for Gobolinux.
