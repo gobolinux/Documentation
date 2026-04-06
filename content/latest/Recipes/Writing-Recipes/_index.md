@@ -27,8 +27,10 @@ To send a recipe for inclusion into the main `Compile` tree, just run
 
 ## Setting up Compile.conf
 
-We only need to do one thing here, add your name to `Compile.conf` (for credits
-on recipes you may make). Open `Compile.conf` in a text editor such as `nano`:
+_Full reference article:_ [`Compile.conf`.](/Usage/Configuration-files/Compile.conf/)
+
+We only need to do one thing here, add your name to [`Compile.conf`](/Usage/Configuration-files/Compile.conf/) (for credits
+on recipes you may make). Open [`Compile.conf`](/Usage/Configuration-files/Compile.conf/) in a text editor such as `nano`:
 
 ```fish
 nano /System/Settings/Compile/Compile.conf
@@ -51,17 +53,17 @@ need to run [`MakeRecipe`]({{%relref "MakeRecipe" %}}) again. Instead, use
 create a new recipe starting with the previous recipe contents. For example:
 
 ```fish
-NewVersion GCC 4.4.4
+NewVersion GCC 15.2.0
 ```
 
 This command will fetch the latest `GCC` recipe, create a new subdirectory
-called `4.4.4` inside `/Data/Compile/Recipes/GCC` and will replace the package
-version in `$url` by `4.4.4`.
+called `15.2.0` inside `/Data/Compile/Recipes/GCC` and will replace the package
+version in `$url` by `15.2.0`.
 
 You can also give the full URL for the package sources:
 
 ```fish
-NewVersion GCC 4.4.4 ftp://ftp.gnu.org/gcc/gcc-4.4.4/gcc-4.4.4.tar.bz2
+NewVersion GCC 15.2.0 https://ftp.gnu.org/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz
 ```
 
 If the version of the package has not changed, and only minor recipe updates are
@@ -118,24 +120,24 @@ program names must start with a capital letter.
 ### MakeRecipe
 
 In this example we'll make a recipe, starting from the source code for a program
-on your computer. We'll use [joe](http://sf.net/projects/joe-editor/), a text
+on your computer. We'll use [joe](https://joe-editor.sourceforge.io/), a text
 editor (console based). This is my first recipe, and it is now in the main
 `Compile` tree.
 
 ```fish
-MakeRecipe http://unc.dl.sourceforge.net/sourceforge/joe-editor/joe-3.1.tar.gz
+MakeRecipe https://downloads.sourceforge.net/sourceforge/joe-editor/joe-4.6.tar.gz
 ```
 
 Based on the filename of the URL, [`MakeRecipe`]({{%relref "MakeRecipe" %}})
-detects that the program it is compiling is called joe (which, after a run of
-the [`NamingConventions`]({{%relref "NamingConventions" %}}) script, becomes Joe),
-and that the version is 3.1.
+detects that the program it is compiling is called "joe" (which, after a run of
+the [`NamingConventions`]({{%relref "NamingConventions" %}}) script, becomes `Joe`),
+and that the version is `3.1`.
 
 > [!TIP] Pro Tip
 > In case it didn't, you could have passed it explicitly as parameters:
 >
 > ```fish
-> MakeRecipe HardToDetect 2.0 http://example.org/htd_2_0.tar.bz2
+> MakeRecipe HardToDetect 2.0 https://example.org/htd_2_0.tar.bz2
 > ```
 
 [`MakeRecipe`]({{%relref "MakeRecipe" %}}) should now report that it has downloaded
@@ -204,5 +206,5 @@ ContributeRecipe <program name>
 GitHub so that the project maintainers can review it and merge it. Please note
 that you will need a valid account at github.com in order to contribute recipes.
 
-For more in-depth information refer to the
-[GitHub contributor workflow]({{%relref "GitHub-contributor-workflow" %}}).
+_For more in-depth information refer to the
+[GitHub contributor workflow]({{%relref "GitHub-contributor-workflow" %}})._
