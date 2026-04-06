@@ -56,13 +56,13 @@
     /* Notices */
     --BOX-BG-color: var(--MAIN-BG-color);
     --BOX-ORANGE-color: #b97300;
-    --BOX-ORANGE-TEXT-color: #ffb200;
-    --BOX-BLUE-color: #002cb9;
-    --BOX-BLUE-TEXT-color: #0094ff;
-    --BOX-GREEN-color: #00b901;
-    --BOX-GREEN-TEXT-color: #2bff00;
+    /* --BOX-ORANGE-TEXT-color: #ffca4f; */
+    --BOX-BLUE-color: #197bae;
+    /* --BOX-BLUE-TEXT-color: #6dc2ff; */
+    --BOX-GREEN-color: #19ae5d;
+    /* --BOX-GREEN-TEXT-color: #74ff58; */
     --BOX-RED-color: #a11414;
-    --BOX-RED-TEXT-color: #ff0000;
+    /* --BOX-RED-TEXT-color: #fc4f4f; */
 }
 
 /* General */
