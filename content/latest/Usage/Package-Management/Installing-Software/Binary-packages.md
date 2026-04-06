@@ -32,13 +32,13 @@ If you want to select a specific version, you can pass it as the second
 parameter:
 
 ```fish
-InstallPackage Gimp 2.8.18
+InstallPackage Gimp 3.2.2
 ```
 
 If you downloaded the package and want to install it, run:
 
 ```fish
-InstallPackage Gimp--2.8.18--i686.tar.bz2
+InstallPackage Gimp--3.2.2--x86_64.tar.bz2
 ```
 
 The script normally runs interactively, asking about each dependency of the

@@ -1,5 +1,6 @@
 ---
-title: "Updating"
+LinkTitle: "Updating"
+title: "Updating Programs"
 weight: 2
 ---
 
