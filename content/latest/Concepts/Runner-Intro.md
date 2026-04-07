@@ -18,7 +18,7 @@ without duplicating files. It dynamically picks the correct parts of your
 each confined to their own subdirectories.
 
 More info:
- - https://gobolinux.org/gobolinux016.html (Runner was released as part of GoboLinux 016)
+ - https://gobolinux.org/runner.html
  - https://www.gobolinux.org/doc/linuxdev-br2017/GoboLinux_Runner.pdf
 
-Main article (How-To): [**Filesystem virtualization with Runner**]({{%relref "Filesystem-virtualization-with-Runner" %}})
+Main article: [**Filesystem virtualization with Runner (How-To)**]({{%relref "Filesystem-virtualization-with-Runner" %}})
