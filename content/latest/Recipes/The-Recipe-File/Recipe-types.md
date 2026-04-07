@@ -69,7 +69,7 @@ The default is `runhaskell`.
 is used for Programs based on CMake. Some options are
 only relevant for `cmake`:
 
-###### **`cmake_options=(<array of options>))`**
+###### **`cmake_options=(<array of options>)`**
 
 Flags to be passed to the CMake configure operation. These flags are passed in
 addition to default flags (such as `-DCMAKE_INSTALL_PREFIX`).
