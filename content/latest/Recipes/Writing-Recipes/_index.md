@@ -131,7 +131,7 @@ MakeRecipe https://downloads.sourceforge.net/sourceforge/joe-editor/joe-4.6.tar.
 Based on the filename of the URL, [`MakeRecipe`]({{%relref "MakeRecipe" %}})
 detects that the program it is compiling is called "joe" (which, after a run of
 the [`NamingConventions`]({{%relref "NamingConventions" %}}) script, becomes `Joe`),
-and that the version is `3.1`.
+and that the version is `4.6`.
 
 > [!TIP] Pro Tip
 > In case it didn't, you could have passed it explicitly as parameters:
