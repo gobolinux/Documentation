@@ -1,5 +1,6 @@
 ---
-title: "Binary packages"
+LinkTitle: "Binary packages"
+title: "Installing binary packages"
 weight: 2
 ---
 
@@ -64,4 +65,4 @@ LiveCD]({{%relref "Installing-packages-from-the-LiveCD" %}}).
 
 ## Removing packages
 
-See [Removing programs]({{%relref "Commands" %}}Removing-programs/).
+See [Removing programs]({{%relref "Removing-programs" %}}).
