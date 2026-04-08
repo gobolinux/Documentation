@@ -18,9 +18,13 @@ Compile irssi
 Depending on the speed of your computer, internet connection and what packages
 you have installed, Irssi should download and install in a few minutes.
 
-Compile manages the build process using GoboLinux recipes. Each recipe contains
+**Compile** manages the build process using GoboLinux recipes. Each recipe contains
 a list of build directives and supplemental control files for compiling a
 particular software library.
+
+Recommended blog articles to read on **Compile**:
+ - [The ideas behind Compile](https://gobolinux.org/doc/articles/compile.html)
+ - [Compile: the GoboLinux compilation system](https://gobolinux.org/compile.html)
 
 ### Finding recipes
 
