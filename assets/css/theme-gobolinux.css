@@ -134,7 +134,7 @@ body h2, h3, .article-subheading, h4, h5, h6 {
     text-decoration: none;
 }
 
-/* Inline code & code blocks */
+/* Inline code, code blocks & blockquote */
 pre {
     background-color: black;
     border-radius: 0.8rem;
@@ -152,6 +152,17 @@ code {
     letter-spacing: -0.015rem;
     &.highlight {
         padding: 1px 3px;
+    }
+}
+
+blockquote {
+    background: #1c1c1c;
+    border-inline-start-width: .3rem;
+    border-inline-start-color: #00e2ff5c;
+    border-radius: .8rem;
+    padding: 1px 1.1rem;
+    p {
+        font-size: inherit;
     }
 }
 
