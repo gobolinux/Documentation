@@ -3,9 +3,12 @@ title: "GoboLinux at a glance"
 weight: 1
 ---
 
-We recommend you start by reading the following article, written by GoboLinux founder Hisham Muhammad:
+For a gentle infroduction we recommend you start by reading the following
+historical articles, authored by GoboLinux founder Hisham Muhammad:
 
 - [GoboLinux at a glance](https://gobolinux.org/at_a_glance.html)
+- [The Unix tree rethought: an introduction to GoboLinux](https://gobolinux.org/k5.html)
+- [I am not clueless](https://gobolinux.org/doc/articles/clueless.html)
 
 
 ## What makes GoboLinux unique
