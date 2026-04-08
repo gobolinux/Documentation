@@ -95,3 +95,9 @@ name = "Showcases"
 pre = "<i class='fas fa-fw fa-camera'></i> "
 url = "https://gobolinux.org/screenshots.html"
 weight = 6
+
+[[menu.shortcuts]]
+name = "FAQ"
+pre = "<i class='fas fa-fw fa-circle-question'></i> "
+url = "https://gobolinux.org/faq.html"
+weight = 7
