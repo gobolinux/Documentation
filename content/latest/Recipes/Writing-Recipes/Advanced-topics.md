@@ -49,11 +49,11 @@ tool `AutoPatch`.
 #### Using `AutoPatch`
 
 On GoboLinux we love creating small tools that make our life a little bit easer.
-Therefore we have created `AutoPatch` to semi-automate the workflow - to create
-a perfect patch for a given recipe.
+Therefore we have created [`AutoPatch`]({{%relref "AutoPatch" %}}) to
+semi-automate the workflow — to create a perfect patch for a given recipe.
 
 This is how it works: You run `AutoPatch` once on a package that you would like
-to edit the sources. After your ammendments, run `AutoPatch` a second time, you
+to edit the sources. After your amendments, run `AutoPatch` a second time, you
 will be asked for a package name and description. Once you're done with the
 process a file `01-<patch_name>.patch` will be placed in the recipes directory.
 
@@ -62,7 +62,7 @@ _For example:_
 Let's create a patch for the `Nano 8.2` recipe.
 
  1. `AutoPatch nano 8.2`
- 2. Edit the clean sources inside `Data/Compile/Sources/nano-8.2` as desired;
+ 2. Edit the clean sources inside `/Data/Compile/Sources/nano-8.2` as desired;
  3. Run `AutoPatch nano 8.2` again.
  4. Verify the generated diff, set a name and description when prompted.
     For this example we will name it "fix-gcc14-build" with the description:
