@@ -3,6 +3,11 @@ title: "Patches"
 weight: 7
 ---
 
+> [!NOTE]
+> Also read: [**Advanced Topics → Patches**]({{%relref "Advanced-topics" %}})
+>
+> Some content is duplicated and these articles should be merged in the future.
+
 Patches are applied in filename order, with the `-p1` option. Creation by
 
 ```fish
@@ -21,8 +26,8 @@ short title giving some inkling of the patch's purpose. Additionally, the first
 few lines of the patch (before the
 
 ```diff
- --- foo/1.0/file.bad
- +++ foo/1.0/file.good
+--- foo/1.0/file.bad
++++ foo/1.0/file.good
 ```
 
 lines) should contain an explanation of why the patch is necessary. GoboLinux

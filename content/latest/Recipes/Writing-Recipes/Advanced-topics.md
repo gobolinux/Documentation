@@ -5,6 +5,11 @@ weight: 1
 
 ## Patches
 
+> [!NOTE]
+> Also read: [**Writing Recipes → Patches**]({{%relref "Patches" %}})
+>
+> Some content is duplicated and these articles should be merged in the future.
+
 `Compile` has built-in support for applying patches distributed with recipes.
 There are some things that should be considered when creating a patch for an
 application. First of all, if the patch is generic, consider sending it
