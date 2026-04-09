@@ -72,22 +72,23 @@ pre = "<i class='fab fa-fw fa-github'></i> "
 url = "https://github.com/gobolinux"
 weight = 2
 
-[[menu.shortcuts]]
-name = "Community"
-pre = "<i class='fas fa-fw fa-users'></i> "
-url = "https://gobolinux.discourse.group/"
-weight = 3
 
 [[menu.shortcuts]]
 name = "Recipes"
 pre = "<i class='fas fa-fw fa-book'></i> "
 url = "https://github.com/gobolinux/Recipes"
-weight = 4
+weight = 3
 
 [[menu.shortcuts]]
 name = "Download ISO"
 pre = "<i class='fas fa-fw fa-download'></i> "
 url = "https://gobolinux.org/downloads.html"
+weight = 4
+
+[[menu.shortcuts]]
+name = "Community"
+pre = "<i class='fas fa-fw fa-users'></i> "
+url = "https://gobolinux.org/community.html/"
 weight = 5
 
 [[menu.shortcuts]]
