@@ -88,7 +88,7 @@ weight = 4
 [[menu.shortcuts]]
 name = "Community"
 pre = "<i class='fas fa-fw fa-users'></i> "
-url = "https://gobolinux.org/community.html/"
+url = "https://gobolinux.org/community.html"
 weight = 5
 
 [[menu.shortcuts]]
