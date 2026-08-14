@@ -3,7 +3,7 @@ title: "Startup & System Settings"
 weight: 3
 ---
 
-> Since we felt like we were "starting from scratch" and we really
+> “Since we felt like we were "starting from scratch" and we really
 > wanted to make a system where everything just made sense for us, we
 > also took the time to rethink the boot scripts. I felt the two
 > historical models (System V and BSD) were overkill for our common
@@ -28,7 +28,7 @@ weight: 3
 > error/output messages), RedHat-like (with lots of OK's), or 
 > [GoboLinux-like](https://gobolinux.org/k5.html)  (the latter uses a
 > modified version of the  [Linux Progress
-> Patch](http://lpp-themes.sourceforge.net/)).
+> Patch](http://lpp-themes.sourceforge.net/)).”
 >
 > ---
 > --- Hisham Muhammad, 2003. Excerpt from ["The Unix tree rethought: an introduction to GoboLinux"](https://gobolinux.org/k5.html).
