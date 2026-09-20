@@ -5,8 +5,9 @@ weight: 2
 ---
 
 > [!WARNING]
-> We do not maintain a binary package repository at this time!
-> Please build your packages from source using [`Compile`]({{%relref Compiling-from-source %}})!
+> We do *not* maintain a binary package repository at this time!
+> 
+> **Please build your packages _from source_ using [`Compile`]({{%relref Compiling-from-source %}}).**
 
 **Binary packages** in GoboLinux are precompiled software packages built for the
 GoboLinux directory tree and made available through the GoboLinux software
